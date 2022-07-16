@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('fronted-views.layouts.app')
 
 @section('content')
 
@@ -21,7 +21,7 @@
                 </div>
             </nav>
             <!-- End of Breadcrumb -->
-            
+
             <!-- Start of Page Content -->
             <div class="page-content">
                 <div class="container">
@@ -32,7 +32,7 @@
                         <p class=" mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             labore et dolore magna aliqua. Venenatis tellu metus</p>
                         <figure class="br-lg">
-                            <img src="assets/images/pages/about_us/1.jpg" alt="Banner" 
+                            <img src="assets/images/pages/about_us/1.jpg" alt="Banner"
                                 width="1240" height="540" style="background-color: #D0C1AE;" />
                         </figure>
                     </section>
@@ -151,7 +151,7 @@
                             <div class="col-md-6 pl-lg-8 mb-8">
                                 <h4 class="title text-left">We Boost Our Clients’ Bottom
                                     Line by Optimizing Their Growth Potential</h4>
-                                <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Venenatis tellus in.
                                     metus vulputate eu scelerisque felis. Vel pretium lectus qua .
                                     Arpis massa. Nunc id cursus metus ididunt ut labore metus vulputate episcing.</p>
@@ -311,6 +311,6 @@
                     </div>
                 </section>
             </div>
-            
+
         </main>
 @endsection

@@ -8,9 +8,8 @@ class AboutController extends Controller
 {
     public function index()
     {
-        exit('abccc');
-        return view('About-us');
-        
+        return view('fronted-views.about-us');
+
     }
-    
+
 }

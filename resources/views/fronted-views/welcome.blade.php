@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('fronted-views.layouts.app')
 
 @section('content')
        <!-- Start of Main-->
        <main class="main">
-        
+
             <section class="intro-section">
                 <div class="swiper-container swiper-theme nav-inner pg-inner swiper-nav-lg animation-slider pg-xxl-hide nav-xxl-show nav-hide"
                     data-swiper-options="{
@@ -2481,7 +2481,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-sm-4 mb-4">
-                            <div class="banner h-100 br-sm" style="background-image: url(assets/images/demos/demo1/banners/2.jpg); 
+                            <div class="banner h-100 br-sm" style="background-image: url(assets/images/demos/demo1/banners/2.jpg);
                                 background-color: #ebeced;">
                                 <div class="banner-content content-top">
                                     <h5 class="banner-subtitle font-weight-normal mb-2">Weekend Sale</h5>
@@ -2814,7 +2814,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-sm-4 mb-4">
-                            <div class="banner h-100 br-sm" style="background-image: url(assets/images/demos/demo1/banners/3.jpg); 
+                            <div class="banner h-100 br-sm" style="background-image: url(assets/images/demos/demo1/banners/3.jpg);
                             background-color: #252525;">
                                 <div class="banner-content content-top">
                                     <h5 class="banner-subtitle text-white font-weight-normal mb-2">New Collection</h5>
@@ -3183,7 +3183,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-sm-4 mb-4">
-                            <div class="banner h-100 br-sm" style="background-image: url(assets/images/demos/demo1/banners/5.jpg); 
+                            <div class="banner h-100 br-sm" style="background-image: url(assets/images/demos/demo1/banners/5.jpg);
                             background-color: #EAEFF3;">
                                 <div class="banner-content content-top">
                                     <h5 class="banner-subtitle font-weight-normal mb-2">Deals And Promotions</h5>
