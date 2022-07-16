@@ -112,6 +112,4 @@
         </footer>
         <!-- End of Footer -->
 
-    <!-- End of Page-wrapper-->
-
 
