@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -376,7 +376,7 @@
                                         <input type="email" id="email_1" name="email_1"
                                             class="form-control form-control-md">
                                     </div>
-                                  
+
                                     <h4 class="title title-password ls-25 font-weight-bold">Password change</h4>
                                     <div class="form-group">
                                         <label class="text-dark" for="cur-password">Current Password leave blank to leave unchanged</label>
@@ -445,7 +445,7 @@
                                     </table>
                                 </div>
                                 <!-- End of Order Details -->
-            
+
                                 <div class="sub-orders mb-10">
                                     <h4 class="title mb-5 font-weight-bold ls-25">Sub Orders</h4>
                                     <div class="alert alert-icon alert-inline mb-5">
@@ -482,9 +482,9 @@
                                     </table>
                                 </div>
                                 <!-- End of Sub Orders-->
-            
+
                                 <div id="billing-account-addresses">
-                                    <div class="row">       
+                                    <div class="row">
                                         <div class="col-sm-6 mb-8">
                                             <div class="ecommerce-address billing-address">
                                                 <h4 class="title title-underline ls-25 font-weight-bold">Billing Address</h4>
@@ -552,7 +552,7 @@
                                     </div>
                                 </div>
                                 <!-- End of Account Address -->
-            
+
                                 <a href="#" class="btn btn-dark btn-rounded btn-icon-left btn-back mt-6 mb-6"><i class="w-icon-long-arrow-left"></i>Back To List</a>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -141,7 +141,7 @@
 
                             <nav class="toolbox sticky-toolbox sticky-content fix-top">
                                 <div class="toolbox-left">
-                                    <a href="#" class="btn btn-primary btn-outline btn-rounded left-sidebar-toggle 
+                                    <a href="#" class="btn btn-primary btn-outline btn-rounded left-sidebar-toggle
                                         btn-icon-left d-block d-lg-none"><i
                                             class="w-icon-category"></i><span>Filters</span></a>
                                     <div class="toolbox-item toolbox-sort select-box text-dark">

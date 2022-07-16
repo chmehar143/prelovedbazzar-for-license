@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -56,8 +56,8 @@
                                     <a href="post-single.html">New found the men dress for summer</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p> <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
@@ -83,8 +83,8 @@
                                     <a href="post-single.html">Recognitory the needs is primary condition  for design</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -110,8 +110,8 @@
                                     <a href="post-single.html">New found the women’s shirt  for summer season</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -137,8 +137,8 @@
                                     <a href="post-single.html">We want to be different and fashion gives to me that outlet</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -166,8 +166,8 @@
                                     <a href="post-single.html">Comes a cool blog post with Images</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -194,8 +194,8 @@
                                     <a href="post-single.html">Fusce lacinia arcuet nulla</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
                                 </div>

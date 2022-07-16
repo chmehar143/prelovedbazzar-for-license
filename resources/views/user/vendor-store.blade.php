@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -60,7 +60,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/1.jpg" alt="Vendor" 
+                                        <img src="assets/images/vendor/dokan/1.jpg" alt="Vendor"
                                             width="400" height="194" style="background-color: #40475E" />
                                     </figure>
                                 </div>
@@ -102,7 +102,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/2.jpg" alt="Vendor" 
+                                        <img src="assets/images/vendor/dokan/2.jpg" alt="Vendor"
                                             width="400" height="194" style="background-color: #6C6C6C" />
                                     </figure>
                                 </div>
@@ -141,7 +141,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/3.jpg" alt="Vendor" 
+                                        <img src="assets/images/vendor/dokan/3.jpg" alt="Vendor"
                                             width="400" height="194" style="background-color: #A891BF" />
                                     </figure>
                                 </div>
@@ -180,7 +180,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/4.jpg" alt="Vendor" 
+                                        <img src="assets/images/vendor/dokan/4.jpg" alt="Vendor"
                                             width="400" height="194" style="background-color: #28292D" />
                                     </figure>
                                 </div>
@@ -219,7 +219,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/5.jpg" alt="Vendor" 
+                                        <img src="assets/images/vendor/dokan/5.jpg" alt="Vendor"
                                             width="400" height="194" style="background-color: #7E7D7B" />
                                     </figure>
                                 </div>
@@ -259,7 +259,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/6.jpg" alt="Vendor" 
+                                        <img src="assets/images/vendor/dokan/6.jpg" alt="Vendor"
                                             width="400" height="194" style="background-color: #5B5B62" />
                                     </figure>
                                 </div>

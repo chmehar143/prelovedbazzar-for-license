@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -376,7 +376,7 @@
                                         <input type="email" id="email_1" name="email_1"
                                             class="form-control form-control-md">
                                     </div>
-                                  
+
                                     <h4 class="title title-password ls-25 font-weight-bold">Password change</h4>
                                     <div class="form-group">
                                         <label class="text-dark" for="cur-password">Current Password leave blank to leave unchanged</label>

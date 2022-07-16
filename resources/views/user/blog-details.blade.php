@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -41,15 +41,15 @@
                                     </div>
                                     <h2 class="post-title"><a href="#">Fashion tells about who you are from external point</a></h2>
                                     <div class="post-content">
-                                        <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse potenti. 
+                                        <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse potenti.
                                                 Sed egstas, ant at vulputate volutpat, uctus metus libero eu augue, vitae luctus metus libero eu augue. </p>
-                                        <p>Morbi purus libero, faucibus adi piscing, com modo quis, gravida iest. 
-                                            Sed lectus. Praesent elementum hendrerit tortor. 
-                                            Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, 
-                                            mi neque euismod dui, eu pulvinar nunc sapien ornare nisl.  pede arcu, 
+                                        <p>Morbi purus libero, faucibus adi piscing, com modo quis, gravida iest.
+                                            Sed lectus. Praesent elementum hendrerit tortor.
+                                            Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis,
+                                            mi neque euismod dui, eu pulvinar nunc sapien ornare nisl.  pede arcu,
                                             dapibus eu, fermen tum et, dapibus sed, urna. <a href="#">Morbi interdum mollis sapien.</a>
-                                            Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, 
-                                            vitae fac ilisis libero dolor a purus. 
+                                            Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus,
+                                            vitae fac ilisis libero dolor a purus.
                                         </p>
                                     </div>
                                 </div>
@@ -61,12 +61,12 @@
                                 <cite class="font-weight-normal text-dark">JELLY CRISTIANA</cite>
                             </blockquote>
                             <!-- End Blockquote -->
-                            <p class="mb-10">Morbi interdum mollis sapien. Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, vitae fac ilisis libeo dolor. 
+                            <p class="mb-10">Morbi interdum mollis sapien. Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, vitae fac ilisis libeo dolor.
                                 Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna.</p>
                             <h4 class="title title-md font-weight-bold">Defaulting to Mindfulness: The Third Person Effect</h4>
-                            <p class="mb-2">Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, 
-                                da pibus id, mattis vel, nisi. Sed pretium, ligula soll itudin laoreet viverra. Sed lectus. 
-                                Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, 
+                            <p class="mb-2">Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
+                                da pibus id, mattis vel, nisi. Sed pretium, ligula soll itudin laoreet viverra. Sed lectus.
+                                Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat,
                                 lacus a ultric sagittis, mi neque euismod duin.</p>
                             <ul class="list-style-none list-type-check">
                                 <li>Nunc nec porttitor turpis. In eu risus enim  neque, aliquet ve In vitae mollis elit.</li>
@@ -116,7 +116,7 @@
                                         <span class="nav-content mb-0 text-normal">Vivamus vestibulum ntulla nec ante</span>
                                     </a>
                                 </div>
-                                <div class="nav nav-next"> 
+                                <div class="nav nav-next">
                                     <a href="#" class="align-items-end text-right">
                                         <span>next post<i class="w-icon-long-arrow-right"></i></span>
                                         <span class="nav-content mb-0 text-normal">Fusce lacinia arcuet nulla</span>
@@ -215,7 +215,7 @@
                                 </div>
                             </div>
                             <!-- End Related Posts -->
-                            
+
                             <h4 class="title title-lg font-weight-bold pt-1 mt-10">3 Comments</h4>
                             <ul class="comments list-style-none pl-0">
                                 <li class="comment">
@@ -246,7 +246,7 @@
                                             </h4>
                                             <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales.</p>
                                             <a href="#" class="btn btn-dark btn-link btn-underline btn-icon-right btn-reply">Reply<i class="w-icon-long-arrow-right"></i></a>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="comment">
@@ -422,7 +422,7 @@
                                         <div class="widget-body">
                                             <p class="text-default mb-0">Fringilla urna porttitor rhoncus dolor purus.
                                                 Luctus veneneratis lectus magna fring.
-                                                Suspendisse potenti. Sed egestas, ante et 
+                                                Suspendisse potenti. Sed egestas, ante et
                                                 vulputate volutpat, uctus metus libero.</p>
                                         </div>
                                     </div>

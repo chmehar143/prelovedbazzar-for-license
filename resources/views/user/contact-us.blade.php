@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
           <!-- Start of Main -->
@@ -106,8 +106,8 @@
                                         </div>
                                         <div id="collapse1" class="card-body expanded">
                                             <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid 
-                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid
+                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler
                                                 isque felis. Vel pretium.
                                             </p>
                                         </div>
@@ -119,8 +119,8 @@
                                         </div>
                                         <div id="collapse2" class="card-body collapsed">
                                             <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid 
-                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid
+                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler
                                                 isque felis. Vel pretium.
                                             </p>
                                         </div>
@@ -132,8 +132,8 @@
                                         </div>
                                         <div id="collapse3" class="card-body collapsed">
                                             <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid 
-                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid
+                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler
                                                 isque felis. Vel pretium.
                                             </p>
                                         </div>
@@ -145,8 +145,8 @@
                                         </div>
                                         <div id="collapse4" class="card-body collapsed">
                                             <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid 
-                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp orincid
+                                                idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu sceler
                                                 isque felis. Vel pretium.
                                             </p>
                                         </div>
