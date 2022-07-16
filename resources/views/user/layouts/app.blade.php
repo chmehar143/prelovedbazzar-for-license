@@ -59,9 +59,9 @@
 <body class="home">
 <div class="page-wrapper">
     <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>
-    @include('fronted-views.layouts.header')
+    @include('user.layouts.header')
     @yield('content')
-    @include('fronted-views.layouts.footer')
+    @include('user.layouts.footer')
     </div>
 <!-- Start of Sticky Footer -->
 <div class="sticky-footer sticky-content fix-bottom">
