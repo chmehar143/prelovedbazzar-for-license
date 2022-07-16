@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/About-us', [AboutController::class, 'index'])->name('About-us');
