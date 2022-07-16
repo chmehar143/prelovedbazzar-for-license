@@ -8,6 +8,6 @@ class BecomeAVendorController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.become-a-vendor');
+        return view('user.become-a-vendor');
     }
 }

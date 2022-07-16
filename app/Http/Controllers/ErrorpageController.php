@@ -8,6 +8,6 @@ class ErrorpageController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.404-error');
+        return view('user.404-error');
     }
 }

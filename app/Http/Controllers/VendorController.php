@@ -8,6 +8,6 @@ class VendorController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.vendor-store');
+        return view('user.vendor-store');
     }
 }

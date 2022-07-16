@@ -8,6 +8,6 @@ class BlogsDetailsController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.blog-details');
+        return view('user.blog-details');
     }
 }
