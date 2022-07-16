@@ -53,6 +53,14 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
+        'vendor.auth' => \App\Http\Middleware\RedirectIfNotVendor::class,
+        'vendor.guest' => \App\Http\Middleware\RedirectIfVendor::class,
+        // 'vendor.verified' => \App\Http\Middleware\EnsureVendorEmailIsVerified::class,
+        // 'vendor.password.confirm' => \App\Http\Middleware\RequireVendorPassword::class,
+        'admin.auth' => \App\Http\Middleware\RedirectIfNotAdmin::class,
+        'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,
+        // 'admin.verified' => \App\Http\Middleware\EnsureAdminEmailIsVerified::class,
+        // 'admin.password.confirm' => \App\Http\Middleware\RequireAdminPassword::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
