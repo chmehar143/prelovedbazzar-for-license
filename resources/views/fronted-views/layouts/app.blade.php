@@ -51,6 +51,8 @@
 
     <!-- Default CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/demo1.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
+
 
 </head>
 
