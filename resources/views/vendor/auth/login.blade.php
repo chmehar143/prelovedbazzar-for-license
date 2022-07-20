@@ -30,12 +30,12 @@
             <!--begin::Wrapper-->
             <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
-                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" method="POST" action="{{ route('admin.login') }}" aria-label="{{ __('Login') }}">
+                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" method="POST" action="{{ route('vendor.login') }}" aria-label="{{ __('Login') }}">
                     @csrf
                     <!--begin::Heading-->
                     <div class="text-center mb-10">
                         <!--begin::Title-->
-                        <h1 class="text-dark mb-3">Sign In to NFT admin panel</h1>
+                        <h1 class="text-dark mb-3">Sign In to Vendor/Seller panel</h1>
                         <!--end::Title-->
                         <!--begin::Link-->
                         <div class="text-gray-400 fw-bold fs-4">
@@ -67,9 +67,9 @@
                             <!--end::Label-->
                             <!--begin::Link-->
 
-{{--                            @if (Route::has('admin.password.request'))--}}
-{{--                            <a  href="{{ route('admin.password.request') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>--}}
-{{--                            @endif--}}
+                            @if (Route::has('vendor.password.request'))
+                            <a  href="{{ route('vendor.password.request') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+                            @endif
                             <!--end::Link-->
                         </div>
                         <!--end::Wrapper-->
