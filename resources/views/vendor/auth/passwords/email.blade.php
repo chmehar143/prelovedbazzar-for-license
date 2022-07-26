@@ -1,6 +1,4 @@
-@extends('admin.layouts.app')
 
-@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,7 +12,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('admin.password.email') }}" aria-label="{{ __('Reset Password') }}">
+                    <form method="POST" action="{{ route('vendor.password.email') }}" aria-label="{{ __('Reset Password') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -44,4 +42,4 @@
         </div>
     </div>
 </div>
-@endsection
+

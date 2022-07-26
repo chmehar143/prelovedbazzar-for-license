@@ -1,6 +1,4 @@
-@extends('admin.layouts.app')
 
-@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,7 +6,7 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin.password.request') }}" aria-label="{{ __('Reset Password') }}">
+                    <form method="POST" action="{{ route('vendor.password.request') }}" aria-label="{{ __('Reset Password') }}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
@@ -62,4 +60,4 @@
         </div>
     </div>
 </div>
-@endsection
+
