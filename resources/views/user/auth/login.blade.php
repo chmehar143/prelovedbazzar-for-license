@@ -69,14 +69,42 @@
                             <div class="tab-pane" id="sign-up">
                                 <form method="POST" action="{{ route('user.register') }}">
                                     @csrf
-                                <div class="form-group">
-                                    <label>Your email address *</label>
-                                    <input type="text" class="form-control" name="email_1" id="email_1" required>
-                                </div>
-                                <div class="form-group mb-5">
-                                    <label>Password *</label>
-                                    <input type="text" class="form-control" name="password_1" id="password_1" required>
-                                </div>
+                                    <div class="form-group">
+                                        <label>{{ __('Name') }}*</label>
+                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                        @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{ __('Email Address') }}*</label>
+                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{ __('Password') }}*</label>
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-5">
+                                    <label>{{ __('Confirm Password') }} *</label>
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    </div>
                                 <p>Your personal data will be used to support your experience
                                     throughout this website, to manage access to your account,
                                     and for other purposes described in our <a href="#" class="text-primary">privacy policy</a>.</p>
