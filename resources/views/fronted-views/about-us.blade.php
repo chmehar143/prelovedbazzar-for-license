@@ -32,7 +32,7 @@
                         <p class=" mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             labore et dolore magna aliqua. Venenatis tellu metus</p>
                         <figure class="br-lg">
-                            <img src="assets/images/pages/about_us/1.jpg" alt="Banner"
+                            <img src="{{asset('frontend-assets/assets/images/pages/about_us/1.jpg')}}" alt="Banner"
                                 width="1240" height="540" style="background-color: #D0C1AE;" />
                         </figure>
                     </section>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="col-md-6 mb-8">
                                 <figure class="br-lg">
-                                    <img src="assets/images/pages/about_us/2.jpg" alt="Banner"
+                                    <img src="{{asset('frontend-assets/assets/images/pages/about_us/2.jpg')}}" alt="Banner"
                                         width="610" height="500" style="background-color: #CECECC;" />
                                 </figure>
                             </div>
@@ -144,7 +144,7 @@
                         <div class="row align-items-center mb-10">
                             <div class="col-md-6 mb-8">
                                 <figure class="br-lg">
-                                    <img src="assets/images/pages/about_us/3.jpg" alt="Banner"
+                                    <img src="{{asset('frontend-assets/assets/images/pages/about_us/3.jpg')}}" alt="Banner"
                                         width="610" height="450" style="background-color: #9E9DA2;" />
                                 </figure>
                             </div>
@@ -180,7 +180,7 @@
                                     <div class="swiper-slide image-box-wrapper">
                                         <div class="image-box text-center">
                                             <figure>
-                                                <img src="assets/images/pages/about_us/1.png" alt="Award Image" width="109" height="105" />
+                                                <img src="{{asset('frontend-assets/assets/images/pages/about_us/1.png')}}" alt="Award Image" width="109" height="105" />
                                             </figure>
                                             <p>Winner Seo Master MAGT<br>
                                                 Smart Start Award 2018</p>
@@ -189,7 +189,7 @@
                                     <div class="swiper-slide image-box-wrapper">
                                         <div class="image-box text-center">
                                             <figure>
-                                                <img src="assets/images/pages/about_us/2.png" alt="Award Image" width="109" height="105" />
+                                                <img src="{{asset('frontend-assets/assets/images/pages/about_us/2.png')}}" alt="Award Image" width="109" height="105" />
                                             </figure>
                                             <p>Top Social Media Agencies<br>
                                                 Next Partner 2019</p>
@@ -198,7 +198,7 @@
                                     <div class="swiper-slide image-box-wrapper mt-3">
                                         <div class="image-box text-center">
                                             <figure>
-                                                <img src="assets/images/pages/about_us/3.png" alt="Award Image" width="109" height="105" />
+                                                <img src="{{asset('frontend-assets/assets/images/pages/about_us/3.png')}}" alt="Award Image" width="109" height="105" />
                                             </figure>
                                             <p>5 Fastest Growing Abstract<br>
                                                 Solution Providers 2020</p>
@@ -207,7 +207,7 @@
                                     <div class="swiper-slide image-box-wrapper">
                                         <div class="image-box text-center">
                                             <figure>
-                                                <img src="assets/images/pages/about_us/4.png" alt="Award Image" width="109" height="105" />
+                                                <img src="{{asset('frontend-assets/assets/images/pages/about_us/4.png')}}" alt="Award Image" width="109" height="105" />
                                             </figure>
                                             <p>National Excellence Agencie<br>
                                                 Award Winner 2021</p>
@@ -243,7 +243,7 @@
                             <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-sm-2 cols-1">
                                 <div class="swiper-slide member-wrap">
                                     <figure class="br-lg">
-                                        <img src="assets/images/pages/about_us/4.jpg" alt="Member" width="295" height="332" />
+                                        <img src="{{asset('frontend-assets/assets/images/pages/about_us/4.jpg')}}" alt="Member" width="295" height="332" />
                                         <div class="overlay">
                                             <div class="social-icons">
                                                 <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
@@ -259,7 +259,7 @@
                                 </div>
                                 <div class="swiper-slide member-wrap">
                                     <figure class="br-lg">
-                                        <img src="assets/images/pages/about_us/5.jpg" alt="Member" width="295" height="332" />
+                                        <img src="{{asset('frontend-assets/assets/images/pages/about_us/5.jpg')}}" alt="Member" width="295" height="332" />
                                         <div class="overlay">
                                             <div class="social-icons">
                                                 <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
@@ -275,7 +275,7 @@
                                 </div>
                                 <div class="swiper-slide member-wrap">
                                     <figure class="br-lg">
-                                        <img src="assets/images/pages/about_us/6.jpg" alt="Member" width="295" height="332" />
+                                        <img src="{{asset('frontend-assets/assets/images/pages/about_us/6.jpg')}}" alt="Member" width="295" height="332" />
                                         <div class="overlay">
                                             <div class="social-icons">
                                                 <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
@@ -291,7 +291,7 @@
                                 </div>
                                 <div class="swiper-slide member-wrap">
                                     <figure class="br-lg">
-                                        <img src="assets/images/pages/about_us/7.jpg" alt="Member" width="295" height="332" />
+                                        <img src="{{asset('frontend-assets/assets/images/pages/about_us/7.jpg')}}" alt="Member" width="295" height="332" />
                                         <div class="overlay">
                                             <div class="social-icons">
                                                 <a href="#" class="social-icon social-facebook w-icon-facebook"></a>

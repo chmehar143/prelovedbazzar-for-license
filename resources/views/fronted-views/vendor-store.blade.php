@@ -60,14 +60,14 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/1.jpg" alt="Vendor" 
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/1.jpg')}}" alt="Vendor" 
                                             width="400" height="194" style="background-color: #40475E" />
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="vendor-dokan-store.html">Vendor 1</a>
+                                        <a href="{{route('vendor-store-details')}}">Vendor 1</a>
                                         <label class="featured-label">Featured</label>
                                     </h4>
                                     <div class="ratings-container">
@@ -89,9 +89,9 @@
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/1.jpg" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/1.jpg')}}" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">
+                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">
                                         Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
@@ -102,14 +102,14 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/2.jpg" alt="Vendor" 
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/2.jpg')}}" alt="Vendor" 
                                             width="400" height="194" style="background-color: #6C6C6C" />
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="vendor-dokan-store.html">Vendor 2</a>
+                                        <a href="{{route('vendor-store-details')}}">Vendor 2</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -131,7 +131,7 @@
                                     <figure class="seller-brand">
                                         <img src="assets/images/vendor/brand/2.jpg" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
+                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
                             </div>
@@ -141,14 +141,14 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/3.jpg" alt="Vendor" 
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/3.jpg')}}" alt="Vendor" 
                                             width="400" height="194" style="background-color: #A891BF" />
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="vendor-dokan-store.html">Vendor 3</a>
+                                        <a href="{{route('vendor-store-details')}}">Vendor 3</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -168,9 +168,9 @@
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/3.jpg" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/3.jpg')}}" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
+                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
                             </div>
@@ -180,14 +180,14 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/4.jpg" alt="Vendor" 
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/4.jpg')}}" alt="Vendor" 
                                             width="400" height="194" style="background-color: #28292D" />
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="vendor-dokan-store.html">Vendor 4</a>
+                                        <a href="{{route('vendor-store-details')}}">Vendor 4</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -207,9 +207,9 @@
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/4.jpg" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/4.jpg')}}" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
+                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
                             </div>
@@ -219,14 +219,14 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/5.jpg" alt="Vendor" 
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/5.jpg')}}" alt="Vendor" 
                                             width="400" height="194" style="background-color: #7E7D7B" />
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="vendor-dokan-store.html">Vendor 5</a>
+                                        <a href="{{route('vendor-store-details')}}">Vendor 5</a>
                                         <label class="featured-label">Featured</label>
                                     </h4>
                                     <div class="ratings-container">
@@ -247,9 +247,9 @@
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/5.jpg" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/5.jpg')}}" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
+                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
                             </div>
@@ -259,14 +259,14 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="assets/images/vendor/dokan/6.jpg" alt="Vendor" 
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/6.jpg')}}" alt="Vendor" 
                                             width="400" height="194" style="background-color: #5B5B62" />
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="vendor-dokan-store.html">Vendor 6</a>
+                                        <a href="{{route('vendor-store-details')}}">Vendor 6</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -286,9 +286,9 @@
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/6.jpg" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/6.jpg')}}" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
+                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
                             </div>

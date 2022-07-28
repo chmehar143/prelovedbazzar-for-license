@@ -69,7 +69,7 @@
         <i class="w-icon-home"></i>
         <p>Home</p>
     </a>
-    <a href="shop.html" class="sticky-link">
+    <a href="{{route('shop')}}" class="sticky-link">
         <i class="w-icon-category"></i>
         <p>Shop</p>
     </a>
@@ -78,7 +78,7 @@
         <p>Account</p>
     </a>
     <div class="cart-dropdown dir-up">
-        <a href="cart.html" class="sticky-link">
+        <a href="{{route('cart')}}" class="sticky-link">
             <i class="w-icon-cart"></i>
             <p>Cart</p>
         </a>
@@ -87,7 +87,7 @@
                 <div class="product product-cart">
                     <div class="product-detail">
                         <h3 class="product-name">
-                            <a href="product-details.html">Beige knitted elas<br>tic
+                            <a href="{{route('product-details')}}">Beige knitted elas<br>tic
                                 runner shoes</a>
                         </h3>
                         <div class="price-box">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <figure class="product-media">
-                        <a href="product-details.html">
+                        <a href="{{route('product-details')}}">
                             <img src="{{asset('frontend-assets/assets/images/cart/product-1.jpg')}}" alt="product" height="84" width="94" />
                         </a>
                     </figure>
@@ -108,7 +108,7 @@
                 <div class="product product-cart">
                     <div class="product-detail">
                         <h3 class="product-name">
-                            <a href="product-details.html">Blue utility pina<br>fore
+                            <a href="{{route('product-details')}}">Blue utility pina<br>fore
                                 denim dress</a>
                         </h3>
                         <div class="price-box">
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <figure class="product-media">
-                        <a href="product-details.html">
+                        <a href="{{route('product-details')}}">
                             <img src="{{asset('frontend-assets/assets/images/cart/product-2.jpg')}}" alt="product" width="84" height="94" />
                         </a>
                     </figure>
@@ -133,8 +133,8 @@
             </div>
 
             <div class="cart-action">
-                <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
+                <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                <a href="{{route('cart')}}" class="btn btn-primary  btn-rounded">Checkout</a>
             </div>
         </div>
         <!-- End of Dropdown Box -->
@@ -201,14 +201,14 @@
                             <li>
                                 <a href="#">MENS CLOTH </a>
                                 <ul>
-                                    <li><a href="shop.html"> product name </a></li>
+                                    <li><a href="{{route('shop')}}"> product name </a></li>
 
                                 </ul>
                             </li>
                             <li>
                                 <a href="#">WOMEN CLOTH</a>
                                 <ul>
-                                    <li><a href="shop-grid-3cols.html">  product name</a></li>
+                                    <li><a href="{{route('shop')}}">  product name</a></li>
 
                                 </ul>
                             </li>
@@ -222,7 +222,7 @@
                             <li>
                                 <a href="#">CLOTHES PRODUCT    </a>
                                 <ul>
-                                    <li><a href="product-details.html">product name<span
+                                    <li><a href="{{route('product-details')}}">product name<span
                                                 class="tip tip-hot">Hot</span></a></li>
 
                                 </ul>
@@ -246,7 +246,7 @@
             <div class="tab-pane" id="categories">
                 <ul class="mobile-menu">
                     <li>
-                        <a href="shop.html">
+                        <a href="{{route('shop')}}">
                             <i class="w-icon-tshirt2"></i>Mens
                         </a>
                         <ul>
@@ -254,17 +254,17 @@
                             <li>
                                 <a href="#">Men</a>
                                 <ul>
-                                    <li><a href="shop.html">New Arrivals</a>
+                                    <li><a href="{{route('shop')}}">New Arrivals</a>
                                     </li>
-                                    <li><a href="shop.html">Best Sellers</a>
+                                    <li><a href="{{route('shop')}}">Best Sellers</a>
                                     </li>
-                                    <li><a href="shop.html">Trending</a></li>
-                                    <li><a href="shop.html">Clothing</a></li>
-                                    <li><a href="shop.html">Shoes</a></li>
-                                    <li><a href="shop.html">Bags</a></li>
-                                    <li><a href="shop.html">Accessories</a>
+                                    <li><a href="{{route('shop')}}">Trending</a></li>
+                                    <li><a href="{{route('shop')}}">Clothing</a></li>
+                                    <li><a href="{{route('shop')}}">Shoes</a></li>
+                                    <li><a href="{{route('shop')}}">Bags</a></li>
+                                    <li><a href="{{route('shop')}}">Accessories</a>
                                     </li>
-                                    <li><a href="shop.html">Jewlery &
+                                    <li><a href="{{route('shop')}}">Jewlery &
                                             Watches</a></li>
                                 </ul>
                             </li>
@@ -273,25 +273,25 @@
 
 
                     <li>
-                        <a href="shop.html">
+                        <a href="{{route('shop')}}">
                             <i class="w-icon-gift"></i>Gift Ideas
                         </a>
                     </li>
 
                     <li>
-                        <a href="shop.html">
+                        <a href="{{route('shop')}}">
                             <i class="w-icon-heart"></i>Shirts
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="shop.html">
+                        <a href="{{route('shop')}}">
                             <i class="w-icon-tshirt"></i>Women
                         </a>
                     </li>
                     <li>
-                        <a href="shop.html"
+                        <a href="{{route('shop')}}"
                            class="font-weight-bold text-primary text-uppercase ls-25">
                             View All Categories<i class="w-icon-angle-right"></i>
                         </a>

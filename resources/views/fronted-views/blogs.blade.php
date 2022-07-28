@@ -1,9 +1,60 @@
 @extends('fronted-views.layouts.app')
 
 @section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-  <!-- Start of Main -->
-  <main class="main">
+    <title> Home - Preloved Bazar </title>
+
+    <meta name="keywords" content=" Preloved Baza" />
+    <meta name="description" content=" Preloved Baza is powerful marketplace &amp;  website.">
+    <meta name="author" content="BS3-design">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"  href="{{asset('frontend-assets/assets/images/icons/favicon.png')}}" >
+
+    <!-- WebFont.js -->
+    <script>
+        WebFontConfig = {
+            google: {
+                families: ['Poppins:400,500,600,700,800']
+            }
+        };
+        (function (d) {
+            var wf = d.createElement('script'),
+                s = d.scripts[0];
+            wf.src = 'assets/js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+    <link rel="preload" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/webfonts/fa-regular-400.woff2')}}" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/webfonts/fa-solid-900.woff2')}}" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/webfonts/fa-brands-400.woff2')}}" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="{{asset('frontend-assets/assets/fonts/wolmart.woff?png09e" as="font" type="font/woff')}}" crossorigin="anonymous">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/css/all.min.css')}}">
+
+    <!-- Plugins CSS -->
+    <!-- <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/vendor/animate/animate.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/vendor/magnific-popup/magnific-popup.min.css')}}">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="{{asset('frontend-assets/assets/vendor/swiper/swiper-bundle.min.css')}}">
+
+    <!-- Default CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/demo1.min.css')}}"> -->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
+
+
+</head>
+<main class="main">
             <!-- Start of Page Header -->
             <div class="page-header">
                 <div class="container">
@@ -27,25 +78,15 @@
             <!-- Start of Page Content -->
             <div class="page-content">
                 <div class="container">
-                    <ul class="nav-filters filter-underline blog-filters mb-4">
-                        <li><a href="#" class="nav-filter active" data-filter="*">All Blog Posts <span>6</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".clothes">Clothes <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".entertainment">Entertainment <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".fashion">Fashion <span>2</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".lifestyle">Lifestyle <span>3</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".others">Others <span>2</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".shoes">Shoes <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".technology">Technology <span>1</span></a></li>
-                    </ul>
+                   
 
                     <div class="row grid cols-lg-3 cols-md-2 mb-2" data-grid-options="{
                         'layoutMode': 'fitRows'
-                    }">
-                        <article class="post post-grid-type grid-item overlay-zoom fashion">
+                    }" style="position: relative; height: 1112.22px;">
+                        <article class="post post-grid-type grid-item overlay-zoom fashion" style="position: absolute; left: 0%; top: 0px;">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2cols/1.jpg" width="600"
-                                        height="420" alt="blog">
+                                <a href="{{route('blog-details')}}">
+                                    <img src="{{asset('frontend-assets/assets/images/blog/2cols/1.jpg')}}" width="600" height="420" alt="blog">
                                 </a>
                             </figure>
                             <div class="post-details">
@@ -53,12 +94,12 @@
                                     <a href="#">Fashion</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">New found the men dress for summer</a>
+                                    <a href="{{route('blog-details')}}">New found the men dress for summer</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p> <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p> <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -67,11 +108,10 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="post post-grid-type grid-item overlay-zoom others technology">
+                        <article class="post post-grid-type grid-item overlay-zoom others technology" style="position: absolute; left: 33.3321%; top: 0px;">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2cols/2.jpg" width="600"
-                                        height="420" alt="blog">
+                                <a href="{{route('blog-details')}}">
+                                    <img src="{{asset('frontend-assets/assets/images/blog/2cols/2.jpg')}}" width="600" height="420" alt="blog">
                                 </a>
                             </figure>
                             <div class="post-details">
@@ -80,13 +120,13 @@
                                     <a href="#">Technology</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">Recognitory the needs is primary condition  for design</a>
+                                    <a href="{{route('blog-details')}}">Recognitory the needs is primary condition  for design</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -95,11 +135,10 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="post post-grid-type grid-item overlay-zoom clothes">
+                        <article class="post post-grid-type grid-item overlay-zoom clothes" style="position: absolute; left: 66.6641%; top: 0px;">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2cols/3.jpg" width="600"
-                                        height="420" alt="blog">
+                                <a href="{{route('blog-details')}}">
+                                    <img src="{{asset('frontend-assets/assets/images/blog/2cols/3.jpg')}}" width="600" height="420" alt="blog">
                                 </a>
                             </figure>
                             <div class="post-details">
@@ -107,13 +146,13 @@
                                     <a href="#">Clothes</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">New found the women’s shirt  for summer season</a>
+                                    <a href="{{route('blog-details')}}">New found the women’s shirt  for summer season</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -122,11 +161,10 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="post post-grid-type grid-item overlay-zoom lifestyle">
+                        <article class="post post-grid-type grid-item overlay-zoom lifestyle" style="position: absolute; left: 0%; top: 556.109px;">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2cols/4.jpg" width="600"
-                                        height="420" alt="blog">
+                                <a href="{{route('blog-details')}}">
+                                    <img src="{{asset('frontend-assets/assets/images/blog/2cols/4.jpg')}}" width="600" height="420" alt="blog">
                                 </a>
                             </figure>
                             <div class="post-details">
@@ -134,13 +172,13 @@
                                     <a href="#">Lifestyle</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">We want to be different and fashion gives to me that outlet</a>
+                                    <a href="{{route('blog-details')}}">We want to be different and fashion gives to me that outlet</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -149,11 +187,10 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="post post-grid-type grid-item overlay-zoom entertainment shoes lifestyle others">
+                        <article class="post post-grid-type grid-item overlay-zoom entertainment shoes lifestyle others" style="position: absolute; left: 33.3321%; top: 556.109px;">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2cols/5.jpg" width="600"
-                                        height="420" alt="blog">
+                                <a href="{{route('blog-details')}}">
+                                    <img src="{{asset('frontend-assets/assets/images/blog/2cols/5.jpg')}}" width="600" height="420" alt="blog">
                                 </a>
                             </figure>
                             <div class="post-details">
@@ -163,13 +200,13 @@
                                     <a href="#">Others</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">Comes a cool blog post with Images</a>
+                                    <a href="{{route('blog-details')}}">Comes a cool blog post with Images</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -178,11 +215,10 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="post post-grid-type grid-item overlay-zoom fashion lifestyle">
+                        <article class="post post-grid-type grid-item overlay-zoom fashion lifestyle" style="position: absolute; left: 66.6641%; top: 556.109px;">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2cols/6.jpg" width="600"
-                                        height="420" alt="blog">
+                                <a href="{{route('blog-details')}}">
+                                    <img src="{{asset('frontend-assets/assets/images/blog/2cols/6.jpg')}}" width="600" height="420" alt="blog">
                                 </a>
                             </figure>
                             <div class="post-details">
@@ -191,13 +227,13 @@
                                     <a href="#">Technology</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">Fusce lacinia arcuet nulla</a>
+                                    <a href="{{route('blog-details')}}">Fusce lacinia arcuet nulla</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -229,5 +265,4 @@
             </div>
             <!-- End of Page Content -->
         </main>
-        <!-- End of Main -->
-@endsection
+        @endsection

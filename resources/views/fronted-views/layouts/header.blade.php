@@ -15,16 +15,16 @@
                         <!-- End of DropDown Menu -->
 
                         <div class="dropdown">
-                            <a href="#language"><img src="assets/images/flags/eng.png" alt="ENG Flag" width="14"
+                            <a href="#language"><img src="{{asset('frontend-assets/assets/images/flags/eng.png')}}" alt="ENG Flag" width="14"
                                     height="8" class="dropdown-image" /> ENG</a>
                             <div class="dropdown-box">
                                 <a href="#ENG">
-                                    <img src="assets/images/flags/eng.png" alt="ENG Flag" width="14" height="8"
+                                    <img src="{{asset('frontend-assets/assets/images/flags/eng.png')}}" alt="ENG Flag" width="14" height="8"
                                         class="dropdown-image" />
                                     ENG
                                 </a>
                                 <a href="#FRA">
-                                    <img src="assets/images/flags/fra.png" alt="FRA Flag" width="14" height="8"
+                                    <img src="{{asset('frontend-assets/assets/images/flags/fra.png')}}" alt="FRA Flag" width="14" height="8"
                                         class="dropdown-image" />
                                     FRA
                                 </a>
@@ -32,14 +32,14 @@
                         </div>
                         <!-- End of Dropdown Menu -->
                         <span class="divider d-lg-show"></span>
-                        <!-- <a href="blogs.html" class="d-lg-show">Blog</a> -->
-                        <a href="contact-us.html" class="d-lg-show">Contact Us</a>
-                        <a href="about-us.html" class="d-lg-show">About Us</a>
+                        <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
+                        <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
+                        <a href="{{route('about-us')}}" class="d-lg-show">About Us</a>
 
-                        <a href="my-account.html" class="d-lg-show">My Account</a>
-                        <a href="login.html" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
+                        <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
+                        <a href="{{route('Login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter  d-lg-show">/</span>
-                        <a href="login.html" class="ml-0 d-lg-show ">Register</a>
+                        <a href="{{route('Login')}}" class="ml-0 d-lg-show ">Register</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                         <a href="#" class="mobile-menu-toggle  w-icon-hamburger" aria-label="menu-toggle">
                         </a>
                         <a href="demo1.html" class="logo ml-lg-0">
-                            <img src="assets/images/logo.png" alt="logo" width="144" height="45" />
+                            <img src="{{asset('frontend-assets/assets/images/logo.png')}}" alt="logo" width="144" height="45" />
                         </a>
                         <form method="get" action="#"
                             class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper">
@@ -80,11 +80,11 @@
                                 <a href="tel:#" class="phone-number font-weight-bolder ls-50">0(800)123-456</a>
                             </div>
                         </div>
-                        <a class="wishlist label-down link d-xs-show" href="wishlist.html">
+                        <a class="wishlist label-down link d-xs-show" href="{{route('wishlist')}}">
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <a class="compare label-down link d-xs-show" href="compare.html">
+                        <a class="compare label-down link d-xs-show" href="{{route('compare')}}">
                             <i class="w-icon-compare"></i>
                             <span class="compare-label d-lg-show">Compare</span>
                         </a>
@@ -152,8 +152,8 @@
                                 </div>
 
                                 <div class="cart-action">
-                                    <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                                    <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
+                                    <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                    <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>
                             <!-- End of Dropdown Box -->
@@ -178,7 +178,7 @@
                                 <div class="dropdown-box">
                                     <ul class="menu vertical-menu category-menu">
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="{{route('shop')}}">
                                                 <i class="w-icon-tshirt2"></i>Men's
                                             </a>
                                             <ul class="megamenu">
@@ -186,15 +186,15 @@
                                                     <h4 class="menu-title">Women</h4>
                                                     <hr class="divider">
                                                     <ul>
-                                                        <li><a href="shop.html">New Arrivals</a>
+                                                        <li><a href="{{route('shop')}}">New Arrivals</a>
                                                         </li>
-                                                        <li><a href="shop.html">Best Sellers</a>
+                                                        <li><a href="{{route('shop')}}">Best Sellers</a>
                                                         </li>
-                                                        <li><a href="shop.html">Trending</a></li>
-                                                        <li><a href="shop.html">Clothing</a></li>
-                                                        <li><a href="shop.html">Shoes</a></li>
-                                                        <li><a href="shop.html">Bags</a></li>
-                                                        <li><a href="shop.html">Accessories</a>
+                                                        <li><a href="{{route('shop')}}">Trending</a></li>
+                                                        <li><a href="{{route('shop')}}">Clothing</a></li>
+                                                        <li><a href="{{route('shop')}}">Shoes</a></li>
+                                                        <li><a href="{{route('shop')}}">Bags</a></li>
+                                                        <li><a href="{{route('shop')}}">Accessories</a>
                                                         </li>
 
                                                     </ul>
@@ -203,24 +203,24 @@
                                                     <h4 class="menu-title">Men</h4>
                                                     <hr class="divider">
                                                     <ul>
-                                                        <li><a href="shop.html">New Arrivals</a>
+                                                        <li><a href="{{route('shop')}}">New Arrivals</a>
                                                         </li>
-                                                        <li><a href="shop.html">Best Sellers</a>
+                                                        <li><a href="{{route('shop')}}">Best Sellers</a>
                                                         </li>
-                                                        <li><a href="shop.html">Trending</a></li>
-                                                        <li><a href="shop.html">Clothing</a></li>
-                                                        <li><a href="shop.html">Shoes</a></li>
-                                                        <li><a href="shop.html">Bags</a></li>
-                                                        <li><a href="shop.html">Accessories</a>
+                                                        <li><a href="{{route('shop')}}">Trending</a></li>
+                                                        <li><a href="{{route('shop')}}">Clothing</a></li>
+                                                        <li><a href="{{route('shop')}}">Shoes</a></li>
+                                                        <li><a href="{{route('shop')}}">Bags</a></li>
+                                                        <li><a href="{{route('shop')}}">Accessories</a>
                                                         </li>
-                                                        <li><a href="shop.html">Jewlery &
+                                                        <li><a href="{{route('shop')}}">Jewlery &
                                                                 Watches</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <div class="banner-fixed menu-banner menu-banner2">
                                                         <figure>
-                                                            <img src="assets/images/menu/banner-2.jpg" alt="Menu Banner"
+                                                            <img src="frontend-assets/assets/images/menu/banner-2.jpg" alt="Menu Banner"
                                                                 width="235" height="347" />
                                                         </figure>
                                                         <div class="banner-content">
@@ -229,7 +229,7 @@
                                                                     class="text-primary text-uppercase">20%Off</strong>
                                                             </div>
                                                             <h3 class="banner-title ls-normal">Hot Sales</h3>
-                                                            <a href="shop.html"
+                                                            <a href="{{route('shop')}}"
                                                                 class="btn btn-dark btn-sm btn-link btn-slide-right btn-icon-right">
                                                                 Shop Now<i class="w-icon-long-arrow-right"></i>
                                                             </a>
@@ -242,25 +242,25 @@
 
 
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="{{route('shop')}}">
                                                 <i class="w-icon-gift"></i>Gift Ideas
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="{{route('shop')}}">
                                                 <i class="w-icon-tshirt"></i>Shirts
                                             </a>
                                         </li>
 
 
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="{{route('shop')}}">
                                                 <i class="w-icon-heart"></i>Women Cloth
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html"
+                                            <a href="{{route('shop')}}"
                                                 class="font-weight-bold text-primary text-uppercase ls-25">
                                                 View All Categories<i class="w-icon-angle-right"></i>
                                             </a>
@@ -271,38 +271,38 @@
                             <nav class="main-nav">
                                 <ul class="menu active-underline">
                                     <li class="active">
-                                        <a href="demo1.html">Home</a>
+                                        <a href="{{route('index')}}">Home</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html">Shop</a>
+                                        <a href="{{route('shop')}}">Shop</a>
 
                                         <!-- Start of Megamenu -->
                                         <ul class="megamenu">
                                             <li>
                                                 <h4 class="menu-title">Mens Cloth </h4>
                                                 <ul>
-                                                    <li><a href="shop.html">product name</a></li>
+                                                    <li><a href="{{route('shop')}}">product name</a></li>
 
                                                 </ul>
                                             </li>
                                             <li>
                                                 <h4 class="menu-title">Women Cloth</h4>
                                                 <ul>
-                                                    <li><a href="shop.html">product name</a></li>
+                                                    <li><a href="{{route('shop')}}">product name</a></li>
 
                                                 </ul>
                                             </li>
                                             <li>
                                                 <h4 class="menu-title">Baby Cloth</h4>
                                                 <ul>
-                                                    <li><a href="shop.html">product name</a></li>
+                                                    <li><a href="{{route('shop')}}">product name</a></li>
 
                                                 </ul>
                                             </li>
                                             <li>
                                                 <h4 class="menu-title">Clothes Product </h4>
                                                 <ul>
-                                                    <li><a href="shop.html">product name<span
+                                                    <li><a href="{{route('shop')}}">product name<span
                                                                 class="tip tip-hot">Hot</span></a></li>
 
                                                 </ul>
@@ -311,16 +311,16 @@
                                         <!-- End of Megamenu -->
                                     </li>
                                     <li>
-                                        <a href="vendor-store.html">Vendor Stores</a>
+                                        <a href="{{route('vendor-store')}}">Vendor Stores</a>
 
                                     </li>
                                     <li>
-                                        <a href="blogs.html">Blog</a>
+                                        <a href="{{route('blogs')}}">Blog</a>
 
                                     </li>
 
 
-                                    <li><a href="become-a-vendor.html">Become A Vendor</a></li>
+                                    <li><a href="{{route('become-a-vendor')}}">Become A Vendor</a></li>
 
 
 
