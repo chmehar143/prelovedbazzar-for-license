@@ -1,267 +1,185 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
- <!-- Start of Main -->
- <main class="main">
-            <!-- Start of Breadcrumb -->
+  <!-- Start of Main -->
+  <main class="main">
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
                         <li><a href="demo1.html">Home</a></li>
-                        <li><a href="#">Vendor</a></li>
-                        <li><a href="#">Dokan</a></li>
-                        <li>Store</li>
+                        <li><a href="shop-banner-sidebar.html">Shop</a></li>
+                        <li>Boxed</li>
                     </ul>
                 </div>
             </nav>
-            <!-- End of Breadcrumb -->
+            <!-- End of Breadcrumb-nav -->
 
-            <!-- Start of Pgae Contetn -->
-            <div class="page-content mb-8">
+            <div class="page-content mb-10">
                 <div class="container">
-                    <div class="row gutter-lg">
-                        <aside class="sidebar left-sidebar vendor-sidebar sticky-sidebar-wrapper sidebar-fixed">
+                    <!-- Start of Shop Content -->
+                    <div class="shop-content row gutter-lg">
+                        <!-- Start of Sidebar, Shop Sidebar -->
+                        <aside class="sidebar shop-sidebar sticky-sidebar-wrapper sidebar-fixed">
                             <!-- Start of Sidebar Overlay -->
                             <div class="sidebar-overlay"></div>
                             <a class="sidebar-close" href="#"><i class="close-icon"></i></a>
-                            <a href="#" class="sidebar-toggle"><i class="fas fa-chevron-right"></i></a>
-                            <div class="sidebar-content">
+
+                            <!-- Start of Sidebar Content -->
+                            <div class="sidebar-content scrollable">
+                                <!-- Start of Sticky Sidebar -->
                                 <div class="sticky-sidebar">
-                                    <div class="widget widget-collapsible widget-categories">
+                                    <div class="filter-actions">
+                                        <label>Filter :</label>
+                                        <a href="#" class="btn btn-dark btn-link filter-clean">Clean All</a>
+                                    </div>
+                                    <!-- Start of Collapsible widget -->
+                                    <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>All Categories</span></h3>
                                         <ul class="widget-body filter-items search-ul">
-                                            <li><a href="#">Clothing</a></li>
-                                            <li><a href="#">Computers</a></li>
+                                            <li><a href="#">Accessories</a></li>
+                                            <li><a href="#">Babies</a></li>
+                                            <li><a href="#">Beauty</a></li>
+                                            <li><a href="#">Decoration</a></li>
                                             <li><a href="#">Electronics</a></li>
                                             <li><a href="#">Fashion</a></li>
+                                            <li><a href="#">Food</a></li>
                                             <li><a href="#">Furniture</a></li>
-                                            <li><a href="#">Games</a></li>
                                             <li><a href="#">Kitchen</a></li>
-                                            <li><a href="#">Shoes</a></li>
+                                            <li><a href="#">Medical</a></li>
                                             <li><a href="#">Sports</a></li>
+                                            <li><a href="#">Watches</a></li>
                                         </ul>
                                     </div>
-                                    <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-contact">
-                                        <h3 class="widget-title"><span>Contact Vendor</span></h3>
+                                    <!-- End of Collapsible Widget -->
+
+                                    <!-- Start of Collapsible Widget -->
+                                    <div class="widget widget-collapsible">
+                                        <h3 class="widget-title"><span>Price</span></h3>
                                         <div class="widget-body">
-                                            <input type="text" class="form-control" name="name" id="name"
-                                                placeholder="Your Name" />
-                                            <input type="text" class="form-control" name="email" id="email_1"
-                                                placeholder="you@example.com" />
-                                            <textarea name="message" maxlength="1000" cols="25" rows="6"
-                                                placeholder="Type your messsage..." class="form-control"
-                                                required="required"></textarea>
-                                            <a href="#" class="btn btn-dark btn-rounded">Send Message</a>
+                                            <ul class="filter-items search-ul">
+                                                <li><a href="#">$0.00 - $100.00</a></li>
+                                                <li><a href="#">$100.00 - $200.00</a></li>
+                                                <li><a href="#">$200.00 - $300.00</a></li>
+                                                <li><a href="#">$300.00 - $500.00</a></li>
+                                                <li><a href="#">$500.00+</a></li>
+                                            </ul>
+                                            <form class="price-range">
+                                                <input type="number" name="min_price" class="min_price text-center"
+                                                    placeholder="$min"><span class="delimiter">-</span><input
+                                                    type="number" name="max_price" class="max_price text-center"
+                                                    placeholder="$max"><a href="#"
+                                                    class="btn btn-primary btn-rounded">Go</a>
+                                            </form>
                                         </div>
                                     </div>
-                                    <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-time">
-                                        <h3 class="widget-title"><span>Store Time</span></h3>
-                                        <ul class="widget-body">
-                                            <li><label>Sunday</label></li>
-                                            <li><label>Monday</label></li>
-                                            <li><label>Tuesday</label></li>
-                                            <li><label>Wednesday</label></li>
-                                            <li><label>Thursday</label></li>
-                                            <li><label>Friday</label></li>
-                                            <li><label>Saturday</label></li>
+                                    <!-- End of Collapsible Widget -->
+
+                                    <!-- Start of Collapsible Widget -->
+                                    <div class="widget widget-collapsible">
+                                        <h3 class="widget-title"><span>Size</span></h3>
+                                        <ul class="widget-body filter-items item-check mt-1">
+                                            <li><a href="#">Extra Large</a></li>
+                                            <li><a href="#">Large</a></li>
+                                            <li><a href="#">Medium</a></li>
+                                            <li><a href="#">Small</a></li>
                                         </ul>
                                     </div>
-                                    <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-products">
-                                        <h3 class="widget-title"><span>Best Selling</span></h3>
-                                        <div class="widget-body">
-                                            <div class="product product-widget">
-                                                <figure class="product-media">
-                                                    <a href="{{route('product-details')}}">
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/1.jpg')}}" alt="Product" width="100"
-                                                            height="106" />
-                                                    </a>
-                                                </figure>
-                                                <div class="product-details">
-                                                    <h4 class="product-name">
-                                                        <a href="{{route('product-details')}}">3D Television</a>
-                                                    </h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings-full">
-                                                            <span class="ratings" style="width: 80%;"></span>
-                                                            <span class="tooltiptext tooltip-top"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-price">$220.00</div>
-                                                </div>
-                                            </div>
-                                            <div class="product product-widget">
-                                                <figure class="product-media">
-                                                    <a href="{{route('product-details')}}">
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/2-1.jpg')}}" alt="Product" width="100"
-                                                            height="106" />
-                                                    </a>
-                                                </figure>
-                                                <div class="product-details">
-                                                    <h4 class="product-name">
-                                                        <a href="{{route('product-details')}}">Alarm Clock With Lamp</a>
-                                                    </h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings-full">
-                                                            <span class="ratings" style="width: 80%;"></span>
-                                                            <span class="tooltiptext tooltip-top"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-price">
-                                                        <ins class="new-price">$30.00</ins><del
-                                                            class="old-price">$60.00</del>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product product-widget">
-                                                <figure class="product-media">
-                                                    <a href="{{route('product-details')}}">
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/3.jpg')}}" alt="Product" width="100"
-                                                            height="106" />
-                                                    </a>
-                                                </figure>
-                                                <div class="product-details">
-                                                    <h4 class="product-name">
-                                                        <a href="{{route('product-details')}}">Apple Laptop</a>
-                                                    </h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings-full">
-                                                            <span class="ratings" style="width: 60%;"></span>
-                                                            <span class="tooltiptext tooltip-top"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-price">$1,000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <!-- End of Collapsible Widget -->
+
+                                    <!-- Start of Collapsible Widget -->
+                                    <div class="widget widget-collapsible">
+                                        <h3 class="widget-title"><span>Brand</span></h3>
+                                        <ul class="widget-body filter-items item-check mt-1">
+                                            <li><a href="#">Elegant Auto Group</a></li>
+                                            <li><a href="#">Green Grass</a></li>
+                                            <li><a href="#">Node Js</a></li>
+                                            <li><a href="#">NS8</a></li>
+                                            <li><a href="#">Red</a></li>
+                                            <li><a href="#">Skysuite Tech</a></li>
+                                            <li><a href="#">Sterling</a></li>
+                                        </ul>
                                     </div>
-                                    <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-products">
-                                        <h3 class="widget-title"><span>Top Rated</span></h3>
-                                        <div class="widget-body">
-                                            <div class="product product-widget">
-                                                <figure class="product-media">
-                                                    <a href="{{route('product-details')}}">
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="Product" width="100"
-                                                            height="106" />
-                                                    </a>
-                                                </figure>
-                                                <div class="product-details">
-                                                    <h4 class="product-name">
-                                                        <a href="{{route('product-details')}}">Classic Simple Backpack</a>
-                                                    </h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings-full">
-                                                            <span class="ratings" style="width: 100%;"></span>
-                                                            <span class="tooltiptext tooltip-top"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-price">$85.00</div>
-                                                </div>
-                                            </div>
-                                            <div class="product product-widget">
-                                                <figure class="product-media">
-                                                    <a href="{{route('product-details')}}">
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/13.jpg')}}" alt="Product" width="100"
-                                                            height="106" />
-                                                    </a>
-                                                </figure>
-                                                <div class="product-details">
-                                                    <h4 class="product-name">
-                                                        <a href="{{route('product-details')}}">Smart Watch</a>
-                                                    </h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings-full">
-                                                            <span class="ratings" style="width: 100%;"></span>
-                                                            <span class="tooltiptext tooltip-top"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-price">$90.00</div>
-                                                </div>
-                                            </div>
-                                            <div class="product product-widget">
-                                                <figure class="product-media">
-                                                    <a href="{{route('product-details')}}">
-                                                        <img src="assets/images/shop/20.jpg" alt="Product" width="100"
-                                                            height="106" />
-                                                    </a>
-                                                </figure>
-                                                <div class="product-details">
-                                                    <h4 class="product-name">
-                                                        <a href="{{route('product-details')}}">Pencil Case</a>
-                                                    </h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings-full">
-                                                            <span class="ratings" style="width: 100%;"></span>
-                                                            <span class="tooltiptext tooltip-top"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-price">$54.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <!-- End of Collapsible Widget -->
+
+                                    <!-- Start of Collapsible Widget -->
+                                    <div class="widget widget-collapsible">
+                                        <h3 class="widget-title"><span>Color</span></h3>
+                                        <ul class="widget-body filter-items item-check">
+                                            <li><a href="#">Black</a></li>
+                                            <li><a href="#">Blue</a></li>
+                                            <li><a href="#">Brown</a></li>
+                                            <li><a href="#">Green</a></li>
+                                            <li><a href="#">Grey</a></li>
+                                            <li><a href="#">Orange</a></li>
+                                            <li><a href="#">Yellow</a></li>
+                                        </ul>
                                     </div>
-                                    <!-- End of Widget -->
+                                    <!-- End of Collapsible Widget -->
                                 </div>
+                                <!-- End of Sidebar Content -->
                             </div>
+                            <!-- End of Sidebar Content -->
                         </aside>
-                        <!-- End of Sidebar -->
+                        <!-- End of Shop Sidebar -->
 
+                        <!-- Start of Main Content -->
                         <div class="main-content">
-                            <div class="store store-banner mb-4">
-                                <figure class="store-media">
-                                    <img src="{{asset('frontend-assets/assets/images/vendor/dokan/1.jpg')}}" alt="Vendor" width="930" height="446"
-                                        style="background-color: #414960;" />
-                                </figure>
-                                <div class="store-content">
-                                    <figure class="seller-brand">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/1.jpg')}}" alt="Brand" width="80"
-                                            height="80" />
-                                    </figure>
-                                    <h4 class="store-title">Vendor 1</h4>
-                                    <ul class="seller-info-list list-style-none mb-6">
-                                        <li class="store-address">
-                                            <i class="w-icon-map-marker"></i>
-                                            Steven Street, El Carjon
-                                            California, United States (US)
-                                        </li>
-                                        <li class="store-phone">
-                                            <a href="tel:1234567890">
-                                                <i class="w-icon-phone"></i>
-                                                1234567890
-                                            </a>
-                                        </li>
-                                        <li class="store-rating">
-                                            <i class="w-icon-star-full"></i>
-                                            4.33 rating from 3 reviews
-                                        </li>
-                                        <li class="store-open">
-                                            <i class="w-icon-cart"></i>
-                                            Store Open
-                                        </li>
-                                    </ul>
-                                    <div class="social-icons social-no-color border-thin">
-                                        <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                        <a href="#" class="social-icon social-google w-icon-google"></a>
-                                        <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                        <a href="#" class="social-icon social-pinterest w-icon-pinterest"></a>
-                                        <a href="#" class="social-icon social-youtube w-icon-youtube"></a>
-                                        <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                    </div>
+                            <!-- Start of Shop Banner -->
+                            <div class="shop-default-banner shop-boxed-banner banner d-flex align-items-center mb-6 br-xs"
+                                style="background-image: url({{asset('frontend-assets/assets/images/shop/banner1.jpg')}}); background-color: #FFC74E;">
+                                <div class="banner-content">
+                                    <h4 class="banner-subtitle font-weight-bold">Accessories Collection</h4>
+                                    <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-10">Smart
+                                        Watches</h3>
+                                    <a href="shop-banner-sidebar.html"
+                                        class="btn btn-dark btn-rounded btn-icon-right">Discover Now<i
+                                            class="w-icon-long-arrow-right"></i></a>
                                 </div>
                             </div>
-                            <!-- End of Store Banner -->
+                            <!-- End of Shop Banner -->
 
-                            <h2 class="title vendor-product-title mb-4"><a href="#">Products</a></h2>
-
+                            <nav class="toolbox sticky-toolbox sticky-content fix-top">
+                                <div class="toolbox-left">
+                                    <a href="#" class="btn btn-primary btn-outline btn-rounded left-sidebar-toggle
+                                        btn-icon-left d-block d-lg-none"><i
+                                            class="w-icon-category"></i><span>Filters</span></a>
+                                    <div class="toolbox-item toolbox-sort select-box text-dark">
+                                        <label>Sort By :</label>
+                                        <select name="orderby" class="form-control">
+                                            <option value="default" selected="selected">Default sorting</option>
+                                            <option value="popularity">Sort by popularity</option>
+                                            <option value="rating">Sort by average rating</option>
+                                            <option value="date">Sort by latest</option>
+                                            <option value="price-low">Sort by pric: low to high</option>
+                                            <option value="price-high">Sort by price: high to low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="toolbox-right">
+                                    <div class="toolbox-item toolbox-show select-box">
+                                        <select name="count" class="form-control">
+                                            <option value="9">Show 9</option>
+                                            <option value="12" selected="selected">Show 12</option>
+                                            <option value="24">Show 24</option>
+                                            <option value="36">Show 36</option>
+                                        </select>
+                                    </div>
+                                    <!-- <div class="toolbox-item toolbox-layout">
+                                        <a href="shop-boxed-banner.html" class="icon-mode-grid btn-layout active">
+                                            <i class="w-icon-grid"></i>
+                                        </a>
+                                        <a href="shop-list.html" class="icon-mode-list btn-layout">
+                                            <i class="w-icon-list"></i>
+                                        </a>
+                                    </div> -->
+                                </div>
+                            </nav>
                             <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -277,6 +195,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Electronics</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">3D Television</a>
                                             </h3>
@@ -298,7 +219,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/2-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{{asset('frontend-assets/assets/images/shop/2-2.jpg')}}" alt="Product" width="300"
@@ -322,6 +243,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Electronics</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Alarm Clock With Lamp</a>
                                             </h3>
@@ -344,7 +268,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/3.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -360,6 +284,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Electronics</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Apple Laptop</a>
                                             </h3>
@@ -381,7 +308,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/4.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -397,6 +324,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Electronics</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Attachable Charge Alarm</a>
                                             </h3>
@@ -418,7 +348,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/5.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -434,6 +364,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Fashion</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Best Travel Bag</a>
                                             </h3>
@@ -455,7 +388,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/6.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -471,6 +404,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Sports</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Black Stunt Motor</a>
                                             </h3>
@@ -492,7 +428,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/7-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{{asset('frontend-assets/assets/images/shop/7-2.jpg')}}" alt="Product" width="300"
@@ -510,6 +446,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Fashion</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Blue Sky Trunk</a>
                                             </h3>
@@ -531,7 +470,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/8.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -547,6 +486,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Beauty</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Bodycare Smooth Powder</a>
                                             </h3>
@@ -568,7 +510,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/9.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -584,6 +526,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Electronics</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Bright Green IPhone</a>
                                             </h3>
@@ -605,7 +550,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/10.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -621,6 +566,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Fashion</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Cavin Fashion Suede Handbag</a>
                                             </h3>
@@ -642,10 +590,10 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/11-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
-                                                <img src="{{asset('frontend-assets/assets/images/shop/11-2.jpg')}}" alt="Product" width="300"
+                                                <img src="assets/images/shop/11-2.jpg;)}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -660,6 +608,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Electronics</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Charming Design Watch</a>
                                             </h3>
@@ -681,7 +632,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="{{route('product-details')}}">
+                                            <a href="#">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -697,6 +648,9 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="#">Fashion</a>
+                                            </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product-details')}}">Classic Simple Backpack</a>
                                             </h3>
@@ -716,14 +670,37 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="toolbox toolbox-pagination justify-content-between">
+                                <p class="showing-info mb-2 mb-sm-0">
+                                    Showing<span>1-12 of 60</span>Products
+                                </p>
+                                <ul class="pagination">
+                                    <li class="prev disabled">
+                                        <a href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                                            <i class="w-icon-long-arrow-left"></i>Prev
+                                        </a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="#" aria-label="Next">
+                                            Next<i class="w-icon-long-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <!-- End of Main Content -->
                     </div>
+                    <!-- End of Shop Content -->
                 </div>
             </div>
-            <!-- End of Page Content -->
         </main>
         <!-- End of Main -->
-
 
 @endsection

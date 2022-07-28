@@ -55,11 +55,11 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'user.auth' => \App\Http\Middleware\RedirectIfNotUser::class,
         'user.guest' => \App\Http\Middleware\RedirectIfUser::class,
-        // 'user.verified' => \App\Http\Middleware\EnsureUserEmailIsVerified::class,
+        'user.verified' => \App\Http\Middleware\EnsureUserEmailIsVerified::class,
         // 'user.password.confirm' => \App\Http\Middleware\RequireUserPassword::class,
         'vendor.auth' => \App\Http\Middleware\RedirectIfNotVendor::class,
         'vendor.guest' => \App\Http\Middleware\RedirectIfVendor::class,
-        // 'vendor.verified' => \App\Http\Middleware\EnsureVendorEmailIsVerified::class,
+        'vendor.verified' => \App\Http\Middleware\EnsureVendorEmailIsVerified::class,
         // 'vendor.password.confirm' => \App\Http\Middleware\RequireVendorPassword::class,
         'admin.auth' => \App\Http\Middleware\RedirectIfNotAdmin::class,
         'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,

@@ -22,11 +22,11 @@
     <div class="d-flex flex-column flex-root">
     <!--begin::Page-->
         <div class="page d-flex flex-row flex-column-fluid">
-            @include('admin.layouts.aside')
+            @include('vendor.layouts.aside')
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                @include('admin.layouts.header')
+                @include('vendor.layouts.header')
                 @yield('content')
-                @include('admin.layouts.footer')
+                @include('vendor.layouts.footer')
             </div>
         </div>
     </div>

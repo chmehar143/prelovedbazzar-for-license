@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -90,8 +90,8 @@
                                         <input type="checkbox" class="custom-checkbox checkbox-round" id="check-seller" name="check-seller" required="">
                                         <label for="check-seller" class="check-seller">I am a vendor</label>
                                     </div>
-                                    <p>Your personal data will be used to support your experience 
-                                        throughout this website, to manage access to your account, 
+                                    <p>Your personal data will be used to support your experience
+                                        throughout this website, to manage access to your account,
                                         and for other purposes described in our <a href="#" class="text-primary">privacy policy</a>.</p>
                                     <a href="#" class="d-block mb-5 text-primary">Signup as a vendor?</a>
                                     <div class="form-checkbox d-flex align-items-center justify-content-between mb-5">

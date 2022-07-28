@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -21,7 +21,7 @@
                     <div class="banner">
                         <figure>
                             <img src="{{asset('frontend-assets/assets/images/pages/404.png')}}" alt="Error 404"  
-                                width="820" height="460" />
+
                         </figure>
                         <div class="banner-content text-center">
                             <h2 class="banner-title">

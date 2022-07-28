@@ -8,6 +8,6 @@ class ContactUsController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.contact-us');
+        return view('user.contact-us');
     }
 }

@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -35,8 +35,8 @@
                         <div class="col-md-6 order-md-first">
                             <h4 class="text-primary font-weight-bold ls-25">Create a Store</h4>
                             <h2 class="title text-left">Build your online store on Wolmart</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua. Venenatis tellus in 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Venenatis tellus in
                                 metus vulputate eu scelerisque felis.
                             </p>
                             <a href="#" class="btn btn-dark btn-outline btn-rounded ls-25">Learn More</a>
@@ -261,20 +261,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h4 class="font-weight-bold ls-25">How can I add new products?</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulputate eu
                                 scelerisquefelis. Vel pretium lectus quam id leo in vitae turpis massa. </p>
                             <h4 class="font-weight-bold ls-25">How can I know stock?</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Venenatis tellus.</p>
                         </div>
                         <div class="col-md-6">
                             <h4 class="font-weight-bold ls-25">How do I get paid?</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulputate eu
                                 scelerisquefelis. </p>
                             <h4 class="font-weight-bold ls-25">Do I need a credit or debit card to create a shop?</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. </p>
                         </div>
                     </div>

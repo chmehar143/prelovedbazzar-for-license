@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 
@@ -25,7 +25,7 @@
                             class="show-login font-weight-bold text-uppercase text-dark">Login</a>
                     </div>
                     <form class="login-content">
-                        <p>If you have shopped with us before, please enter your details below. 
+                        <p>If you have shopped with us before, please enter your details below.
                             If you are a new customer, please proceed to the Billing section.</p>
                         <div class="row">
                             <div class="col-xs-6">
@@ -306,8 +306,8 @@
                                                     </div>
                                                     <div id="cash-on-delivery" class="card-body expanded">
                                                         <p class="mb-0">
-                                                            Make your payment directly into our bank account. 
-                                                            Please use your Order ID as the payment reference. 
+                                                            Make your payment directly into our bank account.
+                                                            Please use your Order ID as the payment reference.
                                                             Your order will not be shipped until the funds have cleared in our account.
                                                         </p>
                                                     </div>
@@ -336,9 +336,9 @@
                                                     <div class="card-header">
                                                         <a href="#paypal" class="expand">Paypal</a>
                                                     </div>
-                                                    <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup" class="text-primary paypal-que" 
+                                                    <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup" class="text-primary paypal-que"
                                                         onclick="javascript:window.open('https://www.paypal.com/us/webapps/mpp/paypal-popup','WIPaypal',
-                                                        'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); 
+                                                        'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700');
                                                         return false;">What is PayPal?
                                                     </a>
                                                     <div id="paypal" class="card-body collapsed">

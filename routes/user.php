@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('user.verified');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -25,6 +25,6 @@ Route::get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')
 Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 
 // Verify Email
-// Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-// Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-// Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+ Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');

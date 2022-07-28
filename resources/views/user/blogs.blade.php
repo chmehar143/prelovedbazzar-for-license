@@ -1,4 +1,4 @@
-@extends('fronted-views.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 <head>
@@ -100,6 +100,7 @@
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
                                     eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p> <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
+
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -123,8 +124,8 @@
                                     <a href="{{route('blog-details')}}">Recognitory the needs is primary condition  for design</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -149,8 +150,8 @@
                                     <a href="{{route('blog-details')}}">New found the women’s shirt  for summer season</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -175,8 +176,8 @@
                                     <a href="{{route('blog-details')}}">We want to be different and fashion gives to me that outlet</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -203,8 +204,8 @@
                                     <a href="{{route('blog-details')}}">Comes a cool blog post with Images</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
@@ -230,8 +231,8 @@
                                     <a href="{{route('blog-details')}}">Fusce lacinia arcuet nulla</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
                                     <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>

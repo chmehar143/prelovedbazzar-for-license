@@ -8,6 +8,6 @@ class CompareController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.compare');
+        return view('user.compare');
     }
 }

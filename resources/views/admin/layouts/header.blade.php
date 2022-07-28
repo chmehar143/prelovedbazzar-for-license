@@ -35,12 +35,12 @@
                                 <span class="menu-title">Home</span>
                                 <span class="menu-arrow d-lg-none"></span>
                             </a>
-                           
+
                         </div>
 
-                        
-                   
-                  
+
+
+
                         <div data-kt-menu-trigger="click" style="display:none;" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
 												<span class="menu-link py-3">
                                                 <a href="{{ url('admin/list') }}">
@@ -49,9 +49,9 @@
 													<span class="menu-arrow d-lg-none"></span>
 </a>
 												</span>
-                          
+
                         </div>
-                      
+
                     </div>
                     <!--end::Menu-->
                 </div>
@@ -80,7 +80,7 @@
                                     <!--end::Avatar-->
                                     <!--begin::Username-->
                                     <div class="d-flex flex-column">
-                                        <div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::guard('admin')->user()->name }}
+{{--                                        <div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::guard('admin')->user()->name }}--}}
                                            </div>
 
                                     </div>

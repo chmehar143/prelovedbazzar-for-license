@@ -4,11 +4,12 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
-class DatabaseSeeder extends Seeder
+class AdminUserSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
@@ -20,6 +21,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(AdminUserSeeder::class);
+
+         \App\Models\Admin::create([
+             'name' => 'admin',
+             'email' => 'admin@dev.com',
+             'email_verified_at' => now(),
+             'password' => Hash::make('123456789') // password
+         ]);
     }
 }

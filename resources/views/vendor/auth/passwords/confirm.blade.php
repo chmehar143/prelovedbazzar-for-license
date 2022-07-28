@@ -1,6 +1,4 @@
-@extends('admin.layouts.app')
 
-@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,7 +8,7 @@
                 <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
 
-                    <form method="POST" action="{{ route('admin.password.confirm') }}">
+                    <form method="POST" action="{{ route('vendor.password.confirm') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -46,4 +44,4 @@
         </div>
     </div>
 </div>
-@endsection
+

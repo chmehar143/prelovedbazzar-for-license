@@ -8,6 +8,6 @@ class OrderViewController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.order-view');
+        return view('user.order-view');
     }
 }
