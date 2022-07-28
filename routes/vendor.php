@@ -33,5 +33,9 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 
 
 Route::get('/product_list', 'ProductController@index')->name('product_list');
-Route::get('/view/{product}', 'ProductController@view')->name('product_view');
+Route::get('/product_create', 'ProductController@create')->name('product_create');
+Route::get('/product_edit', 'ProductController@edit')->name('product_edit');
+
+
+Route::get('/product_view', 'ProductController@view')->name('product_view');
 

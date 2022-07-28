@@ -25,4 +25,20 @@ class ProductController extends Controller
     public function index() {
         return view('vendor.product.list');
     }
+
+    public  function  create()
+    {
+        return view('vendor.product.create');
+    }
+
+    public  function  edit()
+    {
+        return view('vendor.product.edit');
+    }
+
+    public  function  view()
+    {
+        return view('vendor.product.view');
+    }
+
 }
