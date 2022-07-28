@@ -8,7 +8,7 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('fronted-views.about-us');
+        return view('user.about-us');
 
     }
 
