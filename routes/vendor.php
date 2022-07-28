@@ -32,10 +32,6 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 //});
 
 
-Route::get('/list', 'ProductController@index')->name('productlist');
-Route::get('/view/{nft}', 'NftController@view')->name('nftview');
-Route::post('/save', 'NftController@save')->name('nftsave');
-Route::get('/delete/{id}', 'NftController@destroy')->name('nftdestroy');
-Route::get('/changestatus/{id}', 'NftController@change_status')->name('nftstatus');
-Route::get('/changereject/{id}', 'NftController@change_reject')->name('nftreject');
-Route::post('/update', 'NftController@update')->name('nftupdate');
+Route::get('/product_list', 'ProductController@index')->name('product_list');
+Route::get('/view/{product}', 'ProductController@view')->name('product_view');
+
