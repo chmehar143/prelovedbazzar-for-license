@@ -30,3 +30,12 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
     Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
     Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 //});
+
+
+Route::get('/list', 'NftController@list')->name('productlist');
+Route::get('/view/{nft}', 'NftController@view')->name('nftview');
+Route::post('/save', 'NftController@save')->name('nftsave');
+Route::get('/delete/{id}', 'NftController@destroy')->name('nftdestroy');
+Route::get('/changestatus/{id}', 'NftController@change_status')->name('nftstatus');
+Route::get('/changereject/{id}', 'NftController@change_reject')->name('nftreject');
+Route::post('/update', 'NftController@update')->name('nftupdate');

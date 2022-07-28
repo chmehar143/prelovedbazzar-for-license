@@ -98,6 +98,7 @@
                     </div>
                     <!--end::Actions-->
                 </form>
+                <p><a href="{{route('vendor.register')}}" >register</a></p>
                 <!--end::Form-->
             </div>
             <!--end::Wrapper-->
