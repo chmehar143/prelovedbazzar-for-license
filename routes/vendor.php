@@ -32,7 +32,7 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 //});
 
 
-Route::get('/list', 'NftController@list')->name('productlist');
+Route::get('/list', 'ProductController@index')->name('productlist');
 Route::get('/view/{nft}', 'NftController@view')->name('nftview');
 Route::post('/save', 'NftController@save')->name('nftsave');
 Route::get('/delete/{id}', 'NftController@destroy')->name('nftdestroy');

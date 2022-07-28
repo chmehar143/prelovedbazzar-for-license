@@ -23,6 +23,6 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        //return view('vendor.product.list');
+        return view('vendor.product.list');
     }
 }

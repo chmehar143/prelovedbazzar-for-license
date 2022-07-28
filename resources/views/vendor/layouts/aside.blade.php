@@ -27,13 +27,13 @@
 
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/productlist')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-plus-circle fs-2"></i>
+                                        <i class="bi bi-cart"></i>
 										</span>
-                        <span class="menu-title">NFT</span>
-                    </a>
-                </div>
+                                        <span class="menu-title">Products</span>    
+                                    </a>
+                               </div>
 
 
 
