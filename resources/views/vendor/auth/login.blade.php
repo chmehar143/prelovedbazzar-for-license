@@ -98,7 +98,7 @@
                     </div>
                     <!--end::Actions-->
                 </form>
-                <p><a href="{{route('vendor.register')}}" >register</a></p>
+                <p class="text-center" style="font-size:15px">if you have no account with us Please <a href="{{route('vendor.register')}}" ><span style="font-weight:600">register</span></a></p>
                 <!--end::Form-->
             </div>
             <!--end::Wrapper-->
