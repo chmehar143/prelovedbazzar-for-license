@@ -102,11 +102,11 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-<<<<<<< HEAD:resources/views/fronted-views/vendor-store.blade.php
+
                                         <img src="{{asset('frontend-assets/assets/images/vendor/dokan/2.jpg')}}" alt="Vendor" 
-=======
+
                                         <img src="assets/images/vendor/dokan/2.jpg" alt="Vendor"
->>>>>>> 458598966f6f6e6d2898feddcf5870c11bc6e1c6:resources/views/user/vendor-store.blade.php
+
                                             width="400" height="194" style="background-color: #6C6C6C" />
                                     </figure>
                                 </div>
@@ -145,11 +145,10 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-<<<<<<< HEAD:resources/views/fronted-views/vendor-store.blade.php
+
                                         <img src="{{asset('frontend-assets/assets/images/vendor/dokan/3.jpg')}}" alt="Vendor" 
-=======
                                         <img src="assets/images/vendor/dokan/3.jpg" alt="Vendor"
->>>>>>> 458598966f6f6e6d2898feddcf5870c11bc6e1c6:resources/views/user/vendor-store.blade.php
+
                                             width="400" height="194" style="background-color: #A891BF" />
                                     </figure>
                                 </div>
@@ -188,11 +187,11 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-<<<<<<< HEAD:resources/views/fronted-views/vendor-store.blade.php
+
                                         <img src="{{asset('frontend-assets/assets/images/vendor/dokan/4.jpg')}}" alt="Vendor" 
-=======
+
                                         <img src="assets/images/vendor/dokan/4.jpg" alt="Vendor"
->>>>>>> 458598966f6f6e6d2898feddcf5870c11bc6e1c6:resources/views/user/vendor-store.blade.php
+
                                             width="400" height="194" style="background-color: #28292D" />
                                     </figure>
                                 </div>
@@ -231,11 +230,11 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-<<<<<<< HEAD:resources/views/fronted-views/vendor-store.blade.php
+
                                         <img src="{{asset('frontend-assets/assets/images/vendor/dokan/5.jpg')}}" alt="Vendor" 
-=======
+
                                         <img src="assets/images/vendor/dokan/5.jpg" alt="Vendor"
->>>>>>> 458598966f6f6e6d2898feddcf5870c11bc6e1c6:resources/views/user/vendor-store.blade.php
+
                                             width="400" height="194" style="background-color: #7E7D7B" />
                                     </figure>
                                 </div>
@@ -275,11 +274,11 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-<<<<<<< HEAD:resources/views/fronted-views/vendor-store.blade.php
+
                                         <img src="{{asset('frontend-assets/assets/images/vendor/dokan/6.jpg')}}" alt="Vendor" 
-=======
-                                        <img src="assets/images/vendor/dokan/6.jpg" alt="Vendor"
->>>>>>> 458598966f6f6e6d2898feddcf5870c11bc6e1c6:resources/views/user/vendor-store.blade.php
+
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/6.jpg')}}" alt="Vendor"
+
                                             width="400" height="194" style="background-color: #5B5B62" />
                                     </figure>
                                 </div>

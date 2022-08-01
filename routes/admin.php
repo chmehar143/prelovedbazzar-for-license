@@ -47,3 +47,7 @@ Route::get('/ChildCategory_list', 'ChildCategoryController@index')->name('ChildC
 Route::get('/ChildCategory_create', 'ChildCategoryController@create')->name('ChildCategory_create');
 Route::get('/ChildCategory_edit', 'ChildCategoryController@edit')->name('ChildCategory_edit');
 Route::get('/ChildCategory_view', 'ChildCategoryController@view')->name('ChildCategory_view');
+
+
+
+
