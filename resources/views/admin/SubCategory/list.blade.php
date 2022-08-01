@@ -1,13 +1,15 @@
-@extends('vendor.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
+
+
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
 							<!--begin::Card-->
-                         <h1>Products</h1>
-						 <p>Dashboard > Product > List </p>
+                         <h1>Sub Category</h1>
+						 <p>Dashboard > Sub Category > List </p>
 
 							<div class="card">
 								<!--begin::Card header-->
@@ -24,7 +26,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Products">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Sub Category ">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -39,7 +41,7 @@
 									
 											
 											<!--begin::Add customer-->
-											<a type="button" class="btn btn-primary" href="{{url('vendor/product_create')}}">Add Product</a>
+											<a type="button" class="btn btn-primary" href="{{url('admin/SubCategory_create')}}">Add Product</a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -72,22 +74,19 @@
 												</th>
 
                                                 <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-                                                    aria-label="Product Image : activate to sort column ascending" style="width: 192.25px;">Product Image </th>
+                                                    aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Category </th>
 
                                                 <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                                                     aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Name </th>
 
                                                 <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-                                                    aria-label="Type   : activate to sort column ascending" style="width: 192.25px;">Type </th>
+                                                    aria-label="Type   : activate to sort column ascending" style="width: 192.25px;">Slug	 </th>
 
-                                                <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-                                                    aria-label=" Price : activate to sort column ascending" style="width: 192.25px;"> Price </th>
+												
 
                                                 <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                                                     aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>
 
-                                                <th class="min-w-125px sorting_disabled" style="display: none; width: 0px;" rowspan="1" colspan="1"
-                                                    aria-label="Pre-Sale Price">Pre-Sale Price</th>
                                                     
                                                 </tr>											<!--end::Table row-->
 										</thead>
@@ -104,17 +103,14 @@
 													</div>
 												</td>
 												<!--end::Checkbox-->
-                                                <td><img src="#"></td>
-												<td>
-													abc 
-												</td>
-												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">e com</a>	</td>
+												<td>Camera & Photo		</td>
+
+                                            
+												<td>Surveillance Safety & Security	</td>
 										
-												<td>1000</td>
+												<td>  Surveillance-Safety-and-Security	</td>
 												
-                                                <td data-order="Invalid date">
-                                                    <span class="badge badge-light-success">Approved</span>
-                                                </td>
+                                                <td data-order="Invalid date">  <span class="badge badge-light-success">Approved</span> </td>
 
 												<!--end::Date=-->
 												<!--begin::Action=-->
@@ -131,12 +127,12 @@
 													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 														<!--begin::Menu item-->
 														<div class="menu-item px-3">
-															<a href="{{url('vendor/product_view')}}"" class="menu-link px-3">View</a>
+															<a href="{{url('admin/SubCategory_view')}}"" class="menu-link px-3">View</a>
 														</div>
 														<!--end::Menu item-->
 
 														<div class="menu-item px-3">
-															<a href="{{url('vendor/product_edit')}}"" class="menu-link px-3">Edit</a>
+															<a href="{{url('admin/SubCategory_edit')}}"" class="menu-link px-3">Edit</a>
 														</div>
 
 														<!--begin::Menu item-->
@@ -168,4 +164,5 @@
 					</div>
 
 
-                    @endsection
+
+@endsection

@@ -134,6 +134,8 @@
                     <!--end::Actions-->
                 </form>
                 <!--end::Form-->
+                <p class="text-center" style="font-size:15px">If you have an account with us please <a href="{{route('vendor.login')}}" ><span style="font-weight:600">log in</span></a></p>
+
             </div>
             <!--end::Wrapper-->
         </div>

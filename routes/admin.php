@@ -28,3 +28,26 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+// Main Category
+Route::get('/Category_list', 'CategoryController@index')->name('Category_list');
+Route::get('/Category_create', 'CategoryController@create')->name('Category_create');
+Route::get('/Category_edit', 'CategoryController@edit')->name('Category_edit');
+Route::get('/Category_view', 'CategoryController@view')->name('Category_view');
+
+// Sub Category
+Route::get('/SubCategory_list', 'SubCategoryController@index')->name('SubCategory_list');
+Route::get('/SubCategory_create', 'SubCategoryController@create')->name('SubCategory_create');
+Route::get('/SubCategory_edit', 'SubCategoryController@edit')->name('SubCategory_edit');
+Route::get('/SubCategory_view', 'SubCategoryController@view')->name('SubCategory_view');
+
+
+// Child Category
+Route::get('/ChildCategory_list', 'ChildCategoryController@index')->name('ChildCategory_list');
+Route::get('/ChildCategory_create', 'ChildCategoryController@create')->name('ChildCategory_create');
+Route::get('/ChildCategory_edit', 'ChildCategoryController@edit')->name('ChildCategory_edit');
+Route::get('/ChildCategory_view', 'ChildCategoryController@view')->name('ChildCategory_view');
+
+
+
+

@@ -1,5 +1,5 @@
 
-@extends('vendor.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div id="kt_content_container" class="container-xxl" style="margin-top:6pc;margin-left:7pc">
@@ -14,7 +14,7 @@
                                   <!--end::Card title-->
                                   <!--begin::Card toolbar-->
                                   <div class="card-toolbar">
-                                  
+                             
                                   </div>
                                   <!--end::Card toolbar-->
                                 </div>
@@ -33,50 +33,18 @@
                                         <div class="flex-equal me-5">
                                           <table class="table table-flush fw-bold gy-1">
                                             <tbody>
+                                           
                                             <tr>
-                                              <td class="text-muted min-w-125px w-125px">Current Featured Image</td>
-                                              <td class="text-gray-800"><img src="#"></td>
+                                              <td class="text-muted min-w-125px w-125px"> Name </td>
+                                              <td class="text-gray-800">Emma Smith</td>
                                             </tr>
                                             <tr>
-                                              <td class="text-muted min-w-125px w-125px">Product Name </td>
-                                              <td class="text-gray-800">Emma Smith</td>
+                                              <td class="text-muted min-w-125px w-125px"> Slug</td>
+                                              <td class="text-gray-800">light black</td>
                                             </tr>
 
                                           
-                                            
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Quantity</td>
-                                              <td class="text-gray-800">12</td>
-                                            </tr>
-
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Price</td>
-                                              <td class="text-gray-800">1222</td>
-                                            </tr>
-                                            
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Issuer</td>
-                                              <td class="text-gray-800">VICBANK</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Shipping Time</td>
-                                              <td class="text-gray-800">2 day</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Current Price</td>
-                                              <td class="text-gray-800">222</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Product Return Policy </td>
-                                              <td class="text-gray-800">22</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Size </td>
-                                              <td class="text-gray-800">Small</td>
-                                            </tr>
+                                           
 
 
                                           </tbody></table>
@@ -87,41 +55,9 @@
                                           <table class="table table-flush fw-bold gy-1">
                                             <tbody>
                                               
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Prdouct Color</td>
-                                              <td class="text-gray-800">light black</td>
-                                            </tr>
+                                          
 
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Category </td>
-                                              <td class="text-gray-800">Men's cloth</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Sub Category </td>
-                                              <td class="text-gray-800">WoMen</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Child Category </td>
-                                              <td class="text-gray-800">baby boy</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Previous Price</td>
-                                              <td class="text-gray-800">222</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Product Stock</td>
-                                              <td class="text-gray-800">cacdscaca</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Product  Description</td>
-                                              <td class="text-gray-800">acscscacaca</td>
-                                            </tr>
-
+                                         
                                             
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Status </td>

@@ -24,16 +24,50 @@
                     </a>
                 </div>
 
-
-
-                <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-plus-circle fs-2"></i>
+											<i class="bi bi-cart"></i>
 										</span>
-                        <span class="menu-title">NFT</span>
-                    </a>
-                </div>
+										<span class="menu-title">Manage Categories</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Products</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/Category_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Main Category</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/SubCategory_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Sub Category</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/ChildCategory_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Child Category</span>
+											</a>
+										</div>
+										
+										
+										
+									</div>
+								</div>
+
+         
 
 
 
