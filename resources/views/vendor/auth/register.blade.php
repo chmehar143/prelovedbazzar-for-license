@@ -74,6 +74,19 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="fv-row mb-10">
+                        <!--begin::Label-->
+                        <label class="form-label fs-6 fw-bolder text-dark">Shop Name</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input id="shop_name" type="text" class="form-control @error('shop_name') is-invalid @enderror" name="shop_name" value="{{ old('shop_name') }}" required autocomplete="shop_name" autofocus>
+
+                        @error('shop_name')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                    <div class="fv-row mb-10">
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-stack mb-2">
                             <!--begin::Label-->
