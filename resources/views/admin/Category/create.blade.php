@@ -4,13 +4,12 @@
 <head>
 	<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 </head>
-<div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
-                   
+            <div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" >
 							<!--begin::Navbar-->
 							<div class="card mb-5 mb-xl-10">
-						
+
 							</div>
 							<!--end::Navbar-->
 							<!--begin::Basic info-->
@@ -27,11 +26,13 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
-									<form id="kt_account_profile_details_form" class="form">
-										<!--begin::Card body-->
+                                    @include('includes.admin.form-error')
+                                    <form id="kt_account_profile_details_form" action=""  method="POST" class="form">
+                                    {{csrf_field()}}
+                                        <!--begin::Card body-->
 										<div class="card-body border-top p-9">
 
-											
+
 											<!--begin::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
@@ -47,7 +48,7 @@
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
-													
+
 														<!--end::Col-->
 													</div>
 													<!--end::Row-->
@@ -67,13 +68,13 @@
 												<!--end::Col-->
 											</div>
 											<!--end::Input group-->
-											
-										
+
+
 
 											<!--begin::Input group-->
 											<div class="row mb-0">
 												<label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>
-											
+
 												<div class="col-lg-8 d-flex align-items-center">
 													<div class="form-check form-check-solid form-switch fv-row">
 														<input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" checked="checked" />
@@ -94,7 +95,7 @@
 								</div>
 								<!--end::Content-->
 							</div>
-				
+
 							<!--end::Modals-->
 						</div>
                     </div>
@@ -118,5 +119,5 @@
 						console.error( error );
 					} );
 			</script>
-	
+
                     @endsection
