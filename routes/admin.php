@@ -30,24 +30,29 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 // Main Category
-Route::get('/Category_list', 'CategoryController@index')->name('Category_list');
-Route::get('/Category_create', 'CategoryController@create')->name('Category_create');
-Route::get('/Category_edit', 'CategoryController@edit')->name('Category_edit');
-Route::get('/Category_view', 'CategoryController@view')->name('Category_view');
-Route::post('/category_save', 'CategoryController@view')->name('category_save');
+Route::get('/category_list', 'CategoryController@index')->name('category_list');
+Route::get('/category_create', 'CategoryController@create')->name('category_create');
+Route::get('/category_edit/{category}', 'CategoryController@edit')->name('category_edit');
+Route::post('/category_edit/{category}', 'CategoryController@update')->name('category_update');
+Route::post('/category_store', 'CategoryController@store')->name('category_store');
+Route::get('/delete/{id}', 'CategoryController@destroy')->name('category_destroy');
 
 // Sub Category
-Route::get('/SubCategory_list', 'SubCategoryController@index')->name('SubCategory_list');
-Route::get('/SubCategory_create', 'SubCategoryController@create')->name('SubCategory_create');
-Route::get('/SubCategory_edit', 'SubCategoryController@edit')->name('SubCategory_edit');
-Route::get('/SubCategory_view', 'SubCategoryController@view')->name('SubCategory_view');
-
+Route::get('/sub_category_list', 'SubCategoryController@index')->name('sub_category_list');
+Route::get('/sub_category_create', 'SubCategoryController@create')->name('sub_category_create');
+Route::post('/sub_category_store', 'SubCategoryController@store')->name('sub_category_store');
+Route::get('/sub_category_edit/{subcategory}', 'SubCategoryController@edit')->name('sub_category_edit');
+Route::post('/sub_category_edit/{subcategory}', 'SubCategoryController@update')->name('sub_category_update');
+Route::get('/sub_category_delete/{id}', 'SubCategoryController@destroy')->name('sub_category_destroy');
 
 // Child Category
-Route::get('/ChildCategory_list', 'ChildCategoryController@index')->name('ChildCategory_list');
-Route::get('/ChildCategory_create', 'ChildCategoryController@create')->name('ChildCategory_create');
-Route::get('/ChildCategory_edit', 'ChildCategoryController@edit')->name('ChildCategory_edit');
-Route::get('/ChildCategory_view', 'ChildCategoryController@view')->name('ChildCategory_view');
+Route::get('/child_category_list', 'ChildCategoryController@index')->name('child_category_list');
+Route::get('/child_category_create', 'ChildCategoryController@create')->name('child_category_create');
+Route::post('/child_category_store', 'ChildCategoryController@store')->name('child_category_store');
+Route::get('/child_category_edit/{childcategory}', 'ChildCategoryController@edit')->name('child_category_edit');
+Route::post('/child_category_edit/{childcategory}', 'ChildCategoryController@update')->name('child_category_update');
+Route::get('/child_category_delete/{id}', 'ChildCategoryController@destroy')->name('child_category_destroy');
+Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
 
 

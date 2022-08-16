@@ -4,13 +4,12 @@
 <head>
 	<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 </head>
-<div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
-                   
+            <div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" >
 							<!--begin::Navbar-->
 							<div class="card mb-5 mb-xl-10">
-						
+
 							</div>
 							<!--end::Navbar-->
 							<!--begin::Basic info-->
@@ -19,7 +18,7 @@
 								<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
 									<!--begin::Card title-->
 									<div class="card-title m-0">
-										<h3 class="fw-bolder m-0">Add NEW CATEGORY</h3>
+										<h3 class="fw-bolder m-0">Add NEW  MAIN CATEGORY</h3>
 									</div>
 									<!--end::Card title-->
 								</div>
@@ -27,31 +26,12 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
-									<form id="kt_account_profile_details_form" class="form">
-										<!--begin::Card body-->
+                                    <form  action="{{route('admin.category_store')}}"  method="POST" class="form">
+                                    {{csrf_field()}}
+                                        <!--begin::Card body-->
 										<div class="card-body border-top p-9">
 
-										<div class="row mb-6">
-												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label required fw-bold fs-6"> Category </label>
-												<!--end::Label-->
-												<!--begin::Col-->
-												<div class="col-lg-8">
-													<!--begin::Row-->
-													<div class="row">
-														<!--begin::Col-->
-														<div class="col-lg-12 fv-row">
-															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Category " value="Category" />
-														</div>
-														<!--end::Col-->
-														<!--begin::Col-->
-													
-														<!--end::Col-->
-													</div>
-													<!--end::Row-->
-												</div>
-												<!--end::Col-->
-											</div>
+
 											<!--begin::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
@@ -63,11 +43,14 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+                                                            <input type="text" class=" @error('name') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" name="name" placeholder="{{ __('Enter Name') }}" required="" value="">
+                                                            @error('name')
+                                                            <div class="validation mt-1">{{ $message }}</div>
+                                                            @enderror
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
-													
+
 														<!--end::Col-->
 													</div>
 													<!--end::Row-->
@@ -82,25 +65,14 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
+                                                    <input type="text" class=" @error('slug') is-invalid @enderror form-control form-control-lg form-control-solid" name="slug" placeholder="{{ __('Enter Slug') }}" required="" value="">
+                                                    @error('slug')
+                                                    <div class="validation mt-1">{{ $message }}</div>
+                                                    @enderror
 												</div>
 												<!--end::Col-->
 											</div>
 											<!--end::Input group-->
-											
-										
-
-											<!--begin::Input group-->
-											<div class="row mb-0">
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>
-											
-												<div class="col-lg-8 d-flex align-items-center">
-													<div class="form-check form-check-solid form-switch fv-row">
-														<input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" checked="checked" />
-														<label class="form-check-label" for="allowmarketing"></label>
-													</div>
-												</div>
-											</div>
 										</div>
 										<!--end::Card body-->
 										<!--begin::Actions-->
@@ -114,7 +86,7 @@
 								</div>
 								<!--end::Content-->
 							</div>
-				
+
 							<!--end::Modals-->
 						</div>
                     </div>
@@ -138,5 +110,5 @@
 						console.error( error );
 					} );
 			</script>
-	
+
                     @endsection

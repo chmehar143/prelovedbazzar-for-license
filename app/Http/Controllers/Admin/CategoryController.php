@@ -5,33 +5,65 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Validator;
+use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
+
     public function index() {
-        return view('admin.Category.list');
+        $categories = Category::get();
+        return view('admin.category.list',compact('categories'));
     }
 
     public  function  create()
     {
-        return view('admin.Category.create');
+        return view('admin.category.create');
     }
 
-    public  function  edit()
+    //*** GET Request
+    public function edit($id)
     {
-        return view('admin.Category.edit');
+        $data = Category::findOrFail($id);
+        return view('admin.category.edit',compact('data'));
     }
 
-    public  function  view()
-    {
-        return view('admin.Category.view');
-    }
 
+    //*** POST Request
     public function store(Request $request)
     {
         //--- Validation Section
         $rules = [
-            'slug' => 'unique:categories|regex:/^[a-zA-Z0-9\s-]+$/'
+            'slug' => 'unique:categories|regex:/^[a-zA-Z0-9\s-]+$/',
+        ];
+        $customs = [
+            'slug.unique' => 'This slug has already been taken.',
+            'slug.regex' => 'Slug Must Not Have Any Special Characters.'
+        ];
+        $validator = Validator::make($request->all(), $rules, $customs);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        $data = new Category();
+        $input = $request->all();
+        $data->fill($input)->save();
+        return redirect()->route('admin.category_list');
+
+    }
+
+    //*** POST Request
+    public function update(Request $request, $id)
+    {
+
+        //--- Validation Section
+        $rules = [
+            'slug' => 'unique:categories,slug,'.$id.'|regex:/^[a-zA-Z0-9\s-]+$/'
         ];
         $customs = [
             'slug.unique' => 'This slug has already been taken.',
@@ -40,18 +72,23 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), $rules, $customs);
 
         if ($validator->fails()) {
-            return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
+            return Redirect::back()->withErrors($validator);
         }
-        $data = new Category();
+        //--- Validation Section Ends
+
+        //--- Logic Section
+        $data = Category::findOrFail($id);
         $input = $request->all();
-        $data->fill($input)->save();
+        $input['status'] = (isset($request->status) && $request->status == 1)? 1 : 0;
+        $data->update($input);
         //--- Logic Section Ends
-        cache()->forget('categories');
-        //--- Redirect Section
-        $msg = 'New Data Added Successfully.';
-        return response()->json($msg);
+        return redirect()->route('admin.category_list');
         //--- Redirect Section Ends
     }
 
+    public  function  destroy($id){
+        Category::where('id',$id)->delete();
+        return redirect()->back();
+    }
 
 }
