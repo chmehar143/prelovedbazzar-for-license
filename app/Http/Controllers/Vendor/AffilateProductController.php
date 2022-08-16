@@ -5,9 +5,9 @@ namespace App\Http\Controllers\vendor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class AffilateProductController extends Controller
 {
-    /**
+     /**
      * Create a new controller instance.
      *
      * @return void
@@ -23,25 +23,23 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        return view('vendor.product.list');
+        return view('vendor.AffilateProduct.list');
     }
 
     public  function  create()
     {
-        return view('vendor.product.create');
+        return view('vendor.AffilateProduct.create');
     }
 
     public  function  edit()
     {
-        return view('vendor.product.edit');
+        return view('vendor.AffilateProduct.edit');
     }
 
     public  function  view()
     {
-        return view('vendor.product.view');
+        return view('vendor.AffilateProduct.view');
     }
 
-
-    
 
 }

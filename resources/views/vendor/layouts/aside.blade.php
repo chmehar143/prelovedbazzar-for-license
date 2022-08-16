@@ -49,85 +49,96 @@
 
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/AffilateProduct_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-newspaper"></i>
+                                        <i class="bi bi-cart-plus"></i>
+
 										</span>
-                        <span class="menu-title">News</span>
+                        <span class="menu-title">Affiliate Products</span>
                     </a>
                 </div>
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/BulkProduct_home')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-patch-question"></i>
+                                        <i class="fas fa-upload"></i></span>
 										</span>
-                        <span class="menu-title">Faqs</span>
+                        <span class="menu-title">Bulk Product</span>
                     </a>
                 </div>
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/Withdraw_home')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-shop"></i>
+                                        <i class="bi bi-wallet"></i>
 										</span>
-                        <span class="menu-title">Advirtisement</span>
+                        <span class="menu-title">Withdraw</span>
                     </a>
                 </div>
 
-                <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-											<i class=" bi bi-person-lines-fill"></i>
-										</span>
-                        <span class="menu-title">Contact</span>
-                    </a>
-                </div>
+   
 
-                <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class=" bi bi-person-lines-fill"></i>
-										</span>
-                        <span class="menu-title">Users</span>
-                    </a>
-                </div>
+											<i class="fas fa-cogs"></i>
+											</span>
+										<span class="menu-title">Setting</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">Setting</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('vendor/Setting_Service_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Service</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('vendor/Setting_banner_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">Banner</span>
+											</a>
+										</div>
 
-                        <div class="menu-item py-2">
-                            <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-											<i class=" bi bi-person-lines-fill"></i>
-										</span>
-                                <span class="menu-title">Newsletter</span>
-                            </a>
-                        </div>
+                                        <div class="menu-item">
+											<a class="menu-link" href="{{url('vendor/Setting_Shipping_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">Shipping</span>
+											</a>
+										</div>
 
-                        <div class="menu-item py-2">
-                            <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-											<i class="bi bi-shop"></i>
-										</span>
-                                <span class="menu-title">Give Away</span>
-                            </a>
-                        </div>
+                                        <div class="menu-item">
+											<a class="menu-link" href="{{url('vendor/Setting_packgings_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">Packagings</span>
+											</a>
+										</div>
 
-                        <div class="menu-item py-2">
-                            <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-											<i class="bi bi-newspaper"></i>
-										</span>
-                                <span class="menu-title">Marketplace</span>
-                            </a>
-                        </div>
+                                        <div class="menu-item">
+											<a class="menu-link" href="{{url('vendor/Setting_SocialMedia_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">Social Media</span>
+											</a>
+										</div>
+										
+									</div>
+								</div>
 
-                        <div class="menu-item py-2">
-                            <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-											<i class="bi bi-newspaper"></i>
-										</span>
-                                <span class="menu-title">page sitting</span>
-                            </a>
-                        </div>
+                        
 
             </div>
             <!--end::Menu-->
