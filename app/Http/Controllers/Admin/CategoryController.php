@@ -10,23 +10,32 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
+
     public function index() {
-        return view('admin.Category.list');
+        $categories = Category::get();
+        return view('admin.category.list',compact('categories'));
     }
 
     public  function  create()
     {
-        return view('admin.Category.create');
+        return view('admin.category.create');
     }
 
-    public  function  edit()
+    //*** GET Request
+    public function edit($id)
     {
-        return view('admin.Category.edit');
+        $data = Category::findOrFail($id);
+        return view('admin.category.edit',compact('data'));
     }
 
     public  function  view()
     {
-        return view('admin.Category.view');
+        return view('admin.category.view');
     }
 
     //*** POST Request
@@ -48,8 +57,37 @@ class CategoryController extends Controller
         $data = new Category();
         $input = $request->all();
         $data->fill($input)->save();
-        return redirect()->route('admin.Category_list');
+        return redirect()->route('admin.category_list');
 
+    }
+
+    //*** POST Request
+    public function update(Request $request, $id)
+    {
+
+        //--- Validation Section
+        $rules = [
+            'slug' => 'unique:categories,slug,'.$id.'|regex:/^[a-zA-Z0-9\s-]+$/'
+        ];
+        $customs = [
+            'slug.unique' => 'This slug has already been taken.',
+            'slug.regex' => 'Slug Must Not Have Any Special Characters.'
+        ];
+        $validator = Validator::make($request->all(), $rules, $customs);
+
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        //--- Validation Section Ends
+
+        //--- Logic Section
+        $data = Category::findOrFail($id);
+        $input = $request->all();
+        $input['status'] = ($request->status == 1)? 1 : 0;
+        $data->update($input);
+        //--- Logic Section Ends
+        return redirect()->route('admin.category_list');
+        //--- Redirect Section Ends
     }
 
 }

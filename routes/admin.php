@@ -30,10 +30,11 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 // Main Category
-Route::get('/Category_list', 'CategoryController@index')->name('Category_list');
-Route::get('/Category_create', 'CategoryController@create')->name('Category_create');
-Route::get('/Category_edit', 'CategoryController@edit')->name('Category_edit');
-Route::get('/Category_view', 'CategoryController@view')->name('Category_view');
+Route::get('/category_list', 'CategoryController@index')->name('category_list');
+Route::get('/category_create', 'CategoryController@create')->name('category_create');
+Route::get('/category_edit/{category}', 'CategoryController@edit')->name('category_edit');
+Route::post('/category_edit/{category}', 'CategoryController@update')->name('category_update');
+Route::get('/category_view', 'CategoryController@view')->name('category_view');
 Route::post('/category_store', 'CategoryController@store')->name('category_store');
 
 // Sub Category
