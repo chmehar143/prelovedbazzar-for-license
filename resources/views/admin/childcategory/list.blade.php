@@ -36,12 +36,12 @@
 										<!--begin::Toolbar-->
 										<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
 											<!--begin::Filter-->
-										
+
 											<!--begin::Menu 1-->
-									
-											
+
+
 											<!--begin::Add customer-->
-											<a type="button" class="btn btn-primary" href="{{url('admin/ChildCategory_create')}}">Add Child Category</a>
+											<a type="button" class="btn btn-primary" href="{{url('admin/child_category_create')}}">Add Child Category</a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -85,19 +85,19 @@
                                                 <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                                                     aria-label="Type   : activate to sort column ascending" style="width: 192.25px;">Slug	 </th>
 
-												
+
 
                                                 <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                                                     aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>
 
-                                                    
+
                                                 </tr>											<!--end::Table row-->
 										</thead>
 										<!--end::Table head-->
 										<!--begin::Table body-->
 										<tbody class="fw-bold text-gray-600">
 
-											
+
 										<tr class="odd">
 												<!--begin::Checkbox-->
 												<td>
@@ -106,12 +106,12 @@
 													</div>
 												</td>
 												<!--end::Checkbox-->
-												<td>Camera & Photo	</td>      
-												<td>Surveillance Safety & Security	</td>									
+												<td>Camera & Photo	</td>
+												<td>Surveillance Safety & Security	</td>
 												<td> Surveillance-Safety-and-Security	</td>
 												<td> Surveillance	</td>
 
-												
+
                                                 <td data-order="Invalid date">  <span class="badge badge-light-success">Approved</span> </td>
 
 												<!--end::Date=-->
@@ -151,9 +151,9 @@
 									</table></div>
                                     <div class="row">
                                         <div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
-                                           
+
                                         </div>
-                                       
+
                                                         </div>
                                                     </div></div>
 									<!--end::Table-->

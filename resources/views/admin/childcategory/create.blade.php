@@ -19,7 +19,7 @@
                 <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
                     <!--begin::Card title-->
                     <div class="card-title m-0">
-                        <h3 class="fw-bolder m-0">Add NEW SUB CATEGORY</h3>
+                        <h3 class="fw-bolder m-0">Add NEW CHILD CATEGORY</h3>
                     </div>
                     <!--end::Card title-->
                 </div>
@@ -34,18 +34,18 @@
 
                             <div class="row mb-6">
                                 <!--begin::Label-->
-                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Category *</label>
+                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category </label>
                                 <!--end::Label-->
                                 <!--begin::Col-->
                                 <div class="col-lg-8 fv-row">
-                                    <select  aria-label="Select a Timezone" name="category_id" id="catagories" data-control="select2" data-placeholder="Select a Category.." class="form-select form-select-solid form-select-lg @error('category_id') is-invalid @enderror">
+                                    <select  aria-label="Select a Timezone" name="sub_category_id" id="catagories" data-control="select2" data-placeholder="Select a Category.." class="form-select form-select-solid form-select-lg @error('sub_category_id') is-invalid @enderror">
                                         <option value="">Select a Category..</option>
                                         @foreach($cats as $cat)
                                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                                         @endforeach
 
                                     </select>
-                                    @error('category_id')
+                                    @error('sub_category_id')
                                     <div class="validation">{{ $message }}</div>
                                     @enderror
                                 </div>

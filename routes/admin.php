@@ -45,10 +45,10 @@ Route::get('/sub_category_edit/{subcategory}', 'SubCategoryController@edit')->na
 Route::post('/sub_category_edit/{subcategory}', 'SubCategoryController@update')->name('sub_category_update');
 Route::get('/sub_category_delete/{id}', 'SubCategoryController@destroy')->name('sub_category_destroy');
 
-
 // Child Category
 Route::get('/child_category_list', 'ChildCategoryController@index')->name('child_category_list');
 Route::get('/child_category_create', 'ChildCategoryController@create')->name('child_category_create');
+Route::post('/child_category_store', 'SubCategoryController@store')->name('child_category_store');
 Route::get('/child_category_edit', 'ChildCategoryController@edit')->name('child_category_edit');
 Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
