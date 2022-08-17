@@ -28,9 +28,12 @@ class ChildCategoryController extends Controller
         $cats = Subcategory::all();
         return view('admin.childcategory.create',compact('cats'));
     }
-    public  function  edit()
+
+    public function edit($id)
     {
-        return view('admin.childcategory.edit');
+        $cats = Subcategory::all();
+        $data = Childcategory::findOrFail($id);
+        return view('admin.childcategory.edit',compact('data','cats'));
     }
 
     public  function  view()

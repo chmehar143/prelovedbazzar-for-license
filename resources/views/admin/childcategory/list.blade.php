@@ -9,7 +9,7 @@
         <div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
             <!--begin::Card-->
             <h1>Sub Category</h1>
-            <p>Dashboard > Sub Category > List </p>
+            <p>Dashboard > Child Category > List </p>
 
             <div class="card">
                 <!--begin::Card header-->
