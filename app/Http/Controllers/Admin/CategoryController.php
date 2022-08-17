@@ -33,10 +33,6 @@ class CategoryController extends Controller
         return view('admin.category.edit',compact('data'));
     }
 
-    public  function  view()
-    {
-        return view('admin.category.view');
-    }
 
     //*** POST Request
     public function store(Request $request)

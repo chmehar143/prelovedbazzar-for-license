@@ -43,15 +43,14 @@ Route::get('/sub_category_create', 'SubCategoryController@create')->name('sub_ca
 Route::post('/sub_category_store', 'SubCategoryController@store')->name('sub_category_store');
 Route::get('/sub_category_edit/{subcategory}', 'SubCategoryController@edit')->name('sub_category_edit');
 Route::post('/sub_category_edit/{subcategory}', 'SubCategoryController@update')->name('sub_category_update');
-Route::get('/sub_category_view', 'SubCategoryController@view')->name('sub_category_view');
 Route::get('/sub_category_delete/{id}', 'SubCategoryController@destroy')->name('sub_category_destroy');
 
 
 // Child Category
 Route::get('/child_category_list', 'ChildCategoryController@index')->name('child_category_list');
-Route::get('/ChildCategory_create', 'ChildCategoryController@create')->name('ChildCategory_create');
-Route::get('/ChildCategory_edit', 'ChildCategoryController@edit')->name('ChildCategory_edit');
-Route::get('/ChildCategory_view', 'ChildCategoryController@view')->name('ChildCategory_view');
+Route::get('/child_category_create', 'ChildCategoryController@create')->name('child_category_create');
+Route::get('/child_category_edit', 'ChildCategoryController@edit')->name('child_category_edit');
+Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
 
 

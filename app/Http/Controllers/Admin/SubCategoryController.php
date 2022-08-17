@@ -38,10 +38,6 @@ class SubCategoryController extends Controller
         return view('admin.subcategory.edit',compact('data','cats'));
     }
 
-    public  function  view()
-    {
-        return view('admin.subcategory.view');
-    }
 
     public function store(Request $request)
     {
