@@ -38,14 +38,14 @@
                                 <!--end::Label-->
                                 <!--begin::Col-->
                                 <div class="col-lg-8 fv-row">
-                                    <select  aria-label="Select a Timezone" name="sub_category_id" id="catagories" data-control="select2" data-placeholder="Select a Category.." class="form-select form-select-solid form-select-lg @error('sub_category_id') is-invalid @enderror">
+                                    <select  aria-label="Select a Timezone" name="subcategory_id" id="catagories" data-control="select2" data-placeholder="Select a Category.." class="form-select form-select-solid form-select-lg @error('subcategory_id') is-invalid @enderror">
                                         <option value="">Select a Category..</option>
                                         @foreach($cats as $cat)
                                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                                         @endforeach
 
                                     </select>
-                                    @error('sub_category_id')
+                                    @error('subcategory_id')
                                     <div class="validation">{{ $message }}</div>
                                     @enderror
                                 </div>
