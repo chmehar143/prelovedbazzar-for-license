@@ -41,7 +41,8 @@ Route::get('/delete/{id}', 'CategoryController@destroy')->name('category_destroy
 Route::get('/sub_category_list', 'SubCategoryController@index')->name('sub_category_list');
 Route::get('/sub_category_create', 'SubCategoryController@create')->name('sub_category_create');
 Route::post('/sub_category_store', 'SubCategoryController@store')->name('sub_category_store');
-Route::get('/sub_category_edit', 'SubCategoryController@edit')->name('sub_category_edit');
+Route::get('/sub_category_edit/{subcategory}', 'SubCategoryController@edit')->name('sub_category_edit');
+Route::post('/sub_category_edit/{subcategory}', 'SubCategoryController@update')->name('sub_category_update');
 Route::get('/sub_category_view', 'SubCategoryController@view')->name('sub_category_view');
 
 

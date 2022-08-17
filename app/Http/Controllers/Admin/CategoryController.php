@@ -83,7 +83,7 @@ class CategoryController extends Controller
         //--- Logic Section
         $data = Category::findOrFail($id);
         $input = $request->all();
-        $input['status'] = ($request->status == 1)? 1 : 0;
+        $input['status'] = (isset($request->status) && $request->status == 1)? 1 : 0;
         $data->update($input);
         //--- Logic Section Ends
         return redirect()->route('admin.category_list');
