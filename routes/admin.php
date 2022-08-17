@@ -36,6 +36,7 @@ Route::get('/category_edit/{category}', 'CategoryController@edit')->name('catego
 Route::post('/category_edit/{category}', 'CategoryController@update')->name('category_update');
 Route::get('/category_view', 'CategoryController@view')->name('category_view');
 Route::post('/category_store', 'CategoryController@store')->name('category_store');
+Route::get('/delete/{id}', 'CategoryController@destroy')->name('category_destroy');
 
 // Sub Category
 Route::get('/SubCategory_list', 'SubCategoryController@index')->name('SubCategory_list');

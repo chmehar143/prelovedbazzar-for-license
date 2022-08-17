@@ -90,4 +90,9 @@ class CategoryController extends Controller
         //--- Redirect Section Ends
     }
 
+    public  function  destroy($id){
+        Category::where('id',$id)->delete();
+        return redirect()->back();
+    }
+
 }
