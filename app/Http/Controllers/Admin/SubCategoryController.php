@@ -99,4 +99,9 @@ class SubCategoryController extends Controller
         return redirect()->route('admin.sub_category_list');
         //--- Redirect Section Ends
     }
+
+    public  function  destroy($id){
+        Subcategory::where('id',$id)->delete();
+        return redirect()->back();
+    }
 }

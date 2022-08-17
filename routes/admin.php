@@ -44,6 +44,7 @@ Route::post('/sub_category_store', 'SubCategoryController@store')->name('sub_cat
 Route::get('/sub_category_edit/{subcategory}', 'SubCategoryController@edit')->name('sub_category_edit');
 Route::post('/sub_category_edit/{subcategory}', 'SubCategoryController@update')->name('sub_category_update');
 Route::get('/sub_category_view', 'SubCategoryController@view')->name('sub_category_view');
+Route::get('/sub_category_delete/{id}', 'SubCategoryController@destroy')->name('sub_category_destroy');
 
 
 // Child Category

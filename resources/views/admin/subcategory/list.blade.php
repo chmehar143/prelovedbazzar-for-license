@@ -145,12 +145,12 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{url('admin/delete')}}"+ '/' + id,
+                        url: "{{url('admin/sub_category_delete')}}"+ '/' + id,
                         success: function(data) {
                             $("#nft_row_" +id).remove();
                             Swal.fire(
                                 'Deleted!',
-                                'Main Category has been deleted.',
+                                'Sub Category has been deleted.',
                                 'success'
                             )
                         }
