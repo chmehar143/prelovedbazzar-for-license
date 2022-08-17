@@ -19,7 +19,8 @@ class ChildCategoryController extends Controller
     }
 
     public function index() {
-        return view('admin.childcategory.list');
+        $childCategory = Childcategory::get();
+        return view('admin.childcategory.list',compact('childCategory'));
     }
 
     public  function  create()

@@ -49,7 +49,9 @@ Route::get('/sub_category_delete/{id}', 'SubCategoryController@destroy')->name('
 Route::get('/child_category_list', 'ChildCategoryController@index')->name('child_category_list');
 Route::get('/child_category_create', 'ChildCategoryController@create')->name('child_category_create');
 Route::post('/child_category_store', 'ChildCategoryController@store')->name('child_category_store');
-Route::get('/child_category_edit', 'ChildCategoryController@edit')->name('child_category_edit');
+Route::get('/child_category_edit/{childcategory}', 'ChildCategoryController@edit')->name('child_category_edit');
+Route::post('/child_category_edit/{childcategory}', 'ChildCategoryController@update')->name('child_category_update');
+Route::get('/child_category_delete/{id}', 'ChildCategoryController@destroy')->name('child_category_destroy');
 Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
 
