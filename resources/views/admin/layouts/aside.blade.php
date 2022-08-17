@@ -38,7 +38,7 @@
 											</div>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/Category_list')}}">
+											<a class="menu-link" href="{{url('admin/category_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -46,7 +46,7 @@
 											</a>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/SubCategory_list')}}">
+											<a class="menu-link" href="{{url('admin/sub_category_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -54,20 +54,20 @@
 											</a>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/ChildCategory_list')}}">
+											<a class="menu-link" href="{{url('admin/child_category_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
 												<span class="menu-title"> Child Category</span>
 											</a>
 										</div>
-										
-										
-										
+
+
+
 									</div>
 								</div>
 
-         
+
 
 
 
