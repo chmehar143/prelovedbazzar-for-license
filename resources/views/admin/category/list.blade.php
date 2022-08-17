@@ -60,7 +60,7 @@
                                                         <th class="min-w-125px" >#</th>
                                                         <th class="min-w-125px">Name </th>
                                                         <th class="min-w-125px">Slug</th>
-                                                        <th class="min-w-125px">Stauts</th>
+                                                        <th class="min-w-125px">Status</th>
                                                         <th class="min-w-125px">created date</th>
                                                         <th class="min-w-125px">updated date</th>
                                                         <th class="min-w-125px"> </th>
