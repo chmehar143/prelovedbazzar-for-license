@@ -33,7 +33,7 @@
 									<div class="card-toolbar">
 										<!--begin::Toolbar-->
 										<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-											<a type="button" class="btn btn-primary" href="{{url('vendor/Setting_Shipping_create')}}">Add  Shipping </a>
+											<a type="button" class="btn btn-primary" href="{{url('vendor/setting_shipping_create')}}">Add  Shipping </a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -112,13 +112,13 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{url('vendor/Setting_Shipping_view')}}"
+														<a href="{{url('vendor/setting_shipping_view')}}"
 															class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
 
 													<div class="menu-item px-3">
-														<a href="{{url('vendor/Setting_Shipping_edit')}}"
+														<a href="{{url('vendor/setting_shipping_edit')}}"
 															class="menu-link px-3">Edit</a>
 													</div>
 

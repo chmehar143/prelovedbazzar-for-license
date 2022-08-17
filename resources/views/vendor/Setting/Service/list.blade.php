@@ -39,7 +39,7 @@
 									
 											
 											<!--begin::Add customer-->
-											<a type="button" class="btn btn-primary" href="{{url('vendor/Setting_Service_create')}}">Add  Service </a>
+											<a type="button" class="btn btn-primary" href="{{url('vendor/setting_service_create')}}">Add  Service </a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -117,13 +117,13 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{url('vendor/Setting_Service_view')}}"
+														<a href="{{url('vendor/setting_service_view')}}"
 															class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
 
 													<div class="menu-item px-3">
-														<a href="{{url('vendor/Setting_Service_view')}}"
+														<a href="{{url('vendor/setting_service_edit')}}"
 															class="menu-link px-3">Edit</a>
 													</div>
 

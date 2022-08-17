@@ -16,7 +16,7 @@
             <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<i class="bi bi-house fs-2"></i>
 										</span>
@@ -26,7 +26,7 @@
 
                 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="{{url('vendor/product_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/order_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
                                         <i class="fas fa-hand-holding-usd"></i>
 										</span>
@@ -49,7 +49,7 @@
 
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="{{url('vendor/AffilateProduct_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/affilateproduct_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
                                         <i class="bi bi-cart-plus"></i>
 
@@ -58,17 +58,10 @@
                     </a>
                 </div>
 
-                <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="{{url('vendor/BulkProduct_home')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-                                        <i class="fas fa-upload"></i></span>
-										</span>
-                        <span class="menu-title">Bulk Product</span>
-                    </a>
-                </div>
+               
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="{{url('vendor/Withdraw_home')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('vendor/withdraw_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
                                         <i class="bi bi-wallet"></i>
 										</span>
@@ -92,7 +85,7 @@
 											</div>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/Setting_Service_list')}}">
+											<a class="menu-link" href="{{url('vendor/setting_service_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -100,7 +93,7 @@
 											</a>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/Setting_banner_list')}}">
+											<a class="menu-link" href="{{url('vendor/setting_banner_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -109,7 +102,7 @@
 										</div>
 
                                         <div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/Setting_Shipping_list')}}">
+											<a class="menu-link" href="{{url('vendor/setting_shipping_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -118,7 +111,7 @@
 										</div>
 
                                         <div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/Setting_packgings_list')}}">
+											<a class="menu-link" href="{{url('vendor/setting_packgings_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -127,7 +120,7 @@
 										</div>
 
                                         <div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/Setting_SocialMedia_list')}}">
+											<a class="menu-link" href="{{url('vendor/setting_socialmedia_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>

@@ -9,7 +9,7 @@
                                 <div class="card-header border-0">
                                   <!--begin::Card title-->
                                   <div class="card-title">
-                                    <h2 class="fw-bolder mb-0">View Withdraw</h2>
+                                    <h2 class="fw-bolder mb-0">View Service Details</h2>
                                   </div>
                                   <!--end::Card title-->
                                   <!--begin::Card toolbar-->

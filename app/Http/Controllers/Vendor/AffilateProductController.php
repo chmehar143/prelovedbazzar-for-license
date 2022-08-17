@@ -23,22 +23,22 @@ class AffilateProductController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        return view('vendor.AffilateProduct.list');
+        return view('vendor.affilateproduct.list');
     }
 
     public  function  create()
     {
-        return view('vendor.AffilateProduct.create');
+        return view('vendor.affilateproduct.create');
     }
 
     public  function  edit()
     {
-        return view('vendor.AffilateProduct.edit');
+        return view('vendor.affilateproduct.edit');
     }
 
     public  function  view()
     {
-        return view('vendor.AffilateProduct.view');
+        return view('vendor.affilateproduct.view');
     }
 
 

@@ -9,7 +9,7 @@ class BannerController extends Controller
 {
 
     public function create() {
-        return view('vendor.Setting.banner.list');
+        return view('vendor.setting.banner.list');
     }
 
 }

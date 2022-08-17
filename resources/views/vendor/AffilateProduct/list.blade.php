@@ -6,7 +6,7 @@
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
 							<!--begin::Card-->
-                         <h1>Products</h1>
+                         <h1> Affilate Products</h1>
 						 <p>Dashboard >Affilate Product > List </p>
 
 							<div class="card">
@@ -24,7 +24,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Products">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Affilate Products">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -39,7 +39,7 @@
 									
 											
 											<!--begin::Add customer-->
-											<a type="button" class="btn btn-primary" href="{{url('vendor/AffilateProduct_create')}}">Add  Affilate Product</a>
+											<a type="button" class="btn btn-primary" href="{{url('vendor/affilateproduct_create')}}">Add  Affilate Product</a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -119,13 +119,13 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{url('vendor/AffilateProduct_view')}}"
+														<a href="{{url('vendor/affilateproduct_view')}}"
 															class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
 
 													<div class="menu-item px-3">
-														<a href="{{url('vendor/AffilateProduct_view')}}"
+														<a href="{{url('vendor/affilateproduct_edit')}}"
 															class="menu-link px-3">Edit</a>
 													</div>
 

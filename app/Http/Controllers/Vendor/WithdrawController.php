@@ -8,19 +8,19 @@ use Illuminate\Http\Request;
 class WithdrawController extends Controller
 {
     public function index() {
-        return view('vendor.Withdraw.home');
+        return view('vendor.withdraw.list');
     }
 
     public function create() {
-        return view('vendor.Withdraw.create');
+        return view('vendor.withdraw.create');
     }
 
     public function edit() {
-        return view('vendor.Withdraw.edit');
+        return view('vendor.withdraw.edit');
     }
 
     public function view() {
-        return view('vendor.Withdraw.view');
+        return view('vendor.withdraw.view');
     }
 
 }
