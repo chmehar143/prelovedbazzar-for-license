@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Validator;
+use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
@@ -27,11 +29,12 @@ class CategoryController extends Controller
         return view('admin.Category.view');
     }
 
+    //*** POST Request
     public function store(Request $request)
     {
         //--- Validation Section
         $rules = [
-            'slug' => 'unique:categories|regex:/^[a-zA-Z0-9\s-]+$/'
+            'slug' => 'unique:categories|regex:/^[a-zA-Z0-9\s-]+$/',
         ];
         $customs = [
             'slug.unique' => 'This slug has already been taken.',
@@ -39,18 +42,14 @@ class CategoryController extends Controller
         ];
         $validator = Validator::make($request->all(), $rules, $customs);
 
-        if ($validator->fails()) {
-            return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
         }
         $data = new Category();
         $input = $request->all();
         $data->fill($input)->save();
-        //--- Logic Section Ends
-        cache()->forget('categories');
-        //--- Redirect Section
-        $msg = 'New Data Added Successfully.';
-        return response()->json($msg);
-        //--- Redirect Section Ends
+        return redirect()->route('admin.Category_list');
+
     }
 
 }

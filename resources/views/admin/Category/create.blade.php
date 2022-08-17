@@ -26,8 +26,7 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
-                                    @include('includes.admin.form-error')
-                                    <form id="kt_account_profile_details_form" action=""  method="POST" class="form">
+                                    <form  action="{{route('admin.category_store')}}"  method="POST" class="form">
                                     {{csrf_field()}}
                                         <!--begin::Card body-->
 										<div class="card-body border-top p-9">
@@ -44,7 +43,10 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+                                                            <input type="text" class=" @error('name') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" name="name" placeholder="{{ __('Enter Name') }}" required="" value="">
+                                                            @error('name')
+                                                            <div class="validation mt-1">{{ $message }}</div>
+                                                            @enderror
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -63,25 +65,14 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
+                                                    <input type="text" class=" @error('slug') is-invalid @enderror form-control form-control-lg form-control-solid" name="slug" placeholder="{{ __('Enter Slug') }}" required="" value="">
+                                                    @error('slug')
+                                                    <div class="validation mt-1">{{ $message }}</div>
+                                                    @enderror
 												</div>
 												<!--end::Col-->
 											</div>
 											<!--end::Input group-->
-
-
-
-											<!--begin::Input group-->
-											<div class="row mb-0">
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>
-
-												<div class="col-lg-8 d-flex align-items-center">
-													<div class="form-check form-check-solid form-switch fv-row">
-														<input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" checked="checked" />
-														<label class="form-check-label" for="allowmarketing"></label>
-													</div>
-												</div>
-											</div>
 										</div>
 										<!--end::Card body-->
 										<!--begin::Actions-->

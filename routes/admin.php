@@ -34,7 +34,7 @@ Route::get('/Category_list', 'CategoryController@index')->name('Category_list');
 Route::get('/Category_create', 'CategoryController@create')->name('Category_create');
 Route::get('/Category_edit', 'CategoryController@edit')->name('Category_edit');
 Route::get('/Category_view', 'CategoryController@view')->name('Category_view');
-Route::post('/category_save', 'CategoryController@view')->name('category_save');
+Route::post('/category_store', 'CategoryController@store')->name('category_store');
 
 // Sub Category
 Route::get('/SubCategory_list', 'SubCategoryController@index')->name('SubCategory_list');
