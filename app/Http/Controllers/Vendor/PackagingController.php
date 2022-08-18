@@ -8,18 +8,18 @@ use Illuminate\Http\Request;
 class PackagingController extends Controller
 {
     public function index() {
-        return view('vendor.Setting.packgings.list');
+        return view('vendor.setting.packgings.list');
     }
 
     public function create() {
-        return view('vendor.Setting.packgings.create');
+        return view('vendor.setting.packgings.create');
     }
 
     public function edit() {
-        return view('vendor.Setting.packgings.edit');
+        return view('vendor.setting.packgings.edit');
     }
 
     public function view() {
-        return view('vendor.Setting.packgings.view');
+        return view('vendor.setting.packgings.view');
     }
 }

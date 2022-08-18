@@ -46,7 +46,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Facebook " >
+															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Facebook " >
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -73,7 +73,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Google Plus">
+															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Google Plus">
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -100,7 +100,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Twitter ">
+															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Twitter ">
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -127,7 +127,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Linkedin ">
+															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Linkedin ">
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->

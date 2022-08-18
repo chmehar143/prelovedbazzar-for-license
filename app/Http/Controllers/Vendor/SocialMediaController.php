@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class SocialMediaController extends Controller
 {
     public function index() {
-        return view('vendor.Setting.SocialMedia.list');
+        return view('vendor.setting.socialmedia.list');
     }
 }

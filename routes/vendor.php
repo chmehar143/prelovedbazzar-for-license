@@ -39,45 +39,46 @@ Route::get('/product_view', 'ProductController@view')->name('product_view');
 
 
 // Affilated Product  Vendor
-Route::get('/AffilateProduct_list', 'AffilateProductController@index')->name('AffilateProduct_list');
-Route::get('/AffilateProduct_create', 'AffilateProductController@create')->name('AffilateProduct_create');
-Route::get('/AfffilateProduct_edit', 'AffilateProductController@edit')->name('AffilateProduct_edit');
-Route::get('/AffilateProduct_view', 'AffilateProductController@view')->name('AffilateProduct_view');
-
-// Bulk  Product  Vendor
-Route::get('/BulkProduct_home', 'BulkProductController@index')->name('BulkProduct_home');
-
-// Withdraw  Product  Vendor
-Route::get('/Withdraw_home', 'WithdrawController@index')->name('Withdraw_home');
-Route::get('/Withdraw_create', 'WithdrawController@create')->name('Withdraw_create');
-Route::get('/Withdraw_edit', 'WithdrawController@edit')->name('Withdraw_edit');
-Route::get('/Withdraw_view', 'WithdrawController@view')->name('Withdraw_view');
+Route::get('/affilateproduct_list', 'AffilateProductController@index')->name('affilateproduct_list');
+Route::get('affilateproduct_create', 'AffilateProductController@create')->name('affilateproduct_create');
+Route::get('/affilateproduct_edit', 'AffilateProductController@edit')->name('affilateproduct_edit');
+Route::get('/affilateproduct_view', 'AffilateProductController@view')->name('affilateproduct_view');
 
 
 // Withdraw  Product  Vendor
-Route::get('/Setting_Service_list', 'SettingServiceController@index')->name('Setting_Service_list');
-Route::get('/Setting_Service_create', 'SettingServiceController@create')->name('Setting_Service_create');
-Route::get('/Setting_Service_edit', 'SettingServiceController@edit')->name('Setting_Service_edit');
-Route::get('/Setting_Service_view', 'SettingServiceController@view')->name('Setting_Service_view');
+Route::get('/withdraw_list', 'WithdrawController@index')->name('withdraw_list');
+Route::get('/withdraw_create', 'WithdrawController@create')->name('withdraw_create');
+Route::get('/withdraw_edit', 'WithdrawController@edit')->name('withdraw_edit');
+Route::get('/withdraw_view', 'WithdrawController@view')->name('withdraw_view');
 
-Route::get('/Setting_banner_list', 'BannerController@create')->name('Setting_banner_list');
+
+// Service  
+Route::get('/setting_service_list', 'SettingServiceController@index')->name('setting_service_list');
+Route::get('/setting_service_create', 'SettingServiceController@create')->name('setting_service_create');
+Route::get('/setting_service_edit', 'SettingServiceController@edit')->name('setting_service_edit');
+Route::get('/setting_service_view', 'SettingServiceController@view')->name('setting_service_view');
+
+Route::get('/setting_banner_list', 'BannerController@create')->name('setting_banner_list');
 
 
 // Shipping  Product  Vendor
-Route::get('/Setting_Shipping_list', 'ShippingController@index')->name('Setting_Shipping_list');
-Route::get('/Setting_Shipping_create', 'ShippingController@create')->name('Setting_Shipping_create');
-Route::get('/Setting_Shipping_edit', 'ShippingController@edit')->name('Setting_Shipping_edit');
-Route::get('/Setting_Shipping_view', 'ShippingController@view')->name('Setting_Shipping_view');
+Route::get('/setting_shipping_list', 'ShippingController@index')->name('setting_shipping_list');
+Route::get('/setting_shipping_create', 'ShippingController@create')->name('setting_shipping_create');
+Route::get('/setting_shipping_edit', 'ShippingController@edit')->name('setting_shipping_edit');
+Route::get('/setting_shipping_view', 'ShippingController@view')->name('setting_shipping_view');
 
 
 // Packagings  Product  Vendor
-Route::get('/Setting_packgings_list', 'PackagingController@index')->name('Setting_packgings_list');
-Route::get('/Setting_packgings_create', 'PackagingController@create')->name('Setting_packgings_create');
-Route::get('/Setting_packgings_edit', 'PackagingController@edit')->name('Setting_packgings_edit');
-Route::get('/Setting_packgings_view', 'PackagingController@view')->name('Setting_packgings_view');
+Route::get('/setting_packgings_list', 'PackagingController@index')->name('setting_packgings_list');
+Route::get('/setting_packgings_create', 'PackagingController@create')->name('setting_packgings_create');
+Route::get('/setting_packgings_edit', 'PackagingController@edit')->name('setting_packgings_edit');
+Route::get('/setting_packgings_view', 'PackagingController@view')->name('setting_packgings_view');
 
 
-Route::get('/Setting_SocialMedia_list', 'SocialMediaController@index')->name('Setting_SocialMedia_list');
+Route::get('/setting_socialmedia_list', 'SocialMediaController@index')->name('setting_socialmedia_list');
+
+Route::get('/order_list', 'OrderController@index')->name('order_list');
+
 
 
 
