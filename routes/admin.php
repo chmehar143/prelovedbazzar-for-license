@@ -55,5 +55,30 @@ Route::get('/child_category_delete/{id}', 'ChildCategoryController@destroy')->na
 Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
 
+// All  Products
+Route::get('/allproducts_list', 'AllProductController@index')->name('allproducts_list');
+Route::get('/allproducts_create', 'AllProductController@create')->name('allproducts_create');
+Route::get('/allproducts_edit', 'AllProductController@edit')->name('allproducts_edit');
+Route::get('/allproducts_view', 'AllProductController@view')->name('allproducts_view');
+
+// productcatalog
+
+Route::get('/productcatalog_list', 'ProductCatalogsController@index')->name('productcatalog_list');
+Route::get('/productcatalog_create', 'ProductCatalogsController@create')->name('productcatalog_create');
+Route::get('/productcatalog_edit', 'ProductCatalogsController@edit')->name('productcatalog_edit');
+Route::get('/productcatalog_view', 'ProductCatalogsController@view')->name('productcatalog_view');
+
+
+Route::get('/deactivateproduct_list', 'DeactivedProductController@index')->name('deactivateproduct_list');
+
+
+// Affilate product
+
+Route::get('/affilateproduct_list', 'AffilateController@index')->name('affilateproduct_list');
+Route::get('/affilateproduct_create', 'AffilateController@create')->name('affilateproduct_create');
+Route::get('/affilateproduct_edit', 'AffilateController@edit')->name('affilateproduct_edit');
+Route::get('/affilateproduct_view', 'AffilateController@view')->name('affilateproduct_view');
+
+
 
 
