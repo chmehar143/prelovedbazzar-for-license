@@ -27,7 +27,7 @@
                 <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
 									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-cart"></i>
+											<i class="fas fa-sitemap"></i>
 										</span>
 										<span class="menu-title">Manage Categories</span>
 									</span>
@@ -69,14 +69,59 @@
 
 
 
+                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="bi bi-cart"></i>
+										</span>
+										<span class="menu-title"> Products</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Products</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/allproducts_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> All Products</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/deactivateproduct_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Deactived Products</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productcatalog_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Products Catelog</span>
+											</a>
+										</div>
+
+
+
+									</div>
+								</div>
+
+
+
 
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{url('admin/affilateproduct_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="bi bi-newspaper"></i>
+											<i class="bi bi-cart"></i>
 										</span>
-                        <span class="menu-title">News</span>
+                        <span class="menu-title">Affilate Products</span>
                     </a>
                 </div>
 
