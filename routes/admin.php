@@ -81,4 +81,25 @@ Route::get('/affilateproduct_view', 'AffilateController@view')->name('affilatepr
 
 
 
+// Vendor  product
+
+Route::get('vendors_list', 'VendorsController@index')->name('vendors_list');
+Route::get('/vendors_edit', 'VendorsController@edit')->name('vendors_edit');
+Route::get('/vendors_view', 'VendorsController@view')->name('vendors_view');
+Route::get('/vendors_question', 'VendorsController@question')->name('vendors_question');
+Route::get('/vendors_withdraw', 'VendorsController@list')->name('vendors_withdraw');
+
+
+// Vendor  product
+
+Route::get('vendorverification_list', 'VendorVerificationController@index')->name('vendorverification_list');
+Route::get('/vendorverification_pending', 'VendorVerificationController@pending')->name('vendorverification_pending');
+
+
+
+
+
+
+
+
 

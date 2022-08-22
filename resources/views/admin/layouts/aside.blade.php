@@ -114,6 +114,9 @@
 
 
 
+							
+
+
 
 
                 <div class="menu-item py-2">
@@ -124,6 +127,82 @@
                         <span class="menu-title">Affilate Products</span>
                     </a>
                 </div>
+
+
+				<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="bi bi-cart"></i>
+										</span>
+										<span class="menu-title"> Vendors</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendors</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendors_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Vendors List</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendors_withdraw')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Vendors Withdraw</span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="bi bi-check"></i>
+										</span>
+										<span class="menu-title"> Vendors verification</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendors verification</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendorverification_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> All Verification </span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendorverification_pending')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Pending Verification </span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+
+
 
                 <div class="menu-item py-2">
                     <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">

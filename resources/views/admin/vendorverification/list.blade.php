@@ -7,8 +7,8 @@
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
 							<!--begin::Card-->
-                         <h1> Deactived Producuts</h1>
-						 <p>Dashboard >All Deactived Producuts > List </p>
+                         <h1> Vendor Verifications</h1>
+						 <p>Dashboard >Vendor Verifications> List </p>
 
 							<div class="card">
 								<!--begin::Card header-->
@@ -25,7 +25,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Product">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Verification">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -72,17 +72,16 @@
 														value="1" />
 												</div>
 											</th>
-											<th class="min-w-125px"> Name </th>
+											<th class="min-w-125px"> Vendor Name	 </th>
 
-											<th class="min-w-125px">Type </th>
-											<th class="min-w-125px"> Stock </th>
+											<th class="min-w-125px">Vendor Email	 </th>
+											<th class="min-w-125px"> Descriptions </th>
 
-											<th class="min-w-125px"> Price </th>
 
 											<th class="min-w-125px">Status </th>
 
 
-											<th class="min-w-125px" style="display:none">Status </th>
+											
 
 										</tr>
 										<!--end::Table row-->
@@ -104,7 +103,8 @@
 											<td>Physical Product Title Title will Be Here 99u</td>
 											<td>Physical</td>
 											<td>Unlimited	</td>
-											<td>$1000</td>
+                                            <td style="display:none">$1000</td>
+
 
 											<td> <div class="btn-group middle">
                                             <button id="status" type="button" class="btn btn-success">
@@ -176,5 +176,5 @@
 						</div>
 						<!--end::Container-->
 					</div>
-                    <
+
                     @endsection
