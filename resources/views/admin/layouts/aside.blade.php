@@ -203,8 +203,102 @@
 
 
 
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class=" bi bi-person-lines-fill"></i>
+										</span>
+										<span class="menu-title"> Cusomters </span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">   Customer</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/customer_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Customer list </span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/customer_withdraw')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Withdraw </span>
+											</a>
+										</div>
 
-                <div class="menu-item py-2">
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/customer_transaction')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Transactions </span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class=" bi bi-person-lines-fill"></i>
+										</span>
+										<span class="menu-title"> Product Discussion </span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1"> Product  Discussion</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productdisscussion_review')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Reviews </span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productdisscussion_comments')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Comments </span>
+											</a>
+										</div>
+
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productdisscussion_report')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Reports </span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+
+								
+
+
+                <!-- <div class="menu-item py-2">
                     <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<i class="bi bi-patch-question"></i>
@@ -265,16 +359,16 @@
 										</span>
                                 <span class="menu-title">Marketplace</span>
                             </a>
-                        </div>
+                        </div> -->
 
-                        <div class="menu-item py-2">
+                        <!-- <div class="menu-item py-2">
                             <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<i class="bi bi-newspaper"></i>
 										</span>
                                 <span class="menu-title">page sitting</span>
                             </a>
-                        </div>
+                        </div> -->
 
             </div>
             <!--end::Menu-->

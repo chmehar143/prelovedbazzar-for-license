@@ -97,6 +97,35 @@ Route::get('/vendorverification_pending', 'VendorVerificationController@pending'
 
 
 
+//Cusomters
+
+Route::get('customer_list', 'CustomersController@index')->name('customer_list');
+Route::get('/customer_deposit', 'CustomersController@deposit')->name('customer_deposit');
+Route::get('/customer_withdraw', 'CustomersController@withdraw')->name('customer_withdraw');
+Route::get('/customer_transaction', 'CustomersController@transactions')->name('customer_transaction');
+Route::get('/customer_viewdetails', 'CustomersController@view')->name('customer_viewdetails');
+Route::get('/customer_edit', 'CustomersController@edit')->name('customer_edit');
+Route::get('/customer_details', 'CustomersController@details')->name('customer_details');
+Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_invoice');
+
+
+
+
+
+//Cusomters
+
+Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
+Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
+Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
+Route::get('/productdisscussion_reviewview', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+
+
+
+
+
+
+
+
 
 
 

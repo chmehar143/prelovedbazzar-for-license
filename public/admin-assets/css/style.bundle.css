@@ -55655,9 +55655,14 @@ body {
     padding: 0
 }
 
+.menu-item {
+    display: block;
+    padding: 0.15rem 0;
+}
+
 @media (min-width:992px) {
     .aside {
-        width: 140px
+        width: auto
     }
 
     .aside .aside-logo {
@@ -55773,7 +55778,7 @@ body {
 }
 
 .aside-menu .menu>.menu-item>.menu-link {
-    width: 74px;
+    width: auto;
     height: 74px;
     margin: 0 auto;
     flex-direction: column;
@@ -55792,7 +55797,7 @@ body {
 }
 
 .aside-menu .menu>.menu-item>.menu-link .menu-title {
-    flex-grow: 0
+    /* flex-grow: 0 */
 }
 
 .aside-menu .menu>.menu-item>.menu-link {
