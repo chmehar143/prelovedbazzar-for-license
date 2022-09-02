@@ -31,6 +31,8 @@
     margin-bottom: 1rem;
     color: #212529;
 }
+
+
 .h4, h4 {
     font-size: 22px !important;
 }
@@ -98,8 +100,8 @@
                         <div class="mr-breadcrumb">
                             <div class="row">
                                 <div class="col-lg-12">
-                                <h1> Details List</h1>
-                                <p>Dashboard &gt;Details &gt; List </p>
+                                <h1> Completed Order Details List</h1>
+                                <p>Dashboard &gt;Completed Order Details &gt; List </p>
                                 </div>
                             </div>
                         </div>
@@ -176,14 +178,14 @@
 
                                                     <tr><th width="45%">Payment Status</th>
                                                     <th width="10%">:</th>
-                                                    <td width="45%"><span class="badge badge-danger">Unpaid</span></td>
+                                                    <td width="45%"><span class="badge badge-success">paid</span></td>
 
                                                 
                                                 </tr></tbody>
                                             </table>
                                         </div>
                                         <div class="footer-area">
-                                            <a href="{{url('admin/customer_invoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
+                                            <a href="{{url('admin/order_complete_completeorderinvoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
                                         </div>
                                     </div>
                                 </div>
@@ -332,7 +334,7 @@
                                             </td>
                                             <td>
                                                                                                 
-                                                                                                                                                                    <span class="badge badge-warning">Pending</span>
+                                                                                                                                                                    <span class="badge badge-success">paid</span>
                                                                                                             
                                                                                         </td>
 

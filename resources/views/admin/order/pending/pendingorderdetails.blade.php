@@ -31,6 +31,8 @@
     margin-bottom: 1rem;
     color: #212529;
 }
+
+
 .h4, h4 {
     font-size: 22px !important;
 }
@@ -98,8 +100,8 @@
                         <div class="mr-breadcrumb">
                             <div class="row">
                                 <div class="col-lg-12">
-                                <h1> Details List</h1>
-                                <p>Dashboard &gt;Details &gt; List </p>
+                                <h1> Pending Order Details List</h1>
+                                <p>Dashboard &gt;Pending Order Details &gt; List </p>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +185,7 @@
                                             </table>
                                         </div>
                                         <div class="footer-area">
-                                            <a href="{{url('admin/customer_invoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
+                                            <a href="{{url('admin/order_pending_pendingorderinvoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
                                         </div>
                                     </div>
                                 </div>

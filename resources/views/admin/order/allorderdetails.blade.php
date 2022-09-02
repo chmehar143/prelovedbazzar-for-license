@@ -31,6 +31,8 @@
     margin-bottom: 1rem;
     color: #212529;
 }
+
+
 .h4, h4 {
     font-size: 22px !important;
 }
@@ -183,7 +185,7 @@
                                             </table>
                                         </div>
                                         <div class="footer-area">
-                                            <a href="{{url('admin/customer_invoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
+                                            <a href="{{url('admin/order_allorderinvoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
                                         </div>
                                     </div>
                                 </div>

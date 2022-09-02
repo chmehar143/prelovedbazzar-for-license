@@ -24,43 +24,68 @@
                     </a>
                 </div>
 
-                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+
+				<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
 									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class="fas fa-sitemap"></i>
+											<i class=" fas fa-hand-holding-usd"></i>
 										</span>
-										<span class="menu-title">Manage Categories</span>
+										<span class="menu-title"> Orders </span>
 									</span>
 									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
 										<div class="menu-item">
 											<div class="menu-content">
-												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Products</span>
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1"> Orders</span>
 											</div>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/category_list')}}">
+											<a class="menu-link" href="{{url('admin/order_allorder')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title"> Main Category</span>
+												<span class="menu-title"> All Orders </span>
 											</a>
 										</div>
+
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/sub_category_list')}}">
+											<a class="menu-link" href="{{url('admin/order_complete_completedorder')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">  Sub Category</span>
+												<span class="menu-title">  Completed Orders </span>
 											</a>
 										</div>
+
+
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/child_category_list')}}">
+											<a class="menu-link" href="{{url('admin/order_pending_pendingorder')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title"> Child Category</span>
+												<span class="menu-title">  Pending Orders </span>
 											</a>
 										</div>
+
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/order_processing_processingorder')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Processing Orders </span>
+											</a>
+										</div>
+
+
+									
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/order_decline_declinedorder')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Declined Orders </span>
+											</a>
+										</div>
+										
 
 
 
@@ -68,8 +93,7 @@
 								</div>
 
 
-
-                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
 									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<i class="bi bi-cart"></i>
@@ -113,13 +137,8 @@
 								</div>
 
 
-
-							
-
-
-
-
-                <div class="menu-item py-2">
+								
+								<div class="menu-item py-2">
                     <a class="menu-link  menu-center" href="{{url('admin/affilateproduct_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<i class="bi bi-cart"></i>
@@ -128,6 +147,55 @@
                     </a>
                 </div>
 
+							
+				
+				<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class=" bi bi-person-lines-fill"></i>
+										</span>
+										<span class="menu-title"> Cusomters </span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">   Customer</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/customer_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Customer list </span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/customer_withdraw')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Withdraw </span>
+											</a>
+										</div>
+
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/customer_transaction')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Transactions </span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+
+								
 
 				<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
 									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
@@ -203,50 +271,98 @@
 
 
 
-								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+
+
+                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
 									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
-											<i class=" bi bi-person-lines-fill"></i>
+											<i class="fas fa-sitemap"></i>
 										</span>
-										<span class="menu-title"> Cusomters </span>
+										<span class="menu-title">Manage Categories</span>
 									</span>
 									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
 										<div class="menu-item">
 											<div class="menu-content">
-												<span class="menu-section fs-5 fw-bolder ps-1 py-1">   Customer</span>
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Products</span>
 											</div>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/customer_list')}}">
+											<a class="menu-link" href="{{url('admin/category_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title"> Customer list </span>
+												<span class="menu-title"> Main Category</span>
 											</a>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/customer_withdraw')}}">
+											<a class="menu-link" href="{{url('admin/sub_category_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">  Withdraw </span>
+												<span class="menu-title">  Sub Category</span>
 											</a>
 										</div>
-
 										<div class="menu-item">
-											<a class="menu-link" href="{{url('admin/customer_transaction')}}">
+											<a class="menu-link" href="{{url('admin/child_category_list')}}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">  Transactions </span>
+												<span class="menu-title"> Child Category</span>
 											</a>
 										</div>
-										
 
 
 
 									</div>
 								</div>
+
+
+
+
+
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="fas fa-sitemap"></i>
+										</span>
+										<span class="menu-title">Blog</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Blog</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/blog_categorieslist')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Categories</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/sub_category_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Post </span>
+											</a>
+										</div>
+									
+
+
+									</div>
+								</div>
+
+
+
+           
+
+
+
+
+								
 
 
 								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
