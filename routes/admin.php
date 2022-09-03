@@ -58,8 +58,14 @@ Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_
 // All  Products
 Route::get('/allproducts_list', 'AllProductController@index')->name('allproducts_list');
 Route::get('/allproducts_create', 'AllProductController@create')->name('allproducts_create');
-Route::get('/allproducts_edit', 'AllProductController@edit')->name('allproducts_edit');
-Route::get('/allproducts_view', 'AllProductController@view')->name('allproducts_view');
+Route::post('/allproducts_store', 'AllProductController@store')->name('allproducts_store');
+Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat'); 
+Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildCat');
+Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
+Route::put('/allproducts_update', 'AllProductController@update')->name('allproducts_update');
+Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
+Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
+
 
 // productcatalog
 
