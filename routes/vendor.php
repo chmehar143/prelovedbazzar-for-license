@@ -34,8 +34,13 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Product Vendor
 Route::get('/product_list', 'ProductController@index')->name('product_list');
 Route::get('/product_create', 'ProductController@create')->name('product_create');
-Route::get('/product_edit', 'ProductController@edit')->name('product_edit');
-Route::get('/product_view', 'ProductController@view')->name('product_view');
+Route::post('/GetSubCat', 'ProductController@GetSubCat')->name('GetSubCat'); 
+Route::post('/GetChildCat', 'ProductController@GetChildCat')->name('GetChildCat');  
+Route::post('/product_store', 'ProductController@store')->name('product_add');
+Route::get('/product_edit/{id}', 'ProductController@edit')->name('product_edit');
+Route::put('/product_up/{id}', 'ProductController@update')->name('product_up');
+Route::get('/product_view/{id}', 'ProductController@view')->name('product_view');
+Route::get('/product_del/{id}', 'ProductController@destroy')->name('product_del');
 
 
 // Affilated Product  Vendor
