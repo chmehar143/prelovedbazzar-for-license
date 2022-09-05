@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href="">
-    <title>NFT</title>
+    <title>Admin Preloved Bazar</title>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/favicon.ico')}}" />
     <!--begin::Fonts-->
@@ -14,13 +14,13 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{asset('admin-assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('admin-assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <style>
+    <!-- <style>
         @media (min-width: 992px){
 .aside {
     width: 163px;
 }
         }
-        </style>
+        </style> -->
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -52,5 +52,36 @@
     <script src="{{ asset('admin-assets/js/custom/apps/customers/list/export.js')}}"></script>
     <script src="{{ asset('admin-assets/js/custom/apps/customers/list/list.js')}}"></script>
     <script src="{{ asset('/js/custom/apps/customers/add.js')}}"></script>
+    <script>  
+ 
+ $('#dropdown a').click(function () {      
+   var val = parseInt($(this).attr("value"));
+   if (val == 1) {
+    debugger;     
+
+     $('#status').removeClass();
+     $('#status').addClass("btn btn-success");
+     $('#status').text ("Verified");
+     $('#bar').removeClass("btn-success btn-warning btn-danger");
+     $('#bar').addClass("btn-success");
+   } else if (val == 2) {
+     $('#status').removeClass();
+     $('#status').addClass("btn btn-danger");
+     $('#status').text ("Unverified");
+     $('#bar').removeClass("btn-success btn-warning btn-danger");
+     $('#bar').addClass("btn-danger");
+   }else if (val == 3) {
+     $('#status').removeClass();
+     $('#status').addClass("btn btn-warning");
+     $('#status').text ("Pending");
+     $('#bar').removeClass("btn-success btn-warning btn-danger");
+     $('#bar').addClass("btn-warning");
+   }
+ });
+
+
+
+ 
+ </script>
 </body>
 </html>

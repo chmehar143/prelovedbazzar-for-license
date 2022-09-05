@@ -1,14 +1,13 @@
 @extends('admin.layouts.app')
 
 @section('content')
-
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
 							<!--begin::Card-->
-                         <h1> Deactived Producuts</h1>
-						 <p>Dashboard >All Deactived Producuts > List </p>
+                         <h1> Product Comment List</h1>
+						 <p>Dashboard > Product Comment > List </p>
 
 							<div class="card">
 								<!--begin::Card header-->
@@ -25,7 +24,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Product">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Products">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -38,9 +37,8 @@
 										
 											<!--begin::Menu 1-->
 									
-											
+
 											<!--begin::Add customer-->
-											<!-- <a type="button" class="btn btn-primary" href="{{url('admin/allproducts_create')}}">Add   Product</a> -->
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -72,17 +70,19 @@
 														value="1" />
 												</div>
 											</th>
-											<th class="min-w-125px"> Name </th>
+											<th class="min-w-125px"> Product </th>
 
-											<th class="min-w-125px">Type </th>
-											<th class="min-w-125px"> Stock </th>
+											<th class="min-w-125px">Commenter		</th>
+											<th class="min-w-125px"> Comment </th>
 
-											<th class="min-w-125px"> Price </th>
+											<th class="min-w-125px" style="display:none"> </th>
+											<td style="display:none">	</td>
 
-											<th class="min-w-125px">Status </th>
+											<td style="display:none">	</td>
 
 
-											<th class="min-w-125px" style="display:none">Status </th>
+
+
 
 										</tr>
 										<!--end::Table row-->
@@ -90,6 +90,8 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
+
+									
 
 										<tr>
 											<!--begin::Checkbox-->
@@ -100,37 +102,19 @@
 												</div>
 											</td>
 											<!--end::Checkbox-->
+											
                                             
-											<td>Physical Product Title Title will Be Here 99u</td>
-											<td>Physical</td>
-											<td>Unlimited	</td>
-											<td>$1000</td>
+                                                        <td>Product 1	</td>
+                                                        <td>User</td>
+										
+										            
+														  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eveniet veniam nesciunt et nulla minus deleniti at, quia nostrum, aspernatur non laudantium assumenda earum nobis soluta quis, voluptatibus quasi dolore?</td>
+										
+														<td style="display:none">	</td>
+														<td style="display:none">	</td>
 
-											<td> <div class="btn-group middle">
-                                            <button id="status" type="button" class="btn btn-success">
-                                                Verified
-                                            </button>
-                                            <button
-                                                id="bar"
-                                                type="button"
-                                                class="btn btn-success dropdown-toggle dropdown-toggle-split"
-                                                data-bs-toggle="dropdown"
-                                                aria-expanded="false"
-                                            >
-                                                <i class="mdi mdi-chevron-down"></i>
-                                            </button>
-                                            <div id="dropdown" class="dropdown-menu">
-                                                <a value="1" class="dropdown-item" href="#">
-                                                Verified
-                                                </a>
-                                                <a value="2" class="dropdown-item" href="#">
-                                                Unverified
-                                                </a>
-                                               
-                                            </div>
-                                            </div>
-                                             </td>
- 
+                                             
+
 											<!--end::Date=-->
 											<!--begin::Action=-->
 											<td class="text-end">
@@ -151,7 +135,11 @@
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
 													data-kt-menu="true">
 													<!--begin::Menu item-->
-									
+													
+													<!--end::Menu item-->
+
+
+													
 
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
@@ -176,5 +164,8 @@
 						</div>
 						<!--end::Container-->
 					</div>
-                    <
+
+
+
+
                     @endsection
