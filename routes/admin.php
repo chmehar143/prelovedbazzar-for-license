@@ -164,6 +164,26 @@ Route::get('/blog_categorieslist', 'BlogController@index')->name('blog_categorie
 Route::get('blog_addcategories', 'BlogController@create')->name('blog_addcategories');
 Route::get('blog_editcategories', 'BlogController@edit')->name('blog_editcategories');
 
+Route::get('blog_postlist', 'BlogController@post')->name('blog_postlist');
+Route::get('blog_addpost', 'BlogController@postcreate')->name('blog_addpost');
+Route::get('blog_editpost', 'BlogController@postedit')->name('blog_editpost');
+
+//Message
+
+Route::get('message_messagelist', 'MessageController@message')->name('message_messagelist');
+Route::get('message_messagelist_view', 'MessageController@messageview')->name('message_messagelist_view');
+Route::get('message_view', 'MessageController@view')->name('message_view');
+Route::get('message_details', 'MessageController@details')->name('message_details');
+Route::get('message_invoice', 'MessageController@invoice')->name('message_invoice');
+
+
+
+
+
+
+
+
+
 
 
 
