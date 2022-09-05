@@ -1,6 +1,7 @@
 @extends('vendor.layouts.app')
 
 @section('content')
+
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
 						<!--begin::Container-->
@@ -95,8 +96,8 @@
 										<!--begin::Table body-->
 										<tbody class="fw-bold text-gray-600">
 
-											
-										<tr class="odd">
+											@foreach($products as $product)
+											<tr class="odd" id="nft_row_{{$product->id}}">
 												<!--begin::Checkbox-->
 												<td>
 													<div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -104,16 +105,16 @@
 													</div>
 												</td>
 												<!--end::Checkbox-->
-                                                <td><img src="#"></td>
+                                                <td><img src="{{ asset('vendor/uploads/products/'.$product->p_image)}}" width="50px"></td>
 												<td>
-													abc 
+													{{$product->p_name}}
 												</td>
-												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">e com</a>	</td>
+												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $type[$product->p_type] }}</a>	</td>
 										
-												<td>1000</td>
+												<td>${{$product->p_new_price}}</td>
 												
                                                 <td data-order="Invalid date">
-                                                    <span class="badge badge-light-success">Approved</span>
+                                                    <span class="badge badge-light-success">{{ $status[$product->status] }}</span>
                                                 </td>
 
 												<!--end::Date=-->
@@ -131,25 +132,28 @@
 													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 														<!--begin::Menu item-->
 														<div class="menu-item px-3">
-															<a href="{{url('vendor/product_view')}}"" class="menu-link px-3">View</a>
+															<a href="{{url('/vendor/product_view/'.$product->id)}}" class="menu-link px-3">View</a>
 														</div>
 														<!--end::Menu item-->
 
 														<div class="menu-item px-3">
-															<a href="{{url('vendor/product_edit')}}"" class="menu-link px-3">Edit</a>
+															<a href="{{url('vendor/product_edit/'.$product->id)}}" class="menu-link px-3">Edit</a>
 														</div>
 
 														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
+														<div class="menu-item px-3" id="{{$product->id}}">
+															<a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="deleteProduct({{$product->id}})">Delete</a>
 														</div>
 														<!--end::Menu item-->
 													</div>
 													<!--end::Menu-->
 												</td>
 												<!--end::Action=-->
-											</tr></tbody>
-										<!--end::Table body-->
+											</tr>
+											@endforeach	
+										</tbody>
+										
+											<!--end::Table body-->
 									</table></div>
                                     <div class="row">
                                         <div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
@@ -166,6 +170,32 @@
 						</div>
 						<!--end::Container-->
 					</div>
-
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+      function deleteProduct(id) {
+          Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  $.ajax({
+                      url: "{{url('/vendor/product_del')}}"+ '/' + id,
+                      success: function(data) {
+                          $("#nft_row_" +id).remove();
+                          Swal.fire(
+                              'Deleted!',
+                              'Product has been deleted.',
+                              'success'
+                          )
+                      }
+                  });
+              }
+          })
+      }
+  </script>
                     @endsection

@@ -40,10 +40,10 @@ class OrderController extends Controller
     public  function  completedorder()
     {
         return view('admin.order.complete.completedorder');
-    } 
+    }
 
 
-    
+
     public  function  completeorderdetails()
     {
         return view('admin.order.complete.completeorderdetails');
@@ -87,7 +87,7 @@ class OrderController extends Controller
 
 
 //pending orrder
- 
+
     public  function  pendingorder()
     {
         return view('admin.order.pending.pendingorder');
@@ -103,7 +103,7 @@ class OrderController extends Controller
         return view('admin.order.pending.pendingorderinvoice');
     }
 
-  
+
 
     public  function  pendingorderdelivery()
     {

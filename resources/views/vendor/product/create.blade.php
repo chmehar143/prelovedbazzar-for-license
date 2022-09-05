@@ -27,7 +27,8 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
-									<form id="kt_account_profile_details_form" class="form">
+									<form id="kt_account_profile_details_form" action="{{ url('/vendor/product_store')}}" class="form" method="post" enctype="multipart/form-data">
+										@csrf
 										<!--begin::Card body-->
 										<div class="card-body border-top p-9">
 											<!--begin::Input group-->
@@ -72,7 +73,28 @@
 											</div>
 											<!--end::Input group-->
 										
-											
+											<!--begin::Input group-->
+											<div class="row mb-6">
+												<!--begin::Label-->
+													<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Type</label>
+												<!--end::Label-->
+												<!--begin::Col-->
+												<div class="col-lg-8 fv-row">
+													<!--begin::Input-->
+													<select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg">
+														<option value="">Product Type</option>
+														<option data-kt-flag="flags/indonesia.svg" value="0" selected>Physical</option>
+														<option data-kt-flag="flags/indonesia.svg" value="1">Digital</option>
+														<option data-kt-flag="flags/indonesia.svg" value="2">License</option>
+													</select>
+													<!--end::Input-->
+													<!--begin::Hint-->
+													<!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
+													<!--end::Hint-->
+												</div>
+												<!--end::Col-->
+											</div>
+											<!--end::Input group-->
 											<!--begin::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
@@ -84,7 +106,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -103,7 +125,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
+													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -118,12 +140,12 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0">
+															<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0">
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0">
+															<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0">
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 													</div>
@@ -137,7 +159,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
+													<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -148,7 +170,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-2 fv-row">
-													<input type="color" name="company" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
+													<input type="color" name="p_color" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value="" />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -162,9 +184,11 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select name="country" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold">
+													<select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold">
 														<option value="">Category...</option>
-														<option data-kt-flag="flags/afghanistan.svg" value="AF">Mens'cloth</option>
+														@foreach($categories as $category)
+														<option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}">{{$category->name}}</option>
+														@endforeach
 												
 														<option data-kt-flag="flags/venezuela.svg" value="VE">Womencloth</option>
 													
@@ -179,12 +203,11 @@
 												<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
 												<!--end::Label-->
 												<!--begin::Col-->
+													<livewire:product /> 
 												<div class="col-lg-8 fv-row">
 													<!--begin::Input-->
-													<select name="language" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
 														<option value="">Select a Sub Category...</option>
-														<option data-kt-flag="flags/indonesia.svg" value="id">men</option>
-
 													</select>
 													<!--end::Input-->
 													<!--begin::Hint-->
@@ -202,10 +225,8 @@
 													<!--begin::Col-->
 													<div class="col-lg-8 fv-row">
 														<!--begin::Input-->
-														<select name="language" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
+														<select id="childcat" name="p_child_catog" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
 															<option value="">Select a Child Category...</option>
-															<option data-kt-flag="flags/indonesia.svg" value="id">men</option>
-	
 														</select>
 														<!--end::Input-->
 														<!--begin::Hint-->
@@ -221,7 +242,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="20" />
+												<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="20" />
 											</div>
 											<!--end::Col-->
 										</div>
@@ -234,7 +255,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="130" />
+												<input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="130" />
 											</div>
 											<!--end::Col-->
 										</div>
@@ -244,7 +265,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="3" />
+												<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="3" />
 											</div>
 											<!--end::Col-->
 										</div>
@@ -255,7 +276,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<textarea name="content" id="editor">
+												<textarea name="p_detail" id="editor">
 													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>
 																						</div>
@@ -268,10 +289,10 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<textarea name="content" id="editornew">
+												<textarea name="p_r_policy" id="editornew">
 													&lt;p&gt;This is some sample content.&lt;/p&gt;
-												</textarea>
-																						</div>
+												</textarea>																						
+											</div>
 											<!--end::Col-->
 										</div>
 										
@@ -287,19 +308,19 @@
 													<div class="d-flex align-items-center mt-3">
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid me-5">
-															<input class="form-check-input" name="communication[]" type="checkbox" value="1" />
+															<input class="form-check-input" name="small" type="checkbox" value="1" checked/>
 															<span class="fw-bold ps-2 fs-6">Small</span>
 														</label>
 														<!--end::Option-->
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid">
-															<input class="form-check-input" name="communication[]" type="checkbox" value="2" />
+															<input class="form-check-input" name="medium" type="checkbox" value="1" checked/>
 															<span class="fw-bold ps-2 fs-6">Medium</span>
 														</label>
 
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid">
-															<input class="form-check-input" name="communication[]" type="checkbox" value="2" />
+															<input class="form-check-input" name="large" type="checkbox" value="1" checked/>
 															<span class="fw-bold ps-2 fs-6">Large</span>
 														</label>
 														<!--end::Option-->
@@ -343,19 +364,52 @@
 
 
 
-                    <script>
+        <script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.catch( error => {
 					console.error( error );
 				} );
 		</script>
-			<script>
+		<script>
 				ClassicEditor
 					.create( document.querySelector( '#editornew' ) )
 					.catch( error => {
 						console.error( error );
 					} );
-			</script>
-	
-                    @endsection
+		</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#category').change(function(){
+				let cid=$(this).val();
+				$('#childcat').html('<option value="">Select City</option>')
+				$.ajax({
+					url:"{{url('/vendor/GetSubCat')}}",
+					type:'post',
+					data:'cid='+cid+'&_token={{csrf_token()}}',
+					success:function(result){
+						$('#subcat').html(result)
+					}
+				});
+			});
+
+			$('#subcat').change(function(){
+				let sid=$(this).val();
+				$.ajax({
+					url:"{{url('/vendor/GetChildCat')}}",
+					type:'post',
+					data:'sid='+sid+'&_token={{csrf_token()}}',
+					success:function(result){
+						$('#childcat').html(result)
+					}
+				});
+			});
+
+		});
+	</script>	
+
+
+@endsection
+
+
