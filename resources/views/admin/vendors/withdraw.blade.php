@@ -6,8 +6,8 @@
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
 							<!--begin::Card-->
-                         <h1> Withdraws</h1>
-						 <p>Dashboard >Vendors  > Withdraws </p>
+                         <h1> Vendor Withdraws</h1>
+						 <p>Dashboard > Admin > Vendors Withdraws </p>
 
 							<div class="card">
 								<!--begin::Card header-->
@@ -24,7 +24,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Withdraws">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search vendor Withdraws">
 										</div>
 										<!--end::Search-->
 									</div>
