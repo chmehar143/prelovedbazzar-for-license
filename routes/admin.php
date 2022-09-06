@@ -82,8 +82,11 @@ Route::get('/deactivateproduct_list', 'DeactivedProductController@index')->name(
 
 Route::get('/affilateproduct_list', 'AffilateController@index')->name('affilateproduct_list');
 Route::get('/affilateproduct_create', 'AffilateController@create')->name('affilateproduct_create');
-Route::get('/affilateproduct_edit', 'AffilateController@edit')->name('affilateproduct_edit');
-Route::get('/affilateproduct_view', 'AffilateController@view')->name('affilateproduct_view');
+Route::post('/affilateproduct_store', 'AffilateController@store')->name('affilateproduct_store');
+Route::get('/affilateproduct_edit/{id}', 'AffilateController@edit')->name('affilateproduct_edit');
+Route::put('/affilateproduct_update/{id}', 'AffilateController@update')->name('affilateproduct_update');
+Route::get('/affilateproduct_delete/{id}', 'AffilateController@destroy')->name('affilateproduct_delete');
+Route::get('/affilateproduct_view/{id}', 'AffilateController@view')->name('affilateproduct_view');
 
 
 
