@@ -40,7 +40,7 @@
                                             <div class="p-relative">
                                                 <a href="product-default.html">
                                                     <figure>
-                                                        <img src="assets/images/shop/12.jpg" alt="product"
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="product"
                                                             width="300" height="338">
                                                     </figure>
                                                 </a>
@@ -70,7 +70,7 @@
                                             <div class="p-relative">
                                                 <a href="product-default.html">
                                                     <figure>
-                                                        <img src="assets/images/shop/13.jpg" alt="product"
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/13.jpg')}}" alt="product"
                                                             width="300" height="338">
                                                     </figure>
                                                 </a>

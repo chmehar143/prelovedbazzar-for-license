@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content" style="margin-top:5pc;">
         <div id="kt_content_container" class="container-xxl">
             <div class="row g-5 g-xl-8">
                 <div class="col-xl-4">

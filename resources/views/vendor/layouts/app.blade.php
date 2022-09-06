@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href="">
-    <title>NFT</title>
+    <title>Preloved Bazar</title>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/favicon.ico')}}" />
     <!--begin::Fonts-->
@@ -14,6 +14,13 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{asset('admin-assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('admin-assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <style>
+        @media (min-width: 992px){
+.aside {
+    width: 163px;
+}
+        }
+        </style>
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -23,7 +30,7 @@
     <!--begin::Page-->
         <div class="page d-flex flex-row flex-column-fluid">
             @include('vendor.layouts.aside')
-            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            <div class="wrapper d-flex flex-column " id="kt_wrapper">
                 @include('vendor.layouts.header')
                 @yield('content')
                 @include('vendor.layouts.footer')

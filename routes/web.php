@@ -63,7 +63,7 @@ Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/compare', [CompareController::class, 'index'])->name('compare');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::get('/prodcut-details', [ProductDetailsController::class, 'index'])->name('product-details');
+Route::get('/product-details', [ProductDetailsController::class, 'index'])->name('product-details');
 Route::get('/my-account', [MyaccountController::class, 'index'])->name('my-account');
 Route::get('/login', [LoginController::class, 'index'])->name('Login');
 Route::get('/order', [OrderController::class, 'index'])->name('order');
@@ -71,7 +71,6 @@ Route::get('/order-view', [OrderViewController::class, 'index'])->name('order-vi
 Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error');
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
-
 
 
 

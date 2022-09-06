@@ -36,8 +36,8 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="widget widget-about">
                                 <a href="demo1.html" class="logo-footer">
-                                    <img src="{{asset('frontend-assets/assets/images/logo_footer.png')}}" alt="logo-footer" width="144"
-                                        height="45" />
+                                    <!-- <img src="{{asset('frontend-assets/assets/images/logo_footer.png')}}" alt="logo-footer" width="144"
+                                        height="45" /> -->
                                 </a>
                                 <div class="widget-body">
                                     <p class="widget-about-title">Got Question? Call us 24/7</p>
@@ -60,10 +60,10 @@
                             <div class="widget">
                                 <h3 class="widget-title">Company</h3>
                                 <ul class="widget-body">
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="{{route('about-us')}}">About Us</a></li>
                                     <li><a href="#">Team Member</a></li>
                                     <li><a href="#">Career</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="{{route('contact-us')}}">Contact Us</a></li>
                                     <li><a href="#">Affilate</a></li>
                                     <li><a href="#">Order History</a></li>
                                 </ul>
@@ -74,10 +74,10 @@
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
                                     <li><a href="#">Track My Order</a></li>
-                                    <li><a href="cart.html">View Cart</a></li>
-                                    <li><a href="login.html">Sign In</a></li>
+                                    <li><a href="{{route('cart')}}">View Cart</a></li>
+                                    <li><a href="{{route('Login')}}">Sign In</a></li>
                                     <li><a href="#">Help</a></li>
-                                    <li><a href="wishlist.html">My Wishlist</a></li>
+                                    <li><a href="{{route('wishlist')}}">My Wishlist</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="footer-left">
-                        <p class="copyright">Copyright © 2022 BS3-design . All Rights Reserved.</p>
+                        <p class="copyright">Copyright © 2022 BS3 Designs . All Rights Reserved.</p>
                     </div>
                     <div class="footer-right">
                         <span class="payment-label mr-lg-8">We're using safe payment for</span>

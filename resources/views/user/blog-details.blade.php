@@ -31,7 +31,7 @@
                         <div class="main-content post-single-content">
                             <div class="post post-grid post-single">
                                 <figure class="post-media br-sm">
-                                    <img src="assets/images/blog/single/1.jpg" alt="Blog" width="930" height="500" />
+                                    <img src="{{asset('frontend-assets/assets/images/blog/single/1.jpg')}}" alt="Blog" width="930" height="500" />
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-meta">
@@ -95,7 +95,7 @@
                             <!-- End Social Links -->
                             <div class="post-author-detail">
                                 <figure class="author-media mr-4">
-                                    <img src="assets/images/blog/single/1.png" alt="Author" width="105" height="105" />
+                                    <img src="{{asset('frontend-assets/assets/images/blog/single/1.png')}}" alt="Author" width="105" height="105" />
                                 </figure>
                                 <div class="author-details">
                                     <div class="author-name-wrapper flex-wrap mb-2">
@@ -147,8 +147,8 @@
                                     <div class="swiper-wrapper row cols-lg-3 cols-md-4 cols-sm-3 cols-xs-2 cols-1">
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
-                                                    <img src="assets/images/blog/single/2.jpg" alt="Post" width="296"
+                                                <a href="{{route('blog-details')}}">
+                                                    <img src="{{asset('frontend-assets/assets/images/blog/single/2.jpg')}}" alt="Post" width="296"
                                                         height="190" style="background-color: #bcbcb4;" />
                                                 </a>
                                             </figure>
@@ -157,13 +157,13 @@
                                                     by <a href="#" class="post-author">Logan Cee</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">Fashion tell about who you are from...</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{{route('blog-details')}}">Fashion tell about who you are from...</a></h4>
+                                                <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
+                                                <a href="{{route('blog-details')}}">
                                                     <img src="assets/images/blog/single/3.jpg" alt="Post" width="296"
                                                         height="190" style="background-color: #cad2d1;" />
                                                 </a>
@@ -173,14 +173,14 @@
                                                     by <a href="#" class="post-author">Hilary Kreton</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">Comes a cool blog post with Images</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{{route('blog-details')}}">Comes a cool blog post with Images</a></h4>
+                                                <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
-                                                    <img src="assets/images/blog/single/4.jpg" alt="Post" width="296"
+                                                <a href="{{route('blog-details')}}">
+                                                    <img src="{{asset('frontend-assets/assets/images/blog/single/4.jpg')}}" alt="Post" width="296"
                                                         height="190" style="background-color: #ececec;" />
                                                 </a>
                                             </figure>
@@ -189,14 +189,14 @@
                                                     by <a href="#" class="post-author">Casper Dailn</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">Comes a cool blog post with Images</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{{route('blog-details')}}">Comes a cool blog post with Images</a></h4>
+                                                <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
-                                                    <img src="assets/images/blog/single/5.jpg" alt="Post" width="296"
+                                                <a href="{{route('blog-details')}}">
+                                                    <img src="{{asset('frontend-assets/assets/images/blog/single/5.jpg')}}" alt="Post" width="296"
                                                         height="190" style="background-color: #AFAFAF;" />
                                                 </a>
                                             </figure>
@@ -205,8 +205,8 @@
                                                     by <a href="#" class="post-author">John Doe</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">We want to be different and fashion gives to me that outlet</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{{route('blog-details')}}">We want to be different and fashion gives to me that outlet</a></h4>
+                                                <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +221,7 @@
                                 <li class="comment">
                                     <div class="comment-body">
                                         <figure class="comment-avatar">
-                                            <img src="assets/images/blog/single/1.png" alt="Avatar" width="90" height="90" />
+                                            <img src="{{asset('frontend-assets/assets/images/blog/single/1.png')}}" alt="Avatar" width="90" height="90" />
                                         </figure>
                                         <div class="comment-content">
                                             <h4 class="comment-author font-weight-bold">
@@ -237,7 +237,7 @@
                                 <li class="comment">
                                     <div class="comment-body">
                                         <figure class="comment-avatar">
-                                            <img src="assets/images/blog/single/2.png" alt="Avatar" width="90" height="90" />
+                                            <img src="{{asset('frontend-assets/assets/images/blog/single/2.png')}}" alt="Avatar" width="90" height="90" />
                                         </figure>
                                         <div class="comment-content">
                                             <h4 class="comment-author font-weight-bold">
@@ -252,7 +252,7 @@
                                 <li class="comment">
                                     <div class="comment-body">
                                         <figure class="comment-avatar">
-                                            <img src="assets/images/blog/single/1.png" alt="Avatar" width="90" height="90" />
+                                            <img src="{{asset('frontend-assets/assets/images/blog/single/1.png')}}" alt="Avatar" width="90" height="90" />
                                         </figure>
                                         <div class="comment-content">
                                             <h4 class="comment-author font-weight-bold">
@@ -330,40 +330,40 @@
                                                         <div class="swiper-slide widget-col">
                                                             <div class="post-widget mb-4">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="assets/images/blog/sidebar/1.jpg" alt="150" height="150" />
+                                                                    <img src="{{asset('frontend-assets/assets/images/blog/sidebar/1.jpg')}}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Fashion tells about who you are from external point</a>
+                                                                        <a href="{{route('blog-details')}}">Fashion tells about who you are from external point</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
                                                             <div class="post-widget mb-4">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="assets/images/blog/sidebar/2.jpg" alt="150" height="150" />
+                                                                    <img src="{{asset('frontend-assets/assets/images/blog/sidebar/2.jpg')}}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
                                                                         <a href="#" class="post-date">March 5, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">New found the men dress for summer</a>
+                                                                        <a href="{{route('blog-details')}}">New found the men dress for summer</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
                                                             <div class="post-widget mb-2">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="assets/images/blog/sidebar/3.jpg" alt="150" height="150" />
+                                                                    <img src="{{asset('frontend-assets/assets/images/blog/sidebar/3.jpg')}}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Cras ornare tristique elit</a>
+                                                                        <a href="{{route('blog-details')}}">Cras ornare tristique elit</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
@@ -371,40 +371,40 @@
                                                         <div class="swiper-slide widget-col">
                                                             <div class="post-widget mb-4">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="assets/images/blog/sidebar/4.jpg" alt="150" height="150" />
+                                                                    <img src="{{asset('frontend-assets/assets/images/blog/sidebar/4.jpg')}}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Vivamus vestibulum ntulla nec ante</a>
+                                                                        <a href="{{route('blog-details')}}">Vivamus vestibulum ntulla nec ante</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
                                                             <div class="post-widget mb-4">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="assets/images/blog/sidebar/5.jpg" alt="150" height="150" />
+                                                                    <img src="{{asset('frontend-assets/assets/images/blog/sidebar/5.jpg')}}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
                                                                         <a href="#" class="post-date">March 5, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Fusce lacinia arcuet nulla</a>
+                                                                        <a href="{{route('blog-details')}}">Fusce lacinia arcuet nulla</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
                                                             <div class="post-widget mb-2">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="assets/images/blog/sidebar/6.jpg" alt="150" height="150" />
+                                                                    <img src="{{asset('frontend-assets/assets/images/blog/sidebar/6.jpg')}}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Comes a cool blog post with Images</a>
+                                                                        <a href="{{route('blog-details')}}">Comes a cool blog post with Images</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>

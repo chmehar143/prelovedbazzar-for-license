@@ -47,7 +47,7 @@
                                         Sale up to <span class="font-weight-bolder text-secondary">30% OFF</span>
                                     </p>
 
-                                    <a href="shop-list.html"
+                                    <a href="{{route('shop')}}"
                                         class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                                         data-animation-options="{
                                     'name': 'fadeInRightShorter',
@@ -97,7 +97,7 @@
                                     }">
                                         Only until the end of this week.
                                     </p>
-                                    <a href="shop.html"
+                                    <a href="{{route('shop')}}"
                                         class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                                         data-animation-options="{
                                         'name': 'fadeInUpShorter',
@@ -153,7 +153,7 @@
                                         'duration': '1s',
                                         'delay': '.8s'
                                     }">
-                                        <a href="shop-list.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-dark btn-outline btn-rounded btn-icon-right">SHOP
                                             NOW<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
@@ -366,7 +366,7 @@
                                                 <div class="col-md-6">
                                                     <div class="product-details scrollable">
                                                         <h2 class="product-title mb-1"><a
-                                                                href="product-details.html">Coat Pool
+                                                                href="{{route('product-details')}}">Coat Pool
                                                                 Comfort Jacket</a></h2>
 
                                                         <hr class="product-divider">
@@ -532,7 +532,7 @@
                                                 <div class="col-md-6">
                                                     <div class="product-details scrollable">
                                                         <h2 class="product-title mb-1"><a
-                                                                href="product-details.html">Coat Pool
+                                                                href="{{route('product-details')}}">Coat Pool
                                                                 Comfort Jacket</a></h2>
 
                                                         <hr class="product-divider">
@@ -648,14 +648,14 @@
                                             <div class="swiper-slide product-widget-wrap">
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-1.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Kitchen Cooker</a>
+                                                            <a href="{{route('product-details')}}">Kitchen Cooker</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -670,14 +670,14 @@
                                                 </div>
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-2.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Professional Pixel Camera</a>
+                                                            <a href="{{route('product-details')}}">Professional Pixel Camera</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -693,14 +693,14 @@
                                                 </div>
                                                 <div class="product product-widget">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-3.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Sport Women’s Wear</a>
+                                                            <a href="{{route('product-details')}}">Sport Women’s Wear</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -718,14 +718,14 @@
                                             <div class="swiper-slide product-widget-wrap">
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-4.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Latest Speaker</a>
+                                                            <a href="{{route('product-details')}}">Latest Speaker</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -740,14 +740,14 @@
                                                 </div>
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-5.jpg')}}"
+                                                        <a href="{{route('product-details')}}">
+                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-6.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Men's Black Wrist Watch</a>
+                                                            <a href="{{route('product-details')}}">Men's Black Wrist Watch</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -763,14 +763,14 @@
                                                 </div>
                                                 <div class="product product-widget">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-6.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Wash Machine</a>
+                                                            <a href="{{route('product-details')}}">Wash Machine</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -787,14 +787,14 @@
                                             <div class="swiper-slide product-widget-wrap">
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-7.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Security Guard</a>
+                                                            <a href="{{route('product-details')}}">Security Guard</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -809,14 +809,14 @@
                                                 </div>
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-8.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">Apple Super Notecom</a>
+                                                            <a href="{{route('product-details')}}">Apple Super Notecom</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -832,14 +832,14 @@
                                                 </div>
                                                 <div class="product product-widget">
                                                     <figure class="product-media">
-                                                        <a href="product-details.html">
+                                                        <a href="{{route('product-details')}}">
                                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-9.jpg')}}"
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
-                                                            <a href="product-details.html">HD Television</a>
+                                                            <a href="{{route('product-details')}}">HD Television</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
@@ -893,78 +893,78 @@
                                 style="transform: translate3d(0px, 0px, 0px);">
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs swiper-slide-active"
                                     role="group" aria-label="1 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="shop.html" class="category-media">
+                                    <a href="{{route('shop')}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-1.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
                                         <h4 class="category-name">Fashion</h4>
-                                        <a href="shop.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs swiper-slide-next"
                                     role="group" aria-label="2 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="shop.html" class="category-media">
+                                    <a href="{{route('shop')}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-2.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
                                         <h4 class="category-name">Furniture</h4>
-                                        <a href="shop.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs"
                                     role="group" aria-label="3 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="shop.html" class="category-media">
+                                    <a href="{{route('shop')}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-3.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
                                         <h4 class="category-name">Shoes</h4>
-                                        <a href="shop.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs"
                                     role="group" aria-label="4 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="shop.html" class="category-media">
+                                    <a href="{{route('shop')}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-4.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
                                         <h4 class="category-name">Sports</h4>
-                                        <a href="shop.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs"
                                     role="group" aria-label="5 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="shop.html" class="category-media">
+                                    <a href="{{route('shop')}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-5.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
                                         <h4 class="category-name">Games</h4>
-                                        <a href="shop.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs"
                                     role="group" aria-label="6 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="shop.html" class="category-media">
+                                    <a href="{{route('shop')}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-6.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
                                         <h4 class="category-name">Computers</h4>
-                                        <a href="shop.html"
+                                        <a href="{{route('shop')}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
@@ -1003,7 +1003,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-2.jpg')}}" alt="Product"
@@ -1021,13 +1021,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Classic Hat</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Classic Hat</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(1 Reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(1 Reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$53.00</ins>
@@ -1038,7 +1038,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1054,14 +1054,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s White
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s White
                                                 Handbag</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.62</ins>
@@ -1072,7 +1072,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-3.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1091,14 +1091,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi Funtional Apple
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi Funtional Apple
                                                 iPhone</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">136.26</ins>
@@ -1110,7 +1110,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-2.jpg')}}" alt="Product"
@@ -1128,14 +1128,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Fashion Blue Towel</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Fashion Blue Towel</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(8 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(8 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.55 - $29.99</ins>
@@ -1146,7 +1146,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-5.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1165,14 +1165,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Apple Super Notecom</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Apple Super Notecom</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$243.30</ins>
@@ -1184,7 +1184,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-2.jpg')}}" alt="Product"
@@ -1202,14 +1202,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s Comforter</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s Comforter</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$32.00 - $33.26</ins>
@@ -1220,7 +1220,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-7.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1236,14 +1236,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi-colorful Music</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi-colorful Music</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$260.59 - $297.83</ins>
@@ -1254,7 +1254,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-2.jpg')}}" alt="Product"
@@ -1272,14 +1272,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Comfortable Backpack</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Comfortable Backpack</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(6 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(6 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$45.90</ins>
@@ -1290,7 +1290,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-9.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1306,14 +1306,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Data Transformer Tool
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Data Transformer Tool
                                             </a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$64.47</span>
@@ -1324,7 +1324,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-10.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1340,13 +1340,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s hairdye</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s hairdye</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$173.84</span>
@@ -1362,7 +1362,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-2.')}}'" alt="Product"
@@ -1380,14 +1380,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Fashion Blue Towel</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Fashion Blue Towel</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(8 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(8 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.55 - $29.99</ins>
@@ -1398,7 +1398,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-3.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1417,14 +1417,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi Funtional Apple
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi Funtional Apple
                                                 iPhone</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">136.26</ins>
@@ -1436,7 +1436,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-2.jpg')}}" alt="Product"
@@ -1454,14 +1454,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Comfortable Backpack</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Comfortable Backpack</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(6 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(6 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$45.90</ins>
@@ -1472,7 +1472,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-9.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1488,14 +1488,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Data Transformer Tool
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Data Transformer Tool
                                             </a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$64.47</span>
@@ -1506,7 +1506,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-5.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1525,14 +1525,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Apple Super Notecom</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Apple Super Notecom</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$243.30</ins>
@@ -1544,7 +1544,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-2.jpg')}}" alt="Product"
@@ -1562,14 +1562,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s Comforter</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s Comforter</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$32.00 - $33.26</ins>
@@ -1580,7 +1580,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-7.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1596,14 +1596,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi-colorful Music</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi-colorful Music</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$260.59 - $297.83</ins>
@@ -1614,7 +1614,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-2.jpg')}}" alt="Product"
@@ -1632,13 +1632,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Classic Hat</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Classic Hat</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(1 Reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(1 Reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$53.00</ins>
@@ -1649,7 +1649,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1665,14 +1665,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s White
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s White
                                                 Handbag</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.62</ins>
@@ -1683,7 +1683,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-10.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1699,13 +1699,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s hairdye</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s hairdye</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$173.84</span>
@@ -1721,7 +1721,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-9.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1737,14 +1737,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Data Transformer Tool
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Data Transformer Tool
                                             </a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$64.47</span>
@@ -1755,7 +1755,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-2.jpg')}}" alt="Product"
@@ -1773,13 +1773,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Classic Hat</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Classic Hat</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(1 Reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(1 Reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$53.00</ins>
@@ -1790,7 +1790,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-3.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1809,14 +1809,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi Funtional Apple
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi Funtional Apple
                                                 iPhone</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">136.26</ins>
@@ -1828,7 +1828,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1844,14 +1844,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s White
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s White
                                                 Handbag</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.62</ins>
@@ -1862,7 +1862,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-10.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1878,13 +1878,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s hairdye</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s hairdye</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$173.84</span>
@@ -1895,7 +1895,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-2.jpg')}}" alt="Product"
@@ -1913,14 +1913,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Comfortable Backpack</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Comfortable Backpack</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(6 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(6 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$45.90</ins>
@@ -1931,7 +1931,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-5.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1950,14 +1950,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Apple Super Notecom</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Apple Super Notecom</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$243.30</ins>
@@ -1969,7 +1969,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-7.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -1985,14 +1985,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi-colorful Music</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi-colorful Music</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$260.59 - $297.83</ins>
@@ -2003,7 +2003,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-2.jpg')}}" alt="Product"
@@ -2021,14 +2021,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s Comforter</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s Comforter</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$32.00 - $33.26</ins>
@@ -2039,7 +2039,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-2.jpg')}}" alt="Product"
@@ -2057,14 +2057,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Fashion Blue Towel</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Fashion Blue Towel</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(8 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(8 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.55 - $29.99</ins>
@@ -2080,7 +2080,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-4-2.jpg')}}" alt="Product"
@@ -2098,14 +2098,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Fashion Blue Towel</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Fashion Blue Towel</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(8 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(8 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.55 - $29.99</ins>
@@ -2116,7 +2116,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-10.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -2132,13 +2132,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s hairdye</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s hairdye</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$173.84</span>
@@ -2149,7 +2149,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-9.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -2165,14 +2165,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Data Transformer Tool
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Data Transformer Tool
                                             </a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$64.47</span>
@@ -2183,7 +2183,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-8-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="assets/images/demos/demo1/products/3-8-2.jpg" alt="Product"
@@ -2201,14 +2201,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Comfortable Backpack</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Comfortable Backpack</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(6 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(6 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$45.90</ins>
@@ -2219,7 +2219,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -2235,14 +2235,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s White
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s White
                                                 Handbag</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.62</ins>
@@ -2253,7 +2253,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-5.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -2272,14 +2272,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Apple Super Notecom</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Apple Super Notecom</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$243.30</ins>
@@ -2291,7 +2291,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-3.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -2310,14 +2310,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi Funtional Apple
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi Funtional Apple
                                                 iPhone</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">136.26</ins>
@@ -2329,7 +2329,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-7.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
@@ -2345,14 +2345,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Multi-colorful Music</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Multi-colorful Music</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$260.59 - $297.83</ins>
@@ -2363,7 +2363,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-6-2.jpg')}}" alt="Product"
@@ -2381,14 +2381,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Women’s Comforter</a>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Women’s Comforter</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$32.00 - $33.26</ins>
@@ -2399,7 +2399,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-details.html">
+                                        <a href="{{route('product-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/3-1-2.jpg')}}" alt="Product"
@@ -2417,13 +2417,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-details.html">Classic Hat</a></h4>
+                                        <h4 class="product-name"><a href="{{route('product-details')}}">Classic Hat</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-details.html" class="rating-reviews">(1 Reviews)</a>
+                                            <a href="{{route('product-details')}}" class="rating-reviews">(1 Reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$53.00</ins>
@@ -2448,7 +2448,7 @@
                                 <h5 class="banner-subtitle font-weight-bold text-uppercase">Natural Process</h5>
                                 <h3 class="banner-title font-weight-bolder text-capitalize text-white">Cosmetic
                                     Makeup<br>Professional</h3>
-                                <a href="shop.html"
+                                <a href="{{route('shop')}}"
                                     class="btn btn-white btn-link btn-underline btn-icon-right">Shop Now<i
                                         class="w-icon-long-arrow-right"></i></a>
                             </div>
@@ -2464,7 +2464,7 @@
                                 <h5 class="banner-subtitle font-weight-bold text-uppercase">Trending Now</h5>
                                 <h3 class="banner-title font-weight-bolder text-capitalize">Women's
                                     Lifestyle<br>Collection</h3>
-                                <a href="shop.html"
+                                <a href="{{route('shop')}}"
                                     class="btn btn-dark btn-link btn-underline btn-icon-right">Shop Now<i
                                         class="w-icon-long-arrow-right"></i></a>
                             </div>
@@ -2476,7 +2476,7 @@
                 <div class="product-wrapper-1 appear-animate mb-5">
                     <div class="title-link-wrapper pb-1 mb-4">
                         <h2 class="title ls-normal mb-0">Clothing & Apparel</h2>
-                        <a href="shop.html" class="font-size-normal font-weight-bold ls-25 mb-0">More
+                        <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
@@ -2490,7 +2490,7 @@
                                         New Arrivals<br> <span
                                             class="font-weight-normal text-capitalize">Collection</span>
                                     </h3>
-                                    <a href="shop.html"
+                                    <a href="{{route('shop')}}"
                                         class="btn btn-dark btn-outline btn-rounded btn-sm">shop Now</a>
                                 </div>
                             </div>
@@ -2529,7 +2529,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Men’s
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Men’s
                                                         Clothing</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -2537,7 +2537,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2566,7 +2566,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Best Travel
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Best Travel
                                                         Bag</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -2574,7 +2574,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2605,14 +2605,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Women’s Fashion
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Women’s Fashion
                                                         Handbag </a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2639,14 +2639,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Gray Leather
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Gray Leather
                                                         Shoes</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2675,14 +2675,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Black Winter
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Black Winter
                                                         Skating</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2694,7 +2694,7 @@
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
                                                 <a href="#">
-                                                    <img src="assets/images/demos/demo1/products/4-7.jpg" alt="Product"
+                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-7.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -2709,7 +2709,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Men's Black
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Men's Black
                                                         Wrist
                                                         Watch</a></h4>
                                                 <div class="ratings-container">
@@ -2717,7 +2717,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2748,14 +2748,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Sport Women's
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Sport Women's
                                                         Wear</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2782,14 +2782,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Women’s Hiking
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Women’s Hiking
                                                         Hat</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2809,7 +2809,7 @@
                 <div class="product-wrapper-1 appear-animate mb-8">
                     <div class="title-link-wrapper pb-1 mb-4">
                         <h2 class="title ls-normal mb-0">Consumer Electric</h2>
-                        <a href="shop.html" class="font-size-normal font-weight-bold ls-25 mb-0">More
+                        <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
@@ -2823,7 +2823,7 @@
                                         Top Camera <br> <span
                                             class="font-weight-normal text-capitalize">Mirrorless</span>
                                     </h3>
-                                    <a href="shop.html"
+                                    <a href="{{route('shop')}}"
                                         class="btn btn-white btn-outline btn-rounded btn-sm">shop now</a>
                                 </div>
                             </div>
@@ -2846,7 +2846,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-1-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-1-2.jpg')}}"
@@ -2867,7 +2867,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Professional
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Professional
                                                         Pixel
                                                         Camera</a></h4>
                                                 <div class="ratings-container">
@@ -2875,7 +2875,7 @@
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(5
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(5
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2886,7 +2886,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-5.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -2902,7 +2902,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Latest
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Latest
                                                         Speaker</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -2910,7 +2910,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2922,7 +2922,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-2-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-2-2.jpg')}}"
@@ -2940,14 +2940,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Wash Machine</a>
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Wash Machine</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(9
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(9
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2957,7 +2957,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-6.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -2973,7 +2973,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Security
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Security
                                                         Guard</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -2981,7 +2981,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -2993,7 +2993,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-3.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3012,7 +3012,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">HD
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">HD
                                                         Television</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -3020,7 +3020,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3031,7 +3031,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-7.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3050,14 +3050,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">USB Receipt</a>
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">USB Receipt</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(5
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(5
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3070,7 +3070,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-4.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3086,14 +3086,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Data Transformer
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Data Transformer
                                                         Tool</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(6
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(6
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3103,7 +3103,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/5-8.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3122,14 +3122,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Multi Functional
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Multi Functional
                                                         Apple iPhone</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(9
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(9
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3167,7 +3167,7 @@
                                         class="text-dark bg-white font-weight-bold ls-50 pl-1 pr-1 d-inline-block">Black
                                         <strong>12345</strong></span> to get best offer.</p>
                             </div>
-                            <a href="shop.html"
+                            <a href="{{route('shop')}}"
                                 class="btn btn-white btn-outline btn-rounded btn-icon-right mb-3">Shop Now<i
                                     class="w-icon-long-arrow-right"></i></a>
                         </div>
@@ -3178,7 +3178,7 @@
                 <div class="product-wrapper-1 appear-animate mb-7">
                     <div class="title-link-wrapper pb-1 mb-4">
                         <h2 class="title ls-normal mb-0">Home Garden & Kitchen</h2>
-                        <a href="shop.html" class="font-size-normal font-weight-bold ls-25 mb-0">More
+                        <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
@@ -3192,7 +3192,7 @@
                                         Trending <br> <span class="font-weight-normal text-capitalize">House
                                             Utensil</span>
                                     </h3>
-                                    <a href="shop.html"
+                                    <a href="{{route('shop')}}"
                                         class="btn btn-dark btn-outline btn-rounded btn-sm">shop now</a>
                                 </div>
                             </div>
@@ -3215,7 +3215,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-1.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3231,14 +3231,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Home Sofa</a>
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Home Sofa</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(5
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(5
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3248,7 +3248,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-5.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3264,14 +3264,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Electric
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Electric
                                                         Rice-Cooker</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3283,7 +3283,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-2-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-2-2.jpg')}}"
@@ -3304,7 +3304,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Kitchen
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Kitchen
                                                         Table</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -3312,7 +3312,7 @@
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(9
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(9
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3323,7 +3323,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-6.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3339,7 +3339,7 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Kitchen
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Kitchen
                                                         Cooker</a>
                                                 </h4>
                                                 <div class="ratings-container">
@@ -3347,7 +3347,7 @@
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3359,7 +3359,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-3-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-3-2.jpg')}}"
@@ -3377,14 +3377,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Table Lamp</a>
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Table Lamp</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 60%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(3
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(3
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3394,7 +3394,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-7.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3413,14 +3413,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Electric Frying
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Electric Frying
                                                         Pan</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(5
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(5
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3433,7 +3433,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-4.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
@@ -3452,14 +3452,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Latest Chair</a>
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Latest Chair</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(6
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(6
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3470,7 +3470,7 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="product-details.html">
+                                                <a href="{{route('product-details')}}">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-8-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/6-8-2.jpg')}}"
@@ -3488,14 +3488,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="product-details.html">Automatic
+                                                <h4 class="product-name"><a href="{{route('product-details')}}">Automatic
                                                         Crusher</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="product-details.html" class="rating-reviews">(9
+                                                    <a href="{{route('product-details')}}" class="rating-reviews">(9
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -3600,7 +3600,7 @@
                 <div class="post-wrapper appear-animate mb-4">
                     <div class="title-link-wrapper pb-1 mb-4">
                         <h2 class="title ls-normal mb-0">From Our Blog</h2>
-                        <a href="blog-listing.html" class="font-weight-bold font-size-normal">View All Articles</a>
+                        <a href="{{route('blogs')}}" class="font-weight-bold font-size-normal">View All Articles</a>
                     </div>
                     <div class="swiper">
                         <div class="swiper-container swiper-theme" data-swiper-options="{
@@ -3621,7 +3621,7 @@
                             <div class="swiper-wrapper row cols-lg-4 cols-md-3 cols-sm-2 cols-1">
                                 <div class="swiper-slide post text-center overlay-zoom">
                                     <figure class="post-media br-sm">
-                                        <a href="post-single.html">
+                                        <a href="{{route('blog-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/blogs/1.jpg')}}" alt="Post" width="280"
                                                 height="180" style="background-color: #4b6e91;" />
                                         </a>
@@ -3631,16 +3631,16 @@
                                             by <a href="#" class="post-author">John Doe</a>
                                             - <a href="#" class="post-date mr-0">03.05.2021</a>
                                         </div>
-                                        <h4 class="post-title"><a href="post-single.html">Aliquam tincidunt mauris
+                                        <h4 class="post-title"><a href="{{route('blog-details')}}">Aliquam tincidunt mauris
                                                 eurisus</a>
                                         </h4>
-                                        <a href="post-single.html" class="btn btn-link btn-dark btn-underline">Read
+                                        <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline">Read
                                             More<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide post text-center overlay-zoom">
                                     <figure class="post-media br-sm">
-                                        <a href="post-single.html">
+                                        <a href="{{route('blog-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/blogs/2.jpg')}}" alt="Post" width="280"
                                                 height="180" style="background-color: #cec9cf;" />
                                         </a>
@@ -3650,16 +3650,16 @@
                                             by <a href="#" class="post-author">John Doe</a>
                                             - <a href="#" class="post-date mr-0">03.05.2021</a>
                                         </div>
-                                        <h4 class="post-title"><a href="post-single.html">Cras ornare tristique elit</a>
+                                        <h4 class="post-title"><a href="{{route('blog-details')}}">Cras ornare tristique elit</a>
                                         </h4>
-                                        <a href="post-single.html" class="btn btn-link btn-dark btn-underline">Read
+                                        <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline">Read
                                             More<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide post text-center overlay-zoom">
                                     <figure class="post-media br-sm">
-                                        <a href="post-single.html">
-                                            <img src="assets/images/demos/demo1/blogs/3.jpg')}}" alt="Post" width="280"
+                                        <a href="{{route('blog-details')}}">
+                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/blogs/3.jpg')}}" alt="Post" width="280"
                                                 height="180" style="background-color: #c9c7bb;" />
                                         </a>
                                     </figure>
@@ -3668,16 +3668,16 @@
                                             by <a href="#" class="post-author">John Doe</a>
                                             - <a href="#" class="post-date mr-0">03.05.2021</a>
                                         </div>
-                                        <h4 class="post-title"><a href="post-single.html">Vivamus vestibulum ntulla nec
+                                        <h4 class="post-title"><a href="{{route('blog-details')}}">Vivamus vestibulum ntulla nec
                                                 ante</a>
                                         </h4>
-                                        <a href="post-single.html" class="btn btn-link btn-dark btn-underline">Read
+                                        <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline">Read
                                             More<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide post text-center overlay-zoom">
                                     <figure class="post-media br-sm">
-                                        <a href="post-single.html">
+                                        <a href="{{route('blog-details')}}">
                                             <img src="{{asset('frontend-assets/assets/images/demos/demo1/blogs/4.jpg')}}" alt="Post" width="280"
                                                 height="180" style="background-color: #d8dce0;" />
                                         </a>
@@ -3687,9 +3687,9 @@
                                             by <a href="#" class="post-author">John Doe</a>
                                             - <a href="#" class="post-date mr-0">03.05.2021</a>
                                         </div>
-                                        <h4 class="post-title"><a href="post-single.html">Fusce lacinia arcuet nulla</a>
+                                        <h4 class="post-title"><a href="{{route('blog-details')}}">Fusce lacinia arcuet nulla</a>
                                         </h4>
-                                        <a href="post-single.html" class="btn btn-link btn-dark btn-underline">Read
+                                        <a href="{{route('blog-details')}}" class="btn btn-link btn-dark btn-underline">Read
                                             More<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -3723,13 +3723,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-1.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">Women's Fashion Handbag</a>
+                                    <a href="{{route('product-details')}}">Women's Fashion Handbag</a>
                                 </h4>
                             </div>
                         </div>
@@ -3737,13 +3737,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-2.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">Electric Frying Pan</a>
+                                    <a href="{{route('product-details')}}">Electric Frying Pan</a>
                                 </h4>
                             </div>
                         </div>
@@ -3751,13 +3751,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-3.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">Black Winter Skating</a>
+                                    <a href="{{route('product-details')}}">Black Winter Skating</a>
                                 </h4>
                             </div>
                         </div>
@@ -3765,13 +3765,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-4.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">HD Television</a>
+                                    <a href="{{route('product-details')}}">HD Television</a>
                                 </h4>
                             </div>
                         </div>
@@ -3779,13 +3779,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-5.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">Home Sofa</a>
+                                    <a href="{{route('product-details')}}">Home Sofa</a>
                                 </h4>
                             </div>
                         </div>
@@ -3793,13 +3793,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-6.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">USB Receipt</a>
+                                    <a href="{{route('product-details')}}">USB Receipt</a>
                                 </h4>
                             </div>
                         </div>
@@ -3807,13 +3807,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-7.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">Electric Rice-Cooker</a>
+                                    <a href="{{route('product-details')}}">Electric Rice-Cooker</a>
                                 </h4>
                             </div>
                         </div>
@@ -3821,13 +3821,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defaproduct-details.html">
+                                    <a href="product-defa{{route('product-details')}}">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/7-8.jpg')}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="product-details.html">Table Lamp</a>
+                                    <a href="{{route('product-details')}}">Table Lamp</a>
                                 </h4>
                             </div>
                         </div>

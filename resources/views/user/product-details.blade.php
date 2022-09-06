@@ -2,8 +2,7 @@
 
 @section('content')
 
-   <!-- Start of Main -->
-   <main class="main mb-10 pb-1">
+<main class="main mb-10 pb-1">
             <!-- Start of Breadcrumb -->
             <nav class="breadcrumb-nav container">
                 <ul class="breadcrumb bb-no">
@@ -17,7 +16,7 @@
                             <i class="w-icon-angle-left"></i>
                         </a>
                         <span class="product-nav-popup">
-                            <img src="assets/images/products/product-nav-prev.jpg" alt="Product" width="110"
+                            <img src="{{asset('frontend-assets/assets/images/products/product-nav-prev.jpg')}}" alt="Product" width="110"
                                 height="110" />
                             <span class="product-name">Soft Sound Maker</span>
                         </span>
@@ -27,7 +26,7 @@
                             <i class="w-icon-angle-right"></i>
                         </a>
                         <span class="product-nav-popup">
-                            <img src="assets/images/products/product-nav-next.jpg" alt="Product" width="110"
+                            <img src="{{asset('frontend-assets/assets/images/products/product-nav-next.jpg')}}" alt="Product" width="110"
                                 height="110" />
                             <span class="product-name">Fabulous Sound Speaker</span>
                         </span>
@@ -51,36 +50,36 @@
                                     <div class="swiper-wrapper row cols-1 gutter-no">
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="assets/images/products/without/1-800x900.jpg"
-                                                    data-zoom-image="assets/images/products/without/1-800x900.jpg"
+                                                <img src="{{asset('frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
+                                                    data-zoom-image="{{asset('frontend-assets/frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="assets/images/products/without/2-800x900.jpg"
-                                                    data-zoom-image="assets/images/products/without/2-800x900.jpg"
+                                                <img src="{{asset('frontend-assets/assets/images/products/without/2-800x900.jpg')}}"
+                                                    data-zoom-image="a{{asset('frontend-assets/ssets/images/products/without/2-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="488" height="549">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="assets/images/products/without/3-800x900.jpg"
-                                                    data-zoom-image="assets/images/products/without/3-800x900.jpg"
+                                                <img src="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}"
+                                                    data-zoom-image="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="assets/images/products/without/4-800x900.jpg"
-                                                    data-zoom-image="assets/images/products/without/4-800x900.jpg"
+                                                <img src="{{asset('frontend-assets/assets/images/products/without/4-800x900.jpg')}}"
+                                                    data-zoom-image="{{asset('frontend-assets/assets/images/products/without/4-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="assets/images/products/without/5-800x900.jpg"
-                                                    data-zoom-image="assets/images/products/without/5-800x900.jpg"
+                                                <img src="{{asset('frontend-assets/assets/images/products/without/5-800x900.jpg')}}"
+                                                    data-zoom-image="{{asset('frontend-assets/assets/images/products/without/5-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
@@ -103,23 +102,23 @@
                                 }">
                                     <div class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
                                         <div class="product-thumb swiper-slide">
-                                            <img src="assets/images/products/without/1-800x900.jpg" alt="Product Thumb"
+                                            <img src="{{asset('frontend-assets/assets/images/products/without/1-800x900.jpg')}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="assets/images/products/without/2-800x900.jpg" alt="Product Thumb"
+                                            <img src="{{asset('frontend-assets/assets/images/products/without/2-800x900.jpg')}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="assets/images/products/without/3-800x900.jpg" alt="Product Thumb"
+                                            <img src="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="assets/images/products/without/4-800x900.jpg" alt="Product Thumb"
+                                            <img src="{{asset('frontend-assets/assets/images/products/without/4-800x900.jpg ')}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="assets/images/products/without/5-800x900.jpg" alt="Product Thumb"
+                                            <img src="{{asset('frontend-assets/assets/images/products/without/5-800x900.jpg')}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                     </div>
@@ -133,7 +132,7 @@
                                 <h1 class="product-title">Bright Green IPhone</h1>
                                 <div class="product-bm-wrapper">
                                     <figure class="brand">
-                                        <img src="assets/images/products/brand/brand-2.jpg" alt="Brand" width="105"
+                                        <img src="{{asset('frontend-assets/assets/images/products/brand/brand-2.jpg')}}" alt="Brand" width="105"
                                             height="48" />
                                     </figure>
                                     <div class="product-meta">
@@ -236,7 +235,7 @@
                                         <div class="banner banner-video product-video br-xs">
                                             <figure class="banner-media">
                                                 <a href="#">
-                                                    <img src="assets/images/products/video-banner-610x300.jpg"
+                                                    <img src="{{asset('frontend-assets/assets/images/products/video-banner-610x300.jpg')}}"
                                                         alt="banner" width="610" height="300"
                                                         style="background-color: #bebebe;">
                                                 </a>
@@ -456,10 +455,10 @@
                                                                 <div class="review-image">
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-1.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-1.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-1-800x900.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-1-800x900.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                 </div>
@@ -470,7 +469,7 @@
                                                 <li class="comment">
                                                     <div class="comment-body">
                                                         <figure class="comment-avatar">
-                                                            <img src="assets/images/agents/2-100x100.png"
+                                                            <img src="{{asset('frontend-assets/ssets/images/agents/2-100x100.png')}}"
                                                                 alt="Commenter Avatar" width="90" height="90">
                                                         </figure>
                                                         <div class="comment-content">
@@ -503,18 +502,18 @@
                                                                 <div class="review-image">
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-2.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-2.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-2.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-2.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-3.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-3.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                 </div>
@@ -566,7 +565,7 @@
                                                 <li class="comment">
                                                     <div class="comment-body">
                                                         <figure class="comment-avatar">
-                                                            <img src="assets/images/agents/1-100x100.png"
+                                                            <img src="{{asset('frontend-assets/assets/images/agents/1-100x100.png')}}"
                                                                 alt="Commenter Avatar" width="90" height="90">
                                                         </figure>
                                                         <div class="comment-content">
@@ -599,10 +598,10 @@
                                                                 <div class="review-image">
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-1.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-1.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-1.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-1.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                 </div>
@@ -646,18 +645,18 @@
                                                                 <div class="review-image">
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-2.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-2.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-2-800x900.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-2-800x900.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-3.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-3-800x900.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-3-800x900.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                 </div>
@@ -672,7 +671,7 @@
                                                 <li class="comment">
                                                     <div class="comment-body">
                                                         <figure class="comment-avatar">
-                                                            <img src="assets/images/agents/3-100x100.png"
+                                                            <img src="{{asset('frontend-assets/assets/images/agents/3-100x100.png')}}"
                                                                 alt="Commenter Avatar" width="90" height="90">
                                                         </figure>
                                                         <div class="comment-content">
@@ -746,18 +745,18 @@
                                                                 <div class="review-image">
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-2.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-2.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-2-800x900.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-2-800x900.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-3.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-3-800x900.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-3-800x900.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                 </div>
@@ -805,10 +804,10 @@
                                                                 <div class="review-image">
                                                                     <a href="#">
                                                                         <figure>
-                                                                            <img src="assets/images/products/default/review-img-3.jpg"
+                                                                            <img src="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}"
                                                                                 width="60" height="60"
                                                                                 alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                data-zoom-image="assets/images/products/default/review-img-3-800x900.jpg" />
+                                                                                data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-3-800x900.jpg')}}" />
                                                                         </figure>
                                                                     </a>
                                                                 </div>
@@ -848,9 +847,9 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/1-1.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/1-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
-                                            <img src="assets/images/products/default/1-2.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/1-2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -886,7 +885,7 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/2.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -925,7 +924,7 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/3.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/3.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -962,7 +961,7 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/4-1.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/4-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="assets/images/products/default/4-2.jpg" alt="Product"
                                                 width="300" height="338" />
@@ -1025,7 +1024,7 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/5.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/5.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -1058,7 +1057,7 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/6.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/6.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -1095,9 +1094,9 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/7-1.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/7-1.jpg')}}" alt="Product"
                                                 width="300" height="338" />
-                                            <img src="assets/images/products/default/7-2.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/7-2.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -1131,7 +1130,7 @@
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/products/default/8.jpg" alt="Product"
+                                            <img src="{{asset('frontend-assets/assets/images/products/default/8.jpg')}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -1169,5 +1168,5 @@
             </div>
             <!-- End of Page Content -->
         </main>
-        <!-- End of Main -->
+
 @endsection

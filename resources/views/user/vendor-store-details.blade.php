@@ -75,14 +75,14 @@
                                         <div class="widget-body">
                                             <div class="product product-widget">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
-                                                        <img src="assets/images/shop/1.jpg" alt="Product" width="100"
+                                                    <a href="{{route('product-details')}}">
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/1.jpg')}}" alt="Product" width="100"
                                                             height="106" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h4 class="product-name">
-                                                        <a href="product-default.html">3D Television</a>
+                                                        <a href="{{route('product-details')}}">3D Television</a>
                                                     </h4>
                                                     <div class="ratings-container">
                                                         <div class="ratings-full">
@@ -95,14 +95,14 @@
                                             </div>
                                             <div class="product product-widget">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
-                                                        <img src="assets/images/shop/2-1.jpg" alt="Product" width="100"
+                                                    <a href="{{route('product-details')}}">
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/2-1.jpg')}}" alt="Product" width="100"
                                                             height="106" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h4 class="product-name">
-                                                        <a href="product-default.html">Alarm Clock With Lamp</a>
+                                                        <a href="{{route('product-details')}}">Alarm Clock With Lamp</a>
                                                     </h4>
                                                     <div class="ratings-container">
                                                         <div class="ratings-full">
@@ -118,14 +118,14 @@
                                             </div>
                                             <div class="product product-widget">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
-                                                        <img src="assets/images/shop/3.jpg" alt="Product" width="100"
+                                                    <a href="{{route('product-details')}}">
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/3.jpg')}}" alt="Product" width="100"
                                                             height="106" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h4 class="product-name">
-                                                        <a href="product-default.html">Apple Laptop</a>
+                                                        <a href="{{route('product-details')}}">Apple Laptop</a>
                                                     </h4>
                                                     <div class="ratings-container">
                                                         <div class="ratings-full">
@@ -144,14 +144,14 @@
                                         <div class="widget-body">
                                             <div class="product product-widget">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
-                                                        <img src="assets/images/shop/12.jpg" alt="Product" width="100"
+                                                    <a href="{{route('product-details')}}">
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="Product" width="100"
                                                             height="106" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h4 class="product-name">
-                                                        <a href="product-default.html">Classic Simple Backpack</a>
+                                                        <a href="{{route('product-details')}}">Classic Simple Backpack</a>
                                                     </h4>
                                                     <div class="ratings-container">
                                                         <div class="ratings-full">
@@ -164,14 +164,14 @@
                                             </div>
                                             <div class="product product-widget">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
-                                                        <img src="assets/images/shop/13.jpg" alt="Product" width="100"
+                                                    <a href="{{route('product-details')}}">
+                                                        <img src="{{asset('frontend-assets/assets/images/shop/13.jpg')}}" alt="Product" width="100"
                                                             height="106" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h4 class="product-name">
-                                                        <a href="product-default.html">Smart Watch</a>
+                                                        <a href="{{route('product-details')}}">Smart Watch</a>
                                                     </h4>
                                                     <div class="ratings-container">
                                                         <div class="ratings-full">
@@ -184,14 +184,14 @@
                                             </div>
                                             <div class="product product-widget">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
+                                                    <a href="{{route('product-details')}}">
                                                         <img src="assets/images/shop/20.jpg" alt="Product" width="100"
                                                             height="106" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h4 class="product-name">
-                                                        <a href="product-default.html">Pencil Case</a>
+                                                        <a href="{{route('product-details')}}">Pencil Case</a>
                                                     </h4>
                                                     <div class="ratings-container">
                                                         <div class="ratings-full">
@@ -213,12 +213,12 @@
                         <div class="main-content">
                             <div class="store store-banner mb-4">
                                 <figure class="store-media">
-                                    <img src="assets/images/vendor/dokan/1.jpg" alt="Vendor" width="930" height="446"
+                                    <img src="{{asset('frontend-assets/assets/images/vendor/dokan/1.jpg')}}" alt="Vendor" width="930" height="446"
                                         style="background-color: #414960;" />
                                 </figure>
                                 <div class="store-content">
                                     <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/1.jpg" alt="Brand" width="80"
+                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/1.jpg')}}" alt="Brand" width="80"
                                             height="80" />
                                     </figure>
                                     <h4 class="store-title">Vendor 1</h4>
@@ -261,8 +261,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/1.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -278,14 +278,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">3D Television</a>
+                                                <a href="{{route('product-details')}}">3D Television</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(3 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -298,10 +298,10 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/2-1.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/2-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
-                                                <img src="assets/images/shop/2-2.jpg" alt="Product" width="300"
+                                                <img src="{{asset('frontend-assets/assets/images/shop/2-2.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-countdown-container">
@@ -323,14 +323,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Alarm Clock With Lamp</a>
+                                                <a href="{{route('product-details')}}">Alarm Clock With Lamp</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -344,8 +344,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/3.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/3.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -361,14 +361,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Apple Laptop</a>
+                                                <a href="{{route('product-details')}}">Apple Laptop</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(5 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -381,8 +381,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/4.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/4.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -398,14 +398,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Attachable Charge Alarm</a>
+                                                <a href="{{route('product-details')}}">Attachable Charge Alarm</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(7 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(7 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -418,8 +418,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/5.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/5.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -435,14 +435,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Best Travel Bag</a>
+                                                <a href="{{route('product-details')}}">Best Travel Bag</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -455,8 +455,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/6.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/6.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -472,14 +472,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Black Stunt Motor</a>
+                                                <a href="{{route('product-details')}}">Black Stunt Motor</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(12 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(12 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -492,10 +492,10 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/7-1.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/7-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
-                                                <img src="assets/images/shop/7-2.jpg" alt="Product" width="300"
+                                                <img src="{{asset('frontend-assets/assets/images/shop/7-2.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -511,14 +511,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Blue Sky Trunk</a>
+                                                <a href="{{route('product-details')}}">Blue Sky Trunk</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(9 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -531,8 +531,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/8.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/8.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -548,14 +548,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Bodycare Smooth Powder</a>
+                                                <a href="{{route('product-details')}}">Bodycare Smooth Powder</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -568,8 +568,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/9.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/9.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -585,14 +585,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Bright Green IPhone</a>
+                                                <a href="{{route('product-details')}}">Bright Green IPhone</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -605,8 +605,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/10.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/10.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -622,14 +622,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Cavin Fashion Suede Handbag</a>
+                                                <a href="{{route('product-details')}}">Cavin Fashion Suede Handbag</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -642,10 +642,10 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/11-1.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/11-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
-                                                <img src="assets/images/shop/11-2.jpg" alt="Product" width="300"
+                                                <img src="{{asset('frontend-assets/assets/images/shop/11-2.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -661,14 +661,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Charming Design Watch</a>
+                                                <a href="{{route('product-details')}}">Charming Design Watch</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -681,8 +681,8 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
-                                                <img src="assets/images/shop/12.jpg" alt="Product" width="300"
+                                            <a href="{{route('product-details')}}">
+                                                <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
@@ -698,14 +698,14 @@
                                         </figure>
                                         <div class="product-details">
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Classic Simple Backpack</a>
+                                                <a href="{{route('product-details')}}">Classic Simple Backpack</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                                <a href="{{route('product-details')}}" class="rating-reviews">(9 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">

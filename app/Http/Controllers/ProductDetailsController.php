@@ -8,6 +8,8 @@ class ProductDetailsController extends Controller
 {
     public function index()
     {
-        return view('user.vendor-product-details');
+
+        return view('user.product-details');
+
     }
 }
