@@ -6,8 +6,8 @@
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
 							<!--begin::Card-->
-                         <h1> All Products</h1>
-						 <p>Dashboard >All Product > List </p>
+                         <h1> All Vendors</h1>
+						 <p>Dashboard > Vendors > List </p>
 
 						<div class="card">
 							<!--begin::Card header-->
@@ -39,7 +39,7 @@
 								
 										
 										<!--begin::Add customer-->
-										<a type="button" class="btn btn-primary" href="{{route('admin.allproducts_create')}}">Add Product</a>
+										<a type="button" class="btn btn-primary" href="#">Add Vendor</a>
 										<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 										<!--end::Add customer-->
 									</div>
@@ -67,24 +67,18 @@
 												Sr No.
 											</th>
 
-											<th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-												aria-label="Product Image : activate to sort column ascending" style="width: 192.25px;">Product Image </th>
 
 											<th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+												aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Id </th>
+                                            <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
 												aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Name </th>
 
-											<th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-												aria-label="Type   : activate to sort column ascending" style="width: 192.25px;">Type </th>
+                                            <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                                                aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Email </th>
+
 
 											<th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-												aria-label=" Price : activate to sort column ascending" style="width: 192.25px;"> Price </th>
-
-											<th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-												aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>
-
-											<th class="min-w-125px sorting_disabled" style="display: none; width: 0px;" rowspan="1" colspan="1"
-												aria-label="Pre-Sale Price">Pre-Sale Price</th>
-												
+												aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>				
 											</tr>											<!--end::Table row-->
 									</thead>
 									<!--end::Table head-->
@@ -93,11 +87,11 @@
 											<?php 
 											$i = 0;
 											?>
-										@foreach($products as $product)
+										@foreach($vendors as $vendor)
 											<?php 
 											$i = $i+1;
 											?>
-										<tr class="odd" id="nft_row_{{$product->id}}">
+										<tr class="odd" id="nft_row_{{$vendor->id}}">
 											<!--begin::Checkbox-->
 											<td>
 												<div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -105,16 +99,13 @@
 												</div>
 											</td>
 											<!--end::Checkbox-->
-											<td><img src="{{ asset('storage/uploads/products/'.$product->p_image)}}" width="50px"></td>
-											<td>
-												{{$product->p_name}}
-											</td>
-											<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $type[$product->p_type] }}</a>	</td>
+											<td>{{$vendor->id}}</td>
+											<td>{{$vendor->name}}</td>
+											<td>{{$vendor->email}}</td>
 									
-											<td>${{$product->p_new_price}}</td>
 											
 											<td data-order="Invalid date">
-												<span class="badge badge-light-success">{{ $status[$product->status] }}</span>
+												<span class="badge badge-light-success">Status</span>
 											</td>
 
 											<!--end::Date=-->
@@ -132,17 +123,17 @@
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{route('admin.allproducts_view', $product->id)}}" class="menu-link px-3">View</a>
+														<a href="#" class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
 
 													<div class="menu-item px-3">
-														<a href="{{route('admin.allproducts_edit', $product->id )}}" class="menu-link px-3">Edit</a>
+														<a href="#" class="menu-link px-3">Edit</a>
 													</div>
 
 													<!--begin::Menu item-->
-													<div class="menu-item px-3" id="{{$product->id}}">
-														<a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="deleteProduct({{$product->id}})">Delete</a>
+													<div class="menu-item px-3" id="{{$vendor->id}}">
+														<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="#">Delete</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -161,12 +152,13 @@
 									</div>
 									
 													</div>
-												</div></div>
+												</div>
+                                            </div>
 								<!--end::Table-->
 							</div>
 							<!--end::Card body-->
 						</div>
-</div>
+                    </div>
 								<!--end::Card body-->
 							</div>
 
@@ -202,4 +194,4 @@
       }
   </script>
 
-                    @endsection
+@endsection
