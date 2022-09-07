@@ -88,6 +88,10 @@ Route::put('/affilateproduct_update/{id}', 'AffilateController@update')->name('a
 Route::get('/affilateproduct_delete/{id}', 'AffilateController@destroy')->name('affilateproduct_delete');
 Route::get('/affilateproduct_view/{id}', 'AffilateController@view')->name('affilateproduct_view');
 
+//Vendors Lists Rout...
+Route::get('/vendors_list', 'VendorController@index')->name('vendors_list');
+
+
 
 
 
