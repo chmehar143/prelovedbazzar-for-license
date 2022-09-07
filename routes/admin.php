@@ -54,12 +54,11 @@ Route::post('/child_category_edit/{childcategory}', 'ChildCategoryController@upd
 Route::get('/child_category_delete/{id}', 'ChildCategoryController@destroy')->name('child_category_destroy');
 Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
-
 // All  Products
 Route::get('/allproducts_list', 'AllProductController@index')->name('allproducts_list');
 Route::get('/allproducts_create', 'AllProductController@create')->name('allproducts_create');
 Route::post('/allproducts_store', 'AllProductController@store')->name('allproducts_store');
-Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat'); 
+Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat');
 Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildCat');
 Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
 Route::put('/allproducts_update', 'AllProductController@update')->name('allproducts_update');
@@ -161,18 +160,12 @@ Route::get('order_decline_declineorderinvoice', 'OrderController@declineorderinv
 Route::get('order_decline_declineorderdelivery', 'OrderController@declineorderdelivery')->name('order_decline_declineorderdelivery');
 
 // Processing Orders Orders
-
-
 Route::get('/order_processing_processingorder', 'OrderController@processingorder')->name('order_processing_processingorder');
 Route::get('order_processing_processingorderdetails', 'OrderController@processingorderdetails')->name('order_processing_processingorderdetails');
 Route::get('order_processing_processingorderinvoice', 'OrderController@processingorderinvoice')->name('order_processing_processingorderinvoice');
 Route::get('order_processing_processingorderdelivery', 'OrderController@processingorderdelivery')->name('order_processing_processingorderdelivery');
 
-
-
-
 // Blog
-
 Route::get('/blog_categorieslist', 'BlogController@index')->name('blog_categorieslist');
 Route::get('blog_addcategories', 'BlogController@create')->name('blog_addcategories');
 Route::get('blog_editcategories', 'BlogController@edit')->name('blog_editcategories');
