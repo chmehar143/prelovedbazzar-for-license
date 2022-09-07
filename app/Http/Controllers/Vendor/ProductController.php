@@ -80,7 +80,7 @@ class ProductController extends Controller
             $file = $request->file('avatar');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
-            $file->move('vendor/uploads/products/', $filename);
+            $file->storeAs('uploads/products/', $filename, 'public');
             $product->p_image = $filename;
 
         }
@@ -140,7 +140,7 @@ class ProductController extends Controller
         if($request->hasfile('avatar') != '')
         {
             //new 
-            $destination = 'uploads/products/'.$product->p_image;
+            $destination = 'storage/uploads/products/'.$product->p_image;
                if(File::exists($destination))
                  {
                      File::delete($destination);
@@ -149,7 +149,7 @@ class ProductController extends Controller
             $file = $request->file('avatar');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
-            $file->move('vendor/uploads/products/', $filename);
+            $file->storeAs('uploads/products/', $filename, 'public');
             $product->p_image = $filename;
 
         }
@@ -199,6 +199,11 @@ class ProductController extends Controller
     public function destroy($id)
     {
          $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
+         $destination = 'storage/uploads/products/'.$product->p_image;
+         if(File::exists($destination))
+           {
+               File::delete($destination);
+           }
          $product->delete();
          return response()->json(['success' => 'Record Has Been Deleted!..']);
     }
