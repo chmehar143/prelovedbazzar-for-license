@@ -73,11 +73,17 @@
 											<th class="min-w-125px"> Store Name </th>
 
 											<th class="min-w-125px">Vendor Email </th>
-											<th class="min-w-125px"> Shop Number </th>
+
+											<th class="min-w-125px"> Shop Name </th>
+
 
 
 											<th class="min-w-125px">Status </th>
 											<th class="min-w-125px" style="display:none">Status </th>
+
+											<th class="min-w-125px">Action </th>
+
+
 
 
 
@@ -89,40 +95,60 @@
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
 
+										<?php $i = 0; ?>
+										@foreach($vendors as $vendor)
 										<tr>
+											<?php $i = $i+1; ?>
 											<!--begin::Checkbox-->
-											<td>
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid">
-													<input class="form-check-input" type="checkbox" value="1" />
-												</div>
-											</td>
+											<td>{{$i}}</td>
 											<!--end::Checkbox-->
 											
                                             
-											<td>Malyck	</td>
-											<td>alberthmc@gmail.com	</td>
-											<td>121541500515	</td>
+											<td>{{$vendor->name}}</td>
+											<td>{{$vendor->email}}</td>
+											<td>{{$vendor->shop_name}}</td>
+
 											<th class="min-w-125px" style="display:none">Status </th>
 
 
 											<td> <div class="btn-group middle">
+
+											@if($vendor->status == 1)  
+
                                             <button id="status" type="button" class="btn btn-success">
-                                                Verified
+												Verified
+
                                             </button>
                                             <button
                                                 id="bar"
                                                 type="button"
                                                 class="btn btn-success dropdown-toggle dropdown-toggle-split"
                                                 data-bs-toggle="dropdown"
-                                                aria-expanded="false"
-                                            >
+
+                                                aria-expanded="false">
                                                 <i class="mdi mdi-chevron-down"></i>
                                             </button>
+											@else 
+											<button id="status" type="button" class="btn btn-danger">
+												Unverified                                            </button>
+                                            <button
+                                                id="bar"
+                                                type="button"
+                                                class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </button>
+												@endif
                                             <div id="dropdown" class="dropdown-menu">
-                                                <a value="1" class="dropdown-item" href="#">
-                                                Verified
-                                                </a>
+												<form>
+													<input type="hidden" name="status" value="1">
+													<a href="javascript:void(0)" id="verified_{{$vendor->id}}" class="dropdown-item" onclick="verify({{$vendor->id}})">
+                                                	Verified
+													</a>
+												</form>
+
+
                                                 <a value="2" class="dropdown-item" href="#">
                                                 Unverified
                                                 </a>
@@ -151,7 +177,9 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{url('admin/vendors_view')}}"
+
+														<a href="{{route('admin.vendors_view', $vendor->id)}}"
+
 															class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
@@ -161,9 +189,9 @@
 															class="menu-link px-3"> Verification</a>
 													</div> -->
 
-
 													<div class="menu-item px-3">
-														<a href="{{url('admin/vendors_edit')}}"
+														<a href="{{route('admin.vendors_edit', $vendor->id)}}"
+
 															class="menu-link px-3">Edit</a>
 													</div>
 
@@ -178,18 +206,21 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
+										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>
 								<!--end::Table-->
 							</div>
-</div>
+
+							</div>
+
 								<!--end::Card body-->
 							</div>
 
 						</div>
 						<!--end::Container-->
 					</div>
-
-
                     @endsection

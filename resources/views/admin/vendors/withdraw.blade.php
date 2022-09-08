@@ -62,13 +62,10 @@
 									<thead>
 										<!--begin::Table row-->
 										<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-											<th class="w-10px pe-2">
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid me-3">
-													<input class="form-check-input" type="checkbox" data-kt-check="true"
-														data-kt-check-target="#kt_customers_table .form-check-input"
-														value="1" />
-												</div>
+
+											<th class="min-w-50px pe-2">
+												Sr No.
+
 											</th>
 											<th class="min-w-125px"> Email	 </th>
 
@@ -92,29 +89,29 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-
+										<?php $i = 0; ?>
+										@foreach($withdraws as $withdraw)
 										<tr>
+											<?php $i = $i+1; ?>
 											<!--begin::Checkbox-->
-											<td>
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid">
-													<input class="form-check-input" type="checkbox" value="1" />
-												</div>
-											</td>
+											<td class="min-w-50px">{{$i}}</td>
 											<!--end::Checkbox-->
 											
-											<td>alberthmc@gmail.com	</td>
-											<td>121541500515	</td>
+											<td class="min-w-100px">{{$withdraw->email}}</td>
+											<td class="min-w-100px">{{$withdraw->phone}}</td>
 
                                             
-											<td>Malyck	</td>
-											<td>PayPal	</td>
-											<td>23-04-2023	</td>
+											<td class="min-w-100px">{{$withdraw->amount}}</td>
+											<td class="min-w-100px">{{$withdraw->method}}</td>
+											<td class="min-w-100px">{{$withdraw->created_at}}</td>
+
                                             
 
 
 
-											<td><span class="badge badge-light-success">Acctivated</span></td>
+
+											<td><span class="badge badge-light-success">@if($withdraw->status == 1) Confirmed @else Pending @endif</span></td>
+
 
 											<!--end::Date=-->
 											<!--begin::Action=-->
@@ -148,6 +145,9 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
+										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>
