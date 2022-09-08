@@ -24,7 +24,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Products">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Affilated Products">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -161,7 +161,7 @@
 						<!--end::Container-->
 					</div>
 
-					<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
       function deleteProduct(id) {
           Swal.fire({
@@ -189,4 +189,4 @@
           })
       }
   </script>
-                    @endsection
+@endsection
