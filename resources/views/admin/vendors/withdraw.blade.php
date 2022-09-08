@@ -62,8 +62,10 @@
 									<thead>
 										<!--begin::Table row-->
 										<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+
 											<th class="min-w-50px pe-2">
 												Sr No.
+
 											</th>
 											<th class="min-w-125px"> Email	 </th>
 
@@ -102,11 +104,14 @@
 											<td class="min-w-100px">{{$withdraw->amount}}</td>
 											<td class="min-w-100px">{{$withdraw->method}}</td>
 											<td class="min-w-100px">{{$withdraw->created_at}}</td>
+
                                             
 
 
 
+
 											<td><span class="badge badge-light-success">@if($withdraw->status == 1) Confirmed @else Pending @endif</span></td>
+
 
 											<!--end::Date=-->
 											<!--begin::Action=-->
@@ -140,7 +145,9 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
 										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>

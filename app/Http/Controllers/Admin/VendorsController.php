@@ -67,8 +67,7 @@ class VendorsController extends Controller
         $type = Config::get('constants.type');
         return view('admin.vendors.view', compact('vendor', 'products','total_added','status','type'));
     }
-
-
+    
     public  function  question()
     {
         return view('admin.vendors.question');

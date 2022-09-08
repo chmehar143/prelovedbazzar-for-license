@@ -89,6 +89,7 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
+
 										<?php $i = 0; ?>
 										@foreach($verified_Vendors as $vendor)
 										<?php $i = $i+1; ?>
@@ -106,12 +107,14 @@
 
                                             <button id="status" type="button" class="btn btn-success">
 												Verified
+
                                             </button>
                                             <button
                                                 id="bar"
                                                 type="button"
                                                 class="btn btn-success dropdown-toggle dropdown-toggle-split"
                                                 data-bs-toggle="dropdown"
+
                                                 aria-expanded="false">
                                                 <i class="mdi mdi-chevron-down"></i>
                                             </button>
@@ -127,6 +130,7 @@
                                                 <i class="mdi mdi-chevron-down"></i>
                                             </button>
 												@endif
+
                                             <div id="dropdown" class="dropdown-menu">
                                                 <a value="1" class="dropdown-item" href="#">
                                                 Verified
@@ -178,7 +182,9 @@
 								</table>
 								<!--end::Table-->
 							</div>
+
 						</div>
+
 								<!--end::Card body-->
 							</div>
 

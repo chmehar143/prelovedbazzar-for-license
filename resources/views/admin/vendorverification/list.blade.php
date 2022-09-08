@@ -89,6 +89,7 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
+
 										<?php $i = 0; ?>
 										@foreach($verified_Vendors as $vendor)
 										<?php $i = $i+1; ?>
@@ -127,6 +128,7 @@
 														<i class="mdi mdi-chevron-down"></i>
 													</button>
 														@endif
+
                                             <div id="dropdown" class="dropdown-menu">
                                                 <a value="1" class="dropdown-item" href="#">
                                                 Verified
@@ -172,13 +174,17 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
 										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>
 								<!--end::Table-->
 							</div>
+
 						</div>
+
 								<!--end::Card body-->
 							</div>
 

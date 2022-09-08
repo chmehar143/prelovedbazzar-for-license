@@ -14,7 +14,6 @@ class VendorVerificationController extends Controller
         return view('admin.vendorverification.list', compact('verified_Vendors'));
     }
 
-  
     public  function  pending()
     {
         $verified_Vendors = Vendor::where('status', 0)->get();

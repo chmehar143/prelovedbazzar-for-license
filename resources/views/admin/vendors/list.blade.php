@@ -73,12 +73,16 @@
 											<th class="min-w-125px"> Store Name </th>
 
 											<th class="min-w-125px">Vendor Email </th>
+
 											<th class="min-w-125px"> Shop Name </th>
+
 
 
 											<th class="min-w-125px">Status </th>
 											<th class="min-w-125px" style="display:none">Status </th>
+
 											<th class="min-w-125px">Action </th>
+
 
 
 
@@ -90,6 +94,7 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
+
 										<?php $i = 0; ?>
 										@foreach($vendors as $vendor)
 										<tr>
@@ -102,20 +107,24 @@
 											<td>{{$vendor->name}}</td>
 											<td>{{$vendor->email}}</td>
 											<td>{{$vendor->shop_name}}</td>
+
 											<th class="min-w-125px" style="display:none">Status </th>
 
 
 											<td> <div class="btn-group middle">
+
 											@if($vendor->status == 1)  
 
                                             <button id="status" type="button" class="btn btn-success">
 												Verified
+
                                             </button>
                                             <button
                                                 id="bar"
                                                 type="button"
                                                 class="btn btn-success dropdown-toggle dropdown-toggle-split"
                                                 data-bs-toggle="dropdown"
+
                                                 aria-expanded="false">
                                                 <i class="mdi mdi-chevron-down"></i>
                                             </button>
@@ -138,6 +147,7 @@
                                                 	Verified
 													</a>
 												</form>
+
 
                                                 <a value="2" class="dropdown-item" href="#">
                                                 Unverified
@@ -167,7 +177,9 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
+
 														<a href="{{route('admin.vendors_view', $vendor->id)}}"
+
 															class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
@@ -176,8 +188,10 @@
 														<a href="{{url('admin/vendors_question')}}"
 															class="menu-link px-3"> Verification</a>
 													</div> -->
+
 													<div class="menu-item px-3">
 														<a href="{{route('admin.vendors_edit', $vendor->id)}}"
+
 															class="menu-link px-3">Edit</a>
 													</div>
 
@@ -192,13 +206,17 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
 										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>
 								<!--end::Table-->
 							</div>
+
 							</div>
+
 								<!--end::Card body-->
 							</div>
 

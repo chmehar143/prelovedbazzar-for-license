@@ -140,14 +140,229 @@
 								
 								<div class="menu-item py-2">
                     <a class="menu-link  menu-center" href="{{url('admin/affilateproduct_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+
 										<span class="menu-icon me-0">
 											<i class="bi bi-cart"></i>
 										</span>
-                        <span class="menu-title">Affilate Products</span>
+										<span class="menu-title"> Vendors</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendors</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendors_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Vendors List</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendors_withdraw')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Vendors Withdraw</span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="bi bi-check"></i>
+										</span>
+										<span class="menu-title"> Vendors verification</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendors verification</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendorverification_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> All Verification </span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/vendorverification_pending')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Pending Verification </span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+
+
+
+
+                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="fas fa-sitemap"></i>
+										</span>
+										<span class="menu-title">Manage Categories</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Products</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/category_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Main Category</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/sub_category_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Sub Category</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/child_category_list')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Child Category</span>
+											</a>
+										</div>
+
+
+
+									</div>
+								</div>
+
+
+
+
+
+								<!-- <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="fas fa-sitemap"></i>
+										</span>
+										<span class="menu-title">Blog</span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1">  Blog</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/blog_categorieslist')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Categories</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/blog_postlist')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Post </span>
+											</a>
+										</div>
+									
+
+
+									</div>
+								</div> -->
+
+
+
+           
+
+
+
+
+								
+
+
+								<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class=" bi bi-person-lines-fill"></i>
+										</span>
+										<span class="menu-title"> Product Discussion </span>
+									</span>
+									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+										<div class="menu-item">
+											<div class="menu-content">
+												<span class="menu-section fs-5 fw-bolder ps-1 py-1"> Product  Discussion</span>
+											</div>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productdisscussion_review')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"> Reviews </span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productdisscussion_comments')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Comments </span>
+											</a>
+										</div>
+
+										<div class="menu-item">
+											<a class="menu-link" href="{{url('admin/productdisscussion_report')}}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">  Reports </span>
+											</a>
+										</div>
+										
+
+
+
+									</div>
+								</div>
+
+
+								
+								<div class="menu-item py-2">
+                    <a class="menu-link  menu-center" href="{{url('admin/message_messagelist')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="fas fa-fw fa-newspaper"></i>
+										</span>
+                        <span class="menu-title">Message</span>
                     </a>
                 </div>
 
-							
 				
 				<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
 									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
@@ -420,6 +635,7 @@
                         <span class="menu-title">Message</span>
                     </a>
                 </div>
+
 
 
                 <!-- <div class="menu-item py-2">

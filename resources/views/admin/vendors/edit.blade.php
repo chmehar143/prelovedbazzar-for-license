@@ -27,10 +27,12 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
+
 									<form id="kt_account_profile_details_form" action = "{{route('admin.vendors_update', $vendor->id)}}" 
 										class="form" method="post" enctype="multipart/form-data">
 										@csrf
 										@method('PUT')
+
 										<!--begin::Card body-->
 										<div class="card-body border-top p-9">
 											<!--begin::Input group-->
@@ -47,7 +49,9 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
+
 															<input type="text" name="email" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{$vendor->email}}" />
+
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -67,10 +71,10 @@
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
 													<input type="text" name="shop" class="form-control form-control-lg form-control-solid"  value="{{$vendor->shop_name}}" />
+
 												</div>
 												<!--end::Col-->
 											</div>
-
 
 										<div class="row mb-6">
 											<!--begin::Label-->
@@ -79,9 +83,11 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="content" id="editor">
+
 													{{$vendor->shop_detail}}
 												</textarea>
 											</div>
+
 											<!--end::Col-->
 										</div>
 
@@ -91,7 +97,9 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
+
 													<input type="text" name="name" class="form-control form-control-lg form-control-solid"  value="{{$vendor->name}}" />
+
 												</div>
 												<!--end::Col-->
 											</div>
@@ -104,6 +112,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
+
 													<input type="text" class="form-control form-control-lg form-control-solid"  value="{{$vendor->id}}" disabled/>
 												</div>
 												<!--end::Col-->
@@ -118,7 +127,9 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
+
 													<input type="text" name="address" class="form-control form-control-lg form-control-solid"  value="{{$vendor->address}}" />
+
 												</div>
 												<!--end::Col-->
 											</div>
@@ -129,11 +140,13 @@
                                                 <div class="row mb-6">
 												<!--begin::Label-->
 												<label class="col-lg-4 col-form-label required fw-bold fs-6">Registration Number
+
    												</label>
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
 													<input type="text" name="reg_no" class="form-control form-control-lg form-control-solid"  value="{{$vendor->registration}}" />
+
 												</div>
 												<!--end::Col-->
 											</div>
@@ -146,7 +159,9 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
+
 												<input type="text" name="message" class="form-control form-control-lg form-control-solid"  value="{{$vendor->message}}"
+
                                                  />
 											</div>
 											<!--end::Col-->

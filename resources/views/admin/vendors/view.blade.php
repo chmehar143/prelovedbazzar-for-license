@@ -11,6 +11,7 @@
                                   <!--begin::Card title-->
                                   <div class="card-title">
                                     <h2 class="fw-bolder mb-0">View  Vendor Detail</h2>
+
                                   </div>
                                   <!--end::Card title-->
                                   <!--begin::Card toolbar-->
@@ -44,6 +45,7 @@
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Vendor ID#	 </td>
                                               <td class="text-gray-800">{{$vendor->id}}</td>
+
                                             </tr>
 
                                             <tr>
@@ -56,6 +58,7 @@
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Owner Name	</td>
                                               <td class="text-gray-800">{{$vendor->name}}</td>
+
                                             </tr>
 
                                            
@@ -63,11 +66,14 @@
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Email</td>
+
                                               <td class="text-gray-800">{{$vendor->email}}</td>
+
                                             </tr>
                                             
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Shop Number	</td>
+
                                               <td class="text-gray-800">{{$vendor->id}}</td>
                                             </tr>
                                             <tr>
@@ -77,6 +83,7 @@
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Shop Address	</td>
                                               <td class="text-gray-800">{{$vendor->address}}</td>
+
                                             </tr>
 
                                           
@@ -93,12 +100,16 @@
                                               
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Message</td>
+
                                               <td class="text-gray-800">{{$vendor->message}}</td>
+
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Total Product(s)	 </td>
+
                                               <td class="text-gray-800 ml-2">{{$total_added}}</td>
+
                                             </tr>
 
                                             <tr>
@@ -108,12 +119,16 @@
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Current Balance </td>
+
                                               <td class="text-gray-800">565</td>
+
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Shop Details	</td>
+
                                               <td class="text-gray-800">{{$vendor->shop_detail}}</td>
+
                                             </tr>
 
 
@@ -122,7 +137,9 @@
                                             
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Status </td>
+
                                               <td class="text-gray-800">@if($vendor->status == 1) verified 
+
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
                                                 <span class="svg-icon svg-icon-2 svg-icon-success">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -130,6 +147,7 @@
                                                     <path d="M10.4343 12.4343L8.75 10.75C8.33579 10.3358 7.66421 10.3358 7.25 10.75C6.83579 11.1642 6.83579 11.8358 7.25 12.25L10.2929 15.2929C10.6834 15.6834 11.3166 15.6834 11.7071 15.2929L17.25 9.75C17.6642 9.33579 17.6642 8.66421 17.25 8.25C16.8358 7.83579 16.1642 7.83579 15.75 8.25L11.5657 12.4343C11.2533 12.7467 10.7467 12.7467 10.4343 12.4343Z" fill="black"></path>
                                                   </svg>
                                                 </span>
+
 												@else Unverirfied  
 												<span class="svg-icon svg-icon-2 svg-icon-danger">
 													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -137,6 +155,7 @@
 													</svg>
                                                 </span>
 												@endif
+
                                                 <!--end::Svg Icon-->
                                               </td>
                                             </tr>
@@ -216,8 +235,10 @@
 									<thead>
 										<!--begin::Table row-->
 										<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+
 											<th class="min-w-50px pe-2">
 												Sr No.
+
 											</th>
 											<th class="min-w-125px"> Product ID	 </th>
 
@@ -239,6 +260,7 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
+
 										<?php $i = 0; ?>
 										@foreach($products as $product)
 										<?php $i = $i+1; ?>
@@ -258,7 +280,9 @@
 								</table>
 								<!--end::Table-->
 							</div>
+
 						</div>
+
 								<!--end::Card body-->
 							</div>
 
