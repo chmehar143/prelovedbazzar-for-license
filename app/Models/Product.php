@@ -19,5 +19,9 @@ class Product extends Model
         'p_stock','p_detail','p_r_policy','small',
         'medium','large','status'
     ];
+    public function vendor()
+    {
+        return $this->belongsTo(Vendor::class);
+    }
 
 }

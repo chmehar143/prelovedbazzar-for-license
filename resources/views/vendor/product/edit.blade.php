@@ -292,19 +292,19 @@
 													<div class="d-flex align-items-center mt-3">
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid me-5">
-															<input class="form-check-input" name="small" type="checkbox" value="{{$product->small}}" <?php if($product->small == 1){ checked ;} ?>   />
+															<input class="form-check-input" name="small" type="checkbox" value="{{$product->small}}" @if($product->small == 1) checked @endif />
 															<span class="fw-bold ps-2 fs-6">Small</span>
 														</label>
 														<!--end::Option-->
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid">
-															<input class="form-check-input" name="medium" type="checkbox" value="{{$product->medium}}" <?php if($product->medium == 1){ checked ;} ?>/>
+															<input class="form-check-input" name="medium" type="checkbox" value="{{$product->medium}}" @if($product->medium == 1) checked @endif />
 															<span class="fw-bold ps-2 fs-6">Medium</span>
 														</label>
 
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid">
-															<input class="form-check-input" name="large" type="checkbox" value="{{$product->large}}" <?php if($product->large == 1){ checked ;} ?>/>
+															<input class="form-check-input" name="large" type="checkbox" value="{{$product->large}}" @if($product->large == 1) checked @endif />
 															<span class="fw-bold ps-2 fs-6">Large</span>
 														</label>
 														<!--end::Option-->
