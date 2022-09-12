@@ -1,7 +1,5 @@
 @extends('user.layouts.app')
-
 @section('content')
-
 <main class="main mb-10 pb-1">
             <!-- Start of Breadcrumb -->
             <nav class="breadcrumb-nav container">
@@ -16,7 +14,7 @@
                             <i class="w-icon-angle-left"></i>
                         </a>
                         <span class="product-nav-popup">
-                            <img src="{{asset('frontend-assets/assets/images/products/product-nav-prev.jpg')}}" alt="Product" width="110"
+                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product" width="110"
                                 height="110" />
                             <span class="product-name">Soft Sound Maker</span>
                         </span>
@@ -26,7 +24,7 @@
                             <i class="w-icon-angle-right"></i>
                         </a>
                         <span class="product-nav-popup">
-                            <img src="{{asset('frontend-assets/assets/images/products/product-nav-next.jpg')}}" alt="Product" width="110"
+                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product" width="110"
                                 height="110" />
                             <span class="product-name">Fabulous Sound Speaker</span>
                         </span>
@@ -50,36 +48,36 @@
                                     <div class="swiper-wrapper row cols-1 gutter-no">
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="{{asset('frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
+                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                                     data-zoom-image="{{asset('frontend-assets/frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="{{asset('frontend-assets/assets/images/products/without/2-800x900.jpg')}}"
-                                                    data-zoom-image="a{{asset('frontend-assets/ssets/images/products/without/2-800x900.jpg')}}"
+                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
+                                                    data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                                     alt="Bright Green IPhone" width="488" height="549">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}"
+                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                                     data-zoom-image="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="{{asset('frontend-assets/assets/images/products/without/4-800x900.jpg')}}"
-                                                    data-zoom-image="{{asset('frontend-assets/assets/images/products/without/4-800x900.jpg')}}"
+                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
+                                                    data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
                                         <div class="swiper-slide">
                                             <figure class="product-image">
-                                                <img src="{{asset('frontend-assets/assets/images/products/without/5-800x900.jpg')}}"
-                                                    data-zoom-image="{{asset('frontend-assets/assets/images/products/without/5-800x900.jpg')}}"
+                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
+                                                    data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                                     alt="Bright Green IPhone" width="800" height="900">
                                             </figure>
                                         </div>
@@ -102,23 +100,23 @@
                                 }">
                                     <div class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
                                         <div class="product-thumb swiper-slide">
-                                            <img src="{{asset('frontend-assets/assets/images/products/without/1-800x900.jpg')}}" alt="Product Thumb"
+                                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="{{asset('frontend-assets/assets/images/products/without/2-800x900.jpg')}}" alt="Product Thumb"
+                                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}" alt="Product Thumb"
+                                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="{{asset('frontend-assets/assets/images/products/without/4-800x900.jpg ')}}" alt="Product Thumb"
+                                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                         <div class="product-thumb swiper-slide">
-                                            <img src="{{asset('frontend-assets/assets/images/products/without/5-800x900.jpg')}}" alt="Product Thumb"
+                                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
                                                 width="800" height="900">
                                         </div>
                                     </div>
@@ -129,26 +127,26 @@
                         </div>
                         <div class="col-md-6 mb-4 mb-md-6">
                             <div class="product-details">
-                                <h1 class="product-title">Bright Green IPhone</h1>
+                                <h1 class="product-title">{{$product->p_name}}</h1>
                                 <div class="product-bm-wrapper">
                                     <figure class="brand">
-                                        <img src="{{asset('frontend-assets/assets/images/products/brand/brand-2.jpg')}}" alt="Brand" width="105"
+                                        <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Brand" width="105"
                                             height="48" />
                                     </figure>
                                     <div class="product-meta">
                                         <div class="product-categories">
                                             Category:
-                                            <span class="product-category"><a href="#">Electronics</a></span>
+                                            <span class="product-category"><a href="#">{{$category->name}}</a></span>
                                         </div>
                                         <div class="product-sku">
-                                            SKU: <span>MS46891383</span>
+                                            SKU: <span>{{$product->p_sku}}</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <hr class="product-divider">
 
-                                <div class="product-price"><ins class="new-price">$950.00</ins></div>
+                                <div class="product-price"><ins class="new-price">${{$product->p_new_price}}</ins></div>
 
                                 <div class="ratings-container">
                                     <div class="ratings-full">
@@ -844,12 +842,13 @@
                             }
                         }">
                             <div class="swiper-wrapper row cols-lg-3 cols-md-4 cols-sm-3 cols-2">
+                                @foreach($moreproducts as $unit)
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="{{asset('frontend-assets/assets/images/products/default/1-1.jpg')}}" alt="Product"
+                                            <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}" alt="Product"
                                                 width="300" height="338" />
-                                            <img src="{{asset('frontend-assets/assets/images/products/default/1-2.jpg')}}" alt="Product"
+                                            <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -866,9 +865,9 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <div class="product-cat"><a href="shop-banner-sidebar.html">Accessories</a>
+                                        <div class="product-cat"><a href="{{route('product', $unit->id)}}">{{$unit->name}}</a>
                                         </div>
-                                        <h4 class="product-name"><a href="product-default.html">Sticky Pencil</a>
+                                        <h4 class="product-name"><a href="{{route('product', $unit->id)}}">{{$unit->p_name}}</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -878,10 +877,11 @@
                                             <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
-                                            <div class="product-price">$20.00</div>
+                                            <div class="product-price">${{$unit->p_new_price}}</div>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
@@ -1021,10 +1021,11 @@
                             }
                         }">
                             <div class="swiper-wrapper row cols-lg-3 cols-md-4 cols-sm-3 cols-2">
+                                @foreach($related_products as $related)
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="{{asset('frontend-assets/assets/images/products/default/5.jpg')}}" alt="Product"
+                                            <img src="{{asset('storage/uploads/products/'.$related->p_image)}}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
@@ -1041,7 +1042,7 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Drone</a></h4>
+                                        <h4 class="product-name"><a href="product-default.html">{{$related->p_name}}</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
@@ -1050,10 +1051,11 @@
                                             <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
-                                            <div class="product-price">$632.00</div>
+                                            <div class="product-price">${{$related->p_new_price}}</div>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
                                         <a href="product-default.html">
