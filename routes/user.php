@@ -12,6 +12,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Register
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('change/password', 'Auth\RegisterController@store')->name('change');
 Route::post('register', 'Auth\RegisterController@register');
 
 // Reset Password

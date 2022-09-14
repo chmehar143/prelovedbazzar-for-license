@@ -24,23 +24,6 @@ use App\Http\Controllers\ErrorPageController;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,25 +38,28 @@ use App\Http\Controllers\ErrorPageController;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/shop/{name}', [ShopController::class, 'sortby'])->name('sortby');
+Route::get('/shop/{min}/{max}', [ShopController::class, 'sort_price'])->name('sort_price');
 Route::get('/vendor-store', [VendorController::class, 'index'])->name('vendor-store');
 Route::get('/vendor-store-details', [VendorStoreDetailsController::class, 'index'])->name('vendor-store-details');
 Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
 Route::get('/become-a-vendor', [BecomeAVendorController::class, 'index'])->name('become-a-vendor');
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart_store', [CartController::class, 'store'])->name('addcart');
+Route::get('/remove_item/{id}', [CartController::class, 'remove'])->name('remove_cart');
+Route::get('/clear_cart', [CartController::class, 'clear'])->name('clear_cart');
+Route::post('/update', [CartController::class, 'update'])->name('update');
 Route::get('/compare', [CompareController::class, 'index'])->name('compare');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::get('/product-details', [ProductDetailsController::class, 'index'])->name('product-details');
-Route::get('/my-account', [MyaccountController::class, 'index'])->name('my-account');
+Route::get('/product/{id}', [ProductDetailsController::class, 'index'])->name('product');
+Route::get('/my-account', [MyaccountController::class, 'index'])->middleware(['user.auth'])->name('my-account');
 Route::get('/login', [LoginController::class, 'index'])->name('Login');
+Route::post('/order-place', [OrderController::class, 'store'])->name('place');
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::get('/order-view', [OrderViewController::class, 'index'])->name('order-view');
 Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error');
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
-
-
-
-
 
 

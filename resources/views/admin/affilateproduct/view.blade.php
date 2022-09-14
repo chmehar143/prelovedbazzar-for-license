@@ -9,7 +9,7 @@
                                 <div class="card-header border-0">
                                   <!--begin::Card title-->
                                   <div class="card-title">
-                                    <h2 class="fw-bolder mb-0">View  Affilate Product</h2>
+                                    <h2 class="fw-bolder mb-0">View Affilated Product</h2>
                                   </div>
                                   <!--end::Card title-->
                                   <!--begin::Card toolbar-->
@@ -24,7 +24,7 @@
                                   <!--begin::Option-->
                                   <div class="py-0" data-kt-customer-payment-method="row">
                                     <!--begin::Header-->
-                                 
+                                  
                                     <!--begin::Body-->
                                     <div id="kt_customer_view_payment_method_1" class="collapse show fs-6 ps-10" data-bs-parent="#kt_customer_view_payment_method">
                                       <!--begin::Details-->
@@ -34,59 +34,50 @@
                                           <table class="table table-flush fw-bold gy-1">
                                             <tbody>
                                             <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Image</td>
-                                              <td class="text-gray-800"><img src="#"></td>
+                                              <td class="text-muted min-w-125px w-125px">Current Featured Image</td>
+                                              <td class="text-gray-800"><img src="{{ asset('storage/uploads/products/'.$product->a_image)}}" width="100px"></td>
                                             </tr>
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Product Name </td>
-                                              <td class="text-gray-800">Emma Smith</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px">Product SKU </td>
-                                              <td class="text-gray-800">Emma Smith</td>
+                                              <td class="text-gray-800">{{$product->a_name}}</td>
                                             </tr>
 
                                           
                                             
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Quantity</td>
-                                              <td class="text-gray-800">12</td>
+                                              <td class="text-gray-800">{{$product->a_stock}}</td>
                                             </tr>
-
-                                           
 
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Price</td>
-                                              <td class="text-gray-800">1222</td>
+                                              <td class="text-gray-800">{{$product->a_old_price}}</td>
                                             </tr>
                                             
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Issuer</td>
-                                              <td class="text-gray-800">VICBANK</td>
+                                              <td class="text-gray-800">{{$product->a_sku}}</td>
                                             </tr>
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Shipping Time</td>
-                                              <td class="text-gray-800">2 day</td>
+                                              <td class="text-gray-800">{{$product->a_shia_time}}</td>
                                             </tr>
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Current Price</td>
-                                              <td class="text-gray-800">222</td>
+                                              <td class="text-gray-800">{{$product->a_new_price}}</td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Product Return Policy </td>
-                                              <td class="text-gray-800">22</td>
+                                              <td class="text-gray-800">{{$product->a_r_policy}}</td>
                                             </tr>
-
 
                                             <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Youtube Link   </td>
-                                              <td class="text-gray-800">https//:avc.com</td>
+                                              <td class="text-muted min-w-125px w-125px"> Size </td>
+                                              <td class="text-gray-800">{{$product->small}}</td>
                                             </tr>
 
-                                          
 
                                           </tbody></table>
                                         </div>
@@ -98,49 +89,45 @@
                                               
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Prdouct Color</td>
-                                              <td class="text-gray-800">light black</td>
+                                              <td class="text-gray-800">
+                                                <input type="color" value="{{$product->a_color}}" disabled>
+                                              </td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Category </td>
-                                              <td class="text-gray-800">Men's cloth</td>
+                                              <td class="text-gray-800">{{$product->a_catog}}</td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Sub Category </td>
-                                              <td class="text-gray-800">WoMen</td>
+                                              <td class="text-gray-800">{{$product->a_sub_catog}}</td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Child Category </td>
-                                              <td class="text-gray-800">baby boy</td>
+                                              <td class="text-gray-800">{{$product->a_child_catog}}</td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Previous Price</td>
-                                              <td class="text-gray-800">222</td>
+                                              <td class="text-gray-800">{{$product->a_old_price}}</td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Product Stock</td>
-                                              <td class="text-gray-800">cacdscaca</td>
+                                              <td class="text-gray-800">{{$product->a_stock}}</td>
                                             </tr>
 
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px"> Product  Description</td>
-                                              <td class="text-gray-800">acscscacaca</td>
-                                            </tr>
-
-
-                                            <tr>
-                                              <td class="text-muted min-w-125px w-125px"> Size </td>
-                                              <td class="text-gray-800">Small</td>
+                                              <td class="text-gray-800">{{$product->a_detail}}</td>
                                             </tr>
 
                                             
                                             <tr>
                                               <td class="text-muted min-w-125px w-125px">Status </td>
-                                              <td class="text-gray-800">Approved
+                                              <td class="text-gray-800">{{$product->a_status}}
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
                                                 <span class="svg-icon svg-icon-2 svg-icon-success">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

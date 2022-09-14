@@ -120,7 +120,7 @@
                 <tbody>
                 <tr>
                   <td class="text-muted min-w-125px w-125px">Current Featured Image</td>
-                  <td class="text-gray-800"><img src="{{ asset('vendor/uploads/products/'.$product->p_image)}}" width="100px"></td>
+                  <td class="text-gray-800"><img src="{{ asset('storage/uploads/products/'.$product->p_image)}}" width="100px"></td>
                 </tr>
                 <tr>
                   <td class="text-muted min-w-125px w-125px">Product Name </td>

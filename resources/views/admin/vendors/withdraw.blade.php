@@ -13,7 +13,7 @@
 									<!--begin::Breadcrumb-->
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
-										
+
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
 											<span class="bullet bg-gray-200 w-5px h-2px"></span>
@@ -36,7 +36,7 @@
 							<!--begin::Page title-->
 							<div class="flex-grow-1 flex-shrink-0 me-5">
 								<!--begin::Page title-->
-								
+
 								<!--end::Page title-->
 							</div>
 							<!--end::Page title-->
@@ -91,7 +91,7 @@
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 11pc;">
 							<!--begin::Card-->
-                       
+
 
 							<div class="card">
 								<!--begin::Card header-->
@@ -118,10 +118,10 @@
 										<!--begin::Toolbar-->
 										<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
 											<!--begin::Filter-->
-										
+
 											<!--begin::Menu 1-->
-									
-											
+
+
 											<!--begin::Add customer-->
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
@@ -146,13 +146,10 @@
 									<thead>
 										<!--begin::Table row-->
 										<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-											<th class="w-10px pe-2">
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid me-3">
-													<input class="form-check-input" type="checkbox" data-kt-check="true"
-														data-kt-check-target="#kt_customers_table .form-check-input"
-														value="1" />
-												</div>
+
+											<th class="min-w-50px pe-2">
+												Sr No.
+
 											</th>
 											<th class="min-w-125px"> Email	 </th>
 
@@ -176,27 +173,29 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-
+										<?php $i = 0; ?>
+										@foreach($withdraws as $withdraw)
 										<tr>
+											<?php $i = $i+1; ?>
 											<!--begin::Checkbox-->
-											<td>
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid">
-													<input class="form-check-input" type="checkbox" value="1" />
-												</div>
-											</td>
+											<td class="min-w-50px">{{$i}}</td>
 											<!--end::Checkbox-->
-											
-											<td>alberthmc@gmail.com	</td>
-											<td>121541500515	</td>
 
-                                            
-											<td>Malyck	</td>
-											<td>PayPal	</td>
-											<td>23-04-2023	</td>
-                                        
+											<td class="min-w-100px">{{$withdraw->email}}</td>
+											<td class="min-w-100px">{{$withdraw->phone}}</td>
 
-											<td><span class="badge badge-light-success">Acctivated</span></td>
+
+											<td class="min-w-100px">{{$withdraw->amount}}</td>
+											<td class="min-w-100px">{{$withdraw->method}}</td>
+											<td class="min-w-100px">{{$withdraw->created_at}}</td>
+
+
+
+
+
+
+											<td><span class="badge badge-light-success">@if($withdraw->status == 1) Confirmed @else Pending @endif</span></td>
+
 
 											<!--end::Date=-->
 											<!--begin::Action=-->
@@ -218,7 +217,7 @@
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
 													data-kt-menu="true">
 													<!--begin::Menu item-->
-													
+
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
 														<a href="#" class="menu-link px-3"
@@ -230,6 +229,9 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
+										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>

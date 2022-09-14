@@ -1,4 +1,6 @@
-
+<?php
+use Illuminate\Support\Facades\URL;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,14 +52,12 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/assets/vendor/swiper/swiper-bundle.min.css')}}">
 
     <!-- Default CSS -->
-    @if(Route::is('home') )
+    @if(Request::segment(1) != '')
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
+    @else
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/demo1.min.css')}}">
     @endif
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
-
-
 </head>
-
 <body class="home">
 <div class="page-wrapper">
     <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>

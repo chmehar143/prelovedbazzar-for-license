@@ -13,7 +13,7 @@
 									<!--begin::Breadcrumb-->
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
-										
+
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
 											<span class="bullet bg-gray-200 w-5px h-2px"></span>
@@ -36,7 +36,7 @@
 							<!--begin::Page title-->
 							<div class="flex-grow-1 flex-shrink-0 me-5">
 								<!--begin::Page title-->
-								
+
 								<!--end::Page title-->
 							</div>
 							<!--end::Page title-->
@@ -90,7 +90,7 @@
 
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 11pc;">
-						
+
 
 							<div class="card">
 								<!--begin::Card header-->
@@ -117,10 +117,10 @@
 										<!--begin::Toolbar-->
 										<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
 											<!--begin::Filter-->
-										
+
 											<!--begin::Menu 1-->
-									
-											
+
+
 											<!--begin::Add customer-->
 											<!-- <a type="button" class="btn btn-primary" href="{{url('admin/allproducts_create')}}">Add   Product</a> -->
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
@@ -163,7 +163,7 @@
 											<th class="min-w-125px">Status </th>
 
 
-											
+
 
 										</tr>
 										<!--end::Table row-->
@@ -172,34 +172,45 @@
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
 
+										<?php $i = 0; ?>
+										@foreach($verified_Vendors as $vendor)
+										<?php $i = $i+1; ?>
 										<tr>
 											<!--begin::Checkbox-->
-											<td>
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid">
-													<input class="form-check-input" type="checkbox" value="1" />
-												</div>
-											</td>
+											<td>{{$i}}</td>
 											<!--end::Checkbox-->
-                                            
-											<td>Physical Product Title Title will Be Here 99u</td>
-											<td>Physical</td>
-											<td>Unlimited	</td>
 
+											<td>{{$vendor->name}}</td>
+											<td>{{$vendor->email}}</td>
+											<td>{{$vendor->shop_detail}}</td>
 
 											<td> <div class="btn-group middle">
-                                            <button id="status" type="button" class="btn btn-success">
-                                                Verified
-                                            </button>
-                                            <button
-                                                id="bar"
-                                                type="button"
-                                                class="btn btn-success dropdown-toggle dropdown-toggle-split"
-                                                data-bs-toggle="dropdown"
-                                                aria-expanded="false"
-                                            >
-                                                <i class="mdi mdi-chevron-down"></i>
-                                            </button>
+												@if($vendor->status == 1)
+
+													<button id="status" type="button" class="btn btn-success">
+														Verified
+													</button>
+													<button
+														id="bar"
+														type="button"
+														class="btn btn-success dropdown-toggle dropdown-toggle-split"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<i class="mdi mdi-chevron-down"></i>
+													</button>
+													@else
+													<button id="status" type="button" class="btn btn-danger">
+														Unverified                                            </button>
+													<button
+														id="bar"
+														type="button"
+														class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<i class="mdi mdi-chevron-down"></i>
+													</button>
+														@endif
+
                                             <div id="dropdown" class="dropdown-menu">
                                                 <a value="1" class="dropdown-item" href="#">
                                                 Verified
@@ -207,11 +218,11 @@
                                                 <a value="2" class="dropdown-item" href="#">
                                                 Unverified
                                                 </a>
-                                               
+
                                             </div>
                                             </div>
                                              </td>
- 
+
 											<!--end::Date=-->
 											<!--begin::Action=-->
 											<td class="text-end">
@@ -232,7 +243,7 @@
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
 													data-kt-menu="true">
 													<!--begin::Menu item-->
-									
+
 
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
@@ -245,12 +256,17 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+
+										@endforeach
+
 									</tbody>
 									<!--end::Table body-->
 								</table>
 								<!--end::Table-->
 							</div>
-</div>
+
+						</div>
+
 								<!--end::Card body-->
 							</div>
 
