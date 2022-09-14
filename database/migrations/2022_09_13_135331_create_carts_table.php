@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('quantity')->default(1);
-            $table->bigInteger('quantity')->default(1);
             $table->double('price', 8, 2)->default(0.00);
             $table->double('net_price', 8, 2)->default(0.00);
             $table->string('size')->nullable();
