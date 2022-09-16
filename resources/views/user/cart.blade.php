@@ -35,71 +35,51 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <?php $subtotal= 0; ?>
+                                    @forelse($carts as $cart)
+                                    <tr id="setup_{{$cart->id}}" class="data_row">
                                         <td class="product-thumbnail">
                                             <div class="p-relative">
-                                                <a href="product-default.html">
+                                                <a href="javascript:void(0)" class="btn btn-close" onclick="deleteProduct({{$cart->prod_id}})">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                                <a href="{{ route('product',$cart['prod_id'])}}">
                                                     <figure>
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="product"
+                                                        <img src="{{asset('storage/uploads/products/'.$cart['p_image'])}}" alt="product"
                                                             width="300" height="338">
                                                     </figure>
                                                 </a>
-                                                <button type="submit" class="btn btn-close"><i
-                                                        class="fas fa-times"></i></button>
                                             </div>
                                         </td>
                                         <td class="product-name">
                                             <a href="product-default.html">
-                                                Classic Simple Backpack
+                                                {{$cart['p_name']}}
                                             </a>
                                         </td>
-                                        <td class="product-price"><span class="amount">$40.00</span></td>
+                                        <td class="product-price"><span class="amount">${{$cart['p_new_price']}}</span></td>
                                         <td class="product-quantity">
                                             <div class="input-group">
-                                                <input class="quantity form-control" type="number" min="1" max="100000">
+                                                <input id="qnty_{{$cart->prod_id}}" class="quantity form-control" type="number" min="1" max="100000" value="{{$cart['quantity']}}">
                                                 <button class="quantity-plus w-icon-plus"></button>
                                                 <button class="quantity-minus w-icon-minus"></button>
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="amount">$40.00</span>
+                                            <span class="amount">${{$cart['p_new_price'] * $cart['quantity']}}</span>
                                         </td>
                                     </tr>
+                                    <?php $subtotal = $subtotal + $cart['p_new_price'] * $cart['quantity'] ?>
+                                    @empty
                                     <tr>
-                                        <td class="product-thumbnail">
-                                            <div class="p-relative">
-                                                <a href="product-default.html">
-                                                    <figure>
-                                                        <img src="{{asset('frontend-assets/assets/images/shop/13.jpg')}}" alt="product"
-                                                            width="300" height="338">
-                                                    </figure>
-                                                </a>
-                                                <button class="btn btn-close"><i class="fas fa-times"></i></button>
-                                            </div>
-                                        </td>
-                                        <td class="product-name">
-                                            <a href="product-default.html">
-                                                Smart Watch
-                                            </a>
-                                        </td>
-                                        <td class="product-price"><span class="amount">$60.00</span></td>
-                                        <td class="product-quantity">
-                                            <div class="input-group">
-                                                <input class="quantity form-control" type="number" min="1" max="100000">
-                                                <button class="quantity-plus w-icon-plus"></button>
-                                                <button class="quantity-minus w-icon-minus"></button>
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">
-                                            <span class="amount">$60.00</span>
-                                        </td>
+                                        <a href="{{route('shop')}}"><h4>Your cart is empty</h4></a>
                                     </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
 
                             <div class="cart-action mb-6">
-                                <a href="#" class="btn btn-dark btn-rounded btn-icon-left btn-shopping mr-auto"><i class="w-icon-long-arrow-left"></i>Continue Shopping</a>
-                                <button type="submit" class="btn btn-rounded btn-default btn-clear" name="clear_cart" value="Clear Cart">Clear Cart</button>
+                                <a href="{{route('shop')}}" class="btn btn-dark btn-rounded btn-icon-left btn-shopping mr-auto"><i class="w-icon-long-arrow-left"></i>Continue Shopping</a>
+                                <a href="javascript:void(0)" class="btn btn-rounded btn-default btn-clear" onclick="clearall()">Clear Cart</a>
                                 <button type="submit" class="btn btn-rounded btn-update disabled" name="update_cart" value="Update Cart">Update Cart</button>
                             </div>
 
@@ -115,7 +95,7 @@
                                     <h3 class="cart-title text-uppercase">Cart Totals</h3>
                                     <div class="cart-subtotal d-flex align-items-center justify-content-between">
                                         <label class="ls-25">Subtotal</label>
-                                        <span>$100.00</span>
+                                        <span>${{$subtotal}}</span>
                                     </div>
 
                                     <hr class="divider">
@@ -210,6 +190,53 @@
             <!-- End of PageContent -->
         </main>
         <!-- End of Main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
 
+function deleteProduct(id){
+            // processing ajax request    
+            $.ajax({
+                url: "{{ url('remove_item') }}" +'/' + id,
+            success: function() {
+                    $("#setup_" +id).remove();
+                }
+            });   
+        }
 
-        @endsection
+function clearall(){
+
+        $.ajax({
+            url: "{{ route('clear_cart') }}",
+        success: function() {
+                $(".data_row").remove();
+            }
+        });
+}
+//https://www.youtube.com/watch?v=eblMZxwP1eY
+//for update quantity...
+$(document).ready(function(){
+    $(document).change("#qnty_" +id, function(){
+        var quantity = $("#qnty" +(id)).val();
+            var id = id;
+            // processing ajax request    
+            $.ajax({
+                url: "{{ route('update') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    id: id,
+                    quantity: quantity
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            }); 
+    });
+  
+        });
+</script>
+
+@endsection

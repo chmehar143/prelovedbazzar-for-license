@@ -1,5 +1,18 @@
 @extends('user.layouts.app')
 @section('content')
+<head>
+<style>
+      .w-icon-minus:before {
+      content: "";
+      margin-left: 5px;
+      }
+      .w-icon-plus:before {
+      content: "";
+      margin-left: 5px;
+      margin-bottom: 1;
+      }
+   </style>
+</head>
 <main class="main mb-10 pb-1">
             <!-- Start of Breadcrumb -->
             <nav class="breadcrumb-nav container">
@@ -163,25 +176,44 @@
                                         <li>Aliquam id diam maecenas ultricies mi eget mauris.</li>
                                     </ul>
                                 </div>
-
                                 <hr class="product-divider">
-
                                 <div class="fix-bottom product-sticky-content sticky-content">
-                                    <div class="product-form container">
+                                    <form class="product-form container" action="javascript:void(0)">
+                                        <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
+                                        <input type="hidden" id="size" name="size" value="medium">
                                         <div class="product-qty-form with-label">
                                             <label>Quantity:</label>
                                             <div class="input-group">
                                                 <input class="quantity form-control" type="number" min="1"
-                                                    max="10000000">
-                                                <button class="quantity-plus w-icon-plus"></button>
-                                                <button class="quantity-minus w-icon-minus"></button>
+                                                   id="qnty" value="1" max="10000000">
+                                                <a class="quantity-plus w-icon-plus" style="margin-left: -4pc;margin-top:10px; width: 2.4rem;height: 2.4rem;
+                                                    border-radius: 50%;
+                                                    cursor:pointer;
+                                                    background-color: #eee;
+                                                    color: #666;
+                                                    font-size: 1.4rem;
+                                                    border: none;"></a>
+                                                <a class="quantity-minus w-icon-minus" style="position: absolute;
+                                                    top: 50%;
+                                                    -webkit-transform: translateY(-50%);
+                                                    transform: translateY(-50%);
+                                                    cursor:pointer;
+                                                    right: 1.5rem;
+                                                    padding: 0;
+                                                    width: 2.4rem;
+                                                    height: 2.4rem;
+                                                    border-radius: 50%;
+                                                    background-color: #eee;
+                                                    color: #666;
+                                                    font-size: 1.4rem;
+                                                    border: none;"></a>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary btn-cart">
+                                        <button class="btn btn-primary btn-cart" id="postbutton">
                                             <i class="w-icon-cart"></i>
                                             <span>Add to Cart</span>
                                         </button>
-                                    </div>
+                                    </form>
                                 </div>
 
                                 <div class="social-links-wrapper">
@@ -1170,5 +1202,33 @@
             </div>
             <!-- End of Page Content -->
         </main>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
+<script type="text/javascript">
+
+
+   $("#postbutton").click(function(){
+            var id = $("#product_id").val();
+            var quantity = $("#qnty").val();
+            var size = $("#size").val();
+            // processing ajax request    
+            $.ajax({
+                url: "{{ route('addcart') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    id: id,
+                    quantity: quantity,
+                    size: size
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });   
+        });
+</script>
 @endsection
