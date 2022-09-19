@@ -121,27 +121,15 @@ class CartController extends Controller
     }
 
     public function update(Request $request){
+        $data = array($request->all());
         if(Auth::guard('user')){
-            $cart = Cart::where('prod_id', $request->id)->where('user_id', Auth::guard('user')->id())->first();
-            $cart->quantity = $request->quantity;
-            $cart->update();
-            return response()->json([
-                'status'=> 200,
-                'success'=>'Data has been updated'
-
-            ]);
+            $user = Auth::guard('user');
+            foreach($data as $key => $value){
+                $cart = Cart::where('prod_id', $value['id'])->where('user_id', $user->id())->get();
+                $cart->quantity = $value['qnty'];
+            }
         }
-        else{
-            $session = Session::getId();
-            $cart = Cart::where('prod_id', $request->id)->where('session_id', $session)->first();
-            $cart->quantity = $request->quantity;
-            $cart->update();
-            return response()->json([
-                'status'=> 200,
-                'success'=>'Data has been deleted'
-
-            ]);
-        }
+        return redirect()->back();
     }
 
     

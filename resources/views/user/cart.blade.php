@@ -24,6 +24,8 @@
                 <div class="container">
                     <div class="row gutter-lg mb-10">
                         <div class="col-lg-8 pr-lg-4 mb-6">
+                        <form action="{{route('update')}}" method="post">
+                            @csrf
                             <table class="shop-table cart-table">
                                 <thead>
                                     <tr>
@@ -59,7 +61,8 @@
                                         <td class="product-price"><span class="amount">${{$cart['p_new_price']}}</span></td>
                                         <td class="product-quantity">
                                             <div class="input-group">
-                                                <input id="qnty_{{$cart->prod_id}}" class="quantity form-control" type="number" min="1" max="100000" value="{{$cart['quantity']}}">
+                                                <input type="hidden" name="id" value="{{$cart['prod_id']}}">
+                                                <input id="" class="quantity form-control" name="qnty" type="number" min="1" max="100000" value="{{$cart['quantity']}}">
                                                 <button class="quantity-plus w-icon-plus"></button>
                                                 <button class="quantity-minus w-icon-minus"></button>
                                             </div>
@@ -80,14 +83,14 @@
                             <div class="cart-action mb-6">
                                 <a href="{{route('shop')}}" class="btn btn-dark btn-rounded btn-icon-left btn-shopping mr-auto"><i class="w-icon-long-arrow-left"></i>Continue Shopping</a>
                                 <a href="javascript:void(0)" class="btn btn-rounded btn-default btn-clear" onclick="clearall()">Clear Cart</a>
-                                <button type="submit" class="btn btn-rounded btn-update disabled" name="update_cart" value="Update Cart">Update Cart</button>
+                                <button type="submit" class="btn btn-rounded btn-update">Update Cart</button>
                             </div>
-
-                            <form class="coupon">
+                            </form>
+                            <div class="coupon">
                                 <h5 class="title coupon-title font-weight-bold text-uppercase">Coupon Discount</h5>
                                 <input type="text" class="form-control mb-4" placeholder="Enter coupon code here..." required />
                                 <button class="btn btn-dark btn-outline btn-rounded">Apply Coupon</button>
-                            </form>
+                            </div>
                         </div>
                         <div class="col-lg-4 sticky-sidebar-wrapper">
                             <div class="sticky-sidebar">
@@ -215,28 +218,6 @@ function clearall(){
 }
 //https://www.youtube.com/watch?v=eblMZxwP1eY
 //for update quantity...
-$(document).ready(function(){
-    $(document).change("#qnty_" +id, function(){
-        var quantity = $("#qnty" +(id)).val();
-            var id = id;
-            // processing ajax request    
-            $.ajax({
-                url: "{{ route('update') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    id: id,
-                    quantity: quantity
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                }
-            }); 
-    });
-  
-        });
 </script>
 
 @endsection
