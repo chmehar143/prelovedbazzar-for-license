@@ -7,8 +7,8 @@ use App\Models\Vendor;
 use App\Models\Product;
 use App\Models\User;
 
-if(Auth::check()){
-    $user = Auth::user();
+if(Auth::guard('user')){
+    $user = Auth::guard('user');
     $carts = Cart::where('user_id', $user->id())
     ->join('products','carts.prod_id', '=', 'products.id')
     ->get();
