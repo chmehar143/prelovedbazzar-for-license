@@ -3514,7 +3514,6 @@ window.Wolmart = {};
             if (!$content.hasClass('open')) {
                 $content.addClass('open').slideDown();
                 $this.find('.custom-checkbox').addClass('checked');
-
             } else {
                 $content.removeClass('open').slideUp();
                 $this.find('.custom-checkbox').removeClass('checked');

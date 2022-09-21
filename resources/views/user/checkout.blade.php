@@ -62,7 +62,8 @@
                             <button type="submit" class="btn button btn-rounded btn-coupon mb-2" name="apply_coupon" value="Apply coupon">Apply Coupon</button>
                         </div>
                     </div>
-                    <form class="form checkout-form" action="#" method="post">
+                    <form class="form checkout-form" action="{{route('place')}}" method="post">
+                        @csrf
                         <div class="row mb-9">
                             <div class="col-lg-7 pr-lg-4 mb-4">
                                 <h3 class="title billing-title text-uppercase ls-10 pt-1 pb-3 mb-0">
@@ -86,7 +87,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Company name (optional)</label>
-                                    <input type="text" class="form-control form-control-md" name="company-name">
+                                    <input type="text" class="form-control form-control-md" name="company">
                                 </div>
                                 <div class="form-group">
                                     <label>Country / Region *</label>
@@ -105,9 +106,9 @@
                                 <div class="form-group">
                                     <label>Street address *</label>
                                     <input type="text" placeholder="House number and street name"
-                                        class="form-control form-control-md mb-2" name="street-address-1" required>
+                                        class="form-control form-control-md mb-2" name="street-1" required>
                                     <input type="text" placeholder="Apartment, suite, unit, etc. (optional)"
-                                        class="form-control form-control-md" name="street-address-2" required>
+                                        class="form-control form-control-md" name="street-2" required>
                                 </div>
                                 <div class="row gutter-sm">
                                     <div class="col-md-6">
@@ -124,7 +125,7 @@
                                         <div class="form-group">
                                             <label>State *</label>
                                             <div class="select-box">
-                                                <select name="country" class="form-control form-control-md">
+                                                <select name="state" class="form-control form-control-md">
                                                     <option value="default" selected="selected">California</option>
                                                     <option value="uk">United Kingdom (UK)</option>
                                                     <option value="us">United States</option>
@@ -145,7 +146,7 @@
                                 </div>
                                 <div class="form-group checkbox-toggle pb-2">
                                     <input type="checkbox" class="custom-checkbox" id="shipping-toggle"
-                                        name="shipping-toggle">
+                                        name="checkbox">
                                     <label for="shipping-toggle">Ship to a different address?</label>
                                 </div>
                                 <div class="checkbox-content">
@@ -153,26 +154,26 @@
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label>First name *</label>
-                                                <input type="text" class="form-control form-control-md" name="firstname"
-                                                    required>
+                                                <input type="text" class="form-control form-control-md" name="s_fname"
+                                                   required="false" >
                                             </div>
                                         </div>
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label>Last name *</label>
-                                                <input type="text" class="form-control form-control-md" name="lastname"
-                                                    required>
+                                                <input type="text" class="form-control form-control-md" name="s_lname"
+                                                    >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Company name (optional)</label>
-                                        <input type="text" class="form-control form-control-md" name="company-name">
+                                        <input type="text" class="require form-control form-control-md" name="s_company">
                                     </div>
                                     <div class="form-group">
                                         <label>Country / Region *</label>
                                         <div class="select-box">
-                                            <select name="country" class="form-control form-control-md">
+                                            <select name="s_country" class="require form-control form-control-md">
                                                 <option value="default" selected="selected">United States
                                                     (US)
                                                 </option>
@@ -186,25 +187,25 @@
                                     <div class="form-group">
                                         <label>Street address *</label>
                                         <input type="text" placeholder="House number and street name"
-                                            class="form-control form-control-md mb-2" name="street-address-1" required>
+                                            class="require form-control form-control-md mb-2" name="s_street">
                                         <input type="text" placeholder="Apartment, suite, unit, etc. (optional)"
-                                            class="form-control form-control-md" name="street-address-2" required>
+                                            class="require form-control form-control-md" name="s_apart">
                                     </div>
                                     <div class="row gutter-sm">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Town / City *</label>
-                                                <input type="text" class="form-control form-control-md" name="town" required>
+                                                <input type="text" class="require form-control form-control-md" name="s_city">
                                             </div>
                                             <div class="form-group">
                                                 <label>Postcode *</label>
-                                                <input type="text" class="form-control form-control-md" name="postcode" required>
+                                                <input type="text" class="require form-control form-control-md" name="s_zip" >
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Country (optional)</label>
-                                                <input type="text" class="form-control form-control-md" name="zip" required>
+                                                <input type="text" class="require form-control form-control-md" name="s_state" >
                                             </div>
                                         </div>
                                     </div>
@@ -212,7 +213,7 @@
 
                                 <div class="form-group mt-3">
                                     <label for="order-notes">Order notes (optional)</label>
-                                    <textarea class="form-control mb-0" id="order-notes" name="order-notes" cols="30"
+                                    <textarea class="require form-control mb-0" id="order-notes" name="note" cols="30"
                                         rows="4"
                                         placeholder="Notes about your order, e.g special notes for delivery"></textarea>
                                 </div>
@@ -230,23 +231,22 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php $subtotal = 0;?>
+                                                @foreach($carts as $cart)
                                                 <tr class="bb-no">
-                                                    <td class="product-name">Palm Print Jacket <i
+                                                    <td class="product-name">{{$cart->p_name}} <i
                                                             class="fas fa-times"></i> <span
-                                                            class="product-quantity">1</span></td>
-                                                    <td class="product-total">$40.00</td>
+                                                            class="product-quantity">{{$cart->quantity}}</span></td>
+                                                    <td class="product-total">${{$cart->quantity * $cart->p_new_price}}</td>
                                                 </tr>
-                                                <tr class="bb-no">
-                                                    <td class="product-name">Brown Backpack <i class="fas fa-times"></i>
-                                                        <span class="product-quantity">1</span></td>
-                                                    <td class="product-total">$60.00</td>
-                                                </tr>
+                                                <?php $subtotal = $subtotal + $cart->quantity * $cart->p_new_price; ?>
+                                                @endforeach
                                                 <tr class="cart-subtotal bb-no">
                                                     <td>
                                                         <b>Subtotal</b>
                                                     </td>
                                                     <td>
-                                                        <b>$100.00</b>
+                                                        <b>${{$subtotal}}</b>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -291,7 +291,7 @@
                                                         <b>Total</b>
                                                     </th>
                                                     <td>
-                                                        <b>$100.00</b>
+                                                        <b>${{$subtotal}}</b>
                                                     </td>
                                                 </tr>
                                             </tfoot>

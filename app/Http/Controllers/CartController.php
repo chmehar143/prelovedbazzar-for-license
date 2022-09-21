@@ -13,8 +13,8 @@ class CartController extends Controller
 {
     public function index()
     {
-        if(Auth::check()){
-            $user = Auth::user();
+        if(Auth::guard('user')){
+            $user = Auth::guard('user');
             $carts = Cart::where('user_id', $user->id())
             ->join('products','carts.prod_id', '=', 'products.id')
             ->get();
@@ -30,11 +30,13 @@ class CartController extends Controller
     }
 
     public function store(Request $request){
-        if(Auth::guard('user') != NULL){
+           $item = Product::where('id', $request->id)->first();
+        if(Auth::guard('user')){
             $cart = Cart::where('prod_id', $request->id)
             ->where('user_id', Auth::guard('user')->id())->first();
             if($cart){
                 $cart->quantity = $cart->quantity + $request->quantity;
+                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->update();
             }
             else{
@@ -43,6 +45,8 @@ class CartController extends Controller
                 $cart->user_id = Auth::guard('user')->id();
                 $cart->session_id = Session::getId();
                 $cart->quantity = $request->quantity;
+                $cart->price = $item->p_new_price;
+                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->size = $request->size;
                 $cart->save();
             }
@@ -55,6 +59,7 @@ class CartController extends Controller
             $cart = Cart::where('prod_id', $request->id)->where('session_id',Session::getId())->first();
             if($cart){
                 $cart->quantity = $cart->quantity + $request->quantity;
+                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->update();
             }
             else{
@@ -62,6 +67,8 @@ class CartController extends Controller
                 $cart->prod_id = $request->id;
                 $cart->session_id = Session::getId();
                 $cart->quantity = $request->quantity;
+                $cart->price = $item->p_new_price;
+                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->size = $request->size;
                 $cart->save();
             }
@@ -122,10 +129,12 @@ class CartController extends Controller
 
     public function update(Request $request){
         $data = array($request->all());
+        dd($request->all());
         if(Auth::guard('user')){
             $user = Auth::guard('user');
             foreach($data as $key => $value){
                 $cart = Cart::where('prod_id', $value['id'])->where('user_id', $user->id())->get();
+                $cart->net_price = $cart->net_price + $cart->price * $value['qnty'];
                 $cart->quantity = $value['qnty'];
             }
         }
