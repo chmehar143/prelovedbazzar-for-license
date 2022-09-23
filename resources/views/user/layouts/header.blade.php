@@ -147,21 +147,24 @@ else{
                                     </div>
                                     <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
                                     @empty
-                                    <div class="product-detail">
-                                        <h4>No Item</h4>
+                                    <div class="product product-cart">
+                                        <div class="product-detail">
+                                            <h4>No Item</h4>
+                                        </div>
                                     </div>
                                     @endforelse
+                                    <div class="cart-total">
+                                        <label>Subtotal:</label>
+                                        <span class="price">${{$total}}</span>
+                                    </div>
+
+                                    <div class="cart-action">
+                                        <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                        <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
+                                    </div>
                                 </div>
                                 
-                                <div class="cart-total">
-                                    <label>Subtotal:</label>
-                                    <span class="price">${{$total}}</span>
-                                </div>
 
-                                <div class="cart-action">
-                                    <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                                    <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
-                                </div>
                             </div>
                             <!-- End of Dropdown Box -->
                         </div>

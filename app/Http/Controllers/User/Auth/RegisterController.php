@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\User\Auth;
 
+use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -38,7 +40,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('user.guest:user');
+        $this->middleware('user.guest:user', ['except' => 'store']);
     }
 
     /**
@@ -91,5 +93,24 @@ class RegisterController extends Controller
     protected function guard()
     {
         return Auth::guard('user');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required'],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+        $user = User::find(Auth::guard('user')->id())->first();
+        if(Hash::check($request->current_password, $user->password))
+        {
+            $user->password = Hash::make($request->new_password);
+            $user->update();
+        } 
+        return response()->json([
+            "status" => 200,
+            "data" => $user
+        ]);    
     }
 }

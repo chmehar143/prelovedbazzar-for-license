@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Address;
 
 class OrderController extends Controller
 {
@@ -27,6 +28,45 @@ class OrderController extends Controller
             $carts = Cart::where('user_id', Auth::guard('user')->id())->get();
             $order->user_id = Auth::guard('user')->id();
             $order->net_amount = $carts->sum('net_price');
+            if($request->has('save_address')){
+                $address = new Address();
+                $address->user_id = Auth::guard('user')->id();
+                $address->fname = $request->input('firstname');
+                $address->lname = $request->input('lastname');
+                $address->company = $request->input('company');
+                $address->country = $request->input('country');
+                $address->street = $request->input('street-1');
+                $address->apart = $request->input('street-2');
+                $address->city = $request->input('town');
+                $address->state = $request->input('state');
+                $address->zip = $request->input('zip');
+                $address->phone = $request->input('phone');
+                if($request->input('checkbox') == 1){
+                    $address->s_fname = $request->input('s_fname');
+                    $address->s_lname = $request->input('s_lname');
+                    $address->s_company = $request->input('s_company');
+                    $address->s_country = $request->input('s_country');
+                    $address->s_street = $request->input('s_street');
+                    $address->s_apart = $request->input('s_apart');
+                    $address->s_city = $request->input('s_city');
+                    $address->s_state = $request->input('s_state');
+                    $address->s_zip = $request->input('s_zip');
+                    $address->s_phone = $request->input('s_phone');
+                }
+                else{
+                    $address->s_fname = $request->input('firstname');
+                    $address->s_lname = $request->input('lastname');
+                    $address->s_company = $request->input('company');
+                    $address->s_country = $request->input('country');
+                    $address->s_street = $request->input('street-1');
+                    $address->s_apart = $request->input('street-2');
+                    $address->s_city = $request->input('town');
+                    $address->s_state = $request->input('state');
+                    $address->s_zip = $request->input('zip');
+                    $address->s_phone = $request->input('phone');
+                }
+                $address->save();
+            }
         }
         else{
             $carts = Cart::where('session_id', Session::getId())->get();
