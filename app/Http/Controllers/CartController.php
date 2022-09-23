@@ -13,7 +13,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        if(Auth::guard('user')){
+        if(Auth::guard('user')->check()){
             $user = Auth::guard('user');
             $carts = Cart::where('user_id', $user->id())
             ->join('products','carts.prod_id', '=', 'products.id')
@@ -31,7 +31,7 @@ class CartController extends Controller
 
     public function store(Request $request){
            $item = Product::where('id', $request->id)->first();
-        if(Auth::guard('user')){
+        if(Auth::guard('user')->check()){
             $cart = Cart::where('prod_id', $request->id)
             ->where('user_id', Auth::guard('user')->id())->first();
             if($cart){
@@ -80,7 +80,7 @@ class CartController extends Controller
     }
 
     public function clear(){
-        if(Auth::guard('user')){
+        if(Auth::guard('user')->check()){
             $carts = Cart::where('user_id', Auth::guard('user')->id())->get();
             foreach($carts as $cart){
                 $cart->delete();
@@ -106,7 +106,7 @@ class CartController extends Controller
     }
 
     public function remove($id){
-        if(Auth::guard('user')){
+        if(Auth::guard('user')->check()){
             $cart = Cart::where('prod_id', $id)->where('user_id', Auth::guard('user')->id())->first();
             $cart->delete();
             return response()->json([
@@ -130,7 +130,7 @@ class CartController extends Controller
     public function update(Request $request){
         $data = array($request->all());
         dd($request->all());
-        if(Auth::guard('user')){
+        if(Auth::guard('user')->check()){
             $user = Auth::guard('user');
             foreach($data as $key => $value){
                 $cart = Cart::where('prod_id', $value['id'])->where('user_id', $user->id())->get();

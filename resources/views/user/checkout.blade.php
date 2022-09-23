@@ -20,6 +20,7 @@
             <!-- Start of PageContent -->
             <div class="page-content">
                 <div class="container">
+                    @if(!Auth::guard('user'))
                     <div class="login-toggle">
                         Returning customer? <a href="#"
                             class="show-login font-weight-bold text-uppercase text-dark">Login</a>
@@ -50,6 +51,7 @@
                         </div>
                         <button class="btn btn-rounded btn-login">Login</button>
                     </form>
+                    @endif
                     <div class="coupon-toggle">
                         Have a coupon? <a href="#"
                             class="show-coupon font-weight-bold text-uppercase text-dark">Enter your
@@ -74,27 +76,26 @@
                                         <div class="form-group">
                                             <label>First name *</label>
                                             <input type="text" class="form-control form-control-md" name="firstname"
-                                                required>
+                                              value="{{$address['fname']}}"  required>
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label>Last name *</label>
                                             <input type="text" class="form-control form-control-md" name="lastname"
-                                                required>
+                                            value="{{$address['lname']}}" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Company name (optional)</label>
-                                    <input type="text" class="form-control form-control-md" name="company">
+                                    <input type="text" class="form-control form-control-md" name="company" value="{{$address['company']}}">
                                 </div>
                                 <div class="form-group">
                                     <label>Country / Region *</label>
                                     <div class="select-box">
                                         <select name="country" class="form-control form-control-md">
-                                            <option value="default" selected="selected">United States
-                                                (US)
+                                            <option value="{{$address['country']}}" selected="selected">{{$country[$address['country']]}}
                                             </option>
                                             <option value="uk">United Kingdom (UK)</option>
                                             <option value="us">United States</option>
@@ -106,19 +107,19 @@
                                 <div class="form-group">
                                     <label>Street address *</label>
                                     <input type="text" placeholder="House number and street name"
-                                        class="form-control form-control-md mb-2" name="street-1" required>
+                                        class="form-control form-control-md mb-2" name="street-1" value="{{$address['street']}}" required>
                                     <input type="text" placeholder="Apartment, suite, unit, etc. (optional)"
-                                        class="form-control form-control-md" name="street-2" required>
+                                        class="form-control form-control-md" name="street-2" value="{{$address['apart']}}" required>
                                 </div>
                                 <div class="row gutter-sm">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Town / City *</label>
-                                            <input type="text" class="form-control form-control-md" name="town" required>
+                                            <input type="text" class="form-control form-control-md" name="town" value="{{$address['city']}}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>ZIP *</label>
-                                            <input type="text" class="form-control form-control-md" name="zip" required>
+                                            <input type="text" class="form-control form-control-md" name="zip" value="{{$address['zip']}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -126,7 +127,7 @@
                                             <label>State *</label>
                                             <div class="select-box">
                                                 <select name="state" class="form-control form-control-md">
-                                                    <option value="default" selected="selected">California</option>
+                                                    <option value="{{$address['state']}}" selected="selected">California</option>
                                                     <option value="uk">United Kingdom (UK)</option>
                                                     <option value="us">United States</option>
                                                     <option value="fr">France</option>
@@ -136,13 +137,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Phone *</label>
-                                            <input type="text" class="form-control form-control-md" name="phone" required>
+                                            <input type="text" class="form-control form-control-md" value="{{$address['phone']}}" name="phone" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-7">
                                     <label>Email address *</label>
-                                    <input type="email" class="form-control form-control-md" name="email" required>
+                                    <input type="email" class="form-control form-control-md" name="email" value="{{$address['email']}}" required>
                                 </div>
                                 <div class="form-group checkbox-toggle pb-2">
                                     <input type="checkbox" class="custom-checkbox" id="shipping-toggle"
@@ -155,27 +156,26 @@
                                             <div class="form-group">
                                                 <label>First name *</label>
                                                 <input type="text" class="form-control form-control-md" name="s_fname"
-                                                   required="false" >
+                                                value="{{$address['s_fname']}}"  >
                                             </div>
                                         </div>
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label>Last name *</label>
                                                 <input type="text" class="form-control form-control-md" name="s_lname"
-                                                    >
+                                                value="{{$address['s_lname']}}" >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Company name (optional)</label>
-                                        <input type="text" class="require form-control form-control-md" name="s_company">
+                                        <input type="text" class="require form-control form-control-md" name="s_company" value="{{$address['company']}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Country / Region *</label>
                                         <div class="select-box">
                                             <select name="s_country" class="require form-control form-control-md">
-                                                <option value="default" selected="selected">United States
-                                                    (US)
+                                                <option value="{{$address['country']}}" selected="selected">{{$country[$address['country']]}}
                                                 </option>
                                                 <option value="uk">United Kingdom (UK)</option>
                                                 <option value="us">United States</option>
@@ -187,25 +187,25 @@
                                     <div class="form-group">
                                         <label>Street address *</label>
                                         <input type="text" placeholder="House number and street name"
-                                            class="require form-control form-control-md mb-2" name="s_street">
+                                            class="require form-control form-control-md mb-2" name="s_street" value="{{$address['s_street']}}">
                                         <input type="text" placeholder="Apartment, suite, unit, etc. (optional)"
-                                            class="require form-control form-control-md" name="s_apart">
+                                            class="require form-control form-control-md" name="s_apart" value="{{$address['s_apart']}}" >
                                     </div>
                                     <div class="row gutter-sm">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Town / City *</label>
-                                                <input type="text" class="require form-control form-control-md" name="s_city">
+                                                <input type="text" class="require form-control form-control-md" name="s_city" value="{{$address['s_city']}}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Postcode *</label>
-                                                <input type="text" class="require form-control form-control-md" name="s_zip" >
+                                                <input type="text" class="require form-control form-control-md" name="s_zip" value="{{$address['s_zip']}}" >
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Country (optional)</label>
-                                                <input type="text" class="require form-control form-control-md" name="s_state" >
+                                                <input type="text" class="require form-control form-control-md" name="s_state" value="{{$address['s_state']}}">
                                             </div>
                                         </div>
                                     </div>
@@ -216,6 +216,10 @@
                                     <textarea class="require form-control mb-0" id="order-notes" name="note" cols="30"
                                         rows="4"
                                         placeholder="Notes about your order, e.g special notes for delivery"></textarea>
+                                </div>
+                                <div class="form-group pb-2">
+                                    <input type="checkbox" class="custom-checkbox" name="save_address" >
+                                    <label for="shipping-toggle">Remember address for next orders?</label>
                                 </div>
                             </div>
                             <div class="col-lg-5 mb-4 sticky-sidebar-wrapper">

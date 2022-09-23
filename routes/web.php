@@ -24,23 +24,6 @@ use App\Http\Controllers\ErrorPageController;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,7 +53,7 @@ Route::post('/update', [CartController::class, 'update'])->name('update');
 Route::get('/compare', [CompareController::class, 'index'])->name('compare');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/product/{id}', [ProductDetailsController::class, 'index'])->name('product');
-Route::get('/my-account', [MyaccountController::class, 'index'])->name('my-account');
+Route::get('/my-account', [MyaccountController::class, 'index'])->middleware(['user.auth'])->name('my-account');
 Route::get('/login', [LoginController::class, 'index'])->name('Login');
 Route::post('/order-place', [OrderController::class, 'store'])->name('place');
 Route::get('/order', [OrderController::class, 'index'])->name('order');
@@ -78,9 +61,5 @@ Route::get('/order-view', [OrderViewController::class, 'index'])->name('order-vi
 Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error');
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
-
-
-
-
 
 

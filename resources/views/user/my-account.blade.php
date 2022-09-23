@@ -1,8 +1,5 @@
 @extends('user.layouts.app')
-
 @section('content')
-
-
  <!-- Start of Main -->
  <main class="main">
             <!-- Start of Page Header -->
@@ -53,15 +50,17 @@
                         </ul>
 
                         <div class="tab-content mb-6">
-                            <div class="tab-pane active in" id="account-dashboard">
-                                <p class="greeting">
+                            <div class="tab-pane active in" id="account-dashboard">                                   
+                                <form action="{{ route('user.logout') }}" method="post">
+                                    @csrf
+                                    <p class="greeting">
                                     Hello
-                                    <span class="text-dark font-weight-bold">John Doe</span>
+                                    <span class="text-dark font-weight-bold">{{ $user->name }}</span> 
                                     (not
-                                    <span class="text-dark font-weight-bold">John Doe</span>?
-                                    <a href="#" class="text-primary">Log out</a>)
-                                </p>
-
+                                    <span class="text-dark font-weight-bold">{{ $user->name }}</span>?
+                                    <button type="submit" class="btn-link" style="cursor: pointer;">Log out</button>)
+                                    </p>
+                                </form>
                                 <p class="mb-4">
                                     From your account dashboard you can view your <a href="#account-orders"
                                         class="text-primary link-to-tab">recent orders</a>,
@@ -134,16 +133,17 @@
                                         </a>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4">
-                                        <a href="#">
+                                        <form action="{{ route('user.logout') }}" method="post" style="cursor: pointer; ">
+                                            @csrf
                                             <div class="icon-box text-center">
-                                                <span class="icon-box-icon icon-logout">
+                                                <button type="submit" class=" btn-link icon-box-icon icon-logout" style="cursor: pointer;" >
                                                     <i class="w-icon-logout"></i>
-                                                </span>
+                                                </button>
                                                 <div class="icon-box-content">
-                                                    <p class="text-uppercase mb-0">Logout</p>
+                                                    <button type="submit" class="btn-link text-uppercase mb-0 " style="cursor: pointer;">Log out</button>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -169,58 +169,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($orders as $order)
+                                            <?php $details = App\Models\OrderDetail::where('order_id', $order->id)->get(); ?>
                                         <tr>
-                                            <td class="order-id">#2321</td>
-                                            <td class="order-date">August 20, 2021</td>
-                                            <td class="order-status">Processing</td>
+                                            <td class="order-id">#{{$order->id}}</td>
+                                            <td class="order-date">{{$order->created_at->format('d-m-Y')}}</td>
+                                            <td class="order-status">{{$order->status}}</td>
                                             <td class="order-total">
-                                                <span class="order-price">$121.00</span> for
-                                                <span class="order-quantity"> 1</span> item
+                                                <span class="order-price">${{$order->net_amount}}</span> for
+                                                <span class="order-quantity">{{$details->sum('pro_qnty')}}</span> item
                                             </td>
                                             <td class="order-action">
                                                 <a href="#"
                                                     class="btn btn-outline btn-default btn-block btn-sm btn-rounded">View</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="order-id">#2321</td>
-                                            <td class="order-date">August 20, 2021</td>
-                                            <td class="order-status">Processing</td>
-                                            <td class="order-total">
-                                                <span class="order-price">$150.00</span> for
-                                                <span class="order-quantity"> 1</span> item
-                                            </td>
-                                            <td class="order-action">
-                                                <a href="#"
-                                                    class="btn btn-outline btn-default btn-block btn-sm btn-rounded">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="order-id">#2319</td>
-                                            <td class="order-date">August 20, 2021</td>
-                                            <td class="order-status">Processing</td>
-                                            <td class="order-total">
-                                                <span class="order-price">$201.00</span> for
-                                                <span class="order-quantity"> 1</span> item
-                                            </td>
-                                            <td class="order-action">
-                                                <a href="#"
-                                                    class="btn btn-outline btn-default btn-block btn-sm btn-rounded">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="order-id">#2318</td>
-                                            <td class="order-date">August 20, 2021</td>
-                                            <td class="order-status">Processing</td>
-                                            <td class="order-total">
-                                                <span class="order-price">$321.00</span> for
-                                                <span class="order-quantity"> 1</span> item
-                                            </td>
-                                            <td class="order-action">
-                                                <a href="#"
-                                                    class="btn btn-outline btn-default btn-block btn-sm btn-rounded">View</a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 
@@ -262,31 +226,31 @@
                                                     <tbody>
                                                         <tr>
                                                             <th>Name:</th>
-                                                            <td>John Doe</td>
+                                                            <td>{{$address->fname }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Company:</th>
-                                                            <td>Conia</td>
+                                                            <td>{{$address->company}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Address:</th>
-                                                            <td>Wall Street</td>
+                                                            <td>{{$address->street}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>City:</th>
-                                                            <td>California</td>
+                                                            <td>{{$address->city}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Country:</th>
-                                                            <td>United States (US)</td>
+                                                            <td>{{$country[$address->country]}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Postcode:</th>
-                                                            <td>92020</td>
+                                                            <td>{{$address->zip}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Phone:</th>
-                                                            <td>1112223334</td>
+                                                            <td>{{$address->phone}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -301,30 +265,34 @@
                                             <h4 class="title title-underline ls-25 font-weight-bold">Shipping Address</h4>
                                             <address class="mb-4">
                                                 <table class="address-table">
-                                                    <tbody>
+                                                <tbody>
                                                         <tr>
                                                             <th>Name:</th>
-                                                            <td>John Doe</td>
+                                                            <td>{{$address->s_fname }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Company:</th>
-                                                            <td>Conia</td>
+                                                            <td>{{$address->s_company}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Address:</th>
-                                                            <td>Wall Street</td>
+                                                            <td>{{$address->s_street}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>City:</th>
-                                                            <td>California</td>
+                                                            <td>{{$address->s_city}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Country:</th>
-                                                            <td>United States (US)</td>
+                                                            <td>{{$country[$address->s_country]}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Postcode:</th>
-                                                            <td>92020</td>
+                                                            <td>{{$address->s_zip}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Phone:</th>
+                                                            <td>{{$address->s_phone}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -346,12 +314,12 @@
                                         <h4 class="icon-box-title mb-0 ls-normal">Account Details</h4>
                                     </div>
                                 </div>
-                                <form class="form account-details-form" action="#" method="post">
+                                <form class="form account-details-form" action="javascript:void(0)">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="firstname">First name *</label>
-                                                <input type="text" id="firstname" name="firstname" placeholder="John"
+                                                <input type="text" id="firstname" name="firstname" placeholder="John" value="{{$user->name}}"
                                                     class="form-control form-control-md">
                                             </div>
                                         </div>
@@ -373,7 +341,7 @@
 
                                     <div class="form-group mb-6">
                                         <label for="email_1">Email address *</label>
-                                        <input type="email" id="email_1" name="email_1"
+                                        <input type="email" id="email_1" name="email_1" value="{{$user->email}}"
                                             class="form-control form-control-md">
                                     </div>
 
@@ -381,19 +349,19 @@
                                     <div class="form-group">
                                         <label class="text-dark" for="cur-password">Current Password leave blank to leave unchanged</label>
                                         <input type="password" class="form-control form-control-md"
-                                            id="cur-password" name="cur_password">
+                                            id="current" name="current_password">
                                     </div>
                                     <div class="form-group">
                                         <label class="text-dark" for="new-password">New Password leave blank to leave unchanged</label>
                                         <input type="password" class="form-control form-control-md"
-                                            id="new-password" name="new_password">
+                                            id="new" name="new_password">
                                     </div>
                                     <div class="form-group mb-10">
                                         <label class="text-dark" for="conf-password">Confirm Password</label>
                                         <input type="password" class="form-control form-control-md"
-                                            id="conf-password" name="conf_password">
+                                            id="confirm" name="new_confirm_password">
                                     </div>
-                                    <button type="submit" class="btn btn-dark btn-rounded btn-sm mb-4">Save Changes</button>
+                                    <button type="submit" class="btn btn-dark btn-rounded btn-sm mb-4" id="change_pass">Save Changes</button>
                                 </form>
                             </div>
                         </div>
@@ -403,4 +371,29 @@
             <!-- End of PageContent -->
         </main>
         <!-- End of Main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+   $("#change_pass").click(function(){
+            var current_password = $("#current").val();
+            var new_password = $("#new").val();
+            var new_confirm_password = $("#confirm").val();
+            // processing ajax request    
+            $.ajax({
+                url: "{{ route('user.change') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    current_password: current_password,
+                    new_password: new_password,
+                    new_confirm_password: new_confirm_password
+                },
+                success: function(data) {
+                    // log response into console
+                    alert("Password has been changed successfully!");
+                }
+            });   
+        });
+</script>
 @endsection

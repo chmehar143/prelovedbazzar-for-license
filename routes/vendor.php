@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
-Route::get('/', 'HomeController@index')->name('home')->middleware('vendor.verified');
+Route::get('/', 'vendor\HomeController@index')->name('home')->middleware('vendor.verified');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
