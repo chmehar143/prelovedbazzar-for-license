@@ -24075,6 +24075,11 @@ fieldset:disabled .btn {
         max-width: 7px !important
     }
 
+    .table-responsive {
+        overflow-x: clip !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
     .mw-xl-8px {
         max-width: 8px !important
     }
@@ -55633,7 +55638,8 @@ body {
     }
 
     .toolbar-enabled:not(.toolbar-tablet-and-mobile-fixed) .toolbar {
-        margin-bottom: 15px
+        margin-bottom: 15px;
+        display: none;
     }
 
     .header-tablet-and-mobile-fixed.toolbar-tablet-and-mobile-fixed .toolbar {

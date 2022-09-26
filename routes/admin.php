@@ -182,7 +182,14 @@ Route::get('message_view', 'MessageController@view')->name('message_view');
 Route::get('message_details', 'MessageController@details')->name('message_details');
 Route::get('message_invoice', 'MessageController@invoice')->name('message_invoice');
 
+//Subscribe
+Route::get('subscribe_list', 'SubscribeController@index')->name('subscribe_list');
 
+// Manage staff
+Route::get('managestaff_list', 'ManageStaffController@list')->name('managestaff_list');
+Route::get('managestaff_create', 'ManageStaffController@create')->name('managestaff_create');
+Route::get('managestaff_edit', 'ManageStaffController@edit')->name('managestaff_edit');
+Route::get('managestaff_view', 'ManageStaffController@view')->name('managestaff_view');
 
 
 

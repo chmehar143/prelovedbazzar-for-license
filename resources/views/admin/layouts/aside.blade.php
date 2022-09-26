@@ -1,3 +1,4 @@
+
 <div id="kt_aside" class="aside pb-5 pt-5 pt-lg-0" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
     <!--begin::Brand-->
     <div class="aside-logo py-8" id="kt_aside_logo">
@@ -420,6 +421,25 @@
                         <span class="menu-title">Message</span>
                     </a>
                 </div>
+
+				<div class="menu-item py-2">
+                    <a class="menu-link  menu-center" href="{{url('admin/subscribe_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="fas fa-users-cog mr-2"></i>
+										</span>
+                        <span class="menu-title">Subscribe</span>
+                    </a>
+                </div>
+
+				<div class="menu-item py-2">
+                    <a class="menu-link  menu-center" href="{{url('admin/managestaff_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+											<i class="fas fa-user-secret"></i>
+										</span>
+                        <span class="menu-title">Manage Staff</span>
+                    </a>
+                </div>
+
 
 
                 <!-- <div class="menu-item py-2">
