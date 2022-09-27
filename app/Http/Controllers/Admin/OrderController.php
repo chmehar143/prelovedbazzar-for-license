@@ -4,20 +4,31 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Order;
+use App\Models\OrderDetail;
+use Config;
 
 class OrderController extends Controller
 {
 
-//all orrder
+    //all orrder
 
     public  function  allorder()
     {
-        return view('admin.order.allorder');
+        $orders = Order::all();
+        $status = Config::get('constants.order_status');
+        return view('admin.order.allorder', compact('orders', 'status'));
     }
 
-    public  function  allorderdetails()
+    public  function  allorderdetails($id)
     {
-        return view('admin.order.allorderdetails');
+        $order = Order::where('id', $id)->first();
+        $orderdetail = OrderDetail::where('order_id', $id)
+        ->join('products', 'order_details.pro_id','=','products.id')
+        ->get();
+        $status = Config::get('constants.order_status');
+        $ven_status = Config::get('constants.status');
+        return view('admin.order.allorderdetails', compact('order', 'status', 'orderdetail', 'ven_status'));
     }
 
     public  function  allorderinvoice()
@@ -25,8 +36,9 @@ class OrderController extends Controller
         return view('admin.order.allorderinvoice');
     }
 
-    public  function  allorderdelivery()
+    public  function  allorderdelivery($id)
     {
+
         return view('admin.order.allorderdelivery');
     }
 
@@ -34,19 +46,27 @@ class OrderController extends Controller
 
 
 
-//complete orrder
+    //complete orrder
 
 
     public  function  completedorder()
     {
-        return view('admin.order.complete.completedorder');
+        $orders = Order::where('status', 2)->get();
+        $status = Config::get('constants.order_status');
+        return view('admin.order.complete.completedorder', compact('orders', 'status'));
     }
 
 
 
-    public  function  completeorderdetails()
+    public  function  completeorderdetails($id)
     {
-        return view('admin.order.complete.completeorderdetails');
+        $order = Order::where('id', $id)->first();
+        $orderdetail = OrderDetail::where('order_id', $id)
+        ->join('products', 'order_details.pro_id','=','products.id')
+        ->get();
+        $status = Config::get('constants.order_status');
+        $ven_status = Config::get('constants.status');
+        return view('admin.order.complete.completeorderdetails', compact('order', 'status', 'orderdetail', 'ven_status'));
     }
 
     public  function  completeorderinvoice()
@@ -62,16 +82,24 @@ class OrderController extends Controller
     }
 
 
-//declined orrder
+    //declined orrder
 
     public  function  declineorder()
     {
-        return view('admin.order.decline.declinedorder');
+        $orders = Order::where('status', 6)->get();
+        $status = Config::get('constants.order_status');
+        return view('admin.order.decline.declinedorder', compact('orders', 'status'));
     }
 
-    public  function  declineorderdetails()
+    public  function  declineorderdetails($id)
     {
-        return view('admin.order.decline.declineorderdetails');
+        $order = Order::where('id', $id)->first();
+        $orderdetail = OrderDetail::where('order_id', $id)
+        ->join('products', 'order_details.pro_id','=','products.id')
+        ->get();
+        $status = Config::get('constants.order_status');
+        $ven_status = Config::get('constants.status');
+        return view('admin.order.decline.declineorderdetails', compact('order', 'status', 'orderdetail', 'ven_status'));
     }
 
     public  function  declineorderinvoice()
@@ -86,16 +114,24 @@ class OrderController extends Controller
 
 
 
-//pending orrder
+    //pending orrder
 
     public  function  pendingorder()
     {
-        return view('admin.order.pending.pendingorder');
+        $orders = Order::where('status', 0)->get();
+        $status = Config::get('constants.order_status');
+        return view('admin.order.pending.pendingorder', compact('orders', 'status'));
     }
 
-    public  function  pendingorderdetails()
+    public  function  pendingorderdetails($id)
     {
-        return view('admin.order.pending.pendingorderdetails');
+        $order = Order::where('id', $id)->first();
+        $orderdetail = OrderDetail::where('order_id', $id)
+        ->join('products', 'order_details.pro_id','=','products.id')
+        ->get();
+        $status = Config::get('constants.order_status');
+        $ven_status = Config::get('constants.status');
+        return view('admin.order.pending.pendingorderdetails', compact('order', 'status', 'orderdetail', 'ven_status'));
     }
 
     public  function  pendingorderinvoice()
@@ -113,12 +149,20 @@ class OrderController extends Controller
 
     public  function  processingorder()
     {
-        return view('admin.order.processing.processingorder');
+        $orders = Order::where('status', 1)->get();
+        $status = Config::get('constants.order_status');
+        return view('admin.order.processing.processingorder', compact('orders', 'status'));
     }
 
-    public  function  processingorderdetails()
+    public  function  processingorderdetails($id)
     {
-        return view('admin.order.processing.processingorderdetails');
+        $order = Order::where('id', $id)->first();
+        $orderdetail = OrderDetail::where('order_id', $id)
+        ->join('products', 'order_details.pro_id','=','products.id')
+        ->get();
+        $status = Config::get('constants.order_status');
+        $ven_status = Config::get('constants.status');
+        return view('admin.order.processing.processingorderdetails', compact('order', 'status', 'orderdetail', 'ven_status'));
     }
 
     public  function  processingorderinvoice()

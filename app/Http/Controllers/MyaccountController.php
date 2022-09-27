@@ -22,6 +22,9 @@ class MyaccountController extends Controller
             $use = Auth::guard('user');
             $user = User::where('id', $use->id())->first();
             $address = Address::where('user_id', $use->id())->first();
+            if(!$address){
+                $address = NULL;
+            }
             $country = Config::get('constants.country');
             $orders = Order::where('user_id', $use->id())->get();
             return view('user.my-account',compact('user', 'orders', 'address', 'country'));

@@ -61,7 +61,7 @@ Route::post('/allproducts_store', 'AllProductController@store')->name('allproduc
 Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat');
 Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildCat');
 Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
-Route::put('/allproducts_update', 'AllProductController@update')->name('allproducts_update');
+Route::put('/allproducts_update/{id}', 'AllProductController@update')->name('allproducts_update');
 Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
 Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
 
@@ -70,8 +70,10 @@ Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproduc
 
 Route::get('/productcatalog_list', 'ProductCatalogsController@index')->name('productcatalog_list');
 Route::get('/productcatalog_create', 'ProductCatalogsController@create')->name('productcatalog_create');
-Route::get('/productcatalog_edit', 'ProductCatalogsController@edit')->name('productcatalog_edit');
-Route::get('/productcatalog_view', 'ProductCatalogsController@view')->name('productcatalog_view');
+Route::post('/productcatalog_store', 'ProductCatalogsController@store')->name('productcatalog_store');
+Route::get('/productcatalog_edit/{id}', 'ProductCatalogsController@edit')->name('productcatalog_edit');
+Route::get('/productcatalog_update/{id}', 'ProductCatalogsController@update')->name('productcatalog_update');
+Route::get('/productcatalog_view/{id}', 'ProductCatalogsController@view')->name('productcatalog_view');
 
 
 Route::get('/deactivateproduct_list', 'DeactivedProductController@index')->name('deactivateproduct_list');

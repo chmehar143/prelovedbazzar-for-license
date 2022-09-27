@@ -1410,7 +1410,9 @@
 							<!--begin::Card body-->
 							<div class="card-body pt-0" >
 								<!--begin::Table-->
-								<div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="table-responsive"><table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_customers_table" style="width: 1046px;">
+								<div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+									<div class="table-responsive">
+								<table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_customers_table" style="width: 1046px;">
 									<!--begin::Table head-->
 									<thead>
 										<!--begin::Table row-->
@@ -1447,7 +1449,7 @@
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
 
-									
+										@foreach($products as $product)
 										<tr class="odd" id="">
 											<!--begin::Checkbox-->
 											<td>
@@ -1456,16 +1458,16 @@
 												</div>
 											</td>
 											<!--end::Checkbox-->
-											<td><img src="http://127.0.0.1:8000/admin-assets/media/avatars/150-26.jpg" width="50px"></td>
+											<td><img src="{{asset('storage/uploads/products/'.$product->p_image)}}" width="50px"></td>
 											<td>
-												Clothes
+												{{$product->p_name}}
 											</td>
-											<td><a href="#" class="text-gray-600 text-hover-primary mb-1">Product</a>	</td>
+											<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{$type[$product->p_type]}}</a>	</td>
 									
-											<td>$100</td>
+											<td>${{$product->p_new_price}}</td>
 											
 											<td data-order="Invalid date">
-												<span class="badge badge-light-success">Approved</span>
+												<span class="badge badge-light-success">{{$status[$product->status]}}</span>
 											</td>
 
 											<!--end::Date=-->
@@ -1483,17 +1485,17 @@
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{route('admin.allproducts_view')}}" class="menu-link px-3">View</a>
+														<a href="{{route('admin.allproducts_view', $product->id)}}" class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
 
 													<div class="menu-item px-3">
-														<a href="{{route('admin.allproducts_edit')}}" class="menu-link px-3">Edit</a>
+														<a href="{{route('admin.allproducts_edit',$product->id)}}" class="menu-link px-3">Edit</a>
 													</div>
 
 													<!--begin::Menu item-->
-													<div class="menu-item px-3" >
-														<a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" >Delete</a>
+													<div class="menu-item px-3" id="{{$product->id}}">
+														<a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="deleteProduct({{$product->id}})">Delete</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -1501,7 +1503,7 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
-										
+										@endforeach
 									</tbody>
 									
 										<!--end::Table body-->
@@ -1517,7 +1519,7 @@
 							</div>
 							<!--end::Card body-->
 						</div>
-</div>
+					</div>
 								<!--end::Card body-->
 							</div>
 
@@ -1530,5 +1532,33 @@
 						</div>
 						<!--end::Container-->
 					</div>
+					<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+					<script>
+      function deleteProduct(id) {
+          Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  $.ajax({
+                      url: "{{url('admin/product_del')}}"+ '/' + id,
+                      success: function(data) {
+                          $("#nft_row_" +id).remove();
+                          Swal.fire(
+                              'Deleted!',
+                              'Product has been deleted.',
+                              'success'
+                          )
+                      }
+                  });
+              }
+          })
+      }
+  </script>
 
 @endsection

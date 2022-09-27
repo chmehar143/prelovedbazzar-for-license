@@ -101,6 +101,15 @@ class AffilateController extends Controller
         $catog = Category::where('id', $product->a_catog)->first();
         $sub_cat = SubCategory::where('id', $product->a_sub_catog)->first();
         $ch_cat = ChildCategory::where('id', $product->a_child_catog)->first();
+        if(!$catog){
+            $catog = NULL;
+        }      
+        if(!$sub_cat){
+            $sub_cat = NULL;
+        }        
+        if(!$ch_cat){
+            $ch_cat = NULL;
+        }
         $type = Config::get('constants.type');
         return view('admin.affilateproduct.edit', compact('product', 'categories', 'type', 'catog','sub_cat','ch_cat'));
         
@@ -168,7 +177,7 @@ class AffilateController extends Controller
     
         public  function  view($id)
         {
-            $product = AffiliateProduct::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
+            $product = AffiliateProduct::where('id', $id)->first();
             return view('admin.affilateproduct.view', compact('product'));
         }
         public function destroy($id)
