@@ -163,11 +163,6 @@
 											<th class="min-w-125px"> Total Qty </th>
 											<th class="min-w-125px"> Total Cost </th>
 											<th class="min-w-125px"> Staus  </th>
-
-
-
-
-
 											<th class="min-w-125px" style="display:none">Status </th>
 											<th class="min-w-125px" style="display:none">Status </th>
 
@@ -180,29 +175,21 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-
+										@foreach($orders as $order)
 										<tr>
 											<!--begin::Checkbox-->
 											<td>
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid">
-													<input class="form-check-input" type="checkbox" value="1" />
-												</div>
+												{{$loop->iteration}}
 											</td>
 											<!--end::Checkbox-->
-											
-                                            
-											
-											<td>alberthmc@gmail.com	</td>
-											<td>121541500515	</td>
-											<td>2	</td>
-											<td>$200	</td>
-											<td><span class="badge badge-light-warning">Proccesing</span></td>
-
-
-
+												
+											<td>{{$order->email}}</td>
+											<td>{{$order->id}}</td>
+											<td>{{$order->qnty}}</td>
+											<td>{{$order->net_amount}}</td>
+											<td><span class="badge badge-light-warning">{{$status[$order->status]}}</span></td>
 											<td style="display:none">121541500515	</td>
-                                             
+												
 
 											<!--end::Date=-->
 											<!--begin::Action=-->
@@ -225,14 +212,14 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{url('admin/order_allorderdetails')}}"
+														<a href="{{ url('admin/order_allorderdetails/'.$order->id)}}"
 															class="menu-link px-3">Details</a>
 													</div>
 													<!--end::Menu item-->
 
 
 													<div class="menu-item px-3">
-														<a href="{{url('admin/order_allorderdelivery')}}"
+														<a href="{{url('admin/order_allorderdelivery/'.$order->id)}}"
 															class="menu-link px-3">Delivery</a>
 													</div>
 
@@ -247,6 +234,7 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+										@endforeach
 									</tbody>
 									<!--end::Table body-->
 								</table>

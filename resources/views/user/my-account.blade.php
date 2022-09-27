@@ -205,7 +205,7 @@
                                 <a href="shop-banner-sidebar.html" class="btn btn-dark btn-rounded btn-icon-right">Go
                                     Shop<i class="w-icon-long-arrow-right"></i></a>
                             </div>
-
+                            @if($address != NULL)
                             <div class="tab-pane" id="account-addresses">
                                 <div class="icon-box icon-box-side icon-box-light">
                                     <span class="icon-box-icon icon-map-marker">
@@ -304,7 +304,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            @endif
                             <div class="tab-pane" id="account-details">
                                 <div class="icon-box icon-box-side icon-box-light">
                                     <span class="icon-box-icon icon-account mr-2">
