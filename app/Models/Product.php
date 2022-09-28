@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Chilcategory;
+use App\Models\Vendor;
 
 class Product extends Model
 {

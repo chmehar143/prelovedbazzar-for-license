@@ -30,7 +30,8 @@
             <!--begin::Wrapper-->
             <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
-                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" method="POST" action="{{ route('vendor.register') }}" aria-label="{{ __('Register') }}">
+                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" 
+                    method="POST" action="{{ route('vendor.register') }}" aria-label="{{ __('Register') }}" enctype="multipart/form-data">
                 @csrf
                 <!--begin::Heading-->
                     <div class="text-center mb-10">
@@ -81,6 +82,20 @@
                         <input id="shop_name" type="text" class="form-control @error('shop_name') is-invalid @enderror" name="shop_name" value="{{ old('shop_name') }}" required autocomplete="shop_name" autofocus>
 
                         @error('shop_name')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                    <div class="fv-row mb-10">
+                        <!--begin::Label-->
+                        <label class="form-label fs-6 fw-bolder text-dark">Shop Image</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input id="shop_name" type="file" class="form-control @error('shop_image') is-invalid @enderror" 
+                            name="shop_image" value="{{ old('shop_image') }}" required autocomplete="shop_image" autofocus>
+
+                        @error('shop_image')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

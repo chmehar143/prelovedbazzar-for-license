@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Vendor\Auth;
 use App\Models\Vendor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -66,12 +67,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if(request()->hasFile(key: 'shop_image')){
+            $file = request()->file(key: 'shop_image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->storeAs('uploads/vendors/', $filename, 'public');
+        }
+
         return Vendor::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'shop_name' => $data['shop_name'],
+            'shop_image' => $filename,
             'password' => Hash::make($data['password']),
         ]);
+
     }
 
     /**
