@@ -55,6 +55,7 @@ Route::post('/update', [CartController::class, 'update'])->name('update');
 Route::get('/compare', [CompareController::class, 'index'])->name('compare');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/product/{id}', [ProductDetailsController::class, 'index'])->name('product');
+Route::post('/add_review', [ProductDetailsController::class, 'add_rating'])->name('add_review');
 Route::get('/my-account', [MyaccountController::class, 'index'])->middleware(['user.auth'])->name('my-account');
 Route::get('/login', [LoginController::class, 'index'])->name('Login');
 Route::post('/order-place', [OrderController::class, 'store'])->name('place');

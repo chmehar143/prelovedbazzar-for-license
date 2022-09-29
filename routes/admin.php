@@ -123,7 +123,8 @@ Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_i
 Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
 Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
 Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
-Route::get('/productdisscussion_reviewview', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+Route::get('/productdisscussion_reviewview/{id}', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+Route::get('/productdisscussion_delete/{id}', 'ProductDisscussionController@destroy')->name('productdisscussion_delete');
 
 
 //Orders

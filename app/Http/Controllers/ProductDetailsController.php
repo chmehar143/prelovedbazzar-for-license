@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Vendor;
 use App\Models\Admin;
 use App\Models\Product;
+use App\Models\Discussion;
 use App\Models\RecentView;
 use App\Models\Childcategory;
 use App\Models\Subcategory;
@@ -67,6 +68,51 @@ class ProductDetailsController extends Controller
             ->select('products.*', 'categories.name')->get();
         return view('user.product-details', compact('product','vendor',
                     'category','subcategory','childcategory','moreproducts', 'related_products'));
+
+    }
+
+    public function add_rating(Request $request)
+    {
+        $item = Product::where('id', $request->id)->first();
+        if($item){
+            if(Auth::guard('user')->check()){
+                $user = Auth::guard('user');
+                $review = Discussion::where('item', $request->id)->where('user', $user->id())
+                                    ->orWhere('email', $request->email_1)->first();
+                if(!$review){
+                    $review = new Discussion();
+                    $review->item = $request->id;
+                    $review->session = Session::getId();
+                    $review->user = $user->id();
+                    $review->user_name = $request->author;
+                    $review->email = $request->email_1;
+                    $review->review = $request->rating;
+                    $review->comment = $request->review;
+                    $review->save();
+                }
+                return response()->json([
+                    "status" => 200,
+                    "data" => $review
+                ]);
+            }
+            else{
+                $review = Discussion::where('item', $request->id)->where('email', $request->email_1)->first();
+                if(!$review){
+                    $review = new Discussion();
+                    $review->item = $request->id;
+                    $review->session = Session::getId();
+                    $review->user_name = $request->author;
+                    $review->email = $request->email_1;
+                    $review->review = $request->rating;
+                    $review->comment = $request->review;
+                    $review->save();
+                }
+                return response()->json([
+                    "status" => 200,
+                    "data" => $review
+                ]);
+            }
+        }
 
     }
 }
