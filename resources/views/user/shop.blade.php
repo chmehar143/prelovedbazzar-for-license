@@ -37,7 +37,9 @@
                                         <h3 class="widget-title"><span>All Categories</span></h3>
                                         <ul class="widget-body filter-items search-ul">
                                             @foreach($categories as $category)
-                                            <li><a href="{{ route('sortby', $category->name) }}">{{$category->name}}</a></li>
+                                            <li>
+                                                <a href="{{ route('sortby', $category->name) }}">{{$category->name}}</a>
+                                            </li>
                                             @endforeach
                                         </ul>
                                     </div>
