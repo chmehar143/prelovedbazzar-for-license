@@ -22,7 +22,7 @@
                         <aside class="sidebar shop-sidebar sticky-sidebar-wrapper sidebar-fixed">
                             <!-- Start of Sidebar Overlay -->
                             <div class="sidebar-overlay"></div>
-                            <a class="sidebar-close" href="#"><i class="close-icon"></i></a>
+                            <a class="sidebar-close" href="javascript:void(0)"><i class="close-icon"></i></a>
 
                             <!-- Start of Sidebar Content -->
                             <div class="sidebar-content scrollable">
@@ -30,7 +30,7 @@
                                 <div class="sticky-sidebar">
                                     <div class="filter-actions">
                                         <label>Filter :</label>
-                                        <a href="#" class="btn btn-dark btn-link filter-clean">Clean All</a>
+                                        <a href="javascript:void(0)" class="btn btn-dark btn-link filter-clean">Clean All</a>
                                     </div>
                                     <!-- Start of Collapsible widget -->
                                     <div class="widget widget-collapsible">
@@ -76,10 +76,10 @@
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Size</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
-                                            <li><a href="#">Extra Large</a></li>
-                                            <li><a href="#">Large</a></li>
-                                            <li><a href="#">Medium</a></li>
-                                            <li><a href="#">Small</a></li>
+                                            <li><a href="javascript:void(0)">Extra Large</a></li>
+                                            <li><a href="javascript:void(0)">Large</a></li>
+                                            <li><a href="javascript:void(0)">Medium</a></li>
+                                            <li><a href="javascript:void(0)">Small</a></li>
                                         </ul>
                                     </div>
                                     <!-- End of Collapsible Widget -->
@@ -88,13 +88,13 @@
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Brand</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
-                                            <li><a href="#">Elegant Auto Group</a></li>
-                                            <li><a href="#">Green Grass</a></li>
-                                            <li><a href="#">Node Js</a></li>
-                                            <li><a href="#">NS8</a></li>
-                                            <li><a href="#">Red</a></li>
-                                            <li><a href="#">Skysuite Tech</a></li>
-                                            <li><a href="#">Sterling</a></li>
+                                            <li><a href="javascript:void(0)">Elegant Auto Group</a></li>
+                                            <li><a href="javascript:void(0)">Green Grass</a></li>
+                                            <li><a href="javascript:void(0)">Node Js</a></li>
+                                            <li><a href="javascript:void(0)">NS8</a></li>
+                                            <li><a href="javascript:void(0)">Red</a></li>
+                                            <li><a href="javascript:void(0)">Skysuite Tech</a></li>
+                                            <li><a href="javascript:void(0)">Sterling</a></li>
                                         </ul>
                                     </div>
                                     <!-- End of Collapsible Widget -->
@@ -103,13 +103,13 @@
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Color</span></h3>
                                         <ul class="widget-body filter-items item-check">
-                                            <li><a href="#">Black</a></li>
-                                            <li><a href="#">Blue</a></li>
-                                            <li><a href="#">Brown</a></li>
-                                            <li><a href="#">Green</a></li>
-                                            <li><a href="#">Grey</a></li>
-                                            <li><a href="#">Orange</a></li>
-                                            <li><a href="#">Yellow</a></li>
+                                            <li><a href="javascript:void(0)">Black</a></li>
+                                            <li><a href="javascript:void(0)">Blue</a></li>
+                                            <li><a href="javascript:void(0)">Brown</a></li>
+                                            <li><a href="javascript:void(0)">Green</a></li>
+                                            <li><a href="javascript:void(0)">Grey</a></li>
+                                            <li><a href="javascript:void(0)">Orange</a></li>
+                                            <li><a href="javascript:void(0)">Yellow</a></li>
                                         </ul>
                                     </div>
                                     <!-- End of Collapsible Widget -->
@@ -124,7 +124,7 @@
                         <div class="main-content">
                             <!-- Start of Shop Banner -->
                             <div class="shop-default-banner shop-boxed-banner banner d-flex align-items-center mb-6 br-xs"
-                                style="background-image: url({{asset('frontend-assets/assets/images/shop/banner1.jpg')}}); background-color: #FFC74E;">
+                                style="background-image: url({{asset('frontend-assets/assets/images/shop/banner1.jpg')}}); background-color: javascript:void(0)FFC74E;">
                                 <div class="banner-content">
                                     <h4 class="banner-subtitle font-weight-bold">Accessories Collection</h4>
                                     <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-10">Smart
@@ -145,19 +145,19 @@
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                    title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                    title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
+                                                    title="Add to cart" onclick="add_cart_({{$product->id}})"></a>
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    title="Wishlist" onclick="add_wish_({{$product->id}})" ></a>
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">{{$product->name}}</a>
+                                                <a href="javascript:void(0)">{{$product->name}}</a>
                                             </div>
                                             <h3 class="product-name">
                                                 <a href="{{route('product',$product->id)}}">{{$product->p_name}}</a>
@@ -181,7 +181,7 @@
                                 <!-- <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/2-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{{asset('frontend-assets/assets/images/shop/2-2.jpg')}}" alt="Product" width="300"
@@ -194,29 +194,29 @@
                                                     00:00:00:00</div>
                                             </div>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product">
                                             <div class="product-cat">
-                                                <a href="#">Electronics</a>
+                                                <a href="javascript:void(0)">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Alarm Clock With Lamp</a>
+                                                <a href="javascript:void(0)">Alarm Clock With Lamp</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(10 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -230,34 +230,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/3.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Electronics</a>
+                                                <a href="javascript:void(0)">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Apple Laptop</a>
+                                                <a href="javascript:void(0)">Apple Laptop</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(5 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(5 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -270,34 +270,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/4.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product">
                                             <div class="product-cat">
-                                                <a href="#">Electronics</a>
+                                                <a href="javascript:void(0)">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Attachable Charge Alarm</a>
+                                                <a href="javascript:void(0)">Attachable Charge Alarm</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(7 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(7 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -310,34 +310,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/5.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Fashion</a>
+                                                <a href="javascript:void(0)">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Best Travel Bag</a>
+                                                <a href="javascript:void(0)">Best Travel Bag</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(4 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -350,34 +350,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/6.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Sports</a>
+                                                <a href="javascript:void(0)">Sports</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Black Stunt Motor</a>
+                                                <a href="javascript:void(0)">Black Stunt Motor</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(12 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(12 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -390,36 +390,36 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/7-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{{asset('frontend-assets/assets/images/shop/7-2.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Fashion</a>
+                                                <a href="javascript:void(0)">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Blue Sky Trunk</a>
+                                                <a href="javascript:void(0)">Blue Sky Trunk</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(9 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(9 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -432,34 +432,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/8.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Beauty</a>
+                                                <a href="javascript:void(0)">Beauty</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Bodycare Smooth Powder</a>
+                                                <a href="javascript:void(0)">Bodycare Smooth Powder</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(4 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -472,34 +472,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/9.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Electronics</a>
+                                                <a href="javascript:void(0)">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Bright Green IPhone</a>
+                                                <a href="javascript:void(0)">Bright Green IPhone</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(4 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -512,34 +512,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/10.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Fashion</a>
+                                                <a href="javascript:void(0)">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Cavin Fashion Suede Handbag</a>
+                                                <a href="javascript:void(0)">Cavin Fashion Suede Handbag</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(4 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -552,36 +552,36 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/11-1.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="assets/images/shop/11-2.jpg;)}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Electronics</a>
+                                                <a href="javascript:void(0)">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Charming Design Watch</a>
+                                                <a href="javascript:void(0)">Charming Design Watch</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(10 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -594,34 +594,34 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <img src="{{asset('frontend-assets/assets/images/shop/12.jpg')}}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="#">Fashion</a>
+                                                <a href="javascript:void(0)">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="#">Classic Simple Backpack</a>
+                                                <a href="javascript:void(0)">Classic Simple Backpack</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="#" class="rating-reviews">(9 reviews)</a>
+                                                <a href="javascript:void(0)" class="rating-reviews">(9 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -641,5 +641,45 @@
             </div>
         </main>
         <!-- End of Main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+        function add_cart_(id){
+            var id = id;
+            var quantity = 1;
+            var size = "medium";
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('addcart') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    id: id,
+                    quantity: quantity,
+                    size: size
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });
+        }
+
+        function add_wish_(id){
+            // processing ajax request    
+            $.ajax({
+                url: "{{ url('addwish') }}" + '/' + id,
+                success: function() {
+                    // log response into console
+                    console.log("product has been aded to wish list");
+                }
+            });   
+        }
+
+</script>
 
 @endsection

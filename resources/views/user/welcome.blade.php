@@ -384,7 +384,7 @@
                                                                 <span class="ratings" style="width: 80%;"></span>
                                                                 <span class="tooltiptext tooltip-top"></span>
                                                             </div>
-                                                            <a href="#" class="rating-reviews">(3 Reviews)</a>
+                                                            <a href="javascript:void(0)" class="rating-reviews">(3 Reviews)</a>
                                                         </div>
 
                                                         <div
@@ -393,16 +393,16 @@
                                                             <div
                                                                 class="flex-wrap d-flex align-items-center product-variations">
                                                                 @if($unit->large == 1)
-                                                                <a href="#" class="size">Large</a>
+                                                                <a href="javascript:void(0)" class="size">Large</a>
                                                                 @endif
                                                                 @if($unit->medium == 1)
-                                                                <a href="#" class="size">Medium</a>
+                                                                <a href="javascript:void(0)" class="size">Medium</a>
                                                                 @endif
                                                                 @if($unit->small == 1)
-                                                                <a href="#" class="size">Small</a>
+                                                                <a href="javascript:void(0)" class="size">Small</a>
                                                                 @endif
                                                             </div>
-                                                            <a href="#" class="product-variation-clean">Clean All</a>
+                                                            <a href="javascript:void(0)" class="product-variation-clean">Clean All</a>
                                                         </div>
                                                         <div class="product-variation-price">
                                                             <span></span>
@@ -425,23 +425,23 @@
                                                         <div class="social-links-wrapper mt-1">
                                                             <div class="social-links">
                                                                 <div class="social-icons social-no-color border-thin">
-                                                                    <a href="#"
+                                                                    <a href="javascript:void(0)"
                                                                         class="social-icon social-facebook w-icon-facebook"></a>
-                                                                    <a href="#"
+                                                                    <a href="javascript:void(0)"
                                                                         class="social-icon social-twitter w-icon-twitter"></a>
-                                                                    <a href="#"
+                                                                    <a href="javascript:void(0)"
                                                                         class="social-icon social-pinterest fab fa-pinterest-p"></a>
-                                                                    <a href="#"
+                                                                    <a href="javascript:void(0)"
                                                                         class="social-icon social-whatsapp fab fa-whatsapp"></a>
-                                                                    <a href="#"
+                                                                    <a href="javascript:void(0)"
                                                                         class="social-icon social-youtube fab fa-linkedin-in"></a>
                                                                 </div>
                                                             </div>
                                                             <span class="divider d-xs-show"></span>
                                                             <div class="product-link-wrapper d-flex">
-                                                                <a href="#"
-                                                                    class="btn-product-icon btn-wishlist w-icon-heart"></a>
-                                                                <a href="#"
+                                                                <a href="javascript:void(0)"
+                                                                    class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$unit->id}})"></a>
+                                                                <a href="javascript:void(0)"
                                                                     class="btn-product-icon btn-compare btn-icon-left w-icon-compare"></a>
                                                             </div>
                                                         </div>
@@ -741,13 +741,13 @@
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$arrival->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
@@ -784,13 +784,13 @@
                                                         width="300" height="338" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$unit->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -826,13 +826,13 @@
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
@@ -867,13 +867,13 @@
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
@@ -982,13 +982,13 @@
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1015,20 +1015,20 @@
                                     <!-- <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-2-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-2-2.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1051,18 +1051,18 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-6.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1087,18 +1087,18 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-3.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1121,18 +1121,18 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-7.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1158,20 +1158,20 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-4-1.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-4-2.jpg')}}"
                                                         alt="Product" width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1194,18 +1194,18 @@
                                         </div>
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-8.jpg')}}" alt="Product"
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1280,13 +1280,13 @@
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1392,13 +1392,13 @@
                                                         width="216" height="243" />
                                                 </a>
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
@@ -1547,8 +1547,8 @@
                                     </figure>
                                     <div class="post-details">
                                         <div class="post-meta">
-                                            by <a href="#" class="post-author">John Doe</a>
-                                            - <a href="#" class="post-date mr-0">03.05.2021</a>
+                                            by <a href="javascript:void(0)" class="post-author">John Doe</a>
+                                            - <a href="javascript:void(0)" class="post-date mr-0">03.05.2021</a>
                                         </div>
                                         <h4 class="post-title"><a href="{{route('blog-details')}}">Aliquam tincidunt mauris
                                                 eurisus</a>
@@ -1566,8 +1566,8 @@
                                     </figure>
                                     <div class="post-details">
                                         <div class="post-meta">
-                                            by <a href="#" class="post-author">John Doe</a>
-                                            - <a href="#" class="post-date mr-0">03.05.2021</a>
+                                            by <a href="javascript:void(0)" class="post-author">John Doe</a>
+                                            - <a href="javascript:void(0)" class="post-date mr-0">03.05.2021</a>
                                         </div>
                                         <h4 class="post-title"><a href="{{route('blog-details')}}">Cras ornare tristique elit</a>
                                         </h4>
@@ -1584,8 +1584,8 @@
                                     </figure>
                                     <div class="post-details">
                                         <div class="post-meta">
-                                            by <a href="#" class="post-author">John Doe</a>
-                                            - <a href="#" class="post-date mr-0">03.05.2021</a>
+                                            by <a href="javascript:void(0)" class="post-author">John Doe</a>
+                                            - <a href="javascript:void(0)" class="post-date mr-0">03.05.2021</a>
                                         </div>
                                         <h4 class="post-title"><a href="{{route('blog-details')}}">Vivamus vestibulum ntulla nec
                                                 ante</a>
@@ -1603,8 +1603,8 @@
                                     </figure>
                                     <div class="post-details">
                                         <div class="post-meta">
-                                            by <a href="#" class="post-author">John Doe</a>
-                                            - <a href="#" class="post-date mr-0">03.05.2021</a>
+                                            by <a href="javascript:void(0)" class="post-author">John Doe</a>
+                                            - <a href="javascript:void(0)" class="post-date mr-0">03.05.2021</a>
                                         </div>
                                         <h4 class="post-title"><a href="{{route('blog-details')}}">Fusce lacinia arcuet nulla</a>
                                         </h4>
@@ -1649,7 +1649,7 @@
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="{{route('product', 16)}}">{{$recent->pname}}</a>
+                                    <a href="{{route('product', $recent->id)}}">{{$recent->pname}}</a>
                                 </h4>
                             </div>
                         </div>
@@ -1662,4 +1662,43 @@
             <!--End of Catainer -->
         </main>
         <!-- End of Main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$("#postbutton").click(function(){
+            var id = $("#product_id").val();
+            var quantity = $("#qnty").val();
+            var size = $("#size").val();
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('addcart') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    id: id,
+                    quantity: quantity,
+                    size: size
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });
+        });
+
+        function add_wish_(id){
+            // processing ajax request    
+            $.ajax({
+                url: "{{ url('addwish') }}" + '/' + id,
+                success: function() {
+                    // log response into console
+                    console.log("product has been aded to wish list");
+                }
+            });   
+        }
+
+</script>
 @endsection
