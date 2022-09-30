@@ -44,7 +44,7 @@ class VendorsController extends Controller
         $vendor->shop_detail = $request->input('shop_detail');
         $vendor->name = $request->input('name');
         $vendor->address = $request->input('address');
-        $vendor->registration = $request->input('reg_no');
+        $vendor->reg_no = $request->input('reg_no');
         $vendor->message = $request->input('message');
         $vendor->update();
         return redirect()->route('admin.vendors_list');

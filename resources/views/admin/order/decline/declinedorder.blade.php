@@ -148,45 +148,52 @@
                         </div>
                      </th>
                      <!-- <th class="min-w-125px"> Store Name </th> -->
+
                      <th class="min-w-125px">Customer Email  </th>
                      <th class="min-w-125px"> Order Number </th>
                      <th class="min-w-125px"> Total Qty </th>
                      <th class="min-w-125px"> Total Cost </th>
                      <th class="min-w-125px"> Status  </th>
+
+
+
+
+
+
                      <th class="min-w-125px" style="display:none">Status </th>
                      <th class="min-w-125px" style="display:none">Status </th>
+
+
+
+
                   </tr>
                   <!--end::Table row-->
                </thead>
                <!--end::Table head-->
                <!--begin::Table body-->
                <tbody class="fw-bold text-gray-600">
+                  @foreach($orders as $order)
                   <tr>
                      <!--begin::Checkbox-->
                      <td>
-                        <div
-                           class="form-check form-check-sm form-check-custom form-check-solid">
-                           <input class="form-check-input" type="checkbox" value="1" />
-                        </div>
+                        {{$loop->iteration}}
                      </td>
                      <!--end::Checkbox-->
-                     <td>alberthmc@gmail.com	</td>
-                     <td>#12154	</td>
-                     <td>2	</td>
-                     <td>$100</td>
-                     <td>
-                        <span class="badge badge-light-danger">
-                           <Datag>Decline</Datag>
-                        </span>
-                     </td>
-                     <td style="display:none">#121545	</td>
+                        
+                     <td>{{$order->email}}</td>
+                     <td>{{$order->id}}</td>
+                     <td>{{$order->qnty}}</td>
+                     <td>{{$order->net_amount}}</td>
+                     <td><span class="badge badge-light-warning">{{$status[$order->status]}}</span></td>
+                     <td style="display:none">121541500515	</td>
+                        
+
                      <!--end::Date=-->
                      <!--begin::Action=-->
                      <td class="text-end">
                         <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
                            data-kt-menu-trigger="click"
-                           data-kt-menu-placement="bottom-end">
-                           Actions
+                           data-kt-menu-placement="bottom-end">Actions
                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
                            <span class="svg-icon svg-icon-5 m-0">
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -196,21 +203,23 @@
                                     fill="black" />
                               </svg>
                            </span>
-                           <!--end::Svg Icon-->
-                        </a>
+                           <!--end::Svg Icon--></a>
                         <!--begin::Menu-->
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
                            data-kt-menu="true">
                            <!--begin::Menu item-->
                            <div class="menu-item px-3">
-                              <a href="{{url('admin/order_decline_declineorderdetails')}}"
+                              <a href="{{url('admin/order_decline_declineorderdetails/'.$order->id)}}"
                                  class="menu-link px-3">Details</a>
                            </div>
                            <!--end::Menu item-->
+
+
                            <div class="menu-item px-3">
-                              <a href="{{url('admin/order_decline_declineorderdelivery')}}"
+                              <a href="{{url('admin/order_allorderdelivery')}}"
                                  class="menu-link px-3">Delivery</a>
                            </div>
+
                            <!--begin::Menu item-->
                            <div class="menu-item px-3">
                               <a href="#" class="menu-link px-3"
@@ -222,6 +231,7 @@
                      </td>
                      <!--end::Action=-->
                   </tr>
+                  @endforeach
                </tbody>
                <!--end::Table body-->
             </table>

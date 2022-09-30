@@ -262,7 +262,7 @@
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
 
-														<a href="{{route('admin.vendors_view', $vendor->id)}}"
+														<a href="{{url('admin/vendors_view/'.$vendor->id)}}"
 
 															class="menu-link px-3">View</a>
 													</div>
@@ -274,7 +274,7 @@
 													</div> -->
 
 													<div class="menu-item px-3">
-														<a href="{{route('admin.vendors_edit', $vendor->id)}}"
+														<a href="{{url('admin/vendors_edit/'.$vendor->id)}}"
 
 															class="menu-link px-3">Edit</a>
 													</div>

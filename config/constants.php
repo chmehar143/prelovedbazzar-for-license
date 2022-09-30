@@ -3,8 +3,10 @@
 return [
 
     'status' => [
-        '0' => 'inactive',
-        '1' => 'active',
+        '0' => 'unverified',
+        '1' => 'verified',
+        '2' => 'inactive',
+        '3' => 'active',
     ],
     'type' => [
         '0' => 'Physical',

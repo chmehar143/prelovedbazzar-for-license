@@ -181,29 +181,21 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-
+										@foreach($orders as $order)
 										<tr>
 											<!--begin::Checkbox-->
 											<td>
-												<div
-													class="form-check form-check-sm form-check-custom form-check-solid">
-													<input class="form-check-input" type="checkbox" value="1" />
-												</div>
+												{{$loop->iteration}}
 											</td>
 											<!--end::Checkbox-->
-											
-                                            
-											
-											<td>alberthmc@gmail.com	</td>
-											<td>#12154	</td>
-											<td>2	</td>
-											<td>$100</td>
-											<td><span class="badge badge-light-success">Completed</span></td>
-
-
-
-											<td style="display:none">#121545	</td>
-                                             
+												
+											<td>{{$order->email}}</td>
+											<td>{{$order->id}}</td>
+											<td>{{$order->qnty}}</td>
+											<td>{{$order->net_amount}}</td>
+											<td><span class="badge badge-light-warning">{{$status[$order->status]}}</span></td>
+											<td style="display:none">121541500515	</td>
+												
 
 											<!--end::Date=-->
 											<!--begin::Action=-->
@@ -226,14 +218,14 @@
 													data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="{{url('admin/order_complete_completeorderdetails')}}"
+														<a href="{{url('admin/order_complete_completeorderdetails/'.$order->id)}}"
 															class="menu-link px-3">Details</a>
 													</div>
 													<!--end::Menu item-->
 
 
 													<div class="menu-item px-3">
-														<a href="{{url('admin/order_complete_completeorderdelivery')}}"
+														<a href="{{url('admin/order_allorderdelivery')}} "
 															class="menu-link px-3">Delivery</a>
 													</div>
 
@@ -248,6 +240,7 @@
 											</td>
 											<!--end::Action=-->
 										</tr>
+										@endforeach
 									</tbody>
 									<!--end::Table body-->
 								</table>

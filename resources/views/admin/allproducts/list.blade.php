@@ -142,7 +142,9 @@
 							<!--begin::Card body-->
 							<div class="card-body pt-0" >
 								<!--begin::Table-->
-								<div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="table-responsive"><table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_customers_table" style="width: 1046px;">
+								<div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+									<div class="table-responsive">
+								<table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_customers_table" style="width: 1046px;">
 									<!--begin::Table head-->
 									<thead>
 										<!--begin::Table row-->
@@ -244,7 +246,8 @@
 									</tbody>
 									
 										<!--end::Table body-->
-								</table></div>
+								</table>
+							</div>
 								<div class="row">
 									<div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
 										
@@ -264,32 +267,32 @@
 						<!--end::Container-->
 					</div>
 					<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-      function deleteProduct(id) {
-          Swal.fire({
-              title: 'Are you sure?',
-              text: "You won't be able to revert this!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  $.ajax({
-                      url: "{{url('admin/product_del')}}"+ '/' + id,
-                      success: function(data) {
-                          $("#nft_row_" +id).remove();
-                          Swal.fire(
-                              'Deleted!',
-                              'Product has been deleted.',
-                              'success'
-                          )
-                      }
-                  });
-              }
-          })
-      }
-  </script>
+					<script>
+					function deleteProduct(id) {
+						Swal.fire({
+							title: 'Are you sure?',
+							text: "You won't be able to revert this!",
+							icon: 'warning',
+							showCancelButton: true,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'Yes, delete it!'
+						}).then((result) => {
+							if (result.isConfirmed) {
+								$.ajax({
+									url: "{{url('admin/product_del')}}"+ '/' + id,
+									success: function(data) {
+										$("#nft_row_" +id).remove();
+										Swal.fire(
+											'Deleted!',
+											'Product has been deleted.',
+											'success'
+										)
+									}
+								});
+							}
+						})
+					}
+					</script>
 
                     @endsection

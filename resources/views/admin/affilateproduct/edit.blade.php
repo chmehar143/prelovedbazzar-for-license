@@ -307,7 +307,9 @@
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
 													<select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold">
+														@if($catog != NULL)
 														<option value="{{$catog->id}}">{{$catog->name}}</option>
+														@endif
 														@foreach($categories as $category)
 														<option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}">{{$category->name}}</option>
 														@endforeach
@@ -329,7 +331,9 @@
 												<div class="col-lg-8 fv-row">
 													<!--begin::Input-->
 													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+														@if($sub_cat)
 														<option value="{{$sub_cat->id}}">{{$sub_cat->name}}</option>
+														@endif
 													</select>
 													<!--end::Input-->
 													<!--begin::Hint-->
@@ -348,7 +352,9 @@
 													<div class="col-lg-8 fv-row">
 														<!--begin::Input-->
 														<select id="childcat" name="p_child_catog" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
+															@if($ch_cat)
 															<option value="{{$ch_cat->id}}">{{$ch_cat->name}}</option>
+															@endif
 														</select>
 														<!--end::Input-->
 														<!--begin::Hint-->
