@@ -60,9 +60,9 @@ Route::get('/allproducts_create', 'AllProductController@create')->name('allprodu
 Route::post('/allproducts_store', 'AllProductController@store')->name('allproducts_store');
 Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat');
 Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildCat');
-Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
+Route::get('/allproducts_edit', 'AllProductController@edit')->name('allproducts_edit');
 Route::put('/allproducts_update', 'AllProductController@update')->name('allproducts_update');
-Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
+Route::get('/allproducts_view', 'AllProductController@view')->name('allproducts_view');
 Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
 
 
@@ -296,6 +296,10 @@ Route::get('message_invoice', 'MessageController@invoice')->name('message_invoic
 
 
 
+
+Route::get('manageroles_list', 'ManageRolesController@list')->name('manageroles_list');
+Route::get('manageroles_create', 'ManageRolesController@create')->name('manageroles_create');
+Route::get('manageroles_edit', 'ManageRolesController@edit')->name('manageroles_edit');
 
 
 

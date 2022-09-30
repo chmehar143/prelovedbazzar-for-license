@@ -89,7 +89,7 @@
 						</div>
 						<!--end::Container-->
 					</div>
-<div class="content d-flex flex-column flex-column-fluid" id="kt_content" style="margin-top:5pc">
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content" style="margin-top:8pc">
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl">
 							<!--begin::Navbar-->
