@@ -193,8 +193,11 @@ Route::get('subscribe_list', 'SubscribeController@index')->name('subscribe_list'
 // Manage staff
 Route::get('managestaff_list', 'ManageStaffController@list')->name('managestaff_list');
 Route::get('managestaff_create', 'ManageStaffController@create')->name('managestaff_create');
-Route::get('managestaff_edit', 'ManageStaffController@edit')->name('managestaff_edit');
-Route::get('managestaff_view', 'ManageStaffController@view')->name('managestaff_view');
+Route::post('managestaff_store', 'ManageStaffController@store')->name('managestaff_store');
+Route::get('managestaff_edit/{id}', 'ManageStaffController@edit')->name('managestaff_edit');
+Route::put('managestaff_update/{id}', 'ManageStaffController@update')->name('managestaff_update');
+Route::get('managestaff_view/{id}', 'ManageStaffController@view')->name('managestaff_view');
+Route::get('managestaff_delete/{id}', 'ManageStaffController@destroy')->name('managestaff_delete');
 
 
 

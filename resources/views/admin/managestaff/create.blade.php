@@ -112,7 +112,9 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
-									<form id="kt_account_profile_details_form" class="form">
+									<form id="kt_account_profile_details_form" class="form" 
+										action="{{route('admin.managestaff_store')}}" method="post"  enctype="multipart/form-data">
+										@csrf
 										<!--begin::Card body-->
 										<div class="card-body border-top p-9">
 											<!--begin::Input group-->
@@ -169,7 +171,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Max"  />
+															<input type="text" name="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Max"  />
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -188,7 +190,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="email" name="company" class="form-control form-control-lg form-control-solid" placeholder="namskue@gmail.com"  />
+													<input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="namskue@gmail.com"  />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -199,7 +201,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="number" name="company" class="form-control form-control-lg form-control-solid" placeholder="xxxxxxxx" />
+													<input type="number" name="cell" class="form-control form-control-lg form-control-solid" placeholder="xxxxxxxx" />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -215,13 +217,13 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select name="country" aria-label="Select a Role" data-control="select2" data-placeholder="Select a Role..." class="form-select form-select-solid form-select-lg fw-bold">
+													<select name="role" aria-label="Select a Role" data-control="select2" data-placeholder="Select a Role..." class="form-select form-select-solid form-select-lg fw-bold">
 														<option value="">Product Condition...</option>
-														<option data-kt-flag="flags/afghanistan.svg" value="AF">Manager</option>
+														<option data-kt-flag="flags/afghanistan.svg" value="2">User</option>
 												
-														<option data-kt-flag="flags/venezuela.svg" value="VE">Moderator</option>
+														<option data-kt-flag="flags/venezuela.svg" value="1">Admin</option>
 
-														<option data-kt-flag="flags/venezuela.svg" value="VE">Staff</option>
+														<option data-kt-flag="flags/venezuela.svg" value="0">Super Admin</option>
 
 													
 													</select>
@@ -236,7 +238,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="password" name="company" class="form-control form-control-lg form-control-solid" placeholder="xxxxxxxx" />
+													<input type="password" name="password" class="form-control form-control-lg form-control-solid" placeholder="xxxxxxxx" />
 												</div>
 												<!--end::Col-->
 											</div>

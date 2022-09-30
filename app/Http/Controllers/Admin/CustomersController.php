@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
+    
      public  function  index()
     {
         return view('admin.customer.list');

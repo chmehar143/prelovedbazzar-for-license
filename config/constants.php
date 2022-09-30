@@ -19,8 +19,12 @@ return [
         'fr' => 'France',
         'aus' => 'Australia'
     ],
-    'address' => [
-        'fname' => 'Bilal',
+
+    'role' => [
+        '0' => 'Super Admin',
+        '1' => 'Admin',
+        '2' => 'user',
+        '3' => 'not define'
     ],
 ]
 
