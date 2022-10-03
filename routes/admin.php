@@ -210,11 +210,11 @@ Route::get('managestaff_delete/{id}', 'ManageStaffController@destroy')->name('ma
 
 // Vendor  product
 
-Route::get('vendors_list', 'VendorsController@index')->name('vendors_list');
-Route::get('/vendors_edit', 'VendorsController@edit')->name('vendors_edit');
-Route::get('/vendors_view', 'VendorsController@view')->name('vendors_view');
-Route::get('/vendors_question', 'VendorsController@question')->name('vendors_question');
-Route::get('/vendors_withdraw', 'VendorsController@list')->name('vendors_withdraw');
+// Route::get('vendors_list', 'VendorsController@index')->name('vendors_list');
+// Route::get('/vendors_edit', 'VendorsController@edit')->name('vendors_edit');
+// Route::get('/vendors_view', 'VendorsController@view')->name('vendors_view');
+// Route::get('/vendors_question', 'VendorsController@question')->name('vendors_question');
+// Route::get('/vendors_withdraw', 'VendorsController@list')->name('vendors_withdraw');
 
 
 // Vendor  product
@@ -237,48 +237,48 @@ Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_i
 
 //Cusomters
 
-Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
-Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
-Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
-Route::get('/productdisscussion_reviewview', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+// Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
+// Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
+// Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
+// Route::get('/productdisscussion_reviewview', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
 
 
 //Orders
 
-Route::get('order_allorder', 'OrderController@allorder')->name('order_allorder');
-Route::get('order_allorderdetails', 'OrderController@allorderdetails')->name('order_allorderdetails');
-Route::get('order_allorderinvoice', 'OrderController@allorderinvoice')->name('order_allorderinvoice');
-Route::get('order_allorderdelivery', 'OrderController@allorderdelivery')->name('order_allorderdelivery');
+// Route::get('order_allorder', 'OrderController@allorder')->name('order_allorder');
+// Route::get('order_allorderdetails', 'OrderController@allorderdetails')->name('order_allorderdetails');
+// Route::get('order_allorderinvoice', 'OrderController@allorderinvoice')->name('order_allorderinvoice');
+// Route::get('order_allorderdelivery', 'OrderController@allorderdelivery')->name('order_allorderdelivery');
 
 
 // Complete Orders
 
-Route::get('/order_complete_completedorder', 'OrderController@completedorder')->name('order_complete_completedorder');
-Route::get('order_complete_completeorderdetails', 'OrderController@completeorderdetails')->name('order_complete_completeorderdetails');
-Route::get('order_complete_completeorderinvoice', 'OrderController@completeorderinvoice')->name('order_complete_completeorderinvoice');
-Route::get('order_complete_completeorderdelivery', 'OrderController@completeorderdelivery')->name('order_complete_completeorderdelivery');
+// Route::get('/order_complete_completedorder', 'OrderController@completedorder')->name('order_complete_completedorder');
+// Route::get('order_complete_completeorderdetails', 'OrderController@completeorderdetails')->name('order_complete_completeorderdetails');
+// Route::get('order_complete_completeorderinvoice', 'OrderController@completeorderinvoice')->name('order_complete_completeorderinvoice');
+// Route::get('order_complete_completeorderdelivery', 'OrderController@completeorderdelivery')->name('order_complete_completeorderdelivery');
 
 // pending Orders
 
-Route::get('/order_pending_pendingorder', 'OrderController@pendingorder')->name('order_pending_pendingorder');
-Route::get('order_pending_pendingorderdetails', 'OrderController@pendingorderdetails')->name('order_pending_pendingorderdetails');
-Route::get('order_pending_pendingorderinvoice', 'OrderController@pendingorderinvoice')->name('order_pending_pendingorderinvoice');
-Route::get('order_pending_pendingorderdelivery', 'OrderController@pendingorderdelivery')->name('order_pending_pendingorderdelivery');
+// Route::get('/order_pending_pendingorder', 'OrderController@pendingorder')->name('order_pending_pendingorder');
+// Route::get('order_pending_pendingorderdetails', 'OrderController@pendingorderdetails')->name('order_pending_pendingorderdetails');
+// Route::get('order_pending_pendingorderinvoice', 'OrderController@pendingorderinvoice')->name('order_pending_pendingorderinvoice');
+// Route::get('order_pending_pendingorderdelivery', 'OrderController@pendingorderdelivery')->name('order_pending_pendingorderdelivery');
 
 // Declined Orders Orders
 
 
 
-Route::get('/order_decline_declinedorder', 'OrderController@declineorder')->name('order_decline_declinedorder');
-Route::get('order_decline_declineorderdetails', 'OrderController@declineorderdetails')->name('order_decline_declineorderdetails');
-Route::get('order_decline_declineorderinvoice', 'OrderController@declineorderinvoice')->name('order_decline_declineorderinvoice');
-Route::get('order_decline_declineorderdelivery', 'OrderController@declineorderdelivery')->name('order_decline_declineorderdelivery');
+// Route::get('/order_decline_declinedorder', 'OrderController@declineorder')->name('order_decline_declinedorder');
+// Route::get('order_decline_declineorderdetails', 'OrderController@declineorderdetails')->name('order_decline_declineorderdetails');
+// Route::get('order_decline_declineorderinvoice', 'OrderController@declineorderinvoice')->name('order_decline_declineorderinvoice');
+// Route::get('order_decline_declineorderdelivery', 'OrderController@declineorderdelivery')->name('order_decline_declineorderdelivery');
 
 // Processing Orders Orders
-Route::get('/order_processing_processingorder', 'OrderController@processingorder')->name('order_processing_processingorder');
-Route::get('order_processing_processingorderdetails', 'OrderController@processingorderdetails')->name('order_processing_processingorderdetails');
-Route::get('order_processing_processingorderinvoice', 'OrderController@processingorderinvoice')->name('order_processing_processingorderinvoice');
-Route::get('order_processing_processingorderdelivery', 'OrderController@processingorderdelivery')->name('order_processing_processingorderdelivery');
+// Route::get('/order_processing_processingorder', 'OrderController@processingorder')->name('order_processing_processingorder');
+// Route::get('order_processing_processingorderdetails', 'OrderController@processingorderdetails')->name('order_processing_processingorderdetails');
+// Route::get('order_processing_processingorderinvoice', 'OrderController@processingorderinvoice')->name('order_processing_processingorderinvoice');
+// Route::get('order_processing_processingorderdelivery', 'OrderController@processingorderdelivery')->name('order_processing_processingorderdelivery');
 
 // Blog
 Route::get('/blog_categorieslist', 'BlogController@index')->name('blog_categorieslist');
