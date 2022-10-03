@@ -300,7 +300,12 @@ Route::get('message_invoice', 'MessageController@invoice')->name('message_invoic
 
 
 
+//subscriptionplan
 
+Route::get('subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
+Route::get('subscriptionplan_create', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
+Route::get('subscriptionplan_edit', 'SubscriptionPlanController@edit')->name('subscriptionplan_edit');
+Route::get('subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
 
 
 
