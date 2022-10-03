@@ -46,6 +46,7 @@ class CartController extends Controller
                 $cart->session_id = Session::getId();
                 $cart->quantity = $request->quantity;
                 $cart->price = $item->p_new_price;
+                $cart->color = $item->p_color;
                 $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->size = $request->size;
                 $cart->save();
@@ -68,6 +69,7 @@ class CartController extends Controller
                 $cart->session_id = Session::getId();
                 $cart->quantity = $request->quantity;
                 $cart->price = $item->p_new_price;
+                $cart->color = $item->p_color;
                 $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->size = $request->size;
                 $cart->save();

@@ -115,6 +115,7 @@ class OrderController extends Controller
             $detail->pro_id = $cart->prod_id;
             $detail->pro_qnty = $cart->quantity;
             $detail->price = $cart->price;
+            $detail->color = $cart->color;
             $detail->size = $cart->size;
             $detail->subtotal = $cart->net_price;
             $detail->save();
