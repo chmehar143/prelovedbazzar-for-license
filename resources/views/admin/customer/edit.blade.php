@@ -88,7 +88,7 @@
 							<!--end::Action group-->
 						</div>
 </div>
-<div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
+    <div class="content d-flex flex-column flex-column-fluid" style="margin-top:8pc" id="kt_content">
                    
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" >

@@ -63,6 +63,7 @@ Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildC
 Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
 Route::put('/allproducts_update/{id}', 'AllProductController@update')->name('allproducts_update');
 Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
+
 Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
 
 
@@ -307,6 +308,10 @@ Route::get('subscriptionplan_create', 'SubscriptionPlanController@create')->name
 Route::get('subscriptionplan_edit', 'SubscriptionPlanController@edit')->name('subscriptionplan_edit');
 Route::get('subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
 
+
+Route::get('manageroles_list', 'ManageRolesController@list')->name('manageroles_list');
+Route::get('manageroles_create', 'ManageRolesController@create')->name('manageroles_create');
+Route::get('manageroles_edit', 'ManageRolesController@edit')->name('manageroles_edit');
 
 
 
