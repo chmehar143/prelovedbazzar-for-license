@@ -8,6 +8,15 @@ use App\Models\Vendor;
 
 class VendorVerificationController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
     public  function  index()
     {
         $verified_Vendors = Vendor::where('status', 1)->get();

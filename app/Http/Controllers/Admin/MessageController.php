@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
+
+    
     public  function  message()
     {
         return view('admin.message.messagelist');

@@ -16,6 +16,17 @@ use Config;
 
 class ProductDisscussionController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
+
+    
     public  function  comments()
     {
         $reviews = Discussion::join('products', 'item', '=', 'products.id')

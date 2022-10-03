@@ -15,6 +15,11 @@ use Config;
 
 class DeactivedProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin.auth:admin');
+    }
+    
     public  function  index()
     {
         $vendor = Auth::guard('vendor');
