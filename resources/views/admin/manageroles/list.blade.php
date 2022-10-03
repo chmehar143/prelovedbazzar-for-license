@@ -5,7 +5,7 @@
 						<!--begin::Container-->
 						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> Completed Orders </h1>
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> Manage Roles</h1>
 									<!--end::Title-->
 									<!--begin::Separator-->
 									<span class="h-20px border-gray-200 border-start mx-3"></span>
@@ -20,7 +20,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted"> Orders </li>
+										<li class="breadcrumb-item text-muted"> Roles </li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -28,7 +28,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark"> Completed Orders List</li>
+										<li class="breadcrumb-item text-dark"> Manage Roles</li>
 										<!--end::Item-->
 									</ul>
 									<!--end::Breadcrumb-->
@@ -86,15 +86,11 @@
 						</div>
 						<!--end::Container-->
 					</div>
-						<!--begin::Container-->
-
-<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-
+                    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 						<!--begin::Container-->
 						<div id="kt_content_container" class="container-xxl" style="    margin-top: 11pc;">
 							<!--begin::Card-->
-                        
-
+        
 							<div class="card">
 								<!--begin::Card header-->
 								<div class="card-header border-0 pt-6">
@@ -110,7 +106,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Complete order">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Roles">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -123,8 +119,9 @@
 										
 											<!--begin::Menu 1-->
 									
-
+											
 											<!--begin::Add customer-->
+											<a type="button" class="btn btn-primary" href="{{url('admin/manageroles_create')}}">Add Roles</a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -156,24 +153,15 @@
 														value="1" />
 												</div>
 											</th>
-											<!-- <th class="min-w-125px"> Store Name </th> -->
+											<th class="min-w-125px" style="display:none"> Image </th>
+											<th class="min-w-125px"> Name </th>
 
-											<th class="min-w-125px">Customer Email  </th>
-											<th class="min-w-125px"> Order Number </th>
-											<th class="min-w-125px"> Total Qty </th>
-											<th class="min-w-125px"> Total Cost </th>
-											<th class="min-w-125px"> Status  </th>
+											<th class="min-w-125px" style="display:none">Email </th>
+											<th class="min-w-125px"> Permissions </th>
 
-
-
-
-
+											<th class="min-w-125px" style="display:none"> Role </th>
 
 											<th class="min-w-125px" style="display:none">Status </th>
-											<th class="min-w-125px" style="display:none">Status </th>
-
-
-
 
 										</tr>
 										<!--end::Table row-->
@@ -181,21 +169,25 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-										@foreach($orders as $order)
+
 										<tr>
 											<!--begin::Checkbox-->
 											<td>
-												{{$loop->iteration}}
+												<div
+													class="form-check form-check-sm form-check-custom form-check-solid">
+													<input class="form-check-input" type="checkbox" value="1" />
+												</div>
 											</td>
 											<!--end::Checkbox-->
-												
-											<td>{{$order->email}}</td>
-											<td>{{$order->id}}</td>
-											<td>{{$order->qnty}}</td>
-											<td>{{$order->net_amount}}</td>
-											<td><span class="badge badge-light-warning">{{$status[$order->status]}}</span></td>
-											<td style="display:none">121541500515	</td>
-												
+										<td style="display:none"><img src="http://127.0.0.1:8000/admin-assets/media/avatars/150-26.jpg" width="50px"></td>
+
+                                            
+											<td>Genius Admin	</td>
+											<td style="display:none">shaon@gmail.com	</td>
+											<td style="display:none">0000000000000	</td>
+											<td>Orders , Products , Vendors , Vendor Subscription Plans , Categories , Blog , Home Page Settings , Menu Page Settings , Language Settings , Seo Tools , Subscribers
+	</td>
+
 
 											<!--end::Date=-->
 											<!--begin::Action=-->
@@ -216,31 +208,20 @@
 												<!--begin::Menu-->
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
 													data-kt-menu="true">
-													<!--begin::Menu item-->
+													
 													<div class="menu-item px-3">
-														<a href="{{url('admin/order_complete_completeorderdetails/'.$order->id)}}"
-															class="menu-link px-3">Details</a>
-													</div>
-													<!--end::Menu item-->
-
-
-													<div class="menu-item px-3">
-														<a href="{{url('admin/order_allorderdelivery')}} "
-															class="menu-link px-3">Delivery</a>
+														<a href="{{url('admin/manageroles_edit')}}"
+															class="menu-link px-3">Edit</a>
 													</div>
 
 													<!--begin::Menu item-->
-													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3"
-															data-kt-customer-table-filter="delete_row">Delete</a>
-													</div>
+													
 													<!--end::Menu item-->
 												</div>
 												<!--end::Menu-->
 											</td>
 											<!--end::Action=-->
 										</tr>
-										@endforeach
 									</tbody>
 									<!--end::Table body-->
 								</table>
@@ -253,8 +234,6 @@
 						</div>
 						<!--end::Container-->
 					</div>
-
-
 
 
                     @endsection

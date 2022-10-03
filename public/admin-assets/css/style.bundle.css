@@ -55637,6 +55637,9 @@ body {
         box-shadow: 0 10px 30px 0 rgba(82, 63, 105, .05)
     }
 
+    .flex-column-fluid {
+        flex: 0 0 auto !important;
+    }
     .toolbar-enabled:not(.toolbar-tablet-and-mobile-fixed) .toolbar {
         margin-bottom: 15px;
         display: none;
@@ -55984,7 +55987,9 @@ body {
     }
 
     .toolbar-enabled:not(.toolbar-tablet-and-mobile-fixed) .content {
-        padding-top: 0
+        padding-top: 0;
+        width: 100%;
+
     }
 }
 
