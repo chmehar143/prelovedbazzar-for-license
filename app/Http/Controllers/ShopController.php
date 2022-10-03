@@ -48,8 +48,8 @@ class ShopController extends Controller
     }
 
     public function sort_price($min, $max){
-            $products = Product::whereRaw('p_new_price >= ?',$min)
-                ->whereRaw('p_new_price <= ?',$max)
+            $products = Product::whereRaw('p_new_price >= ?' , $min)
+                ->whereRaw('p_new_price <= ?', $max)
                 ->join('categories', 'products.p_catog','=','categories.id')
                 ->select('products.*', 'categories.name')
                 ->paginate(9);

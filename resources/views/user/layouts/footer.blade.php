@@ -19,11 +19,11 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-9 mt-4 mt-lg-0 ">
-                            <form action="#" method="get"
+                            <form action="javascript:void(0)"
                                 class="input-wrapper input-wrapper-inline input-wrapper-rounded">
-                                <input type="email" class="form-control mr-2 bg-white" name="email" id="email"
+                                <input type="email" class="form-control mr-2 bg-white" name="mail" id="mail"
                                     placeholder="Your E-mail Address" />
-                                <button class="btn btn-dark btn-rounded" type="submit">Subscribe<i
+                                <button class="btn btn-dark btn-rounded" type="reset" id="subscribe">Subscribe<i
                                         class="w-icon-long-arrow-right"></i></button>
                             </form>
                         </div>
@@ -111,5 +111,30 @@
             </div>
         </footer>
         <!-- End of Footer -->
+
+        <!-- ajax for subscription -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $("#subscribe").click(function(){
+            var email = $("#mail").val();
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('subscribe') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    email: email
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });
+        });
+</script> -->
+<!-- /ajax for subscription -->
 
 

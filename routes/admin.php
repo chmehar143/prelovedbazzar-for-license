@@ -187,6 +187,7 @@ Route::get('message_invoice', 'MessageController@invoice')->name('message_invoic
 
 //Subscribe
 Route::get('subscribe_list', 'SubscribeController@index')->name('subscribe_list');
+Route::get('remove_subscript/{id}', 'SubscribeController@remove')->name('remove_subscript');
 
 // Manage staff
 Route::get('managestaff_list', 'ManageStaffController@list')->name('managestaff_list');

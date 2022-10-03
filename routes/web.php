@@ -36,6 +36,7 @@ use App\Http\Controllers\ErrorPageController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('subscribe');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/shop/{name}', [ShopController::class, 'sortby'])->name('sortby');
