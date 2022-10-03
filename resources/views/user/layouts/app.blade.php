@@ -312,10 +312,10 @@ use Illuminate\Support\Facades\URL;
         <h2 class="ls-25">Sign up to Wolmart</h2>
         <p class="text-light ls-10">Subscribe to the Wolmart market newsletter to
             receive updates on special offers.</p>
-        <form action="#" method="get" class="input-wrapper input-wrapper-inline input-wrapper-round">
-            <input type="email" class="form-control email font-size-md" name="email" id="email2"
+        <form action="javascript:void(0)" class="input-wrapper input-wrapper-inline input-wrapper-round">
+            <input type="email" class="form-control email font-size-md" name="email" id="mail"
                    placeholder="Your email address" required="">
-            <button class="btn btn-dark" type="submit">SUBMIT</button>
+            <button type="submit" class="btn btn-dark" id="subscribe" >SUBMIT</button>
         </form>
         <div class="form-checkbox d-flex align-items-center">
             <input type="checkbox" class="custom-checkbox" id="hide-newsletter-popup" name="hide-newsletter-popup"
@@ -510,6 +510,31 @@ use Illuminate\Support\Facades\URL;
 
 <!-- Main JS -->
 <script src="{{asset('frontend-assets/assets/js/main.min.js')}}"></script>
+
+<!-- ajax for subscription -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $("#subscribe").click(function(){
+            var email = $("#mail").val();
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('subscribe') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    email: email
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });
+        });
+</script>
+<!-- /ajax for subscription -->
 
 </body>
 

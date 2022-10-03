@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\RecentView;
 use App\Models\Childcategory;
 use App\Models\Subcategory;
+use App\Models\Subscriber;
 use App\Models\User;
 use Carbon\Carbon;
 class HomeController extends Controller
@@ -38,9 +39,28 @@ class HomeController extends Controller
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->get();
 
         $recents = RecentView::where('user_id', Auth::guard('user')->id())
-                    ->orWhere('session', Session::getId())->get();
+                    ->orWhere('session', Session::getId())->orderBy('created_at', 'DESC')->get();
            // dd($recents);
         return view('user.welcome', compact('deals', 'top_sellers', 'top_categories',
          'newarrivals', 'clothings', 'electrics', 'homes', 'recents'));
+    }
+
+    public function subscribe(Request $request)
+    {
+        $Subscribe = Subscriber::where('email', $request->input('email'))->first();
+        if(!$Subscribe){
+            $Subscribe = new Subscriber();
+            if(Auth::guard('user')->check()){
+                $Subscribe->user_id = Auth::guard('user')->id();
+            }
+            $Subscribe->email = $request->input('email');
+            $Subscribe->save();    
+
+        }
+        return response()->json([
+            "status" => 200,
+            "data" => $Subscribe
+        ]);
+
     }
 }

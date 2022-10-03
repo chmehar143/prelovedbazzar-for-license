@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Subscriber;
 
 class SubscribeController extends Controller
 {
@@ -19,8 +20,18 @@ class SubscribeController extends Controller
     }
 
 
-    public  function  index()
+    public function index()
     {
-        return view('admin.subscribe.list');
+        $subscribers = Subscriber::all();
+        return view('admin.subscribe.list', compact('subscribers'));
+    }
+
+    public function remove($id)
+    {
+        $subscribe = Subscriber::where('id', $id)->first();
+        $subscribe->delete();
+        return response()->json([
+            'success' => 'Record has been deleted'
+        ]);
     }
 }
