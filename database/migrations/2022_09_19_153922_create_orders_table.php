@@ -42,7 +42,7 @@ return new class extends Migration
             $table->string('net_amount')->nullable();
             $table->string('pay_method')->nullable();
             $table->string('pay_status')->nullable();
-            $table->string('status')->default('processing');
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }
