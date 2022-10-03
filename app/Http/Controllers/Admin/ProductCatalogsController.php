@@ -14,7 +14,17 @@ use App\Models\Childcategory;
 use Config;
 
 class ProductCatalogsController extends Controller
-{
+{    /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+   public function __construct()
+   {
+       $this->middleware('admin.auth:admin');
+   }
+
+   
     public  function  index()
     {
         $vendor = Auth::guard('vendor');

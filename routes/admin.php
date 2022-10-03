@@ -124,7 +124,8 @@ Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_i
 Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
 Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
 Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
-Route::get('/productdisscussion_reviewview', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+Route::get('/productdisscussion_reviewview/{id}', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+Route::get('/productdisscussion_delete/{id}', 'ProductDisscussionController@destroy')->name('productdisscussion_delete');
 
 
 //Orders
@@ -193,8 +194,11 @@ Route::get('subscribe_list', 'SubscribeController@index')->name('subscribe_list'
 // Manage staff
 Route::get('managestaff_list', 'ManageStaffController@list')->name('managestaff_list');
 Route::get('managestaff_create', 'ManageStaffController@create')->name('managestaff_create');
-Route::get('managestaff_edit', 'ManageStaffController@edit')->name('managestaff_edit');
-Route::get('managestaff_view', 'ManageStaffController@view')->name('managestaff_view');
+Route::post('managestaff_store', 'ManageStaffController@store')->name('managestaff_store');
+Route::get('managestaff_edit/{id}', 'ManageStaffController@edit')->name('managestaff_edit');
+Route::put('managestaff_update/{id}', 'ManageStaffController@update')->name('managestaff_update');
+Route::get('managestaff_view/{id}', 'ManageStaffController@view')->name('managestaff_view');
+Route::get('managestaff_delete/{id}', 'ManageStaffController@destroy')->name('managestaff_delete');
 
 
 
@@ -297,7 +301,12 @@ Route::get('message_invoice', 'MessageController@invoice')->name('message_invoic
 
 
 
+//subscriptionplan
 
+Route::get('subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
+Route::get('subscriptionplan_create', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
+Route::get('subscriptionplan_edit', 'SubscriptionPlanController@edit')->name('subscriptionplan_edit');
+Route::get('subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
 
 
 Route::get('manageroles_list', 'ManageRolesController@list')->name('manageroles_list');

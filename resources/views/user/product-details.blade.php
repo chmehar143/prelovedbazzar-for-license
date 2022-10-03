@@ -228,7 +228,7 @@
                                     </div>
                                     <span class="divider d-xs-show"></span>
                                     <div class="product-link-wrapper d-flex">
-                                        <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"><span></span></a>
+                                        <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$product->id}})" ><span></span></a>
                                         <a href="#"
                                             class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
                                     </div>
@@ -385,18 +385,18 @@
                                             </h3>
                                             <p class="mb-3">Your email address will not be published. Required fields
                                                 are marked *</p>
-                                            <form action="#" method="POST" class="review-form">
+                                            <form action="javascript:void(0)" method="POST" class="review-form">
                                                 <div class="rating-form">
                                                     <label for="rating">Your Rating Of This Product :</label>
                                                     <span class="rating-stars">
-                                                        <a class="star-1" href="#">1</a>
+                                                        <a class="star--1" href="#">1</a>
                                                         <a class="star-2" href="#">2</a>
                                                         <a class="star-3" href="#">3</a>
                                                         <a class="star-4" href="#">4</a>
                                                         <a class="star-5" href="#">5</a>
                                                     </span>
                                                     <select name="rating" id="rating" required=""
-                                                        style="display: none;">
+                                                        style="display: block;">
                                                         <option value="">Rate…</option>
                                                         <option value="5">Perfect</option>
                                                         <option value="4">Good</option>
@@ -404,17 +404,18 @@
                                                         <option value="2">Not that bad</option>
                                                         <option value="1">Very poor</option>
                                                     </select>
+                                                    <input type="hidden" id="id" value="{{$product->id}}">
                                                 </div>
                                                 <textarea cols="30" rows="6" placeholder="Write Your Review Here..."
-                                                    class="form-control" id="review"></textarea>
+                                                    class="form-control" id="review" name="review" ></textarea>
                                                 <div class="row gutter-md">
                                                     <div class="col-md-6">
                                                         <input type="text" class="form-control" placeholder="Your Name"
-                                                            id="author">
+                                                            id="author" name="author">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <input type="text" class="form-control" placeholder="Your Email"
-                                                            id="email_1">
+                                                            id="email_1" name="email_1">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -422,7 +423,7 @@
                                                     <label for="save-checkbox">Save my name, email, and website in this
                                                         browser for the next time I comment.</label>
                                                 </div>
-                                                <button type="submit" class="btn btn-dark">Submit Review</button>
+                                                <button type="reset" class="btn btn-dark" id="add_review" >Submit Review</button>
                                             </form>
                                         </div>
                                     </div>
@@ -877,7 +878,7 @@
                                 @foreach($moreproducts as $unit)
                                 <div class="swiper-slide product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{route('product',$unit->id)}}">
                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}" alt="Product"
                                                 width="300" height="338" />
                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}" alt="Product"
@@ -906,7 +907,7 @@
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product',$unit->id)}}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">${{$unit->p_new_price}}</div>
@@ -914,120 +915,6 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                <div class="swiper-slide product">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{{asset('frontend-assets/assets/images/products/default/2.jpg')}}" alt="Product"
-                                                width="300" height="338" />
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                                                View</a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="product-cat"><a href="shop-banner-sidebar.html">Electronics</a>
-                                        </div>
-                                        <h4 class="product-name"><a href="product-default.html">Mini
-                                                Multi-Functional Cooker</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 80%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
-                                        </div>
-                                        <div class="product-pa-wrapper">
-                                            <div class="product-price">
-                                                <ins class="new-price">$480.00</ins><del
-                                                    class="old-price">$534.00</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide product">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{{asset('frontend-assets/assets/images/products/default/3.jpg')}}" alt="Product"
-                                                width="300" height="338" />
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                                                View</a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="product-cat"><a href="shop-banner-sidebar.html">Sports</a></div>
-                                        <h4 class="product-name"><a href="product-default.html">Skate Pan</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
-                                        </div>
-                                        <div class="product-pa-wrapper">
-                                            <div class="product-price">
-                                                <ins class="new-price">$278.00</ins><del
-                                                    class="old-price">$310.00</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide product">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{{asset('frontend-assets/assets/images/products/default/4-1.jpg')}}" alt="Product"
-                                                width="300" height="338" />
-                                            <img src="assets/images/products/default/4-2.jpg" alt="Product"
-                                                width="300" height="338" />
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                                                View</a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="product-cat"><a href="shop-banner-sidebar.html">Accessories</a>
-                                        </div>
-                                        <h4 class="product-name"><a href="product-default.html">Clip Attachment</a>
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
-                                        </div>
-                                        <div class="product-pa-wrapper">
-                                            <div class="product-price">$40.00</div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>
@@ -1230,5 +1117,44 @@
                 }
             });
         });
+
+        $("#add_review").click(function(){
+            var id = $("#id").val();
+            var rating = $("#rating").val();
+            var review = $("#review").val();
+            var author = $("#author").val();
+            var email_1 = $("#email_1").val();
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('add_review') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    id: id,
+                    rating: rating,
+                    review: review,
+                    author: author,
+                    email_1: email_1
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                    alert('A reviw has been added!');
+                }
+            });
+        });
+
+        function add_wish_(id){
+            // processing ajax request    
+            $.ajax({
+                url: "{{ url('addwish') }}" + '/' + id,
+                success: function() {
+                    // log response into console
+                    console.log("product has been aded to wish list");
+                }
+            });   
+        }
+
 </script>
 @endsection

@@ -18,6 +18,12 @@ use Config;
 
 class VendorsController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
     public function __construct()
     {
         $this->middleware('admin.auth:admin');

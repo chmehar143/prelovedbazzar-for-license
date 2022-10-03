@@ -107,10 +107,6 @@ else{
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <a class="compare label-down link d-xs-show" href="{{route('compare')}}">
-                            <i class="w-icon-compare"></i>
-                            <span class="compare-label d-lg-show">Compare</span>
-                        </a>
                         <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
                             <a href="#" class="cart-toggle label-down link">
@@ -328,11 +324,7 @@ else{
                                         <a href="{{route('blogs')}}">Blog</a>
 
                                     </li>
-
-
-                                    <li><a href="{{route('become-a-vendor')}}">Become A Vendor</a></li>
-
-
+                                    <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
 
                                 </ul>
                             </nav>

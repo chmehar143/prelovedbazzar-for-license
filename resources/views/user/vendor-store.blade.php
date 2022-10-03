@@ -56,18 +56,19 @@
                         <!-- End of Vendor Search Form -->
                     </div>
                     <div class="row cols-lg-3 cols-md-2 cols-sm-2 cols-1 mt-4">
+                        @foreach($vendors as $vendor)
                         <div class="store-wrap mb-4">
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/1.jpg')}}" alt="Vendor" 
+                                        <img src="{{asset('storage/uploads/vendors/'.$vendor->shop_image)}}" alt="{{$vendor->name}}" />
 
                                     </figure>
                                 </div>
                                 <!-- End of Store Header -->
                                 <div class="store-content">
                                     <h4 class="store-title">
-                                        <a href="{{route('vendor-store-details')}}">Vendor 1</a>
+                                        <a href="{{route('vendor-store-details',$vendor->id)}}">{{$vendor->name}}</a>
                                         <label class="featured-label">Featured</label>
                                     </h4>
                                     <div class="ratings-container">
@@ -77,242 +78,27 @@
                                         </div>
                                     </div>
                                     <div class="store-address">
-                                        Steven Street, El Carjon
-                                        California, United States (US)
+                                        {{$vendor->address}}
                                     </div>
                                     <ul class="seller-info-list list-style-none">
                                         <li class="store-phone">
-                                            <a href="tel:1234567890"><i class="w-icon-phone"></i>1234567890</a>
+                                            <a href="tel:1234567890"><i class="w-icon-phone"></i>{{$vendor->phone}}</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/1.jpg')}}" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('storage/uploads/vendors/'.$vendor->shop_image)}}" alt="Brand" width="80" height="80" />
                                     </figure>
-                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">
+                                    <a href="{{route('vendor-store-details',$vendor->id)}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">
                                         Visit Store<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 <!-- End of Store Footer -->
                             </div>
                             <!-- End of Store -->
                         </div>
-                        <div class="store-wrap mb-4">
-                            <div class="store store-grid">
-                                <div class="store-header">
-                                    <figure class="store-banner">
-
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/2.jpg')}}" alt="Vendor" 
-
-                                        <img src="assets/images/vendor/dokan/2.jpg" alt="Vendor"
-
-                                            width="400" height="194" style="background-color: #6C6C6C" />
-                                    </figure>
-                                </div>
-                                <!-- End of Store Header -->
-                                <div class="store-content">
-                                    <h4 class="store-title">
-                                        <a href="{{route('vendor-store-details')}}">Vendor 2</a>
-                                    </h4>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div>
-                                    <div class="store-address">
-                                        London, United Kingdom (UK)
-                                    </div>
-                                    <ul class="seller-info-list list-style-none">
-                                        <li class="store-phone">
-                                            <a href="tel:123456789"><i class="w-icon-phone"></i>123456789</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End of Store Content -->
-                                <div class="store-footer">
-                                    <figure class="seller-brand">
-                                        <img src="assets/images/vendor/brand/2.jpg" alt="Brand" width="80" height="80" />
-                                    </figure>
-                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                                <!-- End of Store Footer -->
-                            </div>
-                            <!-- End of Store -->
-                        </div>
-                        <div class="store-wrap mb-4">
-                            <div class="store store-grid">
-                                <div class="store-header">
-                                    <figure class="store-banner">
-
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/3.jpg')}}" alt="Vendor" 
-                                        <img src="assets/images/vendor/dokan/3.jpg" alt="Vendor"
-
-                                            width="400" height="194" style="background-color: #A891BF" />
-                                    </figure>
-                                </div>
-                                <!-- End of Store Header -->
-                                <div class="store-content">
-                                    <h4 class="store-title">
-                                        <a href="{{route('vendor-store-details')}}">Vendor 3</a>
-                                    </h4>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div>
-                                    <div class="store-address">
-                                        Rio de Janeiro, Brazil
-                                    </div>
-                                    <ul class="seller-info-list list-style-none">
-                                        <li class="store-phone">
-                                          <a href="tel:1234567890"><i class="w-icon-phone"></i>1234567890</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End of Store Content -->
-                                <div class="store-footer">
-                                    <figure class="seller-brand">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/3.jpg')}}" alt="Brand" width="80" height="80" />
-                                    </figure>
-                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                                <!-- End of Store Footer -->
-                            </div>
-                            <!-- End of Store -->
-                        </div>
-                        <div class="store-wrap mb-4">
-                            <div class="store store-grid">
-                                <div class="store-header">
-                                    <figure class="store-banner">
-
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/4.jpg')}}" alt="Vendor" 
-
-                                        <img src="assets/images/vendor/dokan/4.jpg" alt="Vendor"
-
-                                            width="400" height="194" style="background-color: #28292D" />
-                                    </figure>
-                                </div>
-                                <!-- End of Store Header -->
-                                <div class="store-content">
-                                    <h4 class="store-title">
-                                        <a href="{{route('vendor-store-details')}}">Vendor 4</a>
-                                    </h4>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div>
-                                    <div class="store-address">
-                                        Ontario, Canada
-                                    </div>
-                                    <ul class="seller-info-list list-style-none">
-                                        <li class="store-phone">
-                                            <a href="tel:123456789"><i class="w-icon-phone"></i>123456789</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End of Store Content -->
-                                <div class="store-footer">
-                                    <figure class="seller-brand">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/4.jpg')}}" alt="Brand" width="80" height="80" />
-                                    </figure>
-                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                                <!-- End of Store Footer -->
-                            </div>
-                            <!-- End of Store -->
-                        </div>
-                        <div class="store-wrap mb-4">
-                            <div class="store store-grid">
-                                <div class="store-header">
-                                    <figure class="store-banner">
-
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/5.jpg')}}" alt="Vendor" 
-
-                                        <img src="assets/images/vendor/dokan/5.jpg" alt="Vendor"
-
-                                            width="400" height="194" style="background-color: #7E7D7B" />
-                                    </figure>
-                                </div>
-                                <!-- End of Store Header -->
-                                <div class="store-content">
-                                    <h4 class="store-title">
-                                        <a href="{{route('vendor-store-details')}}">Vendor 5</a>
-                                        <label class="featured-label">Featured</label>
-                                    </h4>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div>
-                                    <div class="store-address">
-                                        Australia
-                                    </div>
-                                    <ul class="seller-info-list list-style-none">
-                                        <li class="store-phone">
-                                          <a href="tel:1234567890"><i class="w-icon-phone"></i>1234567890</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End of Store Content -->
-                                <div class="store-footer">
-                                    <figure class="seller-brand">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/5.jpg')}}" alt="Brand" width="80" height="80" />
-                                    </figure>
-                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                                <!-- End of Store Footer -->
-                            </div>
-                            <!-- End of Store -->
-                        </div>
-                        <div class="store-wrap mb-4">
-                            <div class="store store-grid">
-                                <div class="store-header">
-                                    <figure class="store-banner">
-
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/6.jpg')}}" alt="Vendor" 
-
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/dokan/6.jpg')}}" alt="Vendor"
-
-                                            width="400" height="194" style="background-color: #5B5B62" />
-                                    </figure>
-                                </div>
-                                <!-- End of Store Header -->
-                                <div class="store-content">
-                                    <h4 class="store-title">
-                                        <a href="{{route('vendor-store-details')}}">Vendor 6</a>
-                                    </h4>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div>
-                                    <div class="store-address">
-                                        Germany
-                                    </div>
-                                    <ul class="seller-info-list list-style-none">
-                                        <li class="store-phone">
-                                            <a href="tel:123456789"><i class="w-icon-phone"></i>123456789</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End of Store Content -->
-                                <div class="store-footer">
-                                    <figure class="seller-brand">
-                                        <img src="{{asset('frontend-assets/assets/images/vendor/brand/6.jpg')}}" alt="Brand" width="80" height="80" />
-                                    </figure>
-                                    <a href="{{route('vendor-store-details')}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">Visit Store<i class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                                <!-- End of Store Footer -->
-                            </div>
-                            <!-- End of Store -->
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
