@@ -256,8 +256,10 @@
    		confirmButtonText: 'Yes, delete it!'
    	}).then((result) => {
    		if (result.isConfirmed) {
+               var url = "{{ route('admin.allproducts_del', ':id') }}";
+               url = url.replace(':id', id);
    			$.ajax({
-   				url: "{{url('admin/product_del')}}"+ '/' + id,
+   				url: url,
    				success: function(data) {
    					$("#nft_row_" +id).remove();
    					Swal.fire(

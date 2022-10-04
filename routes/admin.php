@@ -63,7 +63,6 @@ Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildC
 Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
 Route::put('/allproducts_update/{id}', 'AllProductController@update')->name('allproducts_update');
 Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
-
 Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
 
 
@@ -119,7 +118,7 @@ Route::get('/customer_edit', 'CustomersController@edit')->name('customer_edit');
 Route::get('/customer_details', 'CustomersController@details')->name('customer_details');
 Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_invoice');
 
-//Cusomters
+//Products Discussions...
 
 Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
 Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
@@ -301,10 +300,13 @@ Route::get('message_invoice', 'MessageController@invoice')->name('message_invoic
 
 //subscriptionplan
 
-Route::get('subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
-Route::get('subscriptionplan_create', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
-Route::get('subscriptionplan_edit', 'SubscriptionPlanController@edit')->name('subscriptionplan_edit');
-Route::get('subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
+Route::get('/subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
+Route::get('/subscriptionplan_create', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
+Route::post('/subscriptionplan_store', 'SubscriptionPlanController@store')->name('subscriptionplan_store');
+Route::get('/subscriptionplan_edit/{id}', 'SubscriptionPlanController@edit')->name('subscriptionplan_edit');
+Route::put('/subscriptionplan_update/{id}', 'SubscriptionPlanController@update')->name('subscriptionplan_update');
+Route::get('/subscriptionplan_view/{id}', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
+Route::get('/subscriptionplan_remove/{id}', 'SubscriptionPlanController@remove')->name('subscriptionplan_remove');
 
 
 Route::get('manageroles_list', 'ManageRolesController@list')->name('manageroles_list');
