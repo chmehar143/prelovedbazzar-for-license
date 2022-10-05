@@ -41,6 +41,17 @@ class ManageStaffController extends Controller
 
     public  function  store(Request $request)
     {
+        $validate = $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required',
+            'email' => 'required|email',
+            'cell' => 'required',
+            'role' => 'required',
+            'password' => 'required',
+        ]);
+        if(!$validate){
+            return response()->back()->flash('somthing went wrong!');
+        }
         $admin = new Admin();
         if($request->hasfile('avatar'))
         {
@@ -71,6 +82,15 @@ class ManageStaffController extends Controller
 
     public  function  update(Request $request, $id)
     {
+        $validate = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'cell' => 'required',
+            'role' => 'required',
+        ]);
+        if(!$validate){
+            return response()->back()->flash('somthing went wrong!');
+        }
         $admin = Admin::where('id', $id)->first();
         if($admin){
             if($request->hasfile('avatar'))

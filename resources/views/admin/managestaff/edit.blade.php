@@ -113,6 +113,18 @@
                @method('PUT')
                <!--begin::Card body-->
                <div class="card-body border-top p-9">
+                  <div class="row mb-6">
+                     @if ($errors->any())
+                     <div class="alert alert-danger">
+                        <ul>
+                           @foreach ($errors->all() as $error)
+                           <li>{{ $error }}</li>
+                           @endforeach
+                        </ul>
+                     </div>
+                     <br />
+                     @endif
+                  </div>
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
@@ -124,7 +136,8 @@
                         <!--begin::Image input-->
                         <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
                            <!--begin::Preview existing avatar-->
-                           <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/150-26.jpg)"></div>
+                           <div class="image-input-wrapper w-125px h-125px" style="background-image: url('{{ asset('storage/uploads/admins/'.$staff->image)}}')">
+                           </div>
                            <!--end::Preview existing avatar-->
                            <!--begin::Label-->
                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
@@ -165,7 +178,7 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{$staff->name}}"  />
+                              <input type="text" name="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{$staff->name}}"  required  />
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -183,7 +196,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="email" name="email" class="form-control form-control-lg form-control-solid" value="{{$staff->email}}"  />
+                        <input type="email" name="email" class="form-control form-control-lg form-control-solid" value="{{$staff->email}}"  required  />
                      </div>
                      <!--end::Col-->
                   </div>
@@ -193,7 +206,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="number" name="cell" class="form-control form-control-lg form-control-solid" value="{{$staff->cell}}" />
+                        <input type="number" name="cell" class="form-control form-control-lg form-control-solid" value="{{$staff->cell}}" required  />
                      </div>
                      <!--end::Col-->
                   </div>
@@ -212,16 +225,6 @@
                            <option data-kt-flag="flags/afghanistan.svg" value="1">Admin</option>
                            <option data-kt-flag="flags/afghanistan.svg" value="2">User</option>
                         </select>
-                     </div>
-                     <!--end::Col-->
-                  </div>
-                  <div class="row mb-6">
-                     <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Password </label>
-                     <!--end::Label-->
-                     <!--begin::Col-->
-                     <div class="col-lg-8 fv-row">
-                        <input type="password" name="password" class="form-control form-control-lg form-control-solid" value="xxxxxxxx" />
                      </div>
                      <!--end::Col-->
                   </div>

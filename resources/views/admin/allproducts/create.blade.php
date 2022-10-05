@@ -135,7 +135,7 @@
 									<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
 										<i class="bi bi-pencil-fill fs-7"></i>
 										<!--begin::Inputs-->
-										<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+										<input type="file" name="avatar" accept=".png, .jpg, .jpeg" required/>
 										<input type="hidden" name="avatar_remove" />
 										<!--end::Inputs-->
 									</label>
@@ -192,7 +192,7 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row">
-										<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+										<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max"  required/>
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
@@ -211,18 +211,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
-							</div>
-							<!--end::Col-->
-						</div>
-						<!--end::Input group-->
-						<div class="row mb-6">
-							<!--begin::Label-->
-							<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Affiliate Link*</label>
-							<!--end::Label-->
-							<!--begin::Col-->
-							<div class="col-lg-8 fv-row">
-								<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="https://abc.com" />
+								<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" required/>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -237,11 +226,12 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<select name="country" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
+								<select name="con" aria-label="Select a Category" data-control="select2" 
+									data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold" required>
 									<option value="">Product Condition...</option>
-									<option data-kt-flag="flags/afghanistan.svg" value="AF">New</option>
+									<option data-kt-flag="flags/afghanistan.svg" value="0">New</option>
 							
-									<option data-kt-flag="flags/venezuela.svg" value="VE">Used</option>
+									<option data-kt-flag="flags/venezuela.svg" value="1">Used</option>
 								
 								</select>
 							</div>
@@ -259,12 +249,12 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-6 fv-row fv-plugins-icon-container">
-										<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0">
+										<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0" required>
 									<div class="fv-plugins-message-container invalid-feedback"></div></div>
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-lg-6 fv-row fv-plugins-icon-container">
-										<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0">
+										<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0" required>
 									<div class="fv-plugins-message-container invalid-feedback"></div></div>
 									<!--end::Col-->
 								</div>
@@ -281,7 +271,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
+								<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" required />
 							</div>
 							<!--end::Col-->
 						</div>
@@ -292,7 +282,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-2 fv-row">
-								<input type="color" name="p_color" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value="" />
+								<input type="color" name="p_color" class="form-control form-control-lg form-control-solid" required/>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -325,10 +315,9 @@
 							<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
 							<!--end::Label-->
 							<!--begin::Col-->
-								<livewire:product /> 
 							<div class="col-lg-8 fv-row">
 								<!--begin::Input-->
-								<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+								<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg" >
 									<option value="">Select a Sub Category...</option>
 								</select>
 								<!--end::Input-->
@@ -364,7 +353,7 @@
 						<!--end::Label-->
 						<!--begin::Col-->
 						<div class="col-lg-8 fv-row">
-							<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="20" />
+							<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="20" required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -377,7 +366,7 @@
 						<!--end::Label-->
 						<!--begin::Col-->
 						<div class="col-lg-8 fv-row">
-							<input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="130" />
+							<input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="130" required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -387,7 +376,7 @@
 						<!--end::Label-->
 						<!--begin::Col-->
 						<div class="col-lg-8 fv-row">
-							<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="3" />
+							<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="3" required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -402,12 +391,11 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<select name="country" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold">
+								<select name="measure" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold" required>
 									<option value="">Product Measurement...</option>
-									<option data-kt-flag="flags/afghanistan.svg" value="AF">Gram</option>
-							
-									<option data-kt-flag="flags/venezuela.svg" value="VE">Kilogram</option>
-									<option data-kt-flag="flags/venezuela.svg" value="VE">Liter</option>
+									<option data-kt-flag="flags/afghanistan.svg" value="0">Gram</option>		
+									<option data-kt-flag="flags/venezuela.svg" value="1">Kilogram</option>
+									<option data-kt-flag="flags/venezuela.svg" value="2">Liter</option>
 
 								
 								</select>
@@ -440,19 +428,6 @@
 							</div>
 							<!--end::Col-->
 						</div>
-					
-							<!--begin::Input group-->
-					<div class="row mb-6">
-						<!--begin::Label-->
-						<label class="col-lg-4 col-form-label  fw-bold fs-6">Youtube Video URL</label>
-						<!--end::Label-->
-						<!--begin::Col-->
-						<div class="col-lg-8 fv-row">
-							<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="youtube url" value="https://youtube.com" />
-						</div>
-						<!--end::Col-->
-					</div>
-					<!--end::Input group-->
 
 						<!--begin::Input group-->
 						<div class="row mb-6">
@@ -465,7 +440,7 @@
 								<div class="d-flex align-items-center mt-3">
 									<!--begin::Option-->
 									<label class="form-check form-check-inline form-check-solid me-5">
-										<input class="form-check-input" name="small" type="checkbox" value="1" checked/>
+										<input class="form-check-input" name="small" type="checkbox" value="1" />
 										<span class="fw-bold ps-2 fs-6">Small</span>
 									</label>
 									<!--end::Option-->
@@ -477,7 +452,7 @@
 
 									<!--begin::Option-->
 									<label class="form-check form-check-inline form-check-solid">
-										<input class="form-check-input" name="large" type="checkbox" value="1" checked/>
+										<input class="form-check-input" name="large" type="checkbox" value="1" />
 										<span class="fw-bold ps-2 fs-6">Large</span>
 									</label>
 									<!--end::Option-->
@@ -493,7 +468,7 @@
 						
 							<div class="col-lg-8 d-flex align-items-center">
 								<div class="form-check form-check-solid form-switch fv-row">
-									<input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" checked="checked" />
+									<input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" />
 									<label class="form-check-label" for="allowmarketing"></label>
 								</div>
 							</div>
