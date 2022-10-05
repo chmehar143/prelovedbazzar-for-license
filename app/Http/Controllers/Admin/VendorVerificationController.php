@@ -29,4 +29,35 @@ class VendorVerificationController extends Controller
         return view('admin.vendorverification.pending', compact('verified_Vendors'));
     }
 
+    public function verify(Request $request, $id)
+    {
+        $vendor = Vendor::where('id', $id)->first();
+        $vendor->status = '1';
+        $vendor->update();
+        return response()->json([
+                                'success' => 'vendor has been verified successfully!',
+                                'data' => $vendor
+                                ]);
+    }
+
+    public function unverify(Request $request, $id)
+    {
+        $vendor = Vendor::where('id', $id)->first();
+        $vendor->status = '0';
+        $vendor->update();
+        return response()->json([
+                                'success' => 'vendor has been unverified successfully!',
+                                'data' => $vendor
+                                ]);
+    }
+
+    public function remove($id)
+    {
+        $vendor = Vendor::where('id', $id)->first();
+        $vendor->delete();
+        return response()->json([
+            'success' => 'vendor has been deleted successfully!',
+            ]);
+    }
+
 }

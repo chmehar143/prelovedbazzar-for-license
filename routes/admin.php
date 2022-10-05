@@ -103,6 +103,9 @@ Route::get('/vendors_withdraw', 'VendorsController@list')->name('vendors_withdra
 // Vendor  product
 
 Route::get('vendorverification_list', 'VendorVerificationController@index')->name('vendorverification_list');
+Route::put('vendorverification_verify/{id}', 'VendorVerificationController@verify')->name('vendorverification_verify');
+Route::put('vendorverification_unverify/{id}', 'VendorVerificationController@unverify')->name('vendorverification_unverify');
+Route::get('vendorverification_del/{id}', 'VendorVerificationController@remove')->name('vendorverification_del');
 Route::get('/vendorverification_pending', 'VendorVerificationController@pending')->name('vendorverification_pending');
 
 

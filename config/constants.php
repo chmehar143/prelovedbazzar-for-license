@@ -36,6 +36,16 @@ return [
         '2' => 'user',
         '3' => 'not define'
     ],
+    'condition' => [
+        '0' => 'new',
+        '1' => 'old like new',
+        '2' => 'old good',
+        '3' => 'old ok',
+    ],
+    'vendor_status' => [
+        '0' => 'Unverified',
+        '1' => 'verified',
+    ]
 ]
 
 

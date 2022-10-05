@@ -23,8 +23,7 @@ class AllProductController extends Controller
 
     public  function  index()
     {
-        $vendor = Auth::guard('vendor');
-        $products = Product::all();
+        $products = Product::orderBy('created_at', 'DESC')->get();
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.allproducts.list', compact('products', 'status', 'type'));
@@ -63,6 +62,24 @@ class AllProductController extends Controller
 
     public  function  store(Request $request)
     {
+        $validate = $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'required',
+            'p_sku' => 'required',
+            'p_size_qnty' => 'required',
+            'p_size_price' => 'required',
+            'p_ship_time' => 'required',
+            'p_color' => 'required',
+            'p_catog' => 'required',
+            'p_sub_catog' => 'required',
+            'p_new_price' => 'required',
+            'p_old_price' => 'required',
+            'p_stock' => 'required',
+        ]);
+        if(!$validate){
+            return redirect()->back()->flash('message', 'something went wrong');
+        }
+
 // Store new product
         $product = new Product();
         $product->admin_id = Auth::guard('admin')->id();
@@ -78,6 +95,8 @@ class AllProductController extends Controller
 
         }
         $product->p_sku = $request->input('p_sku');
+        $product->con = $request->input('con');
+        $product->measure = $request->input('measure');
         $product->p_size_qnty = $request->input('p_size_qnty');
         $product->p_size_price = $request->input('p_size_price');
         $product->p_ship_time = $request->input('p_ship_time');
@@ -118,15 +137,35 @@ class AllProductController extends Controller
     public  function  edit($id)
     {
         $categories = Category::all();
-        $subcategories = Subcategory::all();
-        $childcategories = Childcategory::all();
-        $product = Product::where('id', $id)->first();
-        return view('admin.allproducts.edit', compact('product','categories','subcategories','childcategories'));
+        $product = Product::where('products.id', $id)
+                    ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
+                    ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
+                    ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
+                    ->first();
+        return view('admin.allproducts.edit', compact('product','categories'));
     } 
     
     //Update products...
     public  function  update(Request $request, $id)
     {
+        $validate = $request->validate([
+            'p_sku' => 'required',
+            'con' => 'required',
+            'measure' => 'required',
+            'p_size_qnty' => 'required',
+            'p_size_price' => 'required',
+            'p_ship_time' => 'required',
+            'p_color' => 'required',
+            'p_catog' => 'required',
+            'p_sub_catog' => 'required',
+            'p_new_price' => 'required',
+            'p_old_price' => 'required',
+            'p_stock' => 'required',
+        ]);
+        if(!$validate){
+            return redirect()->back()->flash('message', 'something went wrong');
+        }
+
         $product = Product::where('id', $id)->first();
         $product->p_name = $request->input('p_name');
         if($request->hasfile('avatar') != '')
@@ -146,6 +185,8 @@ class AllProductController extends Controller
 
         }
         $product->p_sku = $request->input('p_sku');
+        $product->con = $request->input('con');
+        $product->measure = $request->input('measure');
         $product->p_size_qnty = $request->input('p_size_qnty');
         $product->p_size_price = $request->input('p_size_price');
         $product->p_ship_time = $request->input('p_ship_time');
@@ -173,11 +214,20 @@ class AllProductController extends Controller
         }else{
             $product->large = 0;
         }
-        if($request->input('checkbox') == true){
-            $product->status = 1;
-        }else{
-            $product->status = 0;
+        if($product->status >= 1){
+            if($request->input('active') == true){
+                $product->status = 3;
+            }else{
+                $product->status = 2;
+            }        }
+        else{
+            if($request->input('checkbox') == true){
+                $product->status = 1;
+            }else{
+                $product->status = 0;
+            }
         }
+
         $product->update();
         return redirect()->route('admin.allproducts_list');
 

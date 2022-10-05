@@ -27,7 +27,7 @@ class AffilateController extends Controller
 
     public  function  index()
     {
-        $affiliateProducts = AffiliateProduct::all();
+        $affiliateProducts = AffiliateProduct::orderBy('created_at', 'DESC')->get();
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.affilateproduct.list', compact('affiliateProducts', 'type','status'));
@@ -36,11 +36,33 @@ class AffilateController extends Controller
     public  function  create()
     {
         $categories = Category::all();
-        return view('admin.affilateproduct.create', compact('categories'));
+        $conditions = Config::get('constants.condition');
+        return view('admin.affilateproduct.create', compact('categories', 'conditions'));
     } 
     //save affiliated products...
     public  function  store(Request $request)
     {
+        $validate = $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'required',
+            'p_sku' => 'required',
+            'plink' => 'required',
+            'url_link' => 'required',
+            'con' => 'required',
+            'measure' => 'required',
+            'p_size_qnty' => 'required',
+            'p_size_price' => 'required',
+            'p_ship_time' => 'required',
+            'p_color' => 'required',
+            'p_catog' => 'required',
+            'p_sub_catog' => 'required',
+            'p_new_price' => 'required',
+            'p_old_price' => 'required',
+            'p_stock' => 'required',
+        ]);
+        if(!$validate){
+            return redirect()->back()->flash('message', 'something went wrong');
+        }
         $product = new AffiliateProduct();
         $product->admin_id = Auth::guard('admin')->id();
         $product->a_type = $request->input('p_type');
@@ -55,6 +77,10 @@ class AffilateController extends Controller
 
         }
         $product->a_sku = $request->input('p_sku');
+        $product->plink = $request->input('plink');
+        $product->url_link = $request->input('url_link');
+        $product->con = $request->input('con');
+        $product->measure = $request->input('measure');
         $product->a_size_qnty = $request->input('p_size_qnty');
         $product->a_size_price = $request->input('p_size_price');
         $product->a_ship_time = $request->input('p_ship_time');
@@ -95,33 +121,41 @@ class AffilateController extends Controller
 
     public  function  edit($id)
     {
-        
-        $product = AffiliateProduct::where('id', $id )->first();
+        $product = AffiliateProduct::where('affiliate_products.id', $id )
+                ->leftJoin('subcategories', 'a_sub_catog', '=', 'subcategories.id')
+                ->leftJoin('childcategories', 'a_child_catog', '=', 'childcategories.id')
+                ->select('affiliate_products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
+                ->first();
         $categories = Category::all();
-        $catog = Category::where('id', $product->a_catog)->first();
-        $sub_cat = SubCategory::where('id', $product->a_sub_catog)->first();
-        $ch_cat = ChildCategory::where('id', $product->a_child_catog)->first();
-        if(!$catog){
-            $catog = NULL;
-        }      
-        if(!$sub_cat){
-            $sub_cat = NULL;
-        }        
-        if(!$ch_cat){
-            $ch_cat = NULL;
-        }
         $type = Config::get('constants.type');
-        return view('admin.affilateproduct.edit', compact('product', 'categories', 'type', 'catog','sub_cat','ch_cat'));
+        $conditions = Config::get('constants.condition');
+        return view('admin.affilateproduct.edit', compact('product', 'categories', 'type', 'conditions'));
         
     }
 
         // update ...
         public function update(Request $request, $id)
         {
+           $validate = $request->validate([
+                'p_sku' => 'required',
+                'plink' => 'required',
+                'url_link' => 'required',
+                'con' => 'required',
+                'measure' => 'required',
+                'p_size_qnty' => 'required',
+                'p_size_price' => 'required',
+                'p_ship_time' => 'required',
+                'p_color' => 'required',
+                'p_catog' => 'required',
+                'p_sub_catog' => 'required',
+                'p_new_price' => 'required',
+                'p_old_price' => 'required',
+                'p_stock' => 'required',
+            ]);
+            if(!$validate){
+                return redirect()->back()->flash('message', 'something went wrong');
+            }
             $product = AffiliateProduct::where('id', $id)->first();
-    
-            $product->a_type = $request->input('p_type');
-            $product->a_name = $request->input('p_name');
             if($request->hasfile('avatar'))
             {
                 //new 
@@ -138,7 +172,12 @@ class AffilateController extends Controller
                 $product->a_image = $filename;
     
             }
+            $product->a_name = $request->input('p_name');
             $product->a_sku = $request->input('p_sku');
+            $product->plink = $request->input('plink');
+            $product->url_link = $request->input('url_link');
+            $product->con = $request->input('con');
+            $product->measure = $request->input('measure');
             $product->a_size_qnty = $request->input('p_size_qnty');
             $product->a_size_price = $request->input('p_size_price');
             $product->a_ship_time = $request->input('p_ship_time');
@@ -166,10 +205,18 @@ class AffilateController extends Controller
             }else{
                 $product->a_large = 0;
             }
-            if($request->input('checkbox') == true){
-                $product->a_status = 1;
-            }else{
-                $product->a_status = 0;
+            if($product->a_status >= 1){
+                if($request->input('active') == true){
+                    $product->a_status = 3;
+                }else{
+                    $product->a_status = 2;
+                }        }
+            else{
+                if($request->input('checkbox') == true){
+                    $product->a_status = 1;
+                }else{
+                    $product->a_status = 0;
+                }
             }
             $product->update();
             return redirect()->route('admin.affilateproduct_list');

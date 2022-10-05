@@ -116,6 +116,18 @@
 										@csrf
 										<!--begin::Card body-->
 										<div class="card-body border-top p-9">
+											<div class="row mb-6">
+												@if ($errors->any())
+												<div class="alert alert-danger">
+													<ul>
+													@foreach ($errors->all() as $error)
+													<li>{{ $error }}</li>
+													@endforeach
+													</ul>
+												</div>
+												<br />
+												@endif
+											</div>
 											<!--begin::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
@@ -133,7 +145,7 @@
 														<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
 															<i class="bi bi-pencil-fill fs-7"></i>
 															<!--begin::Inputs-->
-															<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+															<input type="file" name="avatar" accept=".png, .jpg, .jpeg" required/>
 															<input type="hidden" name="avatar_remove" />
 															<!--end::Inputs-->
 														</label>
@@ -164,7 +176,7 @@
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
 													<!--begin::Input-->
-													<select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg">
+													<select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>
 														<option value="">Product Type</option>
 														<option data-kt-flag="flags/indonesia.svg" value="0" selected>Physical</option>
 														<option data-kt-flag="flags/indonesia.svg" value="1">Digital</option>
@@ -189,7 +201,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" required/>
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -208,18 +220,18 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
+													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" required/>
 												</div>
 												<!--end::Col-->
 											</div>
 
                                             <div class="row mb-6">
 												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Affiliate Link*</label>
+												<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Affiliate Link</label>
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="https://abc.com" />
+													<input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="https://abc.com" required/>
 												</div>
 												<!--end::Col-->
 											</div>
@@ -235,12 +247,11 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select name="country" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
-														<option value="">Product Condition...</option>
-														<option data-kt-flag="flags/afghanistan.svg" value="AF">New</option>
-												
-														<option data-kt-flag="flags/venezuela.svg" value="VE">Used</option>
-													
+													<select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
+													<option data-kt-flag="flags/afghanistan.svg" value="0" >{{$conditions[0]}}</option>														
+													<option data-kt-flag="flags/afghanistan.svg" value="1" >{{$conditions[1]}}</option>														
+													<option data-kt-flag="flags/afghanistan.svg" value="2" >{{$conditions[2]}}</option>														
+													<option data-kt-flag="flags/afghanistan.svg" value="3" >{{$conditions[3]}}</option>														
 													</select>
 												</div>
 												<!--end::Col-->
@@ -260,12 +271,12 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0">
+															<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " required>
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0">
+															<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" required>
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 													</div>
@@ -279,7 +290,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
+													<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" required/>
 												</div>
 												<!--end::Col-->
 											</div>
@@ -290,7 +301,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-2 fv-row">
-													<input type="color" name="p_color" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value="" />
+													<input type="color" name="p_color" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" required/>
 												</div>
 												<!--end::Col-->
 											</div>
@@ -304,14 +315,11 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold">
+													<select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" required>
 														<option value="">Category...</option>
 														@foreach($categories as $category)
 														<option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}">{{$category->name}}</option>
-														@endforeach
-												
-														<option data-kt-flag="flags/venezuela.svg" value="VE">Womencloth</option>
-													
+														@endforeach													
 													</select>
 												</div>
 												<!--end::Col-->
@@ -323,10 +331,9 @@
 												<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
 												<!--end::Label-->
 												<!--begin::Col-->
-													<livewire:product /> 
 												<div class="col-lg-8 fv-row">
 													<!--begin::Input-->
-													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg" required>
 														<option value="">Select a Sub Category...</option>
 													</select>
 													<!--end::Input-->
@@ -362,7 +369,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" />
+												<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" required/>
 											</div>
 											<!--end::Col-->
 										</div>
@@ -385,11 +392,11 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20"  />
+												<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20"  required/>
 											</div>
 											<!--end::Col-->
 										</div>
-                                        <div class="row mb-6">
+                                        	<div class="row mb-6">
 												<!--begin::Label-->
 												<label class="col-lg-4 col-form-label fw-bold fs-6">
 													<span class="">Product Measurement</span>
@@ -398,12 +405,12 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select name="country" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold">
+													<select name="measure" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold" required>
 														<option value="">Product Measurement...</option>
-														<option data-kt-flag="flags/afghanistan.svg" value="AF">Gram</option>
+														<option data-kt-flag="flags/afghanistan.svg" value="0">Gram</option>
 												
-														<option data-kt-flag="flags/venezuela.svg" value="VE">Kilogram</option>
-														<option data-kt-flag="flags/venezuela.svg" value="VE">Liter</option>
+														<option data-kt-flag="flags/venezuela.svg" value="1">Kilogram</option>
+														<option data-kt-flag="flags/venezuela.svg" value="2">Liter</option>
 
 													
 													</select>
@@ -444,7 +451,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="youtube url" value="https://youtube.com" />
+												<input type="text" name="url_link" class="form-control form-control-lg form-control-solid" placeholder="youtube url" value="https://youtube.com" required/>
 											</div>
 											<!--end::Col-->
 										</div>
@@ -461,19 +468,19 @@
 													<div class="d-flex align-items-center mt-3">
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid me-5">
-															<input class="form-check-input" name="small" type="checkbox" value="1" checked/>
+															<input class="form-check-input" name="small" type="checkbox" value="1" />
 															<span class="fw-bold ps-2 fs-6">Small</span>
 														</label>
 														<!--end::Option-->
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid">
-															<input class="form-check-input" name="medium" type="checkbox" value="1" checked/>
+															<input class="form-check-input" name="medium" type="checkbox" value="1"/>
 															<span class="fw-bold ps-2 fs-6">Medium</span>
 														</label>
 
 														<!--begin::Option-->
 														<label class="form-check form-check-inline form-check-solid">
-															<input class="form-check-input" name="large" type="checkbox" value="1" checked/>
+															<input class="form-check-input" name="large" type="checkbox" value="1" />
 															<span class="fw-bold ps-2 fs-6">Large</span>
 														</label>
 														<!--end::Option-->
@@ -489,7 +496,7 @@
 											
 												<div class="col-lg-8 d-flex align-items-center">
 													<div class="form-check form-check-solid form-switch fv-row">
-														<input class="form-check-input w-45px h-30px" type="checkbox" name="checkbox" id="allowmarketing" checked="checked" />
+														<input class="form-check-input w-45px h-30px" type="checkbox" name="checkbox" id="allowmarketing" />
 														<label class="form-check-label" for="allowmarketing"></label>
 													</div>
 												</div>

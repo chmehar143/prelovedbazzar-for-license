@@ -239,9 +239,9 @@ function destroy(id) {
 					$("#plan_" +id).remove();
 					Swal.fire(
 						'Deleted!',
-						'Product has been deleted.',
+						'Subscription plan has been deleted.',
 						'success'
-					)
+					);
 				}
 			});
 		}

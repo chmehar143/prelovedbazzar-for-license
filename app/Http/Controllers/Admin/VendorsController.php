@@ -44,6 +44,18 @@ class VendorsController extends Controller
 
     public  function  update(Request $request, $id)
     {
+        $validate = $request->validate([
+            'email' => 'required|email',
+            'shop' => 'required',
+            'content' => 'required',
+            'name' => 'required',
+            'address' => 'required',
+            'reg_no' => 'required',
+            'message' => 'required',
+        ]);
+        if(!$validate){
+            return response()->back()->flash('somthing went wrong!');
+        }
         $vendor = Vendor::where('id', $id)->first();
         $vendor->email = $request->input('email');
         $vendor->shop_name = $request->input('shop');
@@ -54,14 +66,6 @@ class VendorsController extends Controller
         $vendor->message = $request->input('message');
         $vendor->update();
         return redirect()->route('admin.vendors_list');
-    }
-
-    public function status(Request $request, $id)
-    {
-        $vendor = Vendor::where('id', $id)->first();
-        $vendor->status = $request->input('status');
-        $vendor->update();
-        return response()->json(['success' => 'Status has been changed!..']);
     }
     
     public  function  view($id)
