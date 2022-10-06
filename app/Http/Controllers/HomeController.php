@@ -37,9 +37,12 @@ class HomeController extends Controller
 
         $homes = Product::where('p_catog', 2)->whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->get();
-
-        $recents = RecentView::where('user_id', Auth::guard('user')->id())
-                    ->orWhere('session', Session::getId())->orderBy('created_at', 'DESC')->get();
+        if(Auth::guard('user')->check()){
+            $recents = RecentView::where('user_id', Auth::guard('user')->id())->orderBy('created_at', 'DESC')->get();
+        }
+        else{
+            $recents = RecentView::where('session', Session::getId())->orderBy('created_at', 'DESC')->get();
+        }
            // dd($recents);
         return view('user.welcome', compact('deals', 'top_sellers', 'top_categories',
          'newarrivals', 'clothings', 'electrics', 'homes', 'recents'));

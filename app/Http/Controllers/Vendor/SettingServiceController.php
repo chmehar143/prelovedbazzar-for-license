@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class SettingServiceController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('vendor.auth:vendor');
+    }
     public function index() {
         return view('vendor.setting.service.list');
     }

@@ -25,8 +25,8 @@ class MessageController extends Controller
     
     public  function  message()
     {
-        $messages = Message::unique('order_id')->get();
-
+       // $messages = Message::orderBy('created_at', 'DESC')->groupBy('order_id')->get();
+        $messages = NULL;
         return view('admin.message.messagelist', compact('messages'));
     }
 
