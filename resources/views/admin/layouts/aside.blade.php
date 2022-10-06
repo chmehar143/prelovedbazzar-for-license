@@ -144,7 +144,7 @@
                <span class="menu-icon me-0">
                <i class="bi bi-check"></i>
                </span>
-               <span class="menu-title"> Vendors verification</span>
+               <span class="menu-title">Vendor verification</span>
                </span>
                <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
                   <div class="menu-item">
