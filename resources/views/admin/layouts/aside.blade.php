@@ -458,10 +458,7 @@
                			</span>
                			<span class="menu-title">  Post </span>
                		</a>
-               	</div>
-               
-               
-               
+               	</div>                                          
                </div>
                </div> -->
             <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">

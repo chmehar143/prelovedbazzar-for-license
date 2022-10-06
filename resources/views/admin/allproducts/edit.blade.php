@@ -302,24 +302,24 @@
 											</div>
 											<!--end::Input group-->
 											<!--begin::Input group-->
+										
+
 											<div class="row mb-6">
-												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
-												<!--end::Label-->
-												<!--begin::Col-->
-													<livewire:product /> 
-												<div class="col-lg-8 fv-row">
-													<!--begin::Input-->
-													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
-														<option value="">Select a Sub Category...</option>
-													</select>
-													<!--end::Input-->
-													<!--begin::Hint-->
-													<!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
-													<!--end::Hint-->
+													<!--begin::Label-->
+													<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
+													<!--end::Label-->
+													<!--begin::Col-->
+													<div class="col-lg-8 fv-row">
+														<!--begin::Input-->
+														<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+															<option value="">Select a Sub Category...</option>
+														</select>
+														<!--end::Input-->
+														<!--begin::Hint-->
+														<!--end::Hint-->
+													</div>
+													<!--end::Col-->
 												</div>
-												<!--end::Col-->
-											</div>
 											<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="row mb-6">

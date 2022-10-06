@@ -189,7 +189,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Product name"  />
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -208,8 +208,8 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" />
-												</div>
+													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Product Sku"/>
+												</div
 												<!--end::Col-->
 											</div>
 
@@ -219,7 +219,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="https://abc.com" />
+													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link" />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -260,12 +260,12 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0">
+															<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " >
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 														<!--begin::Col-->
 														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0">
+															<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" >
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
 													</div>
@@ -279,7 +279,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
+													<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" >
 												</div>
 												<!--end::Col-->
 											</div>
@@ -318,25 +318,24 @@
 											</div>
 											<!--end::Input group-->
 											<!--begin::Input group-->
+										
+
 											<div class="row mb-6">
-												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
-												<!--end::Label-->
-												<!--begin::Col-->
-													<livewire:product /> 
-												<div class="col-lg-8 fv-row">
-													<!--begin::Input-->
-													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
-														<option value="">Select a Sub Category...</option>
-													</select>
-													<!--end::Input-->
-													<!--begin::Hint-->
-													<!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
-													<!--end::Hint-->
+													<!--begin::Label-->
+													<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
+													<!--end::Label-->
+													<!--begin::Col-->
+													<div class="col-lg-8 fv-row">
+														<!--begin::Input-->
+														<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+															<option value="">Select a Sub Category...</option>
+														</select>
+														<!--end::Input-->
+														<!--begin::Hint-->
+														<!--end::Hint-->
+													</div>
+													<!--end::Col-->
 												</div>
-												<!--end::Col-->
-											</div>
-											<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="row mb-6">
 													<!--begin::Label-->
