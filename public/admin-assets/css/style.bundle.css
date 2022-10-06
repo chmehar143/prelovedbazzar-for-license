@@ -54307,7 +54307,7 @@ code:not([class*=language-]) {
     .card {
         border: 0 !important;
         box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%) !important;
-        margin-left: 20px !important;
+        margin-left: 9px !important;
     }
 
 .scroll {

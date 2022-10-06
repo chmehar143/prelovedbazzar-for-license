@@ -285,16 +285,20 @@
 											</div>
 											<!--end::Input group-->
 										
-											
-											<div class="row mb-6">
+										
+												
+
+													<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="row mb-6">
 													<!--begin::Label-->
-													<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category</label>
+													<label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category </label>
 													<!--end::Label-->
 													<!--begin::Col-->
 													<div class="col-lg-8 fv-row">
 														<!--begin::Input-->
-														<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
-															<option value="">elect a Sub Category...</option>
+														<select id="subcat" name="p_sub_catog" aria-label="Select a Sub  Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+															<option value="">Select aSub Category...</option>
 														</select>
 														<!--end::Input-->
 														<!--begin::Hint-->
@@ -302,7 +306,7 @@
 													</div>
 													<!--end::Col-->
 												</div>
-												
+												<!--end::Input group-->
 
 											<!--end::Input group-->
 												<!--begin::Input group-->
@@ -365,7 +369,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="p_detail" id="editor">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													  
 												</textarea>
 																						</div>
 											<!--end::Col-->
@@ -378,7 +382,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="p_r_policy" id="editornew">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													  
 												</textarea>																						
 											</div>
 											<!--end::Col-->
@@ -427,7 +431,8 @@
 														<input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" checked="checked" />
 														<label class="form-check-label" for="allowmarketing"></label>
 													</div>
-												</div>
+												</div>Sub Category
+
 											</div>
 										</div>
 										<!--end::Card body-->

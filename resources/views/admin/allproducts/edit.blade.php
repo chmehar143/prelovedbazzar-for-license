@@ -182,7 +182,7 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="{{$product->p_name}}" required />
+                              <input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Product name" value="{{$product->p_name}}" required />
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -383,7 +383,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_detail" id="editor" value="{{$product->p_detail}}">
-                        &lt;p&gt;This is some sample content.&lt;/p&gt;
+                          
                         </textarea>
                      </div>
                      <!--end::Col-->
@@ -395,7 +395,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_r_policy" id="editornew" value="{{$product->p_r_policy}}">
-                        &lt;p&gt;This is some sample content.&lt;/p&gt;
+                          
                         </textarea>
                      </div>
                      <!--end::Col-->

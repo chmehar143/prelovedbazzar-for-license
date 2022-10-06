@@ -192,7 +192,7 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row">
-										<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max"  required/>
+										<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Product name"  required/>
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
@@ -211,7 +211,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" required/>
+								<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Product "  required/>
 							</div>
 							<!--end::Col-->
 						</div>
@@ -249,12 +249,12 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-6 fv-row fv-plugins-icon-container">
-										<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0" required>
+										<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity "  required>
 									<div class="fv-plugins-message-container invalid-feedback"></div></div>
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-lg-6 fv-row fv-plugins-icon-container">
-										<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0" required>
+										<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price"  required>
 									<div class="fv-plugins-message-container invalid-feedback"></div></div>
 									<!--end::Col-->
 								</div>
@@ -271,7 +271,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" required />
+								<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time"  required />
 							</div>
 							<!--end::Col-->
 						</div>
@@ -353,7 +353,7 @@
 						<!--end::Label-->
 						<!--begin::Col-->
 						<div class="col-lg-8 fv-row">
-							<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="20" required/>
+							<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20"  required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -366,7 +366,7 @@
 						<!--end::Label-->
 						<!--begin::Col-->
 						<div class="col-lg-8 fv-row">
-							<input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="130" required/>
+							<input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -376,7 +376,7 @@
 						<!--end::Label-->
 						<!--begin::Col-->
 						<div class="col-lg-8 fv-row">
-							<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="3" required/>
+							<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20"  required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -410,7 +410,7 @@
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
 								<textarea name="p_detail" id="editor">
-									&lt;p&gt;This is some sample content.&lt;/p&gt;
+									  
 								</textarea>
 																		</div>
 							<!--end::Col-->
@@ -423,7 +423,7 @@
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
 								<textarea name="p_r_policy" id="editornew">
-									&lt;p&gt;This is some sample content.&lt;/p&gt;
+									  
 								</textarea>
 							</div>
 							<!--end::Col-->
