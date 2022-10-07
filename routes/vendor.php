@@ -48,7 +48,7 @@ Route::get('/affilateproduct_list', 'AffilateProductController@index')->name('af
 Route::get('/affilateproduct_create', 'AffilateProductController@create')->name('affilateproduct_create');
 Route::post('/affilateproduct_store', 'AffilateProductController@store')->name('affilateproduct_store');
 Route::get('/affilateproduct_edit/{id}', 'AffilateProductController@edit')->name('affilateproduct_edit');
-Route::post('/affilateproduct_update/{id}', 'AffilateProductController@update')->name('affilateproduct_update');
+Route::put('/affilateproduct_update/{id}', 'AffilateProductController@update')->name('affilateproduct_update');
 Route::get('/affilateproduct_view/{id}', 'AffilateProductController@view')->name('affilateproduct_view');
 Route::get('/affilateproduct_delete/{id}', 'AffilateProductController@destroy')->name('affilateproduct_delete');
 

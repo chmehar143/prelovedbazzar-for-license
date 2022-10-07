@@ -7,7 +7,7 @@ use App\Models\Vendor;
 use App\Models\Product;
 use App\Models\User;
 
-if(Auth::guard('user')){
+if(Auth::guard('user')->check()){
     $user = Auth::guard('user');
     $carts = Cart::where('user_id', $user->id())
     ->join('products','carts.prod_id', '=', 'products.id')
@@ -137,9 +137,6 @@ else{
                                                     width="94" />
                                             </a>
                                         </figure>
-                                        <button class="btn btn-link btn-close" aria-label="button">
-                                            <i class="fas fa-times"></i>
-                                        </button>
                                     </div>
                                     <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
                                     @empty
@@ -281,40 +278,6 @@ else{
                                     </li>
                                     <li>
                                         <a href="{{route('shop')}}">Shop</a>
-
-                                        <!-- Start of Megamenu -->
-                                        <ul class="megamenu">
-                                            <li>
-                                                <h4 class="menu-title">Mens Cloth </h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Women Cloth</h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Baby Cloth</h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Clothes Product </h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name<span
-                                                                class="tip tip-hot">Hot</span></a></li>
-
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <!-- End of Megamenu -->
                                     </li>
                                     <li>
                                         <a href="{{route('vendor-store')}}">Vendor Stores</a>

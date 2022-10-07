@@ -78,9 +78,6 @@
      $('#bar').addClass("btn-warning");
    }
  });
-
-
-
  
  </script>
 </body>
