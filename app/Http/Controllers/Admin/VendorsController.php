@@ -14,6 +14,8 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\ChildCategory;
 use App\Models\AffiliateProduct;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
 use Config;
 
 class VendorsController extends Controller
@@ -44,26 +46,26 @@ class VendorsController extends Controller
 
     public  function  update(Request $request, $id)
     {
-        $validate = $request->validate([
+        //--- Validation Section
+        $rules = [
             'email' => 'required|email',
-            'shop' => 'required',
-            'content' => 'required',
             'name' => 'required',
-            'address' => 'required',
-            'reg_no' => 'required',
-            'message' => 'required',
-        ]);
-        if(!$validate){
-            return response()->back()->flash('somthing went wrong!');
-        }
+            'shop_name' => 'required',
+
+       ];
+       $validator = Validator::make($request->all(), $rules);
+       if($validator->fails()) {
+           return Redirect::back()->withErrors($validator);
+       }
+       //end validation
         $vendor = Vendor::where('id', $id)->first();
         $vendor->email = $request->input('email');
-        $vendor->shop_name = $request->input('shop');
-        $vendor->shop_detail = $request->input('shop_detail');
+        $vendor->shop_name = $request->input('shop_name');
+        $vendor->shop_detail = $request->input('shop_detail'); // not required
         $vendor->name = $request->input('name');
-        $vendor->address = $request->input('address');
-        $vendor->reg_no = $request->input('reg_no');
-        $vendor->message = $request->input('message');
+        $vendor->address = $request->input('address');  // not required
+        $vendor->reg_no = $request->input('reg_no');  //registration not required..
+        $vendor->message = $request->input('message'); // not required...
         $vendor->update();
         return redirect()->route('admin.vendors_list');
     }

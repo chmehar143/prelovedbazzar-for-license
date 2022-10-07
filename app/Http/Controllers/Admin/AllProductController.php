@@ -11,6 +11,8 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Childcategory;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
 use Config;
 
 class AllProductController extends Controller
@@ -32,7 +34,8 @@ class AllProductController extends Controller
     public  function  create()
     {
         $categories = Category::all();
-        return view('admin.allproducts.create', compact('categories'));
+        $conditions = Config::get('constants.condition');
+        return view('admin.allproducts.create', compact('categories', 'conditions'));
     } 
 
     //some ajax functions are here...
@@ -62,12 +65,12 @@ class AllProductController extends Controller
 
     public  function  store(Request $request)
     {
-        $validate = $request->validate([
+        //--- Validation Section
+        $rules = [
+            'p_name' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'avatar' => 'required',
-            'p_sku' => 'required',
-            'p_size_qnty' => 'required',
-            'p_size_price' => 'required',
+            'p_sku' => 'required|unique:products|',
+            'con' => 'required',
             'p_ship_time' => 'required',
             'p_color' => 'required',
             'p_catog' => 'required',
@@ -75,10 +78,19 @@ class AllProductController extends Controller
             'p_new_price' => 'required',
             'p_old_price' => 'required',
             'p_stock' => 'required',
-        ]);
-        if(!$validate){
-            return redirect()->back()->flash('message', 'something went wrong');
-        }
+
+       ];
+       $customs = [
+            'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
+            'avatar.max' => 'Fil size must be less than 2MB.',
+            'p_sku.unique' => 'This SKU has already been taken.',
+       ];
+       $validator = Validator::make($request->all(), $rules, $customs);
+
+       if($validator->fails()) {
+           return Redirect::back()->withErrors($validator);
+       }
+       //end validation
 
 // Store new product
         $product = new Product();
@@ -96,9 +108,99 @@ class AllProductController extends Controller
         }
         $product->p_sku = $request->input('p_sku');
         $product->con = $request->input('con');
-        $product->measure = $request->input('measure');
-        $product->p_size_qnty = $request->input('p_size_qnty');
-        $product->p_size_price = $request->input('p_size_price');
+        $product->p_ship_time = $request->input('p_ship_time');
+        $product->p_color = $request->input('p_color');
+        $product->p_catog = $request->input('p_catog');
+        $product->p_sub_catog = $request->input('p_sub_catog');
+        $product->p_child_catog = $request->input('p_child_catog');
+        $product->p_new_price = $request->input('p_new_price');
+        $product->p_old_price = $request->input('p_old_price');
+        $product->p_stock = $request->input('p_stock');
+        $product->p_detail = $request->input('p_detail');
+        $product->p_r_policy = $request->input('p_r_policy');
+        $product->status = 1;
+        if($request->input('small') == true){
+            $product->small = 1;
+        }else{
+            $product->small = 0;
+        }
+        if($request->input('medium') == true){
+            $product->medium = 1;
+        }else{
+            $product->medium = 0;
+        }
+        if($request->input('large') == true){
+            $product->large = 1;
+        }else{
+            $product->large = 0;
+        }
+
+        $product->save(); 
+        return redirect()->route('admin.allproducts_list');
+    }
+
+    //next function.. 
+    public  function  edit($id)
+    {
+        $categories = Category::all();
+        $product = Product::where('products.id', $id)
+                    ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
+                    ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
+                    ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
+                    ->first();
+        $conditions = Config::get('constants.condition');
+        return view('admin.allproducts.edit', compact('product','categories', 'conditions'));
+    } 
+    
+    //Update products...
+    public  function  update(Request $request, $id)
+    {
+        //--- Validation Section
+        $rules = [
+            'p_name' => 'required',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'p_sku' => 'required',
+            'con' => 'required',
+            'p_ship_time' => 'required',
+            'p_color' => 'required',
+            'p_catog' => 'required',
+            'p_sub_catog' => 'required',
+            'p_new_price' => 'required',
+            'p_old_price' => 'required',
+            'p_stock' => 'required',
+
+       ];
+       $customs = [
+            'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
+            'avatar.max' => 'Fil size must be less than 2MB.',
+       ];
+       $validator = Validator::make($request->all(), $rules, $customs);
+
+       if($validator->fails()) {
+           return Redirect::back()->withErrors($validator);
+       }
+       //end validation
+
+        $product = Product::where('id', $id)->first();
+        $product->p_name = $request->input('p_name');
+        if($request->hasfile('avatar') != '')
+        {
+            //new 
+            $destination = 'storage/uploads/products/'.$product->p_image;
+               if(File::exists($destination))
+                 {
+                     File::delete($destination);
+                 }
+            //end new
+            $file = $request->file('avatar');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->storeAs('uploads/products/', $filename, 'public');
+            $product->p_image = $filename;
+
+        }
+        $product->p_sku = $request->input('p_sku');
+        $product->con = $request->input('con');
         $product->p_ship_time = $request->input('p_ship_time');
         $product->p_color = $request->input('p_color');
         $product->p_catog = $request->input('p_catog');
@@ -129,105 +231,6 @@ class AllProductController extends Controller
         }else{
             $product->status = 0;
         }
-        $product->save(); 
-        return redirect()->route('admin.allproducts_list');
-    }
-
-    //next function.. 
-    public  function  edit($id)
-    {
-        $categories = Category::all();
-        $product = Product::where('products.id', $id)
-                    ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
-                    ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
-                    ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
-                    ->first();
-        return view('admin.allproducts.edit', compact('product','categories'));
-    } 
-    
-    //Update products...
-    public  function  update(Request $request, $id)
-    {
-        $validate = $request->validate([
-            'p_sku' => 'required',
-            'con' => 'required',
-            'measure' => 'required',
-            'p_size_qnty' => 'required',
-            'p_size_price' => 'required',
-            'p_ship_time' => 'required',
-            'p_color' => 'required',
-            'p_catog' => 'required',
-            'p_sub_catog' => 'required',
-            'p_new_price' => 'required',
-            'p_old_price' => 'required',
-            'p_stock' => 'required',
-        ]);
-        if(!$validate){
-            return redirect()->back()->flash('message', 'something went wrong');
-        }
-
-        $product = Product::where('id', $id)->first();
-        $product->p_name = $request->input('p_name');
-        if($request->hasfile('avatar') != '')
-        {
-            //new 
-            $destination = 'storage/uploads/products/'.$product->p_image;
-               if(File::exists($destination))
-                 {
-                     File::delete($destination);
-                 }
-            //end new
-            $file = $request->file('avatar');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->storeAs('uploads/products/', $filename, 'public');
-            $product->p_image = $filename;
-
-        }
-        $product->p_sku = $request->input('p_sku');
-        $product->con = $request->input('con');
-        $product->measure = $request->input('measure');
-        $product->p_size_qnty = $request->input('p_size_qnty');
-        $product->p_size_price = $request->input('p_size_price');
-        $product->p_ship_time = $request->input('p_ship_time');
-        $product->p_color = $request->input('p_color');
-        $product->p_catog = $request->input('p_catog');
-        $product->p_sub_catog = $request->input('p_sub_catog');
-        $product->p_child_catog = $request->input('p_child_catog');
-        $product->p_new_price = $request->input('p_new_price');
-        $product->p_old_price = $request->input('p_old_price');
-        $product->p_stock = $request->input('p_stock');
-        $product->p_detail = $request->input('p_detail');
-        $product->p_r_policy = $request->input('p_r_policy');
-        if($request->input('small') == true){
-            $product->small = 1;
-        }else{
-            $product->small = 0;
-        }
-        if($request->input('medium') == true){
-            $product->medium = 1;
-        }else{
-            $product->medium = 0;
-        }
-        if($request->input('large') == true){
-            $product->large = 1;
-        }else{
-            $product->large = 0;
-        }
-        if($product->status >= 1){
-            if($request->input('active') == true){
-                $product->status = 3;
-            }else{
-                $product->status = 2;
-            }        }
-        else{
-            if($request->input('checkbox') == true){
-                $product->status = 1;
-            }else{
-                $product->status = 0;
-            }
-        }
-
         $product->update();
         return redirect()->route('admin.allproducts_list');
 

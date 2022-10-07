@@ -41,49 +41,6 @@
          <!--end::Page title-->
       </div>
       <!--end::Page title-->
-      <!--begin::Action group-->
-      <div class="d-flex align-items-center flex-wrap">
-         <!--begin::Wrapper-->
-         <div class="flex-shrink-0 me-2">
-            <ul class="nav">
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
-               </li>
-            </ul>
-         </div>
-         <!--end::Wrapper-->
-         <!--begin::Wrapper-->
-         <div class="d-flex align-items-center">
-            <!--begin::Daterangepicker-->
-            <a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
-            <span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
-            <span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
-            </a>
-            <!--end::Daterangepicker-->
-            <!--begin::Actions-->
-            <div class="d-flex align-items-center">
-               <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
-                  <!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
-                  <span class="svg-icon svg-icon-2x">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
-                        <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-                     </svg>
-                  </span>
-                  <!--end::Svg Icon-->
-               </button>
-            </div>
-            <!--end::Actions-->
-         </div>
-         <!--end::Wrapper-->
-      </div>
-      <!--end::Action group-->
    </div>
    <!--end::Container-->
 </div>
@@ -113,18 +70,6 @@
                @method('PUT')
                <!--begin::Card body-->
                <div class="card-body border-top p-9">
-                  <div class="row mb-6">
-                     @if ($errors->any())
-                     <div class="alert alert-danger">
-                        <ul>
-                           @foreach ($errors->all() as $error)
-                           <li>{{ $error }}</li>
-                           @endforeach
-                        </ul>
-                     </div>
-                     <br />
-                     @endif
-                  </div>
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
@@ -162,6 +107,9 @@
                         <!--end::Image input-->
                         <!--begin::Hint-->
                         <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                        @error('avatar')
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                         <!--end::Hint-->
                      </div>
                      <!--end::Col-->
@@ -178,7 +126,10 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="p_name" value="{{$product->a_name}}" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" required />
+                              <input type="text" name="a_name" value="{{$product->a_name}}" class="@error('a_name') is_invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" required />
+                              @error('a_name')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -196,7 +147,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_sku" value="{{$product->a_sku}}" class="form-control form-control-lg form-control-solid" placeholder="Company name" required/>
+                        <input type="text" name="a_sku" value="{{$product->a_sku}}" class="@error('a_sku') is_invalid @enderror form-control form-control-lg form-control-solid" placeholder="Company name" required/>
+                        @error('a_sku')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -204,11 +158,11 @@
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Product Affiliate Link</label>
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">Product Affiliate Link</label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="{{$product->plink}}" required/>
+                        <input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="{{$product->plink}}"/>
                      </div>
                      <!--end::Col-->
                   </div>
@@ -223,48 +177,29 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
+                        <select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="@error('con') is-invalid @enderror form-select form-select-solid form-select-lg fw-bold">
                         <option data-kt-flag="flags/afghanistan.svg" value="0"  @if($product->con == 0) seleceted @endif >{{$conditions[0]}}</option>														
                         <option data-kt-flag="flags/afghanistan.svg" value="1"  @if($product->con == 1) seleceted @endif >{{$conditions[1]}}</option>														
                         <option data-kt-flag="flags/afghanistan.svg" value="2"  @if($product->con == 2) seleceted @endif >{{$conditions[2]}}</option>														
                         <option data-kt-flag="flags/afghanistan.svg" value="3"  @if($product->con == 3) seleceted @endif >{{$conditions[3]}}</option>														
                         </select>
+                        @error('con')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
                   <!--end::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Size Quantity & Price</label>
-                     <!--end::Label-->
-                     <!--begin::Col-->
-                     <div class="col-lg-8">
-                        <!--begin::Row-->
-                        <div class="row">
-                           <!--begin::Col-->
-                           <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                              <input type="number" name="p_size_qnty" value="{{$product->a_size_qnty}}" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="0">
-                              <div class="fv-plugins-message-container invalid-feedback"></div>
-                           </div>
-                           <!--end::Col-->
-                           <!--begin::Col-->
-                           <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                              <input type="number" name="p_size_price" value="{{$product->a_size_price}}" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="0">
-                              <div class="fv-plugins-message-container invalid-feedback"></div>
-                           </div>
-                           <!--end::Col-->
-                        </div>
-                        <!--end::Row-->
-                     </div>
-                     <!--end::Col-->
-                  </div>
-                  <div class="row mb-6">
-                     <!--begin::Label-->
                      <label class="col-lg-4 col-form-label required fw-bold fs-6">Product Estimated Shipping Time</label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_ship_time" value="{{$product->a_ship_time}}" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" />
+                        <input type="text" name="a_ship_time" value="{{$product->a_ship_time}}" class="form-control form-control-lg form-control-solid @error('a_ship_time') is-invalid @enderror" placeholder="Product Estimated Shipping Time" required />
+                        @error('a_ship_time')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -274,7 +209,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-2 fv-row">
-                        <input type="color" name="p_color" value="{{$product->a_color}}" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value="" />
+                        <input type="color" name="a_color" value="{{$product->a_color}}" class="form-control form-control-lg form-control-solid @error('a_color') is-invalid @enderror " />
+                        @error('a_ship_time')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -288,12 +226,15 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" required>
+                        <select  id="category" name="a_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold @error('a_catog') is-invalid @enderror" required>
                            <option value="">Category...</option>
                            @foreach($categories as $category)
                            <option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}" @if($category->id == $product->a_catog ) selected @endif >{{$category->name}}</option>
                            @endforeach
                         </select>
+                        @error('a_catog')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -306,9 +247,12 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+                        <select id="subcat" name="a_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class=" @error('a_sub_catog') is-invalid @enderror form-select form-select-solid form-select-lg">
                            <option value="{{$product->a_sub_catog}}"  selected>{{$product->sub_name}}</option>
                         </select>
+                        @error('a_sub_catog')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                         <!--end::Input-->
                         <!--begin::Hint-->
                         <!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
@@ -325,7 +269,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select id="childcat" name="p_child_catog" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
+                        <select id="childcat" name="a_child_catog" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
                            <option value="{{$product->a_child_catog}}" selected>{{$product->child_name}}</option>
                         </select>
                         <!--end::Input-->
@@ -342,7 +286,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_new_price" value="{{$product->a_new_price}}"class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="20" />
+                        <input type="text" name="a_new_price" value="{{$product->a_new_price}}"class="form-control form-control-lg form-control-solid @error('a_new_price') is-invalid @enderror" />
+                        @error('a_new_price')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -353,7 +300,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_old_price" value="{{$product->a_old_price}}" class="form-control form-control-lg form-control-solid" placeholder="eg 20" />
+                        <input type="text" name="a_old_price" value="{{$product->a_old_price}}" class="form-control form-control-lg form-control-solid @error('a_old_price') is-invalid @enderror " />
+                        @error('a_old_price')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -363,35 +313,20 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_stock" value="{{$product->a_stock}}" class="form-control form-control-lg form-control-solid" placeholder="eg 20" />
+                        <input type="text" name="a_stock" value="{{$product->a_stock}}" class="form-control form-control-lg form-control-solid @error('a_stock') is-invalid @enderror" required />
+                        @error('a_stock')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
-				  <div class="row mb-6">
-					<!--begin::Label-->
-					<label class="col-lg-4 col-form-label fw-bold fs-6">
-						<span class="">Product Measurement</span>
-						<!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
-					</label>
-					<!--end::Label-->
-					<!--begin::Col-->
-					<div class="col-lg-8 fv-row">
-						<select name="measure" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold">
-                           <option value="">Product Measurement...</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="0" @if($product->measure == 0) selected @endif >Gram</option>							
-                           <option data-kt-flag="flags/venezuela.svg" value="1" @if($product->measure == 1) selected @endif >Kilogram</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="2" @if($product->measure == 2) selected @endif >Liter</option>
-                        </select>
-					</div>
-					<!--end::Col-->
-				</div>
                   <div class="row mb-6">
                      <!--begin::Label-->
                      <label class="col-lg-4 col-form-label required fw-bold fs-6">Product Description</label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <textarea name="p_detail" id="editor" value="{{$product->a_detail}}">
+                        <textarea name="a_detail" id="editor" value="{{$product->a_detail}}">
                         {{$product->a_detail}}
                         </textarea>
                      </div>
@@ -403,7 +338,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <textarea name="p_r_policy" id="editornew" value="{{$product->a_r_policy}}">
+                        <textarea name="a_r_policy" id="editornew" value="{{$product->a_r_policy}}">
                         {{$product->a_r_policy}}
                         </textarea>																						
                      </div>
@@ -432,18 +367,18 @@
                         <div class="d-flex align-items-center mt-3">
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid me-5">
-                           <input class="form-check-input" name="small" type="checkbox" value="1"  @if($product->small == 1) checked @endif />
+                           <input class="form-check-input" name="a_small" type="checkbox" value="1"  @if($product->a_small == 1) checked @endif />
                            <span class="fw-bold ps-2 fs-6">Small</span>
                            </label>
                            <!--end::Option-->
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid">
-                           <input class="form-check-input" name="medium" type="checkbox" value="1" @if($product->medium == 1) checked @endif/>
+                           <input class="form-check-input" name="a_medium" type="checkbox" value="1" @if($product->a_medium == 1) checked @endif/>
                            <span class="fw-bold ps-2 fs-6">Medium</span>
                            </label>
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid">
-                           <input class="form-check-input" name="large" type="checkbox" value="1" @if($product->large == 1) checked @endif/>
+                           <input class="form-check-input" name="a_large" type="checkbox" value="1" @if($product->a_large == 1) checked @endif/>
                            <span class="fw-bold ps-2 fs-6">Large</span>
                            </label>
                            <!--end::Option-->
@@ -454,9 +389,8 @@
                   </div>
                   <!--end::Input group-->
                   <!--begin::Input group-->
-                  @if($product->a_status == 0)
                   <div class="row mb-0">
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Varification Status </label>											
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>											
                      <div class="col-lg-8 d-flex align-items-center">
                         <div class="form-check form-check-solid form-switch fv-row">
                            <input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" name="checkbox" @if($product->a_status == 1) checked @endif />
@@ -464,17 +398,6 @@
                         </div>
                      </div>
                   </div>
-                  @else
-                  <div class="row mb-0">
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Activation Status </label>											
-                     <div class="col-lg-8 d-flex align-items-center">
-                        <div class="form-check form-check-solid form-switch fv-row">
-                           <input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" name="active" @if($product->a_status == 3) checked @endif />
-                           <label class="form-check-label" for="allowmarketing"></label>
-                        </div>
-                     </div>
-                  </div>
-                  @endif
                </div>
                <!--end::Card body-->
                <!--begin::Actions-->
