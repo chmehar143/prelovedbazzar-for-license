@@ -365,12 +365,12 @@
                <span class="menu-icon me-0">
                <i class="bi bi-check"></i>
                </span>
-               <span class="menu-title"> Vendors verification</span>
+               <span class="menu-title"> Vendor verification</span>
                </span>
                <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
                   <div class="menu-item">
                      <div class="menu-content">
-                        <span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendors verification</span>
+                        <span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendor verification</span>
                      </div>
                   </div>
                   <div class="menu-item">
@@ -526,11 +526,11 @@
             </div>
 
             <div class="menu-item py-2">
-               <a class="menu-link  menu-center" href="{{url('admin/webbanner_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+               <a class="menu-link  menu-center" href="{{url('admin/contactus_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                <span class="menu-icon me-0">
                <i class="fas fa-fw fa-newspaper"></i>
                </span>
-               <span class="menu-title">Banner</span>
+               <span class="menu-title">Contact Us</span>
                </a>
             </div>
             <!-- <div class="menu-item py-2">

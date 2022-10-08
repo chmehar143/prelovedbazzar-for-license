@@ -322,7 +322,9 @@ Route::get('webbanner_create', 'WebsiteBannerController@create')->name('webbanne
 Route::get('webbanner_edit', 'WebsiteBannerController@edit')->name('webbanner_edit');
 
 
-
+//Contact Us 
+Route::get('contactus_list', 'ContactUsController@list')->name('contactus_list');
+Route::get('contactus_view', 'ContactUsController@view')->name('contactus_view');
 
 
 
