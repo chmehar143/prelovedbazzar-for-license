@@ -102,7 +102,7 @@ class AffilateController extends Controller
         $product->a_stock = $request->input('a_stock');
         $product->a_detail = $request->input('a_detail');
         $product->a_r_policy = $request->input('a_r_policy');
-        $product->status = 1;
+        $product->a_status = 1;
         if($request->input('a_small') == true){
             $product->a_small = 1;
         }else{

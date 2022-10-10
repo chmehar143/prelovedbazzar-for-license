@@ -149,12 +149,20 @@
                      <table class="table table-flush fw-bold gy-1">
                         <tbody>
                            <tr>
-                              <td class="text-muted min-w-125px w-125px">Reviewed at:	</td>
-                              <td class="text-gray-800">{{$review->created_at->format('d-m-Y h:i:s')}}</td>
+                              <td class="text-muted min-w-125px w-125px">Product ID </td>
+                              <td class="text-gray-800">{{$product->id}}</td>
                            </tr>
                            <tr>
-                              <td class="text-muted min-w-125px w-125px">Review </td>
+                              <td class="text-muted min-w-125px w-125px">Product Name </td>
+                              <td class="text-gray-800">{{$product->p_name}}</td>
+                           </tr>
+                           <tr>
+                              <td class="text-muted min-w-125px w-125px">Rating in count</td>
                               <td class="text-gray-800">{{$review->review}}</td>
+                           </tr>
+                           <tr>
+                              <td class="text-muted min-w-125px w-125px">Reviewed at:	</td>
+                              <td class="text-gray-800">{{$review->created_at->format('d-m-Y h:i:s')}}</td>
                            </tr>
                         </tbody>
                      </table>

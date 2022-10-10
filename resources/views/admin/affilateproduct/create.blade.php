@@ -183,11 +183,11 @@
 
                                             <div class="row mb-6">
 												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label fw-bold fs-6">Product Affiliate Link</label>
+												<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Affiliate Link</label>
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="a_link" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link" value="Product Affiliate Link"/>
+													<input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link" value="Product Affiliate Link"/>
 												</div>
 												<!--end::Col-->
 											</div>

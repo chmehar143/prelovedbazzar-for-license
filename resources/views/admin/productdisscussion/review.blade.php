@@ -204,7 +204,7 @@
                            data-kt-menu="true">
                            <!--begin::Menu item-->
                            <div class="menu-item px-3">
-                              <a href="{{route('admin.productdisscussion_reviewview')}}/{{$review->id}}"
+                              <a href="{{ route('admin.productdisscussion_reviewview', $review->id)}}"
                                  class="menu-link px-3">View</a>
                            </div>
                            <!--end::Menu item-->

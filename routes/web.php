@@ -39,8 +39,8 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('subscribe');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-Route::get('/shop/{name}', [ShopController::class, 'sortby'])->name('sortby');
-Route::get('/shop/{min}/{max}', [ShopController::class, 'sort_price'])->name('sort_price');
+Route::get('/sort/{cat_id}', [ShopController::class, 'sortby'])->name('sortby');
+Route::get('/sort-p/{min}/{max}', [ShopController::class, 'sort_price'])->name('sort_price');
 Route::get('/vendor-store', [VendorController::class, 'index'])->name('vendor-store');
 Route::get('/vendor-store-details/{id}', [VendorStoreDetailsController::class, 'index'])->name('vendor-store-details');
 Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
@@ -65,5 +65,6 @@ Route::get('/order-view', [OrderViewController::class, 'index'])->name('order-vi
 Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error');
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+Route::post('/contact-post', [ContactUsController::class, 'store'])->name('contact_send');
 
 

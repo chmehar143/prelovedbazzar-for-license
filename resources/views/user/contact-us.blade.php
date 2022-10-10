@@ -168,15 +168,15 @@
                             </div>
                             <div class="col-lg-6 mb-8">
                                 <h4 class="title mb-3">Send Us a Message</h4>
-                                <form class="form contact-us-form" action="#" method="post">
+                                <form class="form contact-us-form" action="javascript:void(0)" id="form">
                                     <div class="form-group">
                                         <label for="username">Your Name</label>
-                                        <input type="text" id="username" name="username"
+                                        <input type="text" id="name" name="name"
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label for="email_1">Your Email</label>
-                                        <input type="email" id="email_1" name="email_1"
+                                        <input type="email" id="email" name="email"
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
@@ -184,7 +184,7 @@
                                         <textarea id="message" name="message" cols="30" rows="5"
                                             class="form-control"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-dark btn-rounded">Send Now</button>
+                                    <button type="reset" class="btn btn-dark btn-rounded" id="sendtext" >Send Now</button>
                                 </form>
                             </div>
                         </div>
@@ -199,5 +199,32 @@
             <!-- End of PageContent -->
         </main>
         <!-- End of Main -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$("#sendtext").click(function(){
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var message = $("#message").val();
+    // processing ajax request
+    $.ajax({
+        url: "{{ route('contact_send') }}",
+        type: 'POST',
+        dataType: "json",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            name: name,
+            email: email,
+            message: message
+        },
+        success: function(data) {
+            Swal.fire(
+                'Sent!',
+                'Message has been sent successfully.',
+                'success'
+            )
+        }
+    });
+});   
+</script>
 @endsection

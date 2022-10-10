@@ -19,8 +19,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        $deals = Product::where('admin_id', '!=', NULL)->whereBetween('created_at', 
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->get();
+        $deals = Product::where('admin_id', '!=', NULL)->whereBetween('products.created_at', 
+                [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+                ->join('discussions', 'products.id', '=', 'discussions.item')
+                ->select('products.*', 'discussions.review')->get();
 
         $top_sellers = Vendor::where('status', 0)->get();
 
