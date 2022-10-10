@@ -150,7 +150,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="a_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('a_name') is-invalid @enderror" placeholder="First name"  />
+															<input type="text" name="a_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('a_name') is-invalid @enderror" placeholder="Product name"  />
 															@error('a_name')
                                                             <div class="validation mt-1 text-danger">{{ $message }}</div>
                                                             @enderror
@@ -172,7 +172,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="a_sku" class="form-control form-control-lg form-control-solid @error('a_sku') is-invalid @enderror" placeholder="Company name" value="Keenthemes" required/>
+													<input type="text" name="a_sku" class="form-control form-control-lg form-control-solid @error('a_sku') is-invalid @enderror" placeholder="Product Sku "  required/>
 														@error('a_sku')
                                                             <div class="validation mt-1 text-danger">{{ $message }}</div>
                                                         @enderror
@@ -187,7 +187,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link" value="Product Affiliate Link"/>
+													<input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link" />
 												</div>
 												<!--end::Col-->
 											</div>
@@ -356,7 +356,6 @@
 											<div class="col-lg-8 fv-row">
 
 												<textarea name="a_detail" id="editor">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>
 																						</div>
 											<!--end::Col-->
@@ -370,7 +369,7 @@
 											<div class="col-lg-8 fv-row">
 
 												<textarea name="a_r_policy" id="editornew">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+												
 												</textarea>
 											</div>
 											<!--end::Col-->
@@ -383,7 +382,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="url_link" class="form-control form-control-lg form-control-solid" placeholder="youtube url" value="https://youtube.com" />
+												<input type="text" name="url_link" class="form-control form-control-lg form-control-solid" placeholder="youtube url"  />
 											</div>
 											<!--end::Col-->
 										</div>

@@ -129,7 +129,7 @@
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
 
-                              <input type="text" name="p_name" value="{{$product->p_name}}" class="@error('p_name') is_invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" required />
+                              <input type="text" name="p_name" value="{{$product->p_name}}" class="@error('p_name') is_invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" required />
                               @error('p_name')
                                  <div class="validation mt-1 text-danger">{{ $message }}</div>
                               @enderror
@@ -151,7 +151,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_sku" value="{{$product->p_sku}}" class="@error('p_sku') is_invalid @enderror form-control form-control-lg form-control-solid" placeholder="Company name" required/>
+                        <input type="text" name="p_sku" value="{{$product->p_sku}}" class="@error('p_sku') is_invalid @enderror form-control form-control-lg form-control-solid"  required/>
                         @error('p_sku')
                            <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -189,7 +189,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_ship_time" value="{{$product->p_ship_time}}" class="form-control form-control-lg form-control-solid @error('p_ship_time') is-invalid @enderror" placeholder="Product Estimated Shipping Time" required />
+                        <input type="text" name="p_ship_time" value="{{$product->p_ship_time}}" class="form-control form-control-lg form-control-solid @error('p_ship_time') is-invalid @enderror" required />
                         @error('p_ship_time')
                            <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror

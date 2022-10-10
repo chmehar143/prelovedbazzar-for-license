@@ -153,7 +153,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('p_name') is-invalid @enderror" placeholder="First name"  />
+															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('p_name') is-invalid @enderror" placeholder="Product name"  />
 															@error('p_name')
                                                             <div class="validation mt-1 text-danger">{{ $message }}</div>
                                                             @enderror
@@ -175,7 +175,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid @error('p_sku') is-invalid @enderror" placeholder="Company name" value="Keenthemes" required/>
+													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid @error('p_sku') is-invalid @enderror" placeholder="Product Sku"  required/>
 														@error('p_sku')
                                                             <div class="validation mt-1 text-danger">{{ $message }}</div>
                                                         @enderror
@@ -347,7 +347,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="p_detail" id="editor">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													&lt;p&gt;&lt;/p&gt;
 												</textarea>
 																						</div>
 											<!--end::Col-->
