@@ -38,7 +38,7 @@
                                         <ul class="widget-body filter-items search-ul">
                                             @foreach($categories as $category)
                                             <li>
-                                                <a href="{{ route('sortby', $category->name) }}">{{$category->name}}</a>
+                                                <a href="{{ route('sortby',$category->id ) }}">{{$category->name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -50,22 +50,22 @@
                                         <h3 class="widget-title"><span>Price</span></h3>
                                         <div class="widget-body">
                                             <ul class="filter-items search-ul">
-                                                <?php $min = 0.00; $max = 100.00; ?>
-                                                <li><a href="{{url('shop/'.$min.'/'.$max)}}">$0.00 - $100.00</a></li>
-                                                <?php $min = 100.00; $max = 200.00; ?>
-                                                <li><a href="{{url('shop/'.$min.'/'.$max)}}">$100.00 - $200.00</a></li>
-                                                <?php $min = 200.00; $max = 300.00; ?>
-                                                <li><a href="{{url('shop/'.$min.'/'.$max)}}">$200.00 - $300.00</a></li>
-                                                <?php $min = 300.00; $max = 500.00; ?>
-                                                <li><a href="{{url('shop/'.$min.'/'.$max)}}">$300.00 - $500.00</a></li>
-                                                <?php $min = 500.00; $max = 99999999.00; ?>
-                                                <li><a href="{{url('shop/'.$min.'/'.$max)}}">$500.00+</a></li>
+                                                <?php $min = 1; $max = 99.0; ?>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$0.00 - $99.99</a></li>
+                                                <?php $min = 99.00; $max = 199.00; ?>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$99.99 - $199.99</a></li>
+                                                <?php $min = 199.00; $max = 299.00; ?>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$199.99 - $299.99</a></li>
+                                                <?php $min = 299.99; $max = 499.99; ?>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$299.99 - $499.99</a></li>
+                                                <?php $min = 499.99; $max = 99999999.00; ?>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$500.00+</a></li>
                                             </ul>
                                             <form class="price-range">
                                                 <input type="number" name="min_price" class="min_price text-center"
                                                     placeholder="$min"><span class="delimiter">-</span><input
                                                     type="number" name="max_price" class="max_price text-center"
-                                                    placeholder="$max"><a href="{{url('shop/'.$min.'/'.$max)}}"
+                                                    placeholder="$max"><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}"
                                                     class="btn btn-primary btn-rounded">Go</a>
                                             </form>
                                         </div>

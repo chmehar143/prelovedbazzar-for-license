@@ -19,26 +19,11 @@ class ShopController extends Controller
         return view('user.shop',compact('products', 'categories'));
     }
 
-    public function sortby($name)
+    public function sortby($cat_id)
     {
-        $category = Category::where('name', $name)->first();
+        $category = Category::where('id', $cat_id)->first();
         if($category){
             $products = Product::where('p_catog', $category->id)
-            ->join('categories', 'products.p_catog','=','categories.id')
-            ->select('products.*', 'categories.name')
-            ->paginate(9);
-
-        }
-        $subcatog = Subcategory::where('name', $name)->first();
-        if($subcatog){
-            $products = Product::where('p_sub_catog', $subcatog->id)
-            ->join('categories', 'products.p_catog','=','categories.id')
-            ->select('products.*', 'categories.name')
-            ->paginate(9);
-        }
-        $childcatog = Childcategory::where('name', $name)->first();
-        if($childcatog){
-            $products = Product::where('p_child_catog', $childcatog->id)
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')
             ->paginate(9);
@@ -48,8 +33,7 @@ class ShopController extends Controller
     }
 
     public function sort_price($min, $max){
-            $products = Product::whereRaw('p_new_price >= ?' , $min)
-                ->whereRaw('p_new_price <= ?', $max)
+            $products = Product::whereBetween('p_new_price' ,[$min, $max])
                 ->join('categories', 'products.p_catog','=','categories.id')
                 ->select('products.*', 'categories.name')
                 ->paginate(9);

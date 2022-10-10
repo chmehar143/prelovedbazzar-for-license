@@ -41,49 +41,6 @@
          <!--end::Page title-->
       </div>
       <!--end::Page title-->
-      <!--begin::Action group-->
-      <div class="d-flex align-items-center flex-wrap">
-         <!--begin::Wrapper-->
-         <div class="flex-shrink-0 me-2">
-            <ul class="nav">
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
-               </li>
-            </ul>
-         </div>
-         <!--end::Wrapper-->
-         <!--begin::Wrapper-->
-         <div class="d-flex align-items-center">
-            <!--begin::Daterangepicker-->
-            <a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
-            <span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
-            <span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
-            </a>
-            <!--end::Daterangepicker-->
-            <!--begin::Actions-->
-            <div class="d-flex align-items-center">
-               <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
-                  <!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
-                  <span class="svg-icon svg-icon-2x">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
-                        <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-                     </svg>
-                  </span>
-                  <!--end::Svg Icon-->
-               </button>
-            </div>
-            <!--end::Actions-->
-         </div>
-         <!--end::Wrapper-->
-      </div>
-      <!--end::Action group-->
    </div>
    <!--end::Container-->
 </div>
@@ -111,43 +68,29 @@
             <form id="kt_account_profile_details_form"
                action="{{ route('admin.allproducts_update', $product->id)}}"
                class="form" method="post" enctype="multipart/form-data">
-               @method('PUT')
                @csrf
+               @method('PUT')
                <!--begin::Card body-->
                <div class="card-body border-top p-9">
-
-                  <div class="row mb-6">
-                     @if ($errors->any())
-                     <div class="alert alert-danger">
-                        <ul>
-                           @foreach ($errors->all() as $error)
-                           <li>{{ $error }}</li>
-                           @endforeach
-                        </ul>
-                     </div>
-                     <br />
-                     @endif
-                  </div>
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label fw-bold required fs-6">Current Featured Image
+                     <label class="col-lg-4 col-form-label fw-bold required fs-6">Current Featured Image 
                      </label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8">
                         <!--begin::Image input-->
-                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/vendor/uploads/products/.$product->p_image)">
+                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
                            <!--begin::Preview existing avatar-->
                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('{{ asset('storage/uploads/products/'.$product->p_image)}}')">
-                              <img src="{{ asset('storage/uploads/products/'.$product->p_image)}}" alt="" class="w-125px h-125px">
                            </div>
                            <!--end::Preview existing avatar-->
                            <!--begin::Label-->
                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                               <i class="bi bi-pencil-fill fs-7"></i>
                               <!--begin::Inputs-->
-                              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" value="{{ asset('storage/uploads/products/'.$product->p_image)}}" />
+                              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
                               <input type="hidden" name="avatar_remove" />
                               <!--end::Inputs-->
                            </label>
@@ -166,6 +109,9 @@
                         <!--end::Image input-->
                         <!--begin::Hint-->
                         <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                        @error('avatar')
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                         <!--end::Hint-->
                      </div>
                      <!--end::Col-->
@@ -182,7 +128,12 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Product name" value="{{$product->p_name}}" required />
+
+                              <input type="text" name="p_name" value="{{$product->p_name}}" class="@error('p_name') is_invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" required />
+                              @error('p_name')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
+
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -200,10 +151,15 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="{{$product->p_sku}}" required/>
+                        <input type="text" name="p_sku" value="{{$product->p_sku}}" class="@error('p_sku') is_invalid @enderror form-control form-control-lg form-control-solid" placeholder="Company name" required/>
+                        @error('p_sku')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
+                  <!--end::Input group-->
+
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
@@ -214,47 +170,29 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select name="con" aria-label="Select a Condition" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
-                           <option value="">Product Condition...</option>
-                           <option data-kt-flag="flags/afghanistan.svg" value="0" @if($product->con == 0) selected @endif>New</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="1" @if($product->con == 1) selected @endif>Used</option>
+                        <select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="@error('con') is-invalid @enderror form-select form-select-solid form-select-lg fw-bold">
+                        <option data-kt-flag="flags/afghanistan.svg" value="0"  @if($product->con == 0) seleceted @endif >{{$conditions[0]}}</option>														
+                        <option data-kt-flag="flags/afghanistan.svg" value="1"  @if($product->con == 1) seleceted @endif >{{$conditions[1]}}</option>														
+                        <option data-kt-flag="flags/afghanistan.svg" value="2"  @if($product->con == 2) seleceted @endif >{{$conditions[2]}}</option>														
+                        <option data-kt-flag="flags/afghanistan.svg" value="3"  @if($product->con == 3) seleceted @endif >{{$conditions[3]}}</option>														
                         </select>
+                        @error('con')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
                   <!--end::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Size Quantity & Price</label>
-                     <!--end::Label-->
-                     <!--begin::Col-->
-                     <div class="col-lg-8">
-                        <!--begin::Row-->
-                        <div class="row">
-                           <!--begin::Col-->
-                           <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                              <input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " value="{{$product->p_size_qnty}}" required>
-                              <div class="fv-plugins-message-container invalid-feedback"></div>
-                           </div>
-                           <!--end::Col-->
-                           <!--begin::Col-->
-                           <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                              <input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" value="{{$product->p_size_price}}" required>
-                              <div class="fv-plugins-message-container invalid-feedback"></div>
-                           </div>
-                           <!--end::Col-->
-                        </div>
-                        <!--end::Row-->
-                     </div>
-                     <!--end::Col-->
-                  </div>
-                  <div class="row mb-6">
-                     <!--begin::Label-->
                      <label class="col-lg-4 col-form-label required fw-bold fs-6">Product Estimated Shipping Time</label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value="{{$product->p_ship_time}}" required />
+                        <input type="text" name="p_ship_time" value="{{$product->p_ship_time}}" class="form-control form-control-lg form-control-solid @error('p_ship_time') is-invalid @enderror" placeholder="Product Estimated Shipping Time" required />
+                        @error('p_ship_time')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -264,7 +202,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-2 fv-row">
-                        <input type="color" name="p_color" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value="{{$product->p_color}}" required />
+                        <input type="color" name="p_color" value="{{$product->p_color}}" class="form-control form-control-lg form-control-solid @error('p_color') is-invalid @enderror " />
+                        @error('p_ship_time')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -278,12 +219,15 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" required>
+                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold @error('p_catog') is-invalid @enderror" required>
                            <option value="">Category...</option>
                            @foreach($categories as $category)
                            <option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}" @if($category->id == $product->p_catog ) selected @endif >{{$category->name}}</option>
                            @endforeach
                         </select>
+                        @error('p_catog')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -296,9 +240,12 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg">
+                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class=" @error('p_sub_catog') is-invalid @enderror form-select form-select-solid form-select-lg">
                            <option value="{{$product->p_sub_catog}}"  selected>{{$product->sub_name}}</option>
                         </select>
+                        @error('p_sub_catog')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                         <!--end::Input-->
                         <!--begin::Hint-->
                         <!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
@@ -332,7 +279,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="{{$product->p_new_price}}" required />
+                        <input type="text" name="p_new_price" value="{{$product->p_new_price}}"class="form-control form-control-lg form-control-solid @error('p_new_price') is-invalid @enderror" />
+                        @error('p_new_price')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -343,7 +293,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="{{$product->p_old_price}}" required/>
+                        <input type="text" name="p_old_price" value="{{$product->p_old_price}}" class="form-control form-control-lg form-control-solid @error('p_old_price') is-invalid @enderror " />
+                        @error('p_old_price')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -353,26 +306,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20" value="{{$product->p_stock}}" required />
-                     </div>
-                     <!--end::Col-->
-                  </div>
-                  <!-- measurement -->
-                  <div class="row mb-6">
-                     <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label fw-bold fs-6">
-                        <span class="">Product Measurement</span>
-                        <!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
-                     </label>
-                     <!--end::Label-->
-                     <!--begin::Col-->
-                     <div class="col-lg-8 fv-row">
-                        <select name="measure" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold">
-                           <option value="">Product Measurement...</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="0" @if($product->measure == 0) selected @endif >Gram</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="1" @if($product->measure == 1) selected @endif >Kilogram</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="2" @if($product->measure == 2) selected @endif >Liter</option>
-                        </select>
+                        <input type="text" name="p_stock" value="{{$product->p_stock}}" class="form-control form-control-lg form-control-solid @error('p_stock') is-invalid @enderror" required />
+                        @error('p_stock')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -383,7 +320,9 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_detail" id="editor" value="{{$product->p_detail}}">
-                          
+
+                        {{$product->p_detail}}
+
                         </textarea>
                      </div>
                      <!--end::Col-->
@@ -395,12 +334,14 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_r_policy" id="editornew" value="{{$product->p_r_policy}}">
-                          
-                        </textarea>
+
+                        {{$product->p_r_policy}}
+                        </textarea>																						
+
                      </div>
                      <!--end::Col-->
                   </div>
-				<!--end::Input group-->
+                  <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
                      <label class="col-lg-4 col-form-label required fw-bold fs-6">Size</label>
@@ -411,18 +352,18 @@
                         <div class="d-flex align-items-center mt-3">
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid me-5">
-                           <input class="form-check-input" name="small" type="checkbox" value="{{$product->small}}" <?php if($product->small == 1){ echo "checked" ;} ?>   />
+                           <input class="form-check-input" name="small" type="checkbox" value="1"  @if($product->small == 1) checked @endif />
                            <span class="fw-bold ps-2 fs-6">Small</span>
                            </label>
                            <!--end::Option-->
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid">
-                           <input class="form-check-input" name="medium" type="checkbox" value="{{$product->medium}}" <?php if($product->medium == 1){ echo "checked" ;} ?> />
+                           <input class="form-check-input" name="medium" type="checkbox" value="1" @if($product->medium == 1) checked @endif/>
                            <span class="fw-bold ps-2 fs-6">Medium</span>
                            </label>
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid">
-                           <input class="form-check-input" name="large" type="checkbox" value="{{$product->large}}" <?php if($product->large == 1){ echo "checked" ;} ?>/>
+                           <input class="form-check-input" name="large" type="checkbox" value="1" @if($product->large == 1) checked @endif/>
                            <span class="fw-bold ps-2 fs-6">Large</span>
                            </label>
                            <!--end::Option-->
@@ -433,9 +374,8 @@
                   </div>
                   <!--end::Input group-->
                   <!--begin::Input group-->
-                  @if($product->status == 0)
                   <div class="row mb-0">
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Varification Status </label>
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>											
                      <div class="col-lg-8 d-flex align-items-center">
                         <div class="form-check form-check-solid form-switch fv-row">
                            <input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" name="checkbox" @if($product->status == 1) checked @endif />
@@ -443,17 +383,6 @@
                         </div>
                      </div>
                   </div>
-                  @else
-                  <div class="row mb-0">
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Activation Status </label>
-                     <div class="col-lg-8 d-flex align-items-center">
-                        <div class="form-check form-check-solid form-switch fv-row">
-                           <input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" name="active" @if($product->status == 3) checked @endif />
-                           <label class="form-check-label" for="allowmarketing"></label>
-                        </div>
-                     </div>
-                  </div>
-                  @endif
                </div>
                <!--end::Card body-->
                <!--begin::Actions-->

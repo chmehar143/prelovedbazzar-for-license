@@ -40,6 +40,7 @@ class CategoryController extends Controller
         //--- Validation Section
         $rules = [
             'slug' => 'unique:categories|regex:/^[a-zA-Z0-9\s-]+$/',
+            'name' => 'required',
         ];
         $customs = [
             'slug.unique' => 'This slug has already been taken.',

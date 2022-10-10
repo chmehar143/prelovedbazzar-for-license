@@ -43,49 +43,6 @@
 								<!--end::Page title-->
 							</div>
 							<!--end::Page title-->
-							<!--begin::Action group-->
-							<div class="d-flex align-items-center flex-wrap">
-								<!--begin::Wrapper-->
-								<div class="flex-shrink-0 me-2">
-									<ul class="nav">
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
-										</li>
-									</ul>
-								</div>
-								<!--end::Wrapper-->
-								<!--begin::Wrapper-->
-								<div class="d-flex align-items-center">
-									<!--begin::Daterangepicker-->
-									<a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
-										<span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
-										<span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
-									</a>
-									<!--end::Daterangepicker-->
-									<!--begin::Actions-->
-									<div class="d-flex align-items-center">
-										<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
-											<!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
-											<span class="svg-icon svg-icon-2x">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
-													<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</button>
-									</div>
-									<!--end::Actions-->
-								</div>
-								<!--end::Wrapper-->
-							</div>
-							<!--end::Action group-->
 						</div>
 						<!--end::Container-->
 					</div>
@@ -116,18 +73,7 @@
 										@csrf
 										<!--begin::Card body-->
 										<div class="card-body border-top p-9">
-											<div class="row mb-6">
-												@if ($errors->any())
-												<div class="alert alert-danger">
-													<ul>
-													@foreach ($errors->all() as $error)
-													<li>{{ $error }}</li>
-													@endforeach
-													</ul>
-												</div>
-												<br />
-												@endif
-											</div>
+
 											<!--begin::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
@@ -145,7 +91,7 @@
 														<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
 															<i class="bi bi-pencil-fill fs-7"></i>
 															<!--begin::Inputs-->
-															<input type="file" name="avatar" accept=".png, .jpg, .jpeg" required/>
+															<input type="file" name="avatar" accept=".png, .jpg, .jpeg" class="@error('avatar') is-invalid @enderror" required/>
 															<input type="hidden" name="avatar_remove" />
 															<!--end::Inputs-->
 														</label>
@@ -164,6 +110,9 @@
 													<!--end::Image input-->
 													<!--begin::Hint-->
 													<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+													@error('avatar')
+													<div class="validation mt-1 text-danger">{{ $message }}</div>
+													@enderror
 													<!--end::Hint-->
 												</div>
 												<!--end::Col-->
@@ -176,7 +125,7 @@
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
 													<!--begin::Input-->
-													<select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>
+													<select name="a_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>
 														<option value="">Product Type</option>
 														<option data-kt-flag="flags/indonesia.svg" value="0" selected>Physical</option>
 														<option data-kt-flag="flags/indonesia.svg" value="1">Digital</option>
@@ -201,7 +150,10 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" required/>
+															<input type="text" name="a_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('a_name') is-invalid @enderror" placeholder="First name"  />
+															@error('a_name')
+                                                            <div class="validation mt-1 text-danger">{{ $message }}</div>
+                                                            @enderror
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -220,8 +172,12 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_sku" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="Keenthemes" required/>
+													<input type="text" name="a_sku" class="form-control form-control-lg form-control-solid @error('a_sku') is-invalid @enderror" placeholder="Company name" value="Keenthemes" required/>
+														@error('a_sku')
+                                                            <div class="validation mt-1 text-danger">{{ $message }}</div>
+                                                        @enderror
 												</div>
+
 												<!--end::Col-->
 											</div>
 
@@ -231,7 +187,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link*" value="https://abc.com" required/>
+													<input type="text" name="plink" class="form-control form-control-lg form-control-solid" placeholder=" Product Affiliate Link" value="Product Affiliate Link"/>
 												</div>
 												<!--end::Col-->
 											</div>
@@ -247,12 +203,13 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
+													<select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold ">
 													<option data-kt-flag="flags/afghanistan.svg" value="0" >{{$conditions[0]}}</option>
 													<option data-kt-flag="flags/afghanistan.svg" value="1" >{{$conditions[1]}}</option>
 													<option data-kt-flag="flags/afghanistan.svg" value="2" >{{$conditions[2]}}</option>
 													<option data-kt-flag="flags/afghanistan.svg" value="3" >{{$conditions[3]}}</option>
 													</select>
+
 												</div>
 												<!--end::Col-->
 											</div>
@@ -263,34 +220,14 @@
 											<!--end::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Size Quantity & Price</label>
-												<!--end::Label-->
-												<!--begin::Col-->
-												<div class="col-lg-8">
-													<!--begin::Row-->
-													<div class="row">
-														<!--begin::Col-->
-														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="p_size_qnty" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Size Quantity " required>
-														<div class="fv-plugins-message-container invalid-feedback"></div></div>
-														<!--end::Col-->
-														<!--begin::Col-->
-														<div class="col-lg-6 fv-row fv-plugins-icon-container">
-															<input type="number" name="p_size_price" class="form-control form-control-lg form-control-solid" placeholder="Size Price" required>
-														<div class="fv-plugins-message-container invalid-feedback"></div></div>
-														<!--end::Col-->
-													</div>
-													<!--end::Row-->
-												</div>
-												<!--end::Col-->
-											</div>
-											<div class="row mb-6">
-												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Estimated Shipping Time</label>
+												<label class="col-lg-4 col-form-label required fw-bold fs-6">Product Estimated Shipping Time in Days</label>
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="p_ship_time" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" value=" Shipping Time" required/>
+													<input type="number" name="a_ship_time" class="form-control form-control-lg form-control-solid " min="1" max="60" placeholder="Product Estimated Shipping Time in Days @error('a_ship_time') is-invalid @enderror" required/>
+													@error('a_ship_time')
+														<div class="validation mt-1 text-danger">{{ $message }}</div>
+													@enderror
 												</div>
 												<!--end::Col-->
 											</div>
@@ -301,7 +238,10 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-2 fv-row">
-													<input type="color" name="p_color" class="form-control form-control-lg form-control-solid" placeholder="Product Estimated Shipping Time" required/>
+													<input type="color" name="a_color" class="form-control form-control-lg form-control-solid @error('a_color') is-invalid @enderror"  required/>
+													@error('a_color')
+														<div class="validation mt-1 text-danger">{{ $message }}</div>
+													@enderror
 												</div>
 												<!--end::Col-->
 											</div>
@@ -315,7 +255,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" required>
+													<select  id="category" name="a_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" >
 														<option value="">Category...</option>
 														@foreach($categories as $category)
 														<option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}">{{$category->name}}</option>
@@ -333,9 +273,10 @@
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
 													<!--begin::Input-->
-													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg" required>
+													<select id="subcat" name="a_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg @error('a_sub_catog') is-invalid @enderror" required>
 														<option value="">Select a Sub Category...</option>
 													</select>
+
 													<!--end::Input-->
 													<!--begin::Hint-->
 													<!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
@@ -347,12 +288,12 @@
 												<!--begin::Input group-->
 												<div class="row mb-6">
 													<!--begin::Label-->
-													<label class="col-lg-4 col-form-label required fw-bold fs-6">Child Category</label>
+													<label class="col-lg-4 col-form-label fw-bold fs-6">Child Category</label>
 													<!--end::Label-->
 													<!--begin::Col-->
 													<div class="col-lg-8 fv-row">
 														<!--begin::Input-->
-														<select id="childcat" name="p_child_catog" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
+														<select id="childcat" name="a_child_catog" aria-label="Select a Child Category" data-control="select2" data-placeholder="Select a Child Category..." class="form-select form-select-solid form-select-lg">
 															<option value="">Select a Child Category...</option>
 														</select>
 														<!--end::Input-->
@@ -369,7 +310,10 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" required/>
+												<input type="text" name="a_new_price" class="form-control form-control-lg form-control-solid @error('a_new_price') is-invalid @enderror" placeholder="eg 20" required/>
+												@error('a_new_price')
+													<div class="validation mt-1 text-danger">{{ $message }}</div>
+												@enderror
 											</div>
 											<!--end::Col-->
 										</div>
@@ -382,7 +326,10 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="p_old_price" class="form-control form-control-lg form-control-solid" placeholder="eg 20" />
+												<input type="text" name="a_old_price" class="form-control form-control-lg form-control-solid @error('a_old_price') is-invalid @enderror" placeholder="eg 20" />
+												@error('a_old_price')
+													<div class="validation mt-1 text-danger">{{ $message }}</div>
+												@enderror
 											</div>
 											<!--end::Col-->
 										</div>
@@ -392,31 +339,14 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="p_stock" class="form-control form-control-lg form-control-solid" placeholder="eg 20"  required/>
+												<input type="text" name="a_stock" class="form-control form-control-lg form-control-solid @error('a_stock') is-invalid @enderror " placeholder="eg 20"  required/>
+												@error('a_stock')
+													<div class="validation mt-1 text-danger">{{ $message }}</div>
+												@enderror
 											</div>
 											<!--end::Col-->
 										</div>
-                                        	<div class="row mb-6">
-												<!--begin::Label-->
-												<label class="col-lg-4 col-form-label fw-bold fs-6">
-													<span class="">Product Measurement</span>
-													<!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
-												</label>
-												<!--end::Label-->
-												<!--begin::Col-->
-												<div class="col-lg-8 fv-row">
-													<select name="measure" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Measurement..." class="form-select form-select-solid form-select-lg fw-bold" required>
-														<option value="">Product Measurement...</option>
-														<option data-kt-flag="flags/afghanistan.svg" value="0">Gram</option>
 
-														<option data-kt-flag="flags/venezuela.svg" value="1">Kilogram</option>
-														<option data-kt-flag="flags/venezuela.svg" value="2">Liter</option>
-
-
-													</select>
-												</div>
-												<!--end::Col-->
-											</div>
 
 											<div class="row mb-6">
 											<!--begin::Label-->
@@ -424,8 +354,9 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<textarea name="p_detail" id="editor">
-													  
+
+												<textarea name="a_detail" id="editor">
+													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>
 																						</div>
 											<!--end::Col-->
@@ -437,8 +368,9 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<textarea name="p_r_policy" id="editornew">
-													  
+
+												<textarea name="a_r_policy" id="editornew">
+													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>
 											</div>
 											<!--end::Col-->
@@ -451,7 +383,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="url_link" class="form-control form-control-lg form-control-solid" placeholder="youtube url" value="https://youtube.com" required/>
+												<input type="text" name="url_link" class="form-control form-control-lg form-control-solid" placeholder="youtube url" value="https://youtube.com" />
 											</div>
 											<!--end::Col-->
 										</div>
@@ -490,17 +422,6 @@
 												<!--end::Col-->
 											</div>
 											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row mb-0">
-												<label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>
-
-												<div class="col-lg-8 d-flex align-items-center">
-													<div class="form-check form-check-solid form-switch fv-row">
-														<input class="form-check-input w-45px h-30px" type="checkbox" name="checkbox" id="allowmarketing" />
-														<label class="form-check-label" for="allowmarketing"></label>
-													</div>
-												</div>
-											</div>
 										</div>
 										<!--end::Card body-->
 										<!--begin::Actions-->
@@ -514,7 +435,6 @@
 								</div>
 								<!--end::Content-->
 							</div>
-
 							<!--end::Modals-->
 						</div>
                     </div>
@@ -524,7 +444,7 @@
 
 
 
-                    <script>
+        <script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.catch( error => {
@@ -569,4 +489,4 @@
 		});
 	</script>
 
-                    @endsection
+    @endsection
