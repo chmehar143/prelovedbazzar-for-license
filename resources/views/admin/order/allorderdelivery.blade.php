@@ -137,7 +137,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="content" id="editor">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													  
 												</textarea>
 																						</div>
 											<!--end::Col-->

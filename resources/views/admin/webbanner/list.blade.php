@@ -6,7 +6,7 @@
 						<!--begin::Container-->
 						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> Affilated Products </h1>
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> Website Banner </h1>
 									<!--end::Title-->
 									<!--begin::Separator-->
 									<span class="h-20px border-gray-200 border-start mx-3"></span>
@@ -21,7 +21,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">  Products </li>
+										<li class="breadcrumb-item text-muted">  Banner </li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -29,7 +29,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark"> Affilated Products List</li>
+										<li class="breadcrumb-item text-dark"> Website Banner List</li>
 										<!--end::Item-->
 									</ul>
 									<!--end::Breadcrumb-->
@@ -41,6 +41,49 @@
 								<!--end::Page title-->
 							</div>
 							<!--end::Page title-->
+							<!--begin::Action group-->
+							<div class="d-flex align-items-center flex-wrap">
+								<!--begin::Wrapper-->
+								<div class="flex-shrink-0 me-2">
+									<ul class="nav">
+										<li class="nav-item">
+											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
+										</li>
+									</ul>
+								</div>
+								<!--end::Wrapper-->
+								<!--begin::Wrapper-->
+								<div class="d-flex align-items-center">
+									<!--begin::Daterangepicker-->
+									<a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
+										<span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
+										<span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
+									</a>
+									<!--end::Daterangepicker-->
+									<!--begin::Actions-->
+									<div class="d-flex align-items-center">
+										<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
+											<!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
+											<span class="svg-icon svg-icon-2x">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
+													<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</button>
+									</div>
+									<!--end::Actions-->
+								</div>
+								<!--end::Wrapper-->
+							</div>
+							<!--end::Action group-->
 						</div>
 						<!--end::Container-->
 					</div>
@@ -67,7 +110,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Affilated Products">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Website Banner">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -82,7 +125,7 @@
 
 
 											<!--begin::Add customer-->
-											<a type="button" class="btn btn-primary" href="{{url('admin/affilateproduct_create')}}">Add Affilate Product</a>
+											<a type="button" class="btn btn-primary" href="{{url('admin/webbanner_create')}}">Add Website Banner </a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
 											<!--end::Add customer-->
 										</div>
@@ -109,16 +152,11 @@
 											<th class="min-w-50px pe-2">
 												Sr No.
 											</th>
-											<th class="min-w-125px"> Image </th>
-											<th class="min-w-125px"> Name </th>
+											<th class="min-w-125px"> First Image </th>
+											<th class="min-w-125px"> Second Image </th>
 
-											<th class="min-w-125px">Type </th>
-											<th class="min-w-125px"> Stock </th>
-
-											<th class="min-w-125px"> Price </th>
-
-											<th class="min-w-125px">Status </th>
-											<th class="min-w-125px">Action </th>
+											<th class="min-w-125px">Third Image </th>
+											<th class="min-w-125px"> Title </th>
 
 
 
@@ -130,32 +168,22 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-											<?php
-											$i = 0;
-											?>
-										@foreach($affiliateProducts as $product)
-											<?php
-											$i = $i+1;
-											?>
-											<tr class="odd" id="nft_row_{{$product->id}}">
+											
+											<tr class="odd" >
 												<!--begin::Checkbox-->
 												<td>
 													<div class="form-check form-check-sm form-check-custom form-check-solid">
-														{{$i}}
+													
 													</div>
 												</td>
 												<!--end::Checkbox-->
-                                                <td><img src="{{ asset('storage/uploads/products/'.$product->a_image)}}" width="50px"></td>
-												<td>
-													{{$product->a_name}}
-												</td>
-												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $type[$product->a_type] }}</a>	</td>
-												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $product->a_stock }}</a>	</td>
-												<td>${{$product->a_new_price}}</td>
+                                                <td><img src="{{ asset('storage/uploads/products/')}}" width="50px"></td>
+                                                <td><img src="{{ asset('storage/uploads/products/')}}" width="50px"></td>
+                                                <td><img src="{{ asset('storage/uploads/products/')}}" width="50px"></td>
 
-                                                <td data-order="Invalid date">
-                                                    <span class="badge badge-light-success">{{ $status[$product->a_status] }}</span>
-                                                </td>
+
+												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. </a>	</td>
+											
 
 												<!--end::Date=-->
 												<!--begin::Action=-->
@@ -171,18 +199,16 @@
 													<!--begin::Menu-->
 													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="{{route('admin.affilateproduct_view' ,$product->id)}}" class="menu-link px-3">View</a>
-														</div>
+														
 														<!--end::Menu item-->
 
 														<div class="menu-item px-3">
-															<a href="{{route('admin.affilateproduct_edit',$product->id)}}" class="menu-link px-3">Edit</a>
+															<a href="{{url('admin/webbanner_edit')}}" class="menu-link px-3">Edit</a>
 														</div>
 
 														<!--begin::Menu item-->
-														<div class="menu-item px-3" id="{{$product->id}}">
-															<a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="deleteProduct({{$product->id}})">Delete</a>
+														<div class="menu-item px-3" >
+															<a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" >Delete</a>
 														</div>
 														<!--end::Menu item-->
 													</div>
@@ -190,7 +216,7 @@
 												</td>
 												<!--end::Action=-->
 											</tr>
-										@endforeach
+										
 									</tbody>
 									<!--end::Table body-->
 								</table>
@@ -205,31 +231,5 @@
 					</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script>
-      function deleteProduct(id) {
-          Swal.fire({
-              title: 'Are you sure?',
-              text: "You won't be able to revert this!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  $.ajax({
-                      url: "{{url('/admin/affilateproduct_delete')}}"+ '/' + id,
-                      success: function(data) {
-                          $("#nft_row_" +id).remove();
-                          Swal.fire(
-                              'Deleted!',
-                              'Product has been deleted.',
-                              'success'
-                          )
-                      }
-                  });
-              }
-          })
-      }
-  </script>
+
 @endsection

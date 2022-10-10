@@ -316,9 +316,15 @@ Route::get('manageroles_list', 'ManageRolesController@list')->name('manageroles_
 Route::get('manageroles_create', 'ManageRolesController@create')->name('manageroles_create');
 Route::get('manageroles_edit', 'ManageRolesController@edit')->name('manageroles_edit');
 
+//Web Banner
+Route::get('webbanner_list', 'WebsiteBannerController@list')->name('webbanner_list');
+Route::get('webbanner_create', 'WebsiteBannerController@create')->name('webbanner_create');
+Route::get('webbanner_edit', 'WebsiteBannerController@edit')->name('webbanner_edit');
 
 
-
+//Contact Us 
+Route::get('contactus_list', 'ContactUsController@list')->name('contactus_list');
+Route::get('contactus_view', 'ContactUsController@view')->name('contactus_view');
 
 
 

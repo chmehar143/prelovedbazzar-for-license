@@ -1326,7 +1326,7 @@
 						<div id="kt_content_container" class="container-xxl">
 							<!--begin::Card-->
                          <h1> All Products</h1>
-						<div class="card">
+						<div class="card container">
 							<!--begin::Card header-->
 							<div class="card-header border-0 pt-6">
 								<!--begin::Card title-->

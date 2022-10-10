@@ -128,10 +128,12 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
+
                               <input type="text" name="p_name" value="{{$product->p_name}}" class="@error('p_name') is_invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" required />
                               @error('p_name')
                                  <div class="validation mt-1 text-danger">{{ $message }}</div>
                               @enderror
+
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -318,7 +320,9 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_detail" id="editor" value="{{$product->p_detail}}">
+
                         {{$product->p_detail}}
+
                         </textarea>
                      </div>
                      <!--end::Col-->
@@ -330,8 +334,10 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_r_policy" id="editornew" value="{{$product->p_r_policy}}">
+
                         {{$product->p_r_policy}}
                         </textarea>																						
+
                      </div>
                      <!--end::Col-->
                   </div>

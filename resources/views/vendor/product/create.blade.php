@@ -300,6 +300,7 @@
 												<!--end::Col-->
 											</div>
 											<!--end::Input group-->
+
 											<!--begin::Input group-->
 											<div class="row mb-6">
 												<!--begin::Label-->
@@ -311,6 +312,7 @@
 													<select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg @error('p_sub_catog') is-invalid @enderror" required>
 														<option value="">Select a Sub Category...</option>
 													</select>
+
 
 													<!--end::Input-->
 													<!--begin::Hint-->
@@ -390,7 +392,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="p_detail" id="editor">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													  
 												</textarea>
 																						</div>
 											<!--end::Col-->
@@ -403,8 +405,10 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="p_r_policy" id="editornew">
+
 													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>
+
 											</div>
 											<!--end::Col-->
 											</div>
@@ -442,6 +446,7 @@
 												<!--end::Col-->
 											</div>
 											<!--end::Input group-->
+
 										</div>
 										<!--end::Card body-->
 										<!--begin::Actions-->

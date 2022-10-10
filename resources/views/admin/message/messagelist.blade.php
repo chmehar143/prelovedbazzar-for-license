@@ -46,7 +46,7 @@
 						<div id="kt_content_container" class="container-xxl">
 						
 							<!--begin::Card-->
-							<div class="card">
+							<div class="card container">
 								<!--begin::Card header-->
 								<div class="card-header border-0 pt-6">
 									<!--begin::Card title-->

@@ -354,6 +354,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
+
 												<textarea name="a_detail" id="editor">
 													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>
@@ -367,6 +368,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
+
 												<textarea name="a_r_policy" id="editornew">
 													&lt;p&gt;This is some sample content.&lt;/p&gt;
 												</textarea>

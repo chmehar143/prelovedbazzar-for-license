@@ -116,6 +116,7 @@
 								<!--begin::Content-->
 								<div id="kt_account_settings_profile_details" class="collapse show">
 									<!--begin::Form-->
+
 			<form id="kt_account_profile_details_form" 
 					action="{{ url('/vendor/product_up/'.$product->id)}}" 
 					class="form" method="post" enctype="multipart/form-data">
@@ -208,6 +209,7 @@
                      <!--end::Col-->
                   </div>
                   <!--end::Input group-->
+
 
                   <!--begin::Input group-->
                   <div class="row mb-6">
