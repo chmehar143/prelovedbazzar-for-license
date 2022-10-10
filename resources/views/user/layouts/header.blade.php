@@ -277,7 +277,7 @@ else{
                                         <a href="{{route('index')}}">Home</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('shop')}}">Shop</a>
+                                        <a href="{{ route('shop') }}">Shop</a>
                                     </li>
                                     <li>
                                         <a href="{{route('vendor-store')}}">Vendor Stores</a>

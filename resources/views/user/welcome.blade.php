@@ -381,9 +381,10 @@
 
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
-                                                                <span class="ratings" style="width: 80%;"></span>
+                                                                <span class="ratings" style="width: 90%;"></span>
                                                                 <span class="tooltiptext tooltip-top"></span>
                                                             </div>
+                                                            <h2>{{ $unit->review }}</h2>
                                                             <a href="javascript:void(0)" class="rating-reviews">(3 Reviews)</a>
                                                         </div>
 
