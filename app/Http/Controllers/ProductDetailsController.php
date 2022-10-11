@@ -19,7 +19,7 @@ class ProductDetailsController extends Controller
     public function index($id)
     {
 
-        $product = Product::where('id', $id)->first();
+        $product = Product::where('id', $id)->with('discussions')->first();
         if(Auth::guard('user')->check()){
             $user = Auth::guard('user');
             $recview = RecentView::where('user_id', $user->id())->where('p_id', $id)->first();

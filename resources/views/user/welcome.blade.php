@@ -378,14 +378,24 @@
                                                                 data-until="2022, 09, 31" data-compact="true">
                                                                 {{$unit->created_at->diffForHumans()}}</div>
                                                         </div>
-
+                                                            <?php 
+                                                                $sum = $unit->discussions->sum('review');
+                                                                $no = $unit->discussions->count('review');
+                                                                if($sum == 0 || $no == 0){
+                                                                    $avg = 0;
+                                                                }
+                                                                else{
+                                                                    $aver = $sum/$no;
+                                                                    $avg = 20 * $aver;
+                                                                }
+                                                            ?>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
-                                                                <span class="ratings" style="width: 90%;"></span>
+                                                                <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                                 <span class="tooltiptext tooltip-top"></span>
                                                             </div>
                                                             <h2>{{ $unit->review }}</h2>
-                                                            <a href="javascript:void(0)" class="rating-reviews">(3 Reviews)</a>
+                                                            <a href="javascript:void(0)" class="rating-reviews">({{$no}} Reviews)</a>
                                                         </div>
 
                                                         <div
@@ -483,7 +493,7 @@
 
                                             @foreach($top_sellers as $seller)
                                             <div class="swiper-slide product-widget-wrap">
-                                                @foreach($seller->products->slice(0, 3) as $item)
+                                                @foreach($seller->products->slice(0, 4) as $item)
                                                 <div class="product product-widget bb-no">
                                                     <figure class="product-media">
                                                         <a href="{{route('product', $item->id)}}">
@@ -491,13 +501,24 @@
                                                                 alt="Product" width="105" height="118" />
                                                         </a>
                                                     </figure>
+                                                    <?php 
+                                                        $sum = $item->discussions->sum('review');
+                                                        $no = $item->discussions->count('review');
+                                                        if($sum == 0 || $no == 0){
+                                                            $avg = 0;
+                                                        }
+                                                        else{
+                                                            $aver = $sum/$no;
+                                                            $avg = 20 * $aver;
+                                                        }
+                                                    ?>
                                                     <div class="product-details">
                                                         <h4 class="product-name">
                                                             <a href="{{route('product', 16)}}">{{$item->p_name}}</a>
                                                         </h4>
                                                         <div class="ratings-container">
                                                             <div class="ratings-full">
-                                                                <span class="ratings" style="width: 60%;"></span>
+                                                                <span class="ratings" style="width: {{$avg}}%;"></span>
                                                                 <span class="tooltiptext tooltip-top"></span>
                                                             </div>
                                                         </div>
@@ -754,12 +775,23 @@
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name"><a href="{{route('product', 16)}}">{{$arrival->p_name}}</a></h4>
+                                        <?php 
+                                            $sum = $arrival->discussions->sum('review');
+                                            $no = $arrival->discussions->count('review');
+                                            if($sum == 0 || $no == 0){
+                                                $avg = 0;
+                                            }
+                                            else{
+                                                $aver = $sum/$no;
+                                                $avg = 20 * $aver;
+                                            }
+                                        ?>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
-                                                <span class="ratings" style="width: 60%;"></span>
+                                                <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="{{route('product', 16)}}" class="rating-reviews">(1 Reviews)</a>
+                                            <a href="{{route('product', 16)}}" class="rating-reviews">({{ $no }} Reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">${{$arrival->p_new_price}}</ins>
@@ -795,15 +827,26 @@
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
+                                            <?php 
+                                                $sum = $unit->discussions->sum('review');
+                                                $no = $unit->discussions->count('review');
+                                                if($sum == 0 || $no == 0){
+                                                    $avg = 0;
+                                                }
+                                                else{
+                                                    $aver = $sum/$no;
+                                                    $avg = 20 * $aver;
+                                                }
+                                            ?>
                                             <div class="product-details">
                                                 <h4 class="product-name"><a href="{{route('product',$unit->id)}}">{{$unit->p_name}}</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
-                                                        <span class="ratings" style="width: 100%;"></span>
+                                                        <span class="ratings" style="width: {{$avg}}%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{{route('product', $unit->id)}}" class="rating-reviews">(8 reviews)</a>
+                                                    <a href="{{route('product', $unit->id)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                                 </div>
                                                 <div class="product-price">
                                                     <ins class="new-price">${{$unit->p_new_price}}</ins>
@@ -837,15 +880,26 @@
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
+                                    <?php 
+                                        $sum = $deal->discussions->sum('review');
+                                        $no = $deal->discussions->count('review');
+                                        if($sum == 0 || $no == 0){
+                                            $avg = 0;
+                                        }
+                                        else{
+                                            $aver = $sum/$no;
+                                            $avg = 20 * $aver;
+                                        }
+                                    ?>
                                     <div class="product-details">
                                         <h4 class="product-name"><a href="{{route('product',$deal->id)}}">{{$deal->p_name}}
                                             </a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
-                                                <span class="ratings" style="width: 60%;"></span>
+                                                <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="{{route('product', 16)}}" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product', 16)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">${{$deal->p_new_price}}</span>
@@ -878,15 +932,26 @@
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
+                                    <?php 
+                                        $sum = $deal->discussions->sum('review');
+                                        $no = $deal->discussions->count('review');
+                                        if($sum == 0 || $no == 0){
+                                            $avg = 0;
+                                        }
+                                        else{
+                                            $aver = $sum/$no;
+                                            $avg = 20 * $aver;
+                                        }
+                                    ?>
                                     <div class="product-details">
                                         <h4 class="product-name"><a href="{{route('product',$deal->id)}}">{{$deal->p_name}}
                                             </a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
-                                                <span class="ratings" style="width: 60%;"></span>
+                                                <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="{{route('product', 16)}}" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{route('product', 16)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">${{$deal->p_new_price}}</span>
@@ -997,12 +1062,23 @@
                                                 <h4 class="product-name">
                                                     <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
                                                 </h4>
+                                                    <?php 
+                                                        $sum = $row->discussions->sum('review');
+                                                        $no = $row->discussions->count('review');
+                                                        if($sum == 0 || $no == 0){
+                                                            $avg = 0;
+                                                        }
+                                                        else{
+                                                            $aver = $sum/$no;
+                                                            $avg = 20 * $aver;
+                                                        }
+                                                    ?>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
+                                                        <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">(3
+                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">({{$no}}
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -1291,16 +1367,27 @@
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
+                                            <?php 
+                                                $sum = $row->discussions->sum('review');
+                                                $no = $row->discussions->count('review');
+                                                if($sum == 0 || $no == 0){
+                                                    $avg = 0;
+                                                }
+                                                else{
+                                                    $aver = $sum/$no;
+                                                    $avg = 20 * $aver;
+                                                }
+                                            ?>
                                             <div class="product-details">
                                                 <h4 class="product-name">
                                                     <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
+                                                        <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">(3
+                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">({{ $no }}
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
@@ -1403,16 +1490,27 @@
                                                         title="Add to Compare"></a>
                                                 </div>
                                             </figure>
+                                            <?php 
+                                                $sum = $row->discussions->sum('review');
+                                                $no = $row->discussions->count('review');
+                                                if($sum == 0 || $no == 0){
+                                                    $avg = 0;
+                                                }
+                                                else{
+                                                    $aver = $sum/$no;
+                                                    $avg = 20 * $aver;
+                                                }
+                                            ?>
                                             <div class="product-details">
                                                 <h4 class="product-name">
                                                     <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
+                                                        <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">(3
+                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">({{ $no }}
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">

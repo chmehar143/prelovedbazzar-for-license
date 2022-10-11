@@ -4,17 +4,32 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Contact;
+use App\Models\User;
+use Config;
 
 class ContactUsController extends Controller
 {
     public  function  list()
     {
-        return view('admin.contactus.list');
+        $contacts = Contact::orderBy('updated_at', 'DESC')->get();
+        return view('admin.contactus.list', compact('contacts'));
     }
 
-    public  function  view()
+    public  function  view($id)
     {
-        return view('admin.contactus.view');
+        $contact = Contact::findOrFail($id);
+        return view('admin.contactus.view', compact('contact'));
+    }
+
+    public  function  remove($id)
+    {
+        $contact = Contact::where('id', $id)->first();
+        $contact->delete();
+        return response()->json([
+            'status' => 200,
+            'success'=>'Data has been remove successfully!'
+        ]);
     }
 
 }

@@ -21,6 +21,9 @@ use App\Http\Controllers\BlogDetailsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderViewController;
 use App\Http\Controllers\ErrorPageController;
+//botman...
+use App\Http\Controllers\BotManController;
+//end...
 
 
 
@@ -66,5 +69,9 @@ Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::post('/contact-post', [ContactUsController::class, 'store'])->name('contact_send');
+
+// Botman route....
+Route::match(['get','post'],'/botman',[BotManController::class,'handle']);
+// end botman...
 
 

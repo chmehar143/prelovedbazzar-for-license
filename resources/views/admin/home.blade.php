@@ -1464,14 +1464,16 @@
 									</tbody>
 									
 										<!--end::Table body-->
-								</table></div>
+								</table>
+							</div>
 								<div class="row">
 									<div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
 										
 									</div>
 									
 													</div>
-												</div></div>
+												</div>
+											</div>
 								<!--end::Table-->
 							</div>
 							<!--end::Card body-->
@@ -1489,8 +1491,8 @@
 						</div>
 						<!--end::Container-->
 					</div>
-					<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-					<script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
       function deleteProduct(id) {
           Swal.fire({
               title: 'Are you sure?',
