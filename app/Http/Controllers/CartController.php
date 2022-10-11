@@ -37,6 +37,8 @@ class CartController extends Controller
             if($cart){
                 $cart->quantity = $cart->quantity + $request->quantity;
                 $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
+                $item->p_stock = $item->p_stock - $request->quantity;
+                $item->update();
                 $cart->update();
             }
             else{
@@ -49,6 +51,8 @@ class CartController extends Controller
                 $cart->color = $item->p_color;
                 $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->size = $request->size;
+                $item->p_stock = $item->p_stock - $request->quantity;
+                $item->update();
                 $cart->save();
             }
             return response()->json([
@@ -61,6 +65,8 @@ class CartController extends Controller
             if($cart){
                 $cart->quantity = $cart->quantity + $request->quantity;
                 $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
+                $item->p_stock = $item->p_stock - $request->quantity;
+                $item->update();
                 $cart->update();
             }
             else{
@@ -72,6 +78,8 @@ class CartController extends Controller
                 $cart->color = $item->p_color;
                 $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
                 $cart->size = $request->size;
+                $item->p_stock = $item->p_stock - $request->quantity;
+                $item->update();
                 $cart->save();
             }
             return response()->json([
@@ -85,6 +93,9 @@ class CartController extends Controller
         if(Auth::guard('user')->check()){
             $carts = Cart::where('user_id', Auth::guard('user')->id())->get();
             foreach($carts as $cart){
+                $item = Product::where('id', $cart->prod_id)->first();
+                $item->p_stock = $item->p_stock + $cart->quantity;
+                $item->update();
                 $cart->delete();
             }
             return response()->json([
@@ -97,6 +108,9 @@ class CartController extends Controller
             $session = Session::getId();
             $carts = Cart::where('session_id', $session)->get();
             foreach($carts as $cart){
+                $item = Product::where('id', $cart->prod_id)->first();
+                $item->p_stock = $item->p_stock + $cart->quantity;
+                $item->update();
                 $cart->delete();
             }
             return response()->json([
@@ -110,6 +124,9 @@ class CartController extends Controller
     public function remove($id){
         if(Auth::guard('user')->check()){
             $cart = Cart::where('prod_id', $id)->where('user_id', Auth::guard('user')->id())->first();
+            $item = Product::where('id', $cart->prod_id)->first();
+            $item->p_stock = $item->p_stock + $cart->quantity;
+            $item->update();
             $cart->delete();
             return response()->json([
                 'status'=> 200,
@@ -120,6 +137,9 @@ class CartController extends Controller
         else{
             $session = Session::getId();
             $cart = Cart::where('prod_id', $id)->where('session_id', $session)->first();
+            $item = Product::where('id', $cart->prod_id)->first();
+            $item->p_stock = $item->p_stock + $cart->quantity;
+            $item->update();
             $cart->delete();
             return response()->json([
                 'status'=> 200,

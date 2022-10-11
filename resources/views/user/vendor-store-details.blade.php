@@ -33,7 +33,7 @@
                                         <ul class="widget-body filter-items search-ul">
                                             @foreach($categories as $category)
                                             <li>
-                                                <a href="{{ route('sortby', $category->name) }}">{{$category->name}}</a>
+                                                <a href="{{ route('sortby', $category->id) }}">{{$category->name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>

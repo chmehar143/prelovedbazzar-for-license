@@ -85,7 +85,7 @@
 													<div class="row">
 														<!--begin::Col-->
 														<div class="col-lg-12 fv-row">
-															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="" value="$251.12" />
+															<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="$251.12"  />
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -104,7 +104,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 fv-row">
-													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="" value="1" />
+													<input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="1" />
 												</div>
 												<!--end::Col-->
 											</div>
