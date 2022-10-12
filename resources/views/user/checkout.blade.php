@@ -430,16 +430,16 @@
                                         <div>
                                        
                                         <h4 class="title font-weight-bold ls-25 pb-0 mb-1">Payment Methods</h4>
-<br>
-  <label>
-    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />&nbsp;&nbsp;Check Payment</label><br>
-  <label>
-    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />&nbsp;&nbsp;Cash On Delivery</label><br>
-  <label>
-    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />&nbsp;&nbsp;Bank Transfer</label>
-    <a class="Click-here"> Click this to direct Bank Transfer</a>
-</div>
-<!-- 
+                                        <br>
+                                        <label>
+                                            <input type="checkbox" class="radio" value="1" name="fooby[1][]" />&nbsp;&nbsp;Check Payment</label><br>
+                                        <label>
+                                            <input type="checkbox" class="radio" value="1" name="fooby[1][]" />&nbsp;&nbsp;Cash On Delivery</label><br>
+                                        <label>
+                                            <input type="checkbox" class="radio" value="1" name="fooby[1][]" />&nbsp;&nbsp;Bank Transfer</label>
+                                            <a class="Click-here"> Click this to direct Bank Transfer</a>
+                                        </div>
+                                        <!-- 
                                         <div class="payment-methods" id="payment_method">
                                             <h4 class="title font-weight-bold ls-25 pb-0 mb-1">Payment Methods</h4>
                                             <div class="accordion payment-accordion">
@@ -515,8 +515,7 @@
             <div class="pop-up-content-wrap">
 
             <form class="shipping-calculator-form">
-                <br>
-                                            
+                <br>                                 
                                         <h4 class="title font-weight-bold ls-25 pb-0 mb-1">PaymeAdd Your Account Details</h4>
                                         <br>
                                                 
@@ -536,42 +535,37 @@
                                             <button type="submit" class="btn btn-dark btn-outline btn-rounded">Add 
                                                 </button>
                                         </form>
-
-        </div>
-        </div>  
-    </div>  
+                                    </div>
+                                </div> 
+                          </div> 
+       
     <div class="bg-overlay"></div>
+
 </div> 
         </main>
        
         <!-- End of Main -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <Script>
-            // the selector will match all input controls of type :checkbox
-// and attach a click event handler 
-$("input:checkbox").on('click', function() {
-  // in the handler, 'this' refers to the box clicked on
-  var $box = $(this);
-  if ($box.is(":checked")) {
-    // the name of the box is retrieved using the .attr() method
-    // as it is assumed and expected to be immutable
-    var group = "input:checkbox[name='" + $box.attr("name") + "']";
-    // the checked state of the group/box on the other hand will change
-    // and the current value is retrieved using .prop() method
-    $(group).prop("checked", false);
-    $box.prop("checked", true);
-  } else {
-    $box.prop("checked", false);
-  }
-});
+           
+            $("input:checkbox").on('click', function() {
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                $(group).prop("checked", false);
+                $box.prop("checked", true);
+            } else {
+                $box.prop("checked", false);
+            }
+            });
             </script>
             <script>
                 $(".Click-here").on('click', function() {
-  $(".custom-model-main").addClass('model-open');
-}); 
-$(".close-btn, .bg-overlay").click(function(){
-  $(".custom-model-main").removeClass('model-open');
-});
+                $(".custom-model-main").addClass('model-open');
+                }); 
+                $(".close-btn, .bg-overlay").click(function(){
+                $(".custom-model-main").removeClass('model-open');
+                });
 
                 </script>
 @endsection
