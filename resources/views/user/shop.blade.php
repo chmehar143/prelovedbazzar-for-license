@@ -86,7 +86,7 @@
                                     <!-- End of Collapsible Widget -->
 
                                     <!-- Start of Collapsible Widget -->
-                                    <div class="widget widget-collapsible">
+                                    <!-- <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Brand</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
                                             <li><a href="javascript:void(0)">Elegant Auto Group</a></li>
@@ -97,11 +97,11 @@
                                             <li><a href="javascript:void(0)">Skysuite Tech</a></li>
                                             <li><a href="javascript:void(0)">Sterling</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Collapsible Widget -->
 
                                     <!-- Start of Collapsible Widget -->
-                                    <div class="widget widget-collapsible">
+                                    <!-- <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Color</span></h3>
                                         <ul class="widget-body filter-items item-check">
                                             <li><a href="javascript:void(0)">Black</a></li>
@@ -112,7 +112,7 @@
                                             <li><a href="javascript:void(0)">Orange</a></li>
                                             <li><a href="javascript:void(0)">Yellow</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Collapsible Widget -->
                                 </div>
                                 <!-- End of Sidebar Content -->
