@@ -19,6 +19,7 @@ class VendorStoreDetailsController extends Controller
         $products = Product::where('vendor_id', $id)->join('categories', 'products.p_catog','=','categories.id')
         ->select('products.*', 'categories.name')
         ->paginate(9);
+        // $bestsellings = 
         return view('user.vendor-store-details', compact('products', 'categories', 'vendor'));
     }
 }

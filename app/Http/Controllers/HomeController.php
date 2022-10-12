@@ -20,25 +20,24 @@ class HomeController extends Controller
     public function index()
     {
         $deals = Product::where('admin_id', '!=', NULL)->whereBetween('products.created_at', 
-                [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
-                ->join('discussions', 'products.id', '=', 'discussions.item')
-                ->select('products.*', 'discussions.review')->get();
+                [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
+                ->get();
 
         $top_sellers = Vendor::where('status', 0)->get();
 
         $top_categories = Category::all();
 
         $newarrivals = Product::whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
 
         $clothings = Product::where('p_catog', 1)->whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
 
         $electrics = Product::where('p_catog', 4)->whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
 
         $homes = Product::where('p_catog', 2)->whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
         if(Auth::guard('user')->check()){
             $recents = RecentView::where('user_id', Auth::guard('user')->id())->orderBy('created_at', 'DESC')->get();
         }

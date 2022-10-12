@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Chilcategory;
 use App\Models\Vendor;
+use App\Models\Discussion;
 
 class Product extends Model
 {
@@ -23,6 +24,10 @@ class Product extends Model
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);
+    }
+
+    public function discussions(){
+        return $this->hasMany(Discussion::class, 'item');
     }
 
 }

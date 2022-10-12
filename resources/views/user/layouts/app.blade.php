@@ -505,6 +505,18 @@ else{
 </div> -->
 <!-- End of Quick view -->
 
+<!-- botman start here we need to update later... -->
+<script>
+        var botmanWidget = {
+            aboutText:'Webappfix',
+            introMessage :'Hi Welcome to webappfix',
+        };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    <!-- botman start here we need to update later... -->
+
+
+
 <!-- Plugin JS File -->
 <script src="{{asset('frontend-assets/assets/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('frontend-assets/assets/vendor/jquery.plugin/jquery.plugin.min.js')}}"></script>

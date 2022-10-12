@@ -107,9 +107,9 @@ else{
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <div class="dropdown  cart-offcanvas mr-0 mr-lg-2">
+                        <div class="dropdown cart-dropdown mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
-                            <a href="{{route('wishlist')}}" class="cart-toggle label-down link">
+                            <a href="{{route('cart')}}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
                                     <span class="cart-count">{{$carts->count()}}</span>
                                 </i>
