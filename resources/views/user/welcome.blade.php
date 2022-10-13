@@ -401,33 +401,41 @@
                                                         <div
                                                             class="product-form product-variation-form product-size-swatch mb-3">
                                                             <label class="mb-1">Size:</label>
-                                                            <div
+                                                            <ul
                                                                 class="flex-wrap d-flex align-items-center product-variations">
                                                                 @if($unit->large == 1)
-                                                                <a href="javascript:void(0)" class="size">Large</a>
-                                                                @endif
+                                                                <li>
+                                                                    <input type="radio" id="large" name="size" value="large" style="display: none;">
+                                                                    <label for="large" class="size">Large</label>
+                                                                </li>                                                                @endif
                                                                 @if($unit->medium == 1)
-                                                                <a href="javascript:void(0)" class="size">Medium</a>
+                                                                <li>
+                                                                    <input type="radio" id="medium" name="size" value="medium" style="display: none;">
+                                                                    <label for="medium" class="size">Medium</label>
+                                                                </li>
                                                                 @endif
                                                                 @if($unit->small == 1)
-                                                                <a href="javascript:void(0)" class="size">Small</a>
+                                                                <li>
+                                                                    <input type="radio" id="small" name="size" value="small" style="display: none;">
+                                                                    <label for="small" class="size">Small</label>
+                                                                </li>                                                                
                                                                 @endif
-                                                            </div>
-                                                            <a href="javascript:void(0)" class="product-variation-clean">Clean All</a>
+                                                            </ul>
+                                                            <!-- <a href="javascript:void(0)" class="product-variation-clean">Clean All</a> -->
                                                         </div>
-                                                        <div class="product-variation-price">
+                                                        <!-- <div class="product-variation-price">
                                                             <span></span>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="product-form pt-4">
                                                             <div class="product-qty-form mb-2 mr-2">
                                                                 <div class="input-group">
-                                                                    <input class="quantity form-control" type="number"
+                                                                    <input class="quantity form-control" id="qnty_{{$unit->id}}" type="number"
                                                                         min="1" max="10000000">
                                                                     <button class="quantity-plus w-icon-plus"></button>
                                                                     <button class="quantity-minus w-icon-minus"></button>
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-primary btn-cart">
+                                                            <button class="btn btn-primary btn-cart" onclick="addcart({{ $unit->id }})">
                                                                 <i class="w-icon-cart"></i>
                                                                 <span>Add to Cart</span>
                                                             </button>
@@ -530,145 +538,6 @@
                                                 @endforeach
                                             </div>
                                             @endforeach
-                                            <!-- <div class="swiper-slide product-widget-wrap">
-                                                <div class="product product-widget bb-no">
-                                                    <figure class="product-media">
-                                                        <a href="{{route('product', 16)}}">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-4.jpg')}}"
-                                                                alt="Product" width="105" height="118" />
-                                                        </a>
-                                                    </figure>
-                                                    <div class="product-details">
-                                                        <h4 class="product-name">
-                                                            <a href="{{route('product', 16)}}">Latest Speaker</a>
-                                                        </h4>
-                                                        <div class="ratings-container">
-                                                            <div class="ratings-full">
-                                                                <span class="ratings" style="width: 60%;"></span>
-                                                                <span class="tooltiptext tooltip-top"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <ins class="new-price">$250.68</ins>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product product-widget bb-no">
-                                                    <figure class="product-media">
-                                                        <a href="{{route('product', 16)}}">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-6.jpg')}}"
-                                                                alt="Product" width="105" height="118" />
-                                                        </a>
-                                                    </figure>
-                                                    <div class="product-details">
-                                                        <h4 class="product-name">
-                                                            <a href="{{route('product', 16)}}">Men's Black Wrist Watch</a>
-                                                        </h4>
-                                                        <div class="ratings-container">
-                                                            <div class="ratings-full">
-                                                                <span class="ratings" style="width: 100%;"></span>
-                                                                <span class="tooltiptext tooltip-top"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <ins class="new-price">$135.60</ins><del
-                                                                class="old-price">$155.70</del>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product product-widget">
-                                                    <figure class="product-media">
-                                                        <a href="{{route('product', 16)}}">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-6.jpg')}}"
-                                                                alt="Product" width="105" height="118" />
-                                                        </a>
-                                                    </figure>
-                                                    <div class="product-details">
-                                                        <h4 class="product-name">
-                                                            <a href="{{route('product', 16)}}">Wash Machine</a>
-                                                        </h4>
-                                                        <div class="ratings-container">
-                                                            <div class="ratings-full">
-                                                                <span class="ratings" style="width: 100%;"></span>
-                                                                <span class="tooltiptext tooltip-top"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <ins class="new-price">$215.68</ins>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide product-widget-wrap">
-                                                <div class="product product-widget bb-no">
-                                                    <figure class="product-media">
-                                                        <a href="{{route('product', 16)}}">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-7.jpg')}}"
-                                                                alt="Product" width="105" height="118" />
-                                                        </a>
-                                                    </figure>
-                                                    <div class="product-details">
-                                                        <h4 class="product-name">
-                                                            <a href="{{route('product', 16)}}">Security Guard</a>
-                                                        </h4>
-                                                        <div class="ratings-container">
-                                                            <div class="ratings-full">
-                                                                <span class="ratings" style="width: 100%;"></span>
-                                                                <span class="tooltiptext tooltip-top"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <ins class="new-price">$320.00</ins>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product product-widget bb-no">
-                                                    <figure class="product-media">
-                                                        <a href="{{route('product', 16)}}">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-8.jpg')}}"
-                                                                alt="Product" width="105" height="118" />
-                                                        </a>
-                                                    </figure>
-                                                    <div class="product-details">
-                                                        <h4 class="product-name">
-                                                            <a href="{{route('product', 16)}}">Apple Super Notecom</a>
-                                                        </h4>
-                                                        <div class="ratings-container">
-                                                            <div class="ratings-full">
-                                                                <span class="ratings" style="width: 100%;"></span>
-                                                                <span class="tooltiptext tooltip-top"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <ins class="new-price">$243.30</ins><del
-                                                                class="old-price">$253.50</del>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product product-widget">
-                                                    <figure class="product-media">
-                                                        <a href="{{route('product', 16)}}">
-                                                            <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/2-9.jpg')}}"
-                                                                alt="Product" width="105" height="118" />
-                                                        </a>
-                                                    </figure>
-                                                    <div class="product-details">
-                                                        <h4 class="product-name">
-                                                            <a href="{{route('product', 16)}}">HD Television</a>
-                                                        </h4>
-                                                        <div class="ratings-container">
-                                                            <div class="ratings-full">
-                                                                <span class="ratings" style="width: 60%;"></span>
-                                                                <span class="tooltiptext tooltip-top"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <ins class="new-price">$450.68</ins><del
-                                                                class="old-price">$500.00</del>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                         </div>
                                         <button class="swiper-button-next"></button>
                                         <button class="swiper-button-prev"></button>
@@ -764,7 +633,7 @@
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
+                                                title="Add to cart" onclick="addcart({{$arrival->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$arrival->id}})"
                                                 title="Add to wishlist"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -818,7 +687,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
+                                                        title="Add to cart" onclick="addcart({{$unit->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$unit->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -871,7 +740,7 @@
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
+                                                title="Add to cart" onclick="addcart({{$deal->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -923,7 +792,7 @@
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
+                                                title="Add to cart" onclick="addcart({{$deal->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1049,7 +918,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
+                                                        title="Add to cart" onclick="addcart({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1089,220 +958,6 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                    <!-- <div class="swiper-slide product-col">
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-2-1.jpg')}}"
-                                                        alt="Product" width="216" height="243" />
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-2-2.jpg')}}"
-                                                        alt="Product" width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h4 class="product-name"><a href="{{route('product', 16)}}">Women’s Fashion
-                                                        Handbag </a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', 16)}}" class="rating-reviews">(3
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$25.68</ins><del
-                                                        class="old-price">$25.89</del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-6.jpg')}}" alt="Product"
-                                                        width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h4 class="product-name"><a href="{{route('product', 16)}}">Gray Leather
-                                                        Shoes</a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', 16)}}" class="rating-reviews">(3
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$26.88</ins><del
-                                                        class="old-price">$27.89</del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide product-col">
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-3.jpg')}}" alt="Product"
-                                                        width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h4 class="product-name"><a href="{{route('product', 16)}}">Black Winter
-                                                        Skating</a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', 16)}}" class="rating-reviews">(3
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$40.86</ins><del
-                                                        class="old-price">$45.89</del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-7.jpg')}}" alt="Product"
-                                                        width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h4 class="product-name"><a href="{{route('product', 16)}}">Men's Black
-                                                        Wrist
-                                                        Watch</a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', 16)}}" class="rating-reviews">(3
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$135.60</ins><del
-                                                        class="old-price">$155.70</del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide product-col">
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-4-1.jpg')}}"
-                                                        alt="Product" width="216" height="243" />
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-4-2.jpg')}}"
-                                                        alt="Product" width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h4 class="product-name"><a href="{{route('product', 16)}}">Sport Women's
-                                                        Wear</a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', 16)}}" class="rating-reviews">(3
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$220.20</ins><del
-                                                        class="old-price">$300.62</del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend-assets/assets/images/demos/demo1/products/4-8.jpg')}}" alt="Product"
-                                                        width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h4 class="product-name"><a href="{{route('product', 16)}}">Women’s Hiking
-                                                        Hat</a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: 60%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', 16)}}" class="rating-reviews">(3
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <span class="price">$53.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                                 <div class="swiper-pagination"></div>
                             </div>
@@ -1358,7 +1013,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
+                                                        title="Add to cart" onclick="addcart({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1481,7 +1136,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart"></a>
+                                                        title="Add to cart" onclick="addcart({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1640,13 +1295,13 @@
                         <div class="swiper-slide product-wrap mb-0">
                             <div class="product text-center product-absolute">
                                 <figure class="product-media">
-                                    <a href="product-defa{{route('product', 16)}}">
+                                    <a href="product-defa{{route('product', $recent->p_id)}}">
                                         <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
                                             width="130" height="146" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
-                                    <a href="{{route('product', $recent->id)}}">{{$recent->pname}}</a>
+                                    <a href="{{route('product', $recent->p_id)}}">{{$recent->pname}}</a>
                                 </h4>
                             </div>
                         </div>
@@ -1664,10 +1319,43 @@
 
 <script type="text/javascript">
 
+function addcart(id){
+    var id = id;
+    var size = $("input[name='size']:checked").val();
+    var quantity = $("#qnty_" +id).val();
+    if(!quantity){
+            var quantity = 1;
+        }
+        if(!size){
+            var size = 'medium';
+        }
+        // processing ajax request
+        $.ajax({
+        url: "{{ route('addcart') }}",
+        type: 'POST',
+        dataType: "json",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: id,
+            quantity: quantity,
+            size: size
+        },
+        success: function(data) {
+            // log response into console
+            console.log(data);
+        }
+    });
+}
 $("#postbutton").click(function(){
             var id = $("#product_id").val();
             var quantity = $("#qnty").val();
+            if(!quantity){
+                var quantity = 1;
+            }
             var size = $("#size").val();
+            if(!size){
+                var size = 'medium';
+            }
             // processing ajax request
             $.ajax({
                 url: "{{ route('addcart') }}",

@@ -6,6 +6,7 @@ use App\Models\Vendor;
 use App\Models\Product;
 use App\Models\Childcategory;
 use App\Models\Subcategory;
+use App\Models\Discussion;
 use App\Models\User;
 
 class ShopController extends Controller
@@ -13,7 +14,7 @@ class ShopController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::join('categories', 'products.p_catog','=','categories.id')
+        $products = Product::with('discussions')->join('categories', 'products.p_catog','=','categories.id')
         ->select('products.*', 'categories.name')
         ->paginate(9);
         return view('user.shop',compact('products', 'categories'));
@@ -23,7 +24,7 @@ class ShopController extends Controller
     {
         $category = Category::where('id', $cat_id)->first();
         if($category){
-            $products = Product::where('p_catog', $category->id)
+            $products = Product::where('p_catog', $category->id)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')
             ->paginate(9);
@@ -33,7 +34,7 @@ class ShopController extends Controller
     }
 
     public function sort_price($min, $max){
-            $products = Product::whereBetween('p_new_price' ,[$min, $max])
+            $products = Product::whereBetween('p_new_price' ,[$min, $max])->with('discussions')
                 ->join('categories', 'products.p_catog','=','categories.id')
                 ->select('products.*', 'categories.name')
                 ->paginate(9);
