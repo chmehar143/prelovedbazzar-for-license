@@ -21,9 +21,8 @@ use App\Http\Controllers\BlogDetailsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderViewController;
 use App\Http\Controllers\ErrorPageController;
-//botman...
 use App\Http\Controllers\BotManController;
-//end...
+use App\Http\Controllers\StripePaymentController;
 
 
 
@@ -73,5 +72,12 @@ Route::post('/contact-post', [ContactUsController::class, 'store'])->name('conta
 // Botman route....
 Route::match(['get','post'],'/botman',[BotManController::class,'handle']);
 // end botman...
+
+//stripe payment method start here....
+Route::controller(StripePaymentController::class)->group(function(){
+    Route::get('stripe', 'stripe');
+    Route::post('stripe', 'stripePost')->name('stripe.post');
+});
+//end stripe...
 
 

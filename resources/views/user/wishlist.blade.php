@@ -66,9 +66,9 @@
                                 <td class="wishlist-action">
                                     <div class="d-lg-flex">
                                         <a href="#"
-                                            class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
+                                            class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">
                                             View</a>
-                                        <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
+                                        <a href="javascript:void(0)" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart" onclick="addcart({{$wish->id}})">Add to
                                             cart</a>
                                     </div>
                                 </td>
@@ -105,6 +105,35 @@ function deleteProduct(id){
                 }
             });   
         }
+
+
+function addcart(id){
+    var id = id;
+    var size = $("input[name='size']:checked").val();
+    var quantity = $("#qnty_" +id).val();
+    if(!quantity){
+            var quantity = 1;
+        }
+        if(!size){
+            var size = 'medium';
+        }
+        // processing ajax request
+        $.ajax({
+        url: "{{ route('addcart') }}",
+        type: 'POST',
+        dataType: "json",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: id,
+            quantity: quantity,
+            size: size
+        },
+        success: function(data) {
+            // log response into console
+            console.log(data);
+        }
+    });
+}
 
 //https://www.youtube.com/watch?v=eblMZxwP1eY
 //for update quantity...

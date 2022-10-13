@@ -148,7 +148,7 @@
                      <div class="product-meta">
                         <div class="product-categories">
                            Category:
-                           <span class="product-category"><a href="#">{{$category->name}}</a></span>
+                           <span class="product-category"><a href="{{ route('sortby', $category->id) }}">{{$category->name}}</a></span>
                         </div>
                         <div class="product-sku">
                            SKU: <span>{{$product->p_sku}}</span>
@@ -157,12 +157,23 @@
                   </div>
                   <hr class="product-divider">
                   <div class="product-price"><ins class="new-price">${{$product->p_new_price}}</ins></div>
+                  <?php                     
+                     $sum = $product->discussions->sum('review');
+                     $no = $product->discussions->count('review');
+                     if($sum == 0 || $no == 0){
+                        $avg = 0;
+                     }
+                     else{
+                        $aver = $sum/$no;
+                        $avg = 20 * $aver;
+                     }
+                  ?>
                   <div class="ratings-container">
                      <div class="ratings-full">
-                        <span class="ratings" style="width: 80%;"></span>
+                        <span class="ratings" style="width: {{$avg}}%;"></span>
                         <span class="tooltiptext tooltip-top"></span>
                      </div>
-                     <a href="#" class="rating-reviews">(1 Reviews)</a>
+                     <a href="#" class="rating-reviews">({{$no}} Reviews)</a>
                   </div>
                   <div class="product-short-desc lh-2">
                      <ul class="list-type-check list-style-none">
@@ -236,7 +247,7 @@
                   <a href="#product-tab-description" class="nav-link active">Description</a>
                </li>
                <li class="nav-item">
-                  <a href="#product-tab-reviews" class="nav-link">Customer Reviews (3)</a>
+                  <a href="#product-tab-reviews" class="nav-link">Customer Reviews ({{ $no }})</a>
                </li>
             </ul>
             <div class="tab-content">
@@ -244,16 +255,10 @@
                   <div class="row mb-4">
                      <div class="col-md-6 mb-5">
                         <h4 class="title tab-pane-title font-weight-bold mb-2">Detail</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                           sed do eiusmod tempor incididunt arcu cursus vitae congue mauris.
-                           Sagittis id consectetur purus ut. Tellus rutrum tellus pelle Vel
-                           pretium lectus quam id leo in vitae turpis massa.
+                        <p class="mb-4">{{$product->p_detail}}
                         </p>
                         <ul class="list-type-check">
-                           <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit.
-                           </li>
-                           <li>Vivamus finibus vel mauris ut vehicula.</li>
-                           <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
+                           <li>{{$product->p_r_policy}}</li>
                         </ul>
                      </div>
                      <div class="col-md-6 mb-5">
@@ -298,21 +303,21 @@
                      <div class="col-xl-4 col-lg-5 mb-4">
                         <div class="ratings-wrapper">
                            <div class="avg-rating-container">
-                              <h4 class="avg-mark font-weight-bolder ls-50">3.3</h4>
+                              <h4 class="avg-mark font-weight-bolder ls-50">{{ round($avg/20 , 1) }}</h4>
                               <div class="avg-rating">
                                  <p class="text-dark mb-1">Average Rating</p>
                                  <div class="ratings-container">
                                     <div class="ratings-full">
-                                       <span class="ratings" style="width: 60%;"></span>
+                                       <span class="ratings" style="width: {{ $avg }}%;"></span>
                                        <span class="tooltiptext tooltip-top"></span>
                                     </div>
-                                    <a href="#" class="rating-reviews">(3 Reviews)</a>
+                                    <a href="#" class="rating-reviews">({{$no}} Reviews)</a>
                                  </div>
                               </div>
                            </div>
                            <div class="ratings-value d-flex align-items-center text-dark ls-25">
-                              <span class="text-dark font-weight-bold">66.7%</span>Recommended<span
-                                 class="count">(2 of 3)</span>
+                              <span class="text-dark font-weight-bold">{{ round($avg, 1) }}%</span>Recommended<span
+                                 class="count">({{ intval($avg*$no/100) }} of {{$no}})</span>
                            </div>
                            <div class="ratings-list">
                               <div class="ratings-container">
@@ -323,8 +328,28 @@
                                  <div class="progress-bar progress-bar-sm ">
                                     <span></span>
                                  </div>
+                                    <?php 
+                                       if($no > 0){
+                                          $fipers = $five*100 / $no;
+                                                                          
+                                          $fopers = $four*100 / $no;
+                                      
+                                          $thpers = $three*100 / $no;
+                                  
+                                          $twpers = $two*100 / $no;
+                                    
+                                          $onpers = $one*100 / $no;
+                                       }
+                                       else{
+                                          $fipers = 0;
+                                          $fopers = 0;
+                                          $thpers = 0;
+                                          $twpers = 0;
+                                          $onpers = 0;
+                                       }
+                                    ?>                                          
                                  <div class="progress-value">
-                                    <mark>70%</mark>
+                                    <mark>{{ intval($fipers)}}%</mark>
                                  </div>
                               </div>
                               <div class="ratings-container">
@@ -336,7 +361,7 @@
                                     <span></span>
                                  </div>
                                  <div class="progress-value">
-                                    <mark>30%</mark>
+                                    <mark>{{ intval($fopers)}}%</mark>
                                  </div>
                               </div>
                               <div class="ratings-container">
@@ -348,7 +373,7 @@
                                     <span></span>
                                  </div>
                                  <div class="progress-value">
-                                    <mark>40%</mark>
+                                    <mark>{{ intval($thpers)}}%</mark>
                                  </div>
                               </div>
                               <div class="ratings-container">
@@ -360,7 +385,7 @@
                                     <span></span>
                                  </div>
                                  <div class="progress-value">
-                                    <mark>0%</mark>
+                                    <mark>{{ intval($twpers)}}%</mark>
                                  </div>
                               </div>
                               <div class="ratings-container">
@@ -372,7 +397,7 @@
                                     <span></span>
                                  </div>
                                  <div class="progress-value">
-                                    <mark>0%</mark>
+                                    <mark>{{ intval($onpers)}}%</mark>
                                  </div>
                               </div>
                            </div>
@@ -449,30 +474,25 @@
                      <div class="tab-content">
                         <div class="tab-pane active" id="show-all">
                            <ul class="comments list-style-none">
+                              @foreach($allreview as $revs)
                               <li class="comment">
                                  <div class="comment-body">
                                     <figure class="comment-avatar">
-                                       <img src="assets/images/agents/1-100x100.png"
+                                       <img src="{{ asset('frontend-assets/assets/images/agents/1-100x100.png')}}"
                                           alt="Commenter Avatar" width="90" height="90">
                                     </figure>
                                     <div class="comment-content">
                                        <h4 class="comment-author">
-                                          <a href="#">John Doe</a>
-                                          <span class="comment-date">March 22, 2021 at 1:54
-                                          pm</span>
+                                          <a href="#">{{$revs->user_name}}</a>
+                                          <span class="comment-date">{{$revs->updated_at->format('d-F-Y, H:i')}}</span>
                                        </h4>
                                        <div class="ratings-container comment-rating">
                                           <div class="ratings-full">
-                                             <span class="ratings" style="width: 60%;"></span>
+                                             <span class="ratings" style="width: {{$revs->review*20 }}%;"></span>
                                              <span class="tooltiptext tooltip-top"></span>
                                           </div>
                                        </div>
-                                       <p>pellentesque habitant morbi tristique senectus et. In
-                                          dictum non consectetur a erat.
-                                          Nunc ultrices eros in cursus turpis massa tincidunt ante
-                                          in nibh mauris cursus mattis.
-                                          Cras ornare arcu dui vivamus arcu felis bibendum ut
-                                          tristique.
+                                       <p>{{$revs->comment }}
                                        </p>
                                        <div class="comment-action">
                                           <a href="#"
@@ -497,100 +517,7 @@
                                     </div>
                                  </div>
                               </li>
-                              <li class="comment">
-                                 <div class="comment-body">
-                                    <figure class="comment-avatar">
-                                       <img src="{{asset('frontend-assets/ssets/images/agents/2-100x100.png')}}"
-                                          alt="Commenter Avatar" width="90" height="90">
-                                    </figure>
-                                    <div class="comment-content">
-                                       <h4 class="comment-author">
-                                          <a href="#">John Doe</a>
-                                          <span class="comment-date">March 22, 2021 at 1:52
-                                          pm</span>
-                                       </h4>
-                                       <div class="ratings-container comment-rating">
-                                          <div class="ratings-full">
-                                             <span class="ratings" style="width: 80%;"></span>
-                                             <span class="tooltiptext tooltip-top"></span>
-                                          </div>
-                                       </div>
-                                       <p>Nullam a magna porttitor, dictum risus nec, faucibus
-                                          sapien.
-                                          Ultrices eros in cursus turpis massa tincidunt ante in
-                                          nibh mauris cursus mattis.
-                                          Cras ornare arcu dui vivamus arcu felis bibendum ut
-                                          tristique.
-                                       </p>
-                                       <div class="comment-action">
-                                          <a href="#"
-                                             class="btn btn-secondary btn-link btn-underline sm btn-icon-left font-weight-normal text-capitalize">
-                                          <i class="far fa-thumbs-up"></i>Helpful (1)
-                                          </a>
-                                          <a href="#"
-                                             class="btn btn-dark btn-link btn-underline sm btn-icon-left font-weight-normal text-capitalize">
-                                          <i class="far fa-thumbs-down"></i>Unhelpful (0)
-                                          </a>
-                                          <div class="review-image">
-                                             <a href="#">
-                                                <figure>
-                                                   <img src="{{asset('frontend-assets/assets/images/products/default/review-img-2.jpg')}}"
-                                                      width="60" height="60"
-                                                      alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                      data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-2.jpg')}}" />
-                                                </figure>
-                                             </a>
-                                             <a href="#">
-                                                <figure>
-                                                   <img src="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}"
-                                                      width="60" height="60"
-                                                      alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                      data-zoom-image="{{asset('frontend-assets/assets/images/products/default/review-img-3.jpg')}}" />
-                                                </figure>
-                                             </a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="comment">
-                                 <div class="comment-body">
-                                    <figure class="comment-avatar">
-                                       <img src="assets/images/agents/3-100x100.png"
-                                          alt="Commenter Avatar" width="90" height="90">
-                                    </figure>
-                                    <div class="comment-content">
-                                       <h4 class="comment-author">
-                                          <a href="#">John Doe</a>
-                                          <span class="comment-date">March 22, 2021 at 1:21
-                                          pm</span>
-                                       </h4>
-                                       <div class="ratings-container comment-rating">
-                                          <div class="ratings-full">
-                                             <span class="ratings" style="width: 60%;"></span>
-                                             <span class="tooltiptext tooltip-top"></span>
-                                          </div>
-                                       </div>
-                                       <p>In fermentum et sollicitudin ac orci phasellus. A
-                                          condimentum vitae
-                                          sapien pellentesque habitant morbi tristique senectus
-                                          et. In dictum
-                                          non consectetur a erat. Nunc scelerisque viverra mauris
-                                          in aliquam sem fringilla.
-                                       </p>
-                                       <div class="comment-action">
-                                          <a href="#"
-                                             class="btn btn-secondary btn-link btn-underline sm btn-icon-left font-weight-normal text-capitalize">
-                                          <i class="far fa-thumbs-up"></i>Helpful (0)
-                                          </a>
-                                          <a href="#"
-                                             class="btn btn-dark btn-link btn-underline sm btn-icon-left font-weight-normal text-capitalize">
-                                          <i class="far fa-thumbs-down"></i>Unhelpful (1)
-                                          </a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
+                              @endforeach
                            </ul>
                         </div>
                         <div class="tab-pane" id="helpful-positive">
@@ -863,7 +790,7 @@
          <section class="vendor-product-section">
             <div class="title-link-wrapper mb-4">
                <h4 class="title text-left">More Products From This Vendor</h4>
-               <a href="#" class="btn btn-dark btn-link btn-slide-right btn-icon-right">More
+               <a href="javascript:void(0)" class="btn btn-dark btn-link btn-slide-right btn-icon-right">More
                Products<i class="w-icon-long-arrow-right"></i></a>
             </div>
             <div class="swiper-container swiper-theme" data-swiper-options="{
@@ -893,7 +820,7 @@
                         </a>
                         <div class="product-action-vertical">
                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"></a>
+                              title="Add to cart" onclick="addcart({{$unit->id}})"></a>
                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                               title="Add to wishlist"></a>
                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
@@ -909,12 +836,23 @@
                         </div>
                         <h4 class="product-name"><a href="{{route('product', $unit->id)}}">{{$unit->p_name}}</a>
                         </h4>
+                        <?php 
+                           $sum = $unit->discussions->sum('review');
+                           $no = $unit->discussions->count('review');
+                           if($sum == 0 || $no == 0){
+                              $avg = 0;
+                           }
+                           else{
+                              $aver = $sum/$no;
+                              $avg = 20 * $aver;
+                           }
+                        ?>
                         <div class="ratings-container">
                            <div class="ratings-full">
-                              <span class="ratings" style="width: 100%;"></span>
+                              <span class="ratings" style="width: {{ $avg }}%;"></span>
                               <span class="tooltiptext tooltip-top"></span>
                            </div>
-                           <a href="{{route('product',$unit->id)}}" class="rating-reviews">(3 reviews)</a>
+                           <a href="{{ route('product',$unit->id ) }}" class="rating-reviews" >({{ $no }} reviews)</a>
                         </div>
                         <div class="product-pa-wrapper">
                            <div class="product-price">${{$unit->p_new_price}}</div>
@@ -950,13 +888,13 @@
                   @foreach($related_products as $related)
                   <div class="swiper-slide product">
                      <figure class="product-media">
-                        <a href="product-default.html">
+                        <a href="{{ route('product', $related->id) }}">
                         <img src="{{asset('storage/uploads/products/'.$related->p_image)}}" alt="Product"
                            width="300" height="338" />
                         </a>
                         <div class="product-action-vertical">
                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"></a>
+                              title="Add to cart" onclick="addcart({{ $related->id }})"></a>
                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                               title="Add to wishlist"></a>
                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
@@ -967,14 +905,25 @@
                            View</a>
                         </div>
                      </figure>
+                     <?php 
+                        $sum = $related->discussions->sum('review');
+                        $no = $related->discussions->count('review');
+                        if($sum == 0 || $no == 0){
+                           $avg = 0;
+                        }
+                        else{
+                           $aver = $sum/$no;
+                           $avg = 20 * $aver;
+                        }
+                     ?>
                      <div class="product-details">
                         <h4 class="product-name"><a href="product-default.html">{{$related->p_name}}</a></h4>
                         <div class="ratings-container">
                            <div class="ratings-full">
-                              <span class="ratings" style="width: 100%;"></span>
+                              <span class="ratings" style="width: {{$avg}}%;"></span>
                               <span class="tooltiptext tooltip-top"></span>
                            </div>
-                           <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                           <a href="product-default.html" class="rating-reviews">({{ $no }} reviews)</a>
                         </div>
                         <div class="product-pa-wrapper">
                            <div class="product-price">${{$related->p_new_price}}</div>
@@ -982,114 +931,6 @@
                      </div>
                   </div>
                   @endforeach
-                  <div class="swiper-slide product">
-                     <figure class="product-media">
-                        <a href="product-default.html">
-                        <img src="{{asset('frontend-assets/assets/images/products/default/6.jpg')}}" alt="Product"
-                           width="300" height="338" />
-                        </a>
-                        <div class="product-action-vertical">
-                           <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"></a>
-                           <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"></a>
-                           <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a>
-                        </div>
-                        <div class="product-action">
-                           <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                           View</a>
-                        </div>
-                     </figure>
-                     <div class="product-details">
-                        <h4 class="product-name"><a href="product-default.html">Official Camera</a>
-                        </h4>
-                        <div class="ratings-container">
-                           <div class="ratings-full">
-                              <span class="ratings" style="width: 100%;"></span>
-                              <span class="tooltiptext tooltip-top"></span>
-                           </div>
-                           <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
-                        </div>
-                        <div class="product-pa-wrapper">
-                           <div class="product-price">
-                              <ins class="new-price">$263.00</ins><del
-                                 class="old-price">$300.00</del>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide product">
-                     <figure class="product-media">
-                        <a href="product-default.html">
-                        <img src="{{asset('frontend-assets/assets/images/products/default/7-1.jpg')}}" alt="Product"
-                           width="300" height="338" />
-                        <img src="{{asset('frontend-assets/assets/images/products/default/7-2.jpg')}}" alt="Product"
-                           width="300" height="338" />
-                        </a>
-                        <div class="product-action-vertical">
-                           <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"></a>
-                           <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"></a>
-                           <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a>
-                        </div>
-                        <div class="product-action">
-                           <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                           View</a>
-                        </div>
-                     </figure>
-                     <div class="product-details">
-                        <h4 class="product-name"><a href="product-default.html">Phone Charge Pad</a>
-                        </h4>
-                        <div class="ratings-container">
-                           <div class="ratings-full">
-                              <span class="ratings" style="width: 80%;"></span>
-                              <span class="tooltiptext tooltip-top"></span>
-                           </div>
-                           <a href="product-default.html" class="rating-reviews">(8 reviews)</a>
-                        </div>
-                        <div class="product-pa-wrapper">
-                           <div class="product-price">$23.00</div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide product">
-                     <figure class="product-media">
-                        <a href="product-default.html">
-                        <img src="{{asset('frontend-assets/assets/images/products/default/8.jpg')}}" alt="Product"
-                           width="300" height="338" />
-                        </a>
-                        <div class="product-action-vertical">
-                           <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"></a>
-                           <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"></a>
-                           <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a>
-                        </div>
-                        <div class="product-action">
-                           <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                           View</a>
-                        </div>
-                     </figure>
-                     <div class="product-details">
-                        <h4 class="product-name"><a href="product-default.html">Fashionalble
-                           Pencil</a>
-                        </h4>
-                        <div class="ratings-container">
-                           <div class="ratings-full">
-                              <span class="ratings" style="width: 100%;"></span>
-                              <span class="tooltiptext tooltip-top"></span>
-                           </div>
-                           <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
-                        </div>
-                        <div class="product-pa-wrapper">
-                           <div class="product-price">$50.00</div>
-                        </div>
-                     </div>
-                  </div>
                </div>
             </div>
          </section>
@@ -1103,7 +944,13 @@
    $("#postbutton").click(function(){
             var id = $("#product_id").val();
             var quantity = $("#qnty").val();
+            if(!quantity){
+                var quantity = 1;
+            }
             var size = $("#size").val();
+            if(!size){
+                var size = 'medium';
+            }
             // processing ajax request
             $.ajax({
                 url: "{{ route('addcart') }}",
@@ -1159,6 +1006,34 @@
                 }
             });   
         }
+
+function addcart(id){
+    var id = id;
+    var size = $("input[name='size']:checked").val();
+    var quantity = $("#qnty_" +id).val();
+    if(!quantity){
+            var quantity = 1;
+        }
+        if(!size){
+            var size = 'medium';
+        }
+        // processing ajax request
+        $.ajax({
+        url: "{{ route('addcart') }}",
+        type: 'POST',
+        dataType: "json",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: id,
+            quantity: quantity,
+            size: size
+        },
+        success: function(data) {
+            // log response into console
+            console.log(data);
+        }
+    });
+}
    
 </script>
 @endsection

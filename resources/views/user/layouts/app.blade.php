@@ -323,7 +323,7 @@ else{
             receive updates on special offers.</p>
         <form action="javascript:void(0)" class="input-wrapper input-wrapper-inline input-wrapper-round">
             <input type="email" class="form-control email font-size-md" name="email" id="mail"
-                   placeholder="Your email address" required="">
+                   placeholder="Your email address" required>
             <button type="submit" class="btn btn-dark" id="subscribe" >SUBMIT</button>
         </form>
         <div class="form-checkbox d-flex align-items-center">
@@ -508,8 +508,8 @@ else{
 <!-- botman start here we need to update later... -->
 <script>
         var botmanWidget = {
-            aboutText:'Webappfix',
-            introMessage :'Hi Welcome to webappfix',
+            aboutText:'PreloveBazar',
+            introMessage :'Hi Welcome to PreloveBazar',
         };
     </script>
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
@@ -551,7 +551,12 @@ else{
                 },
                 success: function(data) {
                     // log response into console
-                    console.log(data);
+                    // Swal.fire(
+                    //     'Sent!',
+                    //     'Message has been sent successfully.',
+                    //     'success'
+                    // )
+                    console.log("email has been sent!")
                 }
             });
         });
