@@ -80,4 +80,3 @@ Route::controller(StripePaymentController::class)->group(function(){
 });
 //end stripe...
 
-

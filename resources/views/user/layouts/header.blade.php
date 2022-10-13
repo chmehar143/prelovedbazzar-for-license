@@ -107,15 +107,15 @@ else{
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
+                        <div class="dropdown cart-dropdown mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
-                            <a href="#" class="cart-toggle label-down link">
+                            <a href="{{route('cart')}}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
                                     <span class="cart-count">{{$carts->count()}}</span>
                                 </i>
                                 <span class="cart-label">Cart</span>
                             </a>
-                            <div class="dropdown-box" style="overflow-y: scroll;">
+                            <!-- <div class="dropdown-box" style="overflow-y: scroll;">
                                 <div class="cart-header">
                                     <span>Shopping Cart</span>
                                     <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
@@ -158,7 +158,7 @@ else{
                                 </div>
 
 
-                            </div>
+                            </div> -->
                             <!-- End of Dropdown Box -->
                         </div>
                     </div>

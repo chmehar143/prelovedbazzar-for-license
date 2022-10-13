@@ -1,6 +1,5 @@
 
 <?php
-
 return [
 
     'conversation_cache_time' => 40,

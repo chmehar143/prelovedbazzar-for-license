@@ -46,6 +46,7 @@
 						</div>
 						<!--end::Container-->
 					</div>
+</div>
 <div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
 
 						<!--begin::Container-->
