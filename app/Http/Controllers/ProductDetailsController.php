@@ -20,6 +20,28 @@ class ProductDetailsController extends Controller
     {
 
         $product = Product::where('id', $id)->with('discussions')->first();
+        $allreview = Discussion::where('item', $id)->get();
+        $five = Discussion::where('item', $id)->where('review', 5)->count();
+        $four = Discussion::where('item', $id)->where('review', 4)->count();
+        $three = Discussion::where('item', $id)->where('review', 3)->count();
+        $two = Discussion::where('item', $id)->where('review', 2)->count();
+        $one = Discussion::where('item', $id)->where('review', 1)->count();
+        if(!$five){
+            $five = 0;
+        }
+        if(!$four){
+            $four = 0;
+        }
+        if(!$three){
+            $three = 0;
+        }
+        if(!$two){
+            $two = 0;
+        }
+        if(!$one){
+            $one = 0;
+        }
+        
         if(Auth::guard('user')->check()){
             $user = Auth::guard('user');
             $recview = RecentView::where('user_id', $user->id())->where('p_id', $id)->first();
@@ -50,24 +72,25 @@ class ProductDetailsController extends Controller
         $vendor = Vendor::where('id', $product->vendor_id)->first();
         $admin = Admin::where('id', $product->admin_id)->first();
         if($vendor){
-            $moreproducts = Product::where('vendor_id', $vendor->id)
+            $moreproducts = Product::where('vendor_id', $vendor->id)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();
         }
         elseif($admin){
-            $moreproducts = Product::where('admin_id', $admin->id)
+            $moreproducts = Product::where('admin_id', $admin->id)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();
         }
         else{
             $moreproducts = NULL;
         }
-        $related_products = Product::where('p_catog', $product->p_catog)
+        $related_products = Product::where('p_catog', $product->p_catog)->with('discussions')
             ->orWhere('p_sub_catog', $product->p_sub_catog)->orWhere('p_child_catog', $product->p_child_catog)
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();
         return view('user.product-details', compact('product','vendor',
-                    'category','subcategory','childcategory','moreproducts', 'related_products'));
+                    'category','subcategory','childcategory','moreproducts', 'related_products',
+                'five', 'four', 'three', 'two', 'one', 'allreview'));
 
     }
 

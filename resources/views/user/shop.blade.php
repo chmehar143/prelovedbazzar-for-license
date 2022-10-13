@@ -155,6 +155,17 @@
                                                     title="Quick View"></a>
                                             </div>
                                         </figure>
+                                        <?php 
+                                            $sum = $product->discussions->sum('review');
+                                            $no = $product->discussions->count('review');
+                                            if($sum == 0 || $no == 0){
+                                                $avg = 0;
+                                            }
+                                            else{
+                                                $aver = $sum/$no;
+                                                $avg = 20 * $aver;
+                                            }
+                                        ?>
                                         <div class="product-details">
                                             <div class="product-cat">
                                                 <a href="javascript:void(0)">{{$product->name}}</a>
@@ -164,10 +175,10 @@
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
-                                                    <span class="ratings" style="width: 100%;"></span>
+                                                    <span class="ratings" style="width: {{ $avg }}%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="{{route('product', $product->id)}}" class="rating-reviews">(3 reviews)</a>
+                                                <a href="{{route('product', $product->id)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">

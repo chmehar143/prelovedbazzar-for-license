@@ -12,6 +12,7 @@ use App\Models\RecentView;
 use App\Models\Childcategory;
 use App\Models\Subcategory;
 use App\Models\Subscriber;
+use App\Models\Discussion;
 use App\Models\User;
 use Carbon\Carbon;
 class HomeController extends Controller

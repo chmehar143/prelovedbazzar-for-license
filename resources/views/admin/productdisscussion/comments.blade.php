@@ -1,5 +1,4 @@
 @extends('admin.layouts.app')
-
 @section('content')
 <div class="toolbar py-2" id="kt_toolbar">
    <!--begin::Container-->
