@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Models;
+use App\Models\Order;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Payment;
 
-
-class Order extends Model
+class Payment extends Model
 {
     use HasFactory;
-
-    public function payment()
+    
+    public function order()
     {
-        return $this->hasMany(Payment::class, 'order_id');
+        return $this->belongsTo(Order::class);
     }
 }

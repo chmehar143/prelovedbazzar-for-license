@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Cart;
+use App\Models\Payment;
 use App\Models\Vendor;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Address;
+use Validator;
+use Stripe;
 
 class OrderController extends Controller
 {
@@ -22,22 +26,135 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        //--- Validation Section
+        $rules = [
+            'fname' => 'required',
+            'lname' => 'required',
+            'country' => 'required',
+            'street' => 'required',
+            'apart' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+        ];
+        if($request->has('checkbox')){
+            array($rules,
+            's_fname' =>'required', 
+            's_lname' =>'required', 
+            's_country' =>'required', 
+            's_street' =>'required', 
+            's_apart' =>'required', 
+            's_city' =>'required', 
+            's_state' =>'required', 
+            's_zip' =>'required', 
+            's_phone' =>'required', 
+            's_lname' =>'required',          
+            );
+        }
 
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        //end validation
+
+    // save order detail...
         $order = new Order();
-        if(Auth::guard('user')){
+        if(Auth::guard('user')->check()){
             $carts = Cart::where('user_id', Auth::guard('user')->id())->get();
             $order->user_id = Auth::guard('user')->id();
-            $order->net_amount = $carts->sum('net_price');
+        }
+        else{
+            $carts = Cart::where('session_id', Session::getId())->get();
+        }
+        // sub order payment charge...
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        $customer = Stripe\Customer::create(array(
+          "address" => [    
+            "line1" => $request->input('street'),    
+            "postal_code" => $request->input('zip'),    
+            "city" => $request->input('city'),    
+            "state" => $request->input('state'),    
+            "country" => $request->input('country'),    
+          ], 
+            "name" => $request->input('fname'),       
+            "email" => $request->input('email'),    
+            "phone" => $request->input('phone'),    
+            "source" => $request->stripeToken    
+        ));
+        
+        Stripe\Charge::create ([
+            "amount" => 100 * $carts->sum('net_price'),
+            "currency" => "usd",
+            "customer" => $customer->id,
+            "description" => "Payment for puchasing some items from my " .env('APP_NAME'). "store.",
+            "shipping" => [
+              "name" => "$request->input('fname')",
+              "address" => [
+                "line1" => $request->input('street'),
+                "postal_code" => $request->input('zip'),
+                "city" => $request->input('city'),
+                "state" => $request->input('state'),
+                "country" => $request->input('country'),
+              ],
+            ]
+        ]);
+        //end payment charge...
+        $order->net_amount = $carts->sum('net_price');
+        if(Auth::guard('user')->check()){
+        $order->user_id = Auth::guard('user')->id();
+        }
+        $order->fname = $request->input('fname');
+        $order->lname = $request->input('lname');
+        $order->company = $request->input('company');
+        $order->country = $request->input('country');
+        $order->street = $request->input('street');
+        $order->apart = $request->input('apart');
+        $order->city = $request->input('city');
+        $order->state = $request->input('state');
+        $order->zip = $request->input('zip');
+        $order->phone = $request->input('phone');
+        $order->email = $request->input('email');
+        if($request->has('checkbox')){
+            $order->s_fname = $request->input('s_fname');
+            $order->s_lname = $request->input('s_lname');
+            $order->s_company = $request->input('s_company');
+            $order->s_country = $request->input('s_country');
+            $order->s_street = $request->input('s_street');
+            $order->s_apart = $request->input('s_apart');
+            $order->s_city = $request->input('s_city');
+            $order->s_state = $request->input('s_state');
+            $order->s_zip = $request->input('s_zip');
+            $order->s_phone = $request->input('s_phone');
+        }
+        else{
+            $order->s_fname = $request->input('fname');
+            $order->s_lname = $request->input('lname');
+            $order->s_company = $request->input('company');
+            $order->s_country = $request->input('company');
+            $order->s_street = $request->input('street');
+            $order->s_apart = $request->input('apart');
+            $order->s_city = $request->input('city');
+            $order->s_state = $request->input('state');
+            $order->s_zip = $request->input('zip');
+            $order->s_phone = $request->input('phone');
+        }
+        $order->note = $request->input('note');
+        $order->save();
+        //save address if user registered...
+        if(Auth::guard('user')->check()){
             if($request->has('save_address')){
                 $address = new Address();
                 $address->user_id = Auth::guard('user')->id();
-                $address->fname = $request->input('firstname');
-                $address->lname = $request->input('lastname');
+                $address->fname = $request->input('fname');
+                $address->lname = $request->input('lname');
                 $address->company = $request->input('company');
                 $address->country = $request->input('country');
-                $address->street = $request->input('street-1');
-                $address->apart = $request->input('street-2');
-                $address->city = $request->input('town');
+                $address->street = $request->input('street');
+                $address->apart = $request->input('apart');
+                $address->city = $request->input('city');
                 $address->state = $request->input('state');
                 $address->zip = $request->input('zip');
                 $address->phone = $request->input('phone');
@@ -54,13 +171,13 @@ class OrderController extends Controller
                     $address->s_phone = $request->input('s_phone');
                 }
                 else{
-                    $address->s_fname = $request->input('firstname');
-                    $address->s_lname = $request->input('lastname');
+                    $address->s_fname = $request->input('fname');
+                    $address->s_lname = $request->input('lname');
                     $address->s_company = $request->input('company');
-                    $address->s_country = $request->input('country');
-                    $address->s_street = $request->input('street-1');
-                    $address->s_apart = $request->input('street-2');
-                    $address->s_city = $request->input('town');
+                    $address->s_country = $request->input('company');
+                    $address->s_street = $request->input('street');
+                    $address->s_apart = $request->input('apart');
+                    $address->s_city = $request->input('city');
                     $address->s_state = $request->input('state');
                     $address->s_zip = $request->input('zip');
                     $address->s_phone = $request->input('phone');
@@ -68,47 +185,16 @@ class OrderController extends Controller
                 $address->save();
             }
         }
-        else{
-            $carts = Cart::where('session_id', Session::getId())->get();
-            $order->net_amount = $carts->sum('net_price');
-        }
-        $order->email = $request->input('email');
-        $order->fname = $request->input('firstname');
-        $order->lname = $request->input('lastname');
-        $order->company = $request->input('company');
-        $order->country = $request->input('country');
-        $order->street = $request->input('street-1');
-        $order->apart = $request->input('street-2');
-        $order->city = $request->input('town');
-        $order->state = $request->input('state');
-        $order->zip = $request->input('zip');
-        $order->phone = $request->input('phone');
-        if($request->input('checkbox') == 1){
-            $order->s_fname = $request->input('s_fname');
-            $order->s_lname = $request->input('s_lname');
-            $order->s_company = $request->input('s_company');
-            $order->s_country = $request->input('s_country');
-            $order->s_street = $request->input('s_street');
-            $order->s_apart = $request->input('s_apart');
-            $order->s_city = $request->input('s_city');
-            $order->s_state = $request->input('s_state');
-            $order->s_zip = $request->input('s_zip');
-            $order->s_phone = $request->input('s_phone');
-        }
-        else{
-            $order->s_fname = $request->input('firstname');
-            $order->s_lname = $request->input('lastname');
-            $order->s_company = $request->input('company');
-            $order->s_country = $request->input('country');
-            $order->s_street = $request->input('street-1');
-            $order->s_apart = $request->input('street-2');
-            $order->s_city = $request->input('town');
-            $order->s_state = $request->input('state');
-            $order->s_zip = $request->input('zip');
-            $order->s_phone = $request->input('phone');
-        }
-        $order->note = $request->input('note');
-        $order->save();
+        //end saving address...
+        //Start payment data stored in table...
+        $payment = new Payment();
+        $payment->order_id = $order->id;
+        $payment->card_id = $customer->id;
+        $payment->phone = $customer->phone;
+        $payment->email = $customer->email;
+        $payment->save();
+        //End store payment...
+        //start order detail data
         foreach($carts as $cart){
             $detail = new OrderDetail();
             $detail->order_id = $order->id;
@@ -121,6 +207,8 @@ class OrderController extends Controller
             $detail->save();
             $cart->delete();
         }
-        return redirect()->route('shop');
+        //end order datail..
+
+        return redirect()->route('order');
     }
 }

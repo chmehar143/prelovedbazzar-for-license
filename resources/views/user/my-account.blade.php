@@ -42,10 +42,12 @@
                                 <a href="#account-details" class="nav-link">Account details</a>
                             </li>
                             <li class="link-item">
-                                <a href="wishlist.html">Wishlist</a>
+                                <a href="{{ route('wishlist') }}" class="btn btn-link">Wishlist</a>
                             </li>
                             <li class="link-item">
-                                <a href="login.html">Logout</a>
+                            <form action="{{ route('user.logout') }}" method="post" class="text-info">
+                                <button class="btn btn-link " style="text-color: sky;">Logout</button>
+                            </form>
                             </li>
                         </ul>
 
@@ -133,14 +135,14 @@
                                         </a>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4">
-                                        <form action="{{ route('user.logout') }}" method="post" style="cursor: pointer; ">
+                                        <form action="{{ route('user.logout') }}" method="post" class="link-to-tab " style="cursor: pointer; display: block; margin-bottom: 5px;">
                                             @csrf
-                                            <div class="icon-box text-center">
+                                            <div class="icon-box text-center" style="cursor: pointer; display: block; padding-bottom: 46px;">
                                                 <button type="submit" class=" btn-link icon-box-icon icon-logout" style="cursor: pointer;" >
                                                     <i class="w-icon-logout"></i>
                                                 </button>
                                                 <div class="icon-box-content">
-                                                    <button type="submit" class="btn-link text-uppercase mb-0 " style="cursor: pointer;">Log out</button>
+                                                    <button type="submit" class="btn-link text-uppercase " style="cursor: pointer;">Log out</button>
                                                 </div>
                                             </div>
                                         </form>
