@@ -21395,4 +21395,7 @@ aside .sp-sidebar-banner span {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .alert-danger{
+    color: red;
+  }
 }

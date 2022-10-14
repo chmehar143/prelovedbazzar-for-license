@@ -1,31 +1,10 @@
-<?php
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\Cart;
-use App\Models\Vendor;
-use App\Models\Product;
-use App\Models\User;
 
-if(Auth::guard('user')->check()){
-    $user = Auth::guard('user');
-    $carts = Cart::where('user_id', $user->id())
-    ->join('products','carts.prod_id', '=', 'products.id')
-    ->get();
-}
-else{
-    $session = Session::getId();
-    $carts = Cart::where('session_id', $session)
-    ->join('products','carts.prod_id', '=', 'products.id')
-    ->get();
-}
-
-?>
 <header class="header">
             <div class="header-top">
                 <div class="container">
                     <div class="header-left">
                         <p class="welcome-msg">Welcome to Preloved Bazar Store!</p>
+                        <p class="welcome-msg"></p>
                     </div>
                     <div class="header-right">
                         <div class="dropdown ">
@@ -58,11 +37,14 @@ else{
                         <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
                         <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
                         <a href="{{route('about-us')}}" class="d-lg-show">About Us</a>
-
+                        @if(Auth::guard('user')->check())
+                        <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
                         <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
+                        @else
                         <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter  d-lg-show">/</span>
                         <a href="{{route('user.register')}}" class="ml-0 d-lg-show ">Register</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -81,11 +63,9 @@ else{
                             <div class="select-box">
                                 <select id="category" name="category">
                                     <option value="">All Categories</option>
-                                    <option value="4">Mens</option>
-                                    <option value="6">Gift Ideas</option>
-                                    <option value="8">Men Cloth</option>
-                                    <option value="9">Women Cloths</option>
-                                    <option value="12">Shirts</option>
+                                    @foreach($shareData['categories'] as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <input type="text" class="form-control" name="search" id="search" placeholder="Search in..."
@@ -177,97 +157,20 @@ else{
                                     <i class="w-icon-category"></i>
                                     <span>Browse Categories</span>
                                 </a>
-
                                 <div class="dropdown-box">
                                     <ul class="menu vertical-menu category-menu">
+                                        @foreach($shareData['categories'] as $category)
                                         <li>
                                             <a href="{{route('shop')}}">
-                                                <i class="w-icon-tshirt2"></i>Men's
+                                                <i class="w-icon-tshirt2"></i>{{$category->name}}
                                             </a>
-                                            <ul class="megamenu">
-                                                <li>
-                                                    <h4 class="menu-title">Women</h4>
-                                                    <hr class="divider">
-                                                    <ul>
-                                                        <li><a href="{{route('shop')}}">New Arrivals</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Best Sellers</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Trending</a></li>
-                                                        <li><a href="{{route('shop')}}">Clothing</a></li>
-                                                        <li><a href="{{route('shop')}}">Shoes</a></li>
-                                                        <li><a href="{{route('shop')}}">Bags</a></li>
-                                                        <li><a href="{{route('shop')}}">Accessories</a>
-                                                        </li>
-
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <h4 class="menu-title">Men</h4>
-                                                    <hr class="divider">
-                                                    <ul>
-                                                        <li><a href="{{route('shop')}}">New Arrivals</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Best Sellers</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Trending</a></li>
-                                                        <li><a href="{{route('shop')}}">Clothing</a></li>
-                                                        <li><a href="{{route('shop')}}">Shoes</a></li>
-                                                        <li><a href="{{route('shop')}}">Bags</a></li>
-                                                        <li><a href="{{route('shop')}}">Accessories</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Jewlery &
-                                                                Watches</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <div class="banner-fixed menu-banner menu-banner2">
-                                                        <figure>
-                                                            <img src="frontend-assets/assets/images/menu/banner-2.jpg" alt="Menu Banner"
-                                                                width="235" height="347" />
-                                                        </figure>
-                                                        <div class="banner-content">
-                                                            <div class="banner-price-info mb-1 ls-normal">Get up to
-                                                                <strong
-                                                                    class="text-primary text-uppercase">20%Off</strong>
-                                                            </div>
-                                                            <h3 class="banner-title ls-normal">Hot Sales</h3>
-                                                            <a href="{{route('shop')}}"
-                                                                class="btn btn-dark btn-sm btn-link btn-slide-right btn-icon-right">
-                                                                Shop Now<i class="w-icon-long-arrow-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                            <ul class="">
+                                                @foreach($category['subcategory'] as $subcategory)  
+                                                    <li><a href="{{route('shop')}}">{{$subcategory->name}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
-
-
-
-                                        <li>
-                                            <a href="{{route('shop')}}">
-                                                <i class="w-icon-gift"></i>Gift Ideas
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{route('shop')}}">
-                                                <i class="w-icon-tshirt"></i>Shirts
-                                            </a>
-                                        </li>
-
-
-                                        <li>
-                                            <a href="{{route('shop')}}">
-                                                <i class="w-icon-heart"></i>Women Cloth
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('shop')}}"
-                                                class="font-weight-bold text-primary text-uppercase ls-25">
-                                                View All Categories<i class="w-icon-angle-right"></i>
-                                            </a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

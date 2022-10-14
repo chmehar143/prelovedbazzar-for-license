@@ -15470,4 +15470,7 @@ aside .sp-sidebar-banner span {
     .title-link-wrapper .title {
         justify-content: center
     }
+    .alert-danger{
+        color: red;
+    }
 }
