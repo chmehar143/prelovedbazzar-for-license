@@ -9,6 +9,7 @@ use App\Models\Subcategory;
 use App\Models\Chilcategory;
 use App\Models\Vendor;
 use App\Models\Discussion;
+use App\Models\OrderDetail;
 
 class Product extends Model
 {
@@ -24,6 +25,16 @@ class Product extends Model
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function orderdetail()
+    {
+        return $this->belongsTo(OrderDetail::class);
     }
 
     public function discussions(){

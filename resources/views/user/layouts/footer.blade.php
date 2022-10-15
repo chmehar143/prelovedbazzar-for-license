@@ -60,7 +60,7 @@
                             <div class="widget">
                                 <h3 class="widget-title">Company</h3>
                                 <ul class="widget-body">
-                                    <li><a href="{{route('about-us')}}">About Us</a></li>
+                                    <!-- <li><a href="{{route('about-us')}}">About Us</a></li> -->
                                     <li><a href="#">Team Member</a></li>
                                     <li><a href="#">Career</a></li>
                                     <li><a href="{{route('contact-us')}}">Contact Us</a></li>

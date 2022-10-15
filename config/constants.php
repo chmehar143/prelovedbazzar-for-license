@@ -19,13 +19,13 @@ return [
     ],
 
     'order_status' => [
-        '0' => 'pending',
-        '1' => 'processing',
-        '2' => 'completed',
-        '3' => 'packed',
-        '4' => 'shipped',
-        '5' => 'delivered',
-        '6' => 'declined',
+        '0' => 'Pending',
+        '1' => 'On hold',
+        '2' => 'Completed',
+        '3' => 'Packed',
+        '4' => 'Shipped',
+        '5' => 'Delivered',
+        '6' => 'Declined',
     ],
 
     'role' => [
