@@ -44,10 +44,10 @@
                             <li class="nav-item">
                                 <a href="#account-details" class="nav-link">Account details</a>
                             </li>
-                            <li class="link-item">
+                            <li class="link-item" Style="    font-size: 18px;margin-left: 2pc;">
                                 <a href="wishlist.html">Wishlist</a>
                             </li>
-                            <li class="link-item">
+                            <li class="link-item" style="    font-size: 18px;margin-left: 2pc;">
                                 <a href="login.html">Logout</a>
                             </li>
                         </ul>
@@ -251,6 +251,7 @@
                                         <h4 class="icon-box-title mb-0 ls-normal">Addresses</h4>
                                     </div>
                                 </div>
+                                <br><br><Br>
                                 <p>The following addresses will be used on the checkout page
                                     by default.</p>
                                 <div class="row">

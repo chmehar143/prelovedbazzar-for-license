@@ -16,12 +16,15 @@ use App\Models\OrderDetail;
 use App\Models\Address;
 use Validator;
 use Stripe;
+use Config;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('user.order');
+        $order = Order::where('id', $id)->with('order_detail')->first();
+        $status = Config::get('constants.order_status');
+        return view('user.order', compact('order', 'status'));
     }
 
     public function store(Request $request)
@@ -196,9 +199,14 @@ class OrderController extends Controller
         //End store payment...
         //start order detail data
         foreach($carts as $cart){
+            $product = Product::where('id', $cart->prod_id)->with('vendor')->first();
             $detail = new OrderDetail();
             $detail->order_id = $order->id;
             $detail->pro_id = $cart->prod_id;
+            $detail->item_name = $product->p_name;
+            $detail->vendor_id = $product->vendor_id;
+            $detail->seller_name = $product->vendor->name;
+            $detail->store_name = $product->vendor->shop;
             $detail->pro_qnty = $cart->quantity;
             $detail->price = $cart->price;
             $detail->color = $cart->color;
@@ -209,6 +217,6 @@ class OrderController extends Controller
         }
         //end order datail..
 
-        return redirect()->route('order');
+        return redirect()->route('order')->with('success', 'Thank you. Your order has been received.');
     }
 }
