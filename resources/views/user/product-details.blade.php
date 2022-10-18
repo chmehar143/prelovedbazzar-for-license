@@ -225,7 +225,8 @@
                                  background-color: #eee;
                                  color: #666;
                                  font-size: 1.4rem;
-                                 border: none;"></a>
+                                 border: none;
+                                 line-height: 21px;"></a>
                               <a class="quantity-minus w-icon-minus" style="position: absolute;
                                  top: 50%;
                                  -webkit-transform: translateY(-50%);
@@ -239,7 +240,8 @@
                                  background-color: #eee;
                                  color: #666;
                                  font-size: 1.4rem;
-                                 border: none;"></a>
+                                 border: none;
+                                 line-height: 21px;"></a>
                            </div>
                         </div>
                         <button class="btn btn-primary btn-cart" id="postbutton">
