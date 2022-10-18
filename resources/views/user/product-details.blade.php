@@ -184,9 +184,36 @@
                   </div>
                   <hr class="product-divider">
                   <div class="fix-bottom product-sticky-content sticky-content">
-                     <form class="product-form container" action="javascript:void(0)">
+                     <!-- size starts here -->
+                     <div
+                        class="product-form product-variation-form product-size-swatch mb-3">
+                        <label class="mb-1">Size:</label>
+                        <ul
+                              class="flex-wrap d-flex align-items-center product-variations">
+                              @if($product->large == 1)
+                              <li>
+                                 <input type="radio" id="large" name="size" value="large" style="display: none;">
+                                 <label for="large" class="size">Large</label>
+                              </li>                                                                
+                              @endif
+                              @if($product->medium == 1)
+                              <li>
+                                 <input type="radio" id="medium" name="size" value="medium" style="display: none;">
+                                 <label for="medium" class="size">Medium</label>
+                              </li>
+                              @endif
+                              @if($product->small == 1)
+                              <li>
+                                 <input type="radio" id="small" name="size" value="small" style="display: none;">
+                                 <label for="small" class="size">Small</label>
+                              </li>                                                                
+                              @endif
+                        </ul>
+                        <!-- <a href="javascript:void(0)" class="product-variation-clean">Clean All</a> -->
+                     </div>
+                     <!-- size end here -->
+                     <div class="product-form container" >
                         <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-                        <input type="hidden" id="size" name="size" value="medium">
                         <div class="product-qty-form with-label">
                            <label>Quantity:</label>
                            <div class="input-group">
@@ -219,7 +246,7 @@
                         <i class="w-icon-cart"></i>
                         <span>Add to Cart</span>
                         </button>
-                     </form>
+                     </div>
                   </div>
                   <div class="social-links-wrapper">
                      <div class="social-links">
@@ -947,7 +974,7 @@
             if(!quantity){
                 var quantity = 1;
             }
-            var size = $("#size").val();
+            var size = $("input[name='size']:checked").val();
             if(!size){
                 var size = 'medium';
             }
