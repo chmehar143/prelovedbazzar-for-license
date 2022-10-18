@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Dashboard
-Route::get('/', 'vendor\HomeController@index')->name('home')->middleware('vendor.verified');
+
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -32,6 +31,8 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 //});
 
 // Product Vendor
+// Dashboard
+Route::get('/dashboard', 'HomeController@index')->name('home')->middleware('vendor.verified');
 Route::get('/product_list', 'ProductController@index')->name('product_list');
 Route::get('/product_create', 'ProductController@create')->name('product_create');
 Route::post('/GetSubCat', 'ProductController@GetSubCat')->name('GetSubCat'); 

@@ -149,18 +149,66 @@ class CartController extends Controller
         }
     }
 
-    public function update(Request $request){
-        $data = array($request->all());
-        dd($request->all());
+    public function upcart($id){
         if(Auth::guard('user')->check()){
-            $user = Auth::guard('user');
-            foreach($data as $key => $value){
-                $cart = Cart::where('prod_id', $value['id'])->where('user_id', $user->id())->get();
-                $cart->net_price = $cart->net_price + $cart->price * $value['qnty'];
-                $cart->quantity = $value['qnty'];
-            }
+            $cart = Cart::where('prod_id', $id)->where('user_id', Auth::guard('user')->id())->first();
+            $item = Product::where('id', $cart->prod_id)->first();
+            $item->p_stock = $item->p_stock - 1;
+            $cart->quantity = $cart->quantity + 1;
+            $cart->net_price = $cart->net_price + $cart->price;
+            $item->update();
+            $cart->update();
         }
-        return redirect()->back();
+        else{
+            $session = Session::getId();
+            $cart = Cart::where('prod_id', $id)->where('session_id', $session)->first();
+            $item = Product::where('id', $cart->prod_id)->first();
+            $item->p_stock = $item->p_stock - 1;
+            $cart->quantity = $cart->quantity + 1;
+            $cart->net_price = $cart->net_price + $cart->price;
+            $item->update();
+            $cart->update();
+        }
+        return response()->json([
+            'status'=> 200,
+            'data'=> $cart
+        ]);
+    }
+
+    public function down($id){
+        if(Auth::guard('user')->check()){
+            $cart = Cart::where('prod_id', $id)->where('user_id', Auth::guard('user')->id())->first();
+            $item = Product::where('id', $cart->prod_id)->first();
+            $item->p_stock = $item->p_stock + 1;
+            if($cart->quantity == 1){
+                $cart->delete();
+            }
+            else{
+                $cart->quantity = $cart->quantity - 1;
+                $cart->net_price = $cart->net_price - $cart->price;
+                $cart->update();
+            }
+            $item->update();
+        }
+        else{
+            $session = Session::getId();
+            $cart = Cart::where('prod_id', $id)->where('session_id', $session)->first();
+            $item = Product::where('id', $cart->prod_id)->first();
+            $item->p_stock = $item->p_stock + 1;
+            if($cart->quantity == 1){
+                $cart->delete();
+            }
+            else{
+                $cart->quantity = $cart->quantity - 1;
+                $cart->net_price = $cart->net_price - $cart->price;
+                $cart->update();
+            }
+            $item->update();
+        }
+        return response()->json([
+            'status'=> 200,
+            'data'=> $cart
+        ]);
     }
 
     

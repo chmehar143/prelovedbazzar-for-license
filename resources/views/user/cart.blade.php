@@ -24,8 +24,6 @@
                 <div class="container">
                     <div class="row gutter-lg mb-10">
                         <div class="col-lg-8 pr-lg-4 mb-6">
-                        <form action="{{route('update')}}" method="post">
-                            @csrf
                             <table class="shop-table cart-table">
                                 <thead>
                                     <tr>
@@ -58,17 +56,36 @@
                                                 {{$cart['p_name']}}
                                             </a>
                                         </td>
-                                        <td class="product-price"><span class="amount">${{$cart['p_new_price']}}</span></td>
+                                        <td class="product-price"><span class="amount" id="n_price_{{$cart->id}}">${{$cart['p_new_price']}}</span></td>
                                         <td class="product-quantity">
                                             <div class="input-group">
                                                 <input type="hidden" name="id" value="{{$cart['prod_id']}}">
                                                 <input id="" class="quantity form-control" name="qnty" type="number" min="1" max="100000" value="{{$cart['quantity']}}">
-                                                <button class="quantity-plus w-icon-plus"></button>
-                                                <button class="quantity-minus w-icon-minus"></button>
+                                                <a onclick="upitem({{$cart->id}})" class="quantity-plus w-icon-plus" style="margin-left: -4pc;margin-top:10px; width: 2.4rem;height: 2.4rem;
+                                                    border-radius: 50%;
+                                                    cursor:pointer;
+                                                    background-color: #eee;
+                                                    color: #666;
+                                                    font-size: 1.4rem;
+                                                    border: none;"></a>
+                                                <a onclick="downitem({{$cart->id}})" class="quantity-minus w-icon-minus" style="position: absolute;
+                                                    top: 50%;
+                                                    -webkit-transform: translateY(-50%);
+                                                    transform: translateY(-50%);
+                                                    cursor:pointer;
+                                                    right: 1.5rem;
+                                                    padding: 0;
+                                                    width: 2.4rem;
+                                                    height: 2.4rem;
+                                                    border-radius: 50%;
+                                                    background-color: #eee;
+                                                    color: #666;
+                                                    font-size: 1.4rem;
+                                                    border: none;"></a>
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="amount">${{$cart['p_new_price'] * $cart['quantity']}}</span>
+                                            <span class="amount" id="net_{{$cart->id}}">${{$cart['p_new_price'] * $cart['quantity']}}</span>
                                         </td>
                                     </tr>
                                     <?php $subtotal = $subtotal + $cart['p_new_price'] * $cart['quantity'] ?>
@@ -85,7 +102,6 @@
                                 <a href="javascript:void(0)" class="btn btn-rounded btn-default btn-clear" onclick="clearall()">Clear Cart</a>
                                 <button type="submit" class="btn btn-rounded btn-update">Update Cart</button>
                             </div>
-                            </form>
                             <div class="coupon">
                                 <h5 class="title coupon-title font-weight-bold text-uppercase">Coupon Discount</h5>
                                 <input type="text" class="form-control mb-4" placeholder="Enter coupon code here..." required />
@@ -196,11 +212,47 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
+    //update cart 
+function upitem(id){
+            // processing ajax request 
+            var url = '{{ route("upcart", ":id") }}';
+                url = url.replace(':id', id);
+
+            $.ajax({
+                url: url,
+            success: function(data) {
+                    $('#net_' +id).replaceWith('$' +data.data.net_price);
+                    console.log(data.data.net_price);
+                }
+            });   
+        }
+
+        function downitem(id){
+
+            // processing ajax request 
+            var url = '{{ route("down", ":id") }}';
+                url = url.replace(':id', id);
+                var price = $("n_price_" +id).html();
+                var net = $('#net_' +id).html();
+
+            $.ajax({
+                url: url,
+            success: function(data) {
+                    if(price == net){
+                        $("#setup_" +id).remove();
+                    }else{
+                        $('#net_' +id).replaceWith('$' +data.data.net_price);
+                    }
+                }
+            });   
+        }
 
 function deleteProduct(id){
-            // processing ajax request    
+            // processing ajax request 
+            var url = '{{ route("remove_cart", ":id") }}';
+                url = url.replace(':id', id);   
             $.ajax({
-                url: "{{ url('remove_item') }}" +'/' + id,
+                url: url,
             success: function() {
                     $("#setup_" +id).remove();
                 }
