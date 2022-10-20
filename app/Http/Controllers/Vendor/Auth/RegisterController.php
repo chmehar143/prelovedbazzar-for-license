@@ -67,6 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $filename = '';
         if(request()->hasFile(key: 'shop_image')){
             $file = request()->file(key: 'shop_image');
             $extention = $file->getClientOriginalExtension();
