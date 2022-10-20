@@ -80,7 +80,7 @@ else{
 </head>
 <body class="home">
 <div class="page-wrapper">
-    <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>
+    <h1 class="d-none">Preloved Bazar </h1>
     @include('user.layouts.header')
     @yield('content')
     @include('user.layouts.footer')
@@ -241,17 +241,12 @@ else{
                         </ul>
                     </li>
                     <li>
-                        <a href="vendor-store.html">Vendor Stores</a>
+                        <a href="{{ route('vendor-store') }}">Vendor Stores</a>
 
                     </li>
-                    <li>
-                        <a href="blogs.html">Blog</a>
-
-                    </li>
-
+                   
                     <li><a href="become-a-vendor.html">Become A Vendor</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="tab-pane" id="categories">
@@ -318,8 +313,8 @@ else{
 <div class="newsletter-popup mfp-hide">
     <div class="newsletter-content">
         <h4 class="text-uppercase font-weight-normal ls-25">Get Up to<span class="text-primary">25% Off</span></h4>
-        <h2 class="ls-25">Sign up to Wolmart</h2>
-        <p class="text-light ls-10">Subscribe to the Wolmart market newsletter to
+        <h2 class="ls-25">Sign up to Preloved Bazar</h2>
+        <p class="text-light ls-10">Subscribe to the Preloved Bazar market newsletter to
             receive updates on special offers.</p>
         <form action="javascript:void(0)" class="input-wrapper input-wrapper-inline input-wrapper-round">
             <input type="email" class="form-control email font-size-md" name="email" id="mail"
