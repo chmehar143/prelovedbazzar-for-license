@@ -36,14 +36,14 @@
                                     <option value="popular">Most Popular</option>
                                 </select>
                             </div>
-                            <div class="toolbox-item toolbox-layout mb-0 d-flex">
+                            <!-- <div class="toolbox-item toolbox-layout mb-0 d-flex">
                                 <a href="vendor-dokan-store-grid.html" class="icon-mode-grid btn-layout active">
                                     <i class="w-icon-grid"></i>
                                 </a>
                                 <a href="vendor-dokan-store-list.html" class="icon-mode-list btn-layout">
                                     <i class="w-icon-list"></i>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- End of Vendor Toolbox -->
