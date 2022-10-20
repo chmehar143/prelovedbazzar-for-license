@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Subcategory;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
