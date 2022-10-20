@@ -1,3 +1,4 @@
+
 <div id="kt_header" style="" class="header align-items-stretch ">
     <!--begin::Container-->
     <div class="container-fluid d-flex align-items-stretch justify-content-between">
@@ -24,36 +25,279 @@
         <!--end::Mobile logo-->
         <!--begin::Wrapper-->
         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+            
             <!--begin::Navbar-->
-            <div class="d-flex align-items-stretch" id="kt_header_nav">
+            <div class="d-flex align-items-stretch" id="kt_header_nav" style="margin-left:3pc">
+                
                 <!--begin::Menu wrapper-->
-                <div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
+                <div class="header-menu align-items-stretch" style="margin-left:4pc" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
                     <!--begin::Menu-->
-                    <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
-                        <div data-kt-menu-trigger="click" style="display:none;" data-kt-menu-placement="bottom-start" class="menu-item here show menu-lg-down-accordion me-lg-1">
-                            <a class="menu-link active py-3" href="{{ url('admin/') }}">
-                                <span class="menu-title">Home</span>
-                                <span class="menu-arrow d-lg-none"></span>
-                            </a>
-
-                        </div>
-
-
-
-
-                        <div data-kt-menu-trigger="click" style="display:none;" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+                
+                    <div class="d-flex align-items-stretch" id="kt_header_nav" style="margin-left:3pc">
+									<!--begin::Menu wrapper-->
+									<div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
+										<!--begin::Menu-->
+										<div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+												<a class="menu-link py-3" href="{{url('admin')}}">
+													<span class="menu-title">Dashboards</span>
+												</a>
+											
+											</div>
+											
+		
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
 												<span class="menu-link py-3">
-                                                <a href="{{ url('admin/list') }}">
-
-													<span class="menu-title">Faqs</span>
+													<span class="menu-title">Orders</span>
 													<span class="menu-arrow d-lg-none"></span>
-</a>
 												</span>
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-300px p-5 p-lg-5">
+													<!--begin:Row-->
+													<div class="row" data-kt-menu-dismiss="true">
+														<!--begin:Col-->
+															<div class="menu-inline menu-column menu-active-bg">
+																<div class="menu-item">
+																	<a href="{{url('admin/order_allorder')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">All Orders </span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/order_complete_completedorder')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Completed Orders</span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/order_pending_pendingorder')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Pending Orders</span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/order_processing_processingorder')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Proceesing Orders</span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/order_decline_declinedorder')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Declined Orders</span>
+																	</a>
+															</div>
+														</div>
+														<!--end:Col-->
+													
+													</div>
+													<!--end:Row-->
+												</div>
+											</div>
 
-                        </div>
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+												<span class="menu-link py-3">
+													<span class="menu-title">Products</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-300px p-5 p-lg-5">
+													<!--begin:Row-->
+													<div class="row" data-kt-menu-dismiss="true">
+														<!--begin:Col-->
+															<div class="menu-inline menu-column menu-active-bg">
+																<div class="menu-item">
+																	<a href="{{url('admin/allproducts_list')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">All Products </span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/deactivateproduct_list')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Deactived Products </span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/productcatalog_list')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Products Catalog</span>
+																	</a>
+																</div>
+																
+																
+														</div>
+														<!--end:Col-->
+													
+													</div>
+													<!--end:Row-->
+												</div>
+											</div>
 
-                    </div>
-                    <!--end::Menu-->
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+												<span class="menu-link py-3">
+													<span class="menu-title">Cusomters</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-300px p-5 p-lg-5">
+													<!--begin:Row-->
+													<div class="row" data-kt-menu-dismiss="true">
+														<!--begin:Col-->
+															<div class="menu-inline menu-column menu-active-bg">
+																<div class="menu-item">
+																	<a href="{{url('admin/customer_list')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Customer list </span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/customer_withdraw')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title"> Withdraw</span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/customer_transaction')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Transactions</span>
+																	</a>
+																</div>
+																
+																
+														</div>
+														<!--end:Col-->
+													
+													</div>
+													<!--end:Row-->
+												</div>
+											</div>
+
+
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+												<span class="menu-link py-3">
+													<span class="menu-title">Vendor</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-300px p-5 p-lg-5">
+													<!--begin:Row-->
+													<div class="row" data-kt-menu-dismiss="true">
+														<!--begin:Col-->
+															<div class="menu-inline menu-column menu-active-bg">
+																<div class="menu-item">
+																	<a href="{{url('admin/vendors_list')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Vendor list </span>
+																	</a>
+																</div>
+																<div class="menu-item">
+																	<a href="{{url('admin/order_complete_completedorder')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">Vendor Withdraw</span>
+																	</a>
+																</div>
+																
+																
+																
+														</div>
+														<!--end:Col-->
+													
+													</div>
+													<!--end:Row-->
+												</div>
+											</div>
+
+
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+												<span class="menu-link py-3">
+													<span class="menu-title">Message</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-300px p-5 p-lg-5">
+													<!--begin:Row-->
+													<div class="row" data-kt-menu-dismiss="true">
+														<!--begin:Col-->
+															<div class="menu-inline menu-column menu-active-bg">
+																<div class="menu-item">
+																	<a href="{{url('admin/message_messagelist')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">  Message </span>
+																	</a>
+																</div>															
+												     		</div>
+														<!--end:Col-->
+													
+													</div>
+													<!--end:Row-->
+												</div>
+											</div>
+										</div>
+										<!--end::Menu-->
+									</div>
+									<!--end::Menu wrapper-->
+								</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
                 <!--end::Menu wrapper-->
             </div>
@@ -69,7 +313,7 @@
                             <img src="{{asset('admin-assets/media/avatars/150-26.jpg')}}" alt="image" />
                         </div>
                         <!--begin::Menu-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
+                        <div style="margin-left: 4pc;" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
                             <!--begin::Menu item-->
                             <div class="menu-item px-3">
                                 <div class="menu-content d-flex align-items-center px-3">

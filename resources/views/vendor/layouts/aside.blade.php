@@ -1,8 +1,17 @@
+<head>
+	<Style>
+		@media (min-width: 992px){
+.aside {
+    width: 190px !important;
+}
+}
+		</style>
+</head>
 <div id="kt_aside" class="aside pb-5 pt-5 pt-lg-0" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
     <!--begin::Brand-->
     <div class="aside-logo py-8" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="#" class="d-flex align-items-center">
+        <a href="{{route('vendor.home')}}" class="d-flex align-items-center">
             <img alt="Logo" src="{{asset('admin-assets/media/logos/logo-demo6.svg')}}" class="h-45px logo" />
         </a>
         <!--end::Logo-->
@@ -16,7 +25,7 @@
             <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
 
                 <div class="menu-item py-2">
-                    <a class="menu-link  menu-center" href="{{url('vendor/')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link  menu-center" href="{{route('vendor.home')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<i class="bi bi-house fs-2"></i>
 										</span>
@@ -71,65 +80,65 @@
 
    
 
-                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
-									<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon me-0">
-											<i class="fas fa-cogs"></i>
-											</span>
-										<span class="menu-title">Setting</span>
-									</span>
-									<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
-										<div class="menu-item">
-											<div class="menu-content">
-												<span class="menu-section fs-5 fw-bolder ps-1 py-1">Setting</span>
-											</div>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/setting_service_list')}}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title"> Service</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/setting_banner_list')}}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Banner</span>
-											</a>
-										</div>
+                <!-- <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+					<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+						<span class="menu-icon me-0">
+							<i class="fas fa-cogs"></i>
+							</span>
+						<span class="menu-title">Setting</span>
+					</span>
+					<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+						<div class="menu-item">
+							<div class="menu-content">
+								<span class="menu-section fs-5 fw-bolder ps-1 py-1">Setting</span>
+							</div>
+						</div>
+						<div class="menu-item">
+							<a class="menu-link" href="{{url('vendor/setting_service_list')}}">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title"> Service</span>
+							</a>
+						</div>
+						<div class="menu-item">
+							<a class="menu-link" href="{{url('vendor/setting_banner_list')}}">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Banner</span>
+							</a>
+						</div>
 
-                                        <div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/setting_shipping_list')}}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Shipping</span>
-											</a>
-										</div>
+						<div class="menu-item">
+							<a class="menu-link" href="{{url('vendor/setting_shipping_list')}}">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Shipping</span>
+							</a>
+						</div>
 
-                                        <div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/setting_packgings_list')}}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Packagings</span>
-											</a>
-										</div>
+						<div class="menu-item">
+							<a class="menu-link" href="{{url('vendor/setting_packgings_list')}}">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Packagings</span>
+							</a>
+						</div>
 
-                                        <div class="menu-item">
-											<a class="menu-link" href="{{url('vendor/setting_socialmedia_list')}}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Social Media</span>
-											</a>
-										</div>
-										
-									</div>
-								</div>
+						<div class="menu-item">
+							<a class="menu-link" href="{{url('vendor/setting_socialmedia_list')}}">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Social Media</span>
+							</a>
+						</div>
+						
+					</div>
+				</div> -->
 
                         
 

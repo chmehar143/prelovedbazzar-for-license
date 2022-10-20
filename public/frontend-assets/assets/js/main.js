@@ -1268,7 +1268,7 @@ window.Wolmart = {};
         name: '',
         nameLink: '#', // 'product.html',
         message: '',
-        actionTemplate: '',
+        actionTemplate: '/checkout',
         isPurchased: false,
 
         // option
@@ -2219,7 +2219,7 @@ window.Wolmart = {};
                     imageSrc: $product.find('.product-media img, .product-image:first-child img').attr('src'),
                     imageLink: $product.find('.product-name > a').attr('href'),
                     message: '<p>has been added to cart:</p>',
-                    actionTemplate: '<a href="cart.html" class="btn btn-rounded btn-sm">View Cart</a><a href="checkout.html" class="btn btn-dark btn-rounded btn-sm">Checkout</a>'
+                   // actionTemplate: '<a href="#" class="btn btn-rounded btn-sm">View Cart</a><a href="checkout.html" class="btn btn-dark btn-rounded btn-sm">Checkout</a>'
                 });
             }, 500);
         });
@@ -3514,7 +3514,6 @@ window.Wolmart = {};
             if (!$content.hasClass('open')) {
                 $content.addClass('open').slideDown();
                 $this.find('.custom-checkbox').addClass('checked');
-
             } else {
                 $content.removeClass('open').slideUp();
                 $this.find('.custom-checkbox').removeClass('checked');

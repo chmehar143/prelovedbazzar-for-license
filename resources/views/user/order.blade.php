@@ -1,5 +1,4 @@
 @extends('user.layouts.app')
-
 @section('content')
  <!-- Start of Main -->
  <main class="main order">
@@ -7,9 +6,9 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb shop-breadcrumb bb-no">
-                        <li class="passed"><a href="cart.html">Shopping Cart</a></li>
-                        <li class="passed"><a href="checkout.html">Checkout</a></li>
-                        <li class="active"><a href="order.html">Order Complete</a></li>
+                        <li class="passed"><a href="{{ route('cart')}}">Shopping Cart</a></li>
+                        <li class="passed"><a href="{{ route('checkout')}}">Checkout</a></li>
+                        <li class="active"><a href="{{ route('order-view')}}">Order Complete</a></li>
                     </ul>
                 </div>
             </nav>
@@ -18,32 +17,38 @@
             <!-- Start of PageContent -->
             <div class="page-content mb-10 pb-2">
                 <div class="container">
-                    <div class="order-success text-center font-weight-bolder text-dark">
+                    @if ($message = Session::get('success'))
+                    <div class="order-success text-center text-success font-weight-bolder text-dark">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
                         <i class="fas fa-check"></i>
                         Thank you. Your order has been received.
+                    </div>
+                    @endif
+                    <div class="order-success text-center text-success font-weight-bolder text-dark" style="color: green;">
+                        <i class="fas fa-check" style="color: green; font-size: 30px; "> Thank you. Your order has been received.</i>
                     </div>
                     <!-- End of Order Success -->
 
                     <ul class="order-view list-style-none">
                         <li>
                             <label>Order number</label>
-                            <strong>945</strong>
+                            <strong>{{$order->id}}</strong>
                         </li>
                         <li>
                             <label>Status</label>
-                            <strong>On hold</strong>
+                            <strong>{{ $status[$order->status] }}</strong>
                         </li>
                         <li>
                             <label>Date</label>
-                            <strong>April 27, 2021</strong>
+                            <strong>{{$order->created_at->format('M d, Y')}}</strong>
                         </li>
                         <li>
                             <label>Total</label>
-                            <strong>$1,646.36</strong>
+                            <strong>${{$order->net_amount}}</strong>
                         </li>
                         <li>
                             <label>Payment method</label>
-                            <strong>Direct bank transfor</strong>
+                            <strong>{{$order->pay_method}}</strong>
                         </li>
                     </ul>
                     <!-- End of Order View -->
@@ -53,30 +58,30 @@
                         <table class="order-table">
                             <thead>
                                 <tr>
-                                    <th class="text-dark">Product</th>
-                                    <th></th>
+                                    <th style="font-size: 14px;">Product</th>
+                                    <th style="font-size: 14px;">Vendor Shop</th>
+                                    <th style="font-size: 14px;">Status</th>
+                                    <th style="font-size: 14px;">Total</th>
+                                    <th style="font-size: 14px;">Tracking</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($order->order_detail as $detail)
                                 <tr>
                                     <td>
-                                        <a href="#">Palm Print Jacket</a>&nbsp;<strong>x 1</strong><br>
-                                        Vendor : <a href="#">Vendor 1</a>
+                                        <a href="{{ route('product', $detail->pro_id) }}">{{$detail->item_name}}</a>&nbsp;<strong>x 1</strong><br>
                                     </td>
-                                    <td>$40.00</td>
+                                    <td><strong>jfgdkfgkd{{$detail->store_name}}</strong></td>
+                                    <td>xfkxkfgldf{{$detail->sub_status}}</td>
+                                    <td>${{$detail->subtotal}}</td>
+                                    <td>jfgkdfgdfgldk{{$detail->tracking}}</td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">Brown Backpack</a>&nbsp;<strong>x 1</strong><br>
-                                        Vendor : <a href="#">Vendor 1</a>
-                                    </td>
-                                    <td>$60.00</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>Subtotal:</th>
-                                    <td>$100.00</td>
+                                    <td>${{$order->order_detail->sum('subtotal')}}</td>
                                 </tr>
                                 <tr>
                                     <th>Shipping:</th>
@@ -88,14 +93,14 @@
                                 </tr>
                                 <tr class="total">
                                     <th class="border-no">Total:</th>
-                                    <td class="border-no">$100.00</td>
+                                    <td class="border-no">${{$order->net_amount}}</td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                     <!-- End of Order Details -->
 
-                    <div class="sub-orders mb-10">
+                    <!-- <div class="sub-orders mb-10">
                         <h4 class="title mb-5 font-weight-bold ls-25">Sub Orders</h4>
                         <div class="alert alert-icon alert-inline mb-5">
                             <i class="w-icon-exclamation-triangle"></i>
@@ -118,18 +123,18 @@
                                     <td class="date">April 23, 2021</td>
                                     <td class="status">On hold</td>
                                     <td class="total">$40.00 for 1 items</td>
-                                    <td class="action"><a href="order-view.html" class="btn btn-rounded">View</a></td>
+                                    <td class="action"><a href="{{route('order-view')}}" class="btn btn-rounded">View</a></td>
                                 </tr>
                                 <tr>
                                     <td class="order">951</td>
                                     <td class="date">April 25, 2021</td>
                                     <td class="status">On hold</td>
                                     <td class="total">$60.00 for 1 items</td>
-                                    <td class="action"><a href="order-view.html" class="btn btn-rounded">View</a></td>
+                                    <td class="action"><a href="{{route('order-view')}}" class="btn btn-rounded">View</a></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
                     <!-- End of Sub Orders-->
 
                     <div id="account-addresses">
@@ -141,28 +146,28 @@
                                         <table class="address-table">
                                             <tbody>
                                                 <tr>
-                                                    <td>John Doe</td>
+                                                    <td>{{ $order->fname." ".$order->lname }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Conia</td>
+                                                    <td>{{$order->apart}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Wall Street</td>
+                                                    <td>{{$order->street}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>California</td>
+                                                    <td>{{$order->state}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>United States (US)</td>
+                                                    <td>{{$order->country}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>92020</td>
+                                                    <td>{{$order->zip}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>1112223334</td>
+                                                    <td>{{$order->phone}}</td>
                                                 </tr>
                                                 <tr class="email">
-                                                    <td>nicework125@gmail.com</td>
+                                                    <td>{{$order->email}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -175,23 +180,23 @@
                                     <address class="mb-4">
                                         <table class="address-table">
                                             <tbody>
-                                                <tr>
-                                                    <td>John Doe</td>
+                                            <tr>
+                                                    <td>{{ $order->s_fname." ".$order->s_lname }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Conia</td>
+                                                    <td>{{$order->s_apart}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Wall Street</td>
+                                                    <td>{{$order->s_street}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>California</td>
+                                                    <td>{{$order->s_state}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>United States (US)</td>
+                                                    <td>{{$order->s_country}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>92020</td>
+                                                    <td>{{$order->s_zip}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>

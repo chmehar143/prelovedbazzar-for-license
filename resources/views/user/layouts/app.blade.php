@@ -1,12 +1,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use App\Models\Cart;
+use App\Models\Vendor;
+use App\Models\Product;
+use App\Models\User;
+
+if(Auth::guard('user')->check()){
+    $user = Auth::guard('user');
+    $carts = Cart::where('user_id', $user->id())
+    ->join('products','carts.prod_id', '=', 'products.id')
+    ->get();
+}
+else{
+    $session = Session::getId();
+    $carts = Cart::where('session_id', $session)
+    ->join('products','carts.prod_id', '=', 'products.id')
+    ->get();
+}
+
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title> Home - Preloved Bazar </title>
+    <title> Home -   Multivendor </title>
 
     <meta name="keywords" content=" Preloved Baza" />
     <meta name="description" content=" Preloved Baza is powerful marketplace &amp;  website.">
@@ -50,14 +72,12 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/assets/vendor/swiper/swiper-bundle.min.css')}}">
 
     <!-- Default CSS -->
-    @if(Route::is('home') )
+    @if(Request::segment(1) != '')
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
+    @else
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/demo1.min.css')}}">
     @endif
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
-
-
 </head>
-
 <body class="home">
 <div class="page-wrapper">
     <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>
@@ -67,77 +87,66 @@
     </div>
 <!-- Start of Sticky Footer -->
 <div class="sticky-footer sticky-content fix-bottom">
-    <a href="demo1.html" class="sticky-link active">
+    <a href="{{ route('index') }}" class="sticky-link active">
         <i class="w-icon-home"></i>
         <p>Home</p>
     </a>
-    <a href="shop.html" class="sticky-link">
+    <a href="{{ route('shop') }}" class="sticky-link">
         <i class="w-icon-category"></i>
         <p>Shop</p>
     </a>
-    <a href="my-account.html" class="sticky-link">
+    <a href="{{ route('my-account') }}" class="sticky-link">
         <i class="w-icon-account"></i>
         <p>Account</p>
     </a>
     <div class="cart-dropdown dir-up">
-        <a href="cart.html" class="sticky-link">
+        <a href="javascript:void(0)" class="sticky-link">
             <i class="w-icon-cart"></i>
             <p>Cart</p>
         </a>
-        <div class="dropdown-box">
+        <div class="dropdown-box" style="overflow-y: scroll;">
+            <div class="cart-header">
+                <span>Shopping Cart</span>
+                <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
+            </div>
             <div class="products">
+                <?php $total = 0; ?>
+                @forelse($carts as $cart)
                 <div class="product product-cart">
                     <div class="product-detail">
-                        <h3 class="product-name">
-                            <a href="product-details.html">Beige knitted elas<br>tic
-                                runner shoes</a>
-                        </h3>
+                        <a href="{{route('product', $cart->prod_id)}}" class="product-name">{{$cart['p_name']}}</a>
                         <div class="price-box">
-                            <span class="product-quantity">1</span>
-                            <span class="product-price">$25.68</span>
+                            <span class="product-quantity">{{$cart['quantity']}}</span>
+                            <span class="product-price">${{$cart['p_new_price']}}</span>
                         </div>
                     </div>
                     <figure class="product-media">
-                        <a href="product-details.html">
-                            <img src="{{asset('frontend-assets/assets/images/cart/product-1.jpg')}}" alt="product" height="84" width="94" />
+                        <a href="{{route('product', $cart->prod_id)}}">
+                            <img src="{{asset('storage/uploads/products/'. $cart['p_image'])}}" alt="product" height="84"
+                                width="94" />
                         </a>
                     </figure>
-                    <button class="btn btn-link btn-close" aria-label="button">
-                        <i class="fas fa-times"></i>
-                    </button>
                 </div>
-
+                <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
+                @empty
                 <div class="product product-cart">
                     <div class="product-detail">
-                        <h3 class="product-name">
-                            <a href="product-details.html">Blue utility pina<br>fore
-                                denim dress</a>
-                        </h3>
-                        <div class="price-box">
-                            <span class="product-quantity">1</span>
-                            <span class="product-price">$32.99</span>
-                        </div>
+                        <h4>No Item</h4>
                     </div>
-                    <figure class="product-media">
-                        <a href="product-details.html">
-                            <img src="{{asset('frontend-assets/assets/images/cart/product-2.jpg')}}" alt="product" width="84" height="94" />
-                        </a>
-                    </figure>
-                    <button class="btn btn-link btn-close" aria-label="button">
-                        <i class="fas fa-times"></i>
-                    </button>
+                </div>
+                @endforelse
+                <div class="cart-total">
+                    <label>Subtotal:</label>
+                    <span class="price">${{$total}}</span>
+                </div>
+
+                <div class="cart-action">
+                    <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                    <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
                 </div>
             </div>
 
-            <div class="cart-total">
-                <label>Subtotal:</label>
-                <span class="price">$58.67</span>
-            </div>
 
-            <div class="cart-action">
-                <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
-            </div>
         </div>
         <!-- End of Dropdown Box -->
     </div>
@@ -196,14 +205,14 @@
         <div class="tab-content">
             <div class="tab-pane active" id="main-menu">
                 <ul class="mobile-menu">
-                    <li><a href="demo1.html">Home</a></li>
+                    <li><a href="{{ route('index') }}">Home</a></li>
                     <li>
                         <a href="#">Shop</a>
                         <ul>
                             <li>
                                 <a href="#">MENS CLOTH </a>
                                 <ul>
-                                    <li><a href="shop.html"> product name </a></li>
+                                    <li><a href="{{ route('shop') }}"> product name </a></li>
 
                                 </ul>
                             </li>
@@ -248,7 +257,7 @@
             <div class="tab-pane" id="categories">
                 <ul class="mobile-menu">
                     <li>
-                        <a href="shop.html">
+                        <a href="{{ route('shop') }}">
                             <i class="w-icon-tshirt2"></i>Mens
                         </a>
                         <ul>
@@ -256,17 +265,17 @@
                             <li>
                                 <a href="#">Men</a>
                                 <ul>
-                                    <li><a href="shop.html">New Arrivals</a>
+                                    <li><a href="{{ route('shop') }}">New Arrivals</a>
                                     </li>
-                                    <li><a href="shop.html">Best Sellers</a>
+                                    <li><a href="{{ route('shop') }}">Best Sellers</a>
                                     </li>
-                                    <li><a href="shop.html">Trending</a></li>
-                                    <li><a href="shop.html">Clothing</a></li>
-                                    <li><a href="shop.html">Shoes</a></li>
-                                    <li><a href="shop.html">Bags</a></li>
-                                    <li><a href="shop.html">Accessories</a>
+                                    <li><a href="{{ route('shop') }}">Trending</a></li>
+                                    <li><a href="{{ route('shop') }}">Clothing</a></li>
+                                    <li><a href="{{ route('shop') }}">Shoes</a></li>
+                                    <li><a href="{{ route('shop') }}">Bags</a></li>
+                                    <li><a href="{{ route('shop') }}">Accessories</a>
                                     </li>
-                                    <li><a href="shop.html">Jewlery &
+                                    <li><a href="{{ route('shop') }}">Jewlery &
                                             Watches</a></li>
                                 </ul>
                             </li>
@@ -275,25 +284,25 @@
 
 
                     <li>
-                        <a href="shop.html">
+                        <a href="{{ route('shop') }}">
                             <i class="w-icon-gift"></i>Gift Ideas
                         </a>
                     </li>
 
                     <li>
-                        <a href="shop.html">
+                        <a href="{{ route('shop') }}">
                             <i class="w-icon-heart"></i>Shirts
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="shop.html">
+                        <a href="{{ route('shop') }}">
                             <i class="w-icon-tshirt"></i>Women
                         </a>
                     </li>
                     <li>
-                        <a href="shop.html"
+                        <a href="{{ route('shop') }}"
                            class="font-weight-bold text-primary text-uppercase ls-25">
                             View All Categories<i class="w-icon-angle-right"></i>
                         </a>
@@ -312,10 +321,10 @@
         <h2 class="ls-25">Sign up to Wolmart</h2>
         <p class="text-light ls-10">Subscribe to the Wolmart market newsletter to
             receive updates on special offers.</p>
-        <form action="#" method="get" class="input-wrapper input-wrapper-inline input-wrapper-round">
-            <input type="email" class="form-control email font-size-md" name="email" id="email2"
-                   placeholder="Your email address" required="">
-            <button class="btn btn-dark" type="submit">SUBMIT</button>
+        <form action="javascript:void(0)" class="input-wrapper input-wrapper-inline input-wrapper-round">
+            <input type="email" class="form-control email font-size-md" name="email" id="mail"
+                   placeholder="Your email address" required>
+            <button type="submit" class="btn btn-dark" id="subscribe" >SUBMIT</button>
         </form>
         <div class="form-checkbox d-flex align-items-center">
             <input type="checkbox" class="custom-checkbox" id="hide-newsletter-popup" name="hide-newsletter-popup"
@@ -327,7 +336,7 @@
 <!-- End of Newsletter popup -->
 
 <!-- Start of Quick View -->
-<div class="product product-single product-popup">
+<!-- <div class="product product-single product-popup">
     <div class="row gutter-lg">
         <div class="col-md-6 mb-4 mb-md-0">
             <div class="product-gallery product-gallery-sticky">
@@ -493,8 +502,20 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End of Quick view -->
+
+<!-- botman start here we need to update later... -->
+<script>
+        var botmanWidget = {
+            aboutText:'PreloveBazar',
+            introMessage :'Hi Welcome to PreloveBazar',
+        };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    <!-- botman start here we need to update later... -->
+
+
 
 <!-- Plugin JS File -->
 <script src="{{asset('frontend-assets/assets/vendor/jquery/jquery.min.js')}}"></script>
@@ -510,6 +531,37 @@
 
 <!-- Main JS -->
 <script src="{{asset('frontend-assets/assets/js/main.min.js')}}"></script>
+
+<!-- ajax for subscription -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="text/javascript">
+    $("#subscribe").click(function(){
+            var email = $("#mail").val();
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('subscribe') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    email: email
+                },
+                success: function(data) {
+                    // log response into console
+                    // Swal.fire(
+                    //     'Sent!',
+                    //     'Message has been sent successfully.',
+                    //     'success'
+                    // )
+                    console.log("email has been sent!")
+                }
+            });
+        });
+</script>
+<!-- /ajax for subscription -->
 
 </body>
 

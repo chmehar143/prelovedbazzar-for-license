@@ -1,8 +1,10 @@
+
 <header class="header">
             <div class="header-top">
                 <div class="container">
                     <div class="header-left">
                         <p class="welcome-msg">Welcome to Preloved Bazar Store!</p>
+                        <p class="welcome-msg"></p>
                     </div>
                     <div class="header-right">
                         <div class="dropdown ">
@@ -35,11 +37,14 @@
                         <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
                         <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
                         <a href="{{route('about-us')}}" class="d-lg-show">About Us</a>
-
+                        @if(Auth::guard('user')->check())
+                        <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
                         <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
-                        <a href="{{route('Login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
+                        @else
+                        <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter  d-lg-show">/</span>
-                        <a href="{{route('Login')}}" class="ml-0 d-lg-show ">Register</a>
+                        <a href="{{route('user.register')}}" class="ml-0 d-lg-show ">Register</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -58,11 +63,9 @@
                             <div class="select-box">
                                 <select id="category" name="category">
                                     <option value="">All Categories</option>
-                                    <option value="4">Mens</option>
-                                    <option value="6">Gift Ideas</option>
-                                    <option value="8">Men Cloth</option>
-                                    <option value="9">Women Cloths</option>
-                                    <option value="12">Shirts</option>
+                                    @foreach($shareData['categories'] as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <input type="text" class="form-control" name="search" id="search" placeholder="Search in..."
@@ -84,78 +87,58 @@
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <a class="compare label-down link d-xs-show" href="{{route('compare')}}">
-                            <i class="w-icon-compare"></i>
-                            <span class="compare-label d-lg-show">Compare</span>
-                        </a>
-                        <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
+                        <div class="dropdown cart-dropdown mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
-                            <a href="#" class="cart-toggle label-down link">
+                            <a href="{{route('cart')}}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
-                                    <span class="cart-count">2</span>
+                                    <span class="cart-count">{{$carts->count()}}</span>
                                 </i>
                                 <span class="cart-label">Cart</span>
                             </a>
-                            <div class="dropdown-box">
+                            <!-- <div class="dropdown-box" style="overflow-y: scroll;">
                                 <div class="cart-header">
                                     <span>Shopping Cart</span>
                                     <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
-
                                 <div class="products">
+                                    <?php $total = 0; ?>
+                                    @forelse($carts as $cart)
                                     <div class="product product-cart">
                                         <div class="product-detail">
-                                            <a href="product-details.html" class="product-name">Beige knitted
-                                                elas<br>tic
-                                                runner shoes</a>
+                                            <a href="{{route('product', $cart->prod_id)}}" class="product-name">{{$cart['p_name']}}</a>
                                             <div class="price-box">
-                                                <span class="product-quantity">1</span>
-                                                <span class="product-price">$25.68</span>
+                                                <span class="product-quantity">{{$cart['quantity']}}</span>
+                                                <span class="product-price">${{$cart['p_new_price']}}</span>
                                             </div>
                                         </div>
                                         <figure class="product-media">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/cart/product-1.jpg" alt="product" height="84"
+                                            <a href="{{route('product', $cart->prod_id)}}">
+                                                <img src="{{asset('storage/uploads/products/'. $cart['p_image'])}}" alt="product" height="84"
                                                     width="94" />
                                             </a>
                                         </figure>
-                                        <button class="btn btn-link btn-close" aria-label="button">
-                                            <i class="fas fa-times"></i>
-                                        </button>
                                     </div>
-
+                                    <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
+                                    @empty
                                     <div class="product product-cart">
                                         <div class="product-detail">
-                                            <a href="product-details.html" class="product-name">Blue utility
-                                                pina<br>fore
-                                                denim dress</a>
-                                            <div class="price-box">
-                                                <span class="product-quantity">1</span>
-                                                <span class="product-price">$32.99</span>
-                                            </div>
+                                            <h4>No Item</h4>
                                         </div>
-                                        <figure class="product-media">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/cart/product-2.jpg" alt="product" width="84"
-                                                    height="94" />
-                                            </a>
-                                        </figure>
-                                        <button class="btn btn-link btn-close" aria-label="button">
-                                            <i class="fas fa-times"></i>
-                                        </button>
+                                    </div>
+                                    @endforelse
+                                    <div class="cart-total">
+                                        <label>Subtotal:</label>
+                                        <span class="price">${{$total}}</span>
+                                    </div>
+
+                                    <div class="cart-action">
+                                        <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                        <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
                                     </div>
                                 </div>
 
-                                <div class="cart-total">
-                                    <label>Subtotal:</label>
-                                    <span class="price">$58.67</span>
-                                </div>
 
-                                <div class="cart-action">
-                                    <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                                    <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
-                                </div>
-                            </div>
+                            </div> -->
                             <!-- End of Dropdown Box -->
                         </div>
                     </div>
@@ -174,97 +157,20 @@
                                     <i class="w-icon-category"></i>
                                     <span>Browse Categories</span>
                                 </a>
-
                                 <div class="dropdown-box">
                                     <ul class="menu vertical-menu category-menu">
+                                        @foreach($shareData['categories'] as $category)
                                         <li>
                                             <a href="{{route('shop')}}">
-                                                <i class="w-icon-tshirt2"></i>Men's
+                                                <i class="w-icon-tshirt2"></i>{{$category->name}}
                                             </a>
-                                            <ul class="megamenu">
-                                                <li>
-                                                    <h4 class="menu-title">Women</h4>
-                                                    <hr class="divider">
-                                                    <ul>
-                                                        <li><a href="{{route('shop')}}">New Arrivals</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Best Sellers</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Trending</a></li>
-                                                        <li><a href="{{route('shop')}}">Clothing</a></li>
-                                                        <li><a href="{{route('shop')}}">Shoes</a></li>
-                                                        <li><a href="{{route('shop')}}">Bags</a></li>
-                                                        <li><a href="{{route('shop')}}">Accessories</a>
-                                                        </li>
-
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <h4 class="menu-title">Men</h4>
-                                                    <hr class="divider">
-                                                    <ul>
-                                                        <li><a href="{{route('shop')}}">New Arrivals</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Best Sellers</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Trending</a></li>
-                                                        <li><a href="{{route('shop')}}">Clothing</a></li>
-                                                        <li><a href="{{route('shop')}}">Shoes</a></li>
-                                                        <li><a href="{{route('shop')}}">Bags</a></li>
-                                                        <li><a href="{{route('shop')}}">Accessories</a>
-                                                        </li>
-                                                        <li><a href="{{route('shop')}}">Jewlery &
-                                                                Watches</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <div class="banner-fixed menu-banner menu-banner2">
-                                                        <figure>
-                                                            <img src="frontend-assets/assets/images/menu/banner-2.jpg" alt="Menu Banner"
-                                                                width="235" height="347" />
-                                                        </figure>
-                                                        <div class="banner-content">
-                                                            <div class="banner-price-info mb-1 ls-normal">Get up to
-                                                                <strong
-                                                                    class="text-primary text-uppercase">20%Off</strong>
-                                                            </div>
-                                                            <h3 class="banner-title ls-normal">Hot Sales</h3>
-                                                            <a href="{{route('shop')}}"
-                                                                class="btn btn-dark btn-sm btn-link btn-slide-right btn-icon-right">
-                                                                Shop Now<i class="w-icon-long-arrow-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                            <ul class="">
+                                                @foreach($category['subcategory'] as $subcategory)  
+                                                    <li><a href="{{route('shop')}}">{{$subcategory->name}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
-
-
-
-                                        <li>
-                                            <a href="{{route('shop')}}">
-                                                <i class="w-icon-gift"></i>Gift Ideas
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{route('shop')}}">
-                                                <i class="w-icon-tshirt"></i>Shirts
-                                            </a>
-                                        </li>
-
-
-                                        <li>
-                                            <a href="{{route('shop')}}">
-                                                <i class="w-icon-heart"></i>Women Cloth
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('shop')}}"
-                                                class="font-weight-bold text-primary text-uppercase ls-25">
-                                                View All Categories<i class="w-icon-angle-right"></i>
-                                            </a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -274,41 +180,7 @@
                                         <a href="{{route('index')}}">Home</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('shop')}}">Shop</a>
-
-                                        <!-- Start of Megamenu -->
-                                        <ul class="megamenu">
-                                            <li>
-                                                <h4 class="menu-title">Mens Cloth </h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Women Cloth</h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Baby Cloth</h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Clothes Product </h4>
-                                                <ul>
-                                                    <li><a href="{{route('shop')}}">product name<span
-                                                                class="tip tip-hot">Hot</span></a></li>
-
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <!-- End of Megamenu -->
+                                        <a href="{{ route('shop') }}">Shop</a>
                                     </li>
                                     <li>
                                         <a href="{{route('vendor-store')}}">Vendor Stores</a>
@@ -318,11 +190,7 @@
                                         <a href="{{route('blogs')}}">Blog</a>
 
                                     </li>
-
-
-                                    <li><a href="{{route('become-a-vendor')}}">Become A Vendor</a></li>
-
-
+                                    <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
 
                                 </ul>
                             </nav>

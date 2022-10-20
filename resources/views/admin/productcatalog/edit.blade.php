@@ -4,10 +4,51 @@
 <head>
 	<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 </head>
-<div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
+<div class="toolbar py-2" id="kt_toolbar">
+						<!--begin::Container-->
+						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+									<!--begin::Title-->
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> Products Catalog </h1>
+									<!--end::Title-->
+									<!--begin::Separator-->
+									<span class="h-20px border-gray-200 border-start mx-3"></span>
+									<!--end::Separator-->
+									<!--begin::Breadcrumb-->
+									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+										<!--begin::Item-->
+										
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted"> Products </li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-dark"> Edit Products Catalog </li>
+										<!--end::Item-->
+									</ul>
+									<!--end::Breadcrumb-->
+								</div>
+							<!--begin::Page title-->
+							<div class="flex-grow-1 flex-shrink-0 me-5">
+								<!--begin::Page title-->
+								
+								<!--end::Page title-->
+							</div>
+							<!--end::Page title-->
+						</div>
+</div>
+<div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content" >
                    
 						<!--begin::Container-->
-						<div id="kt_content_container" class="container-xxl" >
+						<div id="kt_content_container" class="container-xxl" style="margin-top:2pc">
 							<!--begin::Navbar-->
 							<div class="card mb-5 mb-xl-10">
 						
@@ -314,7 +355,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="content" id="editor">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													  
 												</textarea>
 																						</div>
 											<!--end::Col-->
@@ -327,7 +368,7 @@
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
 												<textarea name="content" id="editornew">
-													&lt;p&gt;This is some sample content.&lt;/p&gt;
+													  
 												</textarea>
 																						</div>
 											<!--end::Col-->

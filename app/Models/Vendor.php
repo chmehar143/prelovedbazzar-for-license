@@ -20,8 +20,12 @@ class Vendor extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','shop_name'
+        'name', 'email', 'password','shop_name', 'shop_image'
     ];
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

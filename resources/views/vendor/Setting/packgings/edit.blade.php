@@ -4,6 +4,7 @@
 <head>
 	<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 </head>
+
 <div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
                    
 						<!--begin::Container-->

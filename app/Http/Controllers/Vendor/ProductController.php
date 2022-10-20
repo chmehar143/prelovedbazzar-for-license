@@ -11,6 +11,8 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Childcategory;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
 use Config;
 
 
@@ -42,7 +44,8 @@ class ProductController extends Controller
     public  function  create()
     {
         $categories = Category::all();
-        return view('vendor.product.create', compact('categories'));
+        $conditions = Config::get('constants.condition');
+        return view('vendor.product.create', compact('categories', 'conditions'));
     }
 
 
@@ -71,6 +74,32 @@ class ProductController extends Controller
 
     public  function  store(Request $request)
     {
+        //--- Validation Section
+        $rules = [
+            'p_name' => 'required',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'p_sku' => 'required|unique:products|',
+            'con' => 'required',
+            'p_ship_time' => 'required',
+            'p_color' => 'required',
+            'p_catog' => 'required',
+            'p_sub_catog' => 'required',
+            'p_new_price' => 'required',
+            'p_old_price' => 'required',
+            'p_stock' => 'required',
+
+        ];
+        $customs = [
+            'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
+            'avatar.max' => 'Fil size must be less than 2MB.',
+            'p_sku.unique' => 'This SKU has already been taken.',
+        ];
+        $validator = Validator::make($request->all(), $rules, $customs);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        //end validation
         $product = new Product();
         $product->vendor_id = Auth::guard('vendor')->id();
         $product->p_type = $request->input('p_type');
@@ -85,8 +114,6 @@ class ProductController extends Controller
 
         }
         $product->p_sku = $request->input('p_sku');
-        $product->p_size_qnty = $request->input('p_size_qnty');
-        $product->p_size_price = $request->input('p_size_price');
         $product->p_ship_time = $request->input('p_ship_time');
         $product->p_color = $request->input('p_color');
         $product->p_catog = $request->input('p_catog');
@@ -97,6 +124,7 @@ class ProductController extends Controller
         $product->p_stock = $request->input('p_stock');
         $product->p_detail = $request->input('p_detail');
         $product->p_r_policy = $request->input('p_r_policy');
+        $product->status = 1;
         if($request->input('small') == true){
             $product->small = 1;
         }else{
@@ -112,13 +140,8 @@ class ProductController extends Controller
         }else{
             $product->large = 0;
         }
-        if($request->input('checkbox') == true){
-            $product->status = 1;
-        }else{
-            $product->status = 0;
-        }
         $product->save();
-        return redirect('/vendor/product_list');
+        return redirect()->route('vendor.product_list');
 
     }
 
@@ -126,15 +149,40 @@ class ProductController extends Controller
 
     {
         $categories = Category::all();
-        $subcategories = Subcategory::all();
-        $childcategories = Childcategory::all();
-        $product = Product::where('id', $id)->first();   
-        return view('vendor.product.edit', compact('product','categories','subcategories','childcategories'));
+        $product = Product::where('id', $id)->first(); 
+        $conditions = Config::get('constants.condition');  
+        return view('vendor.product.edit', compact('product','categories','conditions'));
     }
 
 
     public  function  update(Request $request, $id)
     {
+        //--- Validation Section
+        $rules = [
+            'p_name' => 'required',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'p_sku' => 'required',
+            'con' => 'required',
+            'p_ship_time' => 'required',
+            'p_color' => 'required',
+            'p_catog' => 'required',
+            'p_sub_catog' => 'required',
+            'p_new_price' => 'required',
+            'p_old_price' => 'required',
+            'p_stock' => 'required',
+
+        ];
+        $customs = [
+            'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
+            'avatar.max' => 'Fil size must be less than 2MB.',
+        ];
+        $validator = Validator::make($request->all(), $rules, $customs);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        //end validation
+
         $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
         $product->p_name = $request->input('p_name');
         if($request->hasfile('avatar') != '')
@@ -154,8 +202,6 @@ class ProductController extends Controller
 
         }
         $product->p_sku = $request->input('p_sku');
-        $product->p_size_qnty = $request->input('p_size_qnty');
-        $product->p_size_price = $request->input('p_size_price');
         $product->p_ship_time = $request->input('p_ship_time');
         $product->p_color = $request->input('p_color');
         $product->p_catog = $request->input('p_catog');
@@ -187,7 +233,7 @@ class ProductController extends Controller
             $product->status = 0;
         }
         $product->update();
-        return redirect('/vendor/product_list');
+        return redirect()->route('vendor.product_list');
 
     }
 

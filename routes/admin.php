@@ -54,15 +54,14 @@ Route::post('/child_category_edit/{childcategory}', 'ChildCategoryController@upd
 Route::get('/child_category_delete/{id}', 'ChildCategoryController@destroy')->name('child_category_destroy');
 Route::get('/child_category_view', 'ChildCategoryController@view')->name('child_category_view');
 
-
 // All  Products
 Route::get('/allproducts_list', 'AllProductController@index')->name('allproducts_list');
 Route::get('/allproducts_create', 'AllProductController@create')->name('allproducts_create');
 Route::post('/allproducts_store', 'AllProductController@store')->name('allproducts_store');
-Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat'); 
+Route::post('/GetSubCat', 'AllProductController@GetSubCat')->name('GetSubCat');
 Route::post('/GetChildCat', 'AllProductController@GetChildCat')->name('GetChildCat');
 Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allproducts_edit');
-Route::put('/allproducts_update', 'AllProductController@update')->name('allproducts_update');
+Route::put('/allproducts_update/{id}', 'AllProductController@update')->name('allproducts_update');
 Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
 Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
 
@@ -71,8 +70,10 @@ Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproduc
 
 Route::get('/productcatalog_list', 'ProductCatalogsController@index')->name('productcatalog_list');
 Route::get('/productcatalog_create', 'ProductCatalogsController@create')->name('productcatalog_create');
-Route::get('/productcatalog_edit', 'ProductCatalogsController@edit')->name('productcatalog_edit');
-Route::get('/productcatalog_view', 'ProductCatalogsController@view')->name('productcatalog_view');
+Route::post('/productcatalog_store', 'ProductCatalogsController@store')->name('productcatalog_store');
+Route::get('/productcatalog_edit/{id}', 'ProductCatalogsController@edit')->name('productcatalog_edit');
+Route::get('/productcatalog_update/{id}', 'ProductCatalogsController@update')->name('productcatalog_update');
+Route::get('/productcatalog_view/{id}', 'ProductCatalogsController@view')->name('productcatalog_view');
 
 
 Route::get('/deactivateproduct_list', 'DeactivedProductController@index')->name('deactivateproduct_list');
@@ -88,6 +89,240 @@ Route::put('/affilateproduct_update/{id}', 'AffilateController@update')->name('a
 Route::get('/affilateproduct_delete/{id}', 'AffilateController@destroy')->name('affilateproduct_delete');
 Route::get('/affilateproduct_view/{id}', 'AffilateController@view')->name('affilateproduct_view');
 
+// Vendor  product
+
+Route::get('vendors_list', 'VendorsController@index')->name('vendors_list');
+Route::get('/vendors_edit/{id}', 'VendorsController@edit')->name('vendors_edit');
+Route::put('/vendors_update/{id}', 'VendorsController@update')->name('vendors_update');
+Route::get('/vendors_view/{id}', 'VendorsController@view')->name('vendors_view');
+Route::post('/vendors_status/{id}', 'VendorsController@status')->name('vendors_status');
+Route::get('/vendors_question', 'VendorsController@question')->name('vendors_question');
+Route::get('/vendors_withdraw', 'VendorsController@list')->name('vendors_withdraw');
+
+
+// Vendor  product
+
+Route::get('vendorverification_list', 'VendorVerificationController@index')->name('vendorverification_list');
+Route::put('vendorverification_verify/{id}', 'VendorVerificationController@verify')->name('vendorverification_verify');
+Route::put('vendorverification_unverify/{id}', 'VendorVerificationController@unverify')->name('vendorverification_unverify');
+Route::get('vendorverification_del/{id}', 'VendorVerificationController@remove')->name('vendorverification_del');
+Route::get('/vendorverification_pending', 'VendorVerificationController@pending')->name('vendorverification_pending');
 
 
 
+//Cusomters
+
+Route::get('customer_list', 'CustomersController@index')->name('customer_list');
+Route::get('/customer_deposit', 'CustomersController@deposit')->name('customer_deposit');
+Route::get('/customer_withdraw', 'CustomersController@withdraw')->name('customer_withdraw');
+Route::get('/customer_transaction', 'CustomersController@transactions')->name('customer_transaction');
+Route::get('/customer_viewdetails', 'CustomersController@view')->name('customer_viewdetails');
+Route::get('/customer_edit', 'CustomersController@edit')->name('customer_edit');
+Route::get('/customer_details', 'CustomersController@details')->name('customer_details');
+Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_invoice');
+
+//Products Discussions...
+
+Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
+Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
+Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
+Route::get('/productdisscussion_reviewview/{id}', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+Route::get('/productdisscussion_delete/{id}', 'ProductDisscussionController@destroy')->name('productdisscussion_delete');
+
+
+//Orders
+
+Route::get('order_allorder', 'OrderController@allorder')->name('order_allorder');
+Route::get('order_allorderdetails/{id}', 'OrderController@allorderdetails')->name('order_allorderdetails');
+Route::get('order_allorderinvoice', 'OrderController@allorderinvoice')->name('order_allorderinvoice');
+Route::get('order_allorderdelivery/{id}', 'OrderController@allorderdelivery')->name('order_allorderdelivery');
+
+
+// Complete Orders
+
+Route::get('/order_complete_completedorder', 'OrderController@completedorder')->name('order_complete_completedorder');
+Route::get('order_complete_completeorderdetails/{id}', 'OrderController@completeorderdetails')->name('order_complete_completeorderdetails');
+Route::get('order_complete_completeorderinvoice', 'OrderController@completeorderinvoice')->name('order_complete_completeorderinvoice');
+Route::get('order_complete_completeorderdelivery', 'OrderController@completeorderdelivery')->name('order_complete_completeorderdelivery');
+// pending Orders
+
+Route::get('/order_pending_pendingorder', 'OrderController@pendingorder')->name('order_pending_pendingorder');
+Route::get('order_pending_pendingorderdetails/{id}', 'OrderController@pendingorderdetails')->name('order_pending_pendingorderdetails');
+Route::get('order_pending_pendingorderinvoice', 'OrderController@pendingorderinvoice')->name('order_pending_pendingorderinvoice');
+Route::get('order_pending_pendingorderdelivery', 'OrderController@pendingorderdelivery')->name('order_pending_pendingorderdelivery');
+
+// Declined Orders Orders
+
+
+
+Route::get('/order_decline_declinedorder', 'OrderController@declineorder')->name('order_decline_declinedorder');
+Route::get('order_decline_declineorderdetails/{id}', 'OrderController@declineorderdetails')->name('order_decline_declineorderdetails');
+Route::get('order_decline_declineorderinvoice', 'OrderController@declineorderinvoice')->name('order_decline_declineorderinvoice');
+Route::get('order_decline_declineorderdelivery', 'OrderController@declineorderdelivery')->name('order_decline_declineorderdelivery');
+
+// Processing Orders Orders
+
+
+Route::get('/order_processing_processingorder', 'OrderController@processingorder')->name('order_processing_processingorder');
+Route::get('order_processing_processingorderdetails/{id}', 'OrderController@processingorderdetails')->name('order_processing_processingorderdetails');
+Route::get('order_processing_processingorderinvoice', 'OrderController@processingorderinvoice')->name('order_processing_processingorderinvoice');
+Route::get('order_processing_processingorderdelivery', 'OrderController@processingorderdelivery')->name('order_processing_processingorderdelivery');
+
+// Blog
+
+Route::get('/blog_categorieslist', 'BlogController@index')->name('blog_categorieslist');
+Route::get('blog_addcategories', 'BlogController@create')->name('blog_addcategories');
+Route::get('blog_editcategories', 'BlogController@edit')->name('blog_editcategories');
+
+Route::get('blog_postlist', 'BlogController@post')->name('blog_postlist');
+Route::get('blog_addpost', 'BlogController@postcreate')->name('blog_addpost');
+Route::get('blog_editpost', 'BlogController@postedit')->name('blog_editpost');
+
+//Message
+
+Route::get('message_messagelist', 'MessageController@message')->name('message_messagelist');
+Route::get('message_messagelist_view', 'MessageController@messageview')->name('message_messagelist_view');
+Route::post('message_send', 'MessageController@notifyto')->name('message_send');
+Route::get('message_view', 'MessageController@view')->name('message_view');
+Route::get('message_details', 'MessageController@details')->name('message_details');
+Route::get('message_invoice', 'MessageController@invoice')->name('message_invoice');
+
+//Subscribe
+Route::get('subscribe_list', 'SubscribeController@index')->name('subscribe_list');
+Route::get('remove_subscript/{id}', 'SubscribeController@remove')->name('remove_subscript');
+
+// Manage staff
+Route::get('managestaff_list', 'ManageStaffController@list')->name('managestaff_list');
+Route::get('managestaff_create', 'ManageStaffController@create')->name('managestaff_create');
+Route::post('managestaff_store', 'ManageStaffController@store')->name('managestaff_store');
+Route::get('managestaff_edit/{id}', 'ManageStaffController@edit')->name('managestaff_edit');
+Route::put('managestaff_update/{id}', 'ManageStaffController@update')->name('managestaff_update');
+Route::get('managestaff_view/{id}', 'ManageStaffController@view')->name('managestaff_view');
+Route::get('managestaff_delete/{id}', 'ManageStaffController@destroy')->name('managestaff_delete');
+
+
+
+
+
+
+
+
+
+
+
+// Vendor  product
+
+// Route::get('vendors_list', 'VendorsController@index')->name('vendors_list');
+// Route::get('/vendors_edit', 'VendorsController@edit')->name('vendors_edit');
+// Route::get('/vendors_view', 'VendorsController@view')->name('vendors_view');
+// Route::get('/vendors_question', 'VendorsController@question')->name('vendors_question');
+// Route::get('/vendors_withdraw', 'VendorsController@list')->name('vendors_withdraw');
+
+
+// Vendor  product
+
+Route::get('vendorverification_list', 'VendorVerificationController@index')->name('vendorverification_list');
+Route::get('/vendorverification_pending', 'VendorVerificationController@pending')->name('vendorverification_pending');
+
+
+
+//Cusomters
+
+Route::get('customer_list', 'CustomersController@index')->name('customer_list');
+Route::get('/customer_deposit', 'CustomersController@deposit')->name('customer_deposit');
+Route::get('/customer_withdraw', 'CustomersController@withdraw')->name('customer_withdraw');
+Route::get('/customer_transaction', 'CustomersController@transactions')->name('customer_transaction');
+Route::get('/customer_viewdetails', 'CustomersController@view')->name('customer_viewdetails');
+Route::get('/customer_edit', 'CustomersController@edit')->name('customer_edit');
+Route::get('/customer_details', 'CustomersController@details')->name('customer_details');
+Route::get('/customer_invoice', 'CustomersController@invoice')->name('customer_invoice');
+
+//Cusomters
+
+// Route::get('productdisscussion_comments', 'ProductDisscussionController@comments')->name('productdisscussion_comments');
+// Route::get('/productdisscussion_report', 'ProductDisscussionController@report')->name('productdisscussion_report');
+// Route::get('/productdisscussion_review', 'ProductDisscussionController@review')->name('productdisscussion_review');
+// Route::get('/productdisscussion_reviewview', 'ProductDisscussionController@reviewview')->name('productdisscussion_reviewview');
+
+
+//Orders
+
+// Route::get('order_allorder', 'OrderController@allorder')->name('order_allorder');
+// Route::get('order_allorderdetails', 'OrderController@allorderdetails')->name('order_allorderdetails');
+// Route::get('order_allorderinvoice', 'OrderController@allorderinvoice')->name('order_allorderinvoice');
+// Route::get('order_allorderdelivery', 'OrderController@allorderdelivery')->name('order_allorderdelivery');
+
+
+// Complete Orders
+
+// Route::get('/order_complete_completedorder', 'OrderController@completedorder')->name('order_complete_completedorder');
+// Route::get('order_complete_completeorderdetails', 'OrderController@completeorderdetails')->name('order_complete_completeorderdetails');
+// Route::get('order_complete_completeorderinvoice', 'OrderController@completeorderinvoice')->name('order_complete_completeorderinvoice');
+// Route::get('order_complete_completeorderdelivery', 'OrderController@completeorderdelivery')->name('order_complete_completeorderdelivery');
+
+// pending Orders
+
+// Route::get('/order_pending_pendingorder', 'OrderController@pendingorder')->name('order_pending_pendingorder');
+// Route::get('order_pending_pendingorderdetails', 'OrderController@pendingorderdetails')->name('order_pending_pendingorderdetails');
+// Route::get('order_pending_pendingorderinvoice', 'OrderController@pendingorderinvoice')->name('order_pending_pendingorderinvoice');
+// Route::get('order_pending_pendingorderdelivery', 'OrderController@pendingorderdelivery')->name('order_pending_pendingorderdelivery');
+
+// Declined Orders Orders
+
+
+
+// Route::get('/order_decline_declinedorder', 'OrderController@declineorder')->name('order_decline_declinedorder');
+// Route::get('order_decline_declineorderdetails', 'OrderController@declineorderdetails')->name('order_decline_declineorderdetails');
+// Route::get('order_decline_declineorderinvoice', 'OrderController@declineorderinvoice')->name('order_decline_declineorderinvoice');
+// Route::get('order_decline_declineorderdelivery', 'OrderController@declineorderdelivery')->name('order_decline_declineorderdelivery');
+
+// Processing Orders Orders
+// Route::get('/order_processing_processingorder', 'OrderController@processingorder')->name('order_processing_processingorder');
+// Route::get('order_processing_processingorderdetails', 'OrderController@processingorderdetails')->name('order_processing_processingorderdetails');
+// Route::get('order_processing_processingorderinvoice', 'OrderController@processingorderinvoice')->name('order_processing_processingorderinvoice');
+// Route::get('order_processing_processingorderdelivery', 'OrderController@processingorderdelivery')->name('order_processing_processingorderdelivery');
+
+// Blog
+Route::get('/blog_categorieslist', 'BlogController@index')->name('blog_categorieslist');
+Route::get('blog_addcategories', 'BlogController@create')->name('blog_addcategories');
+Route::get('blog_editcategories', 'BlogController@edit')->name('blog_editcategories');
+
+Route::get('blog_postlist', 'BlogController@post')->name('blog_postlist');
+Route::get('blog_addpost', 'BlogController@postcreate')->name('blog_addpost');
+Route::get('blog_editpost', 'BlogController@postedit')->name('blog_editpost');
+
+//Message
+
+Route::get('message_messagelist', 'MessageController@message')->name('message_messagelist');
+Route::get('message_messagelist_view', 'MessageController@messageview')->name('message_messagelist_view');
+Route::get('message_view', 'MessageController@view')->name('message_view');
+Route::get('message_details', 'MessageController@details')->name('message_details');
+Route::get('message_invoice', 'MessageController@invoice')->name('message_invoice');
+
+
+
+//subscriptionplan
+
+Route::get('/subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
+Route::get('/subscriptionplan_create', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
+Route::post('/subscriptionplan_store', 'SubscriptionPlanController@store')->name('subscriptionplan_store');
+Route::get('/subscriptionplan_edit/{id}', 'SubscriptionPlanController@edit')->name('subscriptionplan_edit');
+Route::put('/subscriptionplan_update/{id}', 'SubscriptionPlanController@update')->name('subscriptionplan_update');
+Route::get('/subscriptionplan_view/{id}', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
+Route::get('/subscriptionplan_remove/{id}', 'SubscriptionPlanController@remove')->name('subscriptionplan_remove');
+
+
+Route::get('manageroles_list', 'ManageRolesController@list')->name('manageroles_list');
+Route::get('manageroles_create', 'ManageRolesController@create')->name('manageroles_create');
+Route::get('manageroles_edit', 'ManageRolesController@edit')->name('manageroles_edit');
+
+//Web Banner
+Route::get('webbanner_list', 'WebsiteBannerController@list')->name('webbanner_list');
+Route::get('webbanner_create', 'WebsiteBannerController@create')->name('webbanner_create');
+Route::get('webbanner_edit', 'WebsiteBannerController@edit')->name('webbanner_edit');
+
+
+//Contact Us 
+Route::get('contactus_list', 'ContactUsController@list')->name('contactus_list');
+Route::get('contactus_view/{id}', 'ContactUsController@view')->name('contactus_view');
+Route::get('contactus_rem/{id}', 'ContactUsController@remove')->name('contactus_rem');

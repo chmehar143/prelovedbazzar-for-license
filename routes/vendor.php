@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Dashboard
-Route::get('/', 'HomeController@index')->name('home')->middleware('vendor.verified');
+
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -32,6 +31,8 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 //});
 
 // Product Vendor
+// Dashboard
+Route::get('/dashboard', 'HomeController@index')->name('home')->middleware('vendor.verified');
 Route::get('/product_list', 'ProductController@index')->name('product_list');
 Route::get('/product_create', 'ProductController@create')->name('product_create');
 Route::post('/GetSubCat', 'ProductController@GetSubCat')->name('GetSubCat'); 
@@ -48,7 +49,7 @@ Route::get('/affilateproduct_list', 'AffilateProductController@index')->name('af
 Route::get('/affilateproduct_create', 'AffilateProductController@create')->name('affilateproduct_create');
 Route::post('/affilateproduct_store', 'AffilateProductController@store')->name('affilateproduct_store');
 Route::get('/affilateproduct_edit/{id}', 'AffilateProductController@edit')->name('affilateproduct_edit');
-Route::post('/affilateproduct_update/{id}', 'AffilateProductController@update')->name('affilateproduct_update');
+Route::put('/affilateproduct_update/{id}', 'AffilateProductController@update')->name('affilateproduct_update');
 Route::get('/affilateproduct_view/{id}', 'AffilateProductController@view')->name('affilateproduct_view');
 Route::get('/affilateproduct_delete/{id}', 'AffilateProductController@destroy')->name('affilateproduct_delete');
 

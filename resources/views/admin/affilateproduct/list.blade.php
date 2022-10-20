@@ -1,15 +1,58 @@
 @extends('admin.layouts.app')
 
 @section('content')
+
+<div class="toolbar py-2" id="kt_toolbar">
+						<!--begin::Container-->
+						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+									<!--begin::Title-->
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> Affilated Products </h1>
+									<!--end::Title-->
+									<!--begin::Separator-->
+									<span class="h-20px border-gray-200 border-start mx-3"></span>
+									<!--end::Separator-->
+									<!--begin::Breadcrumb-->
+									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+										<!--begin::Item-->
+										
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">  Products </li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-dark"> Affilated Products List</li>
+										<!--end::Item-->
+									</ul>
+									<!--end::Breadcrumb-->
+								</div>
+							<!--begin::Page title-->
+							<div class="flex-grow-1 flex-shrink-0 me-5">
+								<!--begin::Page title-->
+								
+								<!--end::Page title-->
+							</div>
+							<!--end::Page title-->
+						</div>
+						<!--end::Container-->
+					</div>
+
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
 						<!--begin::Container-->
-						<div id="kt_content_container" class="container-xxl" style="    margin-top: 7pc;">
+						<div id="kt_content_container" class="container-xxl" style="    margin-top: 11pc;">
 							<!--begin::Card-->
-                         <h1> Affiliate Products</h1>
-						 <p>Dashboard >Affiliate Products > List </p>
+                        
 
-							<div class="card">
+							<div class="card container">
 								<!--begin::Card header-->
 								<div class="card-header border-0 pt-6">
 									<!--begin::Card title-->
@@ -24,7 +67,7 @@
 												</svg>
 											</span>
 											<!--end::Svg Icon-->
-											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search  Products">
+											<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Affilated Products">
 										</div>
 										<!--end::Search-->
 									</div>
@@ -34,10 +77,10 @@
 										<!--begin::Toolbar-->
 										<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
 											<!--begin::Filter-->
-										
+
 											<!--begin::Menu 1-->
-									
-											
+
+
 											<!--begin::Add customer-->
 											<a type="button" class="btn btn-primary" href="{{url('admin/affilateproduct_create')}}">Add Affilate Product</a>
 											<!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
@@ -56,7 +99,7 @@
 								</div>
 								<!--end::Card header-->
 								<!--begin::Card body-->
-								<div class="card-body pt-0" style="overflow:scroll;">
+								<div class="card-body pt-0"  >
 								<!--begin::Table-->
 								<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
 									<!--begin::Table head-->
@@ -87,11 +130,11 @@
 									<!--end::Table head-->
 									<!--begin::Table body-->
 									<tbody class="fw-bold text-gray-600">
-											<?php 
+											<?php
 											$i = 0;
 											?>
 										@foreach($affiliateProducts as $product)
-											<?php 
+											<?php
 											$i = $i+1;
 											?>
 											<tr class="odd" id="nft_row_{{$product->id}}">
@@ -107,9 +150,9 @@
 													{{$product->a_name}}
 												</td>
 												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $type[$product->a_type] }}</a>	</td>
-												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $product->a_stock }}</a>	</td>			
+												<td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $product->a_stock }}</a>	</td>
 												<td>${{$product->a_new_price}}</td>
-												
+
                                                 <td data-order="Invalid date">
                                                     <span class="badge badge-light-success">{{ $status[$product->a_status] }}</span>
                                                 </td>
@@ -161,7 +204,7 @@
 						<!--end::Container-->
 					</div>
 
-					<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
       function deleteProduct(id) {
           Swal.fire({
@@ -189,4 +232,4 @@
           })
       }
   </script>
-                    @endsection
+@endsection
