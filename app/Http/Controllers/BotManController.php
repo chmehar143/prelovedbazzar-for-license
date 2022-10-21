@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class BotManController extends Controller
 {
-    private static $bar;
-    public function __construct()
-    {
-        self::$bar = false;
-    }
 
     public function handle()
     {
