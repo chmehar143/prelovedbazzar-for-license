@@ -106,7 +106,7 @@ class VerificationController extends Controller
             event(new Verified($request->user('user')));
         }
 
-        return redirect($this->redirectPath())->with('verified', true);
+        return redirect($this->redirectPath())->with('verified', true)->message('success', 'User has been verified successfully');
     }
 
     /**

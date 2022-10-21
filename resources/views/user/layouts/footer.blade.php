@@ -26,6 +26,8 @@
                                 <button class="btn btn-dark btn-rounded" type="reset" id="subscribe">Subscribe<i
                                         class="w-icon-long-arrow-right"></i></button>
                             </form>
+                            <div id="validation-errors"></div>
+                            <div id="success-subscribe"></div>
                         </div>
                     </div>
                 </div>
@@ -111,30 +113,5 @@
             </div>
         </footer>
         <!-- End of Footer -->
-
-        <!-- ajax for subscription -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-    $("#subscribe").click(function(){
-            var email = $("#mail").val();
-            // processing ajax request
-            $.ajax({
-                url: "{{ route('subscribe') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    email: email
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                }
-            });
-        });
-</script> -->
-<!-- /ajax for subscription -->
 
 

@@ -544,14 +544,17 @@ else{
                     "_token": "{{ csrf_token() }}",
                     email: email
                 },
+                error: function(response){
+                    //check if response has errors object
+                     $('#validation-errors').append('<div class="alert alert-danger text-white">'+response.responseText+'</div');
+                },
                 success: function(data) {
                     // log response into console
-                    // Swal.fire(
-                    //     'Sent!',
-                    //     'Message has been sent successfully.',
-                    //     'success'
-                    // )
-                    console.log("email has been sent!")
+                     Swal.fire(
+                         'Sent!',
+                         'Message has been sent successfully.',
+                         'success'
+                     );
                 }
             });
         });
