@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\User\Auth;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
-use Illuminate\Auth\Events\Verified;
-use Illuminate\Foundation\Auth\VerifiesEmails;
-use Illuminate\Auth\Access\AuthorizationException;
+use App\Models\{
+    Cart, Category, Subcategory
+};
+use Illuminate\{
+    Http\Request, Http\Response, Routing\Controller, Auth\Events\Verified, Foundation\Auth\VerifiesEmails,
+    Auth\Access\AuthorizationException, Support\Facades\Auth, Support\Facades\Session
+};
 
 class VerificationController extends Controller
 {
@@ -41,6 +42,29 @@ class VerificationController extends Controller
         $this->middleware('user.auth');
         $this->middleware('signed')->only('user.verify');
         $this->middleware('throttle:6,1')->only('user.verify', 'resend');
+
+        $user = Auth::guard('user')->user();
+        if (Auth::guard('user')->check()) {
+            $user = Auth::guard('user');
+            $carts = Cart::where('user_id', $user->id())
+                ->join('products', 'carts.prod_id', '=', 'products.id')
+                ->get();
+        } else {
+            $session = Session::getId();
+            $carts = Cart::where('session_id', $session)
+                ->join('products', 'carts.prod_id', '=', 'products.id')
+                ->get();
+        }
+        $categories = Category::where('status', 1)->get();
+        $subcategories = Subcategory::where('status', 1)->get();
+        $shareData = array(
+            'categories' => $categories,
+            'subcategories' => $subcategories,
+            'user' => $user,
+            'carts' => $carts
+        );
+
+        view()->share('shareData', $shareData);
     }
 
     /**
@@ -83,7 +107,7 @@ class VerificationController extends Controller
             event(new Verified($request->user('user')));
         }
 
-        return redirect($this->redirectPath())->with('verified', true);
+        return redirect($this->redirectPath())->with('verified', true)->message('success', 'User has been verified successfully');
     }
 
     /**
