@@ -20,7 +20,7 @@
                 <div class="container">
                     <div class="banner">
                         <figure>
-                            <img src="{{asset('frontend-assets/assets/images/pages/404.png')}}" alt="Error 404"  
+                            <img src="{{asset('frontend-assets/assets/images/pages/404.png')}}" alt="Error 404">  
 
                         </figure>
                         <div class="banner-content text-center">
