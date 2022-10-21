@@ -62,19 +62,19 @@
                                                 <?php $min = 499.99; $max = 99999999.00; ?>
                                                 <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$500.00+</a></li>
                                             </ul>
-                                            <!-- <form class="price-range">
+                                            <form class="price-range">
                                                 <input type="number" name="min_price" class="min_price text-center"
                                                     placeholder="$min"><span class="delimiter">-</span><input
                                                     type="number" name="max_price" class="max_price text-center"
                                                     placeholder="$max"><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}"
                                                     class="btn btn-primary btn-rounded">Go</a>
-                                            </form> -->
+                                            </form>
                                         </div>
                                     </div>
                                     <!-- End of Collapsible Widget -->
 
                                     <!-- Start of Collapsible Widget -->
-                                    <!-- <div class="widget widget-collapsible">
+                                    <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Size</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
                                             <li><a href="javascript:void(0)">Extra Large</a></li>
@@ -82,7 +82,7 @@
                                             <li><a href="javascript:void(0)">Medium</a></li>
                                             <li><a href="javascript:void(0)">Small</a></li>
                                         </ul>
-                                    </div> -->
+                                    </div>
                                     <!-- End of Collapsible Widget -->
 
                                     <!-- Start of Collapsible Widget -->
@@ -124,17 +124,7 @@
                         <!-- Start of Main Content -->
                         <div class="main-content">
                             <!-- Start of Shop Banner -->
-                            <div class="shop-default-banner shop-boxed-banner banner d-flex align-items-center mb-6 br-xs"
-                                style="background-image: url({{asset('frontend-assets/assets/images/shop/banner1.jpg')}}); background-color: javascript:void(0)FFC74E;">
-                                <div class="banner-content">
-                                    <h4 class="banner-subtitle font-weight-bold">Accessories Collection</h4>
-                                    <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-10">Smart
-                                        Watches</h3>
-                                    <a href="shop-banner-sidebar.html"
-                                        class="btn btn-dark btn-rounded btn-icon-right">Discover Now<i
-                                            class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                            </div>
+                            
                             <!-- End of Shop Banner -->
                             <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
                                 @foreach($products as $product)

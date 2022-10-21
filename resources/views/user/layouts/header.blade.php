@@ -7,16 +7,16 @@
                         <p class="welcome-msg"></p>
                     </div>
                     <div class="header-right">
-                        <div class="dropdown ">
+                        <!-- <div class="dropdown ">
                             <a href="#currency">USD</a>
                             <div class="dropdown-box">
                                 <a href="#USD">USD</a>
                                 <a href="#EUR">EUR</a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of DropDown Menu -->
 
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <a href="#language"><img src="{{asset('frontend-assets/assets/images/flags/eng.png')}}" alt="ENG Flag" width="14"
                                     height="8" class="dropdown-image" /> ENG</a>
                             <div class="dropdown-box">
@@ -31,19 +31,19 @@
                                     FRA
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of Dropdown Menu -->
                         <span class="divider d-lg-show"></span>
                         <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
                         <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
-                        <a href="{{route('about-us')}}" class="d-lg-show">About Us</a>
+                        <!-- <a href="{{route('about-us')}}" class="d-lg-show">About Us</a> -->
                         @if(Auth::guard('user')->check())
                         <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
                         <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
                         @else
                         <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter  d-lg-show">/</span>
-                        <a href="{{route('user.login')}}" class="ml-0 d-lg-show ">Register</a>
+                        <a href="{{route('user.register')}}" class="ml-0 d-lg-show ">Register</a>
                         @endif
                     </div>
                 </div>
@@ -186,19 +186,19 @@
                                         <a href="{{route('vendor-store')}}">Vendor Stores</a>
 
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="{{route('blogs')}}">Blog</a>
 
-                                    </li>
+                                    </li> -->
                                     <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
 
                                 </ul>
                             </nav>
                         </div>
-                        <div class="header-right">
+                        <!-- <div class="header-right">
                             <a href="#" class="d-xl-show"><i class="w-icon-map-marker mr-1"></i>Track Order</a>
                             <a href="#"><i class="w-icon-sale"></i>Daily Deals</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

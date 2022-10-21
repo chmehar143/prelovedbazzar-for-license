@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{ Cart, Category, Subcategory };
-use Illuminate\Foundation\{Auth\Access\AuthorizesRequests, Bus\DispatchesJobs, Validation\ValidatesRequests };
-use Illuminate\Support\Facades\{Auth, Session};
+use App\Models\Cart;
+use App\Models\Category;
+use App\Models\Subcategory;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class Controller extends BaseController
 {

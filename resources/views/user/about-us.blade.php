@@ -155,7 +155,7 @@
                                     incididunt ut labore et dolore magna aliqua. Venenatis tellus in.
                                     metus vulputate eu scelerisque felis. Vel pretium lectus qua .
                                     Arpis massa. Nunc id cursus metus ididunt ut labore metus vulputate episcing.</p>
-                                <a href="{{ route('vendor-store') }}" class="btn btn-dark btn-rounded">Visit Our Store</a>
+                                <a href="#" class="btn btn-dark btn-rounded">Visit Our Store</a>
                             </div>
                         </div>
 
