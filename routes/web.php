@@ -1,28 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ShopController;
-use App\Http\Controllers\VendorController;
-use App\Http\Controllers\VendorStoreDetailsController;
-use App\Http\Controllers\BlogsController;
-use App\Http\Controllers\BlogsDetailsController;
-use App\Http\Controllers\BecomeAVendorController;
-use App\Http\Controllers\WishlistController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CompareController;
-use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\ProductDetailsController;
-use App\Http\Controllers\MyaccountController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BlogDetailsController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderViewController;
-use App\Http\Controllers\ErrorPageController;
-use App\Http\Controllers\BotManController;
-use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\{
+    HomeController, AboutController, ShopController, VendorController, VendorStoreDetailsController,
+    BlogsController, BlogsDetailsController, BecomeAVendorController, WishlistController,
+    CartController, CompareController, ContactUsController, CheckoutController,
+    ProductDetailsController, MyaccountController, LoginController, BlogDetailsController,
+    OrderController, OrderViewController, ErrorPageController, BotManController,
+    StripePaymentController
+};
 
 
 
