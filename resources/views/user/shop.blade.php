@@ -124,17 +124,7 @@
                         <!-- Start of Main Content -->
                         <div class="main-content">
                             <!-- Start of Shop Banner -->
-                            <div class="shop-default-banner shop-boxed-banner banner d-flex align-items-center mb-6 br-xs"
-                                style="background-image: url({{asset('frontend-assets/assets/images/shop/banner1.jpg')}}); background-color: javascript:void(0)FFC74E;">
-                                <div class="banner-content">
-                                    <h4 class="banner-subtitle font-weight-bold">Accessories Collection</h4>
-                                    <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-10">Smart
-                                        Watches</h3>
-                                    <a href="shop-banner-sidebar.html"
-                                        class="btn btn-dark btn-rounded btn-icon-right">Discover Now<i
-                                            class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                            </div>
+                            
                             <!-- End of Shop Banner -->
                             <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
                                 @foreach($products as $product)
