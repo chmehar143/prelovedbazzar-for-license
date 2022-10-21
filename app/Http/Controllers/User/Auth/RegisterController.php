@@ -40,6 +40,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('user.guest:user', ['except' => 'store']);
     }
 
@@ -107,10 +108,10 @@ class RegisterController extends Controller
         {
             $user->password = Hash::make($request->new_password);
             $user->update();
-        } 
+        }
         return response()->json([
             "status" => 200,
             "data" => $user
-        ]);    
+        ]);
     }
 }

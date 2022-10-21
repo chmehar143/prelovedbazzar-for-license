@@ -56,45 +56,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <div class="widget">
-                                <h3 class="widget-title">Company</h3>
+                                <h3 class="widget-title">Quick Links</h3>
                                 <ul class="widget-body">
                                     <!-- <li><a href="{{route('about-us')}}">About Us</a></li> -->
-                                    <li><a href="#">Team Member</a></li>
-                                    <li><a href="#">Career</a></li>
+                                    <li><a href="{{route('shop')}}">Shop </a></li>
+                                    <li><a href="{{route('vendor-store')}}">Vendor Store</a></li>
                                     <li><a href="{{route('contact-us')}}">Contact Us</a></li>
-                                    <li><a href="#">Affilate</a></li>
-                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <div class="widget">
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
-                                    <li><a href="#">Track My Order</a></li>
                                     <li><a href="{{route('cart')}}">View Cart</a></li>
                                     <li><a href="{{route('Login')}}">Sign In</a></li>
-                                    <li><a href="#">Help</a></li>
+                                    <li><a href="{{route('Login')}}">Register </a></li>
+
                                     <li><a href="{{route('wishlist')}}">My Wishlist</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="widget">
-                                <h4 class="widget-title">Customer Service</h4>
-                                <ul class="widget-body">
-                                    <li><a href="#">Payment Methods</a></li>
-                                    <li><a href="#">Money-back guarantee!</a></li>
-                                    <li><a href="#">Product Returns</a></li>
-                                    <li><a href="#">Support Center</a></li>
-                                    <li><a href="#">Shipping</a></li>
-                                    <li><a href="#">Term and Conditions</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="footer-bottom">

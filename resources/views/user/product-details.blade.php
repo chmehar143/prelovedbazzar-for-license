@@ -252,7 +252,7 @@
                   </div>
                   <div class="social-links-wrapper">
                      <div class="social-links">
-                        <div class="social-icons social-no-color border-thin">
+                        <div class="social-icons social-no-color border-thin" style="visibility:hidden">
                            <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
                            <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
                            <a href="#" class="social-icon social-pinterest fab fa-pinterest-p"></a>
