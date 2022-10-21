@@ -30,7 +30,6 @@ class BotManController extends Controller
     {
         $botman->ask("Great! What is Your Name?",function(Answer $answer){
             $name = $answer->getText();
-
             $this->say('Nice to meet you '.$name);
         });
     }
