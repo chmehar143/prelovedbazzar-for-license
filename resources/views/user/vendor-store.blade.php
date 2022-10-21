@@ -61,7 +61,7 @@
                             <div class="store store-grid">
                                 <div class="store-header">
                                     <figure class="store-banner">
-                                        <img src="@if($vendor->shop_image == '') {{asset('frontend-assets/assets/images/vendor/dokan/1.jpg')}} @else  {{asset('storage/uploads/vendors/'.$vendor->shop_image)}} @endif" alt="{{$vendor->name}}" />
+                                        <img src="{{asset('storage/uploads/vendors/'.$vendor->shop_image)}}" alt="{{$vendor->name}}" />
 
                                     </figure>
                                 </div>
@@ -89,7 +89,7 @@
                                 <!-- End of Store Content -->
                                 <div class="store-footer">
                                     <figure class="seller-brand">
-                                        <img src="@if($vendor->shop_image == '') {{asset('frontend-assets/assets/images/vendor/brand/1.jpg')}} @else {{asset('storage/uploads/vendors/'.$vendor->shop_image)}} @endif" alt="Brand" width="80" height="80" />
+                                        <img src="{{asset('storage/uploads/vendors/'.$vendor->shop_image)}}" alt="Brand" width="80" height="80" />
                                     </figure>
                                     <a href="{{route('vendor-store-details',$vendor->id)}}" class="btn btn-dark btn-link btn-underline btn-icon-right btn-visit">
                                         Visit Store<i class="w-icon-long-arrow-right"></i></a>
