@@ -4,8 +4,14 @@ namespace App\Http\Controllers\vendor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{ Auth, File, DB, Redirect };
-use App\Models\{ Category, SubCategory, ChildCategory, AffiliateProduct };
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\ChildCategory;
+use App\Models\AffiliateProduct;
+use Illuminate\Support\Facades\Redirect;
 use Validator;
 use Config;
 

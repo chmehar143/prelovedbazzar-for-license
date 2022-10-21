@@ -1,4 +1,5 @@
 @extends('user.layouts.app')
+
 @section('content')
     <main class="main login-page">
         <!-- Start of Page Header -->
