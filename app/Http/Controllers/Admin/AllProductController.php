@@ -82,8 +82,7 @@ class AllProductController extends Controller
        ];
        $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
-            'avatar.max' => 'Fil size must be less than 2MB.',
-            'p_sku.unique' => 'This SKU has already been taken.',
+            'avatar.max' => 'Fil size must be less than 2MB.'
        ];
        $validator = Validator::make($request->all(), $rules, $customs);
 

@@ -551,7 +551,7 @@ else{
                 success: function(data) {
                     Swal.fire(
                          'Sent!',
-                         'Message has been sent successfully.',
+                         'Successfully subscribed to our newsletter!',
                          'success'
                     );
                 }

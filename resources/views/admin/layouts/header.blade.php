@@ -256,6 +256,34 @@
 													<!--end:Row-->
 												</div>
 											</div>
+
+											
+											<div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+												<span class="menu-link py-3">
+													<span class="menu-title">Banners</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-300px p-5 p-lg-5">
+													<!--begin:Row-->
+													<div class="row" data-kt-menu-dismiss="true">
+														<!--begin:Col-->
+															<div class="menu-inline menu-column menu-active-bg">
+																<div class="menu-item">
+																	<a href="{{ route('admin.webbanner_list')}}" class="menu-link">
+																		<span class="menu-bullet">
+																			<span class="bullet bullet-dot"></span>
+																		</span>
+																		<span class="menu-title">  Banners </span>
+																	</a>
+																</div>															
+												     		</div>
+														<!--end:Col-->
+													
+													</div>
+													<!--end:Row-->
+												</div>
+											</div>
+
 										</div>
 										<!--end::Menu-->
 									</div>
