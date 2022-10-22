@@ -51,13 +51,13 @@
 
     <script src="{{ asset('admin-assets/js/custom/apps/customers/list/export.js')}}"></script>
     <script src="{{ asset('admin-assets/js/custom/apps/customers/list/list.js')}}"></script>
-    <script src="{{ asset('/js/custom/apps/customers/add.js')}}"></script>
-    <script>  
- 
- $('#dropdown a').click(function () {      
+    <script src="{{ asset('admin-assets/js/custom/apps/customers/add.js')}}"></script>
+
+    <script>
+
+ $('#dropdown a').click(function () {
    var val = parseInt($(this).attr("value"));
    if (val == 1) {
-    debugger;     
 
      $('#status').removeClass();
      $('#status').addClass("btn btn-success");
@@ -78,7 +78,7 @@
      $('#bar').addClass("btn-warning");
    }
  });
- 
+
  </script>
 </body>
 </html>
