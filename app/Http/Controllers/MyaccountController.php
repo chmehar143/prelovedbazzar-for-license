@@ -3,15 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\Cart;
-use App\Models\Vendor;
-use App\Models\Product;
-use App\Models\User;
-use App\Models\Order;
-use App\Models\OrderDetail;
-use App\Models\Address;
+use Illuminate\Support\Facades\{Auth, Session};
+use App\Models\{Cart, Vendor, Product, User, Order, OrderDetail, Address};
 use Config;
 
 class MyaccountController extends Controller

@@ -10,8 +10,6 @@ use App\Http\Controllers\{
     StripePaymentController
 };
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -106,7 +106,10 @@
          </div>
          <!--begin::Card header-->
          <!--begin::Content-->
-         <div id="kt_account_settings_profile_details" class="collapse show">
+         <form id="kt_account_settings_profile_details" 
+            action="{{ route('admin.webbanner_update', $banner->id) }}" class="collapse show" method="post" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf
             <!--begin::Form-->
             <!--begin::Card body-->
             <div class="card-body border-top p-9">
@@ -124,13 +127,13 @@
                      <!--begin::Image input-->
                      <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
                         <!--begin::Preview existing avatar-->
-                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/150-26.jpg)"></div>
+                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('{{ asset('storage/uploads/Web_banners/'.$banner->image)}}')"></div>
                         <!--end::Preview existing avatar-->
                         <!--begin::Label-->
                         <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                            <i class="bi bi-pencil-fill fs-7"></i>
                            <!--begin::Inputs-->
-                           <input type="file" name="avatar" accept=".png, .jpg, .jpeg" required/>
+                           <input type="file" name="image" accept=".png, .jpg, .jpeg"/>
                            <input type="hidden" name="avatar_remove" />
                            <!--end::Inputs-->
                         </label>
@@ -149,89 +152,14 @@
                      <!--end::Image input-->
                      <!--begin::Hint-->
                      <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                     @error('image')
+                        <div class="validation text-danger mt-1">{{ $message }}</div>
+                     @enderror
                      <!--end::Hint-->
                   </div>
                   <!--end::Col-->
                </div>
                <!--end::Input group-->
-               <div class="row mb-6">
-                  <!--begin::Label-->
-                  <label class="col-lg-4 col-form-label fw-bold required fs-6">Second Image 
-                  </label>
-                  <!--end::Label-->
-                  <!--begin::Col-->
-                  <div class="col-lg-8">
-                     <!--begin::Image input-->
-                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
-                        <!--begin::Preview existing avatar-->
-                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/150-26.jpg)"></div>
-                        <!--end::Preview existing avatar-->
-                        <!--begin::Label-->
-                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                           <i class="bi bi-pencil-fill fs-7"></i>
-                           <!--begin::Inputs-->
-                           <input type="file" name="avatar" accept=".png, .jpg, .jpeg" required/>
-                           <input type="hidden" name="avatar_remove" />
-                           <!--end::Inputs-->
-                        </label>
-                        <!--end::Label-->
-                        <!--begin::Cancel-->
-                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                        <i class="bi bi-x fs-2"></i>
-                        </span>
-                        <!--end::Cancel-->
-                        <!--begin::Remove-->
-                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                        <i class="bi bi-x fs-2"></i>
-                        </span>
-                        <!--end::Remove-->
-                     </div>
-                     <!--end::Image input-->
-                     <!--begin::Hint-->
-                     <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-                     <!--end::Hint-->
-                  </div>
-                  <!--end::Col-->
-               </div>
-               <div class="row mb-6">
-                  <!--begin::Label-->
-                  <label class="col-lg-4 col-form-label fw-bold required fs-6">Third Image 
-                  </label>
-                  <!--end::Label-->
-                  <!--begin::Col-->
-                  <div class="col-lg-8">
-                     <!--begin::Image input-->
-                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
-                        <!--begin::Preview existing avatar-->
-                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/150-26.jpg)"></div>
-                        <!--end::Preview existing avatar-->
-                        <!--begin::Label-->
-                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                           <i class="bi bi-pencil-fill fs-7"></i>
-                           <!--begin::Inputs-->
-                           <input type="file" name="avatar" accept=".png, .jpg, .jpeg" required/>
-                           <input type="hidden" name="avatar_remove" />
-                           <!--end::Inputs-->
-                        </label>
-                        <!--end::Label-->
-                        <!--begin::Cancel-->
-                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                        <i class="bi bi-x fs-2"></i>
-                        </span>
-                        <!--end::Cancel-->
-                        <!--begin::Remove-->
-                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                        <i class="bi bi-x fs-2"></i>
-                        </span>
-                        <!--end::Remove-->
-                     </div>
-                     <!--end::Image input-->
-                     <!--begin::Hint-->
-                     <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-                     <!--end::Hint-->
-                  </div>
-                  <!--end::Col-->
-               </div>
                <!--begin::Input group-->
                <div class="row mb-6">
                   <!--begin::Label-->
@@ -243,8 +171,61 @@
                      <div class="row">
                         <!--begin::Col-->
                         <div class="col-lg-12 fv-row">
-                           <input type="text" name="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Title"  />
+                           <input type="text" name="title" value="{{$banner->title}}" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('title') is-invalid @enderror" placeholder="Title"  />
                         </div>
+                        @error('title')
+                           <div class="validation text-danger mt-1">{{ $message }}</div>
+                        @enderror
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <!--end::Col-->
+                     </div>
+                     <!--end::Row-->
+                  </div>
+                  <!--end::Col-->
+               </div>
+               <!--end::Input group-->
+                              <!--begin::Input group-->
+                              <div class="row mb-6">
+                  <!--begin::Label-->
+                  <label class="col-lg-4 col-form-label required fw-bold fs-6">Descriptions  </label>
+                  <!--end::Label-->
+                  <!--begin::Col-->
+                  <div class="col-lg-8">
+                     <!--begin::Row-->
+                     <div class="row">
+                        <!--begin::Col-->
+                        <div class="col-lg-12 fv-row">
+                           <input type="text" name="description"  value="{{$banner->description}}" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('description') is-invalid @enderror" placeholder="Description"  />
+                        </div>
+                        @error('description')
+                           <div class="validation text-danger mt-1">{{ $message }}</div>
+                        @enderror
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <!--end::Col-->
+                     </div>
+                     <!--end::Row-->
+                  </div>
+                  <!--end::Col-->
+               </div>
+               <!--end::Input group-->
+                              <!--begin::Input group-->
+                              <div class="row mb-6">
+                  <!--begin::Label-->
+                  <label class="col-lg-4 col-form-label required fw-bold fs-6">Offer  </label>
+                  <!--end::Label-->
+                  <!--begin::Col-->
+                  <div class="col-lg-8">
+                     <!--begin::Row-->
+                     <div class="row">
+                        <!--begin::Col-->
+                        <div class="col-lg-12 fv-row">
+                           <input type="text" name="offer"  value="{{$banner->offer}}" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('offer') is-invalid @enderror " placeholder="Offer"  />
+                        </div>
+                        @error('offer')
+                           <div class="validation text-danger mt-1">{{ $message }}</div>
+                        @enderror
                         <!--end::Col-->
                         <!--begin::Col-->
                         <!--end::Col-->
@@ -257,14 +238,37 @@
                <!--begin::Input group-->
                <div class="row mb-6">
                   <!--begin::Label-->
-                  <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+                  <label class="col-lg-4 col-form-label required fw-bold fs-6">Redirected Url </label>
                   <!--end::Label-->
                   <!--begin::Col-->
-                  <div class="col-lg-8 fv-row">
-                     <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="namskue@gmail.com"  required  />
+                  <div class="col-lg-8">
+                     <!--begin::Row-->
+                     <div class="row">
+                        <!--begin::Col-->
+                        <div class="col-lg-12 fv-row">
+                           <input type="text" name="url"  value="{{$banner->url}}" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('url') is-invalid @enderror " placeholder="Url"  />
+                        </div>
+                        @error('url')
+                           <div class="validation text-danger mt-1">{{ $message }}</div>
+                        @enderror
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <!--end::Col-->
+                     </div>
+                     <!--end::Row-->
                   </div>
                   <!--end::Col-->
                </div>
+               <!--end::Input group-->
+               <div class="row mb-0">
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>											
+                     <div class="col-lg-8 d-flex align-items-center">
+                        <div class="form-check form-check-solid form-switch fv-row">
+                           <input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" name="status" value="1" @if($banner->status == 1) checked @endif />
+                           <label class="form-check-label" for="allowmarketing"></label>
+                        </div>
+                     </div>
+                  </div>
             </div>
             <!--end::Card body-->
             <!--begin::Actions-->
@@ -275,7 +279,7 @@
             <!--end::Actions-->
             </form>
             <!--end::Form-->
-         </div>
+         </form>
          <!--end::Content-->
       </div>
       <!--end::Modals-->
