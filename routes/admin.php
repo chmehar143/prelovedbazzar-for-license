@@ -319,7 +319,10 @@ Route::get('manageroles_edit', 'ManageRolesController@edit')->name('manageroles_
 //Web Banner
 Route::get('webbanner_list', 'WebsiteBannerController@list')->name('webbanner_list');
 Route::get('webbanner_create', 'WebsiteBannerController@create')->name('webbanner_create');
-Route::get('webbanner_edit', 'WebsiteBannerController@edit')->name('webbanner_edit');
+Route::post('webbanner_store', 'WebsiteBannerController@store')->name('webbanner_store');
+Route::get('webbanner_edit/{id}', 'WebsiteBannerController@edit')->name('webbanner_edit');
+Route::put('webbanner_update/{id}', 'WebsiteBannerController@update')->name('webbanner_update');
+Route::get('webbanner_remove/{id}', 'WebsiteBannerController@remove')->name('webbanner_remove');
 
 
 //Contact Us 

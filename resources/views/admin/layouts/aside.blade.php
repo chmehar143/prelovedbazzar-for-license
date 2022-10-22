@@ -389,6 +389,16 @@
                <span class="menu-title">Contact Us</span>
                </a>
             </div>
+
+            <div class="menu-item py-2">
+               <a class="menu-link  menu-center" href="{{ route('admin.webbanner_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+               <span class="menu-icon me-0">
+               <i class="fas fa-fw fa-newspaper"></i>
+               </span>
+               <span class="menu-title">Banners</span>
+               </a>
+            </div>
+            
             <!-- <div class="menu-item py-2">
                <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                <span class="menu-icon me-0">
