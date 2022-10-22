@@ -43,7 +43,9 @@
                         @else
                         <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter  d-lg-show">/</span>
-                        <a href="{{route('user.login')}}" class="ml-0 d-lg-show ">Register</a>
+
+                        <a href="{{route('user.login')}}#sign-up" class="ml-0 d-lg-show ">Register</a>
+
                         @endif
                     </div>
                 </div>
