@@ -3,13 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\DB;
-use App\Models\Product;
-use App\Models\Category;
-use App\Models\Subcategory;
-use App\Models\Childcategory;
+use Illuminate\Support\Facades\{Auth, File, DB};
+use App\Models\{Product, Category, Subcategory, Childcategory, RecentView, OrderDetail};
 use Config;
 
 class HomeController extends Controller
@@ -30,8 +25,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $vendor = Auth::guard('vendor');
-        $products = Product::all();
+        $products = OrderDetail::join('products', 'pro_id', '=', 'products.id')->get()->groupBy('pro_id');
+        // $products = RecentView::join('products', 'p_id', '=', 'products.id')->get()->groupBy('p_id');
+        //dd($products);
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.home', compact('products', 'status', 'type'));

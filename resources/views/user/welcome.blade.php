@@ -12,6 +12,7 @@
                     }
                 }">
                     <div class="swiper-wrapper">
+                        @foreach($banners as $banner)
                         <div class="swiper-slide banner banner-fixed intro-slide intro-slide1"
                             style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-1.jpg')}}); background-color: #ebeef2;">
                             <div class="container">
@@ -58,6 +59,7 @@
                             </div>
                             <!-- End of .container -->
                         </div>
+                        @endforeach
                         <!-- End of .intro-slide1 -->
 
                         <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"

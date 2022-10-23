@@ -219,9 +219,9 @@ class AffilateController extends Controller
                 $product->a_large = 0;
             }
             if($request->input('checkbox') == true){
-                $product->status = 1;
+                $product->a_status = 1;
             }else{
-                $product->status = 0;
+                $product->a_status = 0;
             }
             $product->update();
             return redirect()->route('admin.affilateproduct_list');
