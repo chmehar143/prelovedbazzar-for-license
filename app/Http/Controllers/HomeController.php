@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Session, Redirect};
 use App\Models\{
     Category, Vendor, Product, RecentView, Childcategory, 
-    Subcategory, Subscriber, Discussion, User
+    Subcategory, Subscriber, Discussion, User, Banner
 }; 
 use Carbon\Carbon;
 use Validator;
@@ -17,6 +17,8 @@ class HomeController extends Controller
 
     public function index()
     {
+        $banners = Banner::where('status', 1)->get();
+
         $deals = Product::where('admin_id', '!=', NULL)->whereBetween('products.created_at', 
                 [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
                 ->get();
@@ -44,7 +46,7 @@ class HomeController extends Controller
         }
            // dd($recents);
         return view('user.welcome', compact('deals', 'top_sellers', 'top_categories',
-         'newarrivals', 'clothings', 'electrics', 'homes', 'recents'));
+         'newarrivals', 'clothings', 'electrics', 'homes', 'recents', 'banners'));
     }
 
     public function subscribe(Request $request)

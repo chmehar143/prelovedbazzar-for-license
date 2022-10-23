@@ -22,7 +22,7 @@ class DeactivedProductController extends Controller
     
     public  function  index()
     {
-        $products = Product::where('status', 2)->orderBy('created_at', 'DESC')->get();
+        $products = Product::where('status', 0)->orderBy('created_at', 'DESC')->get();
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.deactivateproduct.list', compact('products', 'status', 'type'));
