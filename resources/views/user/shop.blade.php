@@ -196,30 +196,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
-
-        function add_cart_(id){
-            var id = id;
-            var quantity = 1;
-            var size = "medium";
-            // processing ajax request
-            $.ajax({
-                url: "{{ route('addcart') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    id: id,
-                    quantity: quantity,
-                    size: size
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                }
-            });
-        }
-
         function add_wish_(id){
             // processing ajax request    
             $.ajax({

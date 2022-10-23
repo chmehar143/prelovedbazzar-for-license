@@ -45,7 +45,7 @@
    <!--begin::Container-->
    <div id="kt_content_container" class="container-xxl" style="    margin-top: 11pc;">
       <!--begin::Card-->
-      <div class="card container">
+      <div class="card container" >
          <!--begin::Card header-->
          <div class="card-header border-0 pt-6">
             <!--begin::Card title-->
@@ -60,14 +60,22 @@
                      </svg>
                   </span>
                   <!--end::Svg Icon-->
-                  <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search subscriber">
+                  <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Comment">
                </div>
                <!--end::Search-->
             </div>
             <!--begin::Card title-->
             <!--begin::Card toolbar-->
             <div class="card-toolbar">
-
+               <!--begin::Toolbar-->
+               <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                  <!--begin::Filter-->
+                  <!--begin::Menu 1-->
+                  <!--begin::Add customer-->
+                  <!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
+                  <!--end::Add customer-->
+               </div>
+               <!--end::Toolbar-->
                <!--begin::Group actions-->
                <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
                   <div class="fw-bolder me-5">
@@ -81,7 +89,7 @@
          </div>
          <!--end::Card header-->
          <!--begin::Card body-->
-         <div class="card-body pt-0"  >
+         <div class="card-body pt-0" style="overflow:scroll;">
             <!--begin::Table-->
             <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
                <!--begin::Table head-->
@@ -89,36 +97,36 @@
                   <!--begin::Table row-->
                   <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                      <th class="w-10px pe-2">
-                        <div
-                           class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                           <input class="form-check-input" type="checkbox" data-kt-check="true"
-                              data-kt-check-target="#kt_customers_table .form-check-input"
-                              value="1" />
+                        <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                           #
                         </div>
                      </th>
                      <th class="min-w-125px">User ID</th>
                      <th class="min-w-125px"> #Sl </th>
-                     <th class="min-w-125px">Email </th>
+                     <th class="min-w-125px"> Email </th>
+                     <th class="min-w-125px" style="display:none"> </th>
+                     <td style="display:none">	</td>
+                     <td style="display:none">	</td>
                   </tr>
                   <!--end::Table row-->
                </thead>
                <!--end::Table head-->
                <!--begin::Table body-->
                <tbody class="fw-bold text-gray-600">
-				  @foreach($subscribers as $subscriber)
+               @foreach($subscribers as $subscriber)
                   <tr id="nft_row_{{ $subscriber->id }}">
                      <!--begin::Checkbox-->
                      <td>
-                        <div
-                           class="form-check form-check-sm form-check-custom form-check-solid">
-                           <input class="form-check-input" type="checkbox" value="1" />
+                        <div>
+                           {{$loop->iteration}}
                         </div>
                      </td>
                      <!--end::Checkbox-->
-                     
                      <td>@if($subscriber->user_id == NULL) <p class="text-danger">User Not Registered yet</p> @else {{$subscriber->user_id}} @endif</td>
                      <td>{{$subscriber->slug}}</td>
                      <td>{{$subscriber->email}}</td>
+                     <td style="display:none">	</td>
+                     <td style="display:none">	</td>
                      <!--end::Date=-->
                      <!--begin::Action=-->
                      <td class="text-end">
@@ -151,7 +159,7 @@
                      </td>
                      <!--end::Action=-->
                   </tr>
-				  @endforeach
+				      @endforeach
                </tbody>
                <!--end::Table body-->
             </table>

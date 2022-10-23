@@ -25,7 +25,7 @@ class AllProductController extends Controller
 
     public  function  index()
     {
-        $products = Product::orderBy('created_at', 'DESC')->get();
+        $products = Product::whereNotNull('admin_id')->orderBy('created_at', 'DESC')->get();
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.allproducts.list', compact('products', 'status', 'type'));

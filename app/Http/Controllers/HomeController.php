@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Session, Redirect};
 use App\Models\{
     Category, Vendor, Product, RecentView, Childcategory, 
-    Subcategory, Subscriber, Discussion, User, Banner
+    Subcategory, Subscriber, Discussion, User, Banner, OrderDetail
 }; 
 use Carbon\Carbon;
 use Validator;
@@ -19,16 +19,22 @@ class HomeController extends Controller
     {
         $banners = Banner::where('status', 1)->get();
 
-        $deals = Product::where('admin_id', '!=', NULL)->whereBetween('products.created_at', 
+        $deals = Product::whereNotNull('admin_id')->whereBetween('products.created_at', 
                 [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
                 ->get();
 
-        $top_sellers = Vendor::where('status', 0)->get();
+        $top_sellers = Vendor::where('status', 1)->get();
 
-        $top_categories = Category::all();
-
+        $top_categories = Product::leftJoin('categories', 'products.p_catog', '=', 'categories.id')->whereBetween('products.updated_at', 
+         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+         ->select('products.updated_at', 'categories.*')
+         ->get()->groupBy('id');
         $newarrivals = Product::whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
+
+        $most_populars = Product::whereBetween('updated_at',
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
+
 
         $clothings = Product::where('p_catog', 1)->whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
@@ -46,7 +52,7 @@ class HomeController extends Controller
         }
            // dd($recents);
         return view('user.welcome', compact('deals', 'top_sellers', 'top_categories',
-         'newarrivals', 'clothings', 'electrics', 'homes', 'recents', 'banners'));
+         'newarrivals', 'clothings', 'electrics', 'homes', 'recents', 'banners', 'most_populars'));
     }
 
     public function subscribe(Request $request)

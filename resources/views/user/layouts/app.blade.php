@@ -557,10 +557,45 @@ else{
                 }
             });
         });
+
+function add_cart_(id){
+    var id = id;
+    var size = $("input[name='size']:checked").val();
+    var quantity = $("#qnty_" +id).val();
+    if(!quantity){
+            var quantity = 1;
+        }
+        if(!size){
+            var size = 'medium';
+        }
+        // processing ajax request
+        $.ajax({
+        url: "{{ route('addcart') }}",
+        type: 'POST',
+        dataType: "json",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: id,
+            quantity: quantity,
+            size: size
+        },
+        success: function(data) {
+            // log response into console
+            console.log(data);
+        }
+    });
+}
+    function add_wish_(id){
+        // processing ajax request    
+        $.ajax({
+            url: "{{ url('addwish') }}" + '/' + id,
+            success: function() {
+                // log response into console
+                console.log("product has been aded to wish list");
+            }
+        });   
+    }
 </script>
-<Script>
-    
-    </script>
 <!-- /ajax for subscription -->
 
 </body>
