@@ -849,15 +849,10 @@
                         </a>
                         <div class="product-action-vertical">
                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart" onclick="addcart({{$unit->id}})"></a>
+                              title="Add to cart" onclick="add_cart_({{$unit->id}})"></a>
                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"></a>
-                           <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a>
-                        </div>
-                        <div class="product-action">
-                           <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                           View</a>
+                              title="Add to wishlist" onclick="add_wish_({{$unit->id}})"></a>
+
                         </div>
                      </figure>
                      <div class="product-details">
@@ -922,16 +917,10 @@
                            width="300" height="338" />
                         </a>
                         <div class="product-action-vertical">
-                           <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart" onclick="addcart({{ $related->id }})"></a>
-                           <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"></a>
-                           <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a>
-                        </div>
-                        <div class="product-action">
-                           <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
-                           View</a>
+                           <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
+                              title="Add to cart" onclick="add_cart_({{ $related->id }})"></a>
+                           <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
+                              title="Add to wishlist" onclick="add_wish_({{ $related->id }})"></a>
                         </div>
                      </figure>
                      <?php 
@@ -971,8 +960,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
    $("#postbutton").click(function(){
-            var id = $("#product_id").val();
-            var quantity = $("#qnty").val();
+         var id = $("#product_id").val();
+         var quantity = $("#qnty").val();
             if(!quantity){
                 var quantity = 1;
             }
@@ -1024,45 +1013,6 @@
                 }
             });
         });
-   
-        function add_wish_(id){
-            // processing ajax request    
-            $.ajax({
-                url: "{{ url('addwish') }}" + '/' + id,
-                success: function() {
-                    // log response into console
-                    console.log("product has been aded to wish list");
-                }
-            });   
-        }
-
-function addcart(id){
-    var id = id;
-    var size = $("input[name='size']:checked").val();
-    var quantity = $("#qnty_" +id).val();
-    if(!quantity){
-            var quantity = 1;
-        }
-        if(!size){
-            var size = 'medium';
-        }
-        // processing ajax request
-        $.ajax({
-        url: "{{ route('addcart') }}",
-        type: 'POST',
-        dataType: "json",
-        data: {
-            "_token": "{{ csrf_token() }}",
-            id: id,
-            quantity: quantity,
-            size: size
-        },
-        success: function(data) {
-            // log response into console
-            console.log(data);
-        }
-    });
-}
    
 </script>
 @endsection
