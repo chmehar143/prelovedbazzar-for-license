@@ -701,7 +701,7 @@ progress {
     .container-sm,
     .container-xl,
     .container-xxl {
-        max-width: 1320px
+        max-width: 1280px
     }
 }
 
@@ -32701,6 +32701,7 @@ fieldset:disabled .btn {
 
 .flex-column-fluid {
     flex: 1 0 auto
+    /* margin-left: 1pc; */
 }
 
 .flex-row-auto {
@@ -54307,7 +54308,7 @@ code:not([class*=language-]) {
     .card {
         border: 0 !important;
         box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%) !important;
-        margin-left: 9px !important;
+        margin-left: 18px !important;
     }
 
 .scroll {
@@ -54321,6 +54322,11 @@ code:not([class*=language-]) {
     }
 }
 
+@media only screen and (max-width:768px){
+    #kt_header_menu_mobile_toggle{
+        visibility: hidden;
+    }
+}
 .scroll-x {
     overflow-x: scroll;
     position: relative

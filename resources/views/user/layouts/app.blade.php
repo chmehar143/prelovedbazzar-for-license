@@ -30,12 +30,12 @@ else{
 
     <title> Home -   Multivendor </title>
 
-    <meta name="keywords" content=" Preloved Baza" />
-    <meta name="description" content=" Preloved Baza is powerful marketplace &amp;  website.">
+    <meta name="keywords" content=" Preloved Bazar" />
+    <meta name="description" content=" Preloved Bazar is powerful marketplace &amp;  website.">
     <meta name="author" content="BS3-design">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png"  href="{{asset('frontend-assets/assets/images/icons/favicon.png')}}" >
+    <!-- <link rel="icon" type="image/png"  href="{{asset('frontend-assets/assets/images/icons/favicon.png')}}" > -->
 
     <!-- WebFont.js -->
     <script>
@@ -73,9 +73,9 @@ else{
 
     <!-- Default CSS -->
     @if(Request::segment(1) != '')
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.css')}}">
     @else
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/demo1.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/homepage.css')}}">
     @endif
 </head>
 <body class="home">

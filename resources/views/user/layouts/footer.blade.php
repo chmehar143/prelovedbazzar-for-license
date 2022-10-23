@@ -48,13 +48,13 @@
                                         & coupons ster now toon.
                                     </p>
 
-                                    <div class="social-icons social-icons-colored">
+                                    <!-- <div class="social-icons social-icons-colored">
                                         <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
                                         <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
                                         <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
                                         <a href="#" class="social-icon social-youtube w-icon-youtube"></a>
                                         <a href="#" class="social-icon social-pinterest w-icon-pinterest"></a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div class="widget">
                                 <h3 class="widget-title">Quick Links</h3>
                                 <ul class="widget-body">
-                                    <!-- <li><a href="{{route('about-us')}}">About Us</a></li> -->
+                                    <li><a href="{{route('about-us')}}">About Us</a></li>
                                     <li><a href="{{route('shop')}}">Shop </a></li>
                                     <li><a href="{{route('vendor-store')}}">Vendor Store</a></li>
                                     <li><a href="{{route('contact-us')}}">Contact Us</a></li>

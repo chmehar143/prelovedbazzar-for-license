@@ -77,7 +77,7 @@
                         </tbody>
                     </table>
                     {{$wishes->links()}}
-                    <div class="social-links">
+                    <!-- <div class="social-links">
                         <label>Share On:</label>
                         <div class="social-icons social-no-color border-thin">
                             <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
@@ -86,7 +86,7 @@
                             <a href="#" class="social-icon social-email far fa-envelope"></a>
                             <a href="#" class="social-icon social-whatsapp fab fa-whatsapp"></a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- End of PageContent -->
