@@ -7748,6 +7748,7 @@ textarea {
 
 .select-box option {
   font-size: 1.2rem;
+  color:black
 }
 
 @media (-ms-high-contrast: active), (-ms-high-contrast: none) {

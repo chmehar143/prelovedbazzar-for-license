@@ -30,7 +30,7 @@
 <!--begin::Content-->
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content" style="margin-top:10pc">
    <!--begin::Container-->
-   <div id="kt_content_container" class="container-xxl">
+   <div id="kt_content_container" class="container-xl">
       <!--begin::Row-->
       <div class="row g-5 g-xl-8">
          <div class="col-xl-4">
@@ -1323,7 +1323,7 @@
          <!--begin::Tables Widget 10-->
          <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
             <!--begin::Container-->
-            <div id="kt_content_container" class="container-xxl">
+            <div id="kt_content_container" class="container-xl">
                <!--begin::Card-->
                <h1>Top trending products</h1>
                <div class="card container">

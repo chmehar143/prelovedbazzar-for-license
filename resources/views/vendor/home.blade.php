@@ -8,7 +8,7 @@
         </head>
 
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content" style="margin-top:5pc" >
-        <div id="kt_content_container" class="container-xxl" style="">
+        <div id="kt_content_container" class="container-xl" style="">
             <div class="row g-5 g-xl-8">
                 <div class="col-xl-4">
                     <!--begin::Statistics Widget 5-->

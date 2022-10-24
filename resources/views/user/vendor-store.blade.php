@@ -12,7 +12,7 @@
                         <li><a href="demo1.html">Home</a></li>
                         <li><a href="#">Vendor</a></li>
                         <li><a href="#">Dokan</a></li>
-                        <li>Store Grid</li>
+                        <li>Store </li>
                     </ul>
                 </div>
             </nav>
@@ -24,18 +24,18 @@
                     <!-- Start of Vendor Toolbox -->
                     <div class="toolbox vendor-toolbox pb-0">
                         <div class="toolbox-left mb-4 mb-md-0">
-                            <a href="#" class="btn btn-primary btn-outline btn-rounded btn-icon-left vendor-search-toggle "><i class="w-icon-category"></i>Filter</a>
+                            <!-- <a href="#" class="btn btn-primary btn-outline btn-rounded btn-icon-left vendor-search-toggle "><i class="w-icon-category"></i>Filter</a> -->
                             <label class="d-block">Total Store Showing 6</label>
                         </div>
                         <div class="toolbox-right">
-                            <div class="toolbox-item toolbox-sort select-box mb-0">
+                            <!-- <div class="toolbox-item toolbox-sort select-box mb-0">
                                 <label class="font-weight-normal">Sort by:</label>
                                 <select name="orderby" class="form-control">
                                     <option value="default" selected="selected">Default</option>
                                     <option value="recent">Most Recent</option>
                                     <option value="popular">Most Popular</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <!-- <div class="toolbox-item toolbox-layout mb-0 d-flex">
                                 <a href="vendor-dokan-store-grid.html" class="icon-mode-grid btn-layout active">
                                     <i class="w-icon-grid"></i>
