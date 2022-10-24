@@ -638,10 +638,10 @@
                                                 title="Add to cart" onclick="add_cart_({{$arrival->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$arrival->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                            <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
+                                                title="Add to Compare"></a> -->
                                         </div>
                                     </figure>
                                     <div class="product-details">
