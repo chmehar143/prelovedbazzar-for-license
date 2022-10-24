@@ -1,127 +1,77 @@
 @extends('vendor.layouts.app')
-
 @section('content')
 <head>
-	<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
-    <style>
-
-		</style>
-
+   <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+   <style>
+   </style>
 </head>
 <div class="toolbar py-2" id="kt_toolbar">
-						<!--begin::Container-->
-						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc">  Products </h1>
-									<!--end::Title-->
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start mx-3"></span>
-									<!--end::Separator-->
-									<!--begin::Breadcrumb-->
-									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
-										<!--begin::Item-->
-										
-										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted"> Products </li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark"> Edit Products  </li>
-										<!--end::Item-->
-									</ul>
-									<!--end::Breadcrumb-->
-								</div>
-							<!--begin::Page title-->
-							<div class="flex-grow-1 flex-shrink-0 me-5">
-								<!--begin::Page title-->
-								
-								<!--end::Page title-->
-							</div>
-							<!--end::Page title-->
-							<!--begin::Action group-->
-							<div class="d-flex align-items-center flex-wrap">
-								<!--begin::Wrapper-->
-								<div class="flex-shrink-0 me-2">
-									<ul class="nav">
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
-										</li>
-									</ul>
-								</div>
-								<!--end::Wrapper-->
-								<!--begin::Wrapper-->
-								<div class="d-flex align-items-center">
-									<!--begin::Daterangepicker-->
-									<a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
-										<span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
-										<span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
-									</a>
-									<!--end::Daterangepicker-->
-									<!--begin::Actions-->
-									<div class="d-flex align-items-center">
-										<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
-											<!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
-											<span class="svg-icon svg-icon-2x">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
-													<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</button>
-									</div>
-									<!--end::Actions-->
-								</div>
-								<!--end::Wrapper-->
-							</div>
-							<!--end::Action group-->
-						</div>
-						<!--end::Container-->
-					</div>
+   <!--begin::Container-->
+   <div id="kt_toolbar_container" class="container-fluid d-flex align-items-center">
+      <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+         <!--begin::Title-->
+         <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc">  Products </h1>
+         <!--end::Title-->
+         <!--begin::Separator-->
+         <span class="h-20px border-gray-200 border-start mx-3"></span>
+         <!--end::Separator-->
+         <!--begin::Breadcrumb-->
+         <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-2">
+            <!--begin::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item">
+               <span class="bullet bg-gray-200 w-5px h-2px"></span>
+            </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item text-muted"> Products </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item">
+               <span class="bullet bg-gray-200 w-5px h-2px"></span>
+            </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item text-dark"> Edit Products  </li>
+            <!--end::Item-->
+         </ul>
+         <!--end::Breadcrumb-->
+      </div>
+      <!--begin::Page title-->
+      <div class="flex-grow-1 flex-shrink-0 me-5">
+         <!--begin::Page title-->
+         <!--end::Page title-->
+      </div>
+      <!--end::Page title-->
+   </div>
+   <!--end::Container-->
+</div>
 <div class="content d-flex flex-column flex-column-fluid" style="margin-top:7pc" id="kt_content">
-                   
-						<!--begin::Container-->
-						<div id="kt_content_container" class="container-xxl" >
-							<!--begin::Navbar-->
-							<div class="card mb-5 mb-xl-10">
-							
-							</div>
-							<!--end::Navbar-->
-							<!--begin::Basic info-->
-							<div class="card mb-5 mb-xl-10">
-								<!--begin::Card header-->
-								<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
-									<!--begin::Card title-->
-									<div class="card-title m-0">
-										<h3 class="fw-bolder m-0">Edit Proudct Details</h3>
-									</div>
-									<!--end::Card title-->
-								</div>
-								<!--begin::Card header-->
-								<!--begin::Content-->
-								<div id="kt_account_settings_profile_details" class="collapse show">
-									<!--begin::Form-->
-
-			<form id="kt_account_profile_details_form" 
-					action="{{ url('/vendor/product_up/'.$product->id)}}" 
-					class="form" method="post" enctype="multipart/form-data">
-					@csrf
-					@method('PUT')
+   <!--begin::Container-->
+   <div id="kt_content_container" class="container-xxl" >
+      <!--begin::Navbar-->
+      <div class="card mb-5 mb-xl-10">
+      </div>
+      <!--end::Navbar-->
+      <!--begin::Basic info-->
+      <div class="card mb-5 mb-xl-10">
+         <!--begin::Card header-->
+         <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+            <!--begin::Card title-->
+            <div class="card-title m-0">
+               <h3 class="fw-bolder m-0">Edit Proudct Details</h3>
+            </div>
+            <!--end::Card title-->
+         </div>
+         <!--begin::Card header-->
+         <!--begin::Content-->
+         <div id="kt_account_settings_profile_details" class="collapse show">
+            <!--begin::Form-->
+            <form id="kt_account_profile_details_form" 
+               action="{{ url('/vendor/product_up/'.$product->id)}}" 
+               class="form" method="post" enctype="multipart/form-data">
+               @csrf
+               @method('PUT')
                <!--begin::Card body-->
                <div class="card-body border-top p-9">
                   <!--begin::Input group-->
@@ -182,7 +132,7 @@
                            <div class="col-lg-12 fv-row">
                               <input type="text" name="p_name" value="{{$product->p_name}}" class="@error('p_name') is_invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" required />
                               @error('p_name')
-                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              <div class="validation mt-1 text-danger">{{ $message }}</div>
                               @enderror
                            </div>
                            <!--end::Col-->
@@ -203,32 +153,29 @@
                      <div class="col-lg-8 fv-row">
                         <input type="text" name="p_sku" value="{{$product->p_sku}}" class="@error('p_sku') is_invalid @enderror form-control form-control-lg form-control-solid" placeholder="Company name" required/>
                         @error('p_sku')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
                   </div>
                   <!--end::Input group-->
-
-
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
                      <label class="col-lg-4 col-form-label fw-bold fs-6">
-                        <span class="required">Product Condition</span>
-                        <!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
+                     <span class="required">Product Condition</span>
                      </label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select name="con" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Product Condition..." class="@error('con') is-invalid @enderror form-select form-select-solid form-select-lg fw-bold">
+                        <select name="con" aria-label="Select a Condition" data-control="select2" data-placeholder="Select a Product Condition..." class="@error('con') is-invalid @enderror form-select form-select-solid form-select-lg fw-bold">
                         <option data-kt-flag="flags/afghanistan.svg" value="0"  @if($product->con == 0) seleceted @endif >{{$conditions[0]}}</option>														
                         <option data-kt-flag="flags/afghanistan.svg" value="1"  @if($product->con == 1) seleceted @endif >{{$conditions[1]}}</option>														
                         <option data-kt-flag="flags/afghanistan.svg" value="2"  @if($product->con == 2) seleceted @endif >{{$conditions[2]}}</option>														
                         <option data-kt-flag="flags/afghanistan.svg" value="3"  @if($product->con == 3) seleceted @endif >{{$conditions[3]}}</option>														
                         </select>
                         @error('con')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -242,7 +189,7 @@
                      <div class="col-lg-8 fv-row">
                         <input type="text" name="p_ship_time" value="{{$product->p_ship_time}}" class="form-control form-control-lg form-control-solid @error('p_ship_time') is-invalid @enderror" placeholder="Product Estimated Shipping Time" required />
                         @error('p_ship_time')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -255,7 +202,7 @@
                      <div class="col-lg-2 fv-row">
                         <input type="color" name="p_color" value="{{$product->p_color}}" class="form-control form-control-lg form-control-solid @error('p_color') is-invalid @enderror " />
                         @error('p_ship_time')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -277,7 +224,7 @@
                            @endforeach
                         </select>
                         @error('p_catog')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -295,7 +242,7 @@
                            <option value="{{$product->p_sub_catog}}"  selected>{{$product->sub_name}}</option>
                         </select>
                         @error('p_sub_catog')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                         <!--end::Input-->
                         <!--begin::Hint-->
@@ -332,7 +279,7 @@
                      <div class="col-lg-8 fv-row">
                         <input type="text" name="p_new_price" value="{{$product->p_new_price}}"class="form-control form-control-lg form-control-solid @error('p_new_price') is-invalid @enderror" />
                         @error('p_new_price')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -346,7 +293,7 @@
                      <div class="col-lg-8 fv-row">
                         <input type="text" name="p_old_price" value="{{$product->p_old_price}}" class="form-control form-control-lg form-control-solid @error('p_old_price') is-invalid @enderror " />
                         @error('p_old_price')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -359,7 +306,7 @@
                      <div class="col-lg-8 fv-row">
                         <input type="text" name="p_stock" value="{{$product->p_stock}}" class="form-control form-control-lg form-control-solid @error('p_stock') is-invalid @enderror" required />
                         @error('p_stock')
-                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
                      </div>
                      <!--end::Col-->
@@ -370,7 +317,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <textarea name="p_detail" id="editor" value="{{$product->p_detail}}">
+                        <textarea name="p_detail" id="editor" value="{{$product->p_detail}}" style="resize: horizontal; ">
                         {{$product->p_detail}}
                         </textarea>
                      </div>
@@ -382,9 +329,9 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <textarea name="p_r_policy" id="editornew" value="{{$product->p_r_policy}}">
+                        <textarea name="p_r_policy" id="editornew" value="{{$product->p_r_policy}}" style="resize: horizontal; " >
                         {{$product->p_r_policy}}
-                        </textarea>																						
+                        </textarea>
                      </div>
                      <!--end::Col-->
                   </div>
@@ -439,64 +386,60 @@
                </div>
                <!--end::Actions-->
             </form>
-									<!--end::Form-->
-									<!-- 									
- -->
-								</div>
-								<!--end::Content-->
-							</div>	
-							<!--end::Modals-->
-						</div>
-                    </div>
-					</div>
-						<!--end::Container-->
-					</div>
-
-
-
-                    <script>
-			ClassicEditor
-				.create( document.querySelector( '#editor' ) )
-				.catch( error => {
-					console.error( error );
-				} );
-		</script>
-			<script>
-				ClassicEditor
-					.create( document.querySelector( '#editornew' ) )
-					.catch( error => {
-						console.error( error );
-					} );
-			</script>
-				<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('#category').change(function(){
-				let cid=$(this).val();
-				$('#childcat').html('<option value="">Select City</option>')
-				$.ajax({
-					url:"{{url('/vendor/GetSubCat')}}",
-					type:'post',
-					data:'cid='+cid+'&_token={{csrf_token()}}',
-					success:function(result){
-						$('#subcat').html(result)
-					}
-				});
-			});
-
-			$('#subcat').change(function(){
-				let sid=$(this).val();
-				$.ajax({
-					url:"{{url('/vendor/GetChildCat')}}",
-					type:'post',
-					data:'sid='+sid+'&_token={{csrf_token()}}',
-					success:function(result){
-						$('#childcat').html(result)
-					}
-				});
-			});
-
-		});
-	</script>
-	
+            <!--end::Form-->
+            <!-- 									
+               -->
+         </div>
+         <!--end::Content-->
+      </div>
+      <!--end::Modals-->
+   </div>
+</div>
+</div>
+<!--end::Container-->
+</div>
+<script>
+   ClassicEditor
+   	.create( document.querySelector( '#editor' ) )
+   	.catch( error => {
+   		console.error( error );
+   	} );
+</script>
+<script>
+   ClassicEditor
+   	.create( document.querySelector( '#editornew' ) )
+   	.catch( error => {
+   		console.error( error );
+   	} );
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+   $(document).ready(function(){
+   	$('#category').change(function(){
+   		let cid=$(this).val();
+   		$('#childcat').html('<option value="">Select City</option>')
+   		$.ajax({
+   			url:"{{url('/vendor/GetSubCat')}}",
+   			type:'post',
+   			data:'cid='+cid+'&_token={{csrf_token()}}',
+   			success:function(result){
+   				$('#subcat').html(result)
+   			}
+   		});
+   	});
+   
+   	$('#subcat').change(function(){
+   		let sid=$(this).val();
+   		$.ajax({
+   			url:"{{url('/vendor/GetChildCat')}}",
+   			type:'post',
+   			data:'sid='+sid+'&_token={{csrf_token()}}',
+   			success:function(result){
+   				$('#childcat').html(result)
+   			}
+   		});
+   	});
+   
+   });
+</script>
 @endsection

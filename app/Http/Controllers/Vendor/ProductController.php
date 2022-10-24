@@ -4,14 +4,8 @@ namespace App\Http\Controllers\vendor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\DB;
-use App\Models\Product;
-use App\Models\Category;
-use App\Models\Subcategory;
-use App\Models\Childcategory;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\{Auth, File, DB, Redirect};
+use App\Models\{Product, Category, Subcategory, Childcategory};
 use Validator;
 use Config;
 
@@ -149,7 +143,11 @@ class ProductController extends Controller
 
     {
         $categories = Category::all();
-        $product = Product::where('id', $id)->first(); 
+        $product = Product::where('products.id', $id)->where('vendor_id', Auth::guard('vendor')->id())
+                    ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
+                    ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
+                    ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
+                    ->first(); 
         $conditions = Config::get('constants.condition');  
         return view('vendor.product.edit', compact('product','categories','conditions'));
     }
