@@ -92,51 +92,7 @@
                         </div>
                     </section>
 
-                    <section class="count-section mb-10 pb-5">
-                        <div class="swiper-container swiper-theme" data-swiper-options="{
-                            'slidesPerView': 1,
-                            'breakpoints': {
-                                '768': {
-                                    'slidesPerView': 2
-                                },
-                                '992': {
-                                    'slidesPerView': 3
-                                }
-                            }
-                        }">
-                            <div class="swiper-wrapper row cols-lg-3 cols-md-2 cols-1">
-                                <div class="swiper-slide counter-wrap">
-                                    <div class="counter text-center">
-                                        <span class="count-to" data-to="15">0</span>
-                                        <span>M+</span>
-                                        <h4 class="title title-center">Products For Sale</h4>
-                                        <p>Diam maecenas ultricies mi eget mauris<br>
-                                            Nibh tellus molestie nunc non</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide counter-wrap">
-                                    <div class="counter text-center">
-                                        <span>$</span>
-                                        <span class="count-to" data-to="25">0</span>
-                                        <span>B+</span>
-                                        <h4 class="title title-center">Community Earnings</h4>
-                                        <p>Diam maecenas ultricies mi eget mauris<br>
-                                            Nibh tellus molestie nunc non</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide counter-wrap">
-                                    <div class="counter text-center">
-                                        <span class="count-to" data-to="100">0</span>
-                                        <span>M+</span>
-                                        <h4 class="title title-center">Growing Buyers</h4>
-                                        <p>Diam maecenas ultricies mi eget mauris<br>
-                                            Nibh tellus molestie nunc non</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </section>
+              
                 </div>
 
                 <section class="boost-section pt-10 pb-10">
@@ -220,7 +176,7 @@
                     </div>
                 </section>
 
-                <section class="member-section mt-10 pt-9 mb-10 pb-4">
+                <!-- <section class="member-section mt-10 pt-9 mb-10 pb-4">
                     <div class="container">
                         <h4 class="title title-center mb-3">Meet Our Leaders</h4>
                         <p class="text-center mb-8">Nunc id cursus metus aliquam. Libero id faucibus nisl tincidunt eget. Aliquam<br>
@@ -309,7 +265,7 @@
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
-                </section>
+                </section> -->
             </div>
 
         </main>

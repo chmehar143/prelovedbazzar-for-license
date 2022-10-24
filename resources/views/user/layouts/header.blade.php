@@ -36,7 +36,7 @@
                         <span class="divider d-lg-show"></span>
                         <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
                         <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
-                        <!-- <a href="{{route('about-us')}}" class="d-lg-show">About Us</a> -->
+                        <a href="{{route('about-us')}}" class="d-lg-show">About Us</a>
                         @if(Auth::guard('user')->check())
                         <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
                         <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
@@ -189,7 +189,7 @@
 
                                     </li>
                                     <!-- <li>
-                                        <a href="{{route('blogs')}}">Blog</a>
+                                        <a href="{{route('about-us')}}">About Us</a>
 
                                     </li> -->
                                     <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
