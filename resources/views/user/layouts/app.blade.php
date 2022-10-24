@@ -30,12 +30,12 @@ else{
 
     <title> Home -   Multivendor </title>
 
-    <meta name="keywords" content=" Preloved Baza" />
-    <meta name="description" content=" Preloved Baza is powerful marketplace &amp;  website.">
+    <meta name="keywords" content=" Preloved Bazar" />
+    <meta name="description" content=" Preloved Bazar is powerful marketplace &amp;  website.">
     <meta name="author" content="BS3-design">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png"  href="{{asset('frontend-assets/assets/images/icons/favicon.png')}}" >
+    <!-- <link rel="icon" type="image/png"  href="{{asset('frontend-assets/assets/images/icons/favicon.png')}}" > -->
 
     <!-- WebFont.js -->
     <script>
@@ -73,9 +73,9 @@ else{
 
     <!-- Default CSS -->
     @if(Request::segment(1) != '')
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/style.css')}}">
     @else
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/demo1.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/homepage.css')}}">
     @endif
 </head>
 <body class="home">
@@ -544,17 +544,57 @@ else{
                     "_token": "{{ csrf_token() }}",
                     email: email
                 },
+                error: function(response){
+                    //check if response has errors object
+                     $('#validation-errors').append('<div class="alert alert-danger text-white">'+response.responseText+'</div');
+                },
                 success: function(data) {
-                    // log response into console
-                    // Swal.fire(
-                    //     'Sent!',
-                    //     'Message has been sent successfully.',
-                    //     'success'
-                    // )
-                    console.log("email has been sent!")
+                    Swal.fire(
+                         'Sent!',
+                         'Successfully subscribed to our newsletter!',
+                         'success'
+                    );
                 }
             });
         });
+
+function add_cart_(id){
+    var id = id;
+    var size = $("input[name='size']:checked").val();
+    var quantity = $("#qnty_" +id).val();
+    if(!quantity){
+            var quantity = 1;
+        }
+        if(!size){
+            var size = 'medium';
+        }
+        // processing ajax request
+        $.ajax({
+        url: "{{ route('addcart') }}",
+        type: 'POST',
+        dataType: "json",
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: id,
+            quantity: quantity,
+            size: size
+        },
+        success: function(data) {
+            // log response into console
+            console.log(data);
+        }
+    });
+}
+    function add_wish_(id){
+        // processing ajax request    
+        $.ajax({
+            url: "{{ url('addwish') }}" + '/' + id,
+            success: function() {
+                // log response into console
+                console.log("product has been aded to wish list");
+            }
+        });   
+    }
 </script>
 <!-- /ajax for subscription -->
 

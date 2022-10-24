@@ -25,7 +25,7 @@ class AllProductController extends Controller
 
     public  function  index()
     {
-        $products = Product::orderBy('created_at', 'DESC')->get();
+        $products = Product::whereNotNull('admin_id')->orderBy('created_at', 'DESC')->get();
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.allproducts.list', compact('products', 'status', 'type'));
@@ -82,8 +82,7 @@ class AllProductController extends Controller
        ];
        $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
-            'avatar.max' => 'Fil size must be less than 2MB.',
-            'p_sku.unique' => 'This SKU has already been taken.',
+            'avatar.max' => 'Fil size must be less than 2MB.'
        ];
        $validator = Validator::make($request->all(), $rules, $customs);
 

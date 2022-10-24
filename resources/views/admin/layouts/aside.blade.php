@@ -1,5 +1,4 @@
 <div id="kt_aside" class="aside pb-5 pt-5 pt-lg-0" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
-
    <!--begin::Brand-->
    <div class="aside-logo py-8" id="kt_aside_logo">
       <!--begin::Logo-->
@@ -125,7 +124,6 @@
                   <span class="menu-title"> Affiliated Products</span>
                   </span>
                   <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
-
                      <div class="menu-item">
                <a class="menu-link" href="{{url('admin/vendors_list')}}">
                <span class="menu-bullet">
@@ -135,7 +133,6 @@
                </a>
                </div>
                <div class="menu-item">
-
                </div>
                </div>
             </div>
@@ -153,7 +150,7 @@
                      </div>
                   </div>
                   <div class="menu-item">
-                     <a class="menu-link" href="{{url('admin/vendorverification_list')}}">
+                     <a class="menu-link" href="{{route('admin.vendorverification_list')}}">
                      <span class="menu-bullet">
                      <span class="bullet bullet-dot"></span>
                      </span>
@@ -161,11 +158,19 @@
                      </a>
                   </div>
                   <div class="menu-item">
-                     <a class="menu-link" href="{{url('admin/vendorverification_pending')}}">
+                     <a class="menu-link" href="{{route('admin.vendorverification_pending')}}">
                      <span class="menu-bullet">
                      <span class="bullet bullet-dot"></span>
                      </span>
                      <span class="menu-title">  Pending Verification </span>
+                     </a>
+                  </div>
+                  <div class="menu-item">
+                     <a class="menu-link" href="{{route('admin.vendors_withdraw')}}">
+                     <span class="menu-bullet">
+                     <span class="bullet bullet-dot"></span>
+                     </span>
+                     <span class="menu-title">  Vendors Withdraw</span>
                      </a>
                   </div>
                </div>
@@ -329,41 +334,6 @@
                   </div>
                </div>
             </div>
-            <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
-               <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-               <span class="menu-icon me-0">
-               <i class=" bi bi-person-lines-fill"></i>
-               </span>
-               <span class="menu-title"> Vendors</span>
-               </span>
-               <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
-                  <div class="menu-item">
-                     <div class="menu-content">
-                        <span class="menu-section fs-5 fw-bolder ps-1 py-1">  Vendors</span>
-                     </div>
-                  </div>
-                  <div class="menu-item">
-                     <a class="menu-link" href="{{route('admin.vendors_list')}}">
-                     <span class="menu-bullet">
-                     <span class="bullet bullet-dot"></span>
-                     </span>
-                     <span class="menu-title"> Vendors List</span>
-                     </a>
-                  </div>
-                  <div class="menu-item">
-                     <a class="menu-link" href="{{route('admin.vendors_withdraw')}}">
-                     <span class="menu-bullet">
-                     <span class="bullet bullet-dot"></span>
-                     </span>
-                     <span class="menu-title">  Vendors Withdraw</span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-          
-          
-        
-         
             <div class="menu-item py-2">
                <a class="menu-link  menu-center" href="{{url('admin/subscribe_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                <span class="menu-icon me-0">
@@ -380,13 +350,20 @@
                <span class="menu-title">Manage Staff</span>
                </a>
             </div>
-
             <div class="menu-item py-2">
                <a class="menu-link  menu-center" href="{{url('admin/contactus_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                <span class="menu-icon me-0">
                <i class="fas fa-fw fa-newspaper"></i>
                </span>
                <span class="menu-title">Contact Us</span>
+               </a>
+            </div>
+            <div class="menu-item py-2">
+               <a class="menu-link  menu-center" href="{{ route('admin.webbanner_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+               <span class="menu-icon me-0">
+               <i class="fas fa-fw fa-newspaper"></i>
+               </span>
+               <span class="menu-title">Banners</span>
                </a>
             </div>
             <!-- <div class="menu-item py-2">
@@ -617,7 +594,6 @@
                </div>
                --}}
                {{--                
-
             </div>
             --}}
             {{--                <!--end::Menu item-->--}}

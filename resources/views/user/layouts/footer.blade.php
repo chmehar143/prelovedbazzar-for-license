@@ -26,6 +26,8 @@
                                 <button class="btn btn-dark btn-rounded" type="reset" id="subscribe">Subscribe<i
                                         class="w-icon-long-arrow-right"></i></button>
                             </form>
+                            <div id="validation-errors"></div>
+                            <div id="success-subscribe"></div>
                         </div>
                     </div>
                 </div>
@@ -46,55 +48,41 @@
                                         & coupons ster now toon.
                                     </p>
 
-                                    <div class="social-icons social-icons-colored">
+                                    <!-- <div class="social-icons social-icons-colored">
                                         <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
                                         <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
                                         <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
                                         <a href="#" class="social-icon social-youtube w-icon-youtube"></a>
                                         <a href="#" class="social-icon social-pinterest w-icon-pinterest"></a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <div class="widget">
-                                <h3 class="widget-title">Company</h3>
+                                <h3 class="widget-title">Quick Links</h3>
                                 <ul class="widget-body">
-                                    <!-- <li><a href="{{route('about-us')}}">About Us</a></li> -->
-                                    <li><a href="#">Team Member</a></li>
-                                    <li><a href="#">Career</a></li>
+                                    <li><a href="{{route('about-us')}}">About Us</a></li>
+                                    <li><a href="{{route('shop')}}">Shop </a></li>
+                                    <li><a href="{{route('vendor-store')}}">Vendor Store</a></li>
                                     <li><a href="{{route('contact-us')}}">Contact Us</a></li>
-                                    <li><a href="#">Affilate</a></li>
-                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <div class="widget">
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
-                                    <li><a href="#">Track My Order</a></li>
                                     <li><a href="{{route('cart')}}">View Cart</a></li>
                                     <li><a href="{{route('Login')}}">Sign In</a></li>
-                                    <li><a href="#">Help</a></li>
+                                    <li><a href="{{route('Login')}}">Register </a></li>
+
                                     <li><a href="{{route('wishlist')}}">My Wishlist</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="widget">
-                                <h4 class="widget-title">Customer Service</h4>
-                                <ul class="widget-body">
-                                    <li><a href="#">Payment Methods</a></li>
-                                    <li><a href="#">Money-back guarantee!</a></li>
-                                    <li><a href="#">Product Returns</a></li>
-                                    <li><a href="#">Support Center</a></li>
-                                    <li><a href="#">Shipping</a></li>
-                                    <li><a href="#">Term and Conditions</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="footer-bottom">
@@ -112,29 +100,5 @@
         </footer>
         <!-- End of Footer -->
 
-        <!-- ajax for subscription -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-    $("#subscribe").click(function(){
-            var email = $("#mail").val();
-            // processing ajax request
-            $.ajax({
-                url: "{{ route('subscribe') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    email: email
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                }
-            });
-        });
-</script> -->
-<!-- /ajax for subscription -->
 
 

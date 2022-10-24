@@ -12,6 +12,7 @@
                     }
                 }">
                     <div class="swiper-wrapper">
+                        @foreach($banners as $banner)
                         <div class="swiper-slide banner banner-fixed intro-slide intro-slide1"
                             style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-1.jpg')}}); background-color: #ebeef2;">
                             <div class="container">
@@ -58,6 +59,7 @@
                             </div>
                             <!-- End of .container -->
                         </div>
+                        @endforeach
                         <!-- End of .intro-slide1 -->
 
                         <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"
@@ -322,8 +324,9 @@
                                                             <button class="swiper-button-next"></button>
                                                             <button class="swiper-button-prev"></button>
                                                             <div class="product-label-group">
-                                                                <label class="product-label label-discount">25%
-                                                                    Off</label>
+                                                                <label class="product-label label-discount">
+                                                                    $<del class="w-bold">{{$unit->p_old_price}}</del>
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="product-thumbs-wrap swiper-container"
@@ -434,7 +437,7 @@
                                                                     <button class="quantity-minus w-icon-minus"></button>
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-primary btn-cart" onclick="addcart({{ $unit->id }})">
+                                                            <button class="btn btn-primary btn-cart" onclick="add_cart_({{ $unit->id }})">
                                                                 <i class="w-icon-cart"></i>
                                                                 <span>Add to Cart</span>
                                                             </button>
@@ -442,7 +445,7 @@
 
                                                         <div class="social-links-wrapper mt-1">
                                                             <div class="social-links">
-                                                                <div class="social-icons social-no-color border-thin">
+                                                                <!-- <div class="social-icons social-no-color border-thin">
                                                                     <a href="javascript:void(0)"
                                                                         class="social-icon social-facebook w-icon-facebook"></a>
                                                                     <a href="javascript:void(0)"
@@ -453,14 +456,12 @@
                                                                         class="social-icon social-whatsapp fab fa-whatsapp"></a>
                                                                     <a href="javascript:void(0)"
                                                                         class="social-icon social-youtube fab fa-linkedin-in"></a>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                             <span class="divider d-xs-show"></span>
                                                             <div class="product-link-wrapper d-flex">
                                                                 <a href="javascript:void(0)"
                                                                     class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$unit->id}})"></a>
-                                                                <a href="javascript:void(0)"
-                                                                    class="btn-product-icon btn-compare btn-icon-left w-icon-compare"></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -575,19 +576,21 @@
                             <div class="swiper-wrapper " id="swiper-wrapper-106e6dba6ffeb499c" aria-live="polite"
                                 style="transform: translate3d(0px, 0px, 0px);">
                                 @foreach($top_categories as $category)
+                                    @foreach($category->slice(0, 1) as $catog)
                                 <div class="swiper-slide category category-classic category-absolute overlay-zoom br-xs swiper-slide-active"
                                     role="group" aria-label="1 / 6" style="width: 190px; margin-right: 20px;">
-                                    <a href="{{route('shop',$category->name)}}" class="category-media">
+                                    <a href="{{route('shop',2)}}" class="category-media">
                                         <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/2-1.jpg')}}" alt="Category"
                                             width="130" height="130">
                                     </a>
                                     <div class="category-content">
-                                        <h4 class="category-name">{{$category->name}}</h4>
-                                        <a href="{{route('shop',$category->name)}}"
+                                        <h4 class="category-name">{{$catog->name}} </h4>
+                                        <a href="{{route('shop',4)}}"
                                             class="btn btn-primary btn-link btn-underline">Shop
                                             Now</a>
                                     </div>
                                 </div>
+                                    @endforeach
                                 @endforeach
                             </div>
                             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
@@ -632,7 +635,7 @@
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart" onclick="addcart({{$arrival->id}})"></a>
+                                                title="Add to cart" onclick="add_cart_({{$arrival->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$arrival->id}})"
                                                 title="Add to wishlist"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -686,7 +689,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart" onclick="addcart({{$unit->id}})"></a>
+                                                        title="Add to cart" onclick="add_cart_({{$unit->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$unit->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -729,7 +732,7 @@
                     <!-- End of Tab Pane -->
                     <div class="tab-pane pt-4" id="tab1-3">
                         <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-                            @foreach($deals as $deal)
+                            @foreach($most_populars->slice(0, 10) as $deal)
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
@@ -739,7 +742,7 @@
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart" onclick="addcart({{$deal->id}})"></a>
+                                                title="Add to cart" onclick="add_cart_({{$deal->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -791,7 +794,7 @@
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart" onclick="addcart({{$deal->id}})"></a>
+                                                title="Add to cart" onclick="add_cart_({{$deal->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -917,7 +920,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart" onclick="addcart({{$row->id}})"></a>
+                                                        title="Add to cart" onclick="add_cart_({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1012,7 +1015,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart" onclick="addcart({{$row->id}})"></a>
+                                                        title="Add to cart" onclick="add_cart_({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1135,7 +1138,7 @@
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart" onclick="addcart({{$row->id}})"></a>
+                                                        title="Add to cart" onclick="add_cart_({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
@@ -1318,33 +1321,6 @@
 
 <script type="text/javascript">
 
-function addcart(id){
-    var id = id;
-    var size = $("input[name='size']:checked").val();
-    var quantity = $("#qnty_" +id).val();
-    if(!quantity){
-            var quantity = 1;
-        }
-        if(!size){
-            var size = 'medium';
-        }
-        // processing ajax request
-        $.ajax({
-        url: "{{ route('addcart') }}",
-        type: 'POST',
-        dataType: "json",
-        data: {
-            "_token": "{{ csrf_token() }}",
-            id: id,
-            quantity: quantity,
-            size: size
-        },
-        success: function(data) {
-            // log response into console
-            console.log(data);
-        }
-    });
-}
 $("#postbutton").click(function(){
             var id = $("#product_id").val();
             var quantity = $("#qnty").val();
@@ -1372,17 +1348,6 @@ $("#postbutton").click(function(){
                 }
             });
         });
-
-        function add_wish_(id){
-            // processing ajax request    
-            $.ajax({
-                url: "{{ url('addwish') }}" + '/' + id,
-                success: function() {
-                    // log response into console
-                    console.log("product has been aded to wish list");
-                }
-            });   
-        }
 
 </script>
 @endsection

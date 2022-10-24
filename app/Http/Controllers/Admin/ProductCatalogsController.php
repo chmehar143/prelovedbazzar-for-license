@@ -27,8 +27,7 @@ class ProductCatalogsController extends Controller
    
     public  function  index()
     {
-        $vendor = Auth::guard('vendor');
-        $products = Product::all();
+        $products = Product::orderBy('created_at', 'DESC')->get();
         $status = Config::get('constants.status');
         $type = Config::get('constants.type');
         return view('admin.productcatalog.list', compact('products', 'status', 'type'));

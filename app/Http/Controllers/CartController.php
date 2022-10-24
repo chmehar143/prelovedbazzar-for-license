@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\Cart;
-use App\Models\Vendor;
-use App\Models\Product;
-use App\Models\User;
+use Illuminate\Support\Facades\{Auth, Session};
+use App\Models\{Cart, Vendor, Product, User};
 class CartController extends Controller
 {
     public function index()
@@ -30,63 +26,82 @@ class CartController extends Controller
     }
 
     public function store(Request $request){
-           $item = Product::where('id', $request->id)->first();
-        if(Auth::guard('user')->check()){
-            $cart = Cart::where('prod_id', $request->id)
-            ->where('user_id', Auth::guard('user')->id())->first();
-            if($cart){
-                $cart->quantity = $cart->quantity + $request->quantity;
-                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
-                $item->p_stock = $item->p_stock - $request->quantity;
-                $item->update();
-                $cart->update();
+        $item = Product::where('id', $request->id)->first();
+        if($item->p_stock >= 3){
+            if($request->quantity <= $item->p_stock){
+                if(Auth::guard('user')->check()){
+                    $cart = Cart::where('prod_id', $request->id)
+                    ->where('user_id', Auth::guard('user')->id())->first();
+                    if($cart){
+                        $cart->quantity = $cart->quantity + $request->quantity;
+                        $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
+                        $item->p_stock = $item->p_stock - $request->quantity;
+                        $item->update();
+                        $cart->update();
+                    }
+                    else{
+                        $cart = new Cart();
+                        $cart->prod_id = $request->id;
+                        $cart->user_id = Auth::guard('user')->id();
+                        $cart->session_id = Session::getId();
+                        $cart->quantity = $request->quantity;
+                        $cart->price = $item->p_new_price;
+                        $cart->color = $item->p_color;
+                        $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
+                        $cart->size = $request->size;
+                        $item->p_stock = $item->p_stock - $request->quantity;
+                        $item->update();
+                        $cart->save();
+                    }
+                    return response()->json([
+                        "status" => 200,
+                        "data" => $cart
+                    ]);
+                }
+                else{
+                    $cart = Cart::where('prod_id', $request->id)->where('session_id',Session::getId())->first();
+                    if($cart){
+                        $cart->quantity = $cart->quantity + $request->quantity;
+                        $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
+                        $item->p_stock = $item->p_stock - $request->quantity;
+                        $item->update();
+                        $cart->update();
+                    }
+                    else{
+                        $cart = new Cart();
+                        $cart->prod_id = $request->id;
+                        $cart->session_id = Session::getId();
+                        $cart->quantity = $request->quantity;
+                        $cart->price = $item->p_new_price;
+                        $cart->color = $item->p_color;
+                        $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
+                        $cart->size = $request->size;
+                        $item->p_stock = $item->p_stock - $request->quantity;
+                        $item->update();
+                        $cart->save();
+                    }
+                    return response()->json([
+                        "status" => 200,
+                        "data" => $cart
+                    ]);
+                }
             }
             else{
-                $cart = new Cart();
-                $cart->prod_id = $request->id;
-                $cart->user_id = Auth::guard('user')->id();
-                $cart->session_id = Session::getId();
-                $cart->quantity = $request->quantity;
-                $cart->price = $item->p_new_price;
-                $cart->color = $item->p_color;
-                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
-                $cart->size = $request->size;
-                $item->p_stock = $item->p_stock - $request->quantity;
-                $item->update();
-                $cart->save();
+                return response()->json([
+                    "status" => 403,
+                    "data" => 'item is out of stock, no more to be added'
+                ]);  
             }
-            return response()->json([
-                "status" => 200,
-                "data" => $cart
-            ]);
+
         }
         else{
-            $cart = Cart::where('prod_id', $request->id)->where('session_id',Session::getId())->first();
-            if($cart){
-                $cart->quantity = $cart->quantity + $request->quantity;
-                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
-                $item->p_stock = $item->p_stock - $request->quantity;
-                $item->update();
-                $cart->update();
-            }
-            else{
-                $cart = new Cart();
-                $cart->prod_id = $request->id;
-                $cart->session_id = Session::getId();
-                $cart->quantity = $request->quantity;
-                $cart->price = $item->p_new_price;
-                $cart->color = $item->p_color;
-                $cart->net_price = $cart->net_price + $item->p_new_price * $request->quantity;
-                $cart->size = $request->size;
-                $item->p_stock = $item->p_stock - $request->quantity;
-                $item->update();
-                $cart->save();
-            }
             return response()->json([
-                "status" => 200,
-                "data" => $cart
+                "status" => 403,
+                "data" => 'item is out of stock, no more to be added'
             ]);
         }
+            
+        
     }
 
     public function clear(){
@@ -209,7 +224,5 @@ class CartController extends Controller
             'status'=> 200,
             'data'=> $cart
         ]);
-    }
-
-    
+    }   
 }

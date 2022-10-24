@@ -10,6 +10,7 @@ use App\Models\Chilcategory;
 use App\Models\Vendor;
 use App\Models\Discussion;
 use App\Models\OrderDetail;
+use App\Models\RecentView;
 
 class Product extends Model
 {
@@ -34,11 +35,15 @@ class Product extends Model
 
     public function orderdetail()
     {
-        return $this->belongsTo(OrderDetail::class);
+        return $this->hasMany(OrderDetail::class, 'pro_id');
     }
 
     public function discussions(){
         return $this->hasMany(Discussion::class, 'item');
+    }
+
+    public function recentviews(){
+        return $this->hasMany(RecentView::class, 'p_id');
     }
 
 }

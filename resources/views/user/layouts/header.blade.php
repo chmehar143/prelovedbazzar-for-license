@@ -36,14 +36,16 @@
                         <span class="divider d-lg-show"></span>
                         <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
                         <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
-                        <!-- <a href="{{route('about-us')}}" class="d-lg-show">About Us</a> -->
+                        <a href="{{route('about-us')}}" class="d-lg-show">About Us</a>
                         @if(Auth::guard('user')->check())
                         <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
                         <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
                         @else
                         <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter  d-lg-show">/</span>
-                        <a href="{{route('user.register')}}" class="ml-0 d-lg-show ">Register</a>
+
+                        <a href="{{route('user.login')}}#sign-up" class="ml-0 d-lg-show ">Register</a>
+
                         @endif
                     </div>
                 </div>
@@ -187,7 +189,7 @@
 
                                     </li>
                                     <!-- <li>
-                                        <a href="{{route('blogs')}}">Blog</a>
+                                        <a href="{{route('about-us')}}">About Us</a>
 
                                     </li> -->
                                     <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>

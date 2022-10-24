@@ -62,19 +62,19 @@
                                                 <?php $min = 499.99; $max = 99999999.00; ?>
                                                 <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$500.00+</a></li>
                                             </ul>
-                                            <form class="price-range">
+                                            <!-- <form class="price-range">
                                                 <input type="number" name="min_price" class="min_price text-center"
                                                     placeholder="$min"><span class="delimiter">-</span><input
                                                     type="number" name="max_price" class="max_price text-center"
                                                     placeholder="$max"><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}"
                                                     class="btn btn-primary btn-rounded">Go</a>
-                                            </form>
+                                            </form> -->
                                         </div>
                                     </div>
                                     <!-- End of Collapsible Widget -->
 
                                     <!-- Start of Collapsible Widget -->
-                                    <div class="widget widget-collapsible">
+                                    <!-- <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Size</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
                                             <li><a href="javascript:void(0)">Extra Large</a></li>
@@ -82,7 +82,7 @@
                                             <li><a href="javascript:void(0)">Medium</a></li>
                                             <li><a href="javascript:void(0)">Small</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Collapsible Widget -->
 
                                     <!-- Start of Collapsible Widget -->
@@ -196,30 +196,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
-
-        function add_cart_(id){
-            var id = id;
-            var quantity = 1;
-            var size = "medium";
-            // processing ajax request
-            $.ajax({
-                url: "{{ route('addcart') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    id: id,
-                    quantity: quantity,
-                    size: size
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                }
-            });
-        }
-
         function add_wish_(id){
             // processing ajax request    
             $.ajax({

@@ -3,33 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\Category;
-use App\Models\Vendor;
-use App\Models\Product;
-use App\Models\RecentView;
-use App\Models\Childcategory;
-use App\Models\Subcategory;
-use App\Models\Subscriber;
-use App\Models\Discussion;
-use App\Models\User;
+use Illuminate\Support\Facades\{Auth, Session, Redirect};
+use App\Models\{
+    Category, Vendor, Product, RecentView, Childcategory, 
+    Subcategory, Subscriber, Discussion, User, Banner, OrderDetail
+}; 
 use Carbon\Carbon;
+use Validator;
+use Symfony\Component\HttpFoundation\Response;
+
 class HomeController extends Controller
 {
 
     public function index()
     {
-        $deals = Product::where('admin_id', '!=', NULL)->whereBetween('products.created_at', 
+        $banners = Banner::where('status', 1)->get();
+
+        $deals = Product::whereNotNull('admin_id')->whereBetween('products.created_at', 
                 [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
                 ->get();
 
-        $top_sellers = Vendor::where('status', 0)->get();
+        $top_sellers = Vendor::where('status', 1)->get();
 
-        $top_categories = Category::all();
-
+        $top_categories = Product::leftJoin('categories', 'products.p_catog', '=', 'categories.id')->whereBetween('products.updated_at', 
+         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+         ->select('products.updated_at', 'categories.*')
+         ->get()->groupBy('id');
         $newarrivals = Product::whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
+
+        $most_populars = Product::whereBetween('updated_at',
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
+
 
         $clothings = Product::where('p_catog', 1)->whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
@@ -47,11 +52,35 @@ class HomeController extends Controller
         }
            // dd($recents);
         return view('user.welcome', compact('deals', 'top_sellers', 'top_categories',
-         'newarrivals', 'clothings', 'electrics', 'homes', 'recents'));
+         'newarrivals', 'clothings', 'electrics', 'homes', 'recents', 'banners', 'most_populars'));
     }
 
     public function subscribe(Request $request)
     {
+        //--- Validation Section
+        $rules = [
+            'email' => 'required|email|unique:subscribers'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()) {
+            return response()->json($validator->messages(), Response::HTTP_BAD_REQUEST);
+        }
+
+        //in view code is here...
+
+
+        // Try like this
+
+        // error: function (xhr) {
+        // $('#validation-errors').html('');
+        // $.each(xhr.responseJSON.errors, function(key,value) {
+        //     $('#validation-errors').append('<div class="alert alert-danger">'+value+'</div');
+        // }); 
+        // },
+
+        //end validation
+
         $Subscribe = Subscriber::where('email', $request->input('email'))->first();
         if(!$Subscribe){
             $Subscribe = new Subscriber();
