@@ -46,8 +46,8 @@
                      </svg>
                   </span>
                   <!--end::Svg Icon-->
-                  <div class="text-white fw-bolder fs-2 mb-2 mt-5">Shopping Cart</div>
-                  <div class="fw-bold text-white">Lands, Houses, Ranchos, Farms</div>
+                  <div class="text-white fw-bolder fs-2 mb-2 mt-5">Today Vendor's Sale</div>
+                  <div class="fw-bold text-white">${{ number_format((float)$vendor_sale, 2, '.', '') }}</div>
                </div>
                <!--end::Body-->
             </a>
@@ -67,8 +67,8 @@
                      </svg>
                   </span>
                   <!--end::Svg Icon-->
-                  <div class="text-white fw-bolder fs-2 mb-2 mt-5">Products</div>
-                  <div class="fw-bold text-white">Flats, Shared Rooms, Duplex</div>
+                  <div class="text-white fw-bolder fs-2 mb-2 mt-5">Today Admin's Sale</div>
+                  <div class="fw-bold text-white">${{ number_format((float)$admin_sale, 2, '.', '') }}</div>
                </div>
                <!--end::Body-->
             </a>
@@ -87,8 +87,8 @@
                      </svg>
                   </span>
                   <!--end::Svg Icon-->
-                  <div class="text-white fw-bolder fs-2 mb-2 mt-5">Sales Stats</div>
-                  <div class="fw-bold text-white">50% Increased for FY20</div>
+                  <div class="text-white fw-bolder fs-2 mb-2 mt-5">Today's total sales</div>
+                  <div class="fw-bold text-white">${{ number_format((float)$total_sale, 2, '.', '') }}</div>
                </div>
                <!--end::Body-->
             </a>
@@ -317,16 +317,16 @@
         <script>
             const data1 = {
                 labels: [
-                    'Sponsored NFT',
-                    'Featured NFT',
-                    'Simple NFT'
+                    ' Vendors ',
+                    ' Orders ',
+                    ' Users '
                 ],
                 datasets: [{
                     label: 'My System Details',
                     data: [
-                        <?php echo json_encode($sponsored_nft) ?>,
-                        <?php echo json_encode($feature_nft) ?>,
-                        <?php echo json_encode($simple_nft) ?>
+                        <?php echo json_encode($total_vendor) ?>,
+                        <?php echo json_encode($total_order) ?>,
+                        <?php echo json_encode($total_user) ?>
                     ],
                     backgroundColor: [
                         'rgb(255, 99, 132)',
