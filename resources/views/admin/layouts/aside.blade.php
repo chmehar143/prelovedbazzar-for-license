@@ -366,6 +366,14 @@
                <span class="menu-title">Banners</span>
                </a>
             </div>
+            <div class="menu-item py-2">
+               <a class="menu-link  menu-center" href="{{url('admin/frontcat_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+               <span class="menu-icon me-0">
+               <i class="fas fa-users-cog mr-2"></i>
+               </span>
+               <span class="menu-title">Front Cat</span>
+               </a>
+            </div>
             <!-- <div class="menu-item py-2">
                <a class="menu-link  menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                <span class="menu-icon me-0">

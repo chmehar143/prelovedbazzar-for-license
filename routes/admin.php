@@ -329,3 +329,8 @@ Route::get('webbanner_remove/{id}', 'WebsiteBannerController@remove')->name('web
 Route::get('contactus_list', 'ContactUsController@list')->name('contactus_list');
 Route::get('contactus_view/{id}', 'ContactUsController@view')->name('contactus_view');
 Route::get('contactus_rem/{id}', 'ContactUsController@remove')->name('contactus_rem');
+
+
+//Front Cat
+Route::get('frontcat_list', 'frontCatController@list')->name('frontcat_list');
+Route::get('frontcat_create', 'frontCatController@create')->name('frontcat_create');
