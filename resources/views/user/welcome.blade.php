@@ -623,7 +623,7 @@
                 <div class="tab-content product-wrapper appear-animate">
                     <div class="tab-pane active pt-4" id="tab1-1">
                         <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-                            @foreach($newarrivals as $arrival)
+                            @foreach($newarrivals->slice(0, 10) as $arrival)
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
@@ -676,8 +676,8 @@
                     <!-- End of Tab Pane -->
                     <div class="tab-pane pt-4" id="tab1-2">
                         <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-                            @foreach($top_sellers as $seller)
-                                @foreach($seller->products->slice(0, 10) as $unit)
+                            @foreach($top_sellers->slice(0, 5) as $seller)
+                                @foreach($seller->products->slice(0, 3) as $unit)
                                     <div class="product-wrap">
                                         <div class="product text-center">
                                             <figure class="product-media">
