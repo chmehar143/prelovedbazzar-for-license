@@ -5,7 +5,7 @@
 </head>
 <div class="content d-flex flex-column flex-column-fluid" style="margin-top:5pc" id="kt_content">
    <!--begin::Container-->
-   <div id="kt_content_container" class="container-xxl" >
+   <div id="kt_content_container" class="container-xl" >
       <!--begin::Navbar-->
       <div class="card mb-5 mb-xl-10">
       </div>
@@ -66,7 +66,7 @@
       </div>
       <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
          <!--begin::Container-->
-         <div id="kt_content_container" class="container-xxl">
+         <div id="kt_content_container" class="container-xl">
             <!--begin::Card-->
             <h2>TRACKING DETAILS</h2>
             <div class="card">

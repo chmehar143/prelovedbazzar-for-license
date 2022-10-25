@@ -43,7 +43,7 @@
 							<!--end::Page title-->
 						</div>
 </div>
-<div id="kt_content_container" class="container-xxl" style="margin-top:10pc;margin-left:6pc">
+<div id="kt_content_container" class="container-xl" style="margin-top:10pc;margin-left:6pc">
 							<!--begin::Navbar-->
                             <div class="card pt-4 mb-6 mb-xl-9">
                                 <!--begin::Card header-->

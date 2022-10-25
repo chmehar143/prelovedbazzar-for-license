@@ -638,10 +638,10 @@
                                                 title="Add to cart" onclick="add_cart_({{$arrival->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$arrival->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                            <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
+                                                title="Add to Compare"></a> -->
                                         </div>
                                     </figure>
                                     <div class="product-details">
@@ -880,7 +880,7 @@
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-sm-4 mb-4">
+                        <!-- <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/2.jpg')}});
                                 background-color: #ebeced;">
                                 <div class="banner-content content-top">
@@ -894,9 +894,9 @@
                                         class="btn btn-dark btn-outline btn-rounded btn-sm">shop Now</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of Banner -->
-                        <div class="col-lg-9 col-sm-8">
+                        <div class="col-lg-12 col-sm-8">
                             <div class="swiper-container swiper-theme" data-swiper-options="{
                                 'spaceBetween': 20,
                                 'slidesPerView': 2,
@@ -975,7 +975,7 @@
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-sm-4 mb-4">
+                        <!-- <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/3.jpg')}});
                             background-color: #252525;">
                                 <div class="banner-content content-top">
@@ -989,9 +989,9 @@
                                         class="btn btn-white btn-outline btn-rounded btn-sm">shop now</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of Banner -->
-                        <div class="col-lg-9 col-sm-8">
+                        <div class="col-lg-12 col-sm-8">
                             <div class="swiper-container swiper-theme" data-swiper-options="{
                                 'spaceBetween': 20,
                                 'slidesPerView': 2,
@@ -1098,7 +1098,7 @@
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-sm-4 mb-4">
+                        <!-- <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/5.jpg')}});
                             background-color: #EAEFF3;">
                                 <div class="banner-content content-top">
@@ -1112,9 +1112,9 @@
                                         class="btn btn-dark btn-outline btn-rounded btn-sm">shop now</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of Banner -->
-                        <div class="col-lg-9 col-sm-8">
+                        <div class="col-lg-12 col-sm-8">
                             <div class="swiper-container swiper-theme" data-swiper-options="{
                                 'spaceBetween': 20,
                                 'slidesPerView': 2,

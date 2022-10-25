@@ -86,7 +86,7 @@
 </div>
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content" style="margin-top:11pc">
    <!--begin::Container-->
-   <div id="kt_content_container" class="container-xxl">
+   <div id="kt_content_container" class="container-xl">
       <!--begin::Card-->
       <div class="card container">
          <!--begin::Card header-->
