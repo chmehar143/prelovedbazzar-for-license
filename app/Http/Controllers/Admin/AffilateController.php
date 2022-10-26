@@ -47,7 +47,7 @@ class AffilateController extends Controller
         //--- Validation Section
         $rules = [
              'a_name' => 'required',
-             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3072',
              'a_sku' => 'required|unique:affiliate_products|',
              'con' => 'required',
              'a_ship_time' => 'required',
@@ -144,7 +144,7 @@ class AffilateController extends Controller
         //--- Validation Section
         $rules = [
             'a_name' => 'required',
-            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3072',
             'a_sku' => 'required',
             'con' => 'required',
             'a_ship_time' => 'required',
