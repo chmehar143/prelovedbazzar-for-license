@@ -223,12 +223,12 @@
                                             <i class="w-icon-map-marker"></i>
                                             {{$vendor->address}}
                                         </li>
-                                        <li class="store-phone">
+                                        <!-- <li class="store-phone">
                                             <a href="tel:1234567890">
                                                 <i class="w-icon-phone"></i>
                                                 {{$vendor->phone}}
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li class="store-rating">
                                             <i class="w-icon-star-full"></i>
                                             4.33 rating from 3 reviews
@@ -266,10 +266,10 @@
                                                     title="Add to cart"></a>
                                                 <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
                                                 <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                    title="Quick View"></a>
+                                                    title="Quick View"></a> -->
                                             </div>
                                         </figure>
                                         <div class="product-details">

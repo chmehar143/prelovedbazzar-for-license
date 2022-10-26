@@ -71,19 +71,19 @@
                                         <a href="{{route('vendor-store-details',$vendor->id)}}">{{$vendor->name}}</a>
                                         <label class="featured-label">Featured</label>
                                     </h4>
-                                    <div class="ratings-container">
+                                    <!-- <div class="ratings-container">
                                         <div class="ratings-full">
                                             <span class="ratings" style="width: 100%;"></span>
                                             <span class="tooltiptext tooltip-top"></span>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="store-address">
                                         {{$vendor->address}}
                                     </div>
                                     <ul class="seller-info-list list-style-none">
-                                        <li class="store-phone">
+                                        <!-- <li class="store-phone">
                                             <a href="tel:1234567890"><i class="w-icon-phone"></i>{{$vendor->phone}}</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                                 <!-- End of Store Content -->
