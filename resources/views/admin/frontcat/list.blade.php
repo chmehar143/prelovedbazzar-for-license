@@ -44,7 +44,7 @@
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
    <!--begin::Container-->
    <div id="kt_content_container" class="container-xl" style="margin-top: 11pc;">
-   	  <div class="card container">
+      <div class="card container">
          <div class="card-header border-0 pt-6">
             <!--begin::Card title-->
             <div class="card-title">
@@ -58,7 +58,7 @@
                   </svg>
                </span>
                <!--end::Svg Icon-->
-               <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Front Cat">
+               <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Products">
             </div>
             <!--end::Search-->
             </div>
@@ -69,7 +69,7 @@
             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                
                <!--begin::Add products-->
-               <a type="button" class="btn btn-primary" href="{{route('admin.frontcat_create')}}">Add Frint Cat </a>
+               <a type="button" class="btn btn-primary" href="{{route('admin.frontcat_create')}}">Add Front Page Category Show</a>
                <!--end::Add products-->
             </div>
             <!--end::Toolbar-->
@@ -92,79 +92,70 @@
                   <thead>
                      <!--begin::Table row-->
                      <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-						<th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.5px;">
-							<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-							#
-							</div>
-						</th>
-
-						<th class="min-w-200px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Category </th>
-
-						<th class="min-w-300px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label=" Slug : activate to sort column ascending" style="width: 192.25px;"> Sub Category  </th>
-
-                            <th class="min-w-100px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label=" Created : activate to sort column ascending" style="width: 292.25px;">Description  </th>
-
-						<th class="min-w-50px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>
-
-						
-
-						<th class="min-w-100px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label=" Updated : activate to sort column ascending" style="width: 192.25px;"> </th>
-                            
-						<th class="min-w-100px sorting_disabled" rowspan="1" colspan="1"
-							aria-label="Action">Action</th>
+                     <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.5px;">
+                        <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                           #
+                        </div>
+                     </th>
+                     <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                        aria-label="Product Image : activate to sort column ascending" style="width: 192.25px;">Image </th>
+                     <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                        aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Category </th>
+                     <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                        aria-label="Type   : activate to sort column ascending" style="width: 192.25px;">Subcategory </th>
+                     <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                        aria-label=" Price : activate to sort column ascending" style="width: 192.25px;"> Name </th>
+                     <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                        aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Detail </th>
+                     <th class="min-w-125px sorting_disabled" rowspan="1" colspan="1"
+                        aria-label="Action">Action</th>
                      </tr>
                      <!--end::Table row-->
                   </thead>
                   <!--end::Table head-->
                   <!--begin::Table body-->
                   <tbody class="fw-bold text-gray-600">
-                     <tr class="odd" id="">
+                     @foreach($welcome_categories as $frontpage)
+                     <tr class="odd" id="nft_row_{{$frontpage->id}}">
                         <!--begin::Checkbox-->
                         <td>
                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                           {{$loop->iteration}}
                            </div>
                         </td>
                         <!--end::Checkbox-->
-						<td>abc</td>
-						<td>bcd</td>
-						<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
-						<td><span class="btn btn-primary btn-sm">active</span></td>
-						<td></td>
-
-
+                        <td><img src="{{asset('storage/uploads/front_ad/'.$frontpage->image)}}" width="50px"></td>
+                        <td>
+                           {{$frontpage->category->name}}
+                        </td>
+                        <td>{{$frontpage->subcategory->name}}</td>
+                        <td>{{$frontpage->name}}</td>
+                        <td>{{$frontpage->detail}}</td>
                         <!--begin::Action=-->
-						<td class="text-end">
-                              <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                 Actions
-                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                 <span class="svg-icon svg-icon-5 m-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                       <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
-                                    </svg>
-                                 </span>
-                                 <!--end::Svg Icon-->
-                              </a>
-                              <!--begin::Menu-->
-                              <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                 <!--begin::Menu item-->
-                                 <!--end::Menu item-->
-                                 
-                                 <!--begin::Menu item-->
-                                 <div class="menu-item px-3">
-                                    <a href="javascript:void(0)"  class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                                 </div>
-                                 <!--end::Menu item-->
+                        <td class="text-end">
+                           <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                              Actions
+                              <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+                              <span class="svg-icon svg-icon-5 m-0">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black"></path>
+                                 </svg>
+                              </span>
+                              <!--end::Svg Icon-->
+                           </a>
+                           <!--begin::Menu-->
+                           <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+                              <!--begin::Menu item-->
+                              <div class="menu-item px-3" id="{{$frontpage->id}}">
+                                 <a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="removefront({{$frontpage->id}})">Delete</a>
                               </div>
-                              <!--end::Menu-->
-                           </td>
+                              <!--end::Menu item-->
+                           </div>
+                           <!--end::Menu-->
+                        </td>
                         <!--end::Action=-->
                      </tr>
-					
+                     @endforeach
                   </tbody>
                   <!--end::Table body-->
                </table>
@@ -181,7 +172,35 @@
 </div>
 <!--end::Container-->
 </div>
-<script
-   src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+   function removefront(id) {
+   	Swal.fire({
+   		title: 'Are you sure?',
+   		text: "You won't be able to revert this!",
+   		icon: 'warning',
+   		showCancelButton: true,
+   		confirmButtonColor: '#3085d6',
+   		cancelButtonColor: '#d33',
+   		confirmButtonText: 'Yes, delete it!'
+   	}).then((result) => {
+   		if (result.isConfirmed) {
+               var url = "{{ route('admin.frontcat_del', ':id') }}";
+               url = url.replace(':id', id);
+   			$.ajax({
+   				url: url,
+   				success: function(data) {
+   					$("#nft_row_" +id).remove();
+   					Swal.fire(
+   						'Deleted!',
+   						'Front Page Show has been removed.',
+   						'success'
+   					)
+   				}
+   			});
+   		}
+   	})
+   }
+</script>
 
 @endsection

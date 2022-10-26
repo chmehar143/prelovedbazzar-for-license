@@ -202,14 +202,6 @@ Route::get('managestaff_delete/{id}', 'ManageStaffController@destroy')->name('ma
 
 
 
-
-
-
-
-
-
-
-
 // Vendor  product
 
 // Route::get('vendors_list', 'VendorsController@index')->name('vendors_list');
@@ -334,3 +326,5 @@ Route::get('contactus_rem/{id}', 'ContactUsController@remove')->name('contactus_
 //Front Cat
 Route::get('frontcat_list', 'frontCatController@list')->name('frontcat_list');
 Route::get('frontcat_create', 'frontCatController@create')->name('frontcat_create');
+Route::post('frontcat_post', 'frontCatController@store')->name('frontcat_post');
+Route::get('frontcat_del/{id}', 'frontCatController@destroy')->name('frontcat_del');
