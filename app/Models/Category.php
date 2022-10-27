@@ -13,7 +13,7 @@ class Category extends Model
     protected $fillable = ['name','slug','status'];
 
     public function product(){
-        return $this->hasMany(Product::class, 'p_catog');
+        return $this->hasMany(Product::class, 'p_catog', 'id');
     }
 
     public function subcategory(){

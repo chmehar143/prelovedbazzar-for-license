@@ -36,7 +36,7 @@
                                     <!-- Start of Collapsible widget -->
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>All Categories</span></h3>
-                                        <ul class="widget-body filter-items search-ul">
+                                        <ul class="widget-body filter-items search-ul" style="display: none;">
                                             @foreach($categories as $category)
                                             <li>
                                                 <a href="{{ route('sortby',$category->id ) }}">{{$category->name}}</a>
@@ -173,7 +173,7 @@
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
-                                                    ${{$product->p_new_price}}
+                                                    pkr{{$product->p_new_price}}
                                                 </div>
                                             </div>
                                         </div>

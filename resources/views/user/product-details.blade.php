@@ -156,7 +156,7 @@
                      </div>
                   </div>
                   <hr class="product-divider">
-                  <div class="product-price"><ins class="new-price">${{$product->p_new_price}}</ins></div>
+                  <div class="product-price"><ins class="new-price">pkr{{$product->p_new_price}}</ins></div>
                   <?php                     
                      $sum = $product->discussions->sum('review');
                      $no = $product->discussions->count('review');
@@ -284,10 +284,12 @@
                   <div class="row mb-4">
                      <div class="col-md-6 mb-5">
                         <h4 class="title tab-pane-title font-weight-bold mb-2">Detail</h4>
-                        <p class="mb-4">{{$product->p_detail}}
+                        <?php $detail = strip_tags($product->p_detail); ?>
+                        <p class="mb-4">{{$detail}}
                         </p>
                         <ul class="list-type-check">
-                           <li>{{$product->p_r_policy}}</li>
+                           <?php $policy = strip_tags($product->p_r_policy); ?>
+                           <li>{{$policy}}</li>
                         </ul>
                      </div>
                      <div class="col-md-6 mb-5">
@@ -879,7 +881,7 @@
                            <a href="{{ route('product',$unit->id ) }}" class="rating-reviews" >({{ $no }} reviews)</a>
                         </div>
                         <div class="product-pa-wrapper">
-                           <div class="product-price">${{$unit->p_new_price}}</div>
+                           <div class="product-price">pkr{{$unit->p_new_price}}</div>
                         </div>
                      </div>
                   </div>
@@ -944,7 +946,7 @@
                            <a href="product-default.html" class="rating-reviews">({{ $no }} reviews)</a>
                         </div>
                         <div class="product-pa-wrapper">
-                           <div class="product-price">${{$related->p_new_price}}</div>
+                           <div class="product-price">pkr{{$related->p_new_price}}</div>
                         </div>
                      </div>
                   </div>

@@ -72,18 +72,11 @@
                   <!--begin::Filter-->
                   <!--begin::Menu 1-->
                   <!--begin::Add customer-->
+                  <a type="button" class="btn btn-primary" href="{{route('admin.webbanner_create')}}">Add Web Banner</a>
                   <!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
                   <!--end::Add customer-->
                </div>
                <!--end::Toolbar-->
-               <!--begin::Group actions-->
-               <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
-                  <div class="fw-bolder me-5">
-                     <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected
-                  </div>
-                  <button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
-               </div>
-               <!--end::Group actions-->
             </div>
             <!--end::Card toolbar-->
          </div>

@@ -71,7 +71,7 @@
                   <!--begin::Filter-->
                   <!--begin::Menu 1-->
                   <!--begin::Add customer-->
-                  <a type="button" class="btn btn-primary" href="{{url('vendor/product_create')}}">Add Affiliate Product</a>
+                  <a type="button" class="btn btn-primary" href="{{route('vendor.affilateproduct_create')}}">Add Affiliate Product</a>
                   <!-- data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" -->
                   <!--end::Add customer-->
                </div>
@@ -133,7 +133,7 @@
                               {{$product->a_name}}
                            </td>
                            <td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{ $type[$product->a_type] }}</a>	</td>
-                           <td>${{$product->a_new_price}}</td>
+                           <td>pkr{{$product->a_new_price}}</td>
                            <td data-order="Invalid date">
                               <span class="badge @if($product->a_status==1) badge-light-success @else badge-light-danger @endif">{{$status[$product->a_status]}}</span>
                            </td>

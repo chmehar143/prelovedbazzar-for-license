@@ -44,7 +44,7 @@
                         </li>
                         <li>
                             <label>Total</label>
-                            <strong>${{$order->net_amount}}</strong>
+                            <strong>pkr{{$order->net_amount}}</strong>
                         </li>
                         <li>
                             <label>Payment method</label>
@@ -73,7 +73,7 @@
                                     </td>
                                     <td><strong>jfgdkfgkd{{$detail->store_name}}</strong></td>
                                     <td>xfkxkfgldf{{$detail->sub_status}}</td>
-                                    <td>${{$detail->subtotal}}</td>
+                                    <td>pkr{{$detail->subtotal}}</td>
                                     <td>jfgkdfgdfgldk{{$detail->tracking}}</td>
                                 </tr>
                                 @endforeach
@@ -81,7 +81,7 @@
                             <tfoot>
                                 <tr>
                                     <th>Subtotal:</th>
-                                    <td>${{$order->order_detail->sum('subtotal')}}</td>
+                                    <td>pkr{{$order->order_detail->sum('subtotal')}}</td>
                                 </tr>
                                 <tr>
                                     <th>Shipping:</th>
@@ -93,7 +93,7 @@
                                 </tr>
                                 <tr class="total">
                                     <th class="border-no">Total:</th>
-                                    <td class="border-no">${{$order->net_amount}}</td>
+                                    <td class="border-no">pkr{{$order->net_amount}}</td>
                                 </tr>
                             </tfoot>
                         </table>

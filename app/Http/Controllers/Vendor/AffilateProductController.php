@@ -57,7 +57,7 @@ class AffilateProductController extends Controller
             'a_sub_catog' => 'required',
             'a_new_price' => 'required',
             'a_old_price' => 'required',
-            'a_stock' => 'required',
+            'a_stock' => 'required|integer|min:0',
             'a_link' => 'required'
 
         ];
@@ -152,14 +152,16 @@ class AffilateProductController extends Controller
             'a_color' => 'required',
             'a_catog' => 'required',
             'a_sub_catog' => 'required',
-            'a_new_price' => 'required',
-            'a_old_price' => 'required',
-            'a_stock' => 'required',
+            'a_new_price' => 'required|numeric',
+            'a_old_price' => 'required|numeric',
+            'a_stock' => 'required|integer|min:0',
         ];
         $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
             'avatar.max' => 'Fil size must be less than 2MB.',
             'a_sku.regex' => 'SKU Must Not Have Any Special Characters.',
+            'a_new_price.numeric' => 'Numeric value accepted only.',
+            'a_old_price.numeric' => 'Numeric value accepted only.'
 
         ];
         $validator = Validator::make($request->all(), $rules, $customs);
@@ -225,7 +227,10 @@ class AffilateProductController extends Controller
     public  function  view($id)
     {
         $product = AffiliateProduct::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
-        return view('vendor.affilateproduct.view', compact('product'));
+        $category = Category::where('id', $product->a_catog)->first();   
+        $subcategory = Subcategory::where('id', $product->a_sub_catog)->first();
+        $childcategory = ChildCategory::where('id', $product->a_child_catog)->first(); 
+        return view('vendor.affilateproduct.view', compact('product', 'category', 'subcategory', 'childcategory'));
     }
 
     public function destroy($id)

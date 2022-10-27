@@ -117,7 +117,7 @@ else{
                         <a href="{{route('product', $cart->prod_id)}}" class="product-name">{{$cart['p_name']}}</a>
                         <div class="price-box">
                             <span class="product-quantity">{{$cart['quantity']}}</span>
-                            <span class="product-price">${{$cart['p_new_price']}}</span>
+                            <span class="product-price">pkr{{$cart['p_new_price']}}</span>
                         </div>
                     </div>
                     <figure class="product-media">
@@ -137,7 +137,7 @@ else{
                 @endforelse
                 <div class="cart-total">
                     <label>Subtotal:</label>
-                    <span class="price">${{$total}}</span>
+                    <span class="price">pkr{{$total}}</span>
                 </div>
 
                 <div class="cart-action">
@@ -545,9 +545,11 @@ else{
                     email: email
                 },
                 error: function(response){
+
                     //check if response has errors object
-                     $('#validation-errors').append('<div class="alert alert-danger text-white">'+response.responseText+'</div');
+                     $('#validation-errors').append('<div class="alert alert-danger text-white">This email is not valid</div');
                 },
+
                 success: function(data) {
                     Swal.fire(
                          'Sent!',

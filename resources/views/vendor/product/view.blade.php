@@ -100,11 +100,16 @@
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Product Return Policy </td>
-                              <td class="text-gray-800">{{$product->p_r_policy}}</td>
+                              <?php $policy = strip_tags($product->p_r_policy); ?>
+                              <td class="text-gray-800">{{$policy}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Size </td>
-                              <td class="text-gray-800">{{$product->small}}</td>
+                              <td class="text-gray-800">
+                                @if($product->small == 1) small, @endif
+                                @if($product->medium == 1) medium, @endif
+                                @if($product->large == 1) large @endif
+                              </td>
                            </tr>
                         </tbody>
                      </table>
@@ -120,15 +125,15 @@
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px">Category </td>
-                              <td class="text-gray-800">{{$product->p_catog}}</td>
+                              <td class="text-gray-800">{{$category->name}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Sub Category </td>
-                              <td class="text-gray-800">{{$product->p_sub_catog}}</td>
+                              <td class="text-gray-800">{{$subcategory->name}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Child Category </td>
-                              <td class="text-gray-800">{{$product->p_child_catog}}</td>
+                              <td class="text-gray-800">{{$childcategory->name}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Previous Price</td>
@@ -140,7 +145,8 @@
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Product  Description</td>
-                              <td class="text-gray-800">{{$product->p_detail}}</td>
+                              <?php $detail = strip_tags($product->p_detail); ?>
+                              <td class="text-gray-800">{{$detail}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px">Status </td>

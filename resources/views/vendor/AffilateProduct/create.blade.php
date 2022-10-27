@@ -151,7 +151,7 @@
 													</div>
 													<!--end::Image input-->
 													<!--begin::Hint-->
-													<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+													<div class="form-text">Allowed Maximum size: 3MB,  file types: png, jpg, jpeg.</div>
 													@error('avatar')
 													<div class="validation mt-1 text-danger">{{ $message }}</div>
 													@enderror
@@ -280,7 +280,7 @@
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-2 fv-row">
-													<input type="color" name="a_color" class="form-control form-control-lg form-control-solid @error('a_color') is-invalid @enderror"  required/>
+													<input type="color" value="#63c7de" name="a_color" class="form-control form-control-lg form-control-solid @error('a_color') is-invalid @enderror"  required/>
 													@error('a_color')
 														<div class="validation mt-1 text-danger">{{ $message }}</div>
 													@enderror
