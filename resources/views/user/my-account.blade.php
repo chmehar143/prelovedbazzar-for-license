@@ -178,7 +178,7 @@
                                             <td class="order-date">{{$order->created_at->format('d-m-Y')}}</td>
                                             <td class="order-status">{{$order->status}}</td>
                                             <td class="order-total">
-                                                <span class="order-price">${{$order->net_amount}}</span> for
+                                                <span class="order-price">pkr{{$order->net_amount}}</span> for
                                                 <span class="order-quantity">{{$details->sum('pro_qnty')}}</span> item
                                             </td>
                                             <td class="order-action">

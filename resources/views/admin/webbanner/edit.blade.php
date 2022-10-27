@@ -151,7 +151,7 @@
                      </div>
                      <!--end::Image input-->
                      <!--begin::Hint-->
-                     <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                     <div class="form-text">Allowed Maximum size: 3MB,  file types: png, jpg, jpeg.</div>
                      @error('image')
                         <div class="validation text-danger mt-1">{{ $message }}</div>
                      @enderror
