@@ -156,7 +156,7 @@
                      </div>
                   </div>
                   <hr class="product-divider">
-                  <div class="product-price"><ins class="new-price">${{$product->p_new_price}}</ins></div>
+                  <div class="product-price"><ins class="new-price">pkr{{$product->p_new_price}}</ins></div>
                   <?php                     
                      $sum = $product->discussions->sum('review');
                      $no = $product->discussions->count('review');
@@ -879,7 +879,7 @@
                            <a href="{{ route('product',$unit->id ) }}" class="rating-reviews" >({{ $no }} reviews)</a>
                         </div>
                         <div class="product-pa-wrapper">
-                           <div class="product-price">${{$unit->p_new_price}}</div>
+                           <div class="product-price">pkr{{$unit->p_new_price}}</div>
                         </div>
                      </div>
                   </div>
@@ -944,7 +944,7 @@
                            <a href="product-default.html" class="rating-reviews">({{ $no }} reviews)</a>
                         </div>
                         <div class="product-pa-wrapper">
-                           <div class="product-price">${{$related->p_new_price}}</div>
+                           <div class="product-price">pkr{{$related->p_new_price}}</div>
                         </div>
                      </div>
                   </div>

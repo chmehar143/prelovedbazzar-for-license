@@ -58,7 +58,7 @@
                                     </a>
                                 </td>
                                 <td class="product-price">
-                                    <ins class="new-price">${{$wish->p_new_price}}</ins>
+                                    <ins class="new-price">pkr{{$wish->p_new_price}}</ins>
                                 </td>
                                 <td class="product-stock-status">
                                     <span class="wishlist-in-stock">@if($wish->p_stock > 1) In Stock  @endif</span>

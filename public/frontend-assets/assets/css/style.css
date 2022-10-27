@@ -15112,7 +15112,7 @@ body .product-popup {
 .header-search.hs-expanded input.form-control {
   color: #fff;
   border-right: none;
-  border-left: none;
+  /* border-left: none; */
 }
 .header-search.hs-expanded .btn-search {
   display: -webkit-box;
@@ -20452,6 +20452,11 @@ aside .sp-sidebar-banner span {
 ------------------------------------------------*/
 .shop-default-banner {
   padding: 7.4em 8.7em 7.6em;
+}
+.header-search.hs-expanded input.form-control {
+  color: #fff;
+  border-right: #F4442C;
+  /* border-left: #F4442C; */
 }
 .shop-default-banner .banner-subtitle {
   margin-bottom: 0.2rem;

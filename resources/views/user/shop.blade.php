@@ -29,14 +29,14 @@
                             <div class="sidebar-content scrollable">
                                 <!-- Start of Sticky Sidebar -->
                                 <div class="sticky-sidebar">
-                                    <div class="filter-actions">
+                                    <!-- <div class="filter-actions">
                                         <label>Filter :</label>
                                         <a href="javascript:void(0)" class="btn btn-dark btn-link filter-clean">Clean All</a>
-                                    </div>
+                                    </div> -->
                                     <!-- Start of Collapsible widget -->
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>All Categories</span></h3>
-                                        <ul class="widget-body filter-items search-ul">
+                                        <ul class="widget-body filter-items search-ul" style="display:none;">
                                             @foreach($categories as $category)
                                             <li>
                                                 <a href="{{ route('sortby',$category->id ) }}">{{$category->name}}</a>
@@ -50,17 +50,17 @@
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Price</span></h3>
                                         <div class="widget-body">
-                                            <ul class="filter-items search-ul">
+                                            <ul class="filter-items search-ul" style="display:none;">
                                                 <?php $min = 1; $max = 99.0; ?>
-                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$0.00 - $99.99</a></li>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">Pkr0.00 - $99.99</a></li>
                                                 <?php $min = 99.00; $max = 199.00; ?>
-                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$99.99 - $199.99</a></li>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">Pkr99.99 - $199.99</a></li>
                                                 <?php $min = 199.00; $max = 299.00; ?>
-                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$199.99 - $299.99</a></li>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">Pkr199.99 - $299.99</a></li>
                                                 <?php $min = 299.99; $max = 499.99; ?>
-                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$299.99 - $499.99</a></li>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">Pkr299.99 - $499.99</a></li>
                                                 <?php $min = 499.99; $max = 99999999.00; ?>
-                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">$500.00+</a></li>
+                                                <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">Pkr500.00+</a></li>
                                             </ul>
                                             <!-- <form class="price-range">
                                                 <input type="number" name="min_price" class="min_price text-center"
@@ -132,8 +132,7 @@
                                     <div class="product text-center">
                                         <figure class="product-media">
                                             <a href="{{route('product',$product->id)}}">
-                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product" width="300"
-                                                    height="338" />
+                                                <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product"  style="width:300px;height:300px" />
                                             </a>
                                             <div class="product-action-vertical">
                                                 <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
@@ -173,7 +172,7 @@
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
-                                                    ${{$product->p_new_price}}
+                                                    Pkr{{$product->p_new_price}}
                                                 </div>
                                             </div>
                                         </div>

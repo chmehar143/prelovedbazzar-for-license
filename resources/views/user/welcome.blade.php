@@ -372,7 +372,7 @@
 
                                                         <hr class="product-divider">
 
-                                                        <div class="product-price"><ins class="new-price ls-50">${{$unit->p_new_price}}</ins></div>
+                                                        <div class="product-price"><ins class="new-price ls-50">pkr{{$unit->p_new_price}}</ins></div>
 
                                                         <div class="product-countdown-container flex-wrap">
                                                             <label class="mr-2 text-default">Offer Ends In:</label>
@@ -531,7 +531,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-price">
-                                                            <ins class="new-price">${{$item->p_new_price}}</ins>
+                                                            <ins class="new-price">pkr{{$item->p_new_price}}</ins>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -551,7 +551,7 @@
                 <!-- End of Deals Wrapper -->
             </div>
 
-            <section
+            <!-- <section
                 class="category-section top-category bg-grey pt-10 pb-10 appear-animate fadeIn appear-animation-visible"
                 style="animation-duration: 1.2s;">
                 <div class="container pb-2">
@@ -597,7 +597,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- End of .category-section top-category -->
 
             <div class="container">
@@ -629,9 +629,9 @@
                                     <figure class="product-media">
                                         <a href="{{route('product', $arrival->id)}}">
                                             <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
-                                                width="300" height="338" />
+                                            style="width:300px;height:300px" />
                                             <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
-                                                width="300" height="338" />
+                                                style="width:300px;height:300px" />
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
@@ -665,7 +665,7 @@
                                             <a href="{{route('product', 16)}}" class="rating-reviews">({{ $no }} Reviews)</a>
                                         </div>
                                         <div class="product-price">
-                                            <ins class="new-price">${{$arrival->p_new_price}}</ins>
+                                            <ins class="new-price">pkr{{$arrival->p_new_price}}</ins>
                                         </div>
                                     </div>
                                 </div>
@@ -683,19 +683,19 @@
                                             <figure class="product-media">
                                                 <a href="{{route('product',$unit->id)}}">
                                                     <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                                                        width="300" height="338" />
+                                                    style="width:300px;height:300px" />
                                                     <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                                                        width="300" height="338" />
+                                                    style="width:300px;height:300px" />
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart" onclick="add_cart_({{$unit->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$unit->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
+                                                        title="Add to Compare"></a> -->
                                                 </div>
                                             </figure>
                                             <?php 
@@ -720,7 +720,7 @@
                                                     <a href="{{route('product', $unit->id)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                                 </div>
                                                 <div class="product-price">
-                                                    <ins class="new-price">${{$unit->p_new_price}}</ins>
+                                                    <ins class="new-price">pkr{{$unit->p_new_price}}</ins>
                                                 </div>
                                             </div>
                                         </div>
@@ -738,17 +738,17 @@
                                     <figure class="product-media">
                                         <a href="{{route('product', 16)}}">
                                             <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
-                                                width="300" height="338" />
+                                            style="width:300px;height:300px" />
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart" onclick="add_cart_({{$deal->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                            <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
+                                                title="Add to Compare"></a> -->
                                         </div>
                                     </figure>
                                     <?php 
@@ -773,7 +773,7 @@
                                             <a href="{{route('product', 16)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                         </div>
                                         <div class="product-price">
-                                            <span class="price">${{$deal->p_new_price}}</span>
+                                            <span class="price">pkr{{$deal->p_new_price}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -790,17 +790,17 @@
                                     <figure class="product-media">
                                         <a href="{{route('product', 16)}}">
                                             <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
-                                                width="300" height="338" />
+                                            style="width:300px;height:300px" />
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart" onclick="add_cart_({{$deal->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$deal->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                            <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
+                                                title="Add to Compare"></a> -->
                                         </div>
                                     </figure>
                                     <?php 
@@ -825,7 +825,7 @@
                                             <a href="{{route('product', 16)}}" class="rating-reviews">({{ $no }} reviews)</a>
                                         </div>
                                         <div class="product-price">
-                                            <span class="price">${{$deal->p_new_price}}</span>
+                                            <span class="price">pkr{{$deal->p_new_price}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -837,7 +837,7 @@
                 </div>
                 <!-- End of Tab Content -->
 
-                <div class="row category-cosmetic-lifestyle appear-animate mb-5">
+                <!-- <div class="row category-cosmetic-lifestyle appear-animate mb-5">
                     <div class="col-md-6 mb-4">
                         <div class="banner banner-fixed category-banner-1 br-xs">
                             <figure>
@@ -870,7 +870,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End of Category Cosmetic Lifestyle -->
                 @foreach($frontcat as $test)
                     @foreach($test as $unit)
@@ -918,17 +918,17 @@
                                             <figure class="product-media">
                                                 <a href="{{ route('product', $row->id)}}">
                                                     <img src="{{asset('storage/uploads/products/'.$row->p_image)}}" alt="Product"
-                                                        width="216" height="243" />
+                                                    style="width:300px;height:300px" />
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart" onclick="add_cart_({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
+                                                        title="Add to Compare"></a> -->
                                                 </div>
                                             </figure>
                                             <div class="product-details">
@@ -955,8 +955,8 @@
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
-                                                    <ins class="new-price">${{$row->p_new_price}}</ins><del
-                                                        class="old-price">${{$row->p__price}}</del>
+                                                    <ins class="new-price">pkr{{$row->p_new_price}}</ins><del
+                                                        class="old-price">pkr{{$row->p__price}}</del>
                                                 </div>
                                             </div>
                                         </div>
@@ -975,7 +975,7 @@
 
                 <!-- End of Product Wrapper 1 -->
 
-                <div class="banner banner-fashion appear-animate br-sm mb-9" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/4.jpg)')}};
+                <!-- <div class="banner banner-fashion appear-animate br-sm mb-9" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/4.jpg)')}};
                     background-color: #383839;">
                     <div class="banner-content align-items-center">
                         <div class="content-left d-flex align-items-center mb-3">
@@ -999,7 +999,7 @@
                                     class="w-icon-long-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End of Banner Fashion -->
 
                 <div class="product-wrapper-1 appear-animate mb-7">
@@ -1045,17 +1045,17 @@
                                             <figure class="product-media">
                                                 <a href="{{ route('product', $row->id)}}">
                                                     <img src="{{asset('storage/uploads/products/'.$row->p_image)}}" alt="Product"
-                                                        width="216" height="243" />
+                                                    style="width:300px;height:300px" />
                                                 </a>
                                                 <div class="product-action-vertical">
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                                                         title="Add to cart" onclick="add_cart_({{$row->id}})"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
                                                         title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                                    <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quickview"></a>
                                                     <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
+                                                        title="Add to Compare"></a> -->
                                                 </div>
                                             </figure>
                                             <?php 
@@ -1082,8 +1082,8 @@
                                                         reviews)</a>
                                                 </div>
                                                 <div class="product-price">
-                                                    <ins class="new-price">${{$row->p_new_price}}</ins><del
-                                                        class="old-price">${{$row->p__price}}</del>
+                                                    <ins class="new-price">pkr{{$row->p_new_price}}</ins><del
+                                                        class="old-price">pkr{{$row->p__price}}</del>
                                                 </div>
                                             </div>
                                         </div>
@@ -1210,7 +1210,7 @@
                                 <figure class="product-media">
                                     <a href="product-defa{{route('product', $recent->p_id)}}">
                                         <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
-                                            width="130" height="146" style="background-color: #fff" />
+                                        style="width:300px;height:300px" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">

@@ -288,7 +288,7 @@
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
-                                                    ${{$product->p_new_price}}
+                                                    pkr{{$product->p_new_price}}
                                                 </div>
                                             </div>
                                         </div>

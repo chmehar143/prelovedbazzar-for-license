@@ -66,7 +66,7 @@
                                     <li><a href="{{route('shop')}}">Shop </a></li>
                                     <li><a href="{{route('vendor-store')}}">Vendor Store</a></li>
                                     <li><a href="{{route('contact-us')}}">Contact Us</a></li>
-                                    <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
+                                    <!-- <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li> -->
                                 </ul>
                             </div>
                         </div>
