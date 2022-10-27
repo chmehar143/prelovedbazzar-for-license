@@ -623,7 +623,7 @@
                 <div class="tab-content product-wrapper appear-animate">
                     <div class="tab-pane active pt-4" id="tab1-1">
                         <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-                            @foreach($newarrivals as $arrival)
+                            @foreach($newarrivals->slice(0, 10) as $arrival)
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
@@ -638,10 +638,10 @@
                                                 title="Add to cart" onclick="add_cart_({{$arrival->id}})"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$arrival->id}})"
                                                 title="Add to wishlist"></a>
-                                            <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                            <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
                                             <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
+                                                title="Add to Compare"></a> -->
                                         </div>
                                     </figure>
                                     <div class="product-details">
@@ -676,8 +676,8 @@
                     <!-- End of Tab Pane -->
                     <div class="tab-pane pt-4" id="tab1-2">
                         <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-                            @foreach($top_sellers as $seller)
-                                @foreach($seller->products->slice(0, 10) as $unit)
+                            @foreach($top_sellers->slice(0, 5) as $seller)
+                                @foreach($seller->products->slice(0, 3) as $unit)
                                     <div class="product-wrap">
                                         <div class="product text-center">
                                             <figure class="product-media">
@@ -872,15 +872,17 @@
                     </div>
                 </div>
                 <!-- End of Category Cosmetic Lifestyle -->
+                @foreach($frontcat as $test)
+                    @foreach($test as $unit)
 
                 <div class="product-wrapper-1 appear-animate mb-5">
                     <div class="title-link-wrapper pb-1 mb-4">
-                        <h2 class="title ls-normal mb-0">Clothing & Apparel</h2>
+                        <h2 class="title ls-normal mb-0">{{$unit['name']}}</h2>
                         <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-sm-4 mb-4">
+                        <!-- <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/2.jpg')}});
                                 background-color: #ebeced;">
                                 <div class="banner-content content-top">
@@ -894,9 +896,9 @@
                                         class="btn btn-dark btn-outline btn-rounded btn-sm">shop Now</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of Banner -->
-                        <div class="col-lg-9 col-sm-8">
+                        <div class="col-lg-12 col-sm-8">
                             <div class="swiper-container swiper-theme" data-swiper-options="{
                                 'spaceBetween': 20,
                                 'slidesPerView': 2,
@@ -910,7 +912,7 @@
                                 }
                             }">
                                 <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
-                                    @foreach($clothings as $row)
+                                    @foreach($unit['product']->slice(0, 10) as $row)
                                     <div class="swiper-slide product-col">
                                         <div class="product-wrap product text-center">
                                             <figure class="product-media">
@@ -967,101 +969,10 @@
                     </div>
                 </div>
                 <!-- End of Product Wrapper 1 -->
+                    @endforeach
+                @endforeach
 
-                <div class="product-wrapper-1 appear-animate mb-8">
-                    <div class="title-link-wrapper pb-1 mb-4">
-                        <h2 class="title ls-normal mb-0">Consumer Electric</h2>
-                        <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
-                            Products<i class="w-icon-long-arrow-right"></i></a>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-4 mb-4">
-                            <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/3.jpg')}});
-                            background-color: #252525;">
-                                <div class="banner-content content-top">
-                                    <h5 class="banner-subtitle text-white font-weight-normal mb-2">New Collection</h5>
-                                    <hr class="banner-divider bg-white mb-2">
-                                    <h3 class="banner-title text-white font-weight-bolder text-uppercase ls-25">
-                                        Top Camera <br> <span
-                                            class="font-weight-normal text-capitalize">Mirrorless</span>
-                                    </h3>
-                                    <a href="{{route('shop')}}"
-                                        class="btn btn-white btn-outline btn-rounded btn-sm">shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Banner -->
-                        <div class="col-lg-9 col-sm-8">
-                            <div class="swiper-container swiper-theme" data-swiper-options="{
-                                'spaceBetween': 20,
-                                'slidesPerView': 2,
-                                'breakpoints': {
-                                    '992': {
-                                        'slidesPerView': 3
-                                    },
-                                    '1200': {
-                                        'slidesPerView': 4
-                                    }
-                                }
-                            }">
-                                <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
-                                    @foreach($electrics as $row)
-                                    <div class="swiper-slide product-col">
-                                        <div class="product-wrap product text-center">
-                                            <figure class="product-media">
-                                                <a href="{{ route('product', $row->id)}}">
-                                                    <img src="{{asset('storage/uploads/products/'.$row->p_image)}}" alt="Product"
-                                                        width="216" height="243" />
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                                                        title="Add to cart" onclick="add_cart_({{$row->id}})"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$row->id}})"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quickview"></a>
-                                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Add to Compare"></a>
-                                                </div>
-                                            </figure>
-                                            <?php 
-                                                $sum = $row->discussions->sum('review');
-                                                $no = $row->discussions->count('review');
-                                                if($sum == 0 || $no == 0){
-                                                    $avg = 0;
-                                                }
-                                                else{
-                                                    $aver = $sum/$no;
-                                                    $avg = 20 * $aver;
-                                                }
-                                            ?>
-                                            <div class="product-details">
-                                                <h4 class="product-name">
-                                                    <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
-                                                </h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings-full">
-                                                        <span class="ratings" style="width: {{ $avg }}%;"></span>
-                                                        <span class="tooltiptext tooltip-top"></span>
-                                                    </div>
-                                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">({{ $no }}
-                                                        reviews)</a>
-                                                </div>
-                                                <div class="product-price">
-                                                    <ins class="new-price">${{$row->p_new_price}}</ins><del
-                                                        class="old-price">${{$row->p__price}}</del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                            <!-- End of Produts -->
-                        </div>
-                    </div>
-                </div>
+
                 <!-- End of Product Wrapper 1 -->
 
                 <div class="banner banner-fashion appear-animate br-sm mb-9" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/4.jpg)')}};
@@ -1098,7 +1009,7 @@
                             Products<i class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-sm-4 mb-4">
+                        <!-- <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/5.jpg')}});
                             background-color: #EAEFF3;">
                                 <div class="banner-content content-top">
@@ -1112,9 +1023,9 @@
                                         class="btn btn-dark btn-outline btn-rounded btn-sm">shop now</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of Banner -->
-                        <div class="col-lg-9 col-sm-8">
+                        <div class="col-lg-12 col-sm-8">
                             <div class="swiper-container swiper-theme" data-swiper-options="{
                                 'spaceBetween': 20,
                                 'slidesPerView': 2,

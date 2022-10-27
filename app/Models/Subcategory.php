@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\FrontPage;
 
 class Subcategory extends Model
 {
@@ -17,5 +18,8 @@ class Subcategory extends Model
                 $data[$dt] = __('Deleted');
             }
         });
+    }
+    public function forntpages(){
+        return $this->hasMany(FrontPage::class, 'category_id');
     }
 }

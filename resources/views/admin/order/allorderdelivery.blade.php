@@ -49,7 +49,7 @@
 						<!--end::Container-->
 					</div>
 						<!--begin::Container-->
-						<div id="kt_content_container" class="container-xxl" style="margin-top:3pc;" >
+						<div id="kt_content_container" class="container-xl" style="margin-top:3pc;" >
 							<!--begin::Navbar-->
 							<div class="card mb-5 mb-xl-10">
 						

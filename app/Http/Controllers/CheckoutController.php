@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Session};
 use App\Models\{Cart, Vendor, Product, User, Address};
 use Config;
-
-
 class CheckoutController extends Controller
 {
     public function index()

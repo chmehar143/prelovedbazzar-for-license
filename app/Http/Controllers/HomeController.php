@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Session, Redirect};
 use App\Models\{
     Category, Vendor, Product, RecentView, Childcategory, 
-    Subcategory, Subscriber, Discussion, User, Banner, OrderDetail
+    Subcategory, Subscriber, Discussion, User, Banner, OrderDetail, FrontPage
 }; 
 use Carbon\Carbon;
 use Validator;
@@ -23,21 +23,45 @@ class HomeController extends Controller
                 [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
                 ->get();
 
-        $top_sellers = Vendor::where('status', 1)->get();
+        $top_sellers = Vendor::where('status', 1)->orderBy('vendors.created_at', 'desc')->get();
 
         $top_categories = Product::leftJoin('categories', 'products.p_catog', '=', 'categories.id')->whereBetween('products.updated_at', 
          [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
          ->select('products.updated_at', 'categories.*')
          ->get()->groupBy('id');
         $newarrivals = Product::whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->orderBy('created_at', 'desc')->get();
+        
+        $products = OrderDetail::join('products', 'pro_id', '=', 'products.id')->get()->groupBy('pro_id');
+       // dd($products->count());
 
-        $most_populars = Product::whereBetween('updated_at',
+        $most_populars = Product::whereNotNull('admin_id')->whereBetween('updated_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
 
 
         $clothings = Product::where('p_catog', 1)->whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
+
+        $frontpages = FrontPage::all();
+        
+        $frontcat = array();
+        foreach($frontpages as $category){
+            //$products = Product::where('p_catog', $category->category_id)->with('category')->get();
+            $products = Category::where('id', $category->category_id)->with('product')->get();
+            $frontcat[] = $products;
+        }
+        //dd($frontcat);
+
+    // @foreach($frontcat as $test)
+    //     @foreach($test as $unit)
+    //         {{$unit['name']}}
+    //         @foreach($unit['product'] as $pro)
+    //             {{$pro['p_name']}}<br>
+    //         @endforeach
+    //         <br><br><br>
+    //     @endforeach
+    // @endforeach
+
 
         $electrics = Product::where('p_catog', 4)->whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
@@ -52,7 +76,8 @@ class HomeController extends Controller
         }
            // dd($recents);
         return view('user.welcome', compact('deals', 'top_sellers', 'top_categories',
-         'newarrivals', 'clothings', 'electrics', 'homes', 'recents', 'banners', 'most_populars'));
+         'newarrivals', 'clothings', 'electrics', 'homes', 'recents', 'banners', 'most_populars', 
+         'products', 'frontpages', 'frontcat'));
     }
 
     public function subscribe(Request $request)

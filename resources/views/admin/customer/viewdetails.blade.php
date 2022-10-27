@@ -44,7 +44,7 @@
 						</div>
 </div>
 
-<div id="kt_content_container" class="container-xxl" style="margin-top:11pc;margin-left:5pc">
+<div id="kt_content_container" class="container-xl" style="margin-top:11pc;margin-left:5pc">
 							<!--begin::Navbar-->
                             <div class="card pt-4 mb-6 mb-xl-9">
                                 <!--begin::Card header-->
@@ -189,7 +189,7 @@
                               <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
 						<!--begin::Container-->
-						<div id="kt_content_container" class="container-xxl" >
+						<div id="kt_content_container" class="container-xl" >
 							<!--begin::Card-->
                             <h2>Products Added
 

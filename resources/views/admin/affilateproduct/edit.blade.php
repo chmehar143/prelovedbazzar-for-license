@@ -46,7 +46,7 @@
 </div>
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
    <!--begin::Container-->
-   <div id="kt_content_container" class="container-xxl"   style="margin-top:8pc">
+   <div id="kt_content_container" class="container-xl"   style="margin-top:8pc">
       <!--begin::Navbar-->
       <div class="card mb-5 mb-xl-10">
       </div>

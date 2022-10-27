@@ -2,7 +2,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<div id="kt_content_container" class="container-xxl" style="margin-top:6pc;margin-left:7pc">
+<div id="kt_content_container" class="container-xl" style="margin-top:6pc;margin-left:7pc">
 							<!--begin::Navbar-->
                             <div class="card pt-4 mb-6 mb-xl-9">
                                 <!--begin::Card header-->

@@ -39,7 +39,7 @@
                                         </ul>
                                     </div>
                                     <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-contact">
+                                    <!-- <div class="widget widget-collapsible widget-contact">
                                         <h3 class="widget-title"><span>Contact Vendor</span></h3>
                                         <div class="widget-body">
                                             <input type="text" class="form-control" name="name" id="name"
@@ -51,9 +51,9 @@
                                                 required="required"></textarea>
                                             <a href="#" class="btn btn-dark btn-rounded">Send Message</a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-time">
+                                    <!-- <div class="widget widget-collapsible widget-time">
                                         <h3 class="widget-title"><span>Store Time</span></h3>
                                         <ul class="widget-body">
                                             <li><label>Sunday</label></li>
@@ -64,7 +64,7 @@
                                             <li><label>Friday</label></li>
                                             <li><label>Saturday</label></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Widget -->
                                     <div class="widget widget-collapsible widget-products">
                                         <h3 class="widget-title"><span>Best Selling</span></h3>
@@ -135,7 +135,7 @@
                                         </div>
                                     </div>
                                     <!-- End of Widget -->
-                                    <div class="widget widget-collapsible widget-products">
+                                    <!-- <div class="widget widget-collapsible widget-products">
                                         <h3 class="widget-title"><span>Top Rated</span></h3>
                                         <div class="widget-body">
                                             <div class="product product-widget">
@@ -199,7 +199,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Widget -->
                                 </div>
                             </div>
