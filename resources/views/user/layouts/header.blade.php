@@ -60,9 +60,10 @@
                         <a href="demo1.html" class="logo ml-lg-0">
                             <!-- <img src="{{asset('frontend-assets/assets/images/logo.png')}}" alt="logo" width="144" height="45" /> -->
                         </a>
-                        <form method="get" action="#"
+                        <form method="post" action="{{route('search_product')}}"
                             class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper">
-                            <!-- <div class="select-box">
+                            @csrf
+                            <div class="select-box">
                                 <select id="category" name="category">
                                     <option value="">All Categories</option>
                                     @foreach($shareData['categories'] as $category)
@@ -163,12 +164,12 @@
                                     <ul class="menu vertical-menu category-menu">
                                         @foreach($shareData['categories'] as $category)
                                         <li>
-                                            <a href="{{route('shop')}}">
+                                            <a href="{{ route('sortby',$category->id ) }}">
                                                 <i class="w-icon-tshirt2"></i>{{$category->name}}
                                             </a>
                                             <ul class="">
                                                 @foreach($category['subcategory'] as $subcategory)  
-                                                    <li><a href="{{route('shop')}}">{{$subcategory->name}}</a></li>
+                                                    <li><a href="{{ route('subcat',$subcategory->id ) }}">{{$subcategory->name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>

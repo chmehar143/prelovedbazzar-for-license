@@ -294,10 +294,12 @@
                   <div class="row mb-4">
                      <div class="col-md-6 mb-5">
                         <h4 class="title tab-pane-title font-weight-bold mb-2">Detail</h4>
-                        <p class="mb-4">{{$product->p_detail}}
+                        <?php $detail = strip_tags($product->p_detail); ?>
+                        <p class="mb-4">{{$detail}}
                         </p>
                         <ul class="list-type-check">
-                           <li>{{$product->p_r_policy}}</li>
+                           <?php $policy = strip_tags($product->p_r_policy); ?>
+                           <li>{{$policy}}</li>
                         </ul>
                      </div>
                      <div class="col-md-6 mb-5">

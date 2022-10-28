@@ -78,15 +78,17 @@ class ProductController extends Controller
             'p_color' => 'required',
             'p_catog' => 'required',
             'p_sub_catog' => 'required',
-            'p_new_price' => 'required',
-            'p_old_price' => 'required',
-            'p_stock' => 'required',
+            'p_new_price' => 'required|numeric',
+            'p_old_price' => 'required|numeric',
+            'p_stock' => 'required|integer|min:0',
 
         ];
         $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
             'avatar.max' => 'Fil size must be less than 2MB.',
             'p_sku.unique' => 'This SKU has already been taken.',
+            'p_new_price.numeric' => 'Numeric value accepted only.',
+            'p_old_price.numeric' => 'Numeric value accepted only.'
         ];
         $validator = Validator::make($request->all(), $rules, $customs);
 
@@ -167,12 +169,14 @@ class ProductController extends Controller
             'p_sub_catog' => 'required',
             'p_new_price' => 'required',
             'p_old_price' => 'required',
-            'p_stock' => 'required',
+            'p_stock' => 'required|integer|min:0',
 
         ];
         $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
             'avatar.max' => 'Fil size must be less than 2MB.',
+            'p_new_price.numeric' => 'Numeric value accepted only.',
+            'p_old_price.numeric' => 'Numeric value accepted only.'
         ];
         $validator = Validator::make($request->all(), $rules, $customs);
 
@@ -237,8 +241,11 @@ class ProductController extends Controller
 
     public  function  view($id)
     {
-        $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();   
-        return view('vendor.product.view', compact('product'));
+        $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
+        $category = Category::where('id', $product->p_catog)->first();   
+        $subcategory = Subcategory::where('id', $product->p_sub_catog)->first();
+        $childcategory = ChildCategory::where('id', $product->p_child_catog)->first();      
+        return view('vendor.product.view', compact('product', 'category', 'subcategory', 'childcategory'));
     }
     public function destroy($id)
     {
