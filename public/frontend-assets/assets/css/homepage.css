@@ -8144,6 +8144,104 @@ body .product-popup {
     }
 }
 
+/*--------------------------------
+    Instagram
+---------------------------------*/
+.instagram {
+    position: relative;
+    overflow: hidden;
+  }
+  .instagram a {
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+  .instagram a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
+  .instagram a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg) scale(2);
+            transform: translate(-50%, -50%) rotate(90deg) scale(2);
+    font-size: 3rem;
+    font-family: "wolmart";
+    color: #fff;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+    z-index: 1;
+  }
+  .instagram img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  .instagram:hover a::before {
+    opacity: 0.5;
+  }
+  .instagram:hover a::after {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  .instagram:hover img {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  
+  .instagram-info .instagram-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    color: #fff;
+    opacity: 0;
+    z-index: 2;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .instagram-info .instagram-content i {
+    display: inline-block;
+    margin-right: 0.8rem;
+  }
+  .instagram-info .instagram-content a {
+    display: inline-block;
+    color: #fff;
+  }
+  .instagram-info .instagram-content a:not(:last-child) {
+    margin-right: 2rem;
+  }
+  .instagram-info .instagram-content a::before {
+    content: none;
+  }
+  .instagram-info a::after {
+    content: none;
+  }
+  .instagram-info:hover .instagram-content {
+    opacity: 1;
+  }
 @media (min-width:768px) {
     .product-single .product-details {
         padding: 0.2rem 0 0 1rem
@@ -8161,7 +8259,8 @@ body .product-popup {
     font-family: Poppins, sans-serif;
     font-size: 1rem;
     color: #020101;
-    transition: box-shadow 0.3s, opacity 0.3s
+    transition: box-shadow 0.3s, opacity 0.3s;
+    border: 1px solid #eee;
 }
 
 .product:hover .product-action,
