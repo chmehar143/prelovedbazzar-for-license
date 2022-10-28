@@ -138,7 +138,7 @@
                </div>
             </div>
             <div class="col-md-6 mb-4 mb-md-6">
-               <div class="product-details">
+               <div class="product-details ">
                   <h1 class="product-title">{{$product->p_name}}</h1>
                   <div class="product-bm-wrapper">
                      <figure class="brand">
@@ -183,6 +183,16 @@
                      </ul>
                   </div>
                   <hr class="product-divider">
+                  <div class="product-form product-variation-form product-color-swatch">
+                                            <label>Color:</label>
+                                            <div class="d-flex align-items-center product-variations">
+                                                <a href="#" class="color" style="background-color: #ffcc01"></a>
+                                                <a href="#" class="color" style="background-color: #ca6d00;"></a>
+                                                <a href="#" class="color" style="background-color: #1c93cb;"></a>
+                                                <a href="#" class="color" style="background-color: #ccc;"></a>
+                                                <a href="#" class="color" style="background-color: #333;"></a>
+                                            </div>
+                                        </div>
                   <div class="fix-bottom product-sticky-content sticky-content">
                      <!-- size starts here -->
                      <div
@@ -856,8 +866,9 @@
                               title="Add to wishlist" onclick="add_wish_({{$unit->id}})"></a>
 
                         </div>
+                        
                      </figure>
-                     <div class="product-details">
+                     <div class="product-details text-center">
                         <div class="product-cat"><a href="{{route('product', $unit->id)}}">{{$unit->name}}</a>
                         </div>
                         <h4 class="product-name"><a href="{{route('product', $unit->id)}}">{{$unit->p_name}}</a>
@@ -936,7 +947,7 @@
                            $avg = 20 * $aver;
                         }
                      ?>
-                     <div class="product-details">
+                     <div class="product-details text-center">
                         <h4 class="product-name"><a href="product-default.html">{{$related->p_name}}</a></h4>
                         <div class="ratings-container">
                            <div class="ratings-full">
@@ -956,6 +967,7 @@
          </section>
       </div>
    </div>
+   
    <!-- End of Page Content -->
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

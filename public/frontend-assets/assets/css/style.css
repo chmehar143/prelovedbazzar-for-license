@@ -9655,6 +9655,7 @@ body .product-popup {
   transition: opacity 0.3s, -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s, -webkit-box-shadow 0.3s;
+  border: 1px solid #eee;
 }
 .product:hover .product-action,
 .product:hover .product-action-vertical,
@@ -9960,12 +9961,14 @@ body .product-popup {
 
 .product-details {
   position: relative;
-  padding-top: 1.7rem;
+  padding-top: 3.6rem;
   background-color: #fff;
   -webkit-transition: -webkit-box-shadow 0.3s;
   transition: -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  padding-bottom: 3rem;
+
 }
 .product-details > .btn-wishlist {
   position: absolute;
@@ -10060,6 +10063,14 @@ body .product-popup {
 .product-name a:hover {
   color: #F4442C;
 }
+/* .product-single .product-size-swatch .size.active, .product-single .product-size-swatch .size:hover {
+  border-color: #336699;
+  color: #336699;
+}
+
+.product-variations > li:not(.color).active, .product-variations > li:not(.color):hover {
+  border: 1px solid #336699;
+} */
 
 .product-cat {
   margin-bottom: 0.5rem;
@@ -10070,7 +10081,7 @@ body .product-popup {
 }
 .product-cat a {
   display: inline-block;
-  color: inherit;
+  color: #F4442C;
 }
 .product-cat a:hover {
   color: #F4442C;
@@ -15112,7 +15123,7 @@ body .product-popup {
 .header-search.hs-expanded input.form-control {
   color: #fff;
   border-right: none;
-  border-left: none;
+  /* border-left: none; */
 }
 .header-search.hs-expanded .btn-search {
   display: -webkit-box;
@@ -15937,7 +15948,7 @@ body .product-popup {
 .menu > li:hover > .submenu,
 .menu > li:hover .megamenu, .menu > li.show > .submenu,
 .menu > li.show .megamenu {
-  top: 100%;
+  /* top: 100%; */
 }
 .menu .has-submenu > a {
   display: block;
@@ -20227,6 +20238,7 @@ body .product-popup {
 
 .vendor-product-section .ratings-container, .related-product-section .ratings-container {
   margin-bottom: 0.3rem;
+  place-content: center;
 }
 
 .product-single .product-countdown-container {
@@ -20452,6 +20464,11 @@ aside .sp-sidebar-banner span {
 ------------------------------------------------*/
 .shop-default-banner {
   padding: 7.4em 8.7em 7.6em;
+}
+.header-search.hs-expanded input.form-control {
+  color: #fff;
+  border-right: #F4442C;
+  /* border-left: #F4442C; */
 }
 .shop-default-banner .banner-subtitle {
   margin-bottom: 0.2rem;

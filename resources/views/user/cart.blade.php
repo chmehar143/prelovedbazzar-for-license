@@ -56,7 +56,8 @@
                                                 {{$cart['p_name']}}
                                             </a>
                                         </td>
-                                        <td class="product-price"><span class="amount" id="n_price_{{$cart->id}}">pkr{{$cart['p_new_price']}}</span></td>
+
+                                        <td class="product-price"><span class="amount" id="n_price_{{$cart->id}}">Pkr{{$cart['p_new_price']}}</span></t>>>>>>> staging
                                         <td class="product-quantity">
                                             <div class="input-group">
                                                 <input type="hidden" name="id" value="{{$cart['prod_id']}}">
@@ -85,7 +86,8 @@
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="amount" id="net_{{$cart->id}}">pkr{{$cart['p_new_price'] * $cart['quantity']}}</span>
+                                            <span class="amount" id="net_{{$cart->id}}">Pkr{{$cart['p_new_price'] * $cart['quantity']}}</span>
+
                                         </td>
                                     </tr>
                                     <?php $subtotal = $subtotal + $cart['p_new_price'] * $cart['quantity'] ?>
@@ -195,7 +197,8 @@
                                     <hr class="divider mb-6">
                                     <div class="order-total d-flex justify-content-between align-items-center">
                                         <label>Total</label>
-                                        <span class="ls-50">pkr{{$subtotal}}</span>
+                                        <span class="ls-50">Pkr{{$subtotal}}</span>
+
                                     </div>
                                     <a href="{{ route('checkout')}}"
                                         class="btn btn-block btn-dark btn-icon-right btn-rounded  btn-checkout">

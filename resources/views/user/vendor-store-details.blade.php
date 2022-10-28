@@ -223,12 +223,12 @@
                                             <i class="w-icon-map-marker"></i>
                                             {{$vendor->address}}
                                         </li>
-                                        <li class="store-phone">
+                                        <!-- <li class="store-phone">
                                             <a href="tel:1234567890">
                                                 <i class="w-icon-phone"></i>
                                                 {{$vendor->phone}}
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li class="store-rating">
                                             <i class="w-icon-star-full"></i>
                                             4.33 rating from 3 reviews
@@ -266,10 +266,10 @@
                                                     title="Add to cart"></a>
                                                 <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
                                                 <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                    title="Quick View"></a>
+                                                    title="Quick View"></a> -->
                                             </div>
                                         </figure>
                                         <div class="product-details">
@@ -288,7 +288,7 @@
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
-                                                    ${{$product->p_new_price}}
+                                                    pkr{{$product->p_new_price}}
                                                 </div>
                                             </div>
                                         </div>
@@ -303,6 +303,67 @@
                 </div>
             </div>
             <!-- End of Page Content -->
+            <div class="container">
+                    </div>
+                    <div class="swiper-container swiper-theme show-code-action" data-swiper-options="{
+                        'autoplay': true,
+                        'slidesPerView': 2,
+                        'breakpoints': {
+                            '576': {
+                                'slidesPerView': 3
+                            },
+                            '768': {
+                                'slidesPerView': 4
+                            },
+                            '992': {
+                                'slidesPerView': 5
+                            },
+                            '1200': {
+                                'slidesPerView': 6
+                            }
+                        }
+                    }">
+                        <div class="swiper-wrapper row cols-xl-6 cols-lg-5 cols-md-4 cols-sm-3 cols-2 gutter-no">
+                            <figure class="swiper-slide instagram">
+                                <a href="#">
+                                    <img src="../frontend-assets/assets/images/instagram/instagram-1.jpg" alt="Instagram" width="320"
+                                        height="320" />
+                                </a>
+                            </figure>
+                            <figure class="swiper-slide instagram">
+                                <a href="#">
+                                    <img src="../frontend-assets/assets/images/instagram/instagram-2.jpg" alt="Instagram" width="320"
+                                        height="320" />
+                                </a>
+                            </figure>
+                            <figure class="swiper-slide instagram">
+                                <a href="#">
+                                    <img src="../frontend-assets/assets/images/instagram/instagram-6.jpg" alt="Instagram" width="320"
+                                        height="320" />
+                                </a>
+                            </figure>
+                            <figure class="swiper-slide instagram">
+                                <a href="#">
+                                    <img src="../frontend-assets/assets/images/instagram/instagram-3.jpg" alt="Instagram" width="320"
+                                        height="320" />
+                                </a>
+                            </figure>
+                            <figure class="swiper-slide instagram">
+                                <a href="#">
+                                    <img src="../frontend-assets/assets/images/instagram/instagram-4.jpg" alt="Instagram" width="320"
+                                        height="320" />
+                                </a>
+                            </figure>
+                            <figure class="swiper-slide instagram">
+                                <a href="#">
+                                    <img src="../frontend-assets/assets/images/instagram/instagram-5.jpg" alt="Instagram" width="320"
+                                        height="320" />
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
         </main>
         <!-- End of Main -->
 
