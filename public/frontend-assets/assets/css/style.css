@@ -9961,12 +9961,14 @@ body .product-popup {
 
 .product-details {
   position: relative;
-  padding-top: 1.7rem;
+  padding-top: 3.6rem;
   background-color: #fff;
   -webkit-transition: -webkit-box-shadow 0.3s;
   transition: -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  padding-bottom: 3rem;
+
 }
 .product-details > .btn-wishlist {
   position: absolute;
