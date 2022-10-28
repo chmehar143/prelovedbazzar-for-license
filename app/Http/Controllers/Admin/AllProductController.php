@@ -75,14 +75,16 @@ class AllProductController extends Controller
             'p_color' => 'required',
             'p_catog' => 'required',
             'p_sub_catog' => 'required',
-            'p_new_price' => 'required',
-            'p_old_price' => 'required',
-            'p_stock' => 'required',
+            'p_new_price' => 'required|numeric',
+            'p_old_price' => 'required|numeric',
+            'p_stock' => 'required|integer|min:0',
 
        ];
        $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
-            'avatar.max' => 'Fil size must be less than 2MB.'
+            'avatar.max' => 'Fil size must be less than 2MB.',
+            'p_new_price.numeric' => 'Numeric value accepted only.',
+            'p_old_price.numeric' => 'Numeric value accepted only.'
        ];
        $validator = Validator::make($request->all(), $rules, $customs);
 
@@ -164,14 +166,16 @@ class AllProductController extends Controller
             'p_color' => 'required',
             'p_catog' => 'required',
             'p_sub_catog' => 'required',
-            'p_new_price' => 'required',
-            'p_old_price' => 'required',
-            'p_stock' => 'required',
+            'p_new_price' => 'required|numeric',
+            'p_old_price' => 'required|numeric',
+            'p_stock' => 'required|integer|min:0',
 
        ];
        $customs = [
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
             'avatar.max' => 'Fil size must be less than 2MB.',
+            'p_new_price.numeric' => 'Numeric value accepted only.',
+            'p_old_price.numeric' => 'Numeric value accepted only.'
        ];
        $validator = Validator::make($request->all(), $rules, $customs);
 
@@ -237,8 +241,11 @@ class AllProductController extends Controller
     //end update
     public  function  view($id)
     {
-        $product = Product::where('id', $id)->first();   
-        return view('admin.allproducts.view', compact('product'));
+        $product = Product::where('id', $id)->first();
+        $category = Category::where('id', $product->p_catog)->first();   
+        $subcategory = Subcategory::where('id', $product->p_sub_catog)->first();   
+        $childcategory = ChildCategory::where('id', $product->p_child_catog)->first();   
+        return view('admin.allproducts.view', compact('product', 'category', 'subcategory', 'childcategory'));
     }
 
     //delete product from stores...

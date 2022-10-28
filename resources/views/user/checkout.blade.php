@@ -293,7 +293,7 @@
                                  <td class="product-name">{{$cart->p_name}} <i
                                     class="fas fa-times"></i> <span
                                     class="product-quantity">{{$cart->quantity}}</span></td>
-                                 <td class="product-total">${{$cart->quantity * $cart->p_new_price}}</td>
+                                 <td class="product-total">pkr{{$cart->quantity * $cart->p_new_price}}</td>
                               </tr>
                               <?php $subtotal = $subtotal + $cart->quantity * $cart->p_new_price; ?>
                               @endforeach
@@ -302,7 +302,7 @@
                                     <b>Subtotal</b>
                                  </td>
                                  <td>
-                                    <b>${{$subtotal}}</b>
+                                    <b>pkr{{$subtotal}}</b>
                                  </td>
                               </tr>
                            </tbody>
@@ -347,7 +347,7 @@
                                     <b>Total</b>
                                  </th>
                                  <td>
-                                    <b>${{$subtotal}}</b>
+                                    <b>pkr{{$subtotal}}</b>
                                  </td>
                               </tr>
                            </tfoot>

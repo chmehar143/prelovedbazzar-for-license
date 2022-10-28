@@ -69,7 +69,7 @@
             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                
                <!--begin::Add products-->
-               <a type="button" class="btn btn-primary" href="{{route('admin.allproducts_create')}}">Add Main Category</a>
+               <a type="button" class="btn btn-primary" href="{{route('admin.category_create')}}">Add Main Category</a>
                <!--end::Add products-->
             </div>
             <!--end::Toolbar-->

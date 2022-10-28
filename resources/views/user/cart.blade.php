@@ -56,7 +56,7 @@
                                                 {{$cart['p_name']}}
                                             </a>
                                         </td>
-                                        <td class="product-price"><span class="amount" id="n_price_{{$cart->id}}">${{$cart['p_new_price']}}</span></td>
+                                        <td class="product-price"><span class="amount" id="n_price_{{$cart->id}}">pkr{{$cart['p_new_price']}}</span></td>
                                         <td class="product-quantity">
                                             <div class="input-group">
                                                 <input type="hidden" name="id" value="{{$cart['prod_id']}}">
@@ -85,7 +85,7 @@
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="amount" id="net_{{$cart->id}}">${{$cart['p_new_price'] * $cart['quantity']}}</span>
+                                            <span class="amount" id="net_{{$cart->id}}">pkr{{$cart['p_new_price'] * $cart['quantity']}}</span>
                                         </td>
                                     </tr>
                                     <?php $subtotal = $subtotal + $cart['p_new_price'] * $cart['quantity'] ?>
@@ -114,7 +114,7 @@
                                     <h3 class="cart-title text-uppercase">Cart Totals</h3>
                                     <div class="cart-subtotal d-flex align-items-center justify-content-between">
                                         <label class="ls-25">Subtotal</label>
-                                        <span>${{$subtotal}}</span>
+                                        <span>pkr{{$subtotal}}</span>
                                     </div>
 
                                     <hr class="divider">
@@ -195,7 +195,7 @@
                                     <hr class="divider mb-6">
                                     <div class="order-total d-flex justify-content-between align-items-center">
                                         <label>Total</label>
-                                        <span class="ls-50">${{$subtotal}}</span>
+                                        <span class="ls-50">pkr{{$subtotal}}</span>
                                     </div>
                                     <a href="{{ route('checkout')}}"
                                         class="btn btn-block btn-dark btn-icon-right btn-rounded  btn-checkout">
