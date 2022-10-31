@@ -1183,7 +1183,7 @@
                 </div>
                 <!-- End of Brands Wrapper -->
                 <!-- Post Wrapper -->
-
+                @if($recents->count() > 0)
                 <h2 class="title title-underline mb-4 ls-normal appear-animate">Your Recent Views</h2>
                 <div class="swiper-container swiper-theme shadow-swiper appear-animate pb-4 mb-8" data-swiper-options="{
                     'spaceBetween': 20,
@@ -1202,7 +1202,7 @@
                             'slidesPerView': 8
                         }
                     }
-                }">
+                    }">
                     <div class="swiper-wrapper row cols-xl-8 cols-lg-6 cols-md-4 cols-2">
                         @foreach($recents as $recent)
                         <div class="swiper-slide product-wrap mb-0">
@@ -1222,6 +1222,7 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
+                @endif
                 <!-- End of Reviewed Producs -->
                 
             </div>

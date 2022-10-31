@@ -3,17 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\Category;
-use App\Models\Vendor;
-use App\Models\Admin;
-use App\Models\Product;
-use App\Models\Discussion;
-use App\Models\RecentView;
-use App\Models\Childcategory;
-use App\Models\Subcategory;
-use App\Models\User;
+use Illuminate\Support\Facades\{Auth, Session};
+use App\Models\{Category, Vendor, Admin, Product, Discussion, RecentView, Childcategory, Subcategory, User};
 class ProductDetailsController extends Controller
 {
     public function index($id)
