@@ -77,6 +77,7 @@ else{
     @else
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/homepage.css')}}">
     @endif
+    @livewireStyles
 </head>
 <body class="home">
 <div class="page-wrapper">
@@ -599,6 +600,9 @@ function add_cart_(id){
     }
 </script>
 <!-- /ajax for subscription -->
+
+<!-- live-wire -->
+@livewireScripts
 
 </body>
 
