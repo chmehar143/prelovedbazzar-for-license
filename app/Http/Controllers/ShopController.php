@@ -1,22 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Vendor;
-use App\Models\Product;
-use App\Models\Childcategory;
-use App\Models\Subcategory;
-use App\Models\Discussion;
-use App\Models\User;
-
+use App\Models\{Category, Vendor, Product, Childcategory, Subcategory, Discussion, User};
 class ShopController extends Controller
 {
     public function index()
     {
         $categories = Category::all();
         $products = Product::with('discussions')->join('categories', 'products.p_catog','=','categories.id')
-        ->select('products.*', 'categories.name')
-        ->paginate(9);
+                    ->select('products.*', 'categories.name')
+                    ->paginate(9);
         return view('user.shop',compact('products', 'categories'));
     }
 
@@ -29,6 +22,17 @@ class ShopController extends Controller
             ->select('products.*', 'categories.name')
             ->paginate(9);
         }
+        $categories = Category::all();
+        return view('user.shop',compact('products', 'categories'));
+    }
+
+    public function subcat($sub_id)
+    {
+        $products = Product::where('products.status', 1)->where('p_sub_catog', $sub_id)->with('discussions')
+                    ->join('categories', 'products.p_catog','=','categories.id')
+                    ->select('products.*', 'categories.name')
+                    ->paginate(9);
+
         $categories = Category::all();
         return view('user.shop',compact('products', 'categories'));
     }

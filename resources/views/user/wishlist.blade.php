@@ -58,7 +58,7 @@
                                     </a>
                                 </td>
                                 <td class="product-price">
-                                    <ins class="new-price">${{$wish->p_new_price}}</ins>
+                                    <ins class="new-price">pkr{{$wish->p_new_price}}</ins>
                                 </td>
                                 <td class="product-stock-status">
                                     <span class="wishlist-in-stock">@if($wish->p_stock > 1) In Stock  @endif</span>
@@ -88,8 +88,10 @@
                         </div>
                     </div> -->
                 </div>
+                
             </div>
             <!-- End of PageContent -->
+            
         </main>
         <!-- End of Main -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

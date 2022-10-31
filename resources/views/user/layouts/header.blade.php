@@ -60,8 +60,9 @@
                         <a href="demo1.html" class="logo ml-lg-0">
                             <!-- <img src="{{asset('frontend-assets/assets/images/logo.png')}}" alt="logo" width="144" height="45" /> -->
                         </a>
-                        <form method="get" action="#"
+                        <form method="post" action="{{route('search_product')}}"
                             class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper">
+                            @csrf
                             <div class="select-box">
                                 <select id="category" name="category">
                                     <option value="">All Categories</option>
@@ -69,7 +70,7 @@
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> -->
                             <input type="text" class="form-control" name="search" id="search" placeholder="Search in..."
                                 required />
                             <button class="btn btn-search" type="submit"><i class="w-icon-search"></i>
@@ -82,7 +83,7 @@
                             <div class="call-info d-lg-show">
                                 <h4 class="chat font-weight-normal font-size-md text-normal ls-normal text-light mb-0">
                                     <a href="mailto:#" class="text-capitalize">Live Chat</a> or :</h4>
-                                <a href="tel:#" class="phone-number font-weight-bolder ls-50">0(800)123-456</a>
+                                <a href="tel:1-800-570-7777" class="phone-number font-weight-bolder ls-50">1-800-570-7777</a>
                             </div>
                         </div>
                         <a class="wishlist label-down link d-xs-show" href="{{route('wishlist')}}">
@@ -163,12 +164,12 @@
                                     <ul class="menu vertical-menu category-menu">
                                         @foreach($shareData['categories'] as $category)
                                         <li>
-                                            <a href="{{route('shop')}}">
+                                            <a href="{{ route('sortby',$category->id ) }}">
                                                 <i class="w-icon-tshirt2"></i>{{$category->name}}
                                             </a>
                                             <ul class="">
                                                 @foreach($category['subcategory'] as $subcategory)  
-                                                    <li><a href="{{route('shop')}}">{{$subcategory->name}}</a></li>
+                                                    <li><a href="{{ route('subcat',$subcategory->id ) }}">{{$subcategory->name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
