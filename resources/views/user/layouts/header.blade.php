@@ -101,7 +101,7 @@ use Illuminate\Support\Facades\URL;
                <div class="cart-overlay"></div>
                <a href="{{route('cart')}}" class="cart-toggle label-down link">
                <i class="w-icon-cart">
-               <span class="cart-count">{{$carts->count()}}</span>
+               <span class="cart-count">@livewire('userend.products.product-count')</span>
                </i>
                <span class="cart-label">Cart</span>
                </a>

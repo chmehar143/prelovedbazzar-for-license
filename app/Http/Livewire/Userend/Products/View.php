@@ -36,7 +36,8 @@ class View extends Component
     {
         if(Auth::guard('user')->check())
         {
-            if(Product::where('id', $productId)->where('status', 1)->exists()){
+            if(Product::where('id', $productId)->where('status', 1)->exists())
+            {
                 if($this->product->p_stock > 0)
                 {
                     if($this->product->p_stock > $this->quantitycount)
@@ -47,6 +48,57 @@ class View extends Component
                             'quantity'=> $this->quantitycount,
                             'size' => $this->p_size
                         ]);
+                        $this->emit('addupdateCart');
+                        $this->dispatchBrowserEvent('message', [
+                            'text' => 'Product has been adde to your cart successfully',
+                            'type'=> 'success',
+                            'status'=> 200
+                        ]); 
+
+                    }
+                    else
+                    {
+                        $this->dispatchBrowserEvent('message', [
+                            'text' => 'only '.$this->product->p_stock.'quantity available, add less than '.$this->product->p_stock.'.',
+                            'type'=> 'warning',
+                            'status'=> 404
+                        ]);   
+                    }
+                }
+                else
+                {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Out of stock',
+                        'type'=> 'warning',
+                        'status'=> 404
+                    ]);   
+                }
+            }
+            else
+            {
+                $this->dispatchBrowserEvent('message', [
+                    'text' => 'Product does not exist',
+                    'type'=> 'warning',
+                    'status'=> 404
+                ]);
+            }
+        }
+        else
+        {
+            if(Product::where('id', $productId)->where('status', 1)->exists())
+            {
+                if($this->product->p_stock > 0)
+                {
+                    if($this->product->p_stock > $this->quantitycount)
+                    {
+                        Cart::create([
+                            'session_id' => Session::getId(),
+                            'prod_id'=> $productId,
+                            'quantity'=> $this->quantitycount,
+                            'size' => $this->p_size
+                        ]);
+
+                        $this->emit('addupdateCart');
 
                         $this->dispatchBrowserEvent('message', [
                             'text' => 'Product has been adde to your cart successfully',
@@ -73,21 +125,14 @@ class View extends Component
                     ]);   
                 }
             }
-            else{
+            else
+            {
                 $this->dispatchBrowserEvent('message', [
                     'text' => 'Product does not exist',
                     'type'=> 'warning',
                     'status'=> 404
                 ]);
             }
-        }
-        else
-        {
-            $this->dispatchBrowserEvent('message', [
-                'text' => 'Please login first to add to cart',
-                'type'=> 'info',
-                'status'=> 401
-            ]);
         }
     }
 
