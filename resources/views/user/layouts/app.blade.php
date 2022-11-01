@@ -77,6 +77,13 @@ else{
     @else
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/homepage.css')}}">
     @endif
+
+    <!-- alertify -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- end alertify -->
     @livewireStyles
 </head>
 <body class="home">
@@ -600,6 +607,16 @@ function add_cart_(id){
     }
 </script>
 <!-- /ajax for subscription -->
+
+<!-- alertify -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script>
+window.addEventListener('message', event => {
+    alertify.set('notifier','position', 'top-right');
+    alertify.notify(event.detail.text, event.detail.type);})
+</script>
+<!-- end alertify -->
+
 
 <!-- live-wire -->
 @livewireScripts

@@ -1,18 +1,5 @@
-<head>
-   <style>
-      .w-icon-minus:before {
-      content: "";
-      margin-left: 5px;
-      }
-      .w-icon-plus:before {
-      content: "";
-      margin-left: 5px;
-      margin-bottom: 1;
-      }
-   </style>
-</head>
+<div>
 <main class="main mb-10 pb-1">
-
    <!-- Start of Breadcrumb -->
    <nav class="breadcrumb-nav container">
       <ul class="breadcrumb bb-no">
@@ -267,10 +254,11 @@
                      </div>
                      <span class="divider d-xs-show"></span>
                      <div class="product-link-wrapper d-flex">
-                        <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart" onclick="add_wish_({{$product->id}})" ><span></span></a>
+                        <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $product->id }})"><span></span></button>
                         <a href="#"
                            class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
                      </div>
+
                   </div>
                </div>
             </div>
@@ -857,8 +845,8 @@
                         <div class="product-action-vertical">
                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
                               title="Add to cart" onclick="add_cart_({{$unit->id}})"></a>
-                           <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist" onclick="add_wish_({{$unit->id}})"></a>
+                           <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $unit->id }})"><span></span></button>
+
 
                         </div>
                         
@@ -927,8 +915,7 @@
                         <div class="product-action-vertical">
                            <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
                               title="Add to cart" onclick="add_cart_({{ $related->id }})"></a>
-                           <a href="javascript:void(0)" class="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist" onclick="add_wish_({{ $related->id }})"></a>
+                           <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $related->id }})"><span></span></button>
                         </div>
                      </figure>
                      <?php 
@@ -972,3 +959,4 @@
    
    <!-- End of Page Content -->
 </main>
+</div>
