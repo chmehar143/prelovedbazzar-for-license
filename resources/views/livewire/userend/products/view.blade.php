@@ -169,15 +169,15 @@
                   </div>
                   <hr class="product-divider">
                   <div class="product-form product-variation-form product-color-swatch">
-                                            <label>Color:</label>
-                                            <div class="d-flex align-items-center product-variations">
-                                                <a href="#" class="color" style="background-color: #ffcc01"></a>
-                                                <a href="#" class="color" style="background-color: #ca6d00;"></a>
-                                                <a href="#" class="color" style="background-color: #1c93cb;"></a>
-                                                <a href="#" class="color" style="background-color: #ccc;"></a>
-                                                <a href="#" class="color" style="background-color: #333;"></a>
-                                            </div>
-                                        </div>
+                     <label>Color:</label>
+                     <div class="d-flex align-items-center product-variations">
+                        <a href="#" class="color" style="background-color: #ffcc01"></a>
+                        <a href="#" class="color" style="background-color: #ca6d00;"></a>
+                        <a href="#" class="color" style="background-color: #1c93cb;"></a>
+                        <a href="#" class="color" style="background-color: #ccc;"></a>
+                        <a href="#" class="color" style="background-color: #333;"></a>
+                     </div>
+                  </div>
                   <div class="fix-bottom product-sticky-content ">
                      <div
                         class="product-form product-variation-form product-size-swatch mb-3">
@@ -185,22 +185,13 @@
                         <ul
                               class="flex-wrap d-flex align-items-center product-variations">
                               @if($product->large == 1)
-                              <li>
-                                 <input type="radio" id="large" name="size" value="large" style="display: none;">
-                                 <label for="large" class="size">Large</label>
-                              </li>                                                                
+                                 <button type = "button" wire:click="sizeProduc('large')" class="size" style="margin-right: 8px;">large</button>                                                                
                               @endif
                               @if($product->medium == 1)
-                              <li>
-                                 <input type="radio" id="medium" name="size" value="medium" style="display: none;">
-                                 <label for="medium" class="size">Medium</label>
-                              </li>
+                              <button type = "button" wire:click="sizeProduc('medium')" class="size" style="margin-right: 8px;" >medium</button>
                               @endif
                               @if($product->small == 1)
-                              <li>
-                                 <input type="radio" id="small" name="size" value="small" style="display: none;">
-                                 <label for="small" class="size">Small</label>
-                              </li>                                                                
+                              <button type = "button" wire:click="sizeProduc('small')" class="size" style="margin-right: 8px;">small</button>                                                               
                               @endif
                         </ul>
                      </div>
@@ -210,33 +201,17 @@
                            <label>Quantity:</label>
                            <div class="input-group">
                               <input class="quantity form-control" type="number" min="1"
-                                 id="qnty" value="1" max="10000000">
-                              <a class="quantity-plus w-icon-plus" style="margin-left: -4pc;margin-top:10px; width: 2.4rem;height: 2.4rem;
-                                 border-radius: 50%;
-                                 cursor:pointer;
-                                 background-color: #eee;
-                                 color: #666;
-                                 font-size: 1.4rem;
-                                 border: none;
-                                 line-height: 21px;"></a>
-                              <a class="quantity-minus w-icon-minus" style="position: absolute;
-                                 top: 50%;
-                                 -webkit-transform: translateY(-50%);
-                                 transform: translateY(-50%);
-                                 cursor:pointer;
-                                 right: 1.5rem;
-                                 padding: 0;
-                                 width: 2.4rem;
-                                 height: 2.4rem;
-                                 border-radius: 50%;
-                                 background-color: #eee;
-                                 color: #666;
-                                 font-size: 1.4rem;
-                                 border: none;
-                                 line-height: 21px;"></a>
+                                 id="qnty" wire:model="quantitycount" value="{{ $this->quantitycount }}" max="10000000" readonly >
+                              <button type="button" wire:click="incProduct" class="w-icon-plus"></button>
+                              <button type="button" wire:click="decProduct" class="w-icon-minus" ></button>
                            </div>
                         </div>
                         <button class="btn btn-primary btn-cart" id="postbutton">
+                        <i class="w-icon-cart"></i>
+                        <span>Add to Cart</span>
+                        </button>
+
+                        <button class="btn btn-primary btn-cart" wire:click="addtocart({{ $product->id }})">
                         <i class="w-icon-cart"></i>
                         <span>Add to Cart</span>
                         </button>
