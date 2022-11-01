@@ -54,7 +54,7 @@
 
 
 </head>
-<main class="main">
+
             <!-- Start of Page Header -->
             <div class="page-header">
                 <div class="container">

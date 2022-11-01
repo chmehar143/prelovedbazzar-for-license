@@ -12,4 +12,6 @@ class VendorController extends Controller
         $vendors = Vendor::all();
         return view('user.vendor-store', compact('vendors'));
     }
+
+    
 }

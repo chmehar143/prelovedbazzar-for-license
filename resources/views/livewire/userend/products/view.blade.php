@@ -48,7 +48,7 @@
    <div class="page-content">
       <div class="container">
          <div class="product product-single row">
-            <div class="col-md-6 mb-6">
+            <div class="col-md-6 ">
                <div class="product-gallery product-gallery-sticky product-gallery-vertical">
                   <div class="swiper-container product-single-swiper swiper-theme nav-inner" data-swiper-options="{
                      'navigation': {
@@ -61,41 +61,41 @@
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                  data-zoom-image="{{asset('frontend-assets/frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
-                                 alt="Bright Green IPhone" width="800" height="900">
+                                 alt="Bright Green IPhone" style="width:auto;height:auto">
                            </figure>
                         </div>
                         <div class="swiper-slide">
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                  data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 alt="Bright Green IPhone" width="488" height="549">
+                                 alt="Bright Green IPhone" style="width:auto; height:auto">
                            </figure>
                         </div>
                         <div class="swiper-slide">
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                  data-zoom-image="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}"
-                                 alt="Bright Green IPhone" width="800" height="900">
+                                 alt="Bright Green IPhone" width="auto" height="auto">
                            </figure>
                         </div>
                         <div class="swiper-slide">
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                  data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 alt="Bright Green IPhone" width="800" height="900">
+                                 alt="Bright Green IPhone" width="auto" height="auto">
                            </figure>
                         </div>
                         <div class="swiper-slide">
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                  data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 alt="Bright Green IPhone" width="800" height="900">
+                                 alt="Bright Green IPhone" width="auto" height="auto">
                            </figure>
                         </div>
                      </div>
                      <button class="swiper-button-next"></button>
                      <button class="swiper-button-prev"></button>
-                     <a href="#" class="product-gallery-btn product-image-full"><i class="w-icon-zoom"></i></a>
+                     <!-- <a href="#" class="product-gallery-btn product-image-full"><i class="w-icon-zoom"></i></a> -->
                   </div>
                   <div class="product-thumbs-wrap swiper-container" data-swiper-options="{
                      'navigation': {
@@ -112,23 +112,23 @@
                      <div class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
                         <div class="product-thumb swiper-slide">
                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                              width="800" height="900">
+                              style="width:auto;height:auto">
                         </div>
                         <div class="product-thumb swiper-slide">
                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                              width="800" height="900">
+                           style="width:auto;height:auto">
                         </div>
                         <div class="product-thumb swiper-slide">
                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                              width="800" height="900">
+                           style="width:auto;height:auto">
                         </div>
                         <div class="product-thumb swiper-slide">
                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                              width="800" height="900">
+                           style="width:auto;height:auto">
                         </div>
                         <div class="product-thumb swiper-slide">
                            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                              width="800" height="900">
+                           style="width:auto;height:auto">
                         </div>
                      </div>
                      <button class="swiper-button-prev"></button>
@@ -141,8 +141,7 @@
                   <h1 class="product-title">{{$product->p_name}}</h1>
                   <div class="product-bm-wrapper">
                      <figure class="brand">
-                        <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Brand" width="105"
-                           height="48" />
+                        <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Brand" style="width:140;height:125px" />
                      </figure>
                      <div class="product-meta">
                         <div class="product-categories">
@@ -192,8 +191,7 @@
                                                 <a href="#" class="color" style="background-color: #333;"></a>
                                             </div>
                                         </div>
-                  <div class="fix-bottom product-sticky-content sticky-content">
-                     <!-- size starts here -->
+                  <div class="fix-bottom product-sticky-content ">
                      <div
                         class="product-form product-variation-form product-size-swatch mb-3">
                         <label class="mb-1">Size:</label>
@@ -218,9 +216,7 @@
                               </li>                                                                
                               @endif
                         </ul>
-                        <!-- <a href="javascript:void(0)" class="product-variation-clean">Clean All</a> -->
                      </div>
-                     <!-- size end here -->
                      <div class="product-form container" >
                         <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
                         <div class="product-qty-form with-label">
@@ -854,9 +850,9 @@
                      <figure class="product-media">
                         <a href="{{route('product',$unit->id)}}">
                         <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                           width="300" height="338" />
+                           style="width:300px;height:300px" />
                         <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                           width="300" height="338" />
+                        style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
@@ -926,7 +922,7 @@
                      <figure class="product-media">
                         <a href="{{ route('product', $related->id) }}">
                         <img src="{{asset('storage/uploads/products/'.$related->p_image)}}" alt="Product"
-                           width="300" height="338" />
+                        style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
                            <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
@@ -963,9 +959,16 @@
                   @endforeach
                </div>
             </div>
+            
          </section>
+         
+         
       </div>
+      
+      
    </div>
+   
+   
    
    <!-- End of Page Content -->
 </main>

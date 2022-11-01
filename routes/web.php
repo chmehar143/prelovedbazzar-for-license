@@ -53,6 +53,9 @@ Route::get('/order-view', [OrderViewController::class, 'index'])->name('order-vi
 Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error');
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+// Route::get('/vendor-details', [VendorController::class, 'vendordetails'])->name('vendor-details');
+
+
 Route::post('/contact-post', [ContactUsController::class, 'store'])->name('contact_send');
 // Search route
 Route::post('/search_product', [SearchController::class, 'search'])->name('search_product');
