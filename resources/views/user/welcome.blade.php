@@ -1099,7 +1099,7 @@
                 </div>
                 <!-- End of Product Wrapper 1 -->
 
-                <h2 class="title title-underline mb-4 ls-normal appear-animate">Our Clients</h2>
+                <!-- <h2 class="title title-underline mb-4 ls-normal appear-animate">Our Clients</h2>
                 <div class="swiper-container swiper-theme brands-wrapper mb-9 appear-animate" data-swiper-options="{
                     'spaceBetween': 0,
                     'slidesPerView': 2,
@@ -1180,7 +1180,7 @@
                             </figure>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End of Brands Wrapper -->
                 <!-- Post Wrapper -->
                 @if($recents->count() > 0)
