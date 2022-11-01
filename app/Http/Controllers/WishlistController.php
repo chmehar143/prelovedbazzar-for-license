@@ -67,11 +67,7 @@ class WishlistController extends Controller
         if(Auth::guard('user')->check()){
             $wish = WishList::where('p_id', $id)->where('user_id', Auth::guard('user')->id())->first();
             $wish->delete();
-            return response()->json([
-                'status'=> 200,
-                'success'=>'Data has been deleted'
 
-            ]);
         }
         else{
             $session = Session::getId();
