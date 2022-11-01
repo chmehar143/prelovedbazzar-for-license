@@ -4,13 +4,93 @@ namespace App\Http\Livewire\Userend\Products;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\{Auth, Session};
-use App\Models\{Category, Vendor, Admin, Product, Discussion, RecentView, Childcategory, Subcategory, User, WishList};
+use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User};
 
 
 class View extends Component
 {
     public $product, $vendor, $category, $subcategory,  $childcategory,
-    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview;
+    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, $quantitycount = 1, $p_size = 'medium';
+
+    public function sizeProduc($size)
+    {
+        return $this->p_size = $size;
+    }
+    public function incProduct()
+    {
+        if($this->quantitycount < 10)
+        {
+            $this->quantitycount++;
+        }
+    }
+
+    public function decProduct()
+    {
+        if($this->quantitycount > 1)
+        {
+            $this->quantitycount--;
+        }
+    }
+
+    public function addtocart(int $productId)
+    {
+        if(Auth::guard('user')->check())
+        {
+            if(Product::where('id', $productId)->where('status', 1)->exists()){
+                if($this->product->p_stock > 0)
+                {
+                    if($this->product->p_stock > $this->quantitycount)
+                    {
+                        Cart::create([
+                            'user_id' => Auth::guard('user')->id(),
+                            'prod_id'=> $productId,
+                            'quantity'=> $this->quantitycount,
+                            'size' => $this->p_size
+                        ]);
+
+                        $this->dispatchBrowserEvent('message', [
+                            'text' => 'Product has been adde to your cart successfully',
+                            'type'=> 'success',
+                            'status'=> 200
+                        ]); 
+
+                    }
+                    else
+                    {
+                        $this->dispatchBrowserEvent('message', [
+                            'text' => 'only '.$this->product->p_stock.'quantity available, add less than '.$this->product->p_stock.'.',
+                            'type'=> 'warning',
+                            'status'=> 404
+                        ]);   
+                    }
+                }
+                else
+                {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Out of stock',
+                        'type'=> 'warning',
+                        'status'=> 404
+                    ]);   
+                }
+            }
+            else{
+                $this->dispatchBrowserEvent('message', [
+                    'text' => 'Product does not exist',
+                    'type'=> 'warning',
+                    'status'=> 404
+                ]);
+            }
+        }
+        else
+        {
+            $this->dispatchBrowserEvent('message', [
+                'text' => 'Please login first to add to cart',
+                'type'=> 'info',
+                'status'=> 401
+            ]);
+        }
+    }
+
 
     public function addToWish($productId)
     {
@@ -53,7 +133,7 @@ class View extends Component
     }
 
     public function mount($product, $vendor, $category, $subcategory,  $childcategory,
-    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview)
+        $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview)
     {
         $this->product = $product;
         $this->vendor = $vendor;

@@ -508,15 +508,6 @@ else{
 </div> -->
 <!-- End of Quick view -->
 
-<!-- botman start here we need to update later... -->
-<script>
-        var botmanWidget = {
-            aboutText:'PreloveBazar',
-            introMessage :'Hi Welcome to PreloveBazar',
-        };
-    </script>
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-    <!-- botman start here we need to update later... -->
 
 
 
