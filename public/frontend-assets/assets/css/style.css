@@ -9655,7 +9655,7 @@ body .product-popup {
   transition: opacity 0.3s, -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s, -webkit-box-shadow 0.3s;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
 }
 .product:hover .product-action,
 .product:hover .product-action-vertical,
@@ -15943,7 +15943,7 @@ body .product-popup {
   left: -1.5rem;
 }
 .menu > li:hover > a:not(.menu-title), .menu > li.active > a:not(.menu-title) {
-  color: #F4442C;
+  color: #F4442C !important;
 }
 .menu > li:hover > .submenu,
 .menu > li:hover .megamenu, .menu > li.show > .submenu,
@@ -21445,4 +21445,16 @@ aside .sp-sidebar-banner span {
   .alert-danger{
     color: red;
   }
+}
+
+
+
+.product-wrap:hover {
+  -webkit-box-shadow: 0 5px 30px rgb(0 0 0 / 5%);
+  box-shadow: 0 5px 30px rgb(0 0 0 / 5%);
+}
+.product-wrap {
+  margin-bottom: 2rem !important;
+  border: 1px solid #eee !important;
+  margin-right: 10px !important;
 }

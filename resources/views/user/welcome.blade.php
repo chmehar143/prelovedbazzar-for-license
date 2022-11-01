@@ -1183,7 +1183,7 @@
                 </div>
                 <!-- End of Brands Wrapper -->
                 <!-- Post Wrapper -->
-
+                @if($recents->count() > 0)
                 <h2 class="title title-underline mb-4 ls-normal appear-animate">Your Recent Views</h2>
                 <div class="swiper-container swiper-theme shadow-swiper appear-animate pb-4 mb-8" data-swiper-options="{
                     'spaceBetween': 20,
@@ -1202,7 +1202,7 @@
                             'slidesPerView': 8
                         }
                     }
-                }">
+                    }">
                     <div class="swiper-wrapper row cols-xl-8 cols-lg-6 cols-md-4 cols-2">
                         @foreach($recents as $recent)
                         <div class="swiper-slide product-wrap mb-0">
@@ -1222,9 +1222,125 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
+                @endif
                 <!-- End of Reviewed Producs -->
                 
             </div>
+            <div class="container">
+
+          
+            <section class="color-accordion-section mb-7">
+                        <h1 class="title title-center mb-5"> FAQS</h1>
+                        <div class="row">
+                        <div class="col-lg-6 mb-4  mb-lg-0">
+                                <figure class="br-sm">
+                                    <img src="../frontend-assets/assets/images/pages/become/2.jpg" alt="Banner" width="610" height="520" style="background-color: #C9C8CD;">
+                                </figure>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div
+                                    class="accordion accordion-bg accordion-primary accordion-gutter-md accordion-plus show-code-action">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse6-1" class="collapse">Accordion Title 1</a>
+                                        </div>
+                                        <div class="card-body expanded" id="collapse6-1">
+                                            <p class="mb-0">
+                                                Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis rhoncus
+                                                dolor lectus
+                                                Diam maecenas ultricies mi eget mauris. Nibh tellus rhoncus
+                                                dolormolestie nunc
+                                                Ultrices eros in cursus rhoncus dolorturpis massa tincidunt. Ante in
+                                                nibh mauri
+                                                lectus. Etiam non quam lacus suspendisse faucibus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse6-2" class="expand">Accordion Title 2</a>
+                                        </div>
+                                        <div class="card-body collapsed" id="collapse6-2">
+                                            <p class="mb-0">
+                                                Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis rhoncus
+                                                dolor lectus
+                                                Diam maecenas ultricies mi eget mauris. Nibh tellus rhoncus
+                                                dolormolestie nunc
+                                                Ultrices eros in cursus rhoncus dolorturpis massa tincidunt. Ante in
+                                                nibh mauri
+                                                lectus. Etiam non quam lacus suspendisse faucibus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse6-3" class="expand">Accordion Title 3</a>
+                                        </div>
+                                        <div class="card-body collapsed" id="collapse6-3">
+                                            <p class="mb-0">
+                                                Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis rhoncus
+                                                dolor lectus
+                                                Diam maecenas ultricies mi eget mauris. Nibh tellus rhoncus
+                                                dolormolestie nunc
+                                                Ultrices eros in cursus rhoncus dolorturpis massa tincidunt. Ante in
+                                                nibh mauri
+                                                lectus. Etiam non quam lacus suspendisse faucibus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse6-4" class="expand">Accordion Title 4</a>
+                                        </div>
+                                        <div class="card-body collapsed" id="collapse6-4">
+                                            <p class="mb-0">
+                                                Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis rhoncus
+                                                dolor lectus
+                                                Diam maecenas ultricies mi eget mauris. Nibh tellus rhoncus
+                                                dolormolestie nunc
+                                                Ultrices eros in cursus rhoncus dolorturpis massa tincidunt. Ante in
+                                                nibh mauri
+                                                lectus. Etiam non quam lacus suspendisse faucibus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse6-5" class="expand">Accordion Title 5</a>
+                                        </div>
+                                        <div class="card-body collapsed" id="collapse6-5">
+                                            <p class="mb-0">
+                                                Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis rhoncus
+                                                dolor lectus
+                                                Diam maecenas ultricies mi eget mauris. Nibh tellus rhoncus
+                                                dolormolestie nunc
+                                                Ultrices eros in cursus rhoncus dolorturpis massa tincidunt. Ante in
+                                                nibh mauri
+                                                lectus. Etiam non quam lacus suspendisse faucibus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse6-6" class="expand">Accordion Title 6</a>
+                                        </div>
+                                        <div class="card-body collapsed" id="collapse6-6">
+                                            <p class="mb-0">
+                                                Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis rhoncus
+                                                dolor lectus
+                                                Diam maecenas ultricies mi eget mauris. Nibh tellus rhoncus
+                                                dolormolestie nunc
+                                                Ultrices eros in cursus rhoncus dolorturpis massa tincidunt. Ante in
+                                                nibh mauri
+                                                lectus. Etiam non quam lacus suspendisse faucibus.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
             <!--End of Catainer -->
             <div class="container">
                     </div>
