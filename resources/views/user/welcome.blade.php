@@ -599,10 +599,306 @@
                 </div>
             </section> -->
             <!-- End of .category-section top-category -->
-
             <div class="container">
-                <h2 class="title justify-content-center ls-normal mb-4 mt-10 pt-1 appear-animate">Popular Departments
-                </h2>
+                <div class="row">
+                    <div class="col-md-12">
+
+                
+            <div class="sale-banner banner br-sm appear-animate fadeIn appear-animation-visible" style="animation-duration: 1.2s;">
+                    <div class="banner-content">
+                        <h4 class="content-left banner-subtitle text-uppercase mb-8 mb-md-0 mr-0 mr-md-4 text-secondary ls-25">
+                            <span class="font-weight-bold lh-1 ls-normal" style="color:white">Up
+                                <br>To</span> &nbsp; 70% Sale!</h4>
+                        <div class="content-right">
+                            <h3 class="banner-title text-uppercase font-weight-normal mb-4 mb-md-0 ls-25 text-white">
+                                <span>Pay Only For
+                                    <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
+                                    Pay Only For
+                                    <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
+                                    Pay Only For
+                                    <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
+                                </span>
+                            </h3>
+                            <a href="#" class="btn btn-white btn-rounded">Shop Now
+                                <i class="w-icon-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+
+            <Br><br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    
+            <div class="title-link-wrapper pb-1 mb-4">
+                        <h2 class="title ls-normal mb-0">Top Weekly  &amp; Vendors</h2>        
+                    </div>
+                <div class="swiper-container swiper-theme shadow-swiper  vendor-wrapper appear-animate mb-6" data-swiper-options="{
+                    'spaceBetween': 20,
+                    'slidesPerView': 1,
+                    'breakpoints': {
+                        '576': {
+                            'slidesPerView': 2
+                        },
+                        '768': {
+                            'slidesPerView': 3
+                        },
+                        '992': {
+                            'slidesPerView': 4
+                        }
+                    }
+                }">
+                    <div class="swiper-wrapper row cols-xl-4 cols-md-3 cols-sm-2 cols-1">
+                        <div class="swiper-slide vendor-widget">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="../frontend-assets/assets/images/demos/demo3/vendors/1.jpg" alt="Vendor Banner" width="1200"
+                                            height="390" style="background-color: #ECE7DF;     height: 10pc;" />
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-1.jpg" alt="Vendor Logo"
+                                                width="90" height="90" />
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">OAIO Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">27 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
+                        </div>
+                        <div class="swiper-slide vendor-widget">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="../frontend-assets/assets/images/demos/demo3/vendors/2.jpg" alt="Vendor Banner" width="1200"
+                                            height="390" style="background-color: #293936;    height: 10pc;" />
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-2.jpg" alt="Vendor Logo"
+                                                width="90" height="90" />
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">Trident Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">11 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
+                        </div>
+                        <div class="swiper-slide vendor-widget">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="../frontend-assets/assets/images/demos/demo3/vendors/3.jpg" alt="Vendor Banner" width="1200"
+                                            height="390" style="background-color: #B8CDCE;     height: 10pc;" />
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-3.jpg" alt="Vendor Logo"
+                                                width="90" height="90" />
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">Pam Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">16 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
+                        </div>
+                        <div class="swiper-slide vendor-widget">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="../frontend-assets/assets/images/demos/demo3/vendors/4.jpg" alt="Vendor Banner" width="1200"
+                                            height="390" style="background-color: #F5F5F5;    height: 10pc;" />
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-4.jpg" alt="Vendor Logo"
+                                                width="90" height="90" />
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">K Group Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">25 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                </div>
+                </div>
+            </div>
+                <!-- End of Swiper Container -->
+                <div class="container">
+                <div class="top-categories-wrapper appear-animate mb-8 fadeIn appear-animation-visible" data-animation-options="{
+                            'name': 'fadeIn'
+                        }" style="animation-duration: 1.2s;">
+                            <div class="title-link-wrapper pb-1 mb-4">
+                        <h2 class="title ls-normal mb-0">Top Categories  &amp; Of The Month</h2>        
+                    </div>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                    <div class="category category-group-image br-sm">
+                                        <div class="category-content">
+                                            <h4 class="category-name"><a href="shop-fullwidth-banner.html">Clothings</a>
+                                            </h4>
+                                            <ul class="category-list">
+                                                <li><a href="#">Knitwears</a></li>
+                                                <li><a href="#">Jumpers</a></li>
+                                                <li><a href="#">Trousers</a></li>
+                                                <li><a href="#">Dress &amp; Skirts</a></li>
+                                                <li><a href="#">Accessories</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#">
+                                            <figure class="category-media">
+                                                <img src="../frontend-assets/assets/images/demos/demo6/categories/2-1.jpg" alt="Category" width="600" height="675">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                    <div class="category category-group-image br-sm">
+                                        <div class="category-content">
+                                            <h4 class="category-name"><a href="shop-fullwidth-banner.html">Office
+                                                    Electronic</a></h4>
+                                            <ul class="category-list">
+                                                <li><a href="#">Printers</a></li>
+                                                <li><a href="#">Store &amp; Business</a></li>
+                                                <li><a href="#">Scanners</a></li>
+                                                <li><a href="#">Phones</a></li>
+                                                <li><a href="#">Accessories</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#">
+                                            <figure class="category-media">
+                                                <img src="../frontend-assets/assets/images/demos/demo6/categories/2-2.jpg" alt="Category" width="600" height="675">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                    <div class="category category-group-image br-sm">
+                                        <div class="category-content">
+                                            <h4 class="category-name"><a href="shop-fullwidth-banner.html">Home &amp;
+                                                    Kitchen</a></h4>
+                                            <ul class="category-list">
+                                                <li><a href="#">Cookwares</a></li>
+                                                <li><a href="#">Kitchen Utensil</a></li>
+                                                <li><a href="#">Garden Tools</a></li>
+                                                <li><a href="#">Livingroom</a></li>
+                                                <li><a href="#">Accessories</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#">
+                                            <figure class="category-media">
+                                                <img src="../frontend-assets/assets/images/demos/demo6/categories/2-3.jpg" alt="Category" width="600" height="675">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                    <div class="category category-group-image br-sm">
+                                        <div class="category-content">
+                                            <h4 class="category-name"><a href="shop-fullwidth-banner.html">Cameras</a>
+                                            </h4>
+                                            <ul class="category-list">
+                                                <li><a href="#">Samsung</a></li>
+                                                <li><a href="#">Nikon D850</a></li>
+                                                <li><a href="#">Sony</a></li>
+                                                <li><a href="#">Canon EOS 80D</a></li>
+                                                <li><a href="#">Lumix</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#">
+                                            <figure class="category-media">
+                                                <img src="../frontend-assets/assets/images/demos/demo6/categories/2-4.jpg" alt="Category" width="600" height="675">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                    <div class="category category-group-image br-sm">
+                                        <div class="category-content">
+                                            <h4 class="category-name"><a href="shop-fullwidth-banner.html">Speakers</a>
+                                            </h4>
+                                            <ul class="category-list">
+                                                <li><a href="#">Samsung</a></li>
+                                                <li><a href="#">American Dream</a></li>
+                                                <li><a href="#">Apple</a></li>
+                                                <li><a href="#">Acer</a></li>
+                                                <li><a href="#">Arcade 1 UP</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#">
+                                            <figure class="category-media">
+                                                <img src="../frontend-assets/assets/images/demos/demo6/categories/2-5.jpg" alt="Category" width="600" height="675">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                    <div class="category category-group-image category-watch br-sm">
+                                        <div class="category-content">
+                                            <h4 class="category-name"><a href="shop-fullwidth-banner.html">Watches</a>
+                                            </h4>
+                                            <ul class="category-list">
+                                                <li><a href="#">Dell</a></li>
+                                                <li><a href="#">Lenovo</a></li>
+                                                <li><a href="#">Apple</a></li>
+                                                <li><a href="#">Sony</a></li>
+                                                <li><a href="#">Samsung</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#">
+                                            <figure class="category-media">
+                                                <img src="../frontend-assets/assets/images/demos/demo6/categories/2-6.jpg" alt="Category" width="600" height="675">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                
+            <div class="container">
+             
+                <div class="title-link-wrapper pb-1 mb-4">
+                        <h2 class="title ls-normal mb-0">Popular  &amp; Departments</h2>        
+                    </div>
                 <div class="tab tab-nav-boxed tab-nav-outline appear-animate">
                     <ul class="nav nav-tabs justify-content-center" role="tablist">
                         <li class="nav-item mr-2 mb-2">
@@ -1184,7 +1480,11 @@
                 <!-- End of Brands Wrapper -->
                 <!-- Post Wrapper -->
                 @if($recents->count() > 0)
-                <h2 class="title title-underline mb-4 ls-normal appear-animate">Your Recent Views</h2>
+                <div class="title-link-wrapper pb-1 mb-4">
+                        <h2 class="title ls-normal mb-0">Your  &amp; Recent Views</h2>
+                       
+                    </div>
+                    <br>
                 <div class="swiper-container swiper-theme shadow-swiper appear-animate pb-4 mb-8" data-swiper-options="{
                     'spaceBetween': 20,
                     'slidesPerView': 2,
@@ -1230,8 +1530,12 @@
 
           
             <section class="color-accordion-section mb-7">
-                        <h1 class="title title-center mb-5"> FAQS</h1>
-                        <div class="row">
+            <div class="title-link-wrapper pb-1 mb-4">
+                        <h2 class="title ls-normal mb-0">FAQS  &amp;  </h2>
+                       
+                    </div>     
+                    <br>
+                    <div class="row">
                         <div class="col-lg-6 mb-4  mb-lg-0">
                                 <figure class="br-sm">
                                     <img src="../frontend-assets/assets/images/pages/become/2.jpg" alt="Banner" width="610" height="520" style="background-color: #C9C8CD;">
