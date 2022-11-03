@@ -88,63 +88,23 @@ use Illuminate\Support\Facades\URL;
                   <a href="tel:1-800-570-7777" class="phone-number font-weight-bolder ls-50">1-800-570-7777</a>
                </div>
             </div>
-            <a class="wishlist label-down link d-xs-show" href="{{route('wishlist')}}">
-            <i class="w-icon-heart"></i>
-            <span class="wishlist-label d-lg-show">Wishlist</span>
-            </a>
+            <div class="dropdown cart-dropdown mr-0 mr-lg-5">
+               <div class="cart-overlay"></div>
+               <a href="{{route('wishlist')}}" class="cart-toggle label-down link">
+               <i class="w-icon-heart">
+               <span class="cart-count">@livewire('userend.wishlist.wish-item-count')</span>
+               </i>
+               <span class="cart-label">Wishlist</span>
+               </a>
+            </div>
             <div class="dropdown cart-dropdown mr-0 mr-lg-2">
                <div class="cart-overlay"></div>
                <a href="{{route('cart')}}" class="cart-toggle label-down link">
                <i class="w-icon-cart">
-               <span class="cart-count">{{$carts->count()}}</span>
+               <span class="cart-count">@livewire('userend.products.product-count')</span>
                </i>
                <span class="cart-label">Cart</span>
                </a>
-               <!-- <div class="dropdown-box" style="overflow-y: scroll;">
-                  <div class="cart-header">
-                      <span>Shopping Cart</span>
-                      <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
-                  </div>
-                  <div class="products">
-                      <?php $total = 0; ?>
-                      @forelse($carts as $cart)
-                      <div class="product product-cart">
-                          <div class="product-detail">
-                              <a href="{{route('product', $cart->prod_id)}}" class="product-name">{{$cart['p_name']}}</a>
-                              <div class="price-box">
-                                  <span class="product-quantity">{{$cart['quantity']}}</span>
-                                  <span class="product-price">${{$cart['p_new_price']}}</span>
-                              </div>
-                          </div>
-                          <figure class="product-media">
-                              <a href="{{route('product', $cart->prod_id)}}">
-                                  <img src="{{asset('storage/uploads/products/'. $cart['p_image'])}}" alt="product" height="84"
-                                      width="94" />
-                              </a>
-                          </figure>
-                      </div>
-                      <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
-                      @empty
-                      <div class="product product-cart">
-                          <div class="product-detail">
-                              <h4>No Item</h4>
-                          </div>
-                      </div>
-                      @endforelse
-                      <div class="cart-total">
-                          <label>Subtotal:</label>
-                          <span class="price">${{$total}}</span>
-                      </div>
-                  
-                      <div class="cart-action">
-                          <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                          <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
-                      </div>
-                  </div>
-                  
-                  
-                  </div> -->
-               <!-- End of Dropdown Box -->
             </div>
          </div>
       </div>

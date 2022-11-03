@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\{Auth, Session};
 use App\Models\{Category, Vendor, Admin, Product, Discussion, RecentView, Childcategory, Subcategory, User};
 class ProductDetailsController extends Controller
 {
+
     public function index($id)
     {
 

@@ -4,11 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Product;
 
 class Cart extends Model
 {
     use HasFactory;
-    protected $fillabel = [
-        'prod_id', 'user_id', 'quantity'
+    protected $fillable = [
+        'prod_id', 'user_id', 'quantity', 'size', 'session_id'
     ];
+
+    public function products(): BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'prod_id', 'id');
+    }
 }

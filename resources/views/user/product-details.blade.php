@@ -1,7 +1,21 @@
 @extends('user.layouts.app')
 @section('content')
+<head>
+   <style>
+      .w-icon-minus:before {
+      content: "";
+      margin-left: 5px;
+      }
+      .w-icon-plus:before {
+      content: "";
+      margin-left: 5px;
+      margin-bottom: 1;
+      }
+   </style>
+</head>
+<div>
 
-      @livewire('userend.products.view', [
+@livewire('userend.products.view', [
             'product' => $product,
             'vendor'=>$vendor,
             'category' => $category,
@@ -16,64 +30,6 @@
             'one' => $one,
             'allreview' => $allreview
       ])
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript">
-   $("#postbutton").click(function(){
-         var id = $("#product_id").val();
-         var quantity = $("#qnty").val();
-            if(!quantity){
-                var quantity = 1;
-            }
-            var size = $("input[name='size']:checked").val();
-            if(!size){
-                var size = 'medium';
-            }
-            // processing ajax request
-            $.ajax({
-                url: "{{ route('addcart') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    id: id,
-                    quantity: quantity,
-                    size: size
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                }
-            });
-        });
-   
-        $("#add_review").click(function(){
-            var id = $("#id").val();
-            var rating = $("#rating").val();
-            var review = $("#review").val();
-            var author = $("#author").val();
-            var email_1 = $("#email_1").val();
-            // processing ajax request
-            $.ajax({
-                url: "{{ route('add_review') }}",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    id: id,
-                    rating: rating,
-                    review: review,
-                    author: author,
-                    email_1: email_1
-                },
-                success: function(data) {
-                    // log response into console
-                    console.log(data);
-                    alert('A reviw has been added!');
-                }
-            });
-        });
-   
-</script>
+  <!-- 03016817533 -->
+</div>
 @endsection

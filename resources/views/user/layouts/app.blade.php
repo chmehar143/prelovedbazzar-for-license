@@ -77,6 +77,13 @@ else{
     @else
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/css/homepage.css')}}">
     @endif
+
+    <!-- alertify -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- end alertify -->
     @livewireStyles
 </head>
 <body class="home">
@@ -128,7 +135,7 @@ else{
                         </a>
                     </figure>
                 </div>
-                <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
+                <?php $total = $total + (int)$cart['quantity'] * (int)$cart['p_new_price']; ?>
                 @empty
                 <div class="product product-cart">
                     <div class="product-detail">
@@ -501,15 +508,6 @@ else{
 </div> -->
 <!-- End of Quick view -->
 
-<!-- botman start here we need to update later... -->
-<script>
-        var botmanWidget = {
-            aboutText:'PreloveBazar',
-            introMessage :'Hi Welcome to PreloveBazar',
-        };
-    </script>
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-    <!-- botman start here we need to update later... -->
 
 
 
@@ -600,6 +598,16 @@ function add_cart_(id){
     }
 </script>
 <!-- /ajax for subscription -->
+
+<!-- alertify -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script>
+window.addEventListener('message', event => {
+    alertify.set('notifier','position', 'top-right');
+    alertify.notify(event.detail.text, event.detail.type);})
+</script>
+<!-- end alertify -->
+
 
 <!-- live-wire -->
 @livewireScripts

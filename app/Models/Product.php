@@ -4,14 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Category;
-use App\Models\Subcategory;
-use App\Models\Chilcategory;
-use App\Models\Vendor;
-use App\Models\Discussion;
-use App\Models\OrderDetail;
-use App\Models\RecentView;
-
+use App\Models\{Category, Subcategory, Chilcategory, Vendor, Discussion, OrderDetail, RecentView, WishList};
 class Product extends Model
 {
     use HasFactory;
@@ -44,6 +37,14 @@ class Product extends Model
 
     public function recentviews(){
         return $this->hasMany(RecentView::class, 'p_id');
+    }
+
+    public function wishlists(){
+        return $this->hasMany(WishList::class, 'p_id');
+    }
+
+    public function cart(){
+        return $this->hasMany(Cart::class, 'prod_id');
     }
 
 }
