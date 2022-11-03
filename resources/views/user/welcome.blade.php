@@ -761,7 +761,7 @@
                 </div>
             </div>
                 <!-- End of Swiper Container -->
-                <div class="container">
+                <!-- <div class="container">
                 <div class="top-categories-wrapper appear-animate mb-8 fadeIn appear-animation-visible" data-animation-options="{
                             'name': 'fadeIn'
                         }" style="animation-duration: 1.2s;">
@@ -891,7 +891,7 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                </div> -->
 
                 
             <div class="container">
@@ -1510,7 +1510,7 @@
                                 <figure class="product-media">
                                     <a href="product-defa{{route('product', $recent->p_id)}}">
                                         <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
-                                        style="width:300px;height:300px" style="background-color: #fff" />
+                                        style="width:150px;height:150px" style="background-color: #fff" />
                                     </a>
                                 </figure>
                                 <h4 class="product-name">
@@ -1526,11 +1526,11 @@
                 <!-- End of Reviewed Producs -->
                 
             </div>
-            <div class="container">
+            <!-- <div class="container">
 
           
-            <section class="color-accordion-section mb-7">
-            <div class="title-link-wrapper pb-1 mb-4">
+            <section class="color-accordion-section mb-7"> -->
+            <!-- <div class="title-link-wrapper pb-1 mb-4">
                         <h2 class="title ls-normal mb-0">FAQS  &amp;  </h2>
                        
                     </div>     
@@ -1644,7 +1644,7 @@
                             </div>
                         </div>
                     </section>
-                    </div>
+                    </div> -->
             <!--End of Catainer -->
             <div class="container">
                     </div>
