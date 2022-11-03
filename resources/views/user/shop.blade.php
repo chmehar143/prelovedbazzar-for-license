@@ -50,8 +50,8 @@
                                     <!-- Start of Collapsible Widget -->
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>Price</span></h3>
-                                        <div class="widget-body">
-                                            <ul class="filter-items search-ul" style="display:none;">
+                                        <div class="widget-body" style="display:none;">
+                                            <ul class="filter-items search-ul" >
                                                 <?php $min = 1; $max = 99.0; ?>
                                                 <li><a href="{{ route('sort_price', ['min' => $min, 'max' => $max] ) }}">Pkr0.00 - $99.99</a></li>
                                                 <?php $min = 99.00; $max = 199.00; ?>
