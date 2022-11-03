@@ -9,20 +9,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        if(Auth::guard('user')->check()){
-            $user = Auth::guard('user');
-            $carts = Cart::where('user_id', $user->id())
-            ->join('products','carts.prod_id', '=', 'products.id')
-            ->get();
-            return view('user.cart', compact('carts'));
-        }
-        else{
-            $session = Session::getId();
-            $carts = Cart::where('session_id', $session)
-            ->join('products','carts.prod_id', '=', 'products.id')
-            ->get();
-            return view('user.cart', compact('carts'));
-        }
+        return view('user.cart');
     }
 
     public function store(Request $request){

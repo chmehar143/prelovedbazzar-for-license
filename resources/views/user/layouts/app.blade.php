@@ -135,7 +135,7 @@ else{
                         </a>
                     </figure>
                 </div>
-                <?php $total = $total + $cart['quantity']* $cart['p_new_price']; ?>
+                <?php $total = $total + (int)$cart['quantity'] * (int)$cart['p_new_price']; ?>
                 @empty
                 <div class="product product-cart">
                     <div class="product-detail">

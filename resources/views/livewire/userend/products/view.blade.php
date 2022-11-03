@@ -206,11 +206,6 @@
                               <button type="button" wire:click="decProduct" class="w-icon-minus" ></button>
                            </div>
                         </div>
-                        <button class="btn btn-primary btn-cart" id="postbutton">
-                        <i class="w-icon-cart"></i>
-                        <span>Add to Cart</span>
-                        </button>
-
                         <button class="btn btn-primary btn-cart" wire:click="addtocart({{ $product->id }})">
                         <i class="w-icon-cart"></i>
                         <span>Add to Cart</span>
@@ -818,8 +813,7 @@
                         style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                           <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart" onclick="add_cart_({{$unit->id}})"></a>
+                           <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $unit->id }})">
                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $unit->id }})"><span></span></button>
 
 
@@ -888,8 +882,7 @@
                         style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                           <a href="javascript:void(0)" class="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart" onclick="add_cart_({{ $related->id }})"></a>
+                           <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $related->id }})">
                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $related->id }})"><span></span></button>
                         </div>
                      </figure>

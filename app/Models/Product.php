@@ -43,4 +43,8 @@ class Product extends Model
         return $this->hasMany(WishList::class, 'p_id');
     }
 
+    public function cart(){
+        return $this->hasMany(Cart::class, 'prod_id');
+    }
+
 }
