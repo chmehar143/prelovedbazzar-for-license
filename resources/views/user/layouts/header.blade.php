@@ -126,13 +126,17 @@ use Illuminate\Support\Facades\URL;
                         @foreach($shareData['categories'] as $category)
                         <li>
                            <a href="{{ route('sortby',$category->id ) }}">
-                           <i class="w-icon-tshirt2"></i>{{$category->name}}
+                           {{$category->name}}
                            </a>
+                           @if($category['subcategory']->count() > 0)
                            <ul class="">
-                              @foreach($category['subcategory'] as $subcategory)  
+                              @forelse($category['subcategory'] as $subcategory)  
                               <li><a href="{{ route('subcat',$subcategory->id ) }}">{{$subcategory->name}}</a></li>
-                              @endforeach
+                              @empty
+                              <li style="display: none;"></li>
+                              @endforelse
                            </ul>
+                           @endif
                         </li>
                         @endforeach
                      </ul>
