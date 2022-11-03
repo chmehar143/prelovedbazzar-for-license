@@ -6,11 +6,8 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
-        $products = Product::with('discussions')->join('categories', 'products.p_catog','=','categories.id')
-                    ->select('products.*', 'categories.name')
-                    ->paginate(9);
-        return view('user.shop',compact('products', 'categories'));
+
+        return view('user.shop');
     }
 
     public function sortby($cat_id)
