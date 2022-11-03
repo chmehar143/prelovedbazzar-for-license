@@ -1,39 +1,4 @@
-<div>
-<main class="main mb-10 pb-1">
-   <!-- Start of Breadcrumb -->
-   <nav class="breadcrumb-nav container">
-      <ul class="breadcrumb bb-no">
-         <li><a href="demo1.html">Home</a></li>
-         <li><a href="product-default.html">Products</a></li>
-         <li>Vertical Thumbs</li>
-      </ul>
-      <ul class="product-nav list-style-none">
-         <li class="product-nav-prev">
-            <a href="#">
-            <i class="w-icon-angle-left"></i>
-            </a>
-            <span class="product-nav-popup">
-            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product" width="110"
-               height="110" />
-            <span class="product-name">Soft Sound Maker</span>
-            </span>
-         </li>
-         <li class="product-nav-next">
-            <a href="#">
-            <i class="w-icon-angle-right"></i>
-            </a>
-            <span class="product-nav-popup">
-            <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product" width="110"
-               height="110" />
-            <span class="product-name">Fabulous Sound Speaker</span>
-            </span>
-         </li>
-      </ul>
-   </nav>
-   <!-- End of Breadcrumb -->
-   <!-- Start of Page Content -->
-   <div class="page-content">
-      <div class="container">
+<div class="container">
          <div class="product product-single row">
             <div class="col-md-6 ">
                <div class="product-gallery product-gallery-sticky product-gallery-vertical">
@@ -179,20 +144,18 @@
                      </div>
                   </div>
                   <div class="fix-bottom product-sticky-content ">
-                     <div
-                        class="product-form product-variation-form product-size-swatch mb-3">
+                     <div class="product-form product-variation-form product-size-swatch mb-3">
                         <label class="mb-1">Size:</label>
-                        <ul
-                              class="flex-wrap d-flex align-items-center product-variations">
-                              @if($product->large == 1)
-                                 <button type = "button" wire:click="sizeProduc('large')" class="size" style="margin-right: 8px;">large</button>                                                                
-                              @endif
-                              @if($product->medium == 1)
-                              <button type = "button" wire:click="sizeProduc('medium')" class="size" style="margin-right: 8px;" >medium</button>
-                              @endif
-                              @if($product->small == 1)
-                              <button type = "button" wire:click="sizeProduc('small')" class="size" style="margin-right: 8px;">small</button>                                                               
-                              @endif
+                        <ul class="flex-wrap d-flex align-items-center product-variations">
+                           @if($product->large == 1)
+                              <button type = "button" wire:click="sizeProduc('large')" class="size" style="margin-right: 8px;">large</button>                                                                
+                           @endif
+                           @if($product->medium == 1)
+                           <button type = "button" wire:click="sizeProduc('medium')" class="size" style="margin-right: 8px;" >medium</button>
+                           @endif
+                           @if($product->small == 1)
+                           <button type = "button" wire:click="sizeProduc('small')" class="size" style="margin-right: 8px;">small</button>                                                               
+                           @endif
                         </ul>
                      </div>
                      <div class="product-form container" >
@@ -915,16 +878,5 @@
                </div>
             </div>
             
-         </section>
-         
-         
+         </section>         
       </div>
-      
-      
-   </div>
-   
-   
-   
-   <!-- End of Page Content -->
-</main>
-</div>
