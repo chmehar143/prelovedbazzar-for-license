@@ -38,6 +38,8 @@ class Index extends Component
                                     'user_id' => Auth::guard('user')->id(),
                                     'prod_id'=> $productId,
                                     'quantity'=> $this->quantitycount,
+                                    'price'=> $this->product->p_new_price,
+                                    'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                     'size' => $this->p_size
                                 ]);
                                 $this->product->p_stock = $this->product->p_stock  - $this->quantitycount;
@@ -100,6 +102,8 @@ class Index extends Component
                                     'session_id' => Session::getId(),
                                     'prod_id'=> $productId,
                                     'quantity'=> $this->quantitycount,
+                                    'price'=> $this->product->p_new_price,
+                                    'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                     'size' => $this->p_size
                                 ]);
                                 $this->product->p_stock = $this->product->p_stock  - $this->quantitycount;

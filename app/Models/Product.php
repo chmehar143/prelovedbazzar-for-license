@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\{Category, Subcategory, Chilcategory, Vendor, Discussion, OrderDetail, RecentView, WishList};
 class Product extends Model
 {
@@ -21,9 +22,14 @@ class Product extends Model
         return $this->belongsTo(Vendor::class);
     }
 
-    public function category()
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'p_catog', 'id');
+    }
+
+    public function subcategory(): BelongsTo
+    {
+        return $this->belongsTo(Subcategory::class, 'p_sub_catog', 'id');
     }
 
     public function orderdetail()
