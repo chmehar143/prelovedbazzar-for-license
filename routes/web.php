@@ -7,7 +7,7 @@ use App\Http\Controllers\{
     CartController, CompareController, ContactUsController, CheckoutController,
     ProductDetailsController, MyaccountController, LoginController, BlogDetailsController,
     OrderController, OrderViewController, ErrorPageController, BotManController,
-    StripePaymentController, SearchController
+    StripePaymentController, SearchController, InstructorController, PrivacyController
 };
 
 /*
@@ -24,6 +24,7 @@ use App\Http\Controllers\{
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('subscribe');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
+Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy-policy');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/sort/{cat_id}', [ShopController::class, 'sortby'])->name('sortby');
 Route::get('/subcat/{sub_id}', [ShopController::class, 'subcat'])->name('subcat');
@@ -32,6 +33,7 @@ Route::get('/vendor-store', [VendorController::class, 'index'])->name('vendor-st
 Route::get('/vendor-store-details/{id}', [VendorStoreDetailsController::class, 'index'])->name('vendor-store-details');
 Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
 Route::get('/become-a-vendor', [BecomeAVendorController::class, 'index'])->name('become-a-vendor');
+Route::get('/how-to-become-a-vendor', [InstructorController::class, 'index'])->name('how-to-become-a-vendor');
 Route::get('/wishlist', [WishlistController::class, 'index'])->middleware(['user.auth'])->name('wishlist');
 Route::get('/addwish/{id}', [WishlistController::class, 'store'])->name('addwish');
 Route::get('/delwish/{id}', [WishlistController::class, 'destroy'])->name('destroy');

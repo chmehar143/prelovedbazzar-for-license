@@ -40,6 +40,7 @@ class Index extends Component
                                     'quantity'=> $this->quantitycount,
                                     'size' => $this->p_size
                                 ]);
+                                $this->product->p_stock = $this->product->p_stock  - $this->quantitycount;
                                 $this->emit('addupdateCart');
                                 $this->dispatchBrowserEvent('message', [
                                     'text' => 'Product has been adde to your cart successfully',
@@ -101,7 +102,7 @@ class Index extends Component
                                     'quantity'=> $this->quantitycount,
                                     'size' => $this->p_size
                                 ]);
-        
+                                $this->product->p_stock = $this->product->p_stock  - $this->quantitycount;
                                 $this->emit('addupdateCart');        
                                 $this->dispatchBrowserEvent('message', [
                                     'text' => 'Product has been added to your cart successfully',

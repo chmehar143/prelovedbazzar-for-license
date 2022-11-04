@@ -13825,7 +13825,7 @@ aside .sp-sidebar-banner span {
 .menu>li.show>.submenu,
 .menu>li:hover .megamenu,
 .menu>li:hover>.submenu {
-    top: 100%
+    top: 0px;
 }
 
 .menu .has-submenu>a {
