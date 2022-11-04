@@ -6,7 +6,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\{Auth, Session, Redirect};
 use App\Models\{
     Category, Vendor, Product, RecentView, Childcategory, Cart,
-    Subcategory, Subscriber, Discussion, User, Banner, OrderDetail, FrontPage
+    Subcategory, Subscriber, Discussion, User, Banner, OrderDetail, FrontPage, Wishlist
 };
 use Carbon\Carbon;
 use Validator;
@@ -43,6 +43,8 @@ class Welcome extends Component
                                 'user_id' => Auth::guard('user')->id(),
                                 'prod_id'=> $productId,
                                 'quantity'=> $this->quantitycount,
+                                'price'=> $this->product->p_new_price,
+                                'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                 'size' => $this->p_size
                             ]);
                             $this->emit('addupdateCart');
@@ -102,6 +104,8 @@ class Welcome extends Component
                                 'session_id' => Session::getId(),
                                 'prod_id'=> $productId,
                                 'quantity'=> $this->quantitycount,
+                                'price'=> $this->product->p_new_price,
+                                'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                 'size' => $this->p_size
                             ]);    
                             $this->emit('addupdateCart');   

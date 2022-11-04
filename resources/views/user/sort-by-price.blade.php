@@ -13,7 +13,7 @@
    </nav>
    <!-- End of Breadcrumb-nav -->
    <!-- livewire -->
-      @livewire('userend.products.index')
+      @livewire('userend.products.sort-by-price', ['min' => Route::current()->parameter('min'), 'max' => Route::current()->parameter('max') ])
       <!-- endlivewire -->
    <div class="swiper-container swiper-theme show-code-action" data-swiper-options="{
       'autoplay': true,

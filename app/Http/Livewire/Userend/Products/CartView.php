@@ -97,7 +97,7 @@ class CartView extends Component
     public function removecart(int $cartId)
     {
         if(Auth::guard('user')->check()){
-            $cart = Cart::where('id', $cartId)->where('user_id', Auth::guard('user'->id()))->first();
+            $cart = Cart::where('id', $cartId)->where('user_id', Auth::guard('user')->id())->first();
             if($cart)
             {
                 $cart->products->p_stock = $cart->products->p_stock + $cart->quantity;
@@ -146,8 +146,8 @@ class CartView extends Component
     public function clearall()
     {
         if(Auth::guard('user')->check()){
-            $cartitems = Cart::where('user_id', Auth::guard('user'->id()))->get();
-            if($cartitems)
+            $cartitems = Cart::where('user_id', Auth::guard('user')->id())->get();
+            if($cartitems->count() > 0)
             {
                 foreach($cartitems as $cart)
                 {
@@ -165,7 +165,7 @@ class CartView extends Component
             else
             {
                 $this->dispatchBrowserEvent('message', [
-                    'text' => 'Something went wrong',
+                    'text' => 'No item exist',
                     'type'=> 'error',
                     'status'=> 409
                 ]);

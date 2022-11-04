@@ -4,36 +4,20 @@ namespace App\Http\Livewire\Userend\Products;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\{Auth, Session};
-use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User};
+use App\Models\{Product, User, WishList, Cart, Category};
+use Livewire\WithPagination;
 
-
-class View extends Component
+class SortByCat extends Component
 {
-    public $product, $vendor, $category, $subcategory,  $childcategory,
-    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, $quantitycount = 1, $p_size;
+    public $product, $quantitycount = 1, $p_size = 'medium', $cat_id;
 
-    public function sizeProduc($size)
-    {
-        return $this->p_size = $size;
-    }
-    public function incProduct()
-    {
-        if($this->quantitycount < 10)
-        {
-            $this->quantitycount++;
-        }
-    }
+    protected $paginationTheme = 'bootstrap';
 
-    public function decProduct()
-    {
-        if($this->quantitycount > 1)
-        {
-            $this->quantitycount--;
-        }
-    }
-
+ 
     public function addtocart(int $productId)
     {
+        $this->product = Product::where('id', $productId)->where('status', 1)->first();
+
         if(Auth::guard('user')->check())
         {
             if(Product::where('id', $productId)->where('status', 1)->exists())
@@ -61,7 +45,6 @@ class View extends Component
                                 'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                 'size' => $this->p_size
                             ]);
-                            $this->product->p_stock = $this->product->p_stock  - $this->quantitycount;
                             $this->emit('addupdateCart');
                             $this->dispatchBrowserEvent('message', [
                                 'text' => 'Product has been adde to your cart successfully',
@@ -105,7 +88,7 @@ class View extends Component
                 {
                     if($this->product->p_stock > $this->quantitycount)
                     {
-                        if(Cart::where('user_id', Auth::guard('user')->id())->where('prod_id',$productId)->exists())
+                        if(Cart::where('session_id', Session::getId())->where('prod_id',$productId)->exists())
                         {
                             $this->dispatchBrowserEvent('message', [
                                 'text' => 'Product already added to cart',
@@ -122,8 +105,7 @@ class View extends Component
                                 'price'=> $this->product->p_new_price,
                                 'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                 'size' => $this->p_size
-                            ]); 
-                            $this->product->p_stock = $this->product->p_stock  - $this->quantitycount;   
+                            ]);    
                             $this->emit('addupdateCart');   
                             $this->dispatchBrowserEvent('message', [
                                 'text' => 'Product has been added to your cart successfully',
@@ -161,7 +143,6 @@ class View extends Component
             }
         }
     }
-
 
     public function addToWish($productId)
     {
@@ -203,42 +184,26 @@ class View extends Component
         }
     }
 
-    public function mount($product, $vendor, $category, $subcategory,  $childcategory,
-        $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview)
+    public function mount($id)
     {
-        $this->product = $product;
-        $this->vendor = $vendor;
-        $this->category = $category;
-        $this->subcategory = $subcategory;
-        $this->childcategory = $childcategory;
-        $this->moreproducts = $moreproducts;
-        $this->related_products = $related_products;
-        $this->five = $five;
-        $this->four = $four;
-        $this->three = $three;
-        $this->two = $two;
-        $this->one = $one;
-        $this->allreview = $allreview;
-
+        $category = Category::where('id', $id)->first();
+        $this->cat_id = $category->id;
     }
+
 
     public function render()
     {
-        return view('livewire.userend.products.view', [
-            'product' => $this->product,
-            'vendor'=>$this->vendor,
-            'category' => $this->category,
-            'subcategory' => $this->subcategory,
-            'childcategory' => $this->childcategory,
-            'moreproducts' => $this->moreproducts,
-            'related_products' => $this->related_products,
-            'five' => $this->five,
-            'four' => $this->four,
-            'three' => $this->three,
-            'two' => $this->two,
-            'one' => $this->one,
-            'allreview' => $this->allreview
-
+        $category = Category::where('id', $this->cat_id)->first();
+        if($category){
+            $products = Product::where('p_catog', $this->cat_id)->with('discussions')
+            ->join('categories', 'products.p_catog','=','categories.id')
+            ->select('products.*', 'categories.name')
+            ->paginate(9);
+        }
+        $categories = Category::all();
+        return view('livewire.userend.products.sort-by-cat', [
+            'products' => $products,
+            'categories' => $categories
         ]);
     }
 }

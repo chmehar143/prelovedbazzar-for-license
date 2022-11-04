@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Product;
 
 class WishList extends Model
 {
@@ -13,8 +15,8 @@ class WishList extends Model
         'user_id','p_id','pimage'
     ];
 
-    public function product()
+    public function product() :BelongsTo
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class, 'p_id', 'id');
     }
 }
