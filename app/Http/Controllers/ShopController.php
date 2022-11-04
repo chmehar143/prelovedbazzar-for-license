@@ -10,37 +10,21 @@ class ShopController extends Controller
         return view('user.shop');
     }
 
-    public function sortby($cat_id)
+    public function sortby()
     {
-        $category = Category::where('id', $cat_id)->first();
-        if($category){
-            $products = Product::where('p_catog', $category->id)->with('discussions')
-            ->join('categories', 'products.p_catog','=','categories.id')
-            ->select('products.*', 'categories.name')
-            ->paginate(9);
-        }
-        $categories = Category::all();
-        return view('user.shop',compact('products', 'categories'));
+        return view('user.sort-by-cat');
     }
 
-    public function subcat($sub_id)
+    public function subcat()
     {
-        $products = Product::where('products.status', 1)->where('p_sub_catog', $sub_id)->with('discussions')
-                    ->join('categories', 'products.p_catog','=','categories.id')
-                    ->select('products.*', 'categories.name')
-                    ->paginate(9);
 
-        $categories = Category::all();
-        return view('user.shop',compact('products', 'categories'));
+        return view('user.sort-by-subcat');
     }
 
-    public function sort_price($min, $max){
-            $products = Product::whereBetween('p_new_price' ,[$min, $max])->with('discussions')
-                ->join('categories', 'products.p_catog','=','categories.id')
-                ->select('products.*', 'categories.name')
-                ->paginate(9);
-            $categories = Category::all();
-        return view('user.shop',compact('products', 'categories'));
+    public function sort_price()
+    {
+            
+        return view('user.sort-by-price');
     }
 
 }

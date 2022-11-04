@@ -9,9 +9,10 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-    public $product, $quantitycount = 1, $p_size = 'medium';
+    public $product, $quantitycount = 1, $p_size = 'medium', $search ;
+
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'bootstrap', $queryString = ['search'];
 
     public function addtocart(int $productId)
     {
@@ -40,6 +41,8 @@ class Index extends Component
                                 'user_id' => Auth::guard('user')->id(),
                                 'prod_id'=> $productId,
                                 'quantity'=> $this->quantitycount,
+                                'price'=> $this->product->p_new_price,
+                                'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                 'size' => $this->p_size
                             ]);
                             $this->emit('addupdateCart');
@@ -99,6 +102,8 @@ class Index extends Component
                                 'session_id' => Session::getId(),
                                 'prod_id'=> $productId,
                                 'quantity'=> $this->quantitycount,
+                                'price'=> $this->product->p_new_price,
+                                'net_price'=> $this->product->p_new_price * $this->quantitycount,
                                 'size' => $this->p_size
                             ]);    
                             $this->emit('addupdateCart');   
@@ -182,9 +187,12 @@ class Index extends Component
     public function render()
     {
         $categories = Category::all();
-        $products = Product::with('discussions')->join('categories', 'products.p_catog','=','categories.id')
-                    ->select('products.*', 'categories.name')
-                    ->paginate(9);
+        $products = Product::where('products.status', 1)->join('categories', 'products.p_catog','=','categories.id')
+                            ->where('p_name','LIKE','%'.$this->search.'%')
+                            ->orWhere('p_detail','LIKE','%'.$this->search.'%')->with('discussions')
+                            ->orwhere('categories.name', 'LIKE', '%'.$this->search.'%') 
+                            ->select('products.*', 'categories.name')->latest()
+                            ->paginate(9);
 
         return view('livewire.userend.products.index', [
             'categories' => $categories,
