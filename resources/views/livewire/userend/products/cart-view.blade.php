@@ -48,7 +48,7 @@
 
                             </td>
                         </tr>
-                        <?php $subtotal = $subtotal + $cart->products['p_new_price'] * $cart->products['quantity'] ?>
+                        <?php $subtotal = $subtotal + $cart->products['p_new_price'] * $cart['quantity'] ?>
                         @endif
                         @empty
                         <tr>

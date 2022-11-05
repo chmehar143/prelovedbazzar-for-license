@@ -19,6 +19,7 @@ class CartView extends Component
                 if($cart->products->p_stock > $cart->quantity)
                 {
                     $cart->increment('quantity');
+                    $cart->net_price = $cart->net_price + $cart->price;
                     $cart->products->decrement('p_stock');
                 }
                 else
@@ -38,6 +39,7 @@ class CartView extends Component
                 if($cart->products->p_stock > $cart->quantity)
                 {
                     $cart->increment('quantity');
+                    $cart->net_price = $cart->net_price + $cart->price;
                     $cart->products->decrement('p_stock');
                 }
                 else
@@ -60,7 +62,8 @@ class CartView extends Component
             {
                 if($cart->quantity > 1)
                 {
-                    $cart->decrement('quantity');                    
+                    $cart->decrement('quantity');
+                    $cart->net_price = $cart->net_price - $cart->price;                    
                     $cart->products->increment('p_stock');
                 }
                 else
@@ -79,7 +82,8 @@ class CartView extends Component
             {
                 if($cart->quantity > 1)
                 {
-                    $cart->decrement('quantity');                    
+                    $cart->decrement('quantity'); 
+                    $cart->net_price = $cart->net_price - $cart->price;                   
                     $cart->products->increment('p_stock');
                 }
                 else
