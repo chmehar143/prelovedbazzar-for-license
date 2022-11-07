@@ -10,6 +10,47 @@ use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User};
 class CartView extends Component
 {
 
+    public $size;
+
+    public function changesize(int $cartId)
+    {
+        if(Auth::guard('user')->check()){
+            $cart = Cart::where('id', $cartId)->where('user_id', Auth::guard('user')->id())->first();
+            if($cart)
+            {
+                if($cart->products[$this->size] == 1)
+                {
+                    $cart->size = $this->size;
+                }
+                else
+                {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'size not available',
+                        'type'=> 'warning',
+                        'status'=> 404
+                    ]);
+                }
+            }
+        }
+        else{
+            $cart = Cart::where('id', $cartId)->where('session_id', Session::getId())->first();
+            if($cart)
+            {
+                if($cart->products[$this->size] == 1)
+                {
+                    $cart->size = $this->size;
+                }
+                else
+                {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Size not available',
+                        'type'=> 'warning',
+                        'status'=> 404
+                    ]);
+                }
+            }
+        }
+    }
     public function increase(int $cartId)
     {
         if(Auth::guard('user')->check()){

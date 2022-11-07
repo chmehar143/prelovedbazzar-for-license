@@ -18,16 +18,12 @@
             <div class="page-content mb-10 pb-2">
                 <div class="container">
                     @if ($message = Session::get('success'))
-                    <div class="order-success text-center text-success font-weight-bolder text-dark">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <i class="fas fa-check"></i>
-                        Thank you. Your order has been received.
+                    <div class="order-success text-center text-success font-weight-bolder text-dark" style="color: green;">
+                        <i class="fas fa-check" style="color: green; font-size: 30px; ">{{$message}}.</i>
                     </div>
                     @endif
-                    <div class="order-success text-center text-success font-weight-bolder text-dark" style="color: green;">
-                        <i class="fas fa-check" style="color: green; font-size: 30px; "> Thank you. Your order has been received.</i>
-                    </div>
                     <!-- End of Order Success -->
+
 
                     <ul class="order-view list-style-none">
                         <li>
@@ -62,7 +58,7 @@
                                     <th style="font-size: 14px;">Vendor Shop</th>
                                     <th style="font-size: 14px;">Status</th>
                                     <th style="font-size: 14px;">Total</th>
-                                    <th style="font-size: 14px;">Tracking</th>
+                                    <th style="font-size: 14px; float: left;">Tracking</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -72,9 +68,9 @@
                                         <a href="{{ route('product', $detail->pro_id) }}">{{$detail->item_name}}</a>&nbsp;<strong>x 1</strong><br>
                                     </td>
                                     <td><strong>jfgdkfgkd{{$detail->store_name}}</strong></td>
-                                    <td>xfkxkfgldf{{$detail->sub_status}}</td>
-                                    <td>pkr{{$detail->subtotal}}</td>
-                                    <td>jfgkdfgdfgldk{{$detail->tracking}}</td>
+                                    <td>{{$detail->sub_status}}</td>
+                                    <td>pkr{{$detail->subtotal}}</td>                                    
+                                    <td>@if($detail->tracking == NULL) No traking yet @else {{$detail->tracking}} @endif</td>
                                 </tr>
                                 @endforeach
                             </tbody>

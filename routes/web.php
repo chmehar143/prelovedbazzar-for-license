@@ -51,7 +51,7 @@ Route::get('/my-account', [MyaccountController::class, 'index'])->middleware(['u
 Route::get('/login', [LoginController::class, 'index'])->name('Login');
 Route::post('/order-place', [OrderController::class, 'store'])->name('place');
 Route::get('/order/{id}', [OrderController::class, 'index'])->name('order');
-Route::get('/order-view', [OrderViewController::class, 'index'])->name('order-view');
+Route::get('/orders-view', [OrderViewController::class, 'index'])->name('order-view');
 Route::get('/404-error', [ErrorPageController::class, 'index'])->name('404-error');
 Route::get('/blog-details', [BlogsDetailsController::class, 'index'])->name('blog-details');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
