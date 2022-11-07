@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-    public $product, $quantitycount = 1, $p_size = 'medium', $search ;
+    public $product, $quantitycount = 1, $p_size = '', $search ;
 
     use WithPagination;
     protected $paginationTheme = 'bootstrap', $queryString = ['search'];

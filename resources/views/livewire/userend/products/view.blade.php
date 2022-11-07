@@ -367,17 +367,17 @@
                            <p class="mb-3">Your email address will not be published. Required fields
                               are marked *
                            </p>
-                           <form action="javascript:void(0)" method="POST" class="review-form">
+                           <form wire:submit.prevent="addrating"  class="review-form">
                               <div class="rating-form">
                                  <label for="rating">Your Rating Of This Product :</label>
                                  <span class="rating-stars">
-                                 <a class="star--1" href="#">1</a>
+                                 <a class="star-1" href="#">1</a>
                                  <a class="star-2" href="#">2</a>
                                  <a class="star-3" href="#">3</a>
                                  <a class="star-4" href="#">4</a>
                                  <a class="star-5" href="#">5</a>
                                  </span>
-                                 <select name="rating" id="rating" required=""
+                                 <select wire:model="review"  required=""
                                     style="display: block;">
                                     <option value="">Rate…</option>
                                     <option value="5">Perfect</option>
@@ -386,18 +386,18 @@
                                     <option value="2">Not that bad</option>
                                     <option value="1">Very poor</option>
                                  </select>
-                                 <input type="hidden" id="id" value="{{$product->id}}">
+                                 <input type="hidden" id="id" value="{{$product->id}}" wire:model="item">
                               </div>
                               <textarea cols="30" rows="6" placeholder="Write Your Review Here..."
-                                 class="form-control" id="review" name="review" ></textarea>
+                                 class="form-control" id="review" wire:model="comment" ></textarea>
                               <div class="row gutter-md">
                                  <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="Your Name"
-                                       id="author" name="author">
+                                       id="author" wire:model="user_name">
                                  </div>
                                  <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="Your Email"
-                                       id="email_1" name="email_1">
+                                       id="email_1" wire:model="email">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -405,7 +405,7 @@
                                  <label for="save-checkbox">Save my name, email, and website in this
                                  browser for the next time I comment.</label>
                               </div>
-                              <button type="reset" class="btn btn-dark" id="add_review" >Submit Review</button>
+                              <button type="submit" class="btn btn-dark" >Submit Review</button>
                            </form>
                         </div>
                      </div>

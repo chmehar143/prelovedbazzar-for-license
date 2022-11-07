@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('seller_name')->nullable();
             $table->string('store_name')->nullable();
             $table->string('item_name');
-            $table->string('sub_shipping');
-            $table->string('sub_status');
-            $table->string('tracking');
+            $table->decimal('sub_shipping')->default(0.00);
+            $table->tinyInteger('sub_status')->default(1);
+            $table->string('tracking')->nullable();
         });
     }
 
