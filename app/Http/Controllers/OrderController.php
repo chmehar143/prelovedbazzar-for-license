@@ -3,17 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
-use App\Models\Cart;
-use App\Models\Payment;
-use App\Models\Vendor;
-use App\Models\Product;
-use App\Models\User;
-use App\Models\Order;
-use App\Models\OrderDetail;
-use App\Models\Address;
+use Illuminate\Support\Facades\{Auth, Session, Redirect};
+use App\Models\{Cart, Payment, Vendor, Product, User, Order, OrderDetail, Address};
 use Validator;
 use Stripe;
 use Config;
@@ -136,7 +127,7 @@ class OrderController extends Controller
             $order->s_fname = $request->input('fname');
             $order->s_lname = $request->input('lname');
             $order->s_company = $request->input('company');
-            $order->s_country = $request->input('company');
+            $order->s_country = $request->input('s_country');
             $order->s_street = $request->input('street');
             $order->s_apart = $request->input('apart');
             $order->s_city = $request->input('city');
@@ -177,7 +168,7 @@ class OrderController extends Controller
                     $address->s_fname = $request->input('fname');
                     $address->s_lname = $request->input('lname');
                     $address->s_company = $request->input('company');
-                    $address->s_country = $request->input('company');
+                    $address->s_country = $request->input('s_country');
                     $address->s_street = $request->input('street');
                     $address->s_apart = $request->input('apart');
                     $address->s_city = $request->input('city');
@@ -212,11 +203,15 @@ class OrderController extends Controller
             $detail->color = $cart->color;
             $detail->size = $cart->size;
             $detail->subtotal = $cart->net_price;
+            $detail->vendor_id = $cart->products->vendor_id;
+            $detail->seller_name = $cart->products->vendor->name;
+            $detail->store_name = $cart->products->vendor->shop_name;
+            $detail->item_name = $cart->products->p_name;
             $detail->save();
             $cart->delete();
         }
         //end order datail..
 
-        return redirect()->route('order')->with('success', 'Thank you. Your order has been received.');
+        return redirect()->route('order', $order->id)->with('success', 'Thank you. Your order has been received.');
     }
 }

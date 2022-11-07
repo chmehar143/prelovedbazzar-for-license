@@ -13,7 +13,7 @@
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
                                  data-zoom-image="{{asset('frontend-assets/frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
-                                 alt="Bright Green IPhone" style="width:auto;height:auto">
+                                 alt="Bright Green IPhone" >
                            </figure>
                         </div>
                         <div class="swiper-slide">
@@ -199,14 +199,14 @@
          <div class="tab tab-nav-boxed tab-nav-underline product-tabs mt-3">
             <ul class="nav nav-tabs" role="tablist">
                <li class="nav-item">
-                  <a href="#product-tab-description" class="nav-link active">Description</a>
+                  <a href="#product-tab-description" class="nav-link ">Description</a>
                </li>
                <li class="nav-item">
-                  <a href="#product-tab-reviews" class="nav-link">Customer Reviews ({{ $no }})</a>
+                  <a href="#product-tab-reviews" class="nav-link active">Customer Reviews ({{ $no }})</a>
                </li>
             </ul>
             <div class="tab-content">
-               <div class="tab-pane active" id="product-tab-description">
+               <div class="tab-pane " id="product-tab-description">
                   <div class="row mb-4">
                      <div class="col-md-6 mb-5">
                         <h4 class="title tab-pane-title font-weight-bold mb-2">Detail</h4>
@@ -255,7 +255,7 @@
                      </div>
                   </div>
                </div>
-               <div class="tab-pane" id="product-tab-reviews">
+               <div class="tab-pane active" id="product-tab-reviews">
                   <div class="row mb-4">
                      <div class="col-xl-4 col-lg-5 mb-4">
                         <div class="ratings-wrapper">
@@ -367,17 +367,17 @@
                            <p class="mb-3">Your email address will not be published. Required fields
                               are marked *
                            </p>
-                           <form action="javascript:void(0)" method="POST" class="review-form">
+                           <form wire:submit.prevent="addrating"  class="review-form">
                               <div class="rating-form">
                                  <label for="rating">Your Rating Of This Product :</label>
                                  <span class="rating-stars">
-                                 <a class="star--1" href="#">1</a>
+                                 <a class="star-1" href="#">1</a>
                                  <a class="star-2" href="#">2</a>
                                  <a class="star-3" href="#">3</a>
                                  <a class="star-4" href="#">4</a>
                                  <a class="star-5" href="#">5</a>
                                  </span>
-                                 <select name="rating" id="rating" required=""
+                                 <select wire:model="review"  required=""
                                     style="display: block;">
                                     <option value="">Rate…</option>
                                     <option value="5">Perfect</option>
@@ -386,18 +386,18 @@
                                     <option value="2">Not that bad</option>
                                     <option value="1">Very poor</option>
                                  </select>
-                                 <input type="hidden" id="id" value="{{$product->id}}">
+                                 <input type="hidden" id="id" value="{{$product->id}}" wire:model="item">
                               </div>
                               <textarea cols="30" rows="6" placeholder="Write Your Review Here..."
-                                 class="form-control" id="review" name="review" ></textarea>
+                                 class="form-control" id="review" wire:model="comment" ></textarea>
                               <div class="row gutter-md">
                                  <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="Your Name"
-                                       id="author" name="author">
+                                       id="author" wire:model="user_name">
                                  </div>
                                  <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="Your Email"
-                                       id="email_1" name="email_1">
+                                       id="email_1" wire:model="email">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -405,7 +405,7 @@
                                  <label for="save-checkbox">Save my name, email, and website in this
                                  browser for the next time I comment.</label>
                               </div>
-                              <button type="reset" class="btn btn-dark" id="add_review" >Submit Review</button>
+                              <button type="submit" class="btn btn-dark" >Submit Review</button>
                            </form>
                         </div>
                      </div>

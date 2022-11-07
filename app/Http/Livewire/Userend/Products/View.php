@@ -10,7 +10,88 @@ use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User};
 class View extends Component
 {
     public $product, $vendor, $category, $subcategory,  $childcategory,
-    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, $quantitycount = 1, $p_size;
+    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, $quantitycount = 1, $p_size,
+    $item, $session, $user, $ven_id, $user_name, $email, $review, $comment;
+
+    public function addrating()
+    {
+        $validatedData = $this->validate([
+
+            'item' => 'required|integer',
+            'session' => 'required',
+            'user_name' => 'required',
+            'email' => 'required|email',
+            'review' => 'required|integer',
+            'comment' => 'required',
+        ]);
+
+        $item = Product::where('id', $validatedData['item'])->first();
+        if($item)
+        {
+            if(Auth::guard('user')->check())
+            {
+                $user = Auth::guard('user');
+
+                $validatedData['user'] = Auth::guard('user')->id();
+                $validatedData['session'] = Session::getId();
+
+                $review = Discussion::where('item', $validatedData['item'])->where('user', $user->id())
+                                    ->orWhere('email', $validatedData['email'])->first();
+                if(!$review)
+                {
+                    Discussion::create($validatedData);
+
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Review has been submitted successfully',
+                        'type'=> 'success',
+                        'status'=> 200
+                    ]);
+                }
+                else
+                {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Already submitted review',
+                        'type'=> 'info',
+                        'status'=> 404
+                    ]);
+                }
+            }
+            else
+            {
+
+                $validatedData['session'] = Session::getId();
+
+                $review = Discussion::where('item', $validatedData['item'])->where('user', $user->id())
+                                    ->orWhere('email', $validatedData['email'])->first();
+                if(!$review)
+                {
+                    Discussion::create($validatedData);
+
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Review has been submitted successfully',
+                        'type'=> 'success',
+                        'status'=> 200
+                    ]);
+                }
+                else
+                {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Already submitted review',
+                        'type'=> 'info',
+                        'status'=> 404
+                    ]);
+                }
+            }
+        }
+        else
+        {
+            $this->dispatchBrowserEvent('message', [
+                'text' => 'Already submitted review',
+                'type'=> 'error',
+                'status'=> 409
+            ]);  
+        }
+    }
 
     public function sizeProduc($size)
     {

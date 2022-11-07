@@ -25,23 +25,5 @@
 
             <!-- End of PageContent -->
         </main>
-        <!-- End of Main -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript">
-
-
-function clearall(){
-
-        $.ajax({
-            url: "{{ route('clear_cart') }}",
-        success: function() {
-                $(".data_row").remove();
-            }
-        });
-}
-//https://www.youtube.com/watch?v=eblMZxwP1eY
-//for update quantity...
-</script>
 
 @endsection

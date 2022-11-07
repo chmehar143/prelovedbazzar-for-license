@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Livewire\Userend\Products;
+namespace App\Http\Livewire\Userend\Vendor;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\{Auth, Session};
-use App\Models\{Product, User, WishList, Cart, Category};
+use App\Models\{Product, User, WishList, Cart, Category, Vendor, Discussion};
 use Livewire\WithPagination;
 
-class Index extends Component
+class VendorProducts extends Component
 {
-    public $product, $quantitycount = 1, $p_size = '', $search ;
 
-    use WithPagination;
-    protected $paginationTheme = 'bootstrap', $queryString = ['search'];
+    public $product, $quantitycount = 1, $p_size = 'medium', $vendorId, $vendor;
 
+    protected $paginationTheme = 'bootstrap';
+
+ 
     public function addtocart(int $productId)
     {
         $this->product = Product::where('id', $productId)->where('status', 1)->first();
@@ -184,19 +185,38 @@ class Index extends Component
         }
     }
 
+    public function mount($id)
+    {
+        $this->vendor = Vendor::where('id', $id)->first();
+        $this->vendorId = $this->vendor->id;
+
+    }
+
     public function render()
     {
         $categories = Category::all();
-        $products = Product::where('products.status', 1)->join('categories', 'products.p_catog','=','categories.id')
-                            ->where('p_name','LIKE','%'.$this->search.'%')
-                            ->orWhere('p_detail','LIKE','%'.$this->search.'%')->with('discussions')
-                            ->orwhere('categories.name', 'LIKE', '%'.$this->search.'%') 
-                            ->select('products.*', 'categories.name')->latest()
-                            ->paginate(9);
+        $products = Product::where('vendor_id', $this->vendorId)
+                    ->join('categories', 'products.p_catog','=','categories.id')->with('discussions')
+                    ->select('products.*', 'categories.name')
+                    ->paginate(9);
 
-        return view('livewire.userend.products.index', [
+        $reviews = Product::where('vendor_id', $this->vendorId)
+                            ->join('categories', 'products.p_catog','=','categories.id')->with('discussions')
+                            ->select('products.*', 'categories.name')->get();
+    
+        $bestsellings = array();
+
+        foreach($reviews as $review){
+            $avg = $review->discussions->sum('review');
+            if($avg > 3){
+                $bestsellings[] = $review;
+            }
+        }
+        return view('livewire.userend.vendor.vendor-products', [
+            'vendor' => $this->vendor,
+            'products' => $products,
             'categories' => $categories,
-            'products' => $products
+            'bestsellings' => $bestsellings
         ]);
     }
 }

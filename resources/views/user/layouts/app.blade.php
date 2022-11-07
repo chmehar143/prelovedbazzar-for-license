@@ -325,10 +325,11 @@ else{
         <p class="text-light ls-10">Subscribe to the Preloved Bazar market newsletter to
             receive updates on special offers.</p>
         <form action="javascript:void(0)" class="input-wrapper input-wrapper-inline input-wrapper-round">
-            <input type="email" class="form-control email font-size-md" name="email" id="mail"
+            <input type="email" class="form-control email font-size-md" name="email" id="email"
                    placeholder="Your email address" required>
-            <button type="submit" class="btn btn-dark" id="subscribe" >SUBMIT</button>
+            <button type="reset" class="btn btn-dark" id="suboffer" >SUBMIT</button>
         </form>
+        <div id="infomessage"></div>
         <div class="form-checkbox d-flex align-items-center">
             <input type="checkbox" class="custom-checkbox" id="hide-newsletter-popup" name="hide-newsletter-popup"
                    required="">
@@ -545,8 +546,12 @@ else{
                 },
                 error: function(response){
 
-                    //check if response has errors object
-                     $('#validation-errors').append('<div class="alert alert-danger text-white">This email is not valid</div');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        footer: '<a href="">invalid email</a>'
+                    });
                 },
 
                 success: function(data) {
@@ -558,6 +563,30 @@ else{
                 }
             });
         });
+
+        $("#suboffer").click(function(){
+            var email = $("#email").val();
+            // processing ajax request
+            $.ajax({
+                url: "{{ route('subscribe') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    email: email
+                },
+                error: function(response){
+
+                    //check if response has errors object
+                     $('#infomessage').append('<p text-white">This email is not valid</p>').delay(3000).fadeOut();
+                },
+
+                success: function(data) {
+                    $('#infomessage').append('<p>You have been successfully subscribed! </p>').delay(3000).fadeOut();
+                }
+            });
+        });
+
 
 function add_cart_(id){
     var id = id;
