@@ -1126,11 +1126,15 @@
 
                                 <!-- <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $row->id }})"></button> -->
 
-                                  <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                    title="Quickview"></a>
+                                  <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
+                                    title="Quickview"></a> -->
                                  <!--   <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
                                     title="Add to Compare"></a> -->
                               </div>
+                              <div class="product-action">
+                                                <a href="javascript:void(0)" class="btn-product btn-quickview" title="Quick View">Quick
+                                                    View</a>
+                                            </div>
                            </figure>
                            <?php 
                               $sum = $row->discussions->sum('review');
