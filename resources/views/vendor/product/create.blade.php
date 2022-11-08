@@ -1,81 +1,5 @@
 @extends('vendor.layouts.app')
 @section('content')
-<head>
-   <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
-   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<head>
-   
-<style>
-   .preview-images-zone {
-    width: 100%;
-    border: 1px solid #ddd;
-    min-height: 180px;
-    /* display: flex; */
-    padding: 5px 5px 0px 5px;
-    position: relative;
-    overflow:auto;
-}
-.preview-images-zone > .preview-image:first-child {
-    height: 185px;
-    width: 185px;
-    position: relative;
-    margin-right: 5px;
-}
-.preview-images-zone > .preview-image {
-    height: 90px;
-    width: 90px;
-    position: relative;
-    margin-right: 5px;
-    float: left;
-    margin-bottom: 5px;
-}
-.preview-images-zone > .preview-image > .image-zone {
-    width: 100%;
-    height: 100%;
-}
-.preview-images-zone > .preview-image > .image-zone > img {
-    width: 100%;
-    height: 100%;
-}
-.preview-images-zone > .preview-image > .tools-edit-image {
-    position: absolute;
-    z-index: 100;
-    color: #fff;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-    display: none;
-}
-.preview-images-zone > .preview-image > .image-cancel {
-    font-size: 18px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-weight: bold;
-    margin-right: 10px;
-    cursor: pointer;
-    display: none;
-    z-index: 100;
-}
-.preview-image:hover > .image-zone {
-    cursor: move;
-    opacity: .5;
-}
-.preview-image:hover > .tools-edit-image,
-.preview-image:hover > .image-cancel {
-    display: block;
-}
-.ui-sortable-helper {
-    width: 90px !important;
-    height: 90px !important;
-}
-
-
-   </style>
-</head>
 <div class="toolbar py-2" id="kt_toolbar">
    <!--begin::Container-->
    <div id="kt_toolbar_container" class="container-fluid d-flex align-items-center">
@@ -160,7 +84,7 @@
                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                               <i class="bi bi-pencil-fill fs-7"></i>
                               <!--begin::Inputs-->
-                              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" class="@error('avatar') is-invalid @enderror" />
+                              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" class="@error('avatar') is-invalid @enderror" required/>
                               <input type="hidden" name="avatar_remove" />
                               <!--end::Inputs-->
                            </label>
@@ -186,40 +110,6 @@
                      </div>
                      <!--end::Col-->
                   </div>
-
-                     <!--end::Input group-->
-                     <div class="row mb-6">
-                     <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category Images </label>
-                     <!--end::Label-->
-                     <!--begin::Col-->
-                     <div class="col-lg-8 fv-row">
-                     <div class="container">
-                        <fieldset class="form-group">
-                           <a href="javascript:void(0)" onclick="$('#pro-image').click()" style="font-size:20px">Upload Image</a>
-                           <input type="file" id="pro-image" name="pro-image" style="display: none;" class="form-control" multiple>
-                        </fieldset>
-                        <div class="preview-images-zone">
-                           <div class="preview-image preview-show-1">
-                                 <div class="image-cancel" data-no="1">x</div>
-                                 <div class="image-zone"><img id="pro-img-1" src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5Ny85NTkvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzYzOTcxNjY1LmpwZw=="></div>
-                                 <div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div>
-                           </div>
-                           <div class="preview-image preview-show-2">
-                                 <div class="image-cancel" data-no="2">x</div>
-                                 <div class="image-zone"><img id="pro-img-2" src="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/flip.jpg"></div>
-                                 <div class="tools-edit-image"><a href="javascript:void(0)" data-no="2" class="btn btn-light btn-edit-image">edit</a></div>
-                           </div>
-                           <div class="preview-image preview-show-3">
-                                 <div class="image-cancel" data-no="3">x</div>
-                                 <div class="image-zone"><img id="pro-img-3" src="http://i.stack.imgur.com/WCveg.jpg"></div>
-                                 <div class="tools-edit-image"><a href="javascript:void(0)" data-no="3" class="btn btn-light btn-edit-image">edit</a></div>
-                           </div>
-                        </div>
-                     </div>
-                                       </div>
-                     </div>
-                     <br>
                   <!--end::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
@@ -228,7 +118,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg">
+                        <select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>
                            <option value="">Product Type</option>
                            <option data-kt-flag="flags/indonesia.svg" value="0" selected>Physical</option>
                            <option data-kt-flag="flags/indonesia.svg" value="1">Digital</option>
@@ -252,7 +142,7 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('p_name') is-invalid @enderror" placeholder="First name"  />
+                              <input type="text" name="p_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('p_name') is-invalid @enderror" placeholder="Product name"  />
                               @error('p_name')
                               <div class="validation mt-1 text-danger">{{ $message }}</div>
                               @enderror
@@ -273,7 +163,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_sku" class="form-control form-control-lg form-control-solid @error('p_sku') is-invalid @enderror" placeholder="Company name" value="Keenthemes" />
+                        <input type="text" name="p_sku" class="form-control form-control-lg form-control-solid @error('p_sku') is-invalid @enderror" placeholder="Product Sku"  required/>
                         @error('p_sku')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -307,7 +197,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="number" name="p_ship_time" class="form-control form-control-lg form-control-solid " min="1" max="60" placeholder="Product Estimated Shipping Time in Days @error('p_ship_time') is-invalid @enderror" />
+                        <input type="number" name="p_ship_time" class="form-control form-control-lg form-control-solid " min="1" max="60" placeholder="Product Estimated Shipping Time in Days @error('p_ship_time') is-invalid @enderror" required/>
                         @error('p_ship_time')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -320,7 +210,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-2 fv-row">
-                        <input type="color" value="#63c7de" name="p_color" class="form-control form-control-lg form-control-solid @error('p_color') is-invalid @enderror"  />
+                        <input type="color" value="#63c7de" name="p_color" class="form-control form-control-lg form-control-solid @error('p_color') is-invalid @enderror"  required/>
                         @error('p_color')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -337,15 +227,12 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold @error('p_catog') is-invalid @enderror" >
+                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" >
                            <option value="">Category...</option>
                            @foreach($categories as $category)
                            <option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}">{{$category->name}}</option>
                            @endforeach
                         </select>
-                        @error('p_catog')
-                        <div class="validation mt-1 text-danger">{{ $message }}</div>
-                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -358,7 +245,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg @error('p_sub_catog') is-invalid @enderror">
+                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg @error('p_sub_catog') is-invalid @enderror" required>
                            <option value="">Select a Sub Category...</option>
                         </select>
                         <!--end::Input-->
@@ -394,7 +281,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid @error('p_new_price') is-invalid @enderror" placeholder="eg 20" />
+                        <input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid @error('p_new_price') is-invalid @enderror" placeholder="eg 20" required/>
                         @error('p_new_price')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -421,7 +308,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_stock" class="form-control form-control-lg form-control-solid @error('p_stock') is-invalid @enderror " placeholder="eg 20" />
+                        <input type="text" name="p_stock" class="form-control form-control-lg form-control-solid @error('p_stock') is-invalid @enderror " placeholder="eg 20"  required/>
                         @error('p_stock')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -435,6 +322,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="p_detail" id="editor">
+                        &lt;p&gt;&lt;/p&gt;
                         </textarea>
                      </div>
                      <!--end::Col-->
@@ -448,6 +336,25 @@
                         <textarea name="p_r_policy" id="editornew">
                         &lt;p&gt;This is some sample content.&lt;/p&gt;
                         </textarea>
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <!--begin::Input group-->
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">Product Gallery</label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8 fv-row">
+                        <div id="wrapper">
+                           <div class="mb-3">
+                              <label for="upload_file" class="form-label">Choose multiple image for gallery</label>
+                              <input class="form-control" name="gallery[]" type="file" id="upload_file" onchange="preview_image();" multiple>
+                           </div>
+                           <div id="image_preview" class="row">
+                              <!-- preview will be here -->
+                           </div>
+                        </div> 
                      </div>
                      <!--end::Col-->
                   </div>
@@ -468,7 +375,7 @@
                            <!--end::Option-->
                            <!--begin::Option-->
                            <label class="form-check form-check-inline form-check-solid">
-                           <input class="form-check-input" name="medium" type="checkbox" value="1" checked/>
+                           <input class="form-check-input" name="medium" type="checkbox" value="1"/>
                            <span class="fw-bold ps-2 fs-6">Medium</span>
                            </label>
                            <!--begin::Option-->
@@ -493,8 +400,6 @@
                <!--end::Actions-->
             </form>
             <!--end::Form-->
-            <!-- 									
-               -->
          </div>
          <!--end::Content-->
       </div>
@@ -504,6 +409,7 @@
 </div>
 <!--end::Container-->
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 <script>
    ClassicEditor
    	.create( document.querySelector( '#editor' ) )
@@ -547,86 +453,16 @@
    	});
    
    });
-</script>	
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-   $(document).ready(function(){
-   	$('#category').change(function(){
-   		let cid=$(this).val();
-   		$('#childcat').html('<option value="">Select City</option>')
-   		$.ajax({
-   			url:"{{url('/admin/GetSubCat')}}",
-   			type:'post',
-   			data:'cid='+cid+'&_token={{csrf_token()}}',
-   			success:function(result){
-   				$('#subcat').html(result)
-   			}
-   		});
-   	});
-   
-   	$('#subcat').change(function(){
-   		let sid=$(this).val();
-   		$.ajax({
-   			url:"{{url('/admin/GetChildCat')}}",
-   			type:'post',
-   			data:'sid='+sid+'&_token={{csrf_token()}}',
-   			success:function(result){
-   				$('#childcat').html(result)
-   			}
-   		});
-   	});
-   
-   });
 </script>
 
 <script>
-   $(document).ready(function() {
-    document.getElementById('pro-image').addEventListener('change', readImage, false);
-    
-    $( ".preview-images-zone" ).sortable();
-    
-    $(document).on('click', '.image-cancel', function() {
-        let no = $(this).data('no');
-        $(".preview-image.preview-show-"+no).remove();
-    });
-});
-
-
-
-var num = 4;
-function readImage() {
-    if (window.File && window.FileList && window.FileReader) {
-        var files = event.target.files; //FileList object
-        var output = $(".preview-images-zone");
-
-        for (let i = 0; i < files.length; i++) {
-            var file = files[i];
-            if (!file.type.match('image')) continue;
-            
-            var picReader = new FileReader();
-            
-            picReader.addEventListener('load', function (event) {
-                var picFile = event.target;
-                var html =  '<div class="preview-image preview-show-' + num + '">' +
-                            '<div class="image-cancel" data-no="' + num + '">x</div>' +
-                            '<div class="image-zone"><img id="pro-img-' + num + '" src="' + picFile.result + '"></div>' +
-                            '<div class="tools-edit-image"><a href="javascript:void(0)" data-no="' + num + '" class="btn btn-light btn-edit-image">edit</a></div>' +
-                            '</div>';
-
-                output.append(html);
-                num = num + 1;
-            });
-
-            picReader.readAsDataURL(file);
-        }
-        $("#pro-image").val('');
-    } else {
-        console.log('Browser not support');
-    }
+function preview_image() 
+{
+ var total_file=document.getElementById("upload_file").files.length;
+ for(var i=0;i<total_file;i++)
+ {
+  $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"' style=' width: 120px; ' >");
+ }
 }
-
-
-   </script>
-
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</script>
 @endsection

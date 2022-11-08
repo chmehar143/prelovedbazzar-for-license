@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Models\{Category, Subcategory, Chilcategory, Vendor, Discussion, OrderDetail, RecentView, WishList};
+use App\Models\{Category, Subcategory, Chilcategory, Vendor, Discussion, OrderDetail, RecentView, WishList, Gallery};
 class Product extends Model
 {
     use HasFactory;
@@ -41,16 +41,24 @@ class Product extends Model
         return $this->hasMany(Discussion::class, 'item');
     }
 
-    public function recentviews(){
+    public function recentviews()
+    {
         return $this->hasMany(RecentView::class, 'p_id');
     }
 
-    public function wishlists(){
+    public function wishlists()
+    {
         return $this->hasMany(WishList::class, 'p_id');
     }
 
-    public function cart(){
+    public function cart()
+    {
         return $this->hasMany(Cart::class, 'prod_id');
+    }
+
+    public function gallery()
+    {
+        return $this->hasMany(Gallery::class, 'product_id');
     }
 
 }

@@ -137,8 +137,22 @@ class ProductController extends Controller
             $product->large = 0;
         }
         $product->save();
-        return redirect()->route('vendor.product_list');
+        if($request->hasfile('gallery'))
+        {
+            $i = 1;
+            foreach($request->file('gallery') as $image)
+            {
+                $ext = $image->getClientOriginalExtension();
+                $galleryname = time().$i++.'.'.$ext;
+                $image->storeAs('uploads/gallery', $galleryname, 'public');
+                $product->gallery()->create([
+                    'product_id'=> $product->id,
+                    'image'=> $galleryname
+                ]);
+            }
 
+        }
+        return redirect()->route('vendor.product_list')->with('message', 'Product added successfully');
     }
 
     public  function  edit($id)
@@ -234,8 +248,33 @@ class ProductController extends Controller
         }else{
             $product->status = 0;
         }
+        if($request->hasfile('gallery'))
+        {
+            $i = 1;
+            foreach($request->file('gallery') as $image)
+            {
+                //delete old images
+                // $destination = 'storage/uploads/gallery/'.$product->gallery->image;
+                // if(File::exists($destination))
+                // {
+                //     File::delete($destination);
+                // }
+                // //end
+
+                $ext = $image->getClientOriginalExtension();
+                $galleryname = time().$i++.'.'.$ext;
+                $image->storeAs('uploads/gallery', $galleryname, 'public');
+                $product->gallery()->create([
+                    'product_id'=> $product->id,
+                    'image'=> $galleryname
+                ]);
+            }
+
+        }
+
         $product->update();
-        return redirect()->route('vendor.product_list');
+
+        return redirect()->route('vendor.product_list')->with('message', 'Product updated successfully');
 
     }
 
