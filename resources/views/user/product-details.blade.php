@@ -25,7 +25,7 @@
       </ul>
       <ul class="product-nav list-style-none">
          <li class="product-nav-prev">
-            <a href="#">
+            <a href="javascript:void(0)" >
             <i class="w-icon-angle-left"></i>
             </a>
             <span class="product-nav-popup">
@@ -35,7 +35,7 @@
             </span>
          </li>
          <li class="product-nav-next">
-            <a href="#">
+            <a href="javascript:void(0)" >
             <i class="w-icon-angle-right"></i>
             </a>
             <span class="product-nav-popup">

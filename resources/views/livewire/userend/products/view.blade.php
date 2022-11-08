@@ -9,41 +9,15 @@
                      }
                      }">
                      <div class="swiper-wrapper row cols-1 gutter-no">
+                        @foreach($product->gallery->slice(0, 5) as $image)
                         <div class="swiper-slide">
                            <figure class="product-image">
-                              <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
+                              <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                  data-zoom-image="{{asset('frontend-assets/frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
                                  alt="Bright Green IPhone" >
                            </figure>
                         </div>
-                        <div class="swiper-slide">
-                           <figure class="product-image">
-                              <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 alt="Bright Green IPhone" style="width:auto; height:auto">
-                           </figure>
-                        </div>
-                        <div class="swiper-slide">
-                           <figure class="product-image">
-                              <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 data-zoom-image="{{asset('frontend-assets/assets/images/products/without/3-800x900.jpg')}}"
-                                 alt="Bright Green IPhone" width="auto" height="auto">
-                           </figure>
-                        </div>
-                        <div class="swiper-slide">
-                           <figure class="product-image">
-                              <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 alt="Bright Green IPhone" width="auto" height="auto">
-                           </figure>
-                        </div>
-                        <div class="swiper-slide">
-                           <figure class="product-image">
-                              <img src="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 data-zoom-image="{{asset('storage/uploads/products/'.$product->p_image)}}"
-                                 alt="Bright Green IPhone" width="auto" height="auto">
-                           </figure>
-                        </div>
+                        @endforeach
                      </div>
                      <button class="swiper-button-next"></button>
                      <button class="swiper-button-prev"></button>
@@ -62,26 +36,12 @@
                      }
                      }">
                      <div class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
+                        @foreach($product->gallery->slice(0, 5) as $image)
                         <div class="product-thumb swiper-slide">
-                           <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
+                           <img src="{{asset('storage/uploads/gallery/'.$image->image)}}" alt="Product Thumb"
                               style="width:auto;height:auto">
                         </div>
-                        <div class="product-thumb swiper-slide">
-                           <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                           style="width:auto;height:auto">
-                        </div>
-                        <div class="product-thumb swiper-slide">
-                           <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                           style="width:auto;height:auto">
-                        </div>
-                        <div class="product-thumb swiper-slide">
-                           <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                           style="width:auto;height:auto">
-                        </div>
-                        <div class="product-thumb swiper-slide">
-                           <img src="{{asset('storage/uploads/products/'.$product->p_image)}}" alt="Product Thumb"
-                           style="width:auto;height:auto">
-                        </div>
+                        @endforeach
                      </div>
                      <button class="swiper-button-prev"></button>
                      <button class="swiper-button-next"></button>
