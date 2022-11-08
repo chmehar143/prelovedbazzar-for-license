@@ -85,6 +85,9 @@
             <!--end::Card toolbar-->
          </div>
          <div class="card-body pt-0" >
+            @if(session('message'))
+               <div class="alert alert-success">{{ session('message') }}</div>
+            @endif
             <div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
             <div class="table-responsive">
                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_customers_table" style="width: 1046px;">

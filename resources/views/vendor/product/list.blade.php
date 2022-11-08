@@ -91,6 +91,9 @@
          <!--end::Card header-->
          <!--begin::Card body-->
          <div class="card-body pt-0"  >
+            @if(session('message'))
+               <div class="alert alert-success">{{ session('message') }}</div>
+            @endif
             <!--begin::Table-->
             <div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                <div class="table-responsive">
