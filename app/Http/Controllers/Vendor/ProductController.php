@@ -72,6 +72,7 @@ class ProductController extends Controller
         $rules = [
             'p_name' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3072',
+            'gallery' => 'required',
             'p_sku' => 'required|unique:products|',
             'con' => 'required',
             'p_ship_time' => 'required',
@@ -84,6 +85,8 @@ class ProductController extends Controller
 
         ];
         $customs = [
+            'p_catog.required' => 'category field is required',
+            'p_sub_catog.required' => 'Subcategory field is required',
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
             'avatar.max' => 'Fil size must be less than 2MB.',
             'p_sku.unique' => 'This SKU has already been taken.',
@@ -187,6 +190,8 @@ class ProductController extends Controller
 
         ];
         $customs = [
+            'p_catog.required' => 'category field is required',
+            'p_sub_catog.required' => 'Subcategory field is required',
             'avatar.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
             'avatar.max' => 'Fil size must be less than 2MB.',
             'p_new_price.numeric' => 'Numeric value accepted only.',
