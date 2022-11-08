@@ -279,38 +279,16 @@
                                     <div
                                        class="swiper-container product-single-swiper swiper-theme nav-inner">
                                        <div class="swiper-wrapper row cols-1 gutter-no">
+                                          @foreach($unit->gallery->slice(0, 5) as $image)
                                           <div class="swiper-slide">
                                              <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
+                                                <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                                    data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
                                                    alt="Product Image" width="800"
                                                    height="900">
                                              </figure>
                                           </div>
-                                          <div class="swiper-slide">
-                                             <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
-                                             </figure>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
-                                             </figure>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
-                                             </figure>
-                                          </div>
+                                          @endforeach
                                        </div>
                                        <button class="swiper-button-next"></button>
                                        <button class="swiper-button-prev"></button>
@@ -336,22 +314,12 @@
                                        }">
                                        <div
                                           class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
+                                          @foreach($unit->gallery->slice(0, 5) as $image)
                                           <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
+                                             <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                                 alt="Product thumb" width="60" height="68" />
                                           </div>
-                                          <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                alt="Product thumb" width="60" height="68" />
-                                          </div>
-                                          <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                alt="Product thumb" width="60" height="68" />
-                                          </div>
-                                          <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                alt="Product thumb" width="60" height="68" />
-                                          </div>
+                                          @endforeach
                                        </div>
                                     </div>
                                  </div>
@@ -391,8 +359,7 @@
                                     <!-- <div class="product-variation-price">
                                        <span></span>
                                        </div> -->
-                                    <div class="product-form pt-4">
-                                     
+                                    <div class="product-form pt-4">                                     
                                        <button class="btn btn-primary btn-cart" wire:click="addtocart({{ $unit->id }})">
                                         <i class="w-icon-cart"></i>
                                         <span>Add to Cart</span>
