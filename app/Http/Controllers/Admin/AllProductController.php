@@ -4,14 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\DB;
-use App\Models\Product;
-use App\Models\Category;
-use App\Models\Subcategory;
-use App\Models\Childcategory;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\{Auth, File, DB, Redirect};
+use App\Models\{Product, Category, Subcategory, Childcategory, Gallery};
 use Validator;
 use Config;
 
@@ -68,7 +62,7 @@ class AllProductController extends Controller
         //--- Validation Section
         $rules = [
             'p_name' => 'required',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3072',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'p_sku' => 'required|unique:products|',
             'con' => 'required',
             'p_ship_time' => 'required',
@@ -107,6 +101,7 @@ class AllProductController extends Controller
             $product->p_image = $filename;
 
         }
+
         $product->p_sku = $request->input('p_sku');
         $product->con = $request->input('con');
         $product->p_ship_time = $request->input('p_ship_time');
@@ -135,9 +130,25 @@ class AllProductController extends Controller
         }else{
             $product->large = 0;
         }
+        $product->save();
 
-        $product->save(); 
-        return redirect()->route('admin.allproducts_list');
+        if($request->hasfile('gallery'))
+        {
+            $i = 1;
+            foreach($request->file('gallery') as $image)
+            {
+                $ext = $image->getClientOriginalExtension();
+                $galleryname = time().$i++.'.'.$ext;
+                $image->storeAs('uploads/gallery', $galleryname, 'public');
+                $product->gallery()->create([
+                    'product_id'=> $product->id,
+                    'image'=> $galleryname
+                ]);
+            }
+
+        }
+        return redirect()->route('admin.allproducts_list')->with('message', 'Product added successfully');
+
     }
 
     //next function.. 
@@ -234,8 +245,34 @@ class AllProductController extends Controller
         }else{
             $product->status = 0;
         }
+
+        if($request->hasfile('gallery'))
+        {
+            $i = 1;
+            foreach($request->file('gallery') as $image)
+            {
+                //delete old images
+                // $destination = 'storage/uploads/gallery/'.$product->gallery->image;
+                // if(File::exists($destination))
+                // {
+                //     File::delete($destination);
+                // }
+                // //end
+
+                $ext = $image->getClientOriginalExtension();
+                $galleryname = time().$i++.'.'.$ext;
+                $image->storeAs('uploads/gallery', $galleryname, 'public');
+                $product->gallery()->create([
+                    'product_id'=> $product->id,
+                    'image'=> $galleryname
+                ]);
+            }
+
+        }
+
         $product->update();
-        return redirect()->route('admin.allproducts_list');
+
+        return redirect()->route('admin.allproducts_list')->with('message', 'Product updated successfully');
 
     }
     //end update
