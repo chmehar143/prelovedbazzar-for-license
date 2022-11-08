@@ -226,8 +226,6 @@ class Welcome extends Component
         $electrics = Product::where('p_catog', 4)->whereBetween('created_at',
         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
 
-        $homes = Product::where('p_catog', 2)->whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
         if(Auth::guard('user')->check()){
             $recents = RecentView::where('user_id', Auth::guard('user')->id())->orderBy('created_at', 'DESC')->get();
         }
@@ -238,7 +236,7 @@ class Welcome extends Component
             'deals' => $deals,
             'top_sellers' => $top_sellers, 'top_categories' => $top_categories,
          'newarrivals' => $newarrivals, 'clothings' => $clothings, 'electrics' => $electrics, 
-         'homes' => $homes, 'recents' => $recents, 'banners' => $banners, 'most_populars' => $most_populars, 
+         'recents' => $recents, 'banners' => $banners, 'most_populars' => $most_populars, 
          'products' => $products, 'frontpages' => $frontpages, 'frontcat' => $frontcat
         ]);
     }
