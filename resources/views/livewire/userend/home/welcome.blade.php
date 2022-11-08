@@ -359,14 +359,13 @@
                                     <!-- <div class="product-variation-price">
                                        <span></span>
                                        </div> -->
-                                    <div class="product-form pt-4">                                     
-                                       <button class="btn btn-primary btn-cart" wire:click="addtocart({{ $unit->id }})">
-                                        <i class="w-icon-cart"></i>
-                                        <span>Add to Cart</span>
-                                        </button>
+                                    <div class="product-form pt-4" style="justify-content: center;">
+                                       <a href="{{ route('product', $unit->id) }}" class="btn btn-primary ">
+                                       <span>Buy Now</span>
+                                       </a>                                     
                                     </div>
-                                    <div class="social-links-wrapper mt-1">
-                                       <div class="social-links">
+                                    <div class="social-links-wrapper mt-1" style="justify-content: center;">
+                                       <!-- <div class="social-links"> -->
                                           <!-- <div class="social-icons social-no-color border-thin">
                                              <a href="javascript:void(0)"
                                                  class="social-icon social-facebook w-icon-facebook"></a>
@@ -379,10 +378,11 @@
                                              <a href="javascript:void(0)"
                                                  class="social-icon social-youtube fab fa-linkedin-in"></a>
                                              </div> -->
-                                       </div>
-                                       <span class="divider d-xs-show"></span>
-                                       <div class="product-link-wrapper d-flex">
-                                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $unit->id }})"></button>
+                                       <!-- </div>
+                                       <span class="divider d-xs-show"></span> -->
+                                       <div class="product-link-wrapper d-flex ml-5">
+                                          <a href="{{ route('product', $unit->id) }}" class="btn-product-icon btn-wishlist w-icon-heart">
+                                          </a>
                                        </div>
                                     </div>
                                  </div>
@@ -422,7 +422,7 @@
                         <div class="swiper-wrapper row cols-lg-1 cols-md-3">
                            @foreach($top_sellers as $seller)
                            <div class="swiper-slide product-widget-wrap">
-                              @foreach($seller->products->slice(0, 4) as $item)
+                              @foreach($seller->products->slice(0, 3) as $item)
                               <div class="product product-widget bb-no">
                                  <figure class="product-media">
                                     <a href="{{route('product', $item->id)}}">
@@ -708,18 +708,11 @@
                         <a href="{{route('product', $arrival->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
-                        <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $arrival->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $arrival->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $arrival->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <div class="product-details">
@@ -754,26 +747,19 @@
          <!-- End of Tab Pane -->
          <div class="tab-pane pt-4" id="tab1-2">
             <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-               @foreach($top_sellers->slice(0, 5) as $seller)
-               @foreach($seller->products->slice(0, 3) as $unit)
+               @foreach($top_sellers->slice(0, 8) as $seller)
+               @foreach($seller->products->slice(0, 2) as $unit)
                <div class="product-wrap">
                   <div class="product text-center">
                      <figure class="product-media">
                         <a href="{{route('product',$unit->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
-                        <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $unit->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $unit->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $unit->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -814,19 +800,14 @@
                <div class="product-wrap">
                   <div class="product text-center">
                      <figure class="product-media">
-                        <a href="{{route('product', 16)}}">
+                        <a href="{{route('product', $deal->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $deal->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $deal->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -867,19 +848,14 @@
                <div class="product-wrap">
                   <div class="product text-center">
                      <figure class="product-media">
-                        <a href="{{route('product', 16)}}">
+                        <a href="{{route('product', $deal->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $deal->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $deal->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -999,14 +975,9 @@
                                  style="width:300px;height:300px" />
                               </a>
                               <div class="product-action-vertical">
-                                <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $row->id }})">
-
-                                <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $row->id }})"></button>
-
-                                 <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                    title="Quickview"></a>
-                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"></a> -->
+                              </div>
+                              <div class="product-action">
+                                 <a href="{{ route('product', $row->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                               </div>
                            </figure>
                            <div class="product-details">
@@ -1076,104 +1047,6 @@
          </div>
          </div> -->
       <!-- End of Banner Fashion -->
-      <div class="product-wrapper-1 appear-animate mb-7">
-         <div class="title-link-wrapper pb-1 mb-4">
-            <h2 class="title ls-normal mb-0">Home Garden & Kitchen</h2>
-            <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
-            Products<i class="w-icon-long-arrow-right"></i></a>
-         </div>
-         <div class="row">
-            <!-- <div class="col-lg-3 col-sm-4 mb-4">
-               <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/5.jpg')}});
-               background-color: #EAEFF3;">
-                   <div class="banner-content content-top">
-                       <h5 class="banner-subtitle font-weight-normal mb-2">Deals And Promotions</h5>
-                       <hr class="banner-divider bg-dark mb-2">
-                       <h3 class="banner-title font-weight-bolder text-uppercase ls-25">
-                           Trending <br> <span class="font-weight-normal text-capitalize">House
-                               Utensil</span>
-                       </h3>
-                       <a href="{{route('shop')}}"
-                           class="btn btn-dark btn-outline btn-rounded btn-sm">shop now</a>
-                   </div>
-               </div>
-               </div> -->
-            <!-- End of Banner -->
-            <div class="col-lg-12 col-sm-8">
-               <div class="swiper-container swiper-theme" data-swiper-options="{
-                  'spaceBetween': 20,
-                  'slidesPerView': 2,
-                  'breakpoints': {
-                  '992': {
-                  'slidesPerView': 3
-                  },
-                  '1200': {
-                  'slidesPerView': 4
-                  }
-                  }
-                  }">
-                  <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
-                     @foreach($homes as $row)
-                     <div class="swiper-slide product-col">
-                        <div class="product-wrap product text-center">
-                           <figure class="product-media">
-                              <a href="{{ route('product', $row->id)}}">
-                              <img src="{{asset('storage/uploads/products/'.$row->p_image)}}" alt="Product"
-                                 style="width:300px;height:300px" />
-                              </a>
-                              <div class="product-action-vertical">
-                                <!-- <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $row->id }})"> -->
-
-                                <!-- <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $row->id }})"></button> -->
-
-                                  <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                    title="Quickview"></a> -->
-                                 <!--   <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"></a> -->
-                              </div>
-                              <div class="product-action">
-                                                <a href="javascript:void(0)" class="btn-product btn-quickview" title="Quick View">Quick
-                                                    View</a>
-                                            </div>
-                           </figure>
-                           <?php 
-                              $sum = $row->discussions->sum('review');
-                              $no = $row->discussions->count('review');
-                              if($sum == 0 || $no == 0){
-                                  $avg = 0;
-                              }
-                              else{
-                                  $aver = $sum/$no;
-                                  $avg = 20 * $aver;
-                              }
-                              ?>
-                           <div class="product-details">
-                              <h4 class="product-name">
-                                 <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
-                              </h4>
-                              <div class="ratings-container">
-                                 <div class="ratings-full">
-                                    <span class="ratings" style="width: {{ $avg }}%;"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                 </div>
-                                 <a href="{{route('product', $row->id)}}" class="rating-reviews">({{ $no }}
-                                 reviews)</a>
-                              </div>
-                              <div class="product-price">
-                                 <ins class="new-price">pkr{{$row->p_new_price}}</ins><del
-                                    class="old-price">pkr{{$row->p__price}}</del>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     @endforeach
-                  </div>
-                  <div class="swiper-pagination"></div>
-               </div>
-               <!-- End of Produts -->
-            </div>
-         </div>
-      </div>
       <!-- End of Product Wrapper 1 -->
       <!-- <h2 class="title title-underline mb-4 ls-normal appear-animate">Our Clients</h2>
          <div class="swiper-container swiper-theme brands-wrapper mb-9 appear-animate" data-swiper-options="{
@@ -1367,173 +1240,3 @@
       <div class="swiper-pagination"></div>
    </div>
 </div>
-
-  <!-- Start of Quick View -->
-  <div class="product product-single product-popup">
-        <div class="row gutter-lg">
-            <div class="col-md-6 mb-4 mb-md-0">
-                <div class="product-gallery product-gallery-sticky">
-                    <div class="swiper-container product-single-swiper swiper-theme nav-inner">
-                        <div class="swiper-wrapper row cols-1 gutter-no">
-                            <div class="swiper-slide">
-                                <figure class="product-image">
-                                    <img src="../frontend-assets/assets/images/products/popup/1-440x494.jpg"
-                                        data-zoom-image="../frontend-assets/assets/images/products/popup/1-800x900.jpg"
-                                        alt="Water Boil Black Utensil" width="800" height="900">
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="product-image">
-                                    <img src="../frontend-assets/assets/images/products/popup/2-440x494.jpg"
-                                        data-zoom-image="../frontend-assets/assets/images/products/popup/2-800x900.jpg"
-                                        alt="Water Boil Black Utensil" width="800" height="900">
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="product-image">
-                                    <img src="../frontend-assets/assets/images/products/popup/3-440x494.jpg"
-                                        data-zoom-image="../frontend-assets/assets/images/products/popup/3-800x900.jpg"
-                                        alt="Water Boil Black Utensil" width="800" height="900">
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="product-image">
-                                    <img src="../frontend-assets/assets/images/products/popup/4-440x494.jpg"
-                                        data-zoom-image="../frontend-assets/assets/images/products/popup/4-800x900.jpg"
-                                        alt="Water Boil Black Utensil" width="800" height="900">
-                                </figure>
-                            </div>
-                        </div>
-                        <button class="swiper-button-next"></button>
-                        <button class="swiper-button-prev"></button>
-                    </div>
-                    <div class="product-thumbs-wrap swiper-container" data-swiper-options="{
-                        'navigation': {
-                            'nextEl': '.swiper-button-next',
-                            'prevEl': '.swiper-button-prev'
-                        }
-                    }">
-                        <div class="product-thumbs swiper-wrapper row cols-4 gutter-sm">
-                            <div class="product-thumb swiper-slide">
-                                <img src="../frontend-assets/assets/images/products/popup/1-103x116.jpg" alt="Product Thumb" width="103"
-                                    height="116">
-                            </div>
-                            <div class="product-thumb swiper-slide">
-                                <img src="../frontend-assets/assets/images/products/popup/2-103x116.jpg" alt="Product Thumb" width="103"
-                                    height="116">
-                            </div>
-                            <div class="product-thumb swiper-slide">
-                                <img src="../frontend-assets/assets/images/products/popup/3-103x116.jpg" alt="Product Thumb" width="103"
-                                    height="116">
-                            </div>
-                            <div class="product-thumb swiper-slide">
-                                <img src="../frontend-assets/assets/images/products/popup/4-103x116.jpg" alt="Product Thumb" width="103"
-                                    height="116">
-                            </div>
-                        </div>
-                        <button class="swiper-button-next"></button>
-                        <button class="swiper-button-prev"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 overflow-hidden p-relative">
-                <div class="product-details scrollable pl-0">
-                    <h2 class="product-title">Electronics Black Wrist Watch</h2>
-                    <div class="product-bm-wrapper">
-                        <figure class="brand">
-                            <img src="../frontend-assets/assets/images/products/brand/brand-1.jpg" alt="Brand" width="102" height="48" />
-                        </figure>
-                        <div class="product-meta">
-                            <div class="product-categories">
-                                Category:
-                                <span class="product-category"><a href="#">Electronics</a></span>
-                            </div>
-                            <div class="product-sku">
-                                SKU: <span>MS46891340</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="product-divider">
-
-                    <div class="product-price">$40.00</div>
-
-                    <div class="ratings-container">
-                        <div class="ratings-full">
-                            <span class="ratings" style="width: 80%;"></span>
-                            <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="#" class="rating-reviews">(3 Reviews)</a>
-                    </div>
-
-                    <div class="product-short-desc">
-                        <ul class="list-type-check list-style-none">
-                            <li>Ultrices eros in cursus turpis massa cursus mattis.</li>
-                            <li>Volutpat ac tincidunt vitae semper quis lectus.</li>
-                            <li>Aliquam id diam maecenas ultricies mi eget mauris.</li>
-                        </ul>
-                    </div>
-
-                    <hr class="product-divider">
-
-                    <div class="product-form product-variation-form product-color-swatch">
-                        <label>Color:</label>
-                        <div class="d-flex align-items-center product-variations">
-                            <a href="#" class="color" style="background-color: #ffcc01"></a>
-                            <a href="#" class="color" style="background-color: #ca6d00;"></a>
-                            <a href="#" class="color" style="background-color: #1c93cb;"></a>
-                            <a href="#" class="color" style="background-color: #ccc;"></a>
-                            <a href="#" class="color" style="background-color: #333;"></a>
-                        </div>
-                    </div>
-                    <div class="product-form product-variation-form product-size-swatch">
-                        <label class="mb-1">Size:</label>
-                        <div class="flex-wrap d-flex align-items-center product-variations">
-                            <a href="#" class="size">Small</a>
-                            <a href="#" class="size">Medium</a>
-                            <a href="#" class="size">Large</a>
-                            <a href="#" class="size">Extra Large</a>
-                        </div>
-                        <a href="#" class="product-variation-clean">Clean All</a>
-                    </div>
-
-                    <div class="product-variation-price">
-                        <span></span>
-                    </div>
-
-                    <div class="product-form">
-                        <div class="product-qty-form">
-                            <div class="input-group">
-                                <input class="quantity form-control" type="number" min="1" max="10000000">
-                                <button class="quantity-plus w-icon-plus"></button>
-                                <button class="quantity-minus w-icon-minus"></button>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary btn-cart">
-                            <i class="w-icon-cart"></i>
-                            <span>Add to Cart</span>
-                        </button>
-                    </div>
-
-                    <div class="social-links-wrapper">
-                        <div class="social-links">
-                            <div class="social-icons social-no-color border-thin">
-                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                <a href="#" class="social-icon social-pinterest fab fa-pinterest-p"></a>
-                                <a href="#" class="social-icon social-whatsapp fab fa-whatsapp"></a>
-                                <a href="#" class="social-icon social-youtube fab fa-linkedin-in"></a>
-                            </div>
-                        </div>
-                        <span class="divider d-xs-show"></span>
-                        <div class="product-link-wrapper d-flex">
-                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"><span></span></a>
-                            <a href="#"
-                                class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End of Quick view -->
