@@ -95,24 +95,24 @@ else{
     </div>
 <!-- Start of Sticky Footer -->
 <div class="sticky-footer sticky-content fix-bottom">
-    <a href="{{ route('index') }}" class="sticky-link active">
+    <a href="{{ route('index') }}" class="sticky-link " @if(Request::segment(1) == '') style="color: red;" @endif >
         <i class="w-icon-home"></i>
         <p>Home</p>
     </a>
-    <a href="{{ route('shop') }}" class="sticky-link">
+    <a href="{{ route('shop') }}" class="sticky-link" @if(Request::segment(1) == 'shop') style="color: red;" @endif >
         <i class="w-icon-category"></i>
         <p>Shop</p>
     </a>
-    <a href="{{ route('my-account') }}" class="sticky-link">
+    <a href="{{ route('my-account') }}" class="sticky-link" @if(Request::segment(1) == 'user') style="color: red;" @endif >
         <i class="w-icon-account"></i>
         <p>Account</p>
     </a>
     <div class="cart-dropdown dir-up">
-        <a href="javascript:void(0)" class="sticky-link">
+        <a href="{{ route('cart') }}" class="sticky-link" @if(Request::segment(1) == 'cart') style="color: red;" @endif >
             <i class="w-icon-cart"></i>
             <p>Cart</p>
         </a>
-        <div class="dropdown-box" style="overflow-y: scroll;">
+        <!-- <div class="dropdown-box" style="overflow-y: scroll;">
             <div class="cart-header">
                 <span>Shopping Cart</span>
                 <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
@@ -155,17 +155,17 @@ else{
             </div>
 
 
-        </div>
+        </div> -->
         <!-- End of Dropdown Box -->
     </div>
 
     <div class="header-search hs-toggle dir-up">
-        <a href="#" class="search-toggle sticky-link">
+        <a href="javascript:void(0)" class="search-toggle sticky-link" @if(Request::segment(1) == 'search') style="color: red;" @endif >
             <i class="w-icon-search"></i>
             <p>Search</p>
         </a>
-        <form action="#" class="input-wrapper">
-            <input type="text" class="form-control" name="search" autocomplete="off" placeholder="Search"
+        <form  action="{{ route('search_product') }}" method="get" class="input-wrapper">
+            <input type="text" class="form-control" name="search" value="{{ Request::get('search') }}"  placeholder="Search"
                    required />
             <button class="btn btn-search" type="submit">
                 <i class="w-icon-search"></i>
@@ -203,7 +203,7 @@ else{
         <div class="tab">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a href="#main-menu" class="nav-link active">Main Menu</a>
+                    <a href="{{ route('index') }}" class="nav-link active">Main Menu</a>
                 </li>
                 <li class="nav-item">
                     <a href="#categories" class="nav-link">Categories</a>
@@ -215,8 +215,8 @@ else{
                 <ul class="mobile-menu">
                     <li><a href="{{ route('index') }}">Home</a></li>
                     <li>
-                        <a href="#">Shop</a>
-                        <ul>
+                        <a href="{{ route('shop') }}">Shop</a>
+                        <!-- <ul>
                             <li>
                                 <a href="#">MENS CLOTH </a>
                                 <ul>
@@ -246,70 +246,42 @@ else{
 
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li>
                         <a href="{{ route('vendor-store') }}">Vendor Stores</a>
 
                     </li>
                    
-                    <li><a href="become-a-vendor.html">Become A Vendor</a></li>
+                    <li><a href="{{ route('become-a-vendor') }}">Become A Vendor</a></li>
                     <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="tab-pane" id="categories">
                 <ul class="mobile-menu">
+                    @foreach($shareData['categories']->slice(0, 8) as $category)
                     <li>
-                        <a href="{{ route('shop') }}">
-                            <i class="w-icon-tshirt2"></i>Mens
+                        <a href="{{ route('sortby', $category->id) }}">
+                            {{$category->name}}
                         </a>
                         <ul>
-
+                            @foreach($category->subcategory as $subcategory)
                             <li>
-                                <a href="#">Men</a>
-                                <ul>
-                                    <li><a href="{{ route('shop') }}">New Arrivals</a>
-                                    </li>
-                                    <li><a href="{{ route('shop') }}">Best Sellers</a>
-                                    </li>
-                                    <li><a href="{{ route('shop') }}">Trending</a></li>
-                                    <li><a href="{{ route('shop') }}">Clothing</a></li>
-                                    <li><a href="{{ route('shop') }}">Shoes</a></li>
-                                    <li><a href="{{ route('shop') }}">Bags</a></li>
-                                    <li><a href="{{ route('shop') }}">Accessories</a>
-                                    </li>
-                                    <li><a href="{{ route('shop') }}">Jewlery &
-                                            Watches</a></li>
-                                </ul>
+                                <a href="{{ route('subcat', $subcategory->id) }}">{{$subcategory->name}}</a>
                             </li>
+                            @endforeach
                         </ul>
                     </li>
+                    @endforeach
+<!-- 
 
-
-                    <li>
-                        <a href="{{ route('shop') }}">
-                            <i class="w-icon-gift"></i>Gift Ideas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('shop') }}">
-                            <i class="w-icon-heart"></i>Shirts
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="{{ route('shop') }}">
-                            <i class="w-icon-tshirt"></i>Women
-                        </a>
-                    </li>
-                    <li>
+                    <li class="model-fade">
                         <a href="{{ route('shop') }}"
                            class="font-weight-bold text-primary text-uppercase ls-25">
                             View All Categories<i class="w-icon-angle-right"></i>
                         </a>
-                    </li>
+                    </li> -->
+
                 </ul>
             </div>
         </div>
