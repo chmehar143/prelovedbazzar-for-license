@@ -249,7 +249,7 @@ class CartView extends Component
     {
         if(Auth::guard('user')->check()){
             $user = Auth::guard('user');
-            $carts = Cart::where('user_id', $user->id())->get();
+            $carts = Cart::where('user_id', $user->id())->orWhere('session_id', Session::getId())->get();
         }
         else{
             $session = Session::getId();

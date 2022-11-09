@@ -34,7 +34,10 @@ Route::get('/vendor-store-details/{id}', [VendorStoreDetailsController::class, '
 Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
 Route::get('/become-a-vendor', [BecomeAVendorController::class, 'index'])->name('become-a-vendor');
 Route::get('/how-to-become-a-vendor', [InstructorController::class, 'index'])->name('how-to-become-a-vendor');
-Route::get('/wishlist', [WishlistController::class, 'index'])->middleware(['user.auth'])->name('wishlist');
+
+Route::get('/user/wishlist', [WishlistController::class, 'index'])->middleware(['user.auth', 'user.verified'])->name('wishlist');
+Route::get('/user/my-account', [MyaccountController::class, 'index'])->middleware(['user.auth', 'user.verified'])->name('my-account');
+
 Route::get('/addwish/{id}', [WishlistController::class, 'store'])->name('addwish');
 Route::get('/delwish/{id}', [WishlistController::class, 'destroy'])->name('destroy');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
@@ -47,7 +50,6 @@ Route::get('/compare', [CompareController::class, 'index'])->name('compare');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/product/{id}', [ProductDetailsController::class, 'index'])->name('product');
 Route::post('/add_review', [ProductDetailsController::class, 'add_rating'])->name('add_review');
-Route::get('/my-account', [MyaccountController::class, 'index'])->middleware(['user.auth'])->name('my-account');
 Route::get('/login', [LoginController::class, 'index'])->name('Login');
 Route::post('/order-place', [OrderController::class, 'store'])->name('place');
 Route::get('/order/{id}', [OrderController::class, 'index'])->name('order');

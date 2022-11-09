@@ -4,43 +4,42 @@ namespace App\Http\Livewire\Userend\Products;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\{Auth, Session};
-use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User};
+use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User, Discussion};
 
 
 class View extends Component
 {
     public $product, $vendor, $category, $subcategory,  $childcategory,
     $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, $quantitycount = 1, $p_size,
-    $item, $session, $user, $ven_id, $user_name, $email, $review, $comment;
+    $session, $user, $ven_id, $user_name, $email, $review, $comment;
 
-    public function addrating()
+    public function addrating($productId)
     {
         $validatedData = $this->validate([
 
-            'item' => 'required|integer',
-            'session' => 'required',
             'user_name' => 'required',
             'email' => 'required|email',
             'review' => 'required|integer',
             'comment' => 'required',
         ]);
 
-        $item = Product::where('id', $validatedData['item'])->first();
-        if($item)
+        if(Product::where('id', $productId)->exists())
         {
+            $product = Product::where('id', $productId)->first();
+            $validatedData['item'] = $product->id;
+
             if(Auth::guard('user')->check())
             {
-                $user = Auth::guard('user');
-
                 $validatedData['user'] = Auth::guard('user')->id();
                 $validatedData['session'] = Session::getId();
-
-                $review = Discussion::where('item', $validatedData['item'])->where('user', $user->id())
-                                    ->orWhere('email', $validatedData['email'])->first();
+                $review = $product->discussions->where('email', $validatedData['email'])->first();
                 if(!$review)
                 {
-                    Discussion::create($validatedData);
-
+                    $review = new Discussion();
+                    $review->fill($validatedData)->save();
+                    $this->emit('addRating');
+                    $this->emit('addCount');  
+                    $this->emit('addrecom');                  
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Review has been submitted successfully',
                         'type'=> 'success',
@@ -61,12 +60,15 @@ class View extends Component
 
                 $validatedData['session'] = Session::getId();
 
-                $review = Discussion::where('item', $validatedData['item'])->where('user', $user->id())
-                                    ->orWhere('email', $validatedData['email'])->first();
+                $review = $product->discussions->where('email', $validatedData['email'])->first();
+
                 if(!$review)
                 {
-                    Discussion::create($validatedData);
-
+                    $review = new Discussion();
+                    $review->fill($validatedData)->save();
+                    $this->emit('addRating');
+                    $this->emit('addCount'); 
+                    $this->emit('addrecom'); 
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Review has been submitted successfully',
                         'type'=> 'success',
