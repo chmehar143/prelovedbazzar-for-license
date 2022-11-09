@@ -1,0 +1,1 @@
+<div>{{round($Ratings, 1)}}</div>

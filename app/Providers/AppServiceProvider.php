@@ -26,31 +26,4 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
     }
-
-
-//      @foreach($shareData['categories'] as $category)
-//    <li class="dropdown m-menu-fw">
-//      <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ $category->name }}
-//                              <span><i class="fa fa-angle-down"></i></span></a>
-
-
-//                             <ul class="dropdown-menu" >
-//                                <li>
-//                                      <div class="m-menu-content" style="text-align: center;">
-//                                        <ul class="col-sm-12" >
-//                                             <li class="dropdown-header">{{ $category->name }}</li>
-
-//                                              @foreach($category['subcategory'] as $subcategory)
-//                                              <li><a href="{{ url('/subcategory') }}/{{ $subcategory->id }}">{{ $subcategory->name }}</a></li>
-//                                            @endforeach
-//                                          </ul>
-
-
-
-//                                 </div>
-//                                 </li>
-//                              </ul>
-//                          </li>
-
-//  @endforeach
  }
