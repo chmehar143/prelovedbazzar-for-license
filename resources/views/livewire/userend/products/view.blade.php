@@ -111,10 +111,10 @@
                               <button type = "button" wire:click="sizeProduc('large')" class="size" style="margin-right: 8px;">large</button>                                                                
                            @endif
                            @if($product->medium == 1)
-                           <button type = "button" wire:click="sizeProduc('medium')" class="size" style="margin-right: 8px;" >medium</button>
+                              <button type = "button" wire:click="sizeProduc('medium')" class="size" style="margin-right: 8px;" >medium</button>
                            @endif
                            @if($product->small == 1)
-                           <button type = "button" wire:click="sizeProduc('small')" class="size" style="margin-right: 8px;">small</button>                                                               
+                              <button type = "button" wire:click="sizeProduc('small')" class="size" style="margin-right: 8px;">small</button>                                                               
                            @endif
                         </ul>
                      </div>
@@ -220,7 +220,10 @@
                      <div class="col-xl-4 col-lg-5 mb-4">
                         <div class="ratings-wrapper">
                            <div class="avg-rating-container">
-                              <h4 class="avg-mark font-weight-bolder ls-50">{{ round($avg/20 , 1) }}</h4>
+                              <h4 class="avg-mark font-weight-bolder ls-50">
+                                 @livewire('userend.products.rating', [
+                                 'id' => Route::current()->parameter('id') ])
+                              </h4>
                               <div class="avg-rating">
                                  <p class="text-dark mb-1">Average Rating</p>
                                  <div class="ratings-container">
@@ -228,7 +231,10 @@
                                        <span class="ratings" style="width: {{ $avg }}%;"></span>
                                        <span class="tooltiptext tooltip-top"></span>
                                     </div>
-                                    <a href="#" class="rating-reviews">({{$no}} Reviews)</a>
+                                    <a href="javascript:void(0)" class="rating-reviews">
+                                       @livewire('userend.products.review-count', [
+                                       'id' => Route::current()->parameter('id') ])
+                                    </a>
                                  </div>
                               </div>
                            </div>
@@ -327,7 +333,7 @@
                            <p class="mb-3">Your email address will not be published. Required fields
                               are marked *
                            </p>
-                           <form wire:submit.prevent="addrating"  class="review-form">
+                           <form class="review-form" wire:submit.prevent="addrating({{$product->id}})" >
                               <div class="rating-form">
                                  <label for="rating">Your Rating Of This Product :</label>
                                  <span class="rating-stars">
@@ -337,7 +343,7 @@
                                  <a class="star-4" href="#">4</a>
                                  <a class="star-5" href="#">5</a>
                                  </span>
-                                 <select wire:model="review"  required=""
+                                 <select wire:model="review"  required
                                     style="display: block;">
                                     <option value="">Rate…</option>
                                     <option value="5">Perfect</option>
@@ -346,7 +352,6 @@
                                     <option value="2">Not that bad</option>
                                     <option value="1">Very poor</option>
                                  </select>
-                                 <input type="hidden" id="id" value="{{$product->id}}" wire:model="item">
                               </div>
                               <textarea cols="30" rows="6" placeholder="Write Your Review Here..."
                                  class="form-control" id="review" wire:model="comment" ></textarea>
@@ -365,7 +370,7 @@
                                  <label for="save-checkbox">Save my name, email, and website in this
                                  browser for the next time I comment.</label>
                               </div>
-                              <button type="submit" class="btn btn-dark" >Submit Review</button>
+                              <button type="submit" class="btn btn-dark"  >Submit Review</button>
                            </form>
                         </div>
                      </div>

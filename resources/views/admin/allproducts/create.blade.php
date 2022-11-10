@@ -83,7 +83,7 @@
                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                               <i class="bi bi-pencil-fill fs-7"></i>
                               <!--begin::Inputs-->
-                              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" class="@error('avatar') is-invalid @enderror" required/>
+                              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" class="@error('avatar') is-invalid @enderror" />
                               <input type="hidden" name="avatar_remove" />
                               <!--end::Inputs-->
                            </label>
@@ -117,7 +117,7 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>
+                        <select name="p_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" >
                            <option value="">Product Type</option>
                            <option data-kt-flag="flags/indonesia.svg" value="0" selected>Physical</option>
                            <option data-kt-flag="flags/indonesia.svg" value="1">Digital</option>
@@ -162,7 +162,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_sku" class="form-control form-control-lg form-control-solid @error('p_sku') is-invalid @enderror" placeholder="Product Sku"  required/>
+                        <input type="text" name="p_sku" class="form-control form-control-lg form-control-solid @error('p_sku') is-invalid @enderror" placeholder="Product Sku"  />
                         @error('p_sku')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -196,7 +196,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="number" name="p_ship_time" class="form-control form-control-lg form-control-solid " min="1" max="60" placeholder="Product Estimated Shipping Time in Days @error('p_ship_time') is-invalid @enderror" required/>
+                        <input type="number" name="p_ship_time" class="form-control form-control-lg form-control-solid " min="1" max="60" placeholder="Product Estimated Shipping Time in Days @error('p_ship_time') is-invalid @enderror" />
                         @error('p_ship_time')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -209,7 +209,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-2 fv-row">
-                        <input type="color" value="#63c7de" name="p_color" class="form-control form-control-lg form-control-solid @error('p_color') is-invalid @enderror"  required/>
+                        <input type="color" value="#63c7de" name="p_color" class="form-control form-control-lg form-control-solid @error('p_color') is-invalid @enderror"  />
                         @error('p_color')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -226,12 +226,15 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold" >
+                        <select  id="category" name="p_catog" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Category..." class="form-select form-select-solid form-select-lg fw-bold @error('p_catog') is-invalid @enderror" >
                            <option value="">Category...</option>
                            @foreach($categories as $category)
                            <option data-kt-flag="flags/afghanistan.svg" value="{{$category->id}}">{{$category->name}}</option>
                            @endforeach
                         </select>
+                        @error('p_catog')
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -244,9 +247,13 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <!--begin::Input-->
-                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg @error('p_sub_catog') is-invalid @enderror" required>
+                        <select id="subcat" name="p_sub_catog" aria-label="Select a Sub Category" data-control="select2" data-placeholder="Select a Sub Category..." class="form-select form-select-solid form-select-lg @error('p_sub_catog') is-invalid @enderror" >
                            <option value="">Select a Sub Category...</option>
                         </select>
+                        @error('p_sub_catog')
+                        <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
+                        
                         <!--end::Input-->
                         <!--begin::Hint-->
                         <!-- <div class="form-text">Please select a preferred language, including date, time, and number formatting.</div> -->
@@ -280,7 +287,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid @error('p_new_price') is-invalid @enderror" placeholder="eg 20" required/>
+                        <input type="text" name="p_new_price" class="form-control form-control-lg form-control-solid @error('p_new_price') is-invalid @enderror" placeholder="eg 20" />
                         @error('p_new_price')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -307,7 +314,7 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="p_stock" class="form-control form-control-lg form-control-solid @error('p_stock') is-invalid @enderror " placeholder="eg 20"  required/>
+                        <input type="text" name="p_stock" class="form-control form-control-lg form-control-solid @error('p_stock') is-invalid @enderror " placeholder="eg 20"  />
                         @error('p_stock')
                         <div class="validation mt-1 text-danger">{{ $message }}</div>
                         @enderror
@@ -341,14 +348,17 @@
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label fw-bold fs-6">Product Gallery</label>
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Product Gallery</label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <div id="wrapper">
                            <div class="mb-3">
                               <label for="upload_file" class="form-label">Choose multiple image for gallery</label>
-                              <input class="form-control" name="gallery[]" type="file" id="upload_file" onchange="preview_image();" multiple>
+                              <input class="form-control" name="gallery[]" type="file" id="upload_file" onchange="preview_image();" multiple />
+                              @error('gallery')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
                            </div>
                            <div id="image_preview" class="row">
                               <!-- preview will be here -->

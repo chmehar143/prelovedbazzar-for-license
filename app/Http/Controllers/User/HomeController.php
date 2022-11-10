@@ -20,13 +20,17 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('user.auth:user');
-        $user = Auth::guard('user')->user();
         if (Auth::guard('user')->check()) {
-            $user = Auth::guard('user');
-            $carts = Cart::where('user_id', $user->id())
+            $user = Auth::guard('user')->user();
+
+            if(User::where('id', $user->id)->whereNotNull('email_verified_at')->exists())
+            {
+                $carts = Cart::where('user_id', Auth::guard('user')->id())->orWhere('session_id', Session::getId())
                 ->join('products', 'carts.prod_id', '=', 'products.id')
                 ->get();
-        } else {
+            }
+        } 
+        else {
             $session = Session::getId();
             $carts = Cart::where('session_id', $session)
                 ->join('products', 'carts.prod_id', '=', 'products.id')
@@ -34,12 +38,16 @@ class HomeController extends Controller
         }
         $categories = Category::where('status', 1)->get();
         $subcategories = Subcategory::where('status', 1)->get();
+
         $shareData = array(
             'categories' => $categories,
             'subcategories' => $subcategories,
-            'user' => $user,
             'carts' => $carts
         );
+        if (Auth::guard('user')->check()) 
+        {
+            $shareData['user'] = Auth::guard('user')->user();
+        }
 
         view()->share('shareData', $shareData);
 

@@ -349,7 +349,9 @@
                            <div class="mb-3">
                               <label for="upload_file" class="form-label">Choose multiple image for gallery</label>
                               <input class="form-control" name="gallery[]" type="file" id="upload_file" onchange="preview_image();" multiple>
-                           </div>
+                              @error('gallery')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror                           </div>
                            <div id="image_preview" class="row">
                               <!-- preview will be here -->
                            </div>

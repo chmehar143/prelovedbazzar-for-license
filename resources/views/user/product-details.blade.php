@@ -51,6 +51,7 @@
    <div class="page-content">
 
    @livewire('userend.products.view', [
+            'id' => Route::current()->parameter('id'),
             'product' => $product,
             'vendor'=>$vendor,
             'category' => $category,

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
 
 // Dashboard
 Route::get('/', 'HomeController@index')->name('home')->middleware('user.verified');

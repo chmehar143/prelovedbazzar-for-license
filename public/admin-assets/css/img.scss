@@ -1,0 +1,90 @@
+html * {
+    box-sizing: border-box !important;
+  }
+  
+  p {
+    margin: 0 !important;
+  }
+  
+  .upload {
+    &__box {
+      padding: 40px !important;
+    }
+    &__inputfile {
+      width: .1px !important;
+      height: .1px !important;
+      opacity: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      z-index: -1 !important;
+    }
+    
+    &__btn {
+      display: inline-block !important;
+      font-weight: 600 !important;
+      color: #fff !important;
+      text-align: center !important;
+      min-width: 116px !important;
+      padding: 5px !important;
+      transition: all .3s ease !important;
+      cursor: pointer !important;
+      border: 2px solid;
+      background-color: #4045ba !important;
+      border-color: #4045ba !important;
+      border-radius: 10px !important;
+      line-height: 26px !important;
+      font-size: 14px !important;
+      
+      &:hover {
+        background-color: unset;
+        color: #4045ba;
+        transition: all .3s ease;
+      }
+      
+      &-box {
+        margin-bottom: 10px;
+      }
+    }
+    
+    &__img {
+      &-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px !important;
+      }
+      
+      &-box {
+        width: 200px !important;
+        padding: 0 10px !important;
+        margin-bottom: 12px !important;
+      }
+      
+      &-close {
+          width: 24px !important;
+          height: 24px !important;
+          border-radius: 50% !important;
+          background-color: rgba(0, 0, 0, 0.5) !important;
+          position: absolute !important;
+          top: 10px !important;
+          right: 10px !important;
+          text-align: center !important;
+          line-height: 24px !important;
+          z-index: 1 !important;
+          cursor: pointer !important;
+  
+          &:after {
+            content: '\2716' !important;
+            font-size: 14px !important;
+            color: white !important;
+          }
+        }
+    }
+  }
+  
+  .img-bg {
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    position: relative !important;
+    padding-bottom: 100% !important;
+  }

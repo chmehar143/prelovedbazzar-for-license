@@ -279,38 +279,16 @@
                                     <div
                                        class="swiper-container product-single-swiper swiper-theme nav-inner">
                                        <div class="swiper-wrapper row cols-1 gutter-no">
+                                          @foreach($unit->gallery->slice(0, 5) as $image)
                                           <div class="swiper-slide">
                                              <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
+                                                <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                                    data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
                                                    alt="Product Image" width="800"
                                                    height="900">
                                              </figure>
                                           </div>
-                                          <div class="swiper-slide">
-                                             <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
-                                             </figure>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
-                                             </figure>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <figure class="product-image">
-                                                <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
-                                             </figure>
-                                          </div>
+                                          @endforeach
                                        </div>
                                        <button class="swiper-button-next"></button>
                                        <button class="swiper-button-prev"></button>
@@ -336,22 +314,12 @@
                                        }">
                                        <div
                                           class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
+                                          @foreach($unit->gallery->slice(0, 5) as $image)
                                           <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
+                                             <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                                 alt="Product thumb" width="60" height="68" />
                                           </div>
-                                          <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                alt="Product thumb" width="60" height="68" />
-                                          </div>
-                                          <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                alt="Product thumb" width="60" height="68" />
-                                          </div>
-                                          <div class="product-thumb swiper-slide">
-                                             <img src="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                alt="Product thumb" width="60" height="68" />
-                                          </div>
+                                          @endforeach
                                        </div>
                                     </div>
                                  </div>
@@ -391,15 +359,13 @@
                                     <!-- <div class="product-variation-price">
                                        <span></span>
                                        </div> -->
-                                    <div class="product-form pt-4">
-                                     
-                                       <button class="btn btn-primary btn-cart" wire:click="addtocart({{ $unit->id }})">
-                                        <i class="w-icon-cart"></i>
-                                        <span>Add to Cart</span>
-                                        </button>
+                                    <div class="product-form pt-4" style="justify-content: center;">
+                                       <a href="{{ route('product', $unit->id) }}" class="btn btn-primary ">
+                                       <span>Buy Now</span>
+                                       </a>                                     
                                     </div>
-                                    <div class="social-links-wrapper mt-1">
-                                       <div class="social-links">
+                                    <div class="social-links-wrapper mt-1" style="justify-content: center;">
+                                       <!-- <div class="social-links"> -->
                                           <!-- <div class="social-icons social-no-color border-thin">
                                              <a href="javascript:void(0)"
                                                  class="social-icon social-facebook w-icon-facebook"></a>
@@ -412,10 +378,11 @@
                                              <a href="javascript:void(0)"
                                                  class="social-icon social-youtube fab fa-linkedin-in"></a>
                                              </div> -->
-                                       </div>
-                                       <span class="divider d-xs-show"></span>
-                                       <div class="product-link-wrapper d-flex">
-                                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $unit->id }})"></button>
+                                       <!-- </div>
+                                       <span class="divider d-xs-show"></span> -->
+                                       <div class="product-link-wrapper d-flex ml-5">
+                                          <a href="{{ route('product', $unit->id) }}" class="btn-product-icon btn-wishlist w-icon-heart">
+                                          </a>
                                        </div>
                                     </div>
                                  </div>
@@ -455,7 +422,7 @@
                         <div class="swiper-wrapper row cols-lg-1 cols-md-3">
                            @foreach($top_sellers as $seller)
                            <div class="swiper-slide product-widget-wrap">
-                              @foreach($seller->products->slice(0, 4) as $item)
+                              @foreach($seller->products->slice(0, 3) as $item)
                               <div class="product product-widget bb-no">
                                  <figure class="product-media">
                                     <a href="{{route('product', $item->id)}}">
@@ -741,18 +708,11 @@
                         <a href="{{route('product', $arrival->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
-                        <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $arrival->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $arrival->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $arrival->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <div class="product-details">
@@ -787,26 +747,19 @@
          <!-- End of Tab Pane -->
          <div class="tab-pane pt-4" id="tab1-2">
             <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
-               @foreach($top_sellers->slice(0, 5) as $seller)
-               @foreach($seller->products->slice(0, 3) as $unit)
+               @foreach($top_sellers->slice(0, 8) as $seller)
+               @foreach($seller->products->slice(0, 2) as $unit)
                <div class="product-wrap">
                   <div class="product text-center">
                      <figure class="product-media">
                         <a href="{{route('product',$unit->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
-                        <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $unit->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $unit->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $unit->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -847,19 +800,14 @@
                <div class="product-wrap">
                   <div class="product text-center">
                      <figure class="product-media">
-                        <a href="{{route('product', 16)}}">
+                        <a href="{{route('product', $deal->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $deal->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $deal->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -900,19 +848,14 @@
                <div class="product-wrap">
                   <div class="product text-center">
                      <figure class="product-media">
-                        <a href="{{route('product', 16)}}">
+                        <a href="{{route('product', $deal->id)}}">
                         <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
                            style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
-                            <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $deal->id }})">
-
-                            <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $deal->id }})"></button>
-
-                           <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"></a>
-                              <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"></a> -->
+                        </div>
+                        <div class="product-action">
+                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -1032,14 +975,9 @@
                                  style="width:300px;height:300px" />
                               </a>
                               <div class="product-action-vertical">
-                                <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $row->id }})">
-
-                                <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $row->id }})"></button>
-
-                                 <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                    title="Quickview"></a>
-                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"></a> -->
+                              </div>
+                              <div class="product-action">
+                                 <a href="{{ route('product', $row->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
                               </div>
                            </figure>
                            <div class="product-details">
@@ -1109,100 +1047,6 @@
          </div>
          </div> -->
       <!-- End of Banner Fashion -->
-      <div class="product-wrapper-1 appear-animate mb-7">
-         <div class="title-link-wrapper pb-1 mb-4">
-            <h2 class="title ls-normal mb-0">Home Garden & Kitchen</h2>
-            <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
-            Products<i class="w-icon-long-arrow-right"></i></a>
-         </div>
-         <div class="row">
-            <!-- <div class="col-lg-3 col-sm-4 mb-4">
-               <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/5.jpg')}});
-               background-color: #EAEFF3;">
-                   <div class="banner-content content-top">
-                       <h5 class="banner-subtitle font-weight-normal mb-2">Deals And Promotions</h5>
-                       <hr class="banner-divider bg-dark mb-2">
-                       <h3 class="banner-title font-weight-bolder text-uppercase ls-25">
-                           Trending <br> <span class="font-weight-normal text-capitalize">House
-                               Utensil</span>
-                       </h3>
-                       <a href="{{route('shop')}}"
-                           class="btn btn-dark btn-outline btn-rounded btn-sm">shop now</a>
-                   </div>
-               </div>
-               </div> -->
-            <!-- End of Banner -->
-            <div class="col-lg-12 col-sm-8">
-               <div class="swiper-container swiper-theme" data-swiper-options="{
-                  'spaceBetween': 20,
-                  'slidesPerView': 2,
-                  'breakpoints': {
-                  '992': {
-                  'slidesPerView': 3
-                  },
-                  '1200': {
-                  'slidesPerView': 4
-                  }
-                  }
-                  }">
-                  <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
-                     @foreach($homes as $row)
-                     <div class="swiper-slide product-col">
-                        <div class="product-wrap product text-center">
-                           <figure class="product-media">
-                              <a href="{{ route('product', $row->id)}}">
-                              <img src="{{asset('storage/uploads/products/'.$row->p_image)}}" alt="Product"
-                                 style="width:300px;height:300px" />
-                              </a>
-                              <div class="product-action-vertical">
-                                <button type="button" title="Add to cart" class="btn-product-icon btn-cart w-icon-cart" wire:click="addtocart({{ $row->id }})">
-
-                                <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $row->id }})"></button>
-
-                                 <!-- <a href="javascript:void(0)" class="btn-product-icon btn-quickview w-icon-search"
-                                    title="Quickview"></a>
-                                    <a href="javascript:void(0)" class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"></a> -->
-                              </div>
-                           </figure>
-                           <?php 
-                              $sum = $row->discussions->sum('review');
-                              $no = $row->discussions->count('review');
-                              if($sum == 0 || $no == 0){
-                                  $avg = 0;
-                              }
-                              else{
-                                  $aver = $sum/$no;
-                                  $avg = 20 * $aver;
-                              }
-                              ?>
-                           <div class="product-details">
-                              <h4 class="product-name">
-                                 <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
-                              </h4>
-                              <div class="ratings-container">
-                                 <div class="ratings-full">
-                                    <span class="ratings" style="width: {{ $avg }}%;"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                 </div>
-                                 <a href="{{route('product', $row->id)}}" class="rating-reviews">({{ $no }}
-                                 reviews)</a>
-                              </div>
-                              <div class="product-price">
-                                 <ins class="new-price">pkr{{$row->p_new_price}}</ins><del
-                                    class="old-price">pkr{{$row->p__price}}</del>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     @endforeach
-                  </div>
-                  <div class="swiper-pagination"></div>
-               </div>
-               <!-- End of Produts -->
-            </div>
-         </div>
-      </div>
       <!-- End of Product Wrapper 1 -->
       <!-- <h2 class="title title-underline mb-4 ls-normal appear-animate">Our Clients</h2>
          <div class="swiper-container swiper-theme brands-wrapper mb-9 appear-animate" data-swiper-options="{
