@@ -194,7 +194,7 @@ class SortByPrice extends Component
         $products = Product::whereBetween('p_new_price' ,[$this->min, $this->max])->with('discussions')
                     ->join('categories', 'products.p_catog','=','categories.id')
                     ->select('products.*', 'categories.name')
-                    ->paginate(9);
+                    ->paginate(6);
         $categories = Category::all();
 
         return view('livewire.userend.products.sort-by-price',[

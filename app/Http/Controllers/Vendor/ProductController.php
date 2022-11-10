@@ -5,7 +5,7 @@ namespace App\Http\Controllers\vendor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, File, DB, Redirect};
-use App\Models\{Product, Category, Subcategory, Childcategory};
+use App\Models\{Product, Category, Subcategory, Childcategory, Gallery};
 use Validator;
 use Config;
 
@@ -303,6 +303,16 @@ class ProductController extends Controller
          return response()->json(['success' => 'Record Has Been Deleted!..']);
     }
 
-    
+    public function remgallery($id)
+    {
+         $gallery = Gallery::where('id', $id)->first();
+         $destination = 'storage/uploads/gallery/'.$gallery->image;
+         if(File::exists($destination))
+           {
+               File::delete($destination);
+           }
+         $gallery->delete();
+         return response()->json(['success' => 'Record Has Been Deleted!..']);
+    }
 
 }

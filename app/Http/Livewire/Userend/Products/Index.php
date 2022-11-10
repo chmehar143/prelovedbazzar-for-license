@@ -192,7 +192,7 @@ class Index extends Component
                             ->orWhere('p_detail','LIKE','%'.$this->search.'%')->with('discussions')
                             ->orwhere('categories.name', 'LIKE', '%'.$this->search.'%') 
                             ->select('products.*', 'categories.name')->latest()
-                            ->paginate(9);
+                            ->paginate(6);
 
         return view('livewire.userend.products.index', [
             'categories' => $categories,
