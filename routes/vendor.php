@@ -42,6 +42,7 @@ Route::get('/product_edit/{id}', 'ProductController@edit')->name('product_edit')
 Route::put('/product_up/{id}', 'ProductController@update')->name('product_up');
 Route::get('/product_view/{id}', 'ProductController@view')->name('product_view');
 Route::get('/product_del/{id}', 'ProductController@destroy')->name('product_del');
+Route::get('/product_removegall/{id}', 'ProductController@remgallery')->name('product_removegall');
 
 
 // Affilated Product  Vendor

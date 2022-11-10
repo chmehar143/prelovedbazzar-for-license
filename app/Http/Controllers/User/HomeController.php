@@ -25,7 +25,7 @@ class HomeController extends Controller
 
             if(User::where('id', $user->id)->whereNotNull('email_verified_at')->exists())
             {
-                $carts = Cart::where('user_id', Auth::guard('user')->id())->orWhere('session_id', Session::getId())
+                $carts = Cart::where('user_id', Auth::guard('user')->id())
                 ->join('products', 'carts.prod_id', '=', 'products.id')
                 ->get();
             }

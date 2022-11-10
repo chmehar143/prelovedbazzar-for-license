@@ -198,7 +198,7 @@ class SortByCat extends Component
             $products = Product::where('p_catog', $this->cat_id)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')
-            ->paginate(9);
+            ->paginate(6);
         }
         $categories = Category::all();
         return view('livewire.userend.products.sort-by-cat', [

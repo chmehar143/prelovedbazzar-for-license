@@ -194,7 +194,7 @@ class SortBySubcat extends Component
         $products = Product::where('products.status', 1)->where('p_sub_catog', $this->sub_id)->with('discussions')
                     ->join('categories', 'products.p_catog','=','categories.id')
                     ->select('products.*', 'categories.name')
-                    ->paginate(9);
+                    ->paginate(6);
 
         $categories = Category::all();
 

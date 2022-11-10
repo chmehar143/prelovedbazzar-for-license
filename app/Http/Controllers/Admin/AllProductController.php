@@ -302,4 +302,16 @@ class AllProductController extends Controller
          $product->delete();
          return response()->json(['success' => 'Record Has Been Deleted!..']);
     }
+
+    public function removegallery($id)
+    {
+         $gallery = Gallery::where('id', $id)->first();
+         $destination = 'storage/uploads/gallery/'.$gallery->image;
+         if(File::exists($destination))
+           {
+               File::delete($destination);
+           }
+         $gallery->delete();
+         return response()->json(['success' => 'Record Has Been Deleted!..']);
+    }
 }
