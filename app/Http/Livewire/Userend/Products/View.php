@@ -39,7 +39,7 @@ class View extends Component
                     $review->fill($validatedData)->save();
                     $this->emit('addRating');
                     $this->emit('addCount');  
-                    $this->emit('addrecom');                  
+                    $this->emit('percent');                  
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Review has been submitted successfully',
                         'type'=> 'success',
@@ -68,7 +68,7 @@ class View extends Component
                     $review->fill($validatedData)->save();
                     $this->emit('addRating');
                     $this->emit('addCount'); 
-                    $this->emit('addrecom'); 
+                    $this->emit('percent'); 
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Review has been submitted successfully',
                         'type'=> 'success',

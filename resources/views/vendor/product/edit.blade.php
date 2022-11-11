@@ -364,7 +364,7 @@
                         </div>                     
                         <div id="image_preview" class="row mb-4">
                            @foreach($product->gallery as $img)
-                           <div class="col-3" id="image_{{$img->id}}">
+                           <div class="col-3 mb-4" id="image_{{$img->id}}">
                               <img src="{{ asset('storage/uploads/gallery/'.$img->image) }}" class="image" alt="">
                               <span class="file-delete btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
                                  onclick="delgallery({{$img->id}})" data-bs-toggle='tooltip' 
@@ -488,7 +488,7 @@
 
 $("#attachment").on('change', function(e){
 	for(var i = 0; i < this.files.length; i++){
-		let fileBloc = $('<div/>', {class: 'col-3'}),
+		let fileBloc = $('<div/>', {class: 'col-3 mb-4'}),
           image = $('<img/>', {class: 'image', src: URL.createObjectURL(event.target.files[i])});
 		fileBloc.append(image)
       .append("<span class='file-delete btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow' data-kt-image-input-action='remove' data-bs-toggle='tooltip' title='remove' data-bs-original-title='Remove avatar'><i class='bi bi-x fs-2'></i></span>");
