@@ -9,6 +9,8 @@ use Config;
 
 class MyaccountController extends Controller
 {
+
+
     public function index()
     {
         if(Auth::guard('user')->check()){

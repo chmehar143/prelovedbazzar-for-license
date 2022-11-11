@@ -64,7 +64,11 @@
             'three' => $three,
             'two' => $two,
             'one' => $one,
-            'allreview' => $allreview
+            'allreview' => $allreview,
+            'helppositive' => $helppositive,
+            'helpnegative' => $helpnegative, 
+            'highrate' => $highrate,
+            'lowrate' => $lowrate
       ]) 
       
    </div>

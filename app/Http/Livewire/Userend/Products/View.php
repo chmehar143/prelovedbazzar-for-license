@@ -10,7 +10,9 @@ use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User, Discussi
 class View extends Component
 {
     public $product, $vendor, $category, $subcategory,  $childcategory,
-    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, $quantitycount = 1, $p_size,
+    $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview, 
+    $helppositive, $helpnegative, $highrate, $lowrate,
+    $quantitycount = 1, $p_size,
     $session, $user, $ven_id, $user_name, $email, $review, $comment;
 
     public function addrating($productId)
@@ -287,6 +289,7 @@ class View extends Component
     }
 
     public function mount($product, $vendor, $category, $subcategory,  $childcategory,
+                                $helppositive, $helpnegative, $highrate, $lowrate, 
         $moreproducts, $related_products, $five, $four, $three, $two, $one, $allreview)
     {
         $this->product = $product;
@@ -302,6 +305,10 @@ class View extends Component
         $this->two = $two;
         $this->one = $one;
         $this->allreview = $allreview;
+        $this->helppositive = $helppositive;
+        $this->helpnegative = $helpnegative;
+        $this->highrate = $highrate;
+        $this->lowrate = $lowrate;
 
     }
 
@@ -320,7 +327,12 @@ class View extends Component
             'three' => $this->three,
             'two' => $this->two,
             'one' => $this->one,
-            'allreview' => $this->allreview
+            'allreview' => $this->allreview,
+
+            'helppositive' => $this->helppositive,
+            'helpnegative' => $this->helpnegative, 
+            'highrate' => $this->highrate,
+            'lowrate' => $this->lowrate
 
         ]);
     }
