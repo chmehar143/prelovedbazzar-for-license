@@ -14,7 +14,7 @@
                            <figure class="product-image">
                               <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                  data-zoom-image="{{asset('frontend-assets/frontend-assets/assets/images/products/without/1-800x900.jpg')}}"
-                                 alt="Bright Green IPhone" >
+                                 alt="Bright Green IPhone"  style="width:504px;height:504px">
                            </figure>
                         </div>
                         @endforeach
@@ -146,11 +146,11 @@
                         </div>
                      </div>
                      <span class="divider d-xs-show"></span>
-                     <div class="product-link-wrapper d-flex">
+                     <!-- <div class="product-link-wrapper d-flex">
                         <button type="button" class="btn-product-icon btn-wishlist w-icon-heart" wire:click="addToWish({{ $product->id }})"><span></span></button>
                         <a href="#"
                            class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
-                     </div>
+                     </div> -->
 
                   </div>
                </div>
@@ -338,17 +338,17 @@
                            </p>
                            <form class="review-form" wire:submit.prevent="addrating({{$product->id}})" >
                               <div class="rating-form">
-                                 <label for="rating">Your Rating Of This Product :</label>
-                                 <span class="rating-stars">
+                                 <label for="rating">Your Rating Of This Product :  </label>&nbsp;
+                                 <!-- <span class="rating-stars">
                                  <a class="star-1" href="#">1</a>
                                  <a class="star-2" href="#">2</a>
                                  <a class="star-3" href="#">3</a>
                                  <a class="star-4" href="#">4</a>
                                  <a class="star-5" href="#">5</a>
-                                 </span>
+                                 </span> -->
                                  <select wire:model="review"  required
-                                    style="display: block;">
-                                    <option value="">Rate…</option>
+                                    style="display: block;height:2pc;">
+                                    <option value="">Rate… &nbsp;</option>
                                     <option value="5">Perfect</option>
                                     <option value="4">Good</option>
                                     <option value="3">Average</option>
