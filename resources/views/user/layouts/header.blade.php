@@ -160,13 +160,14 @@ use Illuminate\Support\Facades\URL;
 
                      <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
 
-                     <li class=" @if(Request::segment(1) == '') active @endif"> 
-                           <a href="{{route('about-us')}}" class="d-lg-show">About Us</a> 
+                     <li class=" @if(Request::segment(1) == 'about-us') active @endif"> 
+                           <a href="{{route('about-us')}}">About Us</a> 
                       </li>
-                      <li class=" @if(Request::segment(1) == '') active @endif">
-            <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a>
 
-</li>
+                      <li class=" @if(Request::segment(1) == 'contact-us') active @endif">
+                 <a href="{{route('contact-us')}}" >Contact Us</a>
+
+                  </li>
                   </ul>
                </nav>
             </div>
