@@ -8,19 +8,24 @@ use App\Models\{Category, Vendor, Admin, Product, WishList, Cart, User, Discussi
 
 class PercentCount extends Component
 {
-    public $percent, $product;
+    public $percent, $product, $totalreview;
     protected $listeners = ['percent' => 'percentrating'];
 
     public function percentrating()
     {
         return $this->percent = $this->product->discussions
                                 ->whereBetween('review', [4, 5])->count() /
-                                $this->product->discussions->count();        
+                                $this->totalreview;        
     }
     
     public function mount($id)
     {
         $this->product = Product::where('id', $id)->first();
+        $this->totalreview = $this->product->discussions->count();
+        if($this->totalreview == 0){
+            $this->totalreview = 1;
+        }
+
     }
 
 
