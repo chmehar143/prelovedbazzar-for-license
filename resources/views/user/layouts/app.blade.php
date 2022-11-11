@@ -112,51 +112,6 @@ else{
             <i class="w-icon-cart"></i>
             <p>Cart</p>
         </a>
-        <!-- <div class="dropdown-box" style="overflow-y: scroll;">
-            <div class="cart-header">
-                <span>Shopping Cart</span>
-                <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
-            </div>
-            <div class="products">
-                <?php $total = 0; ?>
-                @forelse($carts as $cart)
-                <div class="product product-cart">
-                    <div class="product-detail">
-                        <a href="{{route('product', $cart->prod_id)}}" class="product-name">{{$cart['p_name']}}</a>
-                        <div class="price-box">
-                            <span class="product-quantity">{{$cart['quantity']}}</span>
-                            <span class="product-price">pkr{{$cart['p_new_price']}}</span>
-                        </div>
-                    </div>
-                    <figure class="product-media">
-                        <a href="{{route('product', $cart->prod_id)}}">
-                            <img src="{{asset('storage/uploads/products/'. $cart['p_image'])}}" alt="product" height="84"
-                                width="94" />
-                        </a>
-                    </figure>
-                </div>
-                <?php $total = $total + (int)$cart['quantity'] * (int)$cart['p_new_price']; ?>
-                @empty
-                <div class="product product-cart">
-                    <div class="product-detail">
-                        <h4>No Item</h4>
-                    </div>
-                </div>
-                @endforelse
-                <div class="cart-total">
-                    <label>Subtotal:</label>
-                    <span class="price">pkr{{$total}}</span>
-                </div>
-
-                <div class="cart-action">
-                    <a href="{{route('cart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                    <a href="{{route('checkout')}}" class="btn btn-primary  btn-rounded">Checkout</a>
-                </div>
-            </div>
-
-
-        </div> -->
-        <!-- End of Dropdown Box -->
     </div>
 
     <div class="header-search hs-toggle dir-up">

@@ -339,16 +339,9 @@
                            <form class="review-form" wire:submit.prevent="addrating({{$product->id}})" >
                               <div class="rating-form">
                                  <label for="rating">Your Rating Of This Product :</label>
-                                 <span class="rating-stars">
-                                 <a class="star-1" href="#">1</a>
-                                 <a class="star-2" href="#">2</a>
-                                 <a class="star-3" href="#">3</a>
-                                 <a class="star-4" href="#">4</a>
-                                 <a class="star-5" href="#">5</a>
-                                 </span>
                                  <select wire:model="review"  required
                                     style="display: block;">
-                                    <option value="">Rate…</option>
+                                    <option disabled>Rate…</option>
                                     <option value="5">Perfect</option>
                                     <option value="4">Good</option>
                                     <option value="3">Average</option>

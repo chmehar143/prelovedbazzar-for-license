@@ -516,7 +516,7 @@
               </div>
           </div>
       </div>
-      </section> -->
+   </section> -->
    <!-- End of .category-section top-category -->
    <div class="container">
       <div class="row">

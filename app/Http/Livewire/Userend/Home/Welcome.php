@@ -186,15 +186,20 @@ class Welcome extends Component
         }
     }
 
+    public function loadPosts()
+    {
+        $this->readyToLoad = true;
+    }
+
     public function render()
     {
-        $banners = Banner::where('status', 1)->get();
+        $banners = Banner::where('status', 1)->skip(0)->take(5)->get();
 
         $deals = Product::whereNotNull('admin_id')->whereBetween('products.created_at', 
                 [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
-                ->get();
+                ->skip(0)->take(20)->get();
 
-        $top_sellers = Vendor::where('status', 1)->orderBy('vendors.created_at', 'desc')->get();
+        $top_sellers = Vendor::where('status', 1)->orderBy('vendors.created_at', 'desc')->skip(0)->take(5)->get();
 
         $top_categories = Product::leftJoin('categories', 'products.p_catog', '=', 'categories.id')->whereBetween('products.updated_at', 
          [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
