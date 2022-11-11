@@ -284,8 +284,7 @@
                                              <figure class="product-image">
                                                 <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
                                                    data-zoom-image="{{asset('storage/uploads/products/'.$unit->p_image)}}"
-                                                   alt="Product Image" width="800"
-                                                   height="900">
+                                                   alt="Product Image" style="width:100%;height:350px">
                                              </figure>
                                           </div>
                                           @endforeach
@@ -380,10 +379,10 @@
                                              </div> -->
                                        <!-- </div>
                                        <span class="divider d-xs-show"></span> -->
-                                       <div class="product-link-wrapper d-flex ml-5">
+                                       <!-- <div class="product-link-wrapper d-flex ml-5">
                                           <a href="{{ route('product', $unit->id) }}" class="btn-product-icon btn-wishlist w-icon-heart">
                                           </a>
-                                       </div>
+                                       </div> -->
                                     </div>
                                  </div>
                               </div>
