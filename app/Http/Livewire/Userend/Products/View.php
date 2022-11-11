@@ -39,7 +39,7 @@ class View extends Component
                     $review->fill($validatedData)->save();
                     $this->emit('addRating');
                     $this->emit('addCount');  
-                    $this->emit('addrecom');                  
+                    $this->emit('percent');                  
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Review has been submitted successfully',
                         'type'=> 'success',
@@ -68,7 +68,7 @@ class View extends Component
                     $review->fill($validatedData)->save();
                     $this->emit('addRating');
                     $this->emit('addCount'); 
-                    $this->emit('addrecom'); 
+                    $this->emit('percent'); 
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Review has been submitted successfully',
                         'type'=> 'success',
@@ -188,7 +188,7 @@ class View extends Component
                 {
                     if($this->product->p_stock > $this->quantitycount)
                     {
-                        if(Cart::where('user_id', Auth::guard('user')->id())->where('prod_id',$productId)->exists())
+                        if(Cart::where('session_id', Session::getId())->where('prod_id',$productId)->exists())
                         {
                             $this->dispatchBrowserEvent('message', [
                                 'text' => 'Product already added to cart',

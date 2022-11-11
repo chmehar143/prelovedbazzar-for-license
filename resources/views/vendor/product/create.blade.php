@@ -1,5 +1,16 @@
 @extends('vendor.layouts.app')
 @section('content')
+<style>
+.image{
+   width: 120px;
+   float: left;
+}
+.file-delete{
+   margin-top: -10px;
+   margin-left: -10px;
+}
+
+</style>
 <div class="toolbar py-2" id="kt_toolbar">
    <!--begin::Container-->
    <div id="kt_toolbar_container" class="container-fluid d-flex align-items-center">
@@ -342,22 +353,22 @@
                   <!--begin::Input group-->
                   <div class="row mb-6">
                      <!--begin::Label-->
-                     <label class="col-lg-4 col-form-label fw-bold fs-6">Product Gallery</label>
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Product Gallery</label>
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <div id="wrapper">
-                           <div class="mb-3">
-                              <label for="upload_file" class="form-label">Choose multiple image for gallery</label>
-                              <input class="form-control" name="gallery[]" type="file" id="upload_file" onchange="preview_image();" multiple />
-                              @error('gallery')
-                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
-                              @enderror                           
-                           </div>
-                           <div id="image_preview" class="row">
+                        <div class="mb-3">
+                           <label for="attachment">
+                              <a class="btn btn-primary text-light" role="button" aria-disabled="false">Add image for gallery</a>                              
+                           </label>
+                           <input type="file" name="gallery[]" id="attachment" style="visibility: hidden; position: absolute;" multiple/>
+                           @error('gallery')
+                              <div class="validation mt-1 text-danger">{{ $message }}</div>
+                           @enderror
+                        </div>                     
+                        <div id="image_preview" class="row mb-4">
                               <!-- preview will be here -->
-                           </div>
-                        </div> 
+                        </div>
                      </div>
                      <!--end::Col-->
                   </div>
@@ -457,15 +468,41 @@
    
    });
 </script>
-
 <script>
-function preview_image() 
-{
- var total_file=document.getElementById("upload_file").files.length;
- for(var i=0;i<total_file;i++)
- {
-  $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"' style=' width: 120px; ' >");
- }
-}
+   const dt = new DataTransfer(); // Allows you to manipulate the files of the input file
+
+$("#attachment").on('change', function(e){
+	for(var i = 0; i < this.files.length; i++){
+		let fileBloc = $('<div/>', {class: 'col-3 mb-4'}),
+          image = $('<img/>', {class: 'image', src: URL.createObjectURL(event.target.files[i])});
+		fileBloc.append(image)
+      .append("<span class='file-delete btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow' data-kt-image-input-action='remove' data-bs-toggle='tooltip' title='' data-bs-original-title='Remove avatar'><i class='bi bi-x fs-2'></i></span>");
+		$("#image_preview").append(fileBloc);
+      console.log(this.files.item(i));
+	};
+	// Adding files to the DataTransfer object
+	for (let file of this.files) {
+		dt.items.add(file);
+	}
+	// Update of the files of the input file after addition
+	this.files = dt.files;
+
+	// EventListener for delete button created
+	$('span.file-delete').click(function(){
+		let name = $(this).next('span.name');
+		// Suppress file name display
+		$(this).parent().remove();
+		for(let i = 0; i < dt.items.length; i++){
+			// Match file and name
+			if(name === dt.items[i].getAsFile()){
+				// Deleting file in DataTransfer object
+				dt.items.remove(i);
+				continue;
+			}
+		}
+		// Mise à jour des fichiers de l'input file après suppression
+		document.getElementById('attachment').files = dt.files;
+	});
+});
 </script>
 @endsection

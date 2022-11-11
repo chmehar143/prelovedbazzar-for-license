@@ -64,6 +64,7 @@ Route::get('/allproducts_edit/{id}', 'AllProductController@edit')->name('allprod
 Route::put('/allproducts_update/{id}', 'AllProductController@update')->name('allproducts_update');
 Route::get('/allproducts_view/{id}', 'AllProductController@view')->name('allproducts_view');
 Route::get('/product_del/{id}', 'AllProductController@destroy')->name('allproducts_del');
+Route::get('/product_del_gall/{id}', 'AllProductController@removegallery')->name('product_del_gall');
 
 
 // productcatalog
