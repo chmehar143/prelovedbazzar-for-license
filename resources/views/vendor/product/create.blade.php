@@ -473,7 +473,7 @@
 
 $("#attachment").on('change', function(e){
 	for(var i = 0; i < this.files.length; i++){
-		let fileBloc = $('<div/>', {class: 'col-3'}),
+		let fileBloc = $('<div/>', {class: 'col-3 mb-4'}),
           image = $('<img/>', {class: 'image', src: URL.createObjectURL(event.target.files[i])});
 		fileBloc.append(image)
       .append("<span class='file-delete btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow' data-kt-image-input-action='remove' data-bs-toggle='tooltip' title='' data-bs-original-title='Remove avatar'><i class='bi bi-x fs-2'></i></span>");

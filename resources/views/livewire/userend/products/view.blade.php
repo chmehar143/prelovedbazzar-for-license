@@ -239,7 +239,10 @@
                               </div>
                            </div>
                            <div class="ratings-value d-flex align-items-center text-dark ls-25">
-                              <span class="text-dark font-weight-bold">{{ round($avg, 1) }}%</span>Recommended<span
+                              <span class="text-dark font-weight-bold">
+                                 @livewire('userend.products.percent-count', [
+                                 'id' => Route::current()->parameter('id') ])
+                              </span>Recommended<span
                                  class="count">({{ intval($avg*$no/100) }} of {{$no}})</span>
                            </div>
                            <div class="ratings-list">
