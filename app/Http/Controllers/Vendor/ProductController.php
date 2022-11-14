@@ -82,6 +82,7 @@ class ProductController extends Controller
             'p_new_price' => 'required|numeric',
             'p_old_price' => 'required|numeric',
             'p_stock' => 'required|integer|min:0',
+            'p_detail' => 'max:255',
 
         ];
         $customs = [
@@ -187,6 +188,7 @@ class ProductController extends Controller
             'p_new_price' => 'required',
             'p_old_price' => 'required',
             'p_stock' => 'required|integer|min:0',
+            'p_detail' => 'max:255',
 
         ];
         $customs = [
