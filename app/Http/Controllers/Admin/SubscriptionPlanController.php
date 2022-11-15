@@ -4,14 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\DB;
-use App\Models\Category;
-use App\Models\SubCategory;
-use App\Models\ChildCategory;
-use App\Models\AffiliateProduct;
-use App\Models\SubscriptionPlan;
+use Illuminate\Support\Facades\{Auth, File, DB, Redirect};
+use App\Models\{Category, SubCategory, ChildCategory, AffiliateProduct, SubscriptionPlan};
+use Validator;
 use Config;
 
 class SubscriptionPlanController extends Controller
@@ -39,18 +34,36 @@ class SubscriptionPlanController extends Controller
 
     public  function  store(Request $request)
     {
+        //--- Validation Section
+        $rules = [
+            'title' => 'required|unique:subscription_plans',
+            'symbol' => 'required',
+            'code' => 'required|unique:subscription_plans',
+            'cost' => 'required',
+            'days' => 'required|integer',
+            'limit' => 'required',
+            'allowed_quantity' => 'required|integer',
+            'allowed_type' => 'required|integer',
+            'detail' => 'required',
+        ];
+        $customs = [
+            'title.unique' => 'This title has already been taken.',
+            'code.unique' => 'This code has already been taken.'
+        ];
+        $validator = Validator::make($request->all(), $rules, $customs);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+
+        $inputs = $request->all();
+        if($request->limit==0){
+            $inputs['allowed_quantity'] = 0;
+        }
+        $inputs['staf_id'] = Auth::guard('admin')->id();
         $plan = SubscriptionPlan::where('title', $request->input('title'))->first();
         if(!$plan){
-            $plan = new SubscriptionPlan();
-            $plan->staf_id = Auth::guard('admin')->id();
-            $plan->title = $request->input('title');
-            $plan->symbol = $request->input('symbol');
-            $plan->code = $request->input('code');
-            $plan->cost = $request->input('cost');
-            $plan->days = $request->input('days');
-            $plan->limit = $request->input('limit');
-            $plan->detail = $request->input('detail');
-            $plan->save();
+            SubscriptionPlan::create($inputs);
         }
         return redirect()->route('admin.subscriptionplan_list');
     }

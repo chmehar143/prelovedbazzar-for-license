@@ -75,7 +75,10 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="title" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Title"  />
+                              <input type="text" name="title" class="@error('title') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Title"  />
+                              @error('title')
+                              <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -93,7 +96,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="symbol" class="form-control form-control-lg form-control-solid" placeholder="Currency Symbol " />
+                        <input type="text" name="symbol" class="@error('symbol') is-invalid @enderror form-control form-control-lg form-control-solid" placeholder="Currency Symbol " />
+                        @error('symbol')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -103,7 +109,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="code" class="form-control form-control-lg form-control-solid" placeholder="Currency Code"  />
+                        <input type="text" name="code" class="@error('code') is-invalid @enderror form-control form-control-lg form-control-solid" placeholder="Currency Code"  />
+                        @error('code')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -113,7 +122,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="cost" class="form-control form-control-lg form-control-solid" placeholder="Cost "  />
+                        <input type="text" name="cost" class="@error('cost') is-invalid @enderror form-control form-control-lg form-control-solid" placeholder="Cost "  />
+                        @error('cost')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -123,7 +135,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="days" class="form-control form-control-lg form-control-solid" placeholder="Days" />
+                        <input type="text" name="days" class="@error('days') is-invalid @enderror form-control form-control-lg form-control-solid" placeholder="Days" />
+                        @error('days')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -138,9 +153,49 @@
                      <div class="col-lg-8 fv-row">
                         <select name="limit" aria-label="Select a Product Condition" data-control="select2" data-placeholder="Select a Product Condition..." class="form-select form-select-solid form-select-lg fw-bold">
                            <option value="">Product Condition...</option>
-                           <option data-kt-flag="flags/afghanistan.svg" value="0">Unlimited</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="1">Limited</option>
+                           <option value="0">Unlimited</option>
+                           <option value="1">Limited</option>
                         </select>
+                        @error('limit')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">Allowed product quantity</span>
+                        <!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
+                     </label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8 fv-row">
+                        <input type="text" name="allowed_quantity" class="@error('allowed_quantity') is-invalid @enderror form-control form-control-lg form-control-solid" placeholder="Unlimited" />
+                        @error('allowed_quantity')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">Allowed product type</span>
+                        <!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
+                     </label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8 fv-row">
+                        <select name="allowed_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" >
+                           <option value="">Product Type</option>
+                           <option  value="0" selected>Physical</option>
+                           <option  value="1">Digital</option>
+                           <option  value="2">License</option>
+                        </select>
+                        @error('allowed_type')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -154,6 +209,9 @@
                         <textarea name="detail" id="editor">
                           
                         </textarea>
+                        @error('detail')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
