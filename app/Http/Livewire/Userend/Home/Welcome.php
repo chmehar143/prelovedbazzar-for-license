@@ -238,7 +238,7 @@ class Welcome extends Component
             'top_sellers' => $top_sellers,
          'newarrivals' => $newarrivals, 
          'recents' => $recents, 'banners' => $banners, 'most_populars' => $most_populars, 
-         'products' => $products, 'frontpages' => $frontpages, 
+         'frontpages' => $frontpages, 
          'frontcat' => $this->readyToLoad
                         ? $frontcat : [],
         ]);
