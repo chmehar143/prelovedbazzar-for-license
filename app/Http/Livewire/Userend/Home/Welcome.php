@@ -221,7 +221,6 @@ class Welcome extends Component
         
         $frontcat = array();
         foreach($frontpages->slice(0, 3) as $category){
-            //$products = Product::where('p_catog', $category->category_id)->with('category')->get();
             $products = Category::where('id', $category->category_id)->with('product')->get();
             $frontcat[] = $products;
         }
@@ -238,7 +237,7 @@ class Welcome extends Component
             'top_sellers' => $top_sellers,
          'newarrivals' => $newarrivals, 
          'recents' => $recents, 'banners' => $banners, 'most_populars' => $most_populars, 
-         'products' => $products, 'frontpages' => $frontpages, 
+         'frontpages' => $frontpages, 
          'frontcat' => $this->readyToLoad
                         ? $frontcat : [],
         ]);
