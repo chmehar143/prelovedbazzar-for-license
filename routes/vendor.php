@@ -95,5 +95,10 @@ Route::get('/order_list', 'OrderController@index')->name('order_list');
 
 
 
+//subscriptionplan
+
+Route::get('/subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
+Route::get('/subscriptionplan_create', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
+Route::get('/subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
 
 

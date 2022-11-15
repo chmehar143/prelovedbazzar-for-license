@@ -78,6 +78,17 @@
                     </a>
                 </div>
 
+				
+                <div class="menu-item py-2">
+                    <a class="menu-link  menu-center" href="{{url('vendor/subscriptionplan_list')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+										<span class="menu-icon me-0">
+                                        <i class="fas fa-users-cog mr-2"></i>
+										</span>
+                        <span class="menu-title">Subscription Plan</span>
+                    </a>
+                </div>
+
+
    
 
                 <!-- <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
