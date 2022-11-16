@@ -65,7 +65,7 @@ class SubscriptionPlanController extends Controller
         if(!$plan){
             SubscriptionPlan::create($inputs);
         }
-        return redirect()->route('admin.subscriptionplan_list');
+        return redirect()->route('admin.subscriptionplan_list')->with('message', 'Plan created successfully');
     }
 
     public  function  remove($id)
@@ -84,19 +84,36 @@ class SubscriptionPlanController extends Controller
 
     public function update(Request $request, $id)
     {
+        //--- Validation Section
+        $rules = [
+            'title' => 'required',
+            'symbol' => 'required',
+            'code' => 'required',
+            'cost' => 'required',
+            'days' => 'required|integer',
+            'limit' => 'required',
+            'allowed_quantity' => 'required|integer',
+            'allowed_type' => 'required|integer',
+            'detail' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+
+        $inputs = $request->all();
+        if($request->limit==0){
+            $inputs['allowed_quantity'] = 0;
+        }
+        $inputs['staf_id'] = Auth::guard('admin')->id();
+
         $plan = SubscriptionPlan::where('id', $id)->first();
         if($plan){
-            $plan->staf_id = Auth::guard('admin')->id();
-            $plan->title = $request->input('title');
-            $plan->symbol = $request->input('symbol');
-            $plan->code = $request->input('code');
-            $plan->cost = $request->input('cost');
-            $plan->days = $request->input('days');
-            $plan->limit = $request->input('limit');
-            $plan->detail = $request->input('detail');
-            $plan->update();
+            $plan->update($inputs);
         }
-        return redirect()->route('admin.subscriptionplan_list');
+        return redirect()->route('admin.subscriptionplan_list')->with('message', 'Plan updated successfully');
     }
 
     public  function  view($id)

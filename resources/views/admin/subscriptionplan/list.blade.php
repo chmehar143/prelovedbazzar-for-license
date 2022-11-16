@@ -90,6 +90,9 @@
          <!--end::Card header-->
          <!--begin::Card body-->
          <div class="card-body pt-0" style="overflow:scroll;">
+            @if(session('message'))
+               <div class="alert alert-success">{{ session('message') }}</div>
+            @endif
             <!--begin::Table-->
             <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
                <!--begin::Table head-->
@@ -126,9 +129,9 @@
                      <!--end::Checkbox-->
                      <td>{{$plan->title}}</td>
                      <td>{{$plan->symbol}}</td>
-                     <td>${{$plan->cost}}</td>
+                     <td>{{$plan->cost}} pkr</td>
                      <td>{{$plan->days}} days</td>
-                     <td >{{$plan->limit}}</td>
+                     <td >@if($plan->allowed_quantity==0) Unlimited @else {{$plan->allowed_quantity}} @endif</td>
                      <!--end::Date=-->
                      <!--begin::Action=-->
                      <td class="text-end">
@@ -204,5 +207,13 @@ function destroy(id) {
 		}
 	})
 }
+</script>
+<script>
+$("document").ready(function(){
+    setTimeout(function(){
+       $("div.alert").remove();
+    }, 3000 ); // 3 secs
+
+});
 </script>
 @endsection
