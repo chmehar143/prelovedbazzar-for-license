@@ -91,15 +91,15 @@ Route::get('/order_list', 'OrderController@index')->name('order_list');
 
 
 
-
-
-
-
 //subscriptionplan
 
 Route::get('/subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
 Route::get('/subscriptionplan_create/{id}', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
 Route::post('/subscriptionplan_get/{id}', 'SubscriptionPlanController@get_plan')->name('subscriptionplan_get');
 Route::get('/subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
+
+//total withdraw
+Route::get('/totalwithdraw_list', 'TotalWithdrawController@list')->name('totalwithdraw_list');
+
 
 

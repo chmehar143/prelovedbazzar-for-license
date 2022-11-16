@@ -145,6 +145,16 @@
             <!--end::Navbar-->
             
             <!--begin::Topbar-->
+            <div class="menu menu-lg-rounded  menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
+											<div class="menu-item menu-lg-down-accordion me-lg-1">
+													<span class="menu-title  py-3" style="font-family: cursive;  font-size: 15px;">Your Available Balance Is 34738 &nbsp;&nbsp; </span>
+												<a class=" py-3 btn btn-primary" type="button"  href="{{url('vendor/totalwithdraw_list')}}">
+                                                <span class="menu-title  py-3">Withdraw </span>
+
+                                            </a>
+											
+											</div>
+                                    </div>
             <div class="d-flex align-items-stretch flex-shrink-0">
                 <!--begin::Toolbar wrapper-->
                 <div class="d-flex align-items-stretch flex-shrink-0">
