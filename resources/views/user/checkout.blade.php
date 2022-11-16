@@ -544,7 +544,7 @@ $(function() {
 });
 </script>
 
-<!-- end strie -->
+<!-- end stripe -->
 <!-- 
 <Script>
    $("input:checkbox").on('click', function() {
