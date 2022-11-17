@@ -77,16 +77,20 @@
                            <table class="table table-flush fw-bold gy-1">
                               <tbody>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px">User Name</td>
-                                    <td class="text-gray-800">John</td>
+                                    <td class="text-muted min-w-125px w-125px">Plan Name</td>
+                                    <td class="text-gray-800">{{$plan->title}}</td>
                                  </tr>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px">Card Holder Name</td>
-                                    <td class="text-gray-800">jOHN VON</td>
+                                    <td class="text-muted min-w-125px w-125px">Plan Symbol</td>
+                                    <td class="text-gray-800">{{$plan->symbol}}</td>
                                  </tr>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px">Card No</td>
-                                    <td class="text-gray-800">1323-3232-3232</td>
+                                    <td class="text-muted min-w-125px w-125px">Plan Code</td>
+                                    <td class="text-gray-800">{{$plan->code}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-muted min-w-125px w-125px">Plan Price</td>
+                                    <td class="text-gray-800">{{$plan->cost}} pkr</td>
                                  </tr>
                               </tbody>
                            </table>
@@ -97,30 +101,20 @@
                            <table class="table table-flush fw-bold gy-1">
                               <tbody>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px"> Month </td>
-                                    <td class="text-gray-800">1000</td>
+                                    <td class="text-muted min-w-150px w-125px"> Validation(in days) </td>
+                                    <td class="text-gray-800">{{$plan->days}} days</td>
                                  </tr>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px"> Year </td>
-                                    <td class="text-gray-800">2023</td>
+                                    <td class="text-muted min-w-125px w-125px">Mazimum Upload </td>
+                                    <td class="text-gray-800">{{$plan->allowed_quantity}} products</td>
                                  </tr>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px"> Month </td>
-                                    <td class="text-gray-800">12</td>
+                                    <td class="text-muted min-w-125px w-125px">Valid type </td>
+                                    <td class="text-gray-800">{{$plan->allowed_type}}</td>
                                  </tr>
                                  <tr>
-                                    <td class="text-muted min-w-125px w-125px">Status </td>
-                                    <td class="text-gray-800">
-                                       Approved
-                                       <!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
-                                       <span class="svg-icon svg-icon-2 svg-icon-success">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                             <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black"></rect>
-                                             <path d="M10.4343 12.4343L8.75 10.75C8.33579 10.3358 7.66421 10.3358 7.25 10.75C6.83579 11.1642 6.83579 11.8358 7.25 12.25L10.2929 15.2929C10.6834 15.6834 11.3166 15.6834 11.7071 15.2929L17.25 9.75C17.6642 9.33579 17.6642 8.66421 17.25 8.25C16.8358 7.83579 16.1642 7.83579 15.75 8.25L11.5657 12.4343C11.2533 12.7467 10.7467 12.7467 10.4343 12.4343Z" fill="black"></path>
-                                          </svg>
-                                       </span>
-                                       <!--end::Svg Icon-->
-                                    </td>
+                                    <td class="text-muted min-w-125px w-125px">Descriptions</td>
+                                    <td class="text-gray-800">{{$plan->detail}}</td>
                                  </tr>
                               </tbody>
                            </table>
@@ -153,7 +147,7 @@
                <!--begin::Form-->
                <form id="kt_account_profile_details_form" class="form require-validation" 
                   action="{{ route('vendor.subscriptionplan_get', $plan->id) }}" 
-                  method="post" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}">
+                  method="post" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}">
                   @csrf
                   <!--begin::Card body-->
                   <div class="card-body border-top p-9">
@@ -235,7 +229,7 @@
                   <!--begin::Actions-->
                   <div class="card-footer d-flex justify-content-end py-6 px-9">
                      <button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
-                     <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                     <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Pay ${{$plan->cost}}</button>
                   </div>
                   <!--end::Actions-->
                </form>

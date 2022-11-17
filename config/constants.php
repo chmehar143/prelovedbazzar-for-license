@@ -43,6 +43,11 @@ return [
     'vendor_status' => [
         '0' => 'Unverified',
         '1' => 'verified',
+    ],
+
+    'plan_status' => [
+        '0' => 'active',
+        '1' => 'expired',
     ]
 ]
 

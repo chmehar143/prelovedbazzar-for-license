@@ -32,6 +32,7 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 
 // Product Vendor
 // Dashboard
+
 Route::get('/dashboard', 'HomeController@index')->name('home')->middleware('vendor.verified');
 Route::get('/product_list', 'ProductController@index')->name('product_list');
 Route::get('/product_create', 'ProductController@create')->name('product_create');
@@ -100,6 +101,6 @@ Route::get('/order_list', 'OrderController@index')->name('order_list');
 Route::get('/subscriptionplan_list', 'SubscriptionPlanController@index')->name('subscriptionplan_list');
 Route::get('/subscriptionplan_create/{id}', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
 Route::post('/subscriptionplan_get/{id}', 'SubscriptionPlanController@get_plan')->name('subscriptionplan_get');
-Route::get('/subscriptionplan_view', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
+Route::get('/subscriptionplan_view/{id}', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
 
 

@@ -14,8 +14,11 @@ class SubscriptionPlanController extends Controller
 {
     public function index() 
     {
+        $vendor = Auth::guard('vendor')->user();
         $plans = SubscriptionPlan::all();
-        return view('vendor.subscriptionplan.list', compact('plans'));
+        $myplans = PlanOrder::where('vendor_id', $vendor->id)->get();
+        $status = Config::get('constants.plan_status');
+        return view('vendor.subscriptionplan.list', compact('plans', 'myplans', 'status'));
     }
 
     public function create($id) 
@@ -35,7 +38,6 @@ class SubscriptionPlanController extends Controller
             // sub order payment charge...
             Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
             $customer = Stripe\Customer::create(array(
-                "customer" => $vendor->id,
                 "name" => $vendor->name,       
                 "email" => $vendor->email,    
                 "source" => $request->stripeToken    
@@ -45,15 +47,16 @@ class SubscriptionPlanController extends Controller
                 "amount" => 100 * $plan->cost,
                 "currency" => "usd",
                 "customer" => $customer->id,
-                "description" => "Payment for puchasing a subscription plan with id (".$plan->id."), name (".$plan->title.") from ".env('APP_NAME'). " store.",
+                "description" => "vendor with vendor-id ".$vendor->id." has purchased a subscription plan with id (".$plan->id."), name (".$plan->title.") from ".env('APP_NAME'). " store.",
             ]);
             //end payment charge...
             if($charge->status == "succeeded")
             {
-                PlanOrder::create([
+            $my_plan = PlanOrder::create([
                     'vendor_id' => $vendor->id, 
                     'subscription_id'=>$plan->id,
-                    'strip_customer_id'=>$charge->id, 
+                    'strip_customer_id'=>$customer->id, 
+                    'strip_charge_id'=>$charge->id, 
                     'paid_amount'=>$charge->amount, 
                     'payment_status' =>$charge->status, 
                     'receipt_url'=>$charge->receipt_url, 
@@ -63,23 +66,47 @@ class SubscriptionPlanController extends Controller
                     'remaining_quantity'=>$plan->allowed_quantity, 
                     'status'=>0
                 ]);
-                return redirect()->back();
+                return redirect('/vendor/subscriptionplan_view/'.$my_plan->id )->with('message', 'Subscription plan purchased successfully');
             }
             else
             {
                 //payment failed
+                return redirect()->back()->with('message', 'payment failed');
+
             }
         }
         else
         {
-            //already purchased
+            return redirect()->back()->with('message', 'already purchased, you plan id is #'.$porder->id);
         }
 
 
 
     }
 
-    public function view() {
-        return view('vendor.subscriptionplan.view');
+    public function view($id) 
+    {
+        $myplan = PlanOrder::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
+        if($myplan)
+        {
+            $stripe = new \Stripe\StripeClient(
+                env('STRIPE_SECRET')
+              );
+            $plan_charge = $stripe->charges->retrieve(
+                $myplan->strip_charge_id,
+                []
+              );
+              $plan_customer = $stripe->customers->retrieve(
+                $myplan->strip_customer_id,
+                []
+              );
+            $status = Config::get('constants.plan_status');
+              //dd($plan_charge);
+            return view('vendor.subscriptionplan.view', compact('myplan', 'plan_charge', 'plan_customer', 'status'));
+        }
+        else
+        {
+            return redirect()->route('vendor.subscriptionplan_list')->with('message', 'please purchase a sbscription plan first');
+        }
     }
 }
