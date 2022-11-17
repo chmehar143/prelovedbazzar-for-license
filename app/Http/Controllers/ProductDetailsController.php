@@ -13,6 +13,13 @@ class ProductDetailsController extends Controller
 
         $product = Product::where('id', $id)->with('discussions')->first();
         $allreview = Discussion::where('item', $id)->get();
+
+        $helppositive = Discussion::where('item', $id)->whereBetween('review', [4, 5])->get();
+        $helpnegative = Discussion::where('item', $id)->whereBetween('review', [1, 2])->get();
+
+        $highrate = Discussion::where('item', $id)->where('review', 5)->get();
+        $lowrate = Discussion::where('item', $id)->where('review', 1)->get();
+
         $five = Discussion::where('item', $id)->where('review', 5)->count();
         $four = Discussion::where('item', $id)->where('review', 4)->count();
         $three = Discussion::where('item', $id)->where('review', 3)->count();
@@ -80,54 +87,12 @@ class ProductDetailsController extends Controller
             ->orWhere('p_sub_catog', $product->p_sub_catog)->orWhere('p_child_catog', $product->p_child_catog)
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();
+
+
         return view('user.product-details', compact('product','vendor',
                     'category','subcategory','childcategory','moreproducts', 'related_products',
-                'five', 'four', 'three', 'two', 'one', 'allreview'));
+                'five', 'four', 'three', 'two', 'one', 'allreview', 'helppositive', 'helpnegative', 'highrate', 'lowrate'));
 
     }
 
-    public function add_rating(Request $request)
-    {
-        $item = Product::where('id', $request->id)->first();
-        if($item){
-            if(Auth::guard('user')->check()){
-                $user = Auth::guard('user');
-                $review = Discussion::where('item', $request->id)->where('user', $user->id())
-                                    ->orWhere('email', $request->email_1)->first();
-                if(!$review){
-                    $review = new Discussion();
-                    $review->item = $request->id;
-                    $review->session = Session::getId();
-                    $review->user = $user->id();
-                    $review->user_name = $request->author;
-                    $review->email = $request->email_1;
-                    $review->review = $request->rating;
-                    $review->comment = $request->review;
-                    $review->save();
-                }
-                return response()->json([
-                    "status" => 200,
-                    "data" => $review
-                ]);
-            }
-            else{
-                $review = Discussion::where('item', $request->id)->where('email', $request->email_1)->first();
-                if(!$review){
-                    $review = new Discussion();
-                    $review->item = $request->id;
-                    $review->session = Session::getId();
-                    $review->user_name = $request->author;
-                    $review->email = $request->email_1;
-                    $review->review = $request->rating;
-                    $review->comment = $request->review;
-                    $review->save();
-                }
-                return response()->json([
-                    "status" => 200,
-                    "data" => $review
-                ]);
-            }
-        }
-
-    }
 }

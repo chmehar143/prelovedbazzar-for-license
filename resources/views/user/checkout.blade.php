@@ -11,9 +11,9 @@
    <nav class="breadcrumb-nav">
       <div class="container">
          <ul class="breadcrumb shop-breadcrumb bb-no">
-            <li class="passed"><a href="cart.html">Shopping Cart</a></li>
-            <li class="active"><a href="checkout.html">Checkout</a></li>
-            <li><a href="order.html">Order Complete</a></li>
+            <li class="passed"><a href="{{ route('cart') }}">Shopping Cart</a></li>
+            <li class="active"><a href="{{ route('checkout') }}">Checkout</a></li>
+            <li><a href="javascript:void(0)">Order Complete</a></li>
          </ul>
       </div>
    </nav>
@@ -544,7 +544,7 @@ $(function() {
 });
 </script>
 
-<!-- end strie -->
+<!-- end stripe -->
 <!-- 
 <Script>
    $("input:checkbox").on('click', function() {

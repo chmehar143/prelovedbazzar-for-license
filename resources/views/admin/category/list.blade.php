@@ -105,9 +105,9 @@
 						<th class="min-w-50px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
 							aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>
 						<th class="min-w-100px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label=" Created : activate to sort column ascending" style="width: 192.25px;">Created at </th>
+							aria-label=" Created : activate to sort column ascending" style="width: 192.25px; display: none;">Created at </th>
 						<th class="min-w-100px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-							aria-label=" Updated : activate to sort column ascending" style="width: 192.25px;"> Updtated at </th>
+							aria-label=" Updated : activate to sort column ascending" style="width: 192.25px; display: none;"> Updtated at </th>
 						<th class="min-w-100px sorting_disabled" rowspan="1" colspan="1"
 							aria-label="Action">Action</th>
                      </tr>
@@ -128,8 +128,8 @@
 						<td>{{$cat->name}}</td>
 						<td>{{$cat->slug}}</td>
 						<td><span class="btn btn-primary btn-sm">{{ $cat->status == 1  ? "Active" : "Not active" }}</span></td>
-						<td>{{$cat->created_at->format('d-M-Y')}}</td>
-						<td>{{$cat->updated_at->format('d-M-Y')}}</td>
+						<td style="display: none;">{{$cat->created_at->format('d-M-Y')}}</td>
+						<td style="display: none;">{{$cat->updated_at->format('d-M-Y')}}</td>
                         <!--begin::Action=-->
 						<td class="text-end">
                               <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">

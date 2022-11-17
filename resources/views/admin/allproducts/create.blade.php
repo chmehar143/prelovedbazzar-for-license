@@ -341,7 +341,11 @@
                         <textarea name="p_detail" id="editor">
                         &lt;p&gt;&lt;/p&gt;
                         </textarea>
+                        @error('p_detail')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
+                     
                      <!--end::Col-->
                   </div>
                   <div class="row mb-6">

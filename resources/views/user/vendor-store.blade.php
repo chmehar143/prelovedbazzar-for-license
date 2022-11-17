@@ -9,10 +9,8 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb mb-6">
-                        <li><a href="demo1.html">Home</a></li>
-                        <li><a href="#">Vendor</a></li>
-                        <li><a href="#">Dokan</a></li>
-                        <li>Store </li>
+                        <li><a href="{{ route('index') }}">Home</a></li>
+                        <li><a href="{{ route('vendor-store') }}">Vendor Stores</a></li>
                     </ul>
                 </div>
             </nav>

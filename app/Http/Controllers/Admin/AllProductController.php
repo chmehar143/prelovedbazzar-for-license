@@ -72,6 +72,7 @@ class AllProductController extends Controller
             'p_sub_catog' => 'required',
             'p_new_price' => 'required|numeric',
             'p_old_price' => 'required|numeric',
+            'p_detail' => 'max:255',
             'p_stock' => 'required|integer|min:0',
 
        ];
@@ -183,6 +184,7 @@ class AllProductController extends Controller
             'p_new_price' => 'required|numeric',
             'p_old_price' => 'required|numeric',
             'p_stock' => 'required|integer|min:0',
+            'p_detail' => 'max:255',
 
        ];
        $customs = [

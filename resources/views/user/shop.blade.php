@@ -5,9 +5,8 @@
    <nav class="breadcrumb-nav">
       <div class="container">
          <ul class="breadcrumb bb-no">
-            <li><a href="demo1.html">Home</a></li>
-            <li><a href="shop-banner-sidebar.html">Shop</a></li>
-            <li>Boxed</li>
+            <li><a href="{{ route('index') }}">Home</a></li>
+            <li><a href="{{ route('shop') }}">Shop</a></li>
          </ul>
       </div>
    </nav>

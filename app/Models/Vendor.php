@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\{Product, PlanOrder};
 
 class Vendor extends Authenticatable implements MustVerifyEmail
 {
@@ -25,6 +28,10 @@ class Vendor extends Authenticatable implements MustVerifyEmail
 
     public function products(){
         return $this->hasMany(Product::class);
+    }
+
+    public function plan_order(){
+        return $this->hasMany(PlanOrder::class);
     }
 
     /**

@@ -16,6 +16,13 @@ class Welcome extends Component
 {
     public $product, $vendor, $quantitycount = 1, $p_size;
 
+    public $readyToLoad = false;
+ 
+    public function loadPosts()
+    {
+        $this->readyToLoad = true;
+    }
+
     public function addtocart(int $productId)
     {
         $this->product = Product::where('id', $productId)->where('status', 1)->first();
@@ -186,45 +193,38 @@ class Welcome extends Component
         }
     }
 
+
     public function render()
     {
-        $banners = Banner::where('status', 1)->get();
+        $banners = Banner::where('status', 1)->skip(0)->take(5)->get();
 
         $deals = Product::whereNotNull('admin_id')->whereBetween('products.created_at', 
                 [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')
-                ->get();
+                ->skip(0)->take(20)->get();
 
-        $top_sellers = Vendor::where('status', 1)->orderBy('vendors.created_at', 'desc')->get();
+        $top_sellers = Vendor::where('status', 1)->orderBy('vendors.created_at', 'desc')->skip(0)->take(20)->get();
 
-        $top_categories = Product::leftJoin('categories', 'products.p_catog', '=', 'categories.id')->whereBetween('products.updated_at', 
-         [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
-         ->select('products.updated_at', 'categories.*')
-         ->get()->groupBy('id');
+        // $top_categories = Product::leftJoin('categories', 'products.p_catog', '=', 'categories.id')->whereBetween('products.updated_at', 
+        //  [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+        //  ->select('products.updated_at', 'categories.*')
+        //  ->get()->groupBy('id');
         $newarrivals = Product::whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->orderBy('created_at', 'desc')->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->orderBy('created_at', 'desc')->skip(0)->take(10)->get();
         
-        $products = OrderDetail::join('products', 'pro_id', '=', 'products.id')->get()->groupBy('pro_id');
-       // dd($products->count());
 
         $most_populars = Product::whereNotNull('admin_id')->whereBetween('updated_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->get();
+        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->with('discussions')->skip(0)->take(10)->get();
 
 
-        $clothings = Product::where('p_catog', 1)->whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
-
-        $frontpages = FrontPage::all();
+        //front page top ctegory's product
+        $frontpages = FrontPage::orderBy('created_at', 'desc')->get();
         
         $frontcat = array();
-        foreach($frontpages as $category){
-            //$products = Product::where('p_catog', $category->category_id)->with('category')->get();
+        foreach($frontpages->slice(0, 3) as $category){
             $products = Category::where('id', $category->category_id)->with('product')->get();
             $frontcat[] = $products;
         }
 
-
-        $electrics = Product::where('p_catog', 4)->whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->with('discussions')->get();
 
         if(Auth::guard('user')->check()){
             $recents = RecentView::where('user_id', Auth::guard('user')->id())->orderBy('created_at', 'DESC')->get();
@@ -234,10 +234,12 @@ class Welcome extends Component
         }
         return view('livewire.userend.home.welcome',[
             'deals' => $deals,
-            'top_sellers' => $top_sellers, 'top_categories' => $top_categories,
-         'newarrivals' => $newarrivals, 'clothings' => $clothings, 'electrics' => $electrics, 
+            'top_sellers' => $top_sellers,
+         'newarrivals' => $newarrivals, 
          'recents' => $recents, 'banners' => $banners, 'most_populars' => $most_populars, 
-         'products' => $products, 'frontpages' => $frontpages, 'frontcat' => $frontcat
+         'frontpages' => $frontpages, 
+         'frontcat' => $this->readyToLoad
+                        ? $frontcat : [],
         ]);
     }
 }

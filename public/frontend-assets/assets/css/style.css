@@ -20817,6 +20817,7 @@ aside .sp-sidebar-banner span {
 .shop-table tbody td:not(:first-child),
 .shop-table thead th:not(:first-child) {
   padding-left: 1rem;
+  text-align: center;
 }
 .shop-table .product-thumbnail {
   width: 11rem;
@@ -21474,8 +21475,17 @@ aside .sp-sidebar-banner span {
 }
 .product-wrap {
   margin-bottom: 2rem !important;
-  /* border: 1px solid #eee !important; */
+  border: 1px solid #eee !important;
   margin-right: 0px !important;
+}
+.w-icon-plus:before {
+    content: "" !important;
+    /* margin-left: 2px !important; */
+    margin-bottom: 1 !important;
+}
+.w-icon-minus:before {
+  content: "" ;
+  margin-left: 2px !important;
 }
 .product {
   position: relative;
@@ -21486,12 +21496,13 @@ aside .sp-sidebar-banner span {
   transition: opacity 0.3s, -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s, -webkit-box-shadow 0.3s;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   /* margin-bottom: 2rem !important; */
   /* border: 1px solid #eee !important; */
   margin-right: 0px !important;
+  cursor: pointer;
 }
 .product:hover {
   -webkit-box-shadow: 0 5px 30px rgb(0 0 0 / 5%);
-  box-shadow: 0 5px 30px rgb(0 0 0 / 5%);
+  box-shadow: 0 5px 30px white;
 }

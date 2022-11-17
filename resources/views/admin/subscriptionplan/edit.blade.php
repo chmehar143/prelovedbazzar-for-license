@@ -76,7 +76,10 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="title" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{$plan->title}}"  />
+                              <input type="text" name="title" class="@error('title') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{$plan->title}}"  />
+                              @error('title')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -94,7 +97,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="symbol" class="form-control form-control-lg form-control-solid" value="{{$plan->symbol}}" />
+                        <input type="text" name="symbol" class="@error('symbol') is-invalid @enderror form-control form-control-lg form-control-solid" value="{{$plan->symbol}}" />
+                        @error('symbol')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -104,7 +110,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="code" class="form-control form-control-lg form-control-solid" value="{{$plan->code}}"  />
+                        <input type="text" name="code" class="@error('code') is-invalid @enderror form-control form-control-lg form-control-solid" value="{{$plan->code}}"  />
+                        @error('code')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -114,7 +123,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="cost" class="form-control form-control-lg form-control-solid" value="{{$plan->cost}}"  />
+                        <input type="text" name="cost" class="@error('cost') is-invalid @enderror form-control form-control-lg form-control-solid" value="{{$plan->cost}}"  />
+                        @error('cost')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -124,7 +136,10 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <input type="text" name="days" class="form-control form-control-lg form-control-solid" value="{{$plan->days}}" />
+                        <input type="text" name="days" class="@error('days') is-invalid @enderror form-control form-control-lg form-control-solid" value="{{$plan->days}}" />
+                        @error('days')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -142,6 +157,46 @@
                            <option data-kt-flag="flags/afghanistan.svg" value="0" @if($plan->limit == 0) selected @endif>Unlimited</option>
                            <option data-kt-flag="flags/venezuela.svg" value="1" @if($plan->limit == 1) selected @endif>Limited</option>
                         </select>
+                        @error('limit')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">Allowed product quantity</span>
+                        <!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
+                     </label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8 fv-row">
+                        <input type="text" name="allowed_quantity" value="@if($plan->allowed_quantity == 0) Unlimited @else {{$plan->allowed_quantity}} @endif" class="@error('allowed_quantity') is-invalid @enderror form-control form-control-lg form-control-solid" placeholder="Unlimited" />
+                        @error('allowed_quantity')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">Allowed product type</span>
+                        <!-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Category of origination"></i> -->
+                     </label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8 fv-row">
+                        <select name="allowed_type" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" >
+                           <option value="">Product Type</option>
+                           <option  value="0" @if($plan->allowed_type == 0) selected @endif >Physical</option>
+                           <option  value="1" @if($plan->allowed_type == 1) selected @endif >Digital</option>
+                           <option  value="2" @if($plan->allowed_type == 2) selected @endif >License</option>
+                        </select>
+                        @error('allowed_type')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
@@ -153,8 +208,11 @@
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
                         <textarea name="detail" id="editor">
-							{{$plan->detail}}
+							      {{$plan->detail}}
                         </textarea>
+                        @error('detail')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>

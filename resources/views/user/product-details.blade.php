@@ -19,9 +19,9 @@
    <!-- Start of Breadcrumb -->
    <nav class="breadcrumb-nav container">
       <ul class="breadcrumb bb-no">
-         <li><a href="demo1.html">Home</a></li>
-         <li><a href="product-default.html">Products</a></li>
-         <li>Vertical Thumbs</li>
+         <li><a href="{{ route('index') }}">Home</a></li>
+         <li><a href="{{ route('shop') }}">Products</a></li>
+         <li>{{$product->p_name}}</li>
       </ul>
       <ul class="product-nav list-style-none">
          <li class="product-nav-prev">
@@ -64,7 +64,11 @@
             'three' => $three,
             'two' => $two,
             'one' => $one,
-            'allreview' => $allreview
+            'allreview' => $allreview,
+            'helppositive' => $helppositive,
+            'helpnegative' => $helpnegative, 
+            'highrate' => $highrate,
+            'lowrate' => $lowrate
       ]) 
       
    </div>

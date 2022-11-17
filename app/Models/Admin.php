@@ -22,6 +22,10 @@ class Admin extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public function products(){
+        return $this->hasMany(Product::class, 'admin_id');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

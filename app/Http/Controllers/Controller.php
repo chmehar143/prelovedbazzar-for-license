@@ -16,14 +16,10 @@ class Controller extends BaseController
     {
         if (Auth::guard('user')->check()) 
         {
-            $user = Auth::guard('user')->user();
 
-            if(User::where('id', $user->id)->whereNotNull('email_verified_at')->exists())
-            {
-                $carts = Cart::where('user_id', Auth::guard('user')->id())
-                ->join('products', 'carts.prod_id', '=', 'products.id')
-                ->get();
-            }
+            $carts = Cart::where('user_id', Auth::guard('user')->id())
+            ->join('products', 'carts.prod_id', '=', 'products.id')
+            ->get();
             
         } 
         else {
