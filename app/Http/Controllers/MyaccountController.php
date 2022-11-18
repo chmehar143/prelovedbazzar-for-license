@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Session};
-use App\Models\{Cart, Vendor, Product, User, Order, OrderDetail, Address};
+use App\Models\{Cart, Vendor, User, Order, OrderDetail, Address};
 use Config;
 
 class MyaccountController extends Controller

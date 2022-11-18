@@ -190,7 +190,7 @@ class OrderController extends Controller
         //End store payment...
         //start order detail data
         foreach($carts as $cart){
-            $product = Product::where('id', $cart->prod_id)->with('vendor')->first();
+            $product = Product::where('id', $cart->prod_id)->where('status', 1)->with('vendor')->first();
             $detail = new OrderDetail();
             $detail->order_id = $order->id;
             $detail->pro_id = $cart->prod_id;

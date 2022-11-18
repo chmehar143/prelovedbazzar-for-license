@@ -12,7 +12,7 @@ class PlanOrder extends Model
     use HasFactory;
     protected  $fillable = [
         'vendor_id', 'subscription_id', 'strip_customer_id', 'strip_charge_id', 'paid_amount', 
-        'payment_status', 'receipt_url', 'paid_amount', 'remainig_days', 
+        'payment_status', 'receipt_url', 'paid_amount', 'remainig_days','expired_at', 
         'allowed_quantity', 'remaining_quantity', 'status'
     ];
 

@@ -18,7 +18,7 @@ class ReviewCount extends Component
     
     public function mount($id)
     {
-        $this->product = Product::where('id', $id)->first();
+        $this->product = Product::where('id', $id)->where('status', 1)->first();
     }
 
     public function render()

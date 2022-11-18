@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Session, Redirect};
 use App\Models\{
-    Category, Vendor, Product, RecentView, Childcategory, 
+    Category, Vendor, RecentView, Childcategory, 
     Subcategory, Subscriber, Discussion, User, Banner, OrderDetail, FrontPage
 }; 
 use Carbon\Carbon;

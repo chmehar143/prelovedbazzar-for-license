@@ -11,7 +11,7 @@ class ProductDetailsController extends Controller
     public function index($id)
     {
 
-        $product = Product::where('id', $id)->with('discussions')->first();
+        $product = Product::where('id', $id)->where('status', 1)->with('discussions')->first();
         $allreview = Discussion::where('item', $id)->get();
 
         $helppositive = Discussion::where('item', $id)->whereBetween('review', [4, 5])->get();
@@ -71,19 +71,19 @@ class ProductDetailsController extends Controller
         $vendor = Vendor::where('id', $product->vendor_id)->first();
         $admin = Admin::where('id', $product->admin_id)->first();
         if($vendor){
-            $moreproducts = Product::where('vendor_id', $vendor->id)->with('discussions')
+            $moreproducts = Product::where('vendor_id', $vendor->id)->where('status', 1)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();
         }
         elseif($admin){
-            $moreproducts = Product::where('admin_id', $admin->id)->with('discussions')
+            $moreproducts = Product::where('admin_id', $admin->id)->where('status', 1)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();
         }
         else{
             $moreproducts = NULL;
         }
-        $related_products = Product::where('p_catog', $product->p_catog)->with('discussions')
+        $related_products = Product::where('p_catog', $product->p_catog)->where('status', 1)->with('discussions')
             ->orWhere('p_sub_catog', $product->p_sub_catog)->orWhere('p_child_catog', $product->p_child_catog)
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')->get();

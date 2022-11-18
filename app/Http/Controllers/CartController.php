@@ -14,7 +14,7 @@ class CartController extends Controller
     }
 
     public function store(Request $request){
-        $item = Product::where('id', $request->id)->first();
+        $item = Product::where('id', $request->id)->where('status', 1)->first();
         if($item->p_stock >= 3){
             if($request->quantity <= $item->p_stock){
                 if(Auth::guard('user')->check()){
