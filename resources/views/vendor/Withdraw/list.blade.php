@@ -156,6 +156,7 @@
                <!--end::Table head-->
                <!--begin::Table body-->
                <tbody class="fw-bold text-gray-600">
+                  @foreach($withdraws as $withdraw)
                   <tr>
                      <!--begin::Checkbox-->
                      <td>
@@ -165,13 +166,13 @@
                      </td>
                      <!--end::Checkbox-->
                      <td>
-                        20-09-2022 
+                        {{$withdraw->created_at->format(d-m-Y)}} 
                      </td>
-                     <td><a href="#" class="text-gray-600 text-hover-primary mb-1">  paypal</a>	</td>
-                     <td>1</td>
-                     <td>1999</td>
+                     <td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{$withdraw->method}}</a>	</td>
+                     <td>{{$withdraw->paypal}}</td>
+                     <td>{{$withdraw->amount}}</td>
                      <td>
-                        <span class="badge badge-light-success">Approved</span>
+                        <span class="badge badge-light-success">{{$withdraw->status}}</span>
                      </td>
                      <!--end::Date=-->
                      <!--begin::Action=-->
@@ -206,6 +207,7 @@
                      </td>
                      <!--end::Action=-->
                   </tr>
+                  @endforeach
                </tbody>
                <!--end::Table body-->
             </table>

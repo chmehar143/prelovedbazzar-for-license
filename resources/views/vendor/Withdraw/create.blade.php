@@ -65,7 +65,8 @@
          <!--begin::Content-->
          <div id="kt_account_settings_profile_details" class="collapse show">
             <!--begin::Form-->
-            <form id="kt_account_profile_details_form" class="form">
+            <form action="{{ route('vendor.withdraw_store') }}" id="kt_account_profile_details_form" class="form" method="post">
+               @csrf
                <!--begin::Card body-->
                <div class="card-body border-top p-9">
                   <!--begin::Input group-->
@@ -78,17 +79,67 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <select name="country" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Withdraw Method 
-                           ..." class="form-select form-select-solid form-select-lg fw-bold">
+                        <select id="method" name="method" aria-label="Select a Category" data-control="select2" data-placeholder="Select a Withdraw Method 
+                           ..." class="@error('method') is-invalid @enderror form-select form-select-solid form-select-lg fw-bold">
                            <option value="">Withdraw Method...</option>
-                           <option data-kt-flag="flags/afghanistan.svg" value="AF">paypal</option>
-                           <option data-kt-flag="flags/venezuela.svg" value="VE">payoneer</option>
+                           <option data-kt-flag="flags/afghanistan.svg" value="0" >paypal</option>
+                           <option data-kt-flag="flags/venezuela.svg" value="1" >payoneer</option>
+                           <option data-kt-flag="flags/venezuela.svg" value="2" >Via Bank</option>
                         </select>
+                        @error('method')
+                           <div class="validation mt-1 text-danger">{{ $message }}</div>
+                        @enderror
                      </div>
                      <!--end::Col-->
                   </div>
                   <!--end::Input group-->
                   <!--begin::Input group-->
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label id="payment" class="col-lg-4 col-form-label required fw-bold fs-6">enter account id or IBAN</label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8">
+                        <!--begin::Row-->
+                        <div class="row">
+                           <!--begin::Col-->
+                           <div class="col-lg-12 fv-row">
+                              <input type="text" id="paywith" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="enter your account id or IBAN" required />
+                              @error('unknown')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+                           <!--end::Col-->
+                           <!--begin::Col-->
+                           <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label fw-bold fs-6">Enter Bank name (if any)</label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8">
+                        <!--begin::Row-->
+                        <div class="row">
+                           <!--begin::Col-->
+                           <div class="col-lg-12 fv-row">
+                              <input type="text" name="bnk_name" class="@error('p_stock') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" />
+                              @error('bnk_name')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+                           <!--end::Col-->
+                           <!--begin::Col-->
+                           <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                     </div>
+                     <!--end::Col-->
+                  </div>
                   <div class="row mb-6">
                      <!--begin::Label-->
                      <label class="col-lg-4 col-form-label required fw-bold fs-6">Withdraw Amount</label>
@@ -99,7 +150,58 @@
                         <div class="row">
                            <!--begin::Col-->
                            <div class="col-lg-12 fv-row">
-                              <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder=" 1002" value="2002" />
+                              <input type="text" name="amount" 
+                                 class="@error('amount') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                 placeholder="maximum limit is {{$amount*7/10}}" />
+                                 @error('amount')
+                                    <div class="validation mt-1 text-danger">{{ $message }}</div>
+                                 @enderror
+                           </div>
+                           <!--end::Col-->
+                           <!--begin::Col-->
+                           <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Enter email address</label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8">
+                        <!--begin::Row-->
+                        <div class="row">
+                           <!--begin::Col-->
+                           <div class="col-lg-12 fv-row">
+                              <input type="email" name="email" value="{{$vendor->email}}" class="@error('email') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" />
+                              @error('email')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+                           <!--end::Col-->
+                           <!--begin::Col-->
+                           <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                     </div>
+                     <!--end::Col-->
+                  </div>
+                  <div class="row mb-6">
+                     <!--begin::Label-->
+                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Enter your phone number</label>
+                     <!--end::Label-->
+                     <!--begin::Col-->
+                     <div class="col-lg-8">
+                        <!--begin::Row-->
+                        <div class="row">
+                           <!--begin::Col-->
+                           <div class="col-lg-12 fv-row">
+                              <input type="text" name="phone" class="@error('phone') is-invalid @enderror form-control form-control-lg form-control-solid mb-3 mb-lg-0" />
+                              @error('phone')
+                                 <div class="validation mt-1 text-danger">{{ $message }}</div>
+                              @enderror
                            </div>
                            <!--end::Col-->
                            <!--begin::Col-->
@@ -116,26 +218,17 @@
                      <!--end::Label-->
                      <!--begin::Col-->
                      <div class="col-lg-8 fv-row">
-                        <textarea name="content" id="editor">
+                        <textarea name="other" id="editor">
                         </textarea>
                      </div>
                      <!--end::Col-->
-                  </div>
-                  <div class="row mb-0">
-                     <label class="col-lg-4 col-form-label required fw-bold fs-6">Status </label>
-                     <div class="col-lg-8 d-flex align-items-center">
-                        <div class="form-check form-check-solid form-switch fv-row">
-                           <input class="form-check-input w-45px h-30px" type="checkbox" id="allowmarketing" checked="checked" />
-                           <label class="form-check-label" for="allowmarketing"></label>
-                        </div>
-                     </div>
                   </div>
                </div>
                <!--end::Card body-->
                <!--begin::Actions-->
                <div class="card-footer d-flex justify-content-end py-6 px-9">
                   <button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
-                  <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                  <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Apply</button>
                </div>
                <!--end::Actions-->
             </form>
@@ -162,5 +255,69 @@
    		console.error( error );
    	} );
 </script>
-<!--end::Scr
+<!--end::Scr--->
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+   $(document).ready(function(){
+      $('#method').change(function(){
+         let mid=$(this).val();
+
+         if(mid == 0)
+         {
+            $('label#payment').empty();
+
+        	   $('label#payment').prepend("Please enter you paypal account id");
+            $('#paywith').attr('name', 'paypal');
+
+            $('#paywith').addClass('@error("paypal") is-invalid @enderror');
+         }
+         if(mid == 1)
+         {
+            $('label#payment').empty();
+
+            $('label#payment').prepend("Please enter you payoneer account id");
+
+            $('#paywith').attr('name', 'payoneer');
+
+            $('#paywith').addClass('@error("payoneer") is-invalid @enderror');
+
+
+         }
+         if(mid == 2)
+         {
+            $('label#payment').empty();
+
+            $('label#payment').prepend("Enter IBAN , other detail put in Optional");
+
+            $('#paywith').attr('name', 'iban');
+
+            $('#paywith').addClass('@error("iban") is-invalid @enderror');
+
+
+         }
+      });
+   });
+   	
+         // $('label#payment').remove();
+         // let mid=$(this).val(),
+         // console.log(mid);
+                     
+         // if(mid == 0)
+         // {
+         //  	$('label#payment').prepend("Pay with paypal")
+         // }
+         // elseif()
+         // {
+
+         // }
+         // else
+         // {
+
+         // }
+</script>
+   		
+
 @endsection

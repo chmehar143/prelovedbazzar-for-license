@@ -59,6 +59,7 @@ Route::get('/affilateproduct_delete/{id}', 'AffilateProductController@destroy')-
 // Withdraw  Product  Vendor
 Route::get('/withdraw_list', 'WithdrawController@index')->name('withdraw_list');
 Route::get('/withdraw_create', 'WithdrawController@create')->name('withdraw_create');
+Route::post('/withdraw_store', 'WithdrawController@store')->name('withdraw_store');
 Route::get('/withdraw_edit', 'WithdrawController@edit')->name('withdraw_edit');
 Route::get('/withdraw_view', 'WithdrawController@view')->name('withdraw_view');
 
@@ -98,9 +99,6 @@ Route::get('/subscriptionplan_list', 'SubscriptionPlanController@index')->name('
 Route::get('/subscriptionplan_create/{id}', 'SubscriptionPlanController@create')->name('subscriptionplan_create');
 Route::post('/subscriptionplan_get/{id}', 'SubscriptionPlanController@get_plan')->name('subscriptionplan_get');
 Route::get('/subscriptionplan_view/{id}', 'SubscriptionPlanController@view')->name('subscriptionplan_view');
-
-//total withdraw
-Route::get('/totalwithdraw_list', 'TotalWithdrawController@list')->name('totalwithdraw_list');
 
 
 
