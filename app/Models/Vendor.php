@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Models\{Product, PlanOrder};
+use App\Models\{Product, PlanOrder, OrderDetail, VendorDetail};
 
 class Vendor extends Authenticatable implements MustVerifyEmail
 {
@@ -30,8 +30,16 @@ class Vendor extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Product::class);
     }
 
+    public function order_detail(){
+        return $this->hasMany(OrderDetail::class);
+    }
+
     public function plan_order(){
         return $this->hasMany(PlanOrder::class);
+    }
+
+    public function vendor_detail(){
+        return $this->hasOne(VendorDetail::class);
     }
 
     /**
