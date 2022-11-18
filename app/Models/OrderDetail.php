@@ -1,21 +1,28 @@
 <?php
 
 namespace App\Models;
-use App\Models\Product;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\{Order, Vendor, Discussion, OrderDetail, Product};
+
 
 class OrderDetail extends Model
 {
     use HasFactory;
 
-    public function order()
+    public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);
     }
 
-    public function product()
+    public function vendor(): BelongsTo
+
+    {
+        return $this->belongsTo(Vendor::class);
+    }
+
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);   
     }
