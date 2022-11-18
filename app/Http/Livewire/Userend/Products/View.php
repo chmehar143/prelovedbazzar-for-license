@@ -25,9 +25,9 @@ class View extends Component
             'comment' => 'required',
         ]);
 
-        if(Product::where('id', $productId)->exists())
+        if(Product::where('id', $productId)->where('status', 1)->exists())
         {
-            $product = Product::where('id', $productId)->first();
+            $product = Product::where('id', $productId)->where('status', 1)->first();
             $validatedData['item'] = $product->id;
 
             if(Auth::guard('user')->check())

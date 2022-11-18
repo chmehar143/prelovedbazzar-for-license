@@ -191,10 +191,10 @@ class SortBySubcat extends Component
 
     public function render()
     {
-        $products = Product::where('products.status', 1)->where('p_sub_catog', $this->sub_id)->with('discussions')
+        $products = Product::where('products.status', 1)->where('p_sub_catog', $this->sub_id)->where('status', 1)->with('discussions')
                     ->join('categories', 'products.p_catog','=','categories.id')
                     ->select('products.*', 'categories.name')
-                    ->paginate(6);
+                    ->paginate(12);
 
         $categories = Category::all();
 
