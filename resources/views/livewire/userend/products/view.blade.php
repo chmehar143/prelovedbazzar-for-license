@@ -689,8 +689,22 @@
                <a href="javascript:void(0)" class="btn btn-dark btn-link btn-slide-right btn-icon-right">More
                Products<i class="w-icon-long-arrow-right"></i></a>
             </div>
-            <div class="swiper-container swiper-theme" data-swiper-options="">
-               <div class="swiper-wrapper row cols-lg-4 cols-md-3 cols-sm-2 ">
+            <div class="swiper-container swiper-theme" data-swiper-options="{
+                                    'spaceBetween': 20,
+                                    'slidesPerView': 2,
+                                    'breakpoints': {
+                                        '576': {
+                                            'slidesPerView': 4
+                                        },
+                                        '768': {
+                                            'slidesPerView': 4
+                                        },
+                                        '992': {
+                                            'slidesPerView': 4
+                                        }
+                                    }
+                                }">
+               <div class="swiper-wrapper row cols-lg-3 cols-md-3 cols-sm-2 ">
                   @foreach($moreproducts as $unit)
                   <div class="swiper-slide product">
                      <figure class="product-media">
@@ -746,7 +760,21 @@
                <a href="#" class="btn btn-dark btn-link btn-slide-right btn-icon-right">More
                Products<i class="w-icon-long-arrow-right"></i></a>
             </div>
-            <div class="swiper-container swiper-theme" data-swiper-options="">
+            <div class="swiper-container swiper-theme" data-swiper-options="{
+                                    'spaceBetween': 20,
+                                    'slidesPerView': 2,
+                                    'breakpoints': {
+                                        '576': {
+                                            'slidesPerView': 4
+                                        },
+                                        '768': {
+                                            'slidesPerView': 4
+                                        },
+                                        '992': {
+                                            'slidesPerView': 4
+                                        }
+                                    }
+                                }">
                <div class="swiper-wrapper row cols-lg-4 cols-md-3 cols-sm-2 ">
                   @foreach($related_products as $related)
                   <div class="swiper-slide product">
