@@ -11,13 +11,13 @@
          <div class="swiper-wrapper">
             @foreach($banners as $banner)
             <div class="swiper-slide banner banner-fixed intro-slide intro-slide1"
-               style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-1.jpg')}}); background-color: #ebeef2;">
+               style="background-image: url({{ asset('storage/uploads/Web_banners/'.$banner->image )}}); background-color: #ebeef2;">
                <div class="container">
-                  <figure class="slide-image skrollable slide-animate">
-                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/sliders/shoes.png')}}" alt="Banner"
+                  <!-- <figure class="slide-image skrollable slide-animate">
+                     <img src="" alt="Banner"
                         data-bottom-top="transform: translateY(10vh);"
                         data-top-bottom="transform: translateY(-10vh);" width="474" height="397">
-                  </figure>
+                  </figure> -->
                   <div class="banner-content y-50 text-right">
                      <h5 class="banner-subtitle font-weight-normal text-default ls-50 lh-1 mb-2 slide-animate"
                         data-animation-options="{
@@ -25,7 +25,7 @@
                         'duration': '1s',
                         'delay': '.2s'
                         }">
-                        Custom <span class="p-relative d-inline-block">Men’s</span>
+                        <span class="p-relative d-inline-block">{{$banner->description}}</span>
                      </h5>
                      <h3 class="banner-title font-weight-bolder ls-25 lh-1 slide-animate"
                         data-animation-options="{
@@ -33,16 +33,16 @@
                         'duration': '1s',
                         'delay': '.4s'
                         }">
-                        RUNNING SHOES
+                        {{$banner->title}}
                      </h3>
                      <p class="font-weight-normal text-default slide-animate" data-animation-options="{
                         'name': 'fadeInRightShorter',
                         'duration': '1s',
                         'delay': '.6s'
                         }">
-                        Sale up to <span class="font-weight-bolder text-secondary">30% OFF</span>
+                        <span class="font-weight-bolder text-secondary">{{$banner->offer}}</span>
                      </p>
-                     <a href="{{route('shop')}}"
+                     <a href="{{$banner->url}}"
                         class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                         data-animation-options="{
                         'name': 'fadeInRightShorter',
@@ -56,7 +56,7 @@
             </div>
             @endforeach
             <!-- End of .intro-slide1 -->
-            <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"
+            <!-- <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"
                style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-2.jpg')}}); background-color: #ebeef2;">
                <div class="container">
                   <figure class="slide-image skrollable slide-animate" data-animation-options="{
@@ -104,9 +104,9 @@
                   <!-- End of .banner-content -->
                </div>
                <!-- End of .container -->
-            </div>
+            </div> -->
             <!-- End of .intro-slide2 -->
-            <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
+            <!-- <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
                style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-3.jpg')}}); background-color: #f0f1f2;">
                <div class="container">
                   <figure class="slide-image skrollable slide-animate" data-animation-options="{
@@ -154,7 +154,7 @@
                   </div>
                   <!-- End of .container -->
                </div>
-            </div>
+            </div> -->
             <!-- End of .intro-slide3 -->
          </div>
          <div class="swiper-pagination"></div>
@@ -502,132 +502,123 @@
    <div class="container">
       <div class="row">
          <div class="col-md-12">
-            <div class="title-link-wrapper pb-1 mb-4">
-               <h2 class="title ls-normal mb-0">Top Weekly  &amp; Vendors</h2>
-            </div>
-            <div class="swiper-container swiper-theme shadow-swiper  vendor-wrapper appear-animate mb-6" data-swiper-options="{
-               'spaceBetween': 20,
-               'slidesPerView': 1,
-               'breakpoints': {
-               '576': {
-               'slidesPerView': 2
-               },
-               '768': {
-               'slidesPerView': 3
-               },
-               '992': {
-               'slidesPerView': 4
-               }
-               }
-               }">
-               <div class="swiper-wrapper row cols-xl-4 cols-md-3 cols-sm-2 cols-1">
-                  <div class="swiper-slide vendor-widget">
-                     <div class="vendor-widget-banner">
-                        <figure class="vendor-banner">
-                           <a href="vendor-dokan-store.html">
-                           <img src="../frontend-assets/assets/images/demos/demo3/vendors/1.jpg" alt="Vendor Banner" width="1200"
-                              height="390" style="background-color: #ECE7DF;     height: 10pc;" />
-                           </a>
-                        </figure>
-                        <div class="vendor-details">
-                           <figure class="vendor-logo">
-                              <a href="vendor-dokan-store.html">
-                              <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-1.jpg" alt="Vendor Logo"
-                                 width="90" height="90" />
-                              </a>
-                           </figure>
-                           <div class="vendor-personal">
-                              <h4 class="vendor-name">
-                                 <a href="vendor-dokan-store.html">OAIO Store</a>
-                              </h4>
-                              <span class="vendor-product-count">27 Products</span>
-                           </div>
+            
+       
+   <div class="swiper-container swiper-theme shadow-swiper vendor-wrapper appear-animate mb-6 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events fadeIn appear-animation-visible" data-swiper-options="{
+                    'spaceBetween': 20,
+                    'slidesPerView': 1,
+                    'breakpoints': {
+                        '576': {
+                            'slidesPerView': 2
+                        },
+                        '768': {
+                            'slidesPerView': 3
+                        },
+                        '992': {
+                            'slidesPerView': 4
+                        }
+                    }
+                }" style="animation-duration: 1.2s;">
+                    <div class="swiper-wrapper " id="swiper-wrapper-014adb8158a119e6" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide vendor-widget swiper-slide-active" role="group" aria-label="1 / 4" style="width: 295px; margin-right: 20px;">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/1.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #ECE7DF;">
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-1.jpg" alt="Vendor Logo" width="90" height="90">
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">OAIO Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">27 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
                         </div>
-                     </div>
-                     <!-- End of Vendor Widget Banner -->
-                  </div>
-                  <div class="swiper-slide vendor-widget">
-                     <div class="vendor-widget-banner">
-                        <figure class="vendor-banner">
-                           <a href="vendor-dokan-store.html">
-                           <img src="../frontend-assets/assets/images/demos/demo3/vendors/2.jpg" alt="Vendor Banner" width="1200"
-                              height="390" style="background-color: #293936;    height: 10pc;" />
-                           </a>
-                        </figure>
-                        <div class="vendor-details">
-                           <figure class="vendor-logo">
-                              <a href="vendor-dokan-store.html">
-                              <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-2.jpg" alt="Vendor Logo"
-                                 width="90" height="90" />
-                              </a>
-                           </figure>
-                           <div class="vendor-personal">
-                              <h4 class="vendor-name">
-                                 <a href="vendor-dokan-store.html">Trident Store</a>
-                              </h4>
-                              <span class="vendor-product-count">11 Products</span>
-                           </div>
+                        <div class="swiper-slide vendor-widget swiper-slide-next" role="group" aria-label="2 / 4" style="width: 295px; margin-right: 20px;">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/2.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #293936;">
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-2.jpg" alt="Vendor Logo" width="90" height="90">
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">Trident Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">11 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
                         </div>
-                     </div>
-                     <!-- End of Vendor Widget Banner -->
-                  </div>
-                  <div class="swiper-slide vendor-widget">
-                     <div class="vendor-widget-banner">
-                        <figure class="vendor-banner">
-                           <a href="vendor-dokan-store.html">
-                           <img src="../frontend-assets/assets/images/demos/demo3/vendors/3.jpg" alt="Vendor Banner" width="1200"
-                              height="390" style="background-color: #B8CDCE;     height: 10pc;" />
-                           </a>
-                        </figure>
-                        <div class="vendor-details">
-                           <figure class="vendor-logo">
-                              <a href="vendor-dokan-store.html">
-                              <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-3.jpg" alt="Vendor Logo"
-                                 width="90" height="90" />
-                              </a>
-                           </figure>
-                           <div class="vendor-personal">
-                              <h4 class="vendor-name">
-                                 <a href="vendor-dokan-store.html">Pam Store</a>
-                              </h4>
-                              <span class="vendor-product-count">16 Products</span>
-                           </div>
+                        <div class="swiper-slide vendor-widget" role="group" aria-label="3 / 4" style="width: 295px; margin-right: 20px;">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="frontend-assets/frontend-assets/assets/images/demos/demo3/vendors/3.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #B8CDCE;">
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-3.jpg" alt="Vendor Logo" width="90" height="90">
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">Pam Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">16 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
                         </div>
-                     </div>
-                     <!-- End of Vendor Widget Banner -->
-                  </div>
-                  <div class="swiper-slide vendor-widget">
-                     <div class="vendor-widget-banner">
-                        <figure class="vendor-banner">
-                           <a href="vendor-dokan-store.html">
-                           <img src="../frontend-assets/assets/images/demos/demo3/vendors/4.jpg" alt="Vendor Banner" width="1200"
-                              height="390" style="background-color: #F5F5F5;    height: 10pc;" />
-                           </a>
-                        </figure>
-                        <div class="vendor-details">
-                           <figure class="vendor-logo">
-                              <a href="vendor-dokan-store.html">
-                              <img src="../frontend-assets/assets/images/demos/demo3/vendors/brand-4.jpg" alt="Vendor Logo"
-                                 width="90" height="90" />
-                              </a>
-                           </figure>
-                           <div class="vendor-personal">
-                              <h4 class="vendor-name">
-                                 <a href="vendor-dokan-store.html">K Group Store</a>
-                              </h4>
-                              <span class="vendor-product-count">25 Products</span>
-                           </div>
+                        <div class="swiper-slide vendor-widget" role="group" aria-label="4 / 4" style="width: 295px; margin-right: 20px;">
+                            <div class="vendor-widget-banner">
+                                <figure class="vendor-banner">
+                                    <a href="vendor-dokan-store.html">
+                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/4.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #F5F5F5;">
+                                    </a>
+                                </figure>
+                                <div class="vendor-details">
+                                    <figure class="vendor-logo">
+                                        <a href="vendor-dokan-store.html">
+                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-4.jpg" alt="Vendor Logo" width="90" height="90">
+                                        </a>
+                                    </figure>
+                                    <div class="vendor-personal">
+                                        <h4 class="vendor-name">
+                                            <a href="vendor-dokan-store.html">K Group Store</a>
+                                        </h4>
+                                        <span class="vendor-product-count">25 Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Vendor Widget Banner -->
                         </div>
-                     </div>
-                     <!-- End of Vendor Widget Banner -->
-                  </div>
-               </div>
-               <div class="swiper-pagination"></div>
-            </div>
-         </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+   <!-- End of Swiper Container -->
+   </div>
       </div>
    </div>
-   <!-- End of Swiper Container -->
 
    <div class="container">
       <div class="title-link-wrapper pb-1 mb-4">
@@ -1116,7 +1107,7 @@
                   <figure class="product-media">
                      <a href="product-defa{{route('product', $recent->p_id)}}">
                      <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
-                        style="width:300px;height:300px" style="background-color: #fff" />
+                        style="width:300px;height:150px" style="background-color: #fff" />
                      </a>
                   </figure>
                   <h4 class="product-name">

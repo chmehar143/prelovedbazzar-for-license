@@ -40,10 +40,11 @@ use Illuminate\Support\Facades\URL;
             <!-- <a href="{{route('blogs')}}" class="d-lg-show">Blog</a> -->
             <!-- <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a> -->
 
-            @if(Auth::guard('user')->check())
+            @if(Auth::guard('user')->check() )
             <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
             <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
-            @else
+                 <a href="{{route('user.logout')}}" class="d-lg-show">Logout</a>
+             @else
             <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
             <span class="delimiter  d-lg-show">/</span>
             <a href="{{route('user.login')}}#sign-up" class="ml-0 d-lg-show ">Register</a>
@@ -128,7 +129,7 @@ use Illuminate\Support\Facades\URL;
                            </a>
                            @if($category['subcategory']->count() > 0)
                            <ul class="">
-                              @forelse($category['subcategory'] as $subcategory)  
+                              @forelse($category['subcategory'] as $subcategory)
                               <li><a href="{{ route('subcat',$subcategory->id ) }}">{{$subcategory->name}}</a></li>
                               @empty
                               <li style="display: none;"></li>
@@ -154,14 +155,14 @@ use Illuminate\Support\Facades\URL;
                      </li>
                      <!-- <li>
                         <a href="{{route('about-us')}}">About Us</a>
-                        
+
                         </li> -->
-                       
+
 
                      <li><a href="{{route('vendor.register')}}">Become A Vendor</a></li>
 
-                     <li class=" @if(Request::segment(1) == 'about-us') active @endif"> 
-                           <a href="{{route('about-us')}}">About Us</a> 
+                     <li class=" @if(Request::segment(1) == 'about-us') active @endif">
+                           <a href="{{route('about-us')}}">About Us</a>
                       </li>
 
                       <li class=" @if(Request::segment(1) == 'contact-us') active @endif">
