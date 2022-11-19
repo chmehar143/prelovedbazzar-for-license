@@ -49,7 +49,7 @@ class VerificationController extends Controller
             $carts = Cart::where('user_id', $user->id())
                 ->join('products', 'carts.prod_id', '=', 'products.id')
                 ->get();
-        } 
+        }
         else {
             $session = Session::getId();
             $carts = Cart::where('session_id', $session)

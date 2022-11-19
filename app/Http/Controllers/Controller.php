@@ -14,14 +14,13 @@ class Controller extends BaseController
 
     public  function  __construct()
     {
-        if (Auth::guard('user')->check()) 
+        if (Auth::guard('user')->check())
         {
-
             $carts = Cart::where('user_id', Auth::guard('user')->id())
             ->join('products', 'carts.prod_id', '=', 'products.id')
             ->get();
-            
-        } 
+
+        }
         else {
             $session = Session::getId();
             $carts = Cart::where('session_id', $session)
@@ -35,7 +34,7 @@ class Controller extends BaseController
             'subcategories' => $subcategories,
             'carts' => $carts
         );
-        if (Auth::guard('user')->check()) 
+        if (Auth::guard('user')->check())
         {
             $shareData['user'] = Auth::guard('user')->user();
         }
