@@ -60,9 +60,18 @@ class ProductController extends Controller
 
     public  function  create()
     {
-        $categories = Category::all();
-        $conditions = Config::get('constants.condition');
-        return view('vendor.product.create', compact('categories', 'conditions'));
+        $vendor = Auth::guard('vendor')->user();
+        if($vendor->status == 1)
+        {
+            $categories = Category::all();
+            $conditions = Config::get('constants.condition');
+            return view('vendor.product.create', compact('categories', 'conditions'));
+        }
+        else
+        {
+            return redirect()->back()->with('message', 'Please contact to admin to verify status');
+        }
+
     }
 
 
@@ -127,67 +136,75 @@ class ProductController extends Controller
                     ->where('expired_at', '>', now())->where('status', 0)->first();
         if($allowed)
         {
-            $product = new Product();
-            $product->vendor_id = Auth::guard('vendor')->id();
-            $product->p_type = $request->input('p_type');
-            $product->p_name = $request->input('p_name');
-            if($request->hasfile('avatar'))
+            $vendor = Auth::guard('vendor')->user();
+            if($vendor->status == 1)
             {
-                $file = $request->file('avatar');
-                $extention = $file->getClientOriginalExtension();
-                $filename = time().'.'.$extention;
-                $file->storeAs('uploads/products/', $filename, 'public');
-                $product->p_image = $filename;
-
-            }
-            $product->p_sku = $request->input('p_sku');
-            $product->p_ship_time = $request->input('p_ship_time');
-            $product->p_color = $request->input('p_color');
-            $product->p_catog = $request->input('p_catog');
-            $product->p_sub_catog = $request->input('p_sub_catog');
-            $product->p_child_catog = $request->input('p_child_catog');
-            $product->p_new_price = $request->input('p_new_price');
-            $product->p_old_price = $request->input('p_old_price');
-            $product->p_stock = $request->input('p_stock');
-            $product->p_detail = $request->input('p_detail');
-            $product->p_r_policy = $request->input('p_r_policy');
-            $product->status = 1;
-            if($request->input('small') == true){
-                $product->small = 1;
-            }else{
-                $product->small = 0;
-            }
-            if($request->input('medium') == true){
-                $product->medium = 1;
-            }else{
-                $product->medium = 0;
-            }
-            if($request->input('large') == true){
-                $product->large = 1;
-            }else{
-                $product->large = 0;
-            }
-            $product->save();
-            //plan updated...
-                $allowed->remaining_quantity = $allowed->remaining_quantity -1;
-                $allowed->update();
-            //end plan updated
-            if($request->hasfile('gallery'))
-            {
-                $i = 1;
-                foreach($request->file('gallery') as $image)
+                $product = new Product();
+                $product->vendor_id = $vendor->id();
+                $product->p_type = $request->input('p_type');
+                $product->p_name = $request->input('p_name');
+                if($request->hasfile('avatar'))
                 {
-                    $ext = $image->getClientOriginalExtension();
-                    $galleryname = time().$i++.'.'.$ext;
-                    $image->storeAs('uploads/gallery', $galleryname, 'public');
-                    $product->gallery()->create([
-                        'product_id'=> $product->id,
-                        'image'=> $galleryname
-                    ]);
-                }
+                    $file = $request->file('avatar');
+                    $extention = $file->getClientOriginalExtension();
+                    $filename = time().'.'.$extention;
+                    $file->storeAs('uploads/products/', $filename, 'public');
+                    $product->p_image = $filename;
 
+                }
+                $product->p_sku = $request->input('p_sku');
+                $product->p_ship_time = $request->input('p_ship_time');
+                $product->p_color = $request->input('p_color');
+                $product->p_catog = $request->input('p_catog');
+                $product->p_sub_catog = $request->input('p_sub_catog');
+                $product->p_child_catog = $request->input('p_child_catog');
+                $product->p_new_price = $request->input('p_new_price');
+                $product->p_old_price = $request->input('p_old_price');
+                $product->p_stock = $request->input('p_stock');
+                $product->p_detail = $request->input('p_detail');
+                $product->p_r_policy = $request->input('p_r_policy');
+                $product->status = 1;
+                if($request->input('small') == true){
+                    $product->small = 1;
+                }else{
+                    $product->small = 0;
+                }
+                if($request->input('medium') == true){
+                    $product->medium = 1;
+                }else{
+                    $product->medium = 0;
+                }
+                if($request->input('large') == true){
+                    $product->large = 1;
+                }else{
+                    $product->large = 0;
+                }
+                $product->save();
+                //plan updated...
+                    $allowed->remaining_quantity = $allowed->remaining_quantity -1;
+                    $allowed->update();
+                //end plan updated
+                if($request->hasfile('gallery'))
+                {
+                    $i = 1;
+                    foreach($request->file('gallery') as $image)
+                    {
+                        $ext = $image->getClientOriginalExtension();
+                        $galleryname = time().$i++.'.'.$ext;
+                        $image->storeAs('uploads/gallery', $galleryname, 'public');
+                        $product->gallery()->create([
+                            'product_id'=> $product->id,
+                            'image'=> $galleryname
+                        ]);
+                    }
+
+                }
+                return redirect()->route('vendor.product_list')->with('message', 'Product added successfully');
             }
-            return redirect()->route('vendor.product_list')->with('message', 'Product added successfully');
+            else
+            {
+                return redirect()->back()->with('message', 'Please contact admin to verify your account');
+            }
         }    
         else
         {
@@ -198,14 +215,22 @@ class ProductController extends Controller
     public  function  edit($id)
 
     {
-        $categories = Category::all();
-        $product = Product::where('products.id', $id)->where('vendor_id', Auth::guard('vendor')->id())
-                    ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
-                    ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
-                    ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
-                    ->first(); 
-        $conditions = Config::get('constants.condition');  
-        return view('vendor.product.edit', compact('product','categories','conditions'));
+        $vendor = Auth::guard('vendor')->user();
+        if($vendor->status == 1)
+        {
+            $categories = Category::all();
+            $product = Product::where('products.id', $id)->where('vendor_id', Auth::guard('vendor')->id())
+                        ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
+                        ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
+                        ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
+                        ->first(); 
+            $conditions = Config::get('constants.condition');  
+            return view('vendor.product.edit', compact('product','categories','conditions'));
+        }
+        else
+        {
+            return redirect()->back()->with('message', 'Please contact to admin to verify status');
+        }
     }
 
 
@@ -245,82 +270,81 @@ class ProductController extends Controller
                     ->where('expired_at', '>', now())->weher('status', 0)->first();
         if($allowed)
         {
-
-            $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
-            $product->p_name = $request->input('p_name');
-            if($request->hasfile('avatar') != '')
+            $vendor = Auth::guard('vendor')->user();
+            if($vendor->status == 1)
             {
-                //new 
-                $destination = 'storage/uploads/products/'.$product->p_image;
-                if(File::exists($destination))
-                    {
-                        File::delete($destination);
-                    }
-                //end new
-                $file = $request->file('avatar');
-                $extention = $file->getClientOriginalExtension();
-                $filename = time().'.'.$extention;
-                $file->storeAs('uploads/products/', $filename, 'public');
-                $product->p_image = $filename;
-
-            }
-            $product->p_sku = $request->input('p_sku');
-            $product->p_ship_time = $request->input('p_ship_time');
-            $product->p_color = $request->input('p_color');
-            $product->p_catog = $request->input('p_catog');
-            $product->p_sub_catog = $request->input('p_sub_catog');
-            $product->p_child_catog = $request->input('p_child_catog');
-            $product->p_new_price = $request->input('p_new_price');
-            $product->p_old_price = $request->input('p_old_price');
-            $product->p_stock = $request->input('p_stock');
-            $product->p_detail = $request->input('p_detail');
-            $product->p_r_policy = $request->input('p_r_policy');
-            if($request->input('small') == true){
-                $product->small = 1;
-            }else{
-                $product->small = 0;
-            }
-            if($request->input('medium') == true){
-                $product->medium = 1;
-            }else{
-                $product->medium = 0;
-            }
-            if($request->input('large') == true){
-                $product->large = 1;
-            }else{
-                $product->large = 0;
-            }
-            if($request->input('checkbox') == true){
-                $product->status = 1;
-            }else{
-                $product->status = 0;
-            }
-            if($request->hasfile('gallery'))
-            {
-                $i = 1;
-                foreach($request->file('gallery') as $image)
+                $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
+                $product->p_name = $request->input('p_name');
+                if($request->hasfile('avatar') != '')
                 {
-                    //delete old images
-                    // $destination = 'storage/uploads/gallery/'.$product->gallery->image;
-                    // if(File::exists($destination))
-                    // {
-                    //     File::delete($destination);
-                    // }
-                    // //end
+                    //new 
+                    $destination = 'storage/uploads/products/'.$product->p_image;
+                    if(File::exists($destination))
+                        {
+                            File::delete($destination);
+                        }
+                    //end new
+                    $file = $request->file('avatar');
+                    $extention = $file->getClientOriginalExtension();
+                    $filename = time().'.'.$extention;
+                    $file->storeAs('uploads/products/', $filename, 'public');
+                    $product->p_image = $filename;
 
-                    $ext = $image->getClientOriginalExtension();
-                    $galleryname = time().$i++.'.'.$ext;
-                    $image->storeAs('uploads/gallery', $galleryname, 'public');
-                    $product->gallery()->create([
-                        'product_id'=> $product->id,
-                        'image'=> $galleryname
-                    ]);
+                }
+                $product->p_sku = $request->input('p_sku');
+                $product->p_ship_time = $request->input('p_ship_time');
+                $product->p_color = $request->input('p_color');
+                $product->p_catog = $request->input('p_catog');
+                $product->p_sub_catog = $request->input('p_sub_catog');
+                $product->p_child_catog = $request->input('p_child_catog');
+                $product->p_new_price = $request->input('p_new_price');
+                $product->p_old_price = $request->input('p_old_price');
+                $product->p_stock = $request->input('p_stock');
+                $product->p_detail = $request->input('p_detail');
+                $product->p_r_policy = $request->input('p_r_policy');
+                if($request->input('small') == true){
+                    $product->small = 1;
+                }else{
+                    $product->small = 0;
+                }
+                if($request->input('medium') == true){
+                    $product->medium = 1;
+                }else{
+                    $product->medium = 0;
+                }
+                if($request->input('large') == true){
+                    $product->large = 1;
+                }else{
+                    $product->large = 0;
+                }
+                if($request->input('checkbox') == true){
+                    $product->status = 1;
+                }else{
+                    $product->status = 0;
+                }
+                if($request->hasfile('gallery'))
+                {
+                    $i = 1;
+                    foreach($request->file('gallery') as $image)
+                    {
+                        $ext = $image->getClientOriginalExtension();
+                        $galleryname = time().$i++.'.'.$ext;
+                        $image->storeAs('uploads/gallery', $galleryname, 'public');
+                        $product->gallery()->create([
+                            'product_id'=> $product->id,
+                            'image'=> $galleryname
+                        ]);
+                    }
+
                 }
 
+                $product->update();
+                return redirect()->route('vendor.product_list')->with('message', 'Product updated successfully');
             }
-
-            $product->update();
-            return redirect()->route('vendor.product_list')->with('message', 'Product updated successfully');        
+            else
+            {
+                return redirect()->back()->with('message', 'Please contact admin to verify your status');
+            }        
         }    
 
     }
