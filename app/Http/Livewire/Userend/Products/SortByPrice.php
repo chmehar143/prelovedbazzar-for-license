@@ -191,7 +191,7 @@ class SortByPrice extends Component
 
     public function render()
     {
-        $products = Product::whereBetween('p_new_price' ,[$this->min, $this->max])->where('status', 1)->with('discussions')
+        $products = Product::whereBetween('p_new_price' ,[$this->min, $this->max])->where('products.status', 1)->with('discussions')
                     ->join('categories', 'products.p_catog','=','categories.id')
                     ->select('products.*', 'categories.name')
                     ->paginate(12);
