@@ -619,7 +619,7 @@
    </div>
       </div>
    </div>
-   
+
    <div class="container">
       <div class="title-link-wrapper pb-1 mb-4">
          <h2 class="title ls-normal mb-0">Popular  &amp; Departments</h2>
@@ -1107,7 +1107,7 @@
                   <figure class="product-media">
                      <a href="product-defa{{route('product', $recent->p_id)}}">
                      <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
-                        style="width:300px;height:300px" style="background-color: #fff" />
+                        style="width:300px;height:150px" style="background-color: #fff" />
                      </a>
                   </figure>
                   <h4 class="product-name">
