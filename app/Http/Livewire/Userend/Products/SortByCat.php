@@ -195,7 +195,7 @@ class SortByCat extends Component
     {
         $category = Category::where('id', $this->cat_id)->first();
         if($category){
-            $products = Product::where('p_catog', $this->cat_id)->where('status', 1)->with('discussions')
+            $products = Product::where('p_catog', $this->cat_id)->where('products.status', 1)->with('discussions')
             ->join('categories', 'products.p_catog','=','categories.id')
             ->select('products.*', 'categories.name')
             ->paginate(12);
