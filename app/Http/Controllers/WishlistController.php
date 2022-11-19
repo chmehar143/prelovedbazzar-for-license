@@ -32,7 +32,7 @@ class WishlistController extends Controller
 
     public function store($id)
     {
-        $item = Product::where('id', $id)->first();
+        $item = Product::where('id', $id)->where('status', 1)->first();
         if(Auth::guard('user')->check()){
             $wish = WishList::where('p_id', $id)
             ->where('user_id', Auth::guard('user')->id())->first();

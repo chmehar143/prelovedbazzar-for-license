@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\{Category, Vendor, Product, Childcategory, Subcategory, Discussion, User};
+use App\Models\{Category, Vendor, Childcategory, Subcategory, Discussion, User};
 class ShopController extends Controller
 {
     public function index()
