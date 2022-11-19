@@ -3229,6 +3229,11 @@ blockquote {
   content: "";
 }
 
+.w-icon-plus:before {
+  content: "";
+  margin-left: 2px !important;
+  margin-bottom: 1;
+}
 .swiper-wrapper {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3236,7 +3241,7 @@ blockquote {
 
 .swiper-container:not(.swiper-container-initialized) .swiper-wrapper {
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      flex-wrap: initial;
   overflow: hidden;
   width: auto;
 }
@@ -21496,10 +21501,10 @@ aside .sp-sidebar-banner span {
   transition: opacity 0.3s, -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s;
   transition: box-shadow 0.3s, opacity 0.3s, -webkit-box-shadow 0.3s;
-  /* border: 1px solid #eee; */
-  /* margin-bottom: 2rem !important; */
-  /* border: 1px solid #eee !important; */
+  margin-bottom: 2rem !important;
+  border: 1px solid #eee !important;
   margin-right: 0px !important;
+
   cursor: pointer;
 }
 .product:hover {
