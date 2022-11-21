@@ -61,15 +61,24 @@ class ProductController extends Controller
     public  function  create()
     {
         $vendor = Auth::guard('vendor')->user();
-        if($vendor->status == 1)
+        $allowed = PlanOrder::where('vendor_id', Auth::guard('vendor')->id())->where('remaining_quantity', '>', 0)
+                    ->where('expired_at', '>', now())->where('status', 0)->first();
+        if($allowed)
         {
-            $categories = Category::all();
-            $conditions = Config::get('constants.condition');
-            return view('vendor.product.create', compact('categories', 'conditions'));
+            if($vendor->status == 1)
+            {
+                $categories = Category::all();
+                $conditions = Config::get('constants.condition');
+                return view('vendor.product.create', compact('categories', 'conditions'));
+            }
+            else
+            {
+                return redirect()->back()->with('message', 'Please contact to admin to verify status');
+            }
         }
         else
         {
-            return redirect()->back()->with('message', 'Please contact to admin to verify status');
+            return redirect()->route('vendor.subscriptionplan_list')->with('message', 'Please purchase subscrption plan before adding product');  
         }
 
     }
@@ -216,20 +225,29 @@ class ProductController extends Controller
 
     {
         $vendor = Auth::guard('vendor')->user();
-        if($vendor->status == 1)
+        $allowed = PlanOrder::where('vendor_id', Auth::guard('vendor')->id())
+                    ->where('expired_at', '>', now())->where('status', 0)->first();
+        if($allowed)
         {
-            $categories = Category::all();
-            $product = Product::where('products.id', $id)->where('vendor_id', Auth::guard('vendor')->id())
-                        ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
-                        ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
-                        ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
-                        ->first(); 
-            $conditions = Config::get('constants.condition');  
-            return view('vendor.product.edit', compact('product','categories','conditions'));
+            if($vendor->status == 1)
+            {
+                $categories = Category::all();
+                $product = Product::where('products.id', $id)->where('vendor_id', Auth::guard('vendor')->id())
+                            ->leftJoin('subcategories', 'p_sub_catog', '=', 'subcategories.id')
+                            ->leftJoin('childcategories', 'p_child_catog', '=', 'childcategories.id')
+                            ->select('products.*', 'subcategories.name as sub_name', 'childcategories.name as child_name')
+                            ->first(); 
+                $conditions = Config::get('constants.condition');  
+                return view('vendor.product.edit', compact('product','categories','conditions'));
+            }
+            else
+            {
+                return redirect()->back()->with('message', 'Please contact to admin to verify status');
+            }
         }
         else
         {
-            return redirect()->back()->with('message', 'Please contact to admin to verify status');
+            return redirect()->route('vendor.subscriptionplan_list')->with('message', 'Please purchase subscrption plan before adding product');  
         }
     }
 
@@ -267,7 +285,7 @@ class ProductController extends Controller
         }
         //end validation
         $allowed = PlanOrder::where('vendor_id', Auth::guard('vendor')->id())
-                    ->where('expired_at', '>', now())->weher('status', 0)->first();
+                    ->where('expired_at', '>', now())->where('status', 0)->first();
         if($allowed)
         {
             $vendor = Auth::guard('vendor')->user();
@@ -345,6 +363,10 @@ class ProductController extends Controller
             {
                 return redirect()->back()->with('message', 'Please contact admin to verify your status');
             }        
+        }
+        else
+        {
+            return redirect()->route('vendor.subscriptionplan_list')->with('message', 'Please purchase subscrption plan before adding product');  
         }    
 
     }

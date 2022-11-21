@@ -41,8 +41,8 @@ use Illuminate\Support\Facades\URL;
             <!-- <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a> -->
 
             @if(Auth::guard('user')->check() )
-            <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
-            <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
+                <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
+                <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
                  <a href="{{route('user.logout')}}" class="d-lg-show">Logout</a>
              @else
             <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
