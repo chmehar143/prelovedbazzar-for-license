@@ -127,7 +127,7 @@
    </div>
 </div>
 <div style="background-color:white">
-   <div class="container" style="margin-top:9pc;margin-left:5pc" >
+   <div class="container" style="margin-top:9pc;margin-left:1pc" >
       <div class="mr-breadcrumb">
          <div class="row">
             <div class="col-lg-12">
