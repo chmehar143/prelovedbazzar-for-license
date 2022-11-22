@@ -47,6 +47,9 @@
       <div class="card">
          <!--begin::Card header-->
          <div class="card-header border-0 pt-6">
+            @if(session('message'))
+               <div class="alert alert-success">{{ session('message') }}</div>
+            @endif
             <!--begin::Card title-->
             <div class="card-title">
                <!--begin::Search-->
@@ -106,11 +109,11 @@
                            <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                               aria-label=" Name : activate to sort column ascending" style="width: 192.25px;"> Order Number	 </th>
                            <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
+                              aria-label=" Price : activate to sort column ascending" style="width: 192.25px;"> Product title</th>
+                           <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                               aria-label="Type   : activate to sort column ascending" style="width: 192.25px;">Total Qty	 </th>
                            <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                               aria-label=" Price : activate to sort column ascending" style="width: 192.25px;"> Total Cost	 </th>
-                           <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
-                              aria-label=" Price : activate to sort column ascending" style="width: 192.25px;"> Payment Method		 </th>
                            <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
                               aria-label="Status : activate to sort column ascending" style="width: 192.25px;">Status </th>
                            <th class="min-w-125px sorting"  tabindex="0" aria-controls="kt_customers_table" rowspan="1" colspan="1"
@@ -121,20 +124,19 @@
                      <!--end::Table head-->
                      <!--begin::Table body-->
                      <tbody class="fw-bold text-gray-600">
+                        @foreach($orders as $order)
                         <tr class="odd">
                            <!--begin::Checkbox-->
                            <td>
-                              <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                 <input class="form-check-input" type="checkbox" value="1">
-                              </div>
+                              {{$loop->iteration}}
                            </td>
                            <!--end::Checkbox-->
-                           <td>#124934j94394 </td>
-                           <td>2 	</td>
-                           <td><a href="#" class="text-gray-600 text-hover-primary mb-1">4000</a>	</td>
-                           <td>Bank Transfer</td>
+                           <td>{{$order->id}}</td>
+                           <td>{{$order->product->p_name}}</td>
+                           <td>{{$order->pro_qnty}}</td>
+                           <td><a href="#" class="text-gray-600 text-hover-primary mb-1">{{$order->subtotal + $order->sub_shipping}}</a>	</td>
                            <td data-order="Invalid date">
-                              <span class="badge badge-light-success">Approved</span>
+                              <span class="badge badge-light-success">{{$status[$order->sub_status]}}</span>
                            </td>
                            <!--end::Date=-->
                            <!--begin::Action=-->
@@ -152,16 +154,16 @@
                               <!--begin::Menu-->
                               <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
                                  <!--begin::Menu item-->
-                                 <!-- <div class="menu-item px-3">
-                                    <a href="{{url('vendor/product_view')}}"" class="menu-link px-3">View</a>
-                                    </div> -->
-                                 <!--end::Menu item-->
-                                 <!-- <div class="menu-item px-3">
-                                    <a href="{{url('vendor/product_edit')}}"" class="menu-link px-3">Edit</a>
-                                    </div> -->
-                                 <!--begin::Menu item-->
                                  <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
+                                    <a href="{{ route('vendor.order_view',$order->id)}}" class="menu-link px-3">View</a>
+                                 </div>
+                                 <!--end::Menu item-->
+                                 <div class="menu-item px-3">
+                                    <a href="{{url('vendor/product_edit/'.$order->id)}}" class="menu-link px-3">Edit</a>
+                                 </div>
+                                 <!--begin::Menu item-->
+                                 <div class="menu-item px-3" id="{{$order->id}}">
+                                    <a href="javascript:void(0)" class="menu-link px-3" data-kt-customer-table-filter="delete_row" onclick="deleteProduct({{$order->id}})">Delete</a>
                                  </div>
                                  <!--end::Menu item-->
                               </div>
@@ -169,6 +171,7 @@
                            </td>
                            <!--end::Action=-->
                         </tr>
+                        @endforeach
                      </tbody>
                      <!--end::Table body-->
                   </table>
@@ -186,4 +189,13 @@
 </div>
 <!--end::Container-->
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+   $("document").ready(function(){
+    setTimeout(function(){
+       $("div.alert").remove();
+    }, 3000 ); // 3 secs
+
+});
+</script>
 @endsection
