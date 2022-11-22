@@ -89,7 +89,11 @@ Route::get('/setting_packgings_view', 'PackagingController@view')->name('setting
 
 Route::get('/setting_socialmedia_list', 'SocialMediaController@index')->name('setting_socialmedia_list');
 
+//order details...
+
 Route::get('/order_list', 'OrderController@index')->name('order_list');
+Route::get('/order_view/{id}', 'OrderController@view')->name('order_view');
+//Route::get('/order_list', 'OrderController@index')->name('order_list');
 
 
 

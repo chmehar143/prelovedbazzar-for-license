@@ -10183,7 +10183,7 @@ body .product-popup {
           align-items: baseline;
   font-size: 1.6rem;
   font-weight: 600;
-  letter-spacing: -0.05em;
+  letter-spacing: 0px;
   line-height: 1.6;
   -webkit-transition: visibility 0.4s, opacity 0.4s;
   transition: visibility 0.4s, opacity 0.4s;
