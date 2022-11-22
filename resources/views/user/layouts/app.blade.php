@@ -28,7 +28,7 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title> Home -   Multivendor </title>
+    <title> Home -   MarketPlace </title>
 
     <meta name="keywords" content=" Preloved Bazar" />
     <meta name="description" content=" Preloved Bazar is powerful marketplace &amp;  website.">

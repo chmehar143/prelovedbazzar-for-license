@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href="../../../">
-    <title>  Multivendor</title>
+    <title>Login | Marketplace </title>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/favicon.ico')}}" />
     <!--begin::Fonts-->
