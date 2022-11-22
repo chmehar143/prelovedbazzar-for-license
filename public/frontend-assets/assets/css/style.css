@@ -174,17 +174,17 @@ table {
           animation: fixedBottomContent 0.4s;
 }
 
+
+
+
+
+
+
 #scroll-top {
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   bottom: -4rem;
   right: 1.5rem;
   z-index: 9999;
@@ -194,40 +194,34 @@ table {
   font-weight: 700;
   color: #222;
   opacity: 0;
-  -webkit-transition: bottom 0.3s, opacity 0.3s;
-  transition: bottom 0.3s, opacity 0.3s;
+  transition: bottom 0.3s, opacity 0.3s
 }
 
 #scroll-top.show {
   opacity: 1;
-  bottom: 98px;
+  bottom: 98px
 }
 
-#scroll-top:focus, #scroll-top:hover {
-  text-decoration: none;
+#scroll-top:focus,
+#scroll-top:hover {
+  text-decoration: none
 }
 
 #scroll-top:hover {
-  opacity: 0.8;
+  opacity: 0.8
 }
 
 #scroll-top i {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 3.6rem;
   height: 3.6rem;
   color: #fff;
-  background-color: #333;
-  border: 2px solid #333;
+  background-color: #F4442C;
+  border: 2px solid #F4442C;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 1
 }
 
 #scroll-top svg {
@@ -237,21 +231,23 @@ table {
   border-radius: 50%;
   top: 1px;
   left: 1px;
-  z-index: -1;
+  z-index: -1
 }
 
 #scroll-top svg circle {
-  stroke: #2C67E7;
+  stroke: black;
   stroke-width: 4px;
   stroke-linecap: round;
-  stroke-dasharray: 1, 400;
+  stroke-dasharray: 1, 400
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   #scroll-top {
-    display: none;
+      display: none
   }
 }
+
+
 .loading:not(.load-more-overlay),
 .load-more-overlay.loading::after {
   -webkit-animation: spin 650ms infinite linear;
