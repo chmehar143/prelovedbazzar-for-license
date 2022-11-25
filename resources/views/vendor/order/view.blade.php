@@ -168,7 +168,7 @@
    </div>
    <!--end::Container-->
 </div>
-<div style="background-color:white">
+<div style="background-color:transparent">
    <div class="container" style="margin-top:11pc;margin-left:7pc" >
       <div class="mr-breadcrumb">
          <div class="row">
