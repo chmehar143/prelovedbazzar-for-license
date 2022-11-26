@@ -93,7 +93,8 @@ Route::get('/setting_socialmedia_list', 'SocialMediaController@index')->name('se
 
 Route::get('/order_list', 'OrderController@index')->name('order_list');
 Route::get('/order_view/{id}', 'OrderController@view')->name('order_view');
-//Route::get('/order_list', 'OrderController@index')->name('order_list');
+Route::get('/order_invoice/{id}', 'OrderController@invoice')->name('order_invoice');
+Route::post('/order_status/{id}', 'OrderController@status')->name('order_status');
 
 
 
