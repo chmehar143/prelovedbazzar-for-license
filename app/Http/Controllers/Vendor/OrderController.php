@@ -40,8 +40,27 @@ class OrderController extends Controller
     public  function  view($id)
     {
         $status = Config::get('constants.status');
+        $order_status = Config::get('constants.order_status');
         $detail = OrderDetail::where('vendor_id', Auth::guard('vendor')->id())->where('id', $id)->first();
 
-        return view('vendor.order.view', compact('detail', 'status'));
+        return view('vendor.order.view', compact('detail', 'status', 'order_status'));
+    }
+
+    public function invoice($id)
+    {
+        $status = Config::get('constants.status');
+        $order_status = Config::get('constants.order_status');
+        $detail = OrderDetail::where('vendor_id', Auth::guard('vendor')->id())->where('id', $id)->first();
+        return view('vendor.order.invoice', compact('detail', 'status'));
+    }
+
+    public function status(Request $request, $id)
+    {
+        $detail = OrderDetail::where('vendor_id', Auth::guard('vendor')->id())->where('id', $id)->first();
+        //dd($detail);
+        $detail->sub_status = $request->post('sub_status');
+        $detail->save();
+        return response()->json(['success' => 'Record Has Been Deleted!..']);
+
     }
 }
