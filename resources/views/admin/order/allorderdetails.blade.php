@@ -1,191 +1,129 @@
 @extends('admin.layouts.app')
-
 @section('content')
-
-<head>
-    <style>
-        .special-box {
-    box-shadow: 0px 1px 6px 0px rgb(208 208 208 / 61%);
-}
-
-.special-box {
-    margin-bottom: 20px;
-}
-.special-box .heading-area {
-    background: #eaeaf1;
-    border-bottom: 0px;
-    padding: 10px 30px 10px;
-}
-.heading-area {
-    background: #fff;
-    padding: 30px 30px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-}
-.special-box .table-responsive-sm {
-    padding: 0px 30px 10px 30px;
-}
-.table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-}
-@medi
-
-.h4, h4 {
-    font-size: 22px !important;
-}
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    margin-top: 0 !important;
-    margin-bottom: -0.5rem !important;
-    font-weight: 600 !important;
-    line-height: 3.2 !important;
-    color: #181c32 !important;
-}
-.special-box .footer-area .mybtn1 {
-    display: inline-block;
-    text-transform: unset;
-    border-radius: 50px;
-    background: #2d3274;
-    box-shadow: none;
-}
-.mybtn1 {
-    border-radius: 50px;
-    background-color: #1f224f;
-    -webkit-box-shadow: 0px 5px 10px 0px rgb(14 35 107 / 30%);
-    box-shadow: 0px 5px 10px 0px rgb(14 35 107 / 30%);
-    text-align: center;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    display: inline-block;
-    -webkit-transition: all 0.3s ease-in;
-    -o-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-    position: relative;
-    padding: 7px 25px;
-    border: 0px;
-}
-
-.order-details-table .mr-table {
-    box-shadow: 0px 1px 6px 0px rgb(208 208 208 / 61%);
-    padding-bottom: 5px;
-}
-
-.order-table-wrap .mr-table {
-    padding: 0px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.order-table-wrap .mr-table .title {
-    background: #eaeaf1;
-    display: block;
-    width: 100%;
-    padding: 10px 25px 10px;
-    text-align: left;
-    margin-bottom: 0px;
-}
-
-.order-table-wrap .mr-table .title {
-    font-weight: 600;
-    font-size: 19px;
-    display: inline-block;
-}
-        </style>
-</head>
+<style>
+      .special-box {
+      box-shadow: 0px 1px 6px 0px rgb(208 208 208 / 61%);
+      }
+      .special-box {
+      margin-bottom: 20px;
+      }
+      .special-box .heading-area {
+      background: #eaeaf1;
+      border-bottom: 0px;
+      padding: 10px 30px 10px;
+      }
+      .heading-area {
+      background: #fff;
+      padding: 30px 30px 30px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+      }
+      .special-box .table-responsive-sm {
+      padding: 0px 30px 10px 30px;
+      }
+      .table {
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #212529;
+      }
+      .h4, h4 {
+      font-size: 22px !important;
+      }
+      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+      margin-top: 0 !important;
+      margin-bottom: -0.5rem !important;
+      font-weight: 600 !important;
+      line-height: 3.2 !important;
+      color: #181c32 !important;
+      }
+      .special-box .footer-area .mybtn1 {
+      display: inline-block;
+      text-transform: unset;
+      border-radius: 50px;
+      background: #2d3274;
+      box-shadow: none;
+      }
+      .mybtn1 {
+      border-radius: 50px;
+      background-color: #1f224f;
+      -webkit-box-shadow: 0px 5px 10px 0px rgb(14 35 107 / 30%);
+      box-shadow: 0px 5px 10px 0px rgb(14 35 107 / 30%);
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      display: inline-block;
+      -webkit-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+      position: relative;
+      padding: 7px 25px;
+      border: 0px;
+      }
+      .order-details-table .mr-table {
+      box-shadow: 0px 1px 6px 0px rgb(208 208 208 / 61%);
+      padding-bottom: 5px;
+      }
+      .order-table-wrap .mr-table {
+      padding: 0px;
+      margin-top: 20px;
+      text-align: center;
+      }
+      .order-table-wrap .mr-table .title {
+      background: #eaeaf1;
+      display: block;
+      width: 100%;
+      padding: 10px 25px 10px;
+      text-align: left;
+      margin-bottom: 0px;
+      }
+      .order-table-wrap .mr-table .title {
+      font-weight: 600;
+      font-size: 19px;
+      display: inline-block;
+      }
+   </style>
 <div class="toolbar py-2" id="kt_toolbar">
-						<!--begin::Container-->
-						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> All Orders</h1>
-									<!--end::Title-->
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start mx-3"></span>
-									<!--end::Separator-->
-									<!--begin::Breadcrumb-->
-									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
-										<!--begin::Item-->
-										
-										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">Details</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark"> Order Details</li>
-										<!--end::Item-->
-									</ul>
-									<!--end::Breadcrumb-->
-								</div>
-							<!--begin::Page title-->
-							<div class="flex-grow-1 flex-shrink-0 me-5">
-								<!--begin::Page title-->
-								
-								<!--end::Page title-->
-							</div>
-							<!--end::Page title-->
-							<!--begin::Action group-->
-							<div class="d-flex align-items-center flex-wrap">
-								<!--begin::Wrapper-->
-								<div class="flex-shrink-0 me-2">
-									<ul class="nav">
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
-										</li>
-									</ul>
-								</div>
-								<!--end::Wrapper-->
-								<!--begin::Wrapper-->
-								<div class="d-flex align-items-center">
-									<!--begin::Daterangepicker-->
-									<a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
-										<span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
-										<span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
-									</a>
-									<!--end::Daterangepicker-->
-									<!--begin::Actions-->
-									<div class="d-flex align-items-center">
-										<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
-											<!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
-											<span class="svg-icon svg-icon-2x">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
-													<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</button>
-									</div>
-									<!--end::Actions-->
-								</div>
-								<!--end::Wrapper-->
-							</div>
-							<!--end::Action group-->
-						</div>
-						<!--end::Container-->
-					</div>
+   <!--begin::Container-->
+   <div id="kt_toolbar_container" class="container-fluid d-flex align-items-center">
+      <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+         <!--begin::Title-->
+         <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3" style="margin-left:3pc"> All Orders</h1>
+         <!--end::Title-->
+         <!--begin::Separator-->
+         <span class="h-20px border-gray-200 border-start mx-3"></span>
+         <!--end::Separator-->
+         <!--begin::Breadcrumb-->
+         <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+            <!--begin::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item">
+               <span class="bullet bg-gray-200 w-5px h-2px"></span>
+            </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item text-muted">Details</li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item">
+               <span class="bullet bg-gray-200 w-5px h-2px"></span>
+            </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item text-dark"> Order Details</li>
+            <!--end::Item-->
+         </ul>
+         <!--end::Breadcrumb-->
+      </div>
+   </div>
+   <!--end::Container-->
+</div>
 <div style="background-color:white">
    <div class="container" style="margin-top:11pc;margin-left: 1pc" >
       <div class="mr-breadcrumb">
          <div class="row">
             <div class="col-lg-12">
-            
             </div>
          </div>
       </div>
@@ -213,53 +151,43 @@
                            <tr>
                               <th class="45%" width="45%">Order ID</th>
                               <td width="10%">:</td>
-                              <td class="45%" width="45%">lwNz1587745415</td>
+                              <td class="45%" width="45%">{{$order->id}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Total Product</th>
                               <td width="10%">:</td>
-                              <td width="45%">1</td>
+                              <td width="45%">{{$order->order_detail->sum('pro_qnty')}}</td>
                            </tr>
                            <tr>
-                              <th width="45%">Shipping Method</th>
+                              <th width="45%">Shipping Fee</th>
                               <td width="10%">:</td>
-                              <td width="45%">Free Shipping</td>
+                              <td width="45%">{{$order->sub_shipping}}</td>
                            </tr>
                            <tr>
-                              <th width="45%">Packaging Method</th>
+                              <th width="45%">Sub total</th>
                               <td width="10%">:</td>
-                              <td width="45%">Default Packaging</td>
+                              <td width="45%">{{$order->subtotal}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Total Cost</th>
                               <td width="10%">:</td>
-                              <td width="45%">₹8963.5</td>
+                              <td width="45%">{{$order->sub_shipping + $order->subtotal }}</td>
                            </tr>
                            <tr>
                               <th width="45%">Ordered Date</th>
                               <td width="10%">:</td>
-                              <td width="45%">24-Apr-2020 14:23:35 pm</td>
-                           </tr>
-                           <tr>
-                              <th width="45%">Payment Method</th>
-                              <td width="10%">:</td>
-                              <td width="45%">Paytm</td>
-                           </tr>
-                           <tr>
-                              <th width="45%">Paytm Transaction ID</th>
-                              <td width="10%">:</td>
-                              <td width="45%"></td>
+                              <td width="45%">{{$order->created_at}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Payment Status</th>
                               <th width="10%">:</th>
-                              <td width="45%"><span class="badge badge-danger">Unpaid</span></td>
+                              <td width="45%"><span class="badge badge-danger">{{$order->pay_status}}</span></td>
                            </tr>
                         </tbody>
                      </table>
                   </div>
                   <div class="footer-area">
-                     <a href="{{url('admin/order_allorderinvoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
+                     <a href="{{ route('vendor.order_invoice', $order->id) }}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
                   </div>
                </div>
             </div>
@@ -276,42 +204,42 @@
                            <tr>
                               <th width="45%">Name</th>
                               <th width="10%">:</th>
-                              <td width="45%">Vendor</td>
+                              <td width="45%">{{$order->fname}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Email</th>
                               <th width="10%">:</th>
-                              <td width="45%">vendor@gmail.com</td>
+                              <td width="45%">{{$order->email}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Phone</th>
                               <th width="10%">:</th>
-                              <td width="45%">3453453345453411</td>
+                              <td width="45%">{{$order->phone}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Address</th>
                               <th width="10%">:</th>
-                              <td width="45%">Space Needle 400 Broad St, Seattles</td>
+                              <td width="45%">{{$order->street." ".$order->apart}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Country</th>
                               <th width="10%">:</th>
-                              <td width="45%">Algeria</td>
+                              <td width="45%">{{$order->country}}</td>
                            </tr>
                            <tr>
                               <th width="45%">State</th>
                               <th width="10%">:</th>
-                              <td width="45%">UN</td>
+                              <td width="45%">{{$order->state}}</td>
                            </tr>
                            <tr>
                               <th width="45%">City</th>
                               <th width="10%">:</th>
-                              <td width="45%">Test City</td>
+                              <td width="45%">{{$order->city}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Postal Code</th>
                               <th width="10%">:</th>
-                              <td width="45%">1234</td>
+                              <td width="45%">{{$order->zip}}</td>
                            </tr>
                         </tbody>
                      </table>
@@ -328,45 +256,45 @@
                   <div class="table-responsive-sm">
                      <table class="table">
                         <tbody>
-                           <tr>
-                              <th width="45%"><strong>Name:</strong></th>
+                        <tr>
+                              <th width="45%">Name</th>
                               <th width="10%">:</th>
-                              <td>Vendor</td>
+                              <td width="45%">{{$order->s_fname}}</td>
                            </tr>
                            <tr>
-                              <th width="45%"><strong>Email:</strong></th>
+                              <th width="45%">Email</th>
                               <th width="10%">:</th>
-                              <td width="45%">vendor@gmail.com</td>
+                              <td width="45%">{{$order->email}}</td>
                            </tr>
                            <tr>
-                              <th width="45%"><strong>Phone:</strong></th>
+                              <th width="45%">Phone</th>
                               <th width="10%">:</th>
-                              <td width="45%">3453453345453411</td>
+                              <td width="45%">{{$order->s_phone}}</td>
                            </tr>
                            <tr>
-                              <th width="45%"><strong>Address:</strong></th>
+                              <th width="45%">Address</th>
                               <th width="10%">:</th>
-                              <td width="45%">Space Needle 400 Broad St, Seattles</td>
+                              <td width="45%">{{$order->s_street." ".$order->s_apart}}</td>
                            </tr>
                            <tr>
-                              <th width="45%"><strong>Country:</strong></th>
+                              <th width="45%">Country</th>
                               <th width="10%">:</th>
-                              <td width="45%">Algeria</td>
+                              <td width="45%">{{$order->s_country}}</td>
                            </tr>
                            <tr>
                               <th width="45%">State</th>
                               <th width="10%">:</th>
-                              <td width="45%">UN</td>
+                              <td width="45%">{{$order->s_state}}</td>
                            </tr>
                            <tr>
-                              <th width="45%"><strong>City:</strong></th>
+                              <th width="45%">City</th>
                               <th width="10%">:</th>
-                              <td width="45%">Test City</td>
+                              <td width="45%">{{$order->s_city}}</td>
                            </tr>
                            <tr>
-                              <th width="45%"><strong>Postal Code:</strong></th>
+                              <th width="45%">Postal Code</th>
                               <th width="10%">:</th>
-                              <td width="45%">1234</td>
+                              <td width="45%">{{$order->s_zip}}</td>
                            </tr>
                         </tbody>
                      </table>
@@ -377,7 +305,7 @@
          <div class="row">
             <div class="col-lg-12 order-details-table">
                <div class="mr-table">
-                  <h4 class="title">Products Ordered</h4>
+                  <h4 class="title">Product Ordered</h4>
                   <div class="table-responsiv">
                      <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                         <div class="row btn-area">
@@ -392,42 +320,41 @@
                                     </tr>
                                     <tr role="row">
                                        <th width="10%" class="sorting_disabled" rowspan="1" colspan="1">Product ID#</th>
-                                       <th class="sorting_disabled" rowspan="1" colspan="1">Shop Name</th>
-                                       <th class="sorting_disabled" rowspan="1" colspan="1">Vendor Status</th>
-                                       <th class="sorting_disabled" rowspan="1" colspan="1">Product Title</th>
+                                       <th class="sorting_disabled" rowspan="1" colspan="1">Handled By</th>
+                                       <th class="sorting_disabled" rowspan="1" colspan="1">Order Status</th>
+                                       <th class="sorting_disabled" rowspan="1" colspan="1">Quantity</th>
                                        <th width="20%" class="sorting_disabled" rowspan="1" colspan="1">Details</th>
                                        <th width="10%" class="sorting_disabled" rowspan="1" colspan="1">Total Price</th>
                                     </tr>
                                  </thead>
                                  <tbody>
+                                    @foreach($order->order_detail as $detail)
                                     <tr role="row" class="odd">
-                                       <td tabindex="0"><input type="hidden" value="101S000000">101</td>
                                        <td>
-                                          <a target="_blank" href="https://royalscripts.com/demo/kingcommerce/admin/vendors/13/show">Test Stores</a>
+                                          <a href="{{route('admin.allproducts_view', $detail->product->id)}}">{{$detail->product->id}}</a>
                                        </td>
                                        <td>
-                                          <span class="badge badge-warning">Pending</span>
+                                          @if($detail->product->vendor_id == NULL) 
+                                          <a href="{{ route('admin.order_allorderdelivery', $detail->id)}}">{{__('Admin')}}</a> 
+                                          @else {{$detail->product->vendor->name}} ({{__('Seller')}}) @endif
                                        </td>
                                        <td>
-                                          <input type="hidden" value="">
-                                          <a target="_blank" href="https://royalscripts.com/demo/kingcommerce/item/physical-product-title-title-will-be-here-101-8e1101lbq">Physical Product Title Title w...</a>
+                                          {{$status[$detail->sub_status]}}
+                                       </td>
+                                       <td>
+                                          {{$detail->pro_qnty}}
                                        </td>
                                        <td>
                                           <p>
-                                             <strong>Size :</strong> S
+                                             <strong>Size :</strong> {{$detail->size}}
                                           </p>
                                           <p>
-                                             <strong>color :</strong> <span style="width: 40px; height: 20px; display: block; background: #000000;"></span>
-                                          </p>
-                                          <p>
-                                             <strong>Price :</strong> ₹8963.5
-                                          </p>
-                                          <p>
-                                             <strong>Qty :</strong> 1 
+                                             <strong>color :</strong><span style="width: 40px; height: 20px; display: block; float: right; background: {{$detail->color}};"></span>
                                           </p>
                                        </td>
-                                       <td>₹8963.5</td>
+                                       <td>{{$detail->subtotal}}</td>
                                     </tr>
+                                    @endforeach
                                  </tbody>
                               </table>
                            </div>
@@ -452,4 +379,4 @@
       </div>
    </div>
 </div>
-                    @endsection
+@endsection

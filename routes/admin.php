@@ -137,6 +137,7 @@ Route::get('order_allorder', 'OrderController@allorder')->name('order_allorder')
 Route::get('order_allorderdetails/{id}', 'OrderController@allorderdetails')->name('order_allorderdetails');
 Route::get('order_allorderinvoice', 'OrderController@allorderinvoice')->name('order_allorderinvoice');
 Route::get('order_allorderdelivery/{id}', 'OrderController@allorderdelivery')->name('order_allorderdelivery');
+Route::put('order_allorderstatus/{id}', 'OrderController@allorderstatus')->name('order_allorderstatus');
 
 
 // Complete Orders

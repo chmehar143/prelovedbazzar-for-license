@@ -122,53 +122,10 @@
          <!--end::Page title-->
       </div>
       <!--end::Page title-->
-      <!--begin::Action group-->
-      <div class="d-flex align-items-center flex-wrap">
-         <!--begin::Wrapper-->
-         <div class="flex-shrink-0 me-2">
-            <ul class="nav">
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light active fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="#">Day</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4 me-1" data-bs-toggle="tab" href="">Week</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-color-muted btn-active-color-primary btn-active-light fw-bold fs-7 px-4" data-bs-toggle="tab" href="#">Year</a>
-               </li>
-            </ul>
-         </div>
-         <!--end::Wrapper-->
-         <!--begin::Wrapper-->
-         <div class="d-flex align-items-center">
-            <!--begin::Daterangepicker-->
-            <a href="#" class="btn btn-sm btn-bg-light btn-color-gray-500 btn-active-color-primary me-2" id="kt_dashboard_daterangepicker" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-trigger="hover" title="" data-bs-original-title="Select dashboard daterange">
-            <span class="fw-bold me-1" id="kt_dashboard_daterangepicker_title">Today:</span>
-            <span class="fw-bolder" id="kt_dashboard_daterangepicker_date">Sep 7</span>
-            </a>
-            <!--end::Daterangepicker-->
-            <!--begin::Actions-->
-            <div class="d-flex align-items-center">
-               <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light btn-active-color-primary">
-                  <!--begin::Svg Icon | path: icons/duotune/files/fil005.svg-->
-                  <span class="svg-icon svg-icon-2x">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13H13V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V13H8C7.4 13 7 13.4 7 14C7 14.6 7.4 15 8 15H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V15H16C16.6 15 17 14.6 17 14C17 13.4 16.6 13 16 13Z" fill="black"></path>
-                        <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-                     </svg>
-                  </span>
-                  <!--end::Svg Icon-->
-               </button>
-            </div>
-            <!--end::Actions-->
-         </div>
-         <!--end::Wrapper-->
-      </div>
-      <!--end::Action group-->
    </div>
    <!--end::Container-->
 </div>
-<div style="background-color:white">
+<div style="background-color:transparent">
    <div class="container" style="margin-top:11pc;margin-left:7pc" >
       <div class="mr-breadcrumb">
          <div class="row">
@@ -236,7 +193,7 @@
                      </table>
                   </div>
                   <div class="footer-area">
-                     <a href="{{url('admin/order_allorderinvoice')}}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
+                     <a href="{{ route('vendor.order_invoice', $detail->id) }}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
                   </div>
                </div>
             </div>
@@ -383,7 +340,16 @@
                                           <span class="badge badge-warning">{{$status[$detail->product->status]}}</span>
                                        </td>
                                        <td>
-                                          <span class="badge badge-warning">{{$status[$detail->product->status]}}</span>
+                                          <form>
+                                             <input type="hidden" value="{{$detail->id}}" id="id">
+                                          <select name="sub_status" id="sub_status" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>                                                <option value="0" @if($detail->sub_status == 0) class="badge-danger" selected @endif >{{ $order_status[0] }}</option>
+                                                <option value="1" @if($detail->sub_status == 1) class="badge-warning" selected @endif >{{ $order_status[1] }}</option>
+                                                <option value="2" @if($detail->sub_status == 2) class="badge-info" selected @endif >{{ $order_status[2] }}</option>
+                                                <option value="3" @if($detail->sub_status == 3) class="badge-secondary" selected @endif >{{ $order_status[3] }}</option>
+                                                <option value="4" @if($detail->sub_status == 4) class="badge-primary" selected @endif >{{ $order_status[4] }}</option>
+                                                <option value="5" @if($detail->sub_status == 5) class="badge-success" selected @endif >{{ $order_status[5] }}</option>
+                                             </select>
+                                          </form>
                                        </td>
                                        <td>
                                           {{$detail->pro_qnty}}
@@ -422,4 +388,32 @@
       </div>
    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+   $(document).ready(function(){
+   	$('#sub_status').change(function(){
+   		var status = $(this).val();
+         var id = $('#id').val();
+         var url = "{{ route('vendor.order_status', ':id') }}";
+             url = url.replace(':id', id);
+         let data = {
+             "_token": "{{ csrf_token() }}",
+             "id": id,
+             "sub_status": status
+             };
+   		  $.ajax({
+   		  	url: url,
+   		  	type:'post',
+            data: data,
+            success: function(result) {
+                        Swal.fire(
+                            'Updated!',
+                            'Order status has been Updated successfully.',
+                            'success'
+                        )
+                     }
+   		  });
+   	});   
+   });
+</script>
 @endsection
