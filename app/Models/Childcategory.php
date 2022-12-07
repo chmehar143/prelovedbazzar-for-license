@@ -19,4 +19,9 @@ class Childcategory extends Model
         });
     }
 
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'p_child_catog', 'id');
+    }
+
 }

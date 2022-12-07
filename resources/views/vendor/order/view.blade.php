@@ -1,6 +1,6 @@
-@extends('admin.layouts.app')
+@extends('vendor.layouts.app')
 @section('content')
-<style>
+   <style>
       .special-box {
       box-shadow: 0px 1px 6px 0px rgb(208 208 208 / 61%);
       }
@@ -116,11 +116,17 @@
          </ul>
          <!--end::Breadcrumb-->
       </div>
+      <!--begin::Page title-->
+      <div class="flex-grow-1 flex-shrink-0 me-5">
+         <!--begin::Page title-->
+         <!--end::Page title-->
+      </div>
+      <!--end::Page title-->
    </div>
    <!--end::Container-->
 </div>
-<div style="background-color:white">
-   <div class="container" style="margin-top:11pc;margin-left:1pc" >
+<div style="background-color:transparent">
+   <div class="container" style="margin-top:11pc;margin-left:7pc" >
       <div class="mr-breadcrumb">
          <div class="row">
             <div class="col-lg-12">
@@ -151,43 +157,43 @@
                            <tr>
                               <th class="45%" width="45%">Order ID</th>
                               <td width="10%">:</td>
-                              <td class="45%" width="45%">{{$order->id}}</td>
+                              <td class="45%" width="45%">{{$detail->id}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Total Product</th>
                               <td width="10%">:</td>
-                              <td width="45%">{{$order->order_detail->sum('pro_qnty')}}</td>
+                              <td width="45%">{{$detail->pro_qnty}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Shipping Fee</th>
                               <td width="10%">:</td>
-                              <td width="45%">{{$order->sub_shipping}}</td>
+                              <td width="45%">{{$detail->sub_shipping}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Sub total</th>
                               <td width="10%">:</td>
-                              <td width="45%">{{$order->subtotal}}</td>
+                              <td width="45%">{{$detail->subtotal}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Total Cost</th>
                               <td width="10%">:</td>
-                              <td width="45%">{{$order->sub_shipping + $order->subtotal }}</td>
+                              <td width="45%">{{$detail->sub_shipping + $detail->subtotal }}</td>
                            </tr>
                            <tr>
                               <th width="45%">Ordered Date</th>
                               <td width="10%">:</td>
-                              <td width="45%">{{$order->created_at}}</td>
+                              <td width="45%">{{$detail->created_at}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Payment Status</th>
                               <th width="10%">:</th>
-                              <td width="45%"><span class="badge badge-danger">{{$order->pay_status}}</span></td>
+                              <td width="45%"><span class="badge badge-danger">{{$detail->order->pay_status}}</span></td>
                            </tr>
                         </tbody>
                      </table>
                   </div>
                   <div class="footer-area">
-                     <a href="{{ route('vendor.order_invoice', $order->id) }}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
+                     <a href="{{ route('vendor.order_invoice', $detail->id) }}" class="mybtn1"><i class="fas fa-eye"></i> View Invoice</a>
                   </div>
                </div>
             </div>
@@ -204,42 +210,42 @@
                            <tr>
                               <th width="45%">Name</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->fname}}</td>
+                              <td width="45%">{{$detail->order->fname}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Email</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->email}}</td>
+                              <td width="45%">{{$detail->order->email}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Phone</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->phone}}</td>
+                              <td width="45%">{{$detail->order->phone}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Address</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->street." ".$order->apart}}</td>
+                              <td width="45%">{{$detail->order->street." ".$detail->order->apart}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Country</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->country}}</td>
+                              <td width="45%">{{$detail->order->country}}</td>
                            </tr>
                            <tr>
                               <th width="45%">State</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->state}}</td>
+                              <td width="45%">{{$detail->order->state}}</td>
                            </tr>
                            <tr>
                               <th width="45%">City</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->city}}</td>
+                              <td width="45%">{{$detail->order->city}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Postal Code</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->zip}}</td>
+                              <td width="45%">{{$detail->order->zip}}</td>
                            </tr>
                         </tbody>
                      </table>
@@ -259,42 +265,42 @@
                         <tr>
                               <th width="45%">Name</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_fname}}</td>
+                              <td width="45%">{{$detail->order->s_fname}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Email</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->email}}</td>
+                              <td width="45%">{{$detail->order->email}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Phone</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_phone}}</td>
+                              <td width="45%">{{$detail->order->s_phone}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Address</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_street." ".$order->s_apart}}</td>
+                              <td width="45%">{{$detail->order->s_street." ".$detail->order->s_apart}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Country</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_country}}</td>
+                              <td width="45%">{{$detail->order->s_country}}</td>
                            </tr>
                            <tr>
                               <th width="45%">State</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_state}}</td>
+                              <td width="45%">{{$detail->order->s_state}}</td>
                            </tr>
                            <tr>
                               <th width="45%">City</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_city}}</td>
+                              <td width="45%">{{$detail->order->s_city}}</td>
                            </tr>
                            <tr>
                               <th width="45%">Postal Code</th>
                               <th width="10%">:</th>
-                              <td width="45%">{{$order->s_zip}}</td>
+                              <td width="45%">{{$detail->order->s_zip}}</td>
                            </tr>
                         </tbody>
                      </table>
@@ -320,7 +326,7 @@
                                     </tr>
                                     <tr role="row">
                                        <th width="10%" class="sorting_disabled" rowspan="1" colspan="1">Product ID#</th>
-                                       <th class="sorting_disabled" rowspan="1" colspan="1">Handled By</th>
+                                       <th class="sorting_disabled" rowspan="1" colspan="1">Product Status</th>
                                        <th class="sorting_disabled" rowspan="1" colspan="1">Order Status</th>
                                        <th class="sorting_disabled" rowspan="1" colspan="1">Quantity</th>
                                        <th width="20%" class="sorting_disabled" rowspan="1" colspan="1">Details</th>
@@ -328,18 +334,22 @@
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    @foreach($order->order_detail as $detail)
                                     <tr role="row" class="odd">
+                                       <td>{{$detail->product->id}}</td>
                                        <td>
-                                          <a href="{{route('admin.allproducts_view', $detail->product->id)}}">{{$detail->product->id}}</a>
+                                          <span class="badge badge-warning">{{$status[$detail->product->status]}}</span>
                                        </td>
                                        <td>
-                                          @if($detail->product->vendor_id == NULL) 
-                                          <a href="{{ route('admin.order_allorderdelivery', $detail->id)}}">{{__('Admin')}}</a> 
-                                          @else {{$detail->product->vendor->name}} ({{__('Seller')}}) @endif
-                                       </td>
-                                       <td>
-                                          {{$status[$detail->sub_status]}}
+                                          <form>
+                                             <input type="hidden" value="{{$detail->id}}" id="id">
+                                          <select name="sub_status" id="sub_status" aria-label="Select Product Type..." data-control="select2" data-placeholder="Select Product Type..." class="form-select form-select-solid form-select-lg" required>                                                <option value="0" @if($detail->sub_status == 0) class="badge-danger" selected @endif >{{ $order_status[0] }}</option>
+                                                <option value="1" @if($detail->sub_status == 1) class="badge-warning" selected @endif >{{ $order_status[1] }}</option>
+                                                <option value="2" @if($detail->sub_status == 2) class="badge-info" selected @endif >{{ $order_status[2] }}</option>
+                                                <option value="3" @if($detail->sub_status == 3) class="badge-secondary" selected @endif >{{ $order_status[3] }}</option>
+                                                <option value="4" @if($detail->sub_status == 4) class="badge-primary" selected @endif >{{ $order_status[4] }}</option>
+                                                <option value="5" @if($detail->sub_status == 5) class="badge-success" selected @endif >{{ $order_status[5] }}</option>
+                                             </select>
+                                          </form>
                                        </td>
                                        <td>
                                           {{$detail->pro_qnty}}
@@ -354,7 +364,6 @@
                                        </td>
                                        <td>{{$detail->subtotal}}</td>
                                     </tr>
-                                    @endforeach
                                  </tbody>
                               </table>
                            </div>
@@ -379,4 +388,32 @@
       </div>
    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+   $(document).ready(function(){
+   	$('#sub_status').change(function(){
+   		var status = $(this).val();
+         var id = $('#id').val();
+         var url = "{{ route('vendor.order_status', ':id') }}";
+             url = url.replace(':id', id);
+         let data = {
+             "_token": "{{ csrf_token() }}",
+             "id": id,
+             "sub_status": status
+             };
+   		  $.ajax({
+   		  	url: url,
+   		  	type:'post',
+            data: data,
+            success: function(result) {
+                        Swal.fire(
+                            'Updated!',
+                            'Order status has been Updated successfully.',
+                            'success'
+                        )
+                     }
+   		  });
+   	});   
+   });
+</script>
 @endsection

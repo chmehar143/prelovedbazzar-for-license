@@ -149,7 +149,7 @@ class ProductController extends Controller
             if($vendor->status == 1)
             {
                 $product = new Product();
-                $product->vendor_id = $vendor->id();
+                $product->vendor_id = $vendor->id;
                 $product->p_type = $request->input('p_type');
                 $product->p_name = $request->input('p_name');
                 if($request->hasfile('avatar'))
@@ -374,10 +374,7 @@ class ProductController extends Controller
     public  function  view($id)
     {
         $product = Product::where('id', $id)->where('vendor_id', Auth::guard('vendor')->id())->first();
-        $category = Category::where('id', $product->p_catog)->first();   
-        $subcategory = Subcategory::where('id', $product->p_sub_catog)->first();
-        $childcategory = ChildCategory::where('id', $product->p_child_catog)->first();      
-        return view('vendor.product.view', compact('product', 'category', 'subcategory', 'childcategory'));
+        return view('vendor.product.view', compact('product'));
     }
     public function destroy($id)
     {

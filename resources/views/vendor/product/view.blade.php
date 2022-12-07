@@ -125,15 +125,15 @@
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px">Category </td>
-                              <td class="text-gray-800">{{$category->name}}</td>
+                              <td class="text-gray-800">{{$product->category->name}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Sub Category </td>
-                              <td class="text-gray-800">{{$subcategory->name}}</td>
+                              <td class="text-gray-800">{{$product->subcategory->name}}</td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Child Category </td>
-                              <td class="text-gray-800">{{$childcategory->name}}</td>
+                              <td class="text-gray-800">@if($product->p_child_catog == NULL) No Child-Category @else {{$product->childcategory->name}} @endif </td>
                            </tr>
                            <tr>
                               <td class="text-muted min-w-125px w-125px"> Previous Price</td>

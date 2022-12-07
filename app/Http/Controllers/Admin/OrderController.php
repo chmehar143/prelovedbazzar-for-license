@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
 use Config;
 
 class OrderController extends Controller
@@ -26,7 +28,7 @@ class OrderController extends Controller
 
     public  function  allorder()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('id', 'DESC')->get();
         $status = Config::get('constants.order_status');
         return view('admin.order.allorder', compact('orders', 'status'));
     }
@@ -34,12 +36,8 @@ class OrderController extends Controller
     public  function  allorderdetails($id)
     {
         $order = Order::where('id', $id)->first();
-        $orderdetail = OrderDetail::where('order_id', $id)
-        ->join('products', 'order_details.pro_id','=','products.id')
-        ->get();
         $status = Config::get('constants.order_status');
-        $ven_status = Config::get('constants.status');
-        return view('admin.order.allorderdetails', compact('order', 'status', 'orderdetail', 'ven_status'));
+        return view('admin.order.allorderdetails', compact('order', 'status'));
     }
 
     public  function  allorderinvoice()
@@ -49,8 +47,31 @@ class OrderController extends Controller
 
     public  function  allorderdelivery($id)
     {
+        $sub_order = OrderDetail::where('id', $id)->first();
+        $order_status = Config::get('constants.order_status');
+        return view('admin.order.allorderdelivery', compact('sub_order', 'order_status'));
+    }
 
-        return view('admin.order.allorderdelivery');
+    public  function  allorderstatus(Request $request, $id)
+    {
+        //--- Validation Section
+        $rules = [
+            'sub_status' => 'required|integer',
+            'tracking' => 'required',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+
+        //--- end validation
+
+        $sub_order = OrderDetail::where('id', $id)->first();
+        $sub_order->sub_status = $request->input('sub_status');
+        $sub_order->tracking = $request->input('tracking');
+        $sub_order->update();
+        return redirect()->back();
     }
 
 
