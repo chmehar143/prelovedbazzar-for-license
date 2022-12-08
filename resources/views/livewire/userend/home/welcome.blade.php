@@ -25,7 +25,7 @@
                         'duration': '1s',
                         'delay': '.2s'
                         }">
-                        <span class="p-relative d-inline-block">{{$banner->description}}</span>
+                        <!-- <span class="p-relative d-inline-block">{{$banner->description}}</span> -->
                      </h5>
                      <h3 class="banner-title font-weight-bolder ls-25 lh-1 slide-animate"
                         data-animation-options="{
@@ -33,14 +33,14 @@
                         'duration': '1s',
                         'delay': '.4s'
                         }">
-                        {{$banner->title}}
+                        <!-- {{$banner->title}} -->
                      </h3>
                      <p class="font-weight-normal text-default slide-animate" data-animation-options="{
                         'name': 'fadeInRightShorter',
                         'duration': '1s',
                         'delay': '.6s'
                         }">
-                        <span class="font-weight-bolder text-secondary">{{$banner->offer}}</span>
+                        <!-- <span class="font-weight-bolder text-secondary">{{$banner->offer}}</span> -->
                      </p>
                      <a href="{{$banner->url}}"
                         class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
@@ -220,43 +220,180 @@
          </div>
       </div>
       <!-- End of Iocn Box Wrapper -->
-      <div class="row category-banner-wrapper appear-animate pt-6 pb-8">
-         <div class="col-md-6 mb-4">
-            <div class="banner banner-fixed br-xs">
-               <figure>
-                  <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/1-1.jpg')}}" alt="Category Banner"
-                     width="610" height="160" style="background-color: #ecedec;" />
-               </figure>
-               <div class="banner-content y-50 mt-0">
-                  <h5 class="banner-subtitle font-weight-normal text-dark">Get up to <span
-                     class="text-secondary font-weight-bolder text-uppercase ls-25">20% Off</span>
-                  </h5>
-                  <h3 class="banner-title text-uppercase">Sports Outfits<br><span
-                     class="font-weight-normal                       text-capitalize">Collection</span>
-                  </h3>
-                  <div class="banner-price-info font-weight-normal">Starting at <span
-                     class="text-secondary                       font-weight-bolder">$170.00</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-6 mb-4">
-            <div class="banner banner-fixed br-xs">
-               <figure>
-                  <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/1-2.jpg')}}" alt="Category Banner"
-                     width="610" height="160" style="background-color: #636363;" />
-               </figure>
-               <div class="banner-content y-50 mt-0">
-                  <h5 class="banner-subtitle font-weight-normal text-capitalize">New Arrivals</h5>
-                  <h3 class="banner-title text-white text-uppercase">Accessories<br><span
-                     class="font-weight-normal text-capitalize">Collection</span></h3>
-                  <div class="banner-price-info text-white font-weight-normal text-capitalize">Only From
-                     <span class="text-secondary font-weight-bolder">$90.00</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      <div class="swiper-container swiper-theme category-banner-3cols pt-2 pb-10 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" data-swiper-options="{
+                    'spaceBetween': 20,
+                    'slidesPerView': 1,
+                    'breakpoints': {
+                        '576': {
+                            'slidesPerView': 2
+                        },
+                        '992': {
+                            'slidesPerView': 3
+                        }
+                    }
+                }">
+                    <div class="swiper-wrapper " id="swiper-wrapper-fc3c5c310d9a2da5b" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide banner banner-fixed category-banner br-sm swiper-slide-active" role="group" aria-label="1 / 3" style="width: 446.667px; margin-right: 20px;">
+                            <figure>
+                                <img src="../frontend-assets/assets/images/demos/demo8/category/1-1.jpg" alt="Category Banner" width="447" height="230" style="background-color: #cfd1cf;">
+                            </figure>
+                            <div class="banner-content y-50">
+                                <h3 class="banner-title text-capitalize ls-25 mb-0">For Men's</h3>
+                                <div class="banner-price-info text-uppercase text-default ls-25 font-weight-bold">Starting
+                                    at <span class="text-secondary">$29.00</span></div>
+                                <hr class="banner-divider bg-dark">
+                                <a href="{{route('shop')}}" class="btn btn-dark btn-link btn-outline btn-icon-right btn-slide-right">
+                                    Shop Now<i class="w-icon-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End of Category Banner -->
+                        <div class="swiper-slide banner banner-fixed category-banner br-sm swiper-slide-next" role="group" aria-label="2 / 3" style="width: 446.667px; margin-right: 20px;">
+                            <figure>
+                                <img src="../frontend-assets/assets/images/demos/demo8/category/1-2.jpg" alt="Category Banner" width="447" height="230" style="background-color: #333">
+                            </figure>
+                            <div class="banner-content text-center x-50 y-50 w-100 pl-2 pr-2">
+                                <h5 class="banner-subtitle text-primary text-capitalize ls-25 font-weight-bold">Get 30% Off
+                                    Your Entire Order!</h5>
+                                <h3 class="banner-title text-white text-uppercase ls-25">Black Friday Sale</h3>
+                                <p>Use code <strong class="text-uppercase text-white">Blkfri40</strong> at checkout.</p>
+                                <a href="{{route('shop')}}" class="btn btn-primary btn-outline btn-rounded btn-icon-right text-white btn-slide-right">
+                                    Shop Now<i class="w-icon-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End of Category Banner -->
+                        <div class="swiper-slide banner banner-fixed category-banner br-sm" role="group" aria-label="3 / 3" style="width: 446.667px; margin-right: 20px;">
+                            <figure>
+                                <img src="../frontend-assets/assets/images/demos/demo8/category/1-3.jpg" alt="Category Banner" width="447" height="230" style="background-color: #e0dddd;">
+                            </figure>
+                            <div class="banner-content y-50">
+                                <h3 class="banner-title text-capitalize ls-25 mb-0">For Women's</h3>
+                                <div class="banner-price-info text-uppercase text-default ls-25 font-weight-bold">From Only
+                                    <span class="text-secondary">$29.00</span></div>
+                                <hr class="banner-divider bg-dark">
+                                <a href="{{route('shop')}}" class="btn btn-dark btn-link btn-outline btn-icon-right btn-slide-right">
+                                    Shop Now<i class="w-icon-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End of Category Banner -->
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+<br><br>
+<h2 class="title title-center mb-5">Top Categories Of The Month</h2>
+<br><br>
+
+                <div class="swiper-container swiper-theme shadow-swiper pb-10 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" data-swiper-options="{
+                    'spaceBetween': 20,
+                    'slidesPerView': 2,
+                    'breakpoints': {
+                        '576': {
+                            'slidesPerView': 3
+                        },
+                        '768': {
+                            'slidesPerView': 4
+                        },
+                        '992': {
+                            'slidesPerView': 5
+                        },
+                        '1200': {
+                            'slidesPerView': 6
+                        }
+                    }
+                }">
+                    <div class="swiper-wrapper " id="swiper-wrapper-1c9bbba10bc010da48" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide category-wrap swiper-slide-active" role="group" aria-label="1 / 6" style="width: 213.333px; margin-right: 20px;">
+                            <div class="category category-classic category-absolute overlay-zoom br-sm">
+                                <a href="{{route('shop')}}">
+                                    <figure class="category-media">
+                                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-1.jpg" alt="Category" width="213" height="213">
+                                    </figure>
+                                </a>
+                                <div class="category-content">
+                                    <h4 class="category-name ls-normal">Fashion</h4>
+                                    <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Category Classic -->
+                        <div class="swiper-slide category-wrap swiper-slide-next" role="group" aria-label="2 / 6" style="width: 213.333px; margin-right: 20px;">
+                            <div class="category category-classic category-absolute overlay-zoom br-sm">
+                                <a href="{{route('shop')}}">
+                                    <figure class="category-media">
+                                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-2.jpg" alt="Category" width="213" height="213">
+                                    </figure>
+                                </a>
+                                <div class="category-content">
+                                    <h4 class="category-name ls-normal">Furniture</h4>
+                                    <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Category Classic -->
+                        <div class="swiper-slide category-wrap" role="group" aria-label="3 / 6" style="width: 213.333px; margin-right: 20px;">
+                            <div class="category category-classic category-absolute overlay-zoom br-sm">
+                                <a href="{{route('shop')}}">
+                                    <figure class="category-media">
+                                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-3.jpg" alt="Category" width="213" height="213">
+                                    </figure>
+                                </a>
+                                <div class="category-content">
+                                    <h4 class="category-name ls-normal">Sneaker</h4>
+                                    <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Category Classic -->
+                        <div class="swiper-slide category-wrap" role="group" aria-label="4 / 6" style="width: 213.333px; margin-right: 20px;">
+                            <div class="category category-classic category-absolute overlay-zoom br-sm">
+                                <a href="{{route('shop')}}">
+                                    <figure class="category-media">
+                                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-4.jpg" alt="Category" width="213" height="213">
+                                    </figure>
+                                </a>
+                                <div class="category-content">
+                                    <h4 class="category-name ls-normal">Sports</h4>
+                                    <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Category Classic -->
+                        <div class="swiper-slide category-wrap" role="group" aria-label="5 / 6" style="width: 213.333px; margin-right: 20px;">
+                            <div class="category category-classic category-absolute overlay-zoom br-sm">
+                                <a href="{{route('shop')}}">
+                                    <figure class="category-media">
+                                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-5.jpg" alt="Category" width="213" height="213">
+                                    </figure>
+                                </a>
+                                <div class="category-content">
+                                    <h4 class="category-name ls-normal">Speaker</h4>
+                                    <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Category Classic -->
+                        <div class="swiper-slide category-wrap" role="group" aria-label="6 / 6" style="width: 213.333px; margin-right: 20px;">
+                            <div class="category category-classic category-absolute overlay-zoom br-sm">
+                                <a href="{{route('shop')}}">
+                                    <figure class="category-media">
+                                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-6.jpg" alt="Category" width="213" height="213">
+                                    </figure>
+                                </a>
+                                <div class="category-content">
+                                    <h4 class="category-name ls-normal">Electronics</h4>
+                                    <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Category Classic -->
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+<Br><br><br>
       <!-- End of Category Banner Wrapper -->
       <div class="row deals-wrapper appear-animate mb-8">
          <div class="col-lg-9 mb-4">
@@ -470,6 +607,8 @@
       <!-- End of Deals Wrapper -->
    </div>
 
+   
+
    <div class="container">
       <div class="row">
          <div class="col-md-12">
@@ -523,19 +662,19 @@
                         <div class="swiper-slide vendor-widget swiper-slide-active" role="group" aria-label="1 / 4" style="width: 295px; margin-right: 20px;">
                             <div class="vendor-widget-banner">
                                 <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
+                                    <a href="{{route('vendor-store')}}">
                                         <img src="frontend-assets/assets/images/demos/demo3/vendors/1.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #ECE7DF;">
                                     </a>
                                 </figure>
                                 <div class="vendor-details">
                                     <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
+                                        <a href="{{route('vendor-store')}}">
                                             <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-1.jpg" alt="Vendor Logo" width="90" height="90">
                                         </a>
                                     </figure>
                                     <div class="vendor-personal">
                                         <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">OAIO Store</a>
+                                            <a href="{{route('vendor-store')}}">OAIO Store</a>
                                         </h4>
                                         <span class="vendor-product-count">27 Products</span>
                                     </div>
@@ -546,19 +685,19 @@
                         <div class="swiper-slide vendor-widget swiper-slide-next" role="group" aria-label="2 / 4" style="width: 295px; margin-right: 20px;">
                             <div class="vendor-widget-banner">
                                 <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
+                                    <a href="{{route('vendor-store')}}">
                                         <img src="frontend-assets/assets/images/demos/demo3/vendors/2.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #293936;">
                                     </a>
                                 </figure>
                                 <div class="vendor-details">
                                     <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
+                                        <a href="{{route('vendor-store')}}">
                                             <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-2.jpg" alt="Vendor Logo" width="90" height="90">
                                         </a>
                                     </figure>
                                     <div class="vendor-personal">
                                         <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">Trident Store</a>
+                                            <a href="{{route('vendor-store')}}">Trident Store</a>
                                         </h4>
                                         <span class="vendor-product-count">11 Products</span>
                                     </div>
@@ -569,19 +708,19 @@
                         <div class="swiper-slide vendor-widget" role="group" aria-label="3 / 4" style="width: 295px; margin-right: 20px;">
                             <div class="vendor-widget-banner">
                                 <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
-                                        <img src="frontend-assets/frontend-assets/assets/images/demos/demo3/vendors/3.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #B8CDCE;">
+                                    <a href="{{route('vendor-store')}}">
+                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/3.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #B8CDCE;">
                                     </a>
                                 </figure>
                                 <div class="vendor-details">
                                     <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
+                                        <a href="{{route('vendor-store')}}">
                                             <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-3.jpg" alt="Vendor Logo" width="90" height="90">
                                         </a>
                                     </figure>
                                     <div class="vendor-personal">
                                         <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">Pam Store</a>
+                                            <a href="{{route('vendor-store')}}">Pam Store</a>
                                         </h4>
                                         <span class="vendor-product-count">16 Products</span>
                                     </div>
@@ -592,19 +731,19 @@
                         <div class="swiper-slide vendor-widget" role="group" aria-label="4 / 4" style="width: 295px; margin-right: 20px;">
                             <div class="vendor-widget-banner">
                                 <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
+                                    <a href="{{route('vendor-store')}}">
                                         <img src="frontend-assets/assets/images/demos/demo3/vendors/4.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #F5F5F5;">
                                     </a>
                                 </figure>
                                 <div class="vendor-details">
                                     <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
+                                        <a href="{{route('vendor-store')}}">
                                             <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-4.jpg" alt="Vendor Logo" width="90" height="90">
                                         </a>
                                     </figure>
                                     <div class="vendor-personal">
                                         <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">K Group Store</a>
+                                            <a href="{{route('vendor-store')}}">K Group Store</a>
                                         </h4>
                                         <span class="vendor-product-count">25 Products</span>
                                     </div>
