@@ -41,13 +41,13 @@ use Illuminate\Support\Facades\URL;
             <!-- <a href="{{route('contact-us')}}" class="d-lg-show">Contact Us</a> -->
 
             @if(Auth::guard('user')->check() )
-                <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
-                <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
-                 <a href="{{route('user.logout')}}" class="d-lg-show">Logout</a>
+               <a href="{{route('my-account')}}" class="d-lg-show"><i class="w-icon-account"></i> Hi {{Auth::guard('user')->user()->name}}!</a>
+               <a href="{{route('my-account')}}" class="d-lg-show">My Account</a>
+               <a href="{{route('user.logout')}}" class="d-lg-show">Logout</a>
              @else
-            <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
-            <span class="delimiter  d-lg-show">/</span>
-            <a href="{{route('user.login')}}#sign-up" class="ml-0 d-lg-show ">Register</a>
+               <a href="{{route('user.login')}}" class="d-lg-show"><i class="w-icon-account"></i>Sign In</a>
+               <span class="delimiter  d-lg-show">/</span>
+               <a href="{{route('user.login')}}#sign-up" class="ml-0 d-lg-show ">Register</a>
             @endif
          </div>
       </div>
@@ -59,18 +59,10 @@ use Illuminate\Support\Facades\URL;
             <a href="#" class="mobile-menu-toggle  w-icon-hamburger" aria-label="menu-toggle">
             </a>
             <a href="demo1.html" class="logo ml-lg-0">
-               <!-- <img src="{{asset('frontend-assets/assets/images/logo.png')}}" alt="logo" width="144" height="45" /> -->
+               <img src="{{asset('frontend-assets/assets/images/logo.png')}}" alt="logo" width="144" height="45" />
             </a>
             <form method="get" action="{{route('search_product')}}"
                class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper">
-               <!-- <div class="select-box">
-                  <select id="category" name="category">
-                      <option value="">All Categories</option>
-                      @foreach($shareData['categories'] as $category)
-                      <option value="{{$category->id}}">{{$category->name}}</option>
-                      @endforeach
-                  </select>
-                  </div> -->
                <input type="text" class="form-control" name="search" value="{{ Request::get('search') }}" id="search" placeholder="Search in..."
                   required />
                <button class="btn btn-search" type="submit"><i class="w-icon-search"></i>
