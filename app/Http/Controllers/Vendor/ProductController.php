@@ -112,7 +112,7 @@ class ProductController extends Controller
         //--- Validation Section
         $rules = [
             'p_name' => 'required',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3072',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'gallery' => 'required',
             'p_sku' => 'required|unique:products|',
             'con' => 'required',
@@ -257,7 +257,7 @@ class ProductController extends Controller
         //--- Validation Section
         $rules = [
             'p_name' => 'required',
-            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3072',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'p_sku' => 'required',
             'con' => 'required',
             'p_ship_time' => 'required',

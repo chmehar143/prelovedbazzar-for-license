@@ -195,12 +195,12 @@ class VendorProducts extends Component
     public function render()
     {
         $categories = Category::all();
-        $products = Product::where('vendor_id', $this->vendorId)->where('status', 1)
+        $products = Product::where('vendor_id', $this->vendorId)->where('products.status', 1)
                     ->join('categories', 'products.p_catog','=','categories.id')->with('discussions')
                     ->select('products.*', 'categories.name')
                     ->paginate(12);
 
-        $reviews = Product::where('vendor_id', $this->vendorId)->where('status', 1)
+        $reviews = Product::where('vendor_id', $this->vendorId)->where('products.status', 1)
                             ->join('categories', 'products.p_catog','=','categories.id')->with('discussions')
                             ->select('products.*', 'categories.name')->get();
     
