@@ -2,7 +2,7 @@
    <!--begin::Brand-->
    <div class="aside-logo py-8" id="kt_aside_logo">
       <!--begin::Logo-->
-      <a href="#" class="d-flex align-items-center">
+      <a href="{{route('admin.home')}}" class="d-flex align-items-center">
       <img alt="Logo" src="{{asset('admin-assets/media/logos/logo.png')}}" class="h-45px logo" />
       </a>
       <!--end::Logo-->
@@ -15,7 +15,7 @@
          <!--begin::Menu-->
          <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
             <div class="menu-item py-2">
-               <a class="menu-link  menu-center" href="{{url('admin')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+               <a class="menu-link  menu-center" href="{{route('admin.home')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                <span class="menu-icon me-0">
                <i class="bi bi-house fs-2"></i>
                </span>

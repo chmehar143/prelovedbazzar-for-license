@@ -23,7 +23,7 @@
                     <div class="toolbox vendor-toolbox pb-0">
                         <div class="toolbox-left mb-4 mb-md-0">
                             <!-- <a href="#" class="btn btn-primary btn-outline btn-rounded btn-icon-left vendor-search-toggle "><i class="w-icon-category"></i>Filter</a> -->
-                            <label class="d-block">Total Store Showing 6</label>
+                            <label class="d-block">Total Stores Showing: {{$vendors->count()}}</label>
                         </div>
                         <div class="toolbox-right">
                             <!-- <div class="toolbox-item toolbox-sort select-box mb-0">

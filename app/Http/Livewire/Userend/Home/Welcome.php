@@ -196,11 +196,14 @@ class Welcome extends Component
 
     public function render()
     {
-        $banners = Banner::where('status', 1)->skip(0)->take(5)->get();
+        $banners = Banner::where('status', 1)->skip(0)->take(8)->get();
 
         $deals = Product::whereNotNull('admin_id')->whereBetween('products.created_at', 
-                [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])->where('status', 1)->with('discussions')
+                [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+                ->where('products.status', 1)->with('discussions')
                 ->skip(0)->take(20)->get();
+
+        //dd($deals);
 
         $top_sellers = Vendor::where('status', 1)->orderBy('vendors.created_at', 'desc')->skip(0)->take(20)->get();
 
@@ -208,12 +211,18 @@ class Welcome extends Component
         //  [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
         //  ->select('products.updated_at', 'categories.*')
         //  ->get()->groupBy('id');
-        $newarrivals = Product::whereBetween('created_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->where('status', 1)->with('discussions')->orderBy('created_at', 'desc')->skip(0)->take(10)->get();
+        $newarrivals = Product::whereBetween('products.created_at', 
+                        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+                        ->where('products.status', 1)->with('discussions')
+                        ->skip(0)->take(20)->get();
+
+        //dd($newarrivals);
         
 
-        $most_populars = Product::whereNotNull('admin_id')->whereBetween('updated_at',
-        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->today()])->where('status', 1)->with('discussions')->skip(0)->take(10)->get();
+        $most_populars = Product::whereNotNull('admin_id')->whereBetween('products.updated_at', 
+                        [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()])
+                        ->where('products.status', 1)->with('discussions')
+                        ->skip(0)->take(20)->get();
 
 
         //front page top ctegory's product
