@@ -5400,7 +5400,7 @@ blockquote {
 @font-face {
     font-family: "wolmart";
     src: url("../fonts/bazaar.eot?png09e");
-    src: url("../fonts/wolmart.woff?png09e") format("woff"), url("../fonts/bazaar.eot?png09e#iefix") format("embedded-opentype"), url("../fonts/wolmart.ttf?png09e") format("truetype"), url("../fonts/wolmart.svg?png09e#wolmart") format("svg");
+    src: url("../fonts/bazzar.woff?png09e") format("woff"), url("../fonts/bazaar.eot?png09e#iefix") format("embedded-opentype"), url("../fonts/bazzar.ttf?png09e") format("truetype"), url("../fonts/bazzar.svg?png09e#wolmart") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: swap
