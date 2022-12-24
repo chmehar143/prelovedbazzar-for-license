@@ -195,11 +195,11 @@
          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
       </div>
 
-      <br><br>
+      <!-- <br><br>
       <h2 class="title title-center mb-5">Top Categories Of The Month</h2>
-      <br><br>
+      <br><br> -->
 
-      <div
+      <!-- <div
          class="swiper-container swiper-theme shadow-swiper pb-10 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events"
          data-swiper-options="{
                     'spaceBetween': 20,
@@ -235,9 +235,9 @@
                      <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
                   </div>
                </div>
-            </div>
+            </div> -->
             <!-- End of Category Classic -->
-            <div class="swiper-slide category-wrap swiper-slide-next" role="group" aria-label="2 / 6"
+            <!-- <div class="swiper-slide category-wrap swiper-slide-next" role="group" aria-label="2 / 6"
                style="width: 213.333px; margin-right: 20px;">
                <div class="category category-classic category-absolute overlay-zoom br-sm">
                   <a href="{{route('shop')}}">
@@ -251,9 +251,9 @@
                      <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
                   </div>
                </div>
-            </div>
+            </div> -->
             <!-- End of Category Classic -->
-            <div class="swiper-slide category-wrap" role="group" aria-label="3 / 6"
+            <!-- <div class="swiper-slide category-wrap" role="group" aria-label="3 / 6"
                style="width: 213.333px; margin-right: 20px;">
                <div class="category category-classic category-absolute overlay-zoom br-sm">
                   <a href="{{route('shop')}}">
@@ -267,9 +267,9 @@
                      <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
                   </div>
                </div>
-            </div>
+            </div> -->
             <!-- End of Category Classic -->
-            <div class="swiper-slide category-wrap" role="group" aria-label="4 / 6"
+            <!-- <div class="swiper-slide category-wrap" role="group" aria-label="4 / 6"
                style="width: 213.333px; margin-right: 20px;">
                <div class="category category-classic category-absolute overlay-zoom br-sm">
                   <a href="{{route('shop')}}">
@@ -283,9 +283,9 @@
                      <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
                   </div>
                </div>
-            </div>
+            </div> -->
             <!-- End of Category Classic -->
-            <div class="swiper-slide category-wrap" role="group" aria-label="5 / 6"
+            <!-- <div class="swiper-slide category-wrap" role="group" aria-label="5 / 6"
                style="width: 213.333px; margin-right: 20px;">
                <div class="category category-classic category-absolute overlay-zoom br-sm">
                   <a href="{{route('shop')}}">
@@ -299,9 +299,9 @@
                      <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
                   </div>
                </div>
-            </div>
+            </div> -->
             <!-- End of Category Classic -->
-            <div class="swiper-slide category-wrap" role="group" aria-label="6 / 6"
+            <!-- <div class="swiper-slide category-wrap" role="group" aria-label="6 / 6"
                style="width: 213.333px; margin-right: 20px;">
                <div class="category category-classic category-absolute overlay-zoom br-sm">
                   <a href="{{route('shop')}}">
@@ -315,14 +315,14 @@
                      <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
                   </div>
                </div>
-            </div>
+            </div> -->
             <!-- End of Category Classic -->
-         </div>
+         <!-- </div>
          <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;">
             <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
                aria-label="Go to slide 1"></span></div>
          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-      </div>
+      </div> -->
 
       <Br><br><br>
       <!-- End of Category Banner Wrapper -->
@@ -569,6 +569,9 @@
    </div>
    <Br><br><br>
    <div class="container">
+      <div class="title-link-wrapper pb-1 mb-4">
+         <h2 class="title ls-normal mb-0">Top Best Sellers</h2>
+      </div>
       <div class="row">
          <div class="col-md-12">
             <div class="swiper-container swiper-theme shadow-swiper vendor-wrapper appear-animate mb-6 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events fadeIn appear-animation-visible"
@@ -592,21 +595,21 @@
                   @foreach($top_sellers as $seller)
                   <div class="swiper-slide vendor-widget swiper-slide-active" role="group"
                      style="width: 295px; margin-right: 20px;">
-                     <div class="vendor-widget-banner" style="height: 250px;">
+                     <div class="vendor-widget-banner" style="height: 300px;">
                         <figure class="vendor-banner">
                            <a href="{{route('vendor-store-details', $seller->id)}}">
                               <img src="{{asset('storage/uploads/vendors/'.$seller->shop_image)}}" alt="Vendor Banner"
-                                 width="1200" height="390" style="background-color: #ECE7DF;">
+                                 width="1200" height="390" style="background-color: #ECE7DF; height:175px; !important">
                            </a>
                         </figure>
                         <div class="vendor-details">
-                           <figure class="vendor-logo">
-                              <a href="{{route('vendor-store-details', $seller->id)}}">
+                           <figure class="vendor-logo" style="width:90px; !important height:90px; !important" >
+                              <a href="{{route('vendor-store-details', $seller->id)}}" >
                                  <img src="{{asset('storage/uploads/vendors/'.$seller->shop_image)}}"
-                                    alt="Vendor Logo" width="90" height="90">
+                                    alt="Vendor Logo" style="width:90px; height:90px; !important">
                               </a>
                            </figure>
-                           <div class="vendor-personal" style="height: 100px;">
+                           <div class="vendor-personal">
                               <h4 class="vendor-name">
                                  <a href="{{route('vendor-store-details', $seller->id)}}">{{$seller->shop_name}}</a>
                               </h4>
