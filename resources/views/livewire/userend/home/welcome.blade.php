@@ -138,7 +138,7 @@
             <div class="swiper-slide banner banner-fixed category-banner br-sm swiper-slide-active" role="group"
                aria-label="1 / 3" style="width: 446.667px; margin-right: 20px;">
                <figure>
-                  <img src="../frontend-assets/assets/images/demos/demo8/category/1-1.jpg" alt="Category Banner"
+                  <img src="../frontend-assets/assets/images/1-1.jpg" alt="Category Banner"
                      width="447" height="230" style="background-color: #cfd1cf;">
                </figure>
                <div class="banner-content y-50">
@@ -155,7 +155,7 @@
             <div class="swiper-slide banner banner-fixed category-banner br-sm swiper-slide-next" role="group"
                aria-label="2 / 3" style="width: 446.667px; margin-right: 20px;">
                <figure>
-                  <img src="../frontend-assets/assets/images/demos/demo8/category/1-2.jpg" alt="Category Banner"
+                  <img src="../frontend-assets/assets/images/1-2.jpg" alt="Category Banner"
                      width="447" height="230" style="background-color: #333">
                </figure>
                <div class="banner-content text-center x-50 y-50 w-100 pl-2 pr-2">
@@ -173,7 +173,7 @@
             <div class="swiper-slide banner banner-fixed category-banner br-sm" role="group" aria-label="3 / 3"
                style="width: 446.667px; margin-right: 20px;">
                <figure>
-                  <img src="../frontend-assets/assets/images/demos/demo8/category/1-3.jpg" alt="Category Banner"
+                  <img src="../frontend-assets/assets/images/1-3.jpg" alt="Category Banner"
                      width="447" height="230" style="background-color: #e0dddd;">
                </figure>
                <div class="banner-content y-50">
