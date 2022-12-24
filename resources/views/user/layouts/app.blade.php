@@ -28,10 +28,10 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title> Home -   MarketPlace </title>
+    <title> Home -   Bazaar </title>
 
-    <meta name="keywords" content=" Preloved Bazar" />
-    <meta name="description" content=" Preloved Bazar is powerful marketplace &amp;  website.">
+    <meta name="keywords" content="  Bazaar" />
+    <meta name="description" content="  Bazaar is powerful store &amp;  website.">
     <meta name="author" content="BS3-design">
 
     <!-- Favicon -->
@@ -59,7 +59,7 @@ else{
         crossorigin="anonymous">
     <link rel="preload" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/webfonts/fa-brands-400.woff2')}}" as="font" type="font/woff2"
         crossorigin="anonymous">
-    <link rel="preload" href="{{asset('frontend-assets/assets/fonts/wolmart.woff?png09e" as="font" type="font/woff')}}" crossorigin="anonymous">
+    <link rel="preload" href="{{asset('frontend-assets/assets/fonts/bazaar.woff?png09e" as="font" type="font/woff')}}" crossorigin="anonymous">
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/css/all.min.css')}}">
