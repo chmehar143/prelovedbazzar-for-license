@@ -15,7 +15,7 @@
             <nav class="breadcrumb-nav mb-10 pb-1">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Contact Us</li>
                     </ul>
                 </div>
@@ -225,6 +225,6 @@ $("#sendtext").click(function(){
             )
         }
     });
-});   
+});
 </script>
 @endsection

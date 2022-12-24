@@ -16,7 +16,7 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li><a href="my-account.html">My account</a></li>
                         <li>Order #962</li>
                     </ul>

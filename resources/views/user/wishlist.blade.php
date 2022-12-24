@@ -15,7 +15,7 @@
             <nav class="breadcrumb-nav mb-10">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Wishlist</li>
                     </ul>
                 </div>
@@ -26,10 +26,10 @@
             <div class="page-content">
                 <div>
                     @livewire('userend.wishlist.index', ['wishes' => $wishes])
-                </div>                
+                </div>
             </div>
             <!-- End of PageContent -->
-            
+
         </main>
         <!-- End of Main -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -37,13 +37,13 @@
 <script type="text/javascript">
 
 function deleteProduct(id){
-            // processing ajax request    
+            // processing ajax request
             $.ajax({
                 url: "{{ url('delwish') }}" +'/' + id,
             success: function() {
                     $("#setup_" +id).remove();
                 }
-            });   
+            });
         }
 
 

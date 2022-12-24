@@ -2,9 +2,9 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href="../../../">
-    <title>NFT</title>
+    <title>MarketPlace</title>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/iconb.png')}}" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->

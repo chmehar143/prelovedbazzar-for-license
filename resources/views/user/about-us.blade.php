@@ -15,7 +15,7 @@
             <nav class="breadcrumb-nav mb-10 pb-8">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>About Us</li>
                     </ul>
                 </div>
@@ -92,7 +92,7 @@
                         </div>
                     </section>
 
-              
+
                 </div>
 
                 <section class="boost-section pt-10 pb-10">

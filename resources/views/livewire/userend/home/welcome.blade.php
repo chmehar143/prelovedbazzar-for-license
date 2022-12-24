@@ -1,10 +1,11 @@
 <div>
-<section class="intro-section">
-      <div class="swiper-container swiper-theme nav-inner pg-inner swiper-nav-lg animation-slider pg-xxl-hide nav-xxl-show nav-hide"
+   <section class="intro-section">
+      <div
+         class="swiper-container swiper-theme nav-inner pg-inner swiper-nav-lg animation-slider pg-xxl-hide nav-xxl-show nav-hide"
          data-swiper-options="{
          'slidesPerView': 1,
          'autoplay': {
-         'delay': 8000,
+         'delay': 3000,
          'disableOnInteraction': false
          }
          }">
@@ -25,29 +26,28 @@
                         'duration': '1s',
                         'delay': '.2s'
                         }">
-                        <span class="p-relative d-inline-block">{{$banner->description}}</span>
+                        <!-- <span class="p-relative d-inline-block">{{$banner->description}}</span> -->
                      </h5>
-                     <h3 class="banner-title font-weight-bolder ls-25 lh-1 slide-animate"
-                        data-animation-options="{
+                     <h3 class="banner-title font-weight-bolder ls-25 lh-1 slide-animate" data-animation-options="{
                         'name': 'fadeInRightShorter',
                         'duration': '1s',
                         'delay': '.4s'
                         }">
-                        {{$banner->title}}
+                        <!-- {{$banner->title}} -->
                      </h3>
                      <p class="font-weight-normal text-default slide-animate" data-animation-options="{
                         'name': 'fadeInRightShorter',
                         'duration': '1s',
                         'delay': '.6s'
                         }">
-                        <span class="font-weight-bolder text-secondary">{{$banner->offer}}</span>
+                        <!-- <span class="font-weight-bolder text-secondary">{{$banner->offer}}</span> -->
                      </p>
                      <a href="{{$banner->url}}"
                         class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                         data-animation-options="{
                         'name': 'fadeInRightShorter',
                         'duration': '1s',
-                        'delay': '.8s'
+                        'delay': '.2s'
                         }">SHOP NOW<i class="w-icon-long-arrow-right"></i></a>
                   </div>
                   <!-- End of .banner-content -->
@@ -55,107 +55,6 @@
                <!-- End of .container -->
             </div>
             @endforeach
-            <!-- End of .intro-slide1 -->
-            <!-- <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"
-               style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-2.jpg')}}); background-color: #ebeef2;">
-               <div class="container">
-                  <figure class="slide-image skrollable slide-animate" data-animation-options="{
-                     'name': 'fadeInUpShorter',
-                     'duration': '1s'
-                     }">
-                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/sliders/men.png')}}" alt="Banner"
-                        data-bottom-top="transform: translateX(10vh);"
-                        data-top-bottom="transform: translateX(-10vh);" width="480" height="633">
-                  </figure>
-                  <div class="banner-content d-inline-block y-50">
-                     <h5 class="banner-subtitle font-weight-normal text-default ls-50 slide-animate"
-                        data-animation-options="{
-                        'name': 'fadeInUpShorter',
-                        'duration': '1s',
-                        'delay': '.2s'
-                        }">
-                        Mountain-<span class="text-secondary">Climbing</span>
-                     </h5>
-                     <h3 class="banner-title font-weight-bolder text-dark mb-0 ls-25 slide-animate"
-                        data-animation-options="{
-                        'name': 'fadeInUpShorter',
-                        'duration': '1s',
-                        'delay': '.4s'
-                        }">
-                        Hot & Packback
-                     </h3>
-                     <p class="font-weight-normal text-default slide-animate" data-animation-options="{
-                        'name': 'fadeInUpShorter',
-                        'duration': '1s',
-                        'delay': '.8s'
-                        }">
-                        Only until the end of this week.
-                     </p>
-                     <a href="{{route('shop')}}"
-                        class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
-                        data-animation-options="{
-                        'name': 'fadeInUpShorter',
-                        'duration': '1s',
-                        'delay': '1s'
-                        }">
-                     SHOP NOW<i class="w-icon-long-arrow-right"></i>
-                     </a>
-                  </div>
-                  <!-- End of .banner-content -->
-               </div>
-               <!-- End of .container -->
-            </div> -->
-            <!-- End of .intro-slide2 -->
-            <!-- <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
-               style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/sliders/slide-3.jpg')}}); background-color: #f0f1f2;">
-               <div class="container">
-                  <figure class="slide-image skrollable slide-animate" data-animation-options="{
-                     'name': 'fadeInDownShorter',
-                     'duration': '1s'
-                     }">
-                     <img src="{{asset('frontend-assets/assets/images/demos/demo1/sliders/skate.png')}}" alt="Banner"
-                        data-bottom-top="transform: translateY(10vh);"
-                        data-top-bottom="transform: translateY(-10vh);" width="310" height="444">
-                  </figure>
-                  <div class="banner-content text-right y-50">
-                     <p class="font-weight-normal text-default text-uppercase mb-0 slide-animate"
-                        data-animation-options="{
-                        'name': 'fadeInLeftShorter',
-                        'duration': '1s',
-                        'delay': '.6s'
-                        }">
-                        Top weekly Seller
-                     </p>
-                     <h5 class="banner-subtitle font-weight-normal text-default ls-25 slide-animate"
-                        data-animation-options="{
-                        'name': 'fadeInLeftShorter',
-                        'duration': '1s',
-                        'delay': '.4s'
-                        }">
-                        Trending Collection
-                     </h5>
-                     <h3 class="banner-title p-relative font-weight-bolder ls-50 slide-animate"
-                        data-animation-options="{
-                        'name': 'fadeInLeftShorter',
-                        'duration': '1s',
-                        'delay': '.2s'
-                        }"><span class="text-white mr-4">Roller</span>-skate
-                     </h3>
-                     <div class="btn-group slide-animate" data-animation-options="{
-                        'name': 'fadeInLeftShorter',
-                        'duration': '1s',
-                        'delay': '.8s'
-                        }">
-                        <a href="{{route('shop')}}"
-                           class="btn btn-dark btn-outline btn-rounded btn-icon-right">SHOP
-                        NOW<i class="w-icon-long-arrow-right"></i></a>
-                     </div>
-                     <!-- End of .banner-content -->
-                  </div>
-                  <!-- End of .container -->
-               </div>
-            </div> -->
-            <!-- End of .intro-slide3 -->
          </div>
          <div class="swiper-pagination"></div>
          <button class="swiper-button-next"></button>
@@ -183,7 +82,7 @@
          <div class="swiper-wrapper row cols-md-4 cols-sm-3 cols-1">
             <div class="swiper-slide icon-box icon-box-side icon-box-primary">
                <span class="icon-box-icon icon-shipping">
-               <i class="w-icon-truck"></i>
+                  <i class="w-icon-truck"></i>
                </span>
                <div class="icon-box-content">
                   <h4 class="icon-box-title font-weight-bold mb-1">Free Shipping & Returns</h4>
@@ -192,7 +91,7 @@
             </div>
             <div class="swiper-slide icon-box icon-box-side icon-box-primary">
                <span class="icon-box-icon icon-payment">
-               <i class="w-icon-bag"></i>
+                  <i class="w-icon-bag"></i>
                </span>
                <div class="icon-box-content">
                   <h4 class="icon-box-title font-weight-bold mb-1">Secure Payment</h4>
@@ -201,7 +100,7 @@
             </div>
             <div class="swiper-slide icon-box icon-box-side icon-box-primary icon-box-money">
                <span class="icon-box-icon icon-money">
-               <i class="w-icon-money"></i>
+                  <i class="w-icon-money"></i>
                </span>
                <div class="icon-box-content">
                   <h4 class="icon-box-title font-weight-bold mb-1">Money Back Guarantee</h4>
@@ -210,7 +109,7 @@
             </div>
             <div class="swiper-slide icon-box icon-box-side icon-box-primary icon-box-chat">
                <span class="icon-box-icon icon-chat">
-               <i class="w-icon-chat"></i>
+                  <i class="w-icon-chat"></i>
                </span>
                <div class="icon-box-content">
                   <h4 class="icon-box-title font-weight-bold mb-1">Customer Support</h4>
@@ -220,43 +119,212 @@
          </div>
       </div>
       <!-- End of Iocn Box Wrapper -->
-      <div class="row category-banner-wrapper appear-animate pt-6 pb-8">
-         <div class="col-md-6 mb-4">
-            <div class="banner banner-fixed br-xs">
+      <div
+         class="swiper-container swiper-theme category-banner-3cols pt-2 pb-10 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events"
+         data-swiper-options="{
+                    'spaceBetween': 20,
+                    'slidesPerView': 1,
+                    'breakpoints': {
+                        '576': {
+                            'slidesPerView': 2
+                        },
+                        '992': {
+                            'slidesPerView': 3
+                        }
+                    }
+                }">
+         <div class="swiper-wrapper " id="swiper-wrapper-fc3c5c310d9a2da5b" aria-live="polite"
+            style="transform: translate3d(0px, 0px, 0px);">
+            <div class="swiper-slide banner banner-fixed category-banner br-sm swiper-slide-active" role="group"
+               aria-label="1 / 3" style="width: 446.667px; margin-right: 20px;">
                <figure>
-                  <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/1-1.jpg')}}" alt="Category Banner"
-                     width="610" height="160" style="background-color: #ecedec;" />
+                  <img src="../frontend-assets/assets/images/demos/demo8/category/1-1.jpg" alt="Category Banner"
+                     width="447" height="230" style="background-color: #cfd1cf;">
                </figure>
-               <div class="banner-content y-50 mt-0">
-                  <h5 class="banner-subtitle font-weight-normal text-dark">Get up to <span
-                     class="text-secondary font-weight-bolder text-uppercase ls-25">20% Off</span>
-                  </h5>
-                  <h3 class="banner-title text-uppercase">Sports Outfits<br><span
-                     class="font-weight-normal                       text-capitalize">Collection</span>
-                  </h3>
-                  <div class="banner-price-info font-weight-normal">Starting at <span
-                     class="text-secondary                       font-weight-bolder">$170.00</span>
-                  </div>
+               <div class="banner-content y-50">
+                  <h3 class="banner-title text-capitalize ls-25 mb-0">For Men's</h3>
+                  <div class="banner-price-info text-uppercase text-default ls-25 font-weight-bold">Starting
+                     at <span class="text-secondary">$29.00</span></div>
+                  <hr class="banner-divider bg-dark">
+                  <a href="{{route('shop')}}" class="btn btn-dark btn-link btn-outline btn-icon-right btn-slide-right">
+                     Shop Now<i class="w-icon-long-arrow-right"></i>
+                  </a>
                </div>
             </div>
-         </div>
-         <div class="col-md-6 mb-4">
-            <div class="banner banner-fixed br-xs">
+            <!-- End of Category Banner -->
+            <div class="swiper-slide banner banner-fixed category-banner br-sm swiper-slide-next" role="group"
+               aria-label="2 / 3" style="width: 446.667px; margin-right: 20px;">
                <figure>
-                  <img src="{{asset('frontend-assets/assets/images/demos/demo1/categories/1-2.jpg')}}" alt="Category Banner"
-                     width="610" height="160" style="background-color: #636363;" />
+                  <img src="../frontend-assets/assets/images/demos/demo8/category/1-2.jpg" alt="Category Banner"
+                     width="447" height="230" style="background-color: #333">
                </figure>
-               <div class="banner-content y-50 mt-0">
-                  <h5 class="banner-subtitle font-weight-normal text-capitalize">New Arrivals</h5>
-                  <h3 class="banner-title text-white text-uppercase">Accessories<br><span
-                     class="font-weight-normal text-capitalize">Collection</span></h3>
-                  <div class="banner-price-info text-white font-weight-normal text-capitalize">Only From
-                     <span class="text-secondary font-weight-bolder">$90.00</span>
-                  </div>
+               <div class="banner-content text-center x-50 y-50 w-100 pl-2 pr-2">
+                  <h5 class="banner-subtitle text-primary text-capitalize ls-25 font-weight-bold">Get 30% Off
+                     Your Entire Order!</h5>
+                  <h3 class="banner-title text-white text-uppercase ls-25">Black Friday Sale</h3>
+                  <p>Use code <strong class="text-uppercase text-white">Blkfri40</strong> at checkout.</p>
+                  <a href="{{route('shop')}}"
+                     class="btn btn-primary btn-outline btn-rounded btn-icon-right text-white btn-slide-right">
+                     Shop Now<i class="w-icon-long-arrow-right"></i>
+                  </a>
                </div>
             </div>
+            <!-- End of Category Banner -->
+            <div class="swiper-slide banner banner-fixed category-banner br-sm" role="group" aria-label="3 / 3"
+               style="width: 446.667px; margin-right: 20px;">
+               <figure>
+                  <img src="../frontend-assets/assets/images/demos/demo8/category/1-3.jpg" alt="Category Banner"
+                     width="447" height="230" style="background-color: #e0dddd;">
+               </figure>
+               <div class="banner-content y-50">
+                  <h3 class="banner-title text-capitalize ls-25 mb-0">For Women's</h3>
+                  <div class="banner-price-info text-uppercase text-default ls-25 font-weight-bold">From Only
+                     <span class="text-secondary">$29.00</span>
+                  </div>
+                  <hr class="banner-divider bg-dark">
+                  <a href="{{route('shop')}}" class="btn btn-dark btn-link btn-outline btn-icon-right btn-slide-right">
+                     Shop Now<i class="w-icon-long-arrow-right"></i>
+                  </a>
+               </div>
+            </div>
+            <!-- End of Category Banner -->
          </div>
+         <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;">
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+               aria-label="Go to slide 1"></span></div>
+         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
       </div>
+
+      <br><br>
+      <h2 class="title title-center mb-5">Top Categories Of The Month</h2>
+      <br><br>
+
+      <div
+         class="swiper-container swiper-theme shadow-swiper pb-10 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events"
+         data-swiper-options="{
+                    'spaceBetween': 20,
+                    'slidesPerView': 2,
+                    'breakpoints': {
+                        '576': {
+                            'slidesPerView': 3
+                        },
+                        '768': {
+                            'slidesPerView': 4
+                        },
+                        '992': {
+                            'slidesPerView': 5
+                        },
+                        '1200': {
+                            'slidesPerView': 6
+                        }
+                    }
+                }">
+         <div class="swiper-wrapper " id="swiper-wrapper-1c9bbba10bc010da48" aria-live="polite"
+            style="transform: translate3d(0px, 0px, 0px);">
+            <div class="swiper-slide category-wrap swiper-slide-active" role="group" aria-label="1 / 6"
+               style="width: 213.333px; margin-right: 20px;">
+               <div class="category category-classic category-absolute overlay-zoom br-sm">
+                  <a href="{{route('shop')}}">
+                     <figure class="category-media">
+                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-1.jpg" alt="Category"
+                           width="213" height="213">
+                     </figure>
+                  </a>
+                  <div class="category-content">
+                     <h4 class="category-name ls-normal">Fashion</h4>
+                     <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+            <!-- End of Category Classic -->
+            <div class="swiper-slide category-wrap swiper-slide-next" role="group" aria-label="2 / 6"
+               style="width: 213.333px; margin-right: 20px;">
+               <div class="category category-classic category-absolute overlay-zoom br-sm">
+                  <a href="{{route('shop')}}">
+                     <figure class="category-media">
+                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-2.jpg" alt="Category"
+                           width="213" height="213">
+                     </figure>
+                  </a>
+                  <div class="category-content">
+                     <h4 class="category-name ls-normal">Furniture</h4>
+                     <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+            <!-- End of Category Classic -->
+            <div class="swiper-slide category-wrap" role="group" aria-label="3 / 6"
+               style="width: 213.333px; margin-right: 20px;">
+               <div class="category category-classic category-absolute overlay-zoom br-sm">
+                  <a href="{{route('shop')}}">
+                     <figure class="category-media">
+                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-3.jpg" alt="Category"
+                           width="213" height="213">
+                     </figure>
+                  </a>
+                  <div class="category-content">
+                     <h4 class="category-name ls-normal">Sneaker</h4>
+                     <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+            <!-- End of Category Classic -->
+            <div class="swiper-slide category-wrap" role="group" aria-label="4 / 6"
+               style="width: 213.333px; margin-right: 20px;">
+               <div class="category category-classic category-absolute overlay-zoom br-sm">
+                  <a href="{{route('shop')}}">
+                     <figure class="category-media">
+                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-4.jpg" alt="Category"
+                           width="213" height="213">
+                     </figure>
+                  </a>
+                  <div class="category-content">
+                     <h4 class="category-name ls-normal">Sports</h4>
+                     <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+            <!-- End of Category Classic -->
+            <div class="swiper-slide category-wrap" role="group" aria-label="5 / 6"
+               style="width: 213.333px; margin-right: 20px;">
+               <div class="category category-classic category-absolute overlay-zoom br-sm">
+                  <a href="{{route('shop')}}">
+                     <figure class="category-media">
+                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-5.jpg" alt="Category"
+                           width="213" height="213">
+                     </figure>
+                  </a>
+                  <div class="category-content">
+                     <h4 class="category-name ls-normal">Speaker</h4>
+                     <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+            <!-- End of Category Classic -->
+            <div class="swiper-slide category-wrap" role="group" aria-label="6 / 6"
+               style="width: 213.333px; margin-right: 20px;">
+               <div class="category category-classic category-absolute overlay-zoom br-sm">
+                  <a href="{{route('shop')}}">
+                     <figure class="category-media">
+                        <img src="../frontend-assets/assets/images/demos/demo8/product/1-6.jpg" alt="Category"
+                           width="213" height="213">
+                     </figure>
+                  </a>
+                  <div class="category-content">
+                     <h4 class="category-name ls-normal">Electronics</h4>
+                     <a href="{{route('shop')}}" class="btn btn-primary btn-link btn-underline">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+            <!-- End of Category Classic -->
+         </div>
+         <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;">
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+               aria-label="Go to slide 1"></span></div>
+         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+      </div>
+
+      <Br><br><br>
       <!-- End of Category Banner Wrapper -->
       <div class="row deals-wrapper appear-animate mb-8">
          <div class="col-lg-9 mb-4">
@@ -274,10 +342,8 @@
                         <div class="swiper-slide">
                            <div class="product product-single row">
                               <div class="col-md-6">
-                                 <div
-                                    class="product-gallery product-gallery-sticky product-gallery-vertical">
-                                    <div
-                                       class="swiper-container product-single-swiper swiper-theme nav-inner">
+                                 <div class="product-gallery product-gallery-sticky product-gallery-vertical">
+                                    <div class="swiper-container product-single-swiper swiper-theme nav-inner">
                                        <div class="swiper-wrapper row cols-1 gutter-no">
                                           @foreach($unit->gallery->slice(0, 5) as $image)
                                           <div class="swiper-slide">
@@ -293,12 +359,11 @@
                                        <button class="swiper-button-prev"></button>
                                        <div class="product-label-group">
                                           <label class="product-label label-discount">
-                                          $<del class="w-bold">{{$unit->p_old_price}}</del>
+                                             $<del class="w-bold">{{$unit->p_old_price}}</del>
                                           </label>
                                        </div>
                                     </div>
-                                    <div class="product-thumbs-wrap swiper-container"
-                                       data-swiper-options="{
+                                    <div class="product-thumbs-wrap swiper-container" data-swiper-options="{
                                        'direction': 'vertical',
                                        'breakpoints': {
                                        '0': {
@@ -311,8 +376,7 @@
                                        }
                                        }
                                        }">
-                                       <div
-                                          class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
+                                       <div class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
                                           @foreach($unit->gallery->slice(0, 5) as $image)
                                           <div class="product-thumb swiper-slide">
                                              <img src="{{asset('storage/uploads/gallery/'.$image->image)}}"
@@ -326,13 +390,14 @@
                               <div class="col-md-6">
                                  <div class="product-details scrollable">
                                     <h2 class="product-title mb-1"><a
-                                       href="{{route('product',$unit->id)}}">{{$unit->p_name}}</a></h2>
+                                          href="{{route('product',$unit->id)}}">{{$unit->p_name}}</a></h2>
                                     <hr class="product-divider">
-                                    <div class="product-price"><ins class="new-price ls-50">pkr{{$unit->p_new_price}}</ins></div>
+                                    <div class="product-price"><ins
+                                          class="new-price ls-50">pkr{{$unit->p_new_price}}</ins></div>
                                     <div class="product-countdown-container flex-wrap">
                                        <label class="mr-2 text-default">Offer Ends In:</label>
-                                       <div class="product-countdown countdown-compact"
-                                          data-until="2022, 09, 31" data-compact="true">
+                                       <div class="product-countdown countdown-compact" data-until="2022, 09, 31"
+                                          data-compact="true">
                                           {{$unit->created_at->diffForHumans()}}
                                        </div>
                                     </div>
@@ -360,12 +425,12 @@
                                        </div> -->
                                     <div class="product-form pt-4" style="justify-content: center;">
                                        <a href="{{ route('product', $unit->id) }}" class="btn btn-primary ">
-                                       <span>Buy Now</span>
-                                       </a>                                     
+                                          <span>Buy Now</span>
+                                       </a>
                                     </div>
                                     <div class="social-links-wrapper mt-1" style="justify-content: center;">
                                        <!-- <div class="social-links"> -->
-                                          <!-- <div class="social-icons social-no-color border-thin">
+                                       <!-- <div class="social-icons social-no-color border-thin">
                                              <a href="javascript:void(0)"
                                                  class="social-icon social-facebook w-icon-facebook"></a>
                                              <a href="javascript:void(0)"
@@ -425,8 +490,8 @@
                               <div class="product product-widget bb-no">
                                  <figure class="product-media">
                                     <a href="{{route('product', $item->id)}}">
-                                    <img src="{{asset('storage/uploads/products/'.$item->p_image)}}"
-                                       alt="Product" width="105" height="118" />
+                                       <img src="{{asset('storage/uploads/products/'.$item->p_image)}}" alt="Product"
+                                          width="105" height="118" />
                                     </a>
                                  </figure>
                                  <?php 
@@ -470,27 +535,31 @@
       <!-- End of Deals Wrapper -->
    </div>
 
+
+
    <div class="container">
       <div class="row">
          <div class="col-md-12">
-            <div class="sale-banner banner br-sm appear-animate fadeIn appear-animation-visible" style="animation-duration: 1.2s;">
+            <div class="sale-banner banner br-sm appear-animate fadeIn appear-animation-visible"
+               style="animation-duration: 1.2s;">
                <div class="banner-content">
-                  <h4 class="content-left banner-subtitle text-uppercase mb-8 mb-md-0 mr-0 mr-md-4 text-secondary ls-25">
+                  <h4
+                     class="content-left banner-subtitle text-uppercase mb-8 mb-md-0 mr-0 mr-md-4 text-secondary ls-25">
                      <span class="font-weight-bold lh-1 ls-normal" style="color:white">Up
-                     <br>To</span> &nbsp; 70% Sale!
+                        <br>To</span> &nbsp; 70% Sale!
                   </h4>
                   <div class="content-right">
                      <h3 class="banner-title text-uppercase font-weight-normal mb-4 mb-md-0 ls-25 text-white">
                         <span>Pay Only For
-                        <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
-                        Pay Only For
-                        <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
-                        Pay Only For
-                        <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
+                           <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
+                           Pay Only For
+                           <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
+                           Pay Only For
+                           <strong class="mr-10 pr-lg-10">Your Lovling Electronics</strong>
                         </span>
                      </h3>
                      <a href="#" class="btn btn-white btn-rounded">Shop Now
-                     <i class="w-icon-long-arrow-right"></i>
+                        <i class="w-icon-long-arrow-right"></i>
                      </a>
                   </div>
                </div>
@@ -502,9 +571,8 @@
    <div class="container">
       <div class="row">
          <div class="col-md-12">
-            
-       
-   <div class="swiper-container swiper-theme shadow-swiper vendor-wrapper appear-animate mb-6 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events fadeIn appear-animation-visible" data-swiper-options="{
+            <div class="swiper-container swiper-theme shadow-swiper vendor-wrapper appear-animate mb-6 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events fadeIn appear-animation-visible"
+               data-swiper-options="{
                     'spaceBetween': 20,
                     'slidesPerView': 1,
                     'breakpoints': {
@@ -519,110 +587,51 @@
                         }
                     }
                 }" style="animation-duration: 1.2s;">
-                    <div class="swiper-wrapper " id="swiper-wrapper-014adb8158a119e6" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="swiper-slide vendor-widget swiper-slide-active" role="group" aria-label="1 / 4" style="width: 295px; margin-right: 20px;">
-                            <div class="vendor-widget-banner">
-                                <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
-                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/1.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #ECE7DF;">
-                                    </a>
-                                </figure>
-                                <div class="vendor-details">
-                                    <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
-                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-1.jpg" alt="Vendor Logo" width="90" height="90">
-                                        </a>
-                                    </figure>
-                                    <div class="vendor-personal">
-                                        <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">OAIO Store</a>
-                                        </h4>
-                                        <span class="vendor-product-count">27 Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Vendor Widget Banner -->
+               <div class="swiper-wrapper " id="swiper-wrapper-014adb8158a119e6" aria-live="polite"
+                  style="transform: translate3d(0px, 0px, 0px);">
+                  @foreach($top_sellers as $seller)
+                  <div class="swiper-slide vendor-widget swiper-slide-active" role="group"
+                     style="width: 295px; margin-right: 20px;">
+                     <div class="vendor-widget-banner" style="height: 250px;">
+                        <figure class="vendor-banner">
+                           <a href="{{route('vendor-store-details', $seller->id)}}">
+                              <img src="{{asset('storage/uploads/vendors/'.$seller->shop_image)}}" alt="Vendor Banner"
+                                 width="1200" height="390" style="background-color: #ECE7DF;">
+                           </a>
+                        </figure>
+                        <div class="vendor-details">
+                           <figure class="vendor-logo">
+                              <a href="{{route('vendor-store-details', $seller->id)}}">
+                                 <img src="{{asset('storage/uploads/vendors/'.$seller->shop_image)}}"
+                                    alt="Vendor Logo" width="90" height="90">
+                              </a>
+                           </figure>
+                           <div class="vendor-personal" style="height: 100px;">
+                              <h4 class="vendor-name">
+                                 <a href="{{route('vendor-store-details', $seller->id)}}">{{$seller->shop_name}}</a>
+                              </h4>
+                              <span class="vendor-product-count">{{$seller->products->count()}} Products</span>
+                           </div>
                         </div>
-                        <div class="swiper-slide vendor-widget swiper-slide-next" role="group" aria-label="2 / 4" style="width: 295px; margin-right: 20px;">
-                            <div class="vendor-widget-banner">
-                                <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
-                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/2.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #293936;">
-                                    </a>
-                                </figure>
-                                <div class="vendor-details">
-                                    <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
-                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-2.jpg" alt="Vendor Logo" width="90" height="90">
-                                        </a>
-                                    </figure>
-                                    <div class="vendor-personal">
-                                        <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">Trident Store</a>
-                                        </h4>
-                                        <span class="vendor-product-count">11 Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Vendor Widget Banner -->
-                        </div>
-                        <div class="swiper-slide vendor-widget" role="group" aria-label="3 / 4" style="width: 295px; margin-right: 20px;">
-                            <div class="vendor-widget-banner">
-                                <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
-                                        <img src="frontend-assets/frontend-assets/assets/images/demos/demo3/vendors/3.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #B8CDCE;">
-                                    </a>
-                                </figure>
-                                <div class="vendor-details">
-                                    <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
-                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-3.jpg" alt="Vendor Logo" width="90" height="90">
-                                        </a>
-                                    </figure>
-                                    <div class="vendor-personal">
-                                        <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">Pam Store</a>
-                                        </h4>
-                                        <span class="vendor-product-count">16 Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Vendor Widget Banner -->
-                        </div>
-                        <div class="swiper-slide vendor-widget" role="group" aria-label="4 / 4" style="width: 295px; margin-right: 20px;">
-                            <div class="vendor-widget-banner">
-                                <figure class="vendor-banner">
-                                    <a href="vendor-dokan-store.html">
-                                        <img src="frontend-assets/assets/images/demos/demo3/vendors/4.jpg" alt="Vendor Banner" width="1200" height="390" style="background-color: #F5F5F5;">
-                                    </a>
-                                </figure>
-                                <div class="vendor-details">
-                                    <figure class="vendor-logo">
-                                        <a href="vendor-dokan-store.html">
-                                            <img src="frontend-assets/assets/images/demos/demo3/vendors/brand-4.jpg" alt="Vendor Logo" width="90" height="90">
-                                        </a>
-                                    </figure>
-                                    <div class="vendor-personal">
-                                        <h4 class="vendor-name">
-                                            <a href="vendor-dokan-store.html">K Group Store</a>
-                                        </h4>
-                                        <span class="vendor-product-count">25 Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Vendor Widget Banner -->
-                        </div>
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="display: none;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span></div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-   <!-- End of Swiper Container -->
-   </div>
+                     </div>
+                     <!-- End of Vendor Widget Banner -->
+                  </div>
+                  @endforeach
+               </div>
+               <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                  style="display: none;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"
+                     tabindex="0" role="button" aria-label="Go to slide 1"></span>
+               </div>
+               <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+            <!-- End of Swiper Container -->
+         </div>
       </div>
    </div>
 
    <div class="container">
       <div class="title-link-wrapper pb-1 mb-4">
-         <h2 class="title ls-normal mb-0">Popular  &amp; Departments</h2>
+         <h2 class="title ls-normal mb-0">Popular &amp; Departments</h2>
       </div>
       <div class="tab tab-nav-boxed tab-nav-outline appear-animate">
          <ul class="nav nav-tabs justify-content-center" role="tablist">
@@ -649,13 +658,14 @@
                   <div class="product text-center">
                      <figure class="product-media">
                         <a href="{{route('product', $arrival->id)}}">
-                        <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
+                           <img src="{{asset('/storage/uploads/products/'.$arrival->p_image)}}" alt="Product"
+                              style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
                         </div>
                         <div class="product-action">
-                           <a href="{{ route('product', $arrival->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
+                           <a href="{{ route('product', $arrival->id) }}" class="btn-product btn-quickview"
+                              title="Quick View">View</a>
                         </div>
                      </figure>
                      <div class="product-details">
@@ -696,13 +706,14 @@
                   <div class="product text-center">
                      <figure class="product-media">
                         <a href="{{route('product',$unit->id)}}">
-                        <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
+                           <img src="{{asset('/storage/uploads/products/'.$unit->p_image)}}" alt="Product"
+                              style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
                         </div>
                         <div class="product-action">
-                           <a href="{{ route('product', $unit->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
+                           <a href="{{ route('product', $unit->id) }}" class="btn-product btn-quickview"
+                              title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -744,13 +755,14 @@
                   <div class="product text-center">
                      <figure class="product-media">
                         <a href="{{route('product', $deal->id)}}">
-                        <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
+                           <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
+                              style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
                         </div>
                         <div class="product-action">
-                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
+                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview"
+                              title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -792,13 +804,14 @@
                   <div class="product text-center">
                      <figure class="product-media">
                         <a href="{{route('product', $deal->id)}}">
-                        <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
-                           style="width:300px;height:300px" />
+                           <img src="{{asset('/storage/uploads/products/'.$deal->p_image)}}" alt="Product"
+                              style="width:300px;height:300px" />
                         </a>
                         <div class="product-action-vertical">
                         </div>
                         <div class="product-action">
-                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
+                           <a href="{{ route('product', $deal->id) }}" class="btn-product btn-quickview"
+                              title="Quick View">View</a>
                         </div>
                      </figure>
                      <?php 
@@ -872,15 +885,15 @@
       <!-- End of Category Cosmetic Lifestyle -->
       <div wire:init="loadPosts">
          @foreach($frontcat as $test)
-            @foreach($test as $unit)
-            <div class="product-wrapper-1 appear-animate mb-5">
-               <div class="title-link-wrapper pb-1 mb-4">
-                  <h2 class="title ls-normal mb-0">{{$unit['name']}}</h2>
-                  <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
+         @foreach($test as $unit)
+         <div class="product-wrapper-1 appear-animate mb-5">
+            <div class="title-link-wrapper pb-1 mb-4">
+               <h2 class="title ls-normal mb-0">{{$unit['name']}}</h2>
+               <a href="{{route('shop')}}" class="font-size-normal font-weight-bold ls-25 mb-0">More
                   Products<i class="w-icon-long-arrow-right"></i></a>
-               </div>
-               <div class="row">
-                  <!-- <div class="col-lg-3 col-sm-4 mb-4">
+            </div>
+            <div class="row">
+               <!-- <div class="col-lg-3 col-sm-4 mb-4">
                      <div class="banner h-100 br-sm" style="background-image: url({{asset('frontend-assets/assets/images/demos/demo1/banners/2.jpg')}});
                         background-color: #ebeced;">
                         <div class="banner-content content-top">
@@ -895,9 +908,9 @@
                         </div>
                      </div>
                      </div> -->
-                  <!-- End of Banner -->
-                  <div class="col-lg-12 col-sm-8">
-                     <div class="swiper-container swiper-theme" data-swiper-options="{
+               <!-- End of Banner -->
+               <div class="col-lg-12 col-sm-8">
+                  <div class="swiper-container swiper-theme" data-swiper-options="{
                         'spaceBetween': 20,
                         'slidesPerView': 2,
                         'breakpoints': {
@@ -909,26 +922,27 @@
                         }
                         }
                         }">
-                        <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
-                           @foreach($unit['product']->slice(0, 10) as $row)
-                           <div class="swiper-slide product-col">
-                              <div class="product-wrap product text-center">
-                                 <figure class="product-media">
-                                    <a href="{{ route('product', $row->id)}}">
+                     <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
+                        @foreach($unit['product']->slice(0, 10) as $row)
+                        <div class="swiper-slide product-col">
+                           <div class="product-wrap product text-center">
+                              <figure class="product-media">
+                                 <a href="{{ route('product', $row->id)}}">
                                     <img src="{{asset('storage/uploads/products/'.$row->p_image)}}" alt="Product"
                                        style="width:300px;height:300px" />
-                                    </a>
-                                    <div class="product-action-vertical">
-                                    </div>
-                                    <div class="product-action">
-                                       <a href="{{ route('product', $row->id) }}" class="btn-product btn-quickview" title="Quick View">View</a>
-                                    </div>
-                                 </figure>
-                                 <div class="product-details">
-                                    <h4 class="product-name">
-                                       <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
-                                    </h4>
-                                    <?php 
+                                 </a>
+                                 <div class="product-action-vertical">
+                                 </div>
+                                 <div class="product-action">
+                                    <a href="{{ route('product', $row->id) }}" class="btn-product btn-quickview"
+                                       title="Quick View">View</a>
+                                 </div>
+                              </figure>
+                              <div class="product-details">
+                                 <h4 class="product-name">
+                                    <a href="{{route('product', $row->id)}}">{{$row->p_name}}</a>
+                                 </h4>
+                                 <?php 
                                        $sum = $row->discussions->sum('review');
                                        $no = $row->discussions->count('review');
                                        if($sum == 0 || $no == 0){
@@ -939,30 +953,30 @@
                                           $avg = 20 * $aver;
                                        }
                                        ?>
-                                    <div class="ratings-container">
-                                       <div class="ratings-full">
-                                          <span class="ratings" style="width: {{ $avg }}%;"></span>
-                                          <span class="tooltiptext tooltip-top"></span>
-                                       </div>
-                                       <a href="{{route('product', $row->id)}}" class="rating-reviews">({{$no}}
+                                 <div class="ratings-container">
+                                    <div class="ratings-full">
+                                       <span class="ratings" style="width: {{ $avg }}%;"></span>
+                                       <span class="tooltiptext tooltip-top"></span>
+                                    </div>
+                                    <a href="{{route('product', $row->id)}}" class="rating-reviews">({{$no}}
                                        reviews)</a>
-                                    </div>
-                                    <div class="product-price">
-                                       <ins class="new-price">pkr{{$row->p_new_price}}</ins><del
-                                          class="old-price">pkr{{$row->p__price}}</del>
-                                    </div>
+                                 </div>
+                                 <div class="product-price">
+                                    <ins class="new-price">pkr{{$row->p_new_price}}</ins><del
+                                       class="old-price">pkr{{$row->p__price}}</del>
                                  </div>
                               </div>
                            </div>
-                           @endforeach
                         </div>
-                        <div class="swiper-pagination"></div>
+                        @endforeach
                      </div>
+                     <div class="swiper-pagination"></div>
                   </div>
                </div>
             </div>
-            <!-- End of Product Wrapper 1 -->
-            @endforeach
+         </div>
+         <!-- End of Product Wrapper 1 -->
+         @endforeach
          @endforeach
       </div>
       <!-- End of Product Wrapper 1 -->
@@ -1079,7 +1093,7 @@
       <!-- Post Wrapper -->
       @if($recents->count() > 0)
       <div class="title-link-wrapper pb-1 mb-4">
-         <h2 class="title ls-normal mb-0">Your  &amp; Recent Views</h2>
+         <h2 class="title ls-normal mb-0">Your &amp; Recent Views</h2>
       </div>
       <br>
       <div class="swiper-container swiper-theme shadow-swiper appear-animate pb-4 mb-8" data-swiper-options="{
@@ -1106,8 +1120,8 @@
                <div class="product text-center product-absolute">
                   <figure class="product-media">
                      <a href="product-defa{{route('product', $recent->p_id)}}">
-                     <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
-                        style="width:300px;height:150px" style="background-color: #fff" />
+                        <img src="{{asset('storage/uploads/products/'.$recent->pimage)}}" alt="Category image"
+                           style="width:300px;height:150px" style="background-color: #fff" />
                      </a>
                   </figure>
                   <h4 class="product-name">
@@ -1147,38 +1161,38 @@
       <div class="swiper-wrapper row cols-xl-6 cols-lg-5 cols-md-4 cols-sm-3 cols-2 gutter-no">
          <figure class="swiper-slide instagram">
             <a href="#">
-            <img src="../frontend-assets/assets/images/instagram/instagram-1.jpg" alt="Instagram" width="320"
-               height="320" />
+               <img src="../frontend-assets/assets/images/instagram/instagram-1.jpg" alt="Instagram" width="320"
+                  height="320" />
             </a>
          </figure>
          <figure class="swiper-slide instagram">
             <a href="#">
-            <img src="../frontend-assets/assets/images/instagram/instagram-2.jpg" alt="Instagram" width="320"
-               height="320" />
+               <img src="../frontend-assets/assets/images/instagram/instagram-2.jpg" alt="Instagram" width="320"
+                  height="320" />
             </a>
          </figure>
          <figure class="swiper-slide instagram">
             <a href="#">
-            <img src="../frontend-assets/assets/images/instagram/instagram-6.jpg" alt="Instagram" width="320"
-               height="320" />
+               <img src="../frontend-assets/assets/images/instagram/instagram-6.jpg" alt="Instagram" width="320"
+                  height="320" />
             </a>
          </figure>
          <figure class="swiper-slide instagram">
             <a href="#">
-            <img src="../frontend-assets/assets/images/instagram/instagram-3.jpg" alt="Instagram" width="320"
-               height="320" />
+               <img src="../frontend-assets/assets/images/instagram/instagram-3.jpg" alt="Instagram" width="320"
+                  height="320" />
             </a>
          </figure>
          <figure class="swiper-slide instagram">
             <a href="#">
-            <img src="../frontend-assets/assets/images/instagram/instagram-4.jpg" alt="Instagram" width="320"
-               height="320" />
+               <img src="../frontend-assets/assets/images/instagram/instagram-4.jpg" alt="Instagram" width="320"
+                  height="320" />
             </a>
          </figure>
          <figure class="swiper-slide instagram">
             <a href="#">
-            <img src="../frontend-assets/assets/images/instagram/instagram-5.jpg" alt="Instagram" width="320"
-               height="320" />
+               <img src="../frontend-assets/assets/images/instagram/instagram-5.jpg" alt="Instagram" width="320"
+                  height="320" />
             </a>
          </figure>
       </div>

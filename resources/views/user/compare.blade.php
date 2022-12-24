@@ -15,7 +15,7 @@
             <nav class="breadcrumb-nav mb-2">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Compare</li>
                     </ul>
                 </div>

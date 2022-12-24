@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <div class="widget widget-about">
-                                <a href="demo1.html" class="logo-footer">
+                                <a href="#" class="logo-footer">
                                     <!-- <img src="{{asset('frontend-assets/assets/images/logo_footer.png')}}" alt="logo-footer" width="144"
                                         height="45" /> -->
                                 </a>
@@ -82,12 +82,12 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="footer-bottom">
                     <div class="footer-left">
-                        <p class="copyright">Copyright © 2022 BS3 Designs . All Rights Reserved.</p>
+                        <p class="copyright">Copyright © 2022 MarketPlace . All Rights Reserved.</p>
                     </div>
                     <div class="footer-right">
                         <span class="payment-label mr-lg-8">We're using safe payment for</span>

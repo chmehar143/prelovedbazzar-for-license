@@ -15,7 +15,7 @@
             <nav class="breadcrumb-nav mb-10 pb-8">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Privacy Policy</li>
                     </ul>
                 </div>
@@ -72,11 +72,11 @@
                   <p class="mx-auto text-center">You have the right to request information about the personal data we hold on you. If your data is incorrect, incomplete or irrelevant, you can ask to have the information corrected or removed.
 
                        </p>
-                
+
                 </section>
 
-               
-              
+
+
                 </div>
 
 

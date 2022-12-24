@@ -114,7 +114,7 @@
                                  </tr>
                                  <tr>
                                     <td class="text-muted min-w-125px w-125px">Descriptions</td>
-                                    <td class="text-gray-800">{{$plan->detail}}</td>
+                                    <td class="text-gray-800">{!!$plan->detail!!}</td>
                                  </tr>
                               </tbody>
                            </table>

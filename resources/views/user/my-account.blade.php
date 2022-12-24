@@ -14,7 +14,7 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>My account</li>
                     </ul>
                 </div>
@@ -52,12 +52,12 @@
                         </ul>
 
                         <div class="tab-content mb-6">
-                            <div class="tab-pane active in" id="account-dashboard">                                   
+                            <div class="tab-pane active in" id="account-dashboard">
                                 <form action="{{ route('user.logout') }}" method="post">
                                     @csrf
                                     <p class="greeting">
                                     Hello
-                                    <span class="text-dark font-weight-bold">{{ $user->name }}</span> 
+                                    <span class="text-dark font-weight-bold">{{ $user->name }}</span>
                                     (not
                                     <span class="text-dark font-weight-bold">{{ $user->name }}</span>?
                                     <button type="submit" class="btn-link" style="cursor: pointer;">Log out</button>)
@@ -380,7 +380,7 @@
             var current_password = $("#current").val();
             var new_password = $("#new").val();
             var new_confirm_password = $("#confirm").val();
-            // processing ajax request    
+            // processing ajax request
             $.ajax({
                 url: "{{ route('user.change') }}",
                 type: 'POST',
@@ -395,7 +395,7 @@
                     // log response into console
                     alert("Password has been changed successfully!");
                 }
-            });   
+            });
         });
 </script>
 @endsection

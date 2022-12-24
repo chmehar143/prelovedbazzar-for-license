@@ -35,7 +35,7 @@ else{
     <meta name="author" content="BS3-design">
 
     <!-- Favicon -->
-    <!-- <link rel="icon" type="image/png"  href="{{asset('frontend-assets/assets/images/icons/favicon.png')}}" > -->
+    <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/iconb.png')}}" />
 
     <!-- WebFont.js -->
     <script>

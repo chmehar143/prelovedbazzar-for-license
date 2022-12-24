@@ -39,7 +39,7 @@ class WebsiteBannerController extends Controller
     {
         //--- Validation Section
         $rules = [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'title' => 'required',
             'description' => 'required',
             'offer' => 'required',
@@ -47,7 +47,7 @@ class WebsiteBannerController extends Controller
         ];
         $customs = [
             'image.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
-            'image.max' => 'Fil size must be less than 2MB.'
+            'image.max' => 'Fil size must be less than 4MB.'
         ];
         $validator = Validator::make($request->all(), $rules, $customs);
 
@@ -80,7 +80,7 @@ class WebsiteBannerController extends Controller
 
         //--- Validation Section
         $rules = [
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'title' => 'required',
             'description' => 'required',
             'offer' => 'required',
@@ -88,7 +88,7 @@ class WebsiteBannerController extends Controller
         ];
         $customs = [
             'image.mimes' => 'File must be with extension jpeg,png,jpg,gif or svg.',
-            'image.max' => 'Fil size must be less than 2MB.'
+            'image.max' => 'Fil size must be less than 4MB.'
         ];
         $validator = Validator::make($request->all(), $rules, $customs);
 
