@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href="../../../">
-    <title>Login | Marketplace </title>
+    <title>Login | Bazaar </title>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/iconb.png')}}" />
     <!--begin::Fonts-->
@@ -24,7 +24,7 @@
         <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
             <!--begin::Logo-->
             <a href="#" class="mb-12">
-                <img alt="Logo" src="{{asset('img/logo.jpeg')}}" class="h-40px" />
+                <img alt="Logo" src="{{asset('media/logos/logo.png')}}" class="h-40px" />
             </a>
             <!--end::Logo-->
             <!--begin::Wrapper-->
