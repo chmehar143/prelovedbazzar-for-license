@@ -8,7 +8,7 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Error 404</li>
                     </ul>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="container">
                     <div class="banner">
                         <figure>
-                            <img src="{{asset('frontend-assets/assets/images/pages/404.png')}}" alt="Error 404" > 
+                            <img src="{{asset('frontend-assets/assets/images/pages/404.png')}}" alt="Error 404" >
 
                         </figure>
                         <div class="banner-content text-center">
@@ -28,7 +28,7 @@
                                 <span class="text-secondary">Oops!!!</span> Something Went Wrong Here
                             </h2>
                             <p class="text-light">There may be a misspelling in the URL entered, or the page you are looking for may no longer exist</p>
-                            <a href="demo1.html" class="btn btn-dark btn-rounded btn-icon-right">Go Back Home<i class="w-icon-long-arrow-right"></i></a>
+                            <a href="#" class="btn btn-dark btn-rounded btn-icon-right">Go Back Home<i class="w-icon-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

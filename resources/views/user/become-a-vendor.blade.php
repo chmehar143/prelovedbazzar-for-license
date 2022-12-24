@@ -16,7 +16,7 @@
             <nav class="breadcrumb-nav mb-10 pb-1 pb-lg-10">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Become a Vendor</li>
                     </ul>
                 </div>

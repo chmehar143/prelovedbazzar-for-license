@@ -67,7 +67,7 @@
             <nav class="breadcrumb-nav mb-6">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li>Grid 3</li>
                     </ul>
@@ -78,7 +78,7 @@
             <!-- Start of Page Content -->
             <div class="page-content">
                 <div class="container">
-                   
+
 
                     <div class="row grid cols-lg-3 cols-md-2 mb-2" data-grid-options="{
                         'layoutMode': 'fitRows'
@@ -97,8 +97,8 @@
                                     <a href="{{route('blog-details')}}">New found the men dress for summer</a>
                                 </h4>
                                 <div class="post-content">
-                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, 
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at 
+                                    <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                     vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p> <a href="{{route('blog-details')}}" class="btn btn-link btn-primary">(read more)</a>
 
                                 </div>
