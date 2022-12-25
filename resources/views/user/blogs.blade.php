@@ -36,7 +36,7 @@
         crossorigin="anonymous">
     <link rel="preload" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/webfonts/fa-brands-400.woff2')}}" as="font" type="font/woff2"
         crossorigin="anonymous">
-    <link rel="preload" href="{{asset('frontend-assets/assets/fonts/wolmart.woff?png09e" as="font" type="font/woff')}}" crossorigin="anonymous">
+    <link rel="preload" href="{{asset('frontend-assets/assets/fonts/bazzar.woff?png09e" as="font" type="font/woff')}}" crossorigin="anonymous">
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/assets/vendor/fontawesome-free/css/all.min.css')}}">

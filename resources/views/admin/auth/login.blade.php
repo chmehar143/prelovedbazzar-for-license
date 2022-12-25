@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href="../../../">
-    <title>Login | Marketplace </title>
+    <title>Login | Bazaar </title>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="{{asset('admin-assets/media/logos/iconb.png')}}" />
     <!--begin::Fonts-->
