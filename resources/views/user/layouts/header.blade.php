@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\URL;
    <div class="header-top">
       <div class="container">
          <div class="header-left">
-            <p class="welcome-msg">Welcome to Preloved Bazar Store!</p>
+            <p class="welcome-msg">Welcome to  Bazaar!</p>
             <p class="welcome-msg"></p>
          </div>
          <div class="header-right">
